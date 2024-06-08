@@ -1,3 +1,3 @@
-import './style.css'
-import purecss;
+//import './style.css'
+//import purecss;
 console.log("Hello vite")
