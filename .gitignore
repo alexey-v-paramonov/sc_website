@@ -11,6 +11,11 @@ node_modules
 dist
 dist-ssr
 *.local
+hugo_build
+hugo_run
+package-lock.json
+public/
+run
 
 # Editor directories and files
 .vscode/*
