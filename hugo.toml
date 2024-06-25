@@ -1,1 +1,24 @@
 theme = 'streamingCenter'
+defaultContentLanguage = 'en'
+defaultContentLanguageInSubdir = true
+[languages]
+  [languages.de]
+    contentDir = 'content/ru'
+    disabled = false
+    languageCode = 'ru-RU'
+    languageDirection = 'ltr'
+    languageName = 'Russian'
+    title = 'Radio-Tochka.com'
+    weight = 2
+    [languages.ru.params]
+      subtitle = 'Платформа Интернет-Радио'
+  [languages.en]
+    contentDir = 'content/en'
+    disabled = false
+    languageCode = 'en-US'
+    languageDirection = 'ltr'
+    languageName = 'English'
+    title = 'Streaming.center'
+    weight = 1
+    [languages.en.params]
+      subtitle = 'INternet-radio streaming platform'
