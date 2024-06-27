@@ -2,7 +2,8 @@ theme = 'streamingCenter'
 defaultContentLanguage = 'en'
 defaultContentLanguageInSubdir = true
 [languages]
-  [languages.de]
+  [languages.ru]
+    baseURL = 'https://radio-tochka.com/'
     contentDir = 'content/ru'
     disabled = false
     languageCode = 'ru-RU'
@@ -13,6 +14,7 @@ defaultContentLanguageInSubdir = true
     [languages.ru.params]
       subtitle = 'Платформа Интернет-Радио'
   [languages.en]
+    baseURL = 'https://streaming.center/'
     contentDir = 'content/en'
     disabled = false
     languageCode = 'en-US'
