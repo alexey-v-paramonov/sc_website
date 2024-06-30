@@ -1,0 +1,8 @@
+[tour]
+other = "Tour"
+[pricing]
+other = "Price"
+[docs]
+other = "Docs"
+[account]
+other = "SignIn"

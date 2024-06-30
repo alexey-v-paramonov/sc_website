@@ -1,2 +1,16 @@
-<h1>{{ site.Title }}</h1>
-{{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+<div class="header">
+    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+        <a class="pure-menu-heading" href="">Your Site</a>
+
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Home</a></li>
+            <li class="pure-menu-item"><a href="/tour" class="pure-menu-link">{{ T "tour" }}</a></li>
+            <li class="pure-menu-item"><a href="/pricing" class="pure-menu-link">{{ T "pricing" }}</a></li>
+            <li class="pure-menu-item"><a href="/pricing" class="pure-menu-link">{{ T "docs" }}</a></li>
+            <li class="pure-menu-item"><a href="#" class="pure-menu-link">{{ T "account" }}</a></li>
+        </ul>
+    </div>
+</div>        
+
+
+<!-- {{ partial "menu.html" (dict "menuID" "main" "page" .) }} -->
