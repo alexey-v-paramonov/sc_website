@@ -1,6 +1,11 @@
 <div class="header">
     <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
         <a class="pure-menu-heading" href="">Your Site</a>
+        {{ if eq .Lang "en" }}
+          <a href="{{ (index $.Translations 0).Permalink  }}">🇷🇺 | Rus</a>
+        {{ else if eq .Lang "ru" }}
+          <a href="{{ (index $.Translations 0).Permalink  }}">🌎 | Eng</a>
+        {{ end }}
 
         <ul class="pure-menu-list">
             <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Home</a></li>
@@ -11,6 +16,3 @@
         </ul>
     </div>
 </div>        
-
-
-<!-- {{ partial "menu.html" (dict "menuID" "main" "page" .) }} -->
