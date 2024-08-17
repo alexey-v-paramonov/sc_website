@@ -4,4 +4,13 @@
     <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
     {{ .Summary }}
   {{ end }}
+
+  <hr>
+
+  {{ range (where .Site.Pages "Section" "news").ByDate }}
+  {{ range first 3 .Pages  }}
+    {{ .RelPermalink }} - {{ .Title }} - {{ .Date }}<br />
+  {{ end }}
+  {{ end }}
+
 {{ end }}
