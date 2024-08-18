@@ -1,6 +1,8 @@
 theme = 'streamingCenter'
 defaultContentLanguage = 'en'
 defaultContentLanguageInSubdir = true
+enableRobotsTXT = true
+
 [languages]
   [languages.ru]
     baseURL = 'https://radio-tochka.com/'
