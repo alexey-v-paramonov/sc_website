@@ -3,6 +3,12 @@ defaultContentLanguage = 'en'
 defaultContentLanguageInSubdir = true
 enableRobotsTXT = true
 
+[sitemap]
+  changeFreq = 'weekly'
+  disable = false
+  filename = 'sitemap.xml'
+  priority = -1
+
 [languages]
   [languages.ru]
     baseURL = 'https://radio-tochka.com/'
