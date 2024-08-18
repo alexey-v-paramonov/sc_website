@@ -5,14 +5,19 @@
     {{ .Summary }}
   {{ end }}
 
+  {{ range where .Site.Pages "Section" "advantages" }}
+    {{ range first 6 (shuffle .Pages)  }}
+      <a href="{{ .RelPermalink }}"> - {{ .Title }} - {{ .Date }}<br /></a>
+    {{ end }}    
+  {{ end }}
+  <a href="/advantages">{{ T "all_news" }}</a>
+
   <hr>
 
   {{ range (where .Site.Pages "Section" "news").ByDate }}
     {{ range first 3 .Pages  }}
       <a href="{{ .RelPermalink }}"> - {{ .Title }} - {{ .Date }}<br /></a>
-    {{ end }}
-
-    
+    {{ end }}    
   {{ end }}
   <a href="/news">{{ T "all_news" }}</a>
 
