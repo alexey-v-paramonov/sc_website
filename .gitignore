@@ -27,3 +27,4 @@ run
 *.njsproj
 *.sln
 *.sw?
+.hugo_build.lock
