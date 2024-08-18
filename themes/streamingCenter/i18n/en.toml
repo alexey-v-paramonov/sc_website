@@ -6,3 +6,5 @@ other = "Price"
 other = "Docs"
 [account]
 other = "SignIn"
+[all_news]
+other = "All news"

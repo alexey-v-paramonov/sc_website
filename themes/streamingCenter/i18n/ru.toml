@@ -6,3 +6,5 @@ other = "Цены"
 other = "Инфо"
 [account]
 other = "Вход"
+[all_news]
+other = "Все новости"

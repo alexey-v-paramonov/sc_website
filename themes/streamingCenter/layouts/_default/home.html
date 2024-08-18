@@ -8,9 +8,12 @@
   <hr>
 
   {{ range (where .Site.Pages "Section" "news").ByDate }}
-  {{ range first 3 .Pages  }}
-    {{ .RelPermalink }} - {{ .Title }} - {{ .Date }}<br />
+    {{ range first 3 .Pages  }}
+      <a href="{{ .RelPermalink }}"> - {{ .Title }} - {{ .Date }}<br /></a>
+    {{ end }}
+
+    
   {{ end }}
-  {{ end }}
+  <a href="/news">{{ T "all_news" }}</a>
 
 {{ end }}
