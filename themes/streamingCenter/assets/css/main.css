@@ -330,16 +330,6 @@ a.pure-button-primary {
 * -- CONTENT STYLES --
 * This represents the content area (everything below the blue section)
 */
-.content-wrapper {
-  /* These styles are required for the "scroll-over" effect */
-  position: absolute;
-  top: 87%;
-  width: 100%;
-  min-height: 12%;
-  z-index: 2;
-  background: white;
-
-}
 
 /* We want to give the content area some more padding */
 .content {
@@ -436,4 +426,13 @@ a.pure-button-primary {
   .splash-head {
       font-size: 300%;
   }
+}
+
+.logo-text {
+  color: #000;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: .6px;
+  line-height: 1;
+  padding: 0 0 0 5px;
 }
