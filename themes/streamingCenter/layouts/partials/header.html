@@ -12,15 +12,12 @@
         {{ end }}
 
         <ul class="pure-menu-list">
+          {{ $currentPage := . }}
+
           {{- range site.Menus.main }}
-          <li class="pure-menu-item">
+          <li class="pure-menu-item {{ if $currentPage.IsMenuCurrent .Menu . }}pure-menu-selected{{ end }}">
             <a href="{{ .URL }}" class="pure-menu-link">
               {{ .Name }}
-              {{- with .Page }}
-                {{- with .Params.version -}}
-                  ({{ . }})
-                {{- end }}
-              {{- end }}
             </a>
           </li>
           {{- end }}
