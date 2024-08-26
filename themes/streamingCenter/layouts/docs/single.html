@@ -1,9 +1,16 @@
 {{ define "main" }}
 
-  {{ .Content }}
-  {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
-  CUSTOM SINGLE
-  {{ partial "docs_menu.html" . }}
+<div class="pure-g">
 
+  <div class="pure-u-1-5">
+    {{ partial "docs_menu.html" . }}
+
+  </div>
+
+  <div class="pure-u-1-2">
+    {{ .Content }}
+  </div>
+
+</div>
 
 {{ end }}

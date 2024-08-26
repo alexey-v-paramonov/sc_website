@@ -1,7 +1,16 @@
 {{ define "main" }}
 
+<div class="pure-g">
 
-  {{ partial "docs_menu.html" . }}
+  <div class="pure-u-1-5">
+    {{ partial "docs_menu.html" . }}
+  </div>
 
-
+  <div class="pure-u-1-2">
+    {{ range .Pages }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{ end }}
+  </div>
+  
+</div>
 {{ end }}

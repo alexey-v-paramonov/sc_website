@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="{{ or site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+
 <head>
   {{ partial "head.html" . }}
 </head>
+
 <body>
   <header>
     {{ partial "header.html" . }}
   </header>
   <main>
-      <div class="content">    
-        {{ block "main" . }}{{ end }}
-      </div>
+    <div class="spacer" style="height: 55px;">
+      &nbsp;
+    </div>
+    <div class="content">
+      {{ block "main" . }}{{ end }}
+    </div>
   </main>
   <footer>
     {{ partial "footer.html" . }}
   </footer>
 </body>
+
 </html>
