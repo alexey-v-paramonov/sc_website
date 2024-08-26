@@ -1,10 +1,26 @@
-[tour]
-other = "Обзор"
-[pricing]
-other = "Цены"
-[docs]
-other = "Инфо"
-[account]
-other = "Вход"
-[all_news]
-other = "Все новости"
+[stats_total]
+other = "Прямо сейчас мы обслуживаем"
+
+[stats_listeners]
+other = "Слушателей"
+
+[stats_radios]
+other = "Радистанций"
+
+[stats_servers]
+other = "Серверов"
+
+[stats_apps]
+other = "Приложений"
+
+[stats_listeners_hint]
+other = "Подключены и слушают различные Интернет-радио прямо сейчас!"
+
+[stats_radios_hint]
+other = "Онлайн и ведут эфир в Сеть с различных серверов по всему Миру."
+
+[stats_servers_hint]
+other = "Оснащены нашей панелью управления радио: это включает в себя как радио-хостинги, так и индивидуальные радио проекты"
+
+[stats_apps_hint]
+other = "Мы разработали и опубликовали в магазинах приложений Google Play и Apple App Store."

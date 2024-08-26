@@ -9,6 +9,11 @@ enableRobotsTXT = true
   filename = 'sitemap.xml'
   priority = -1
 
+[caches]
+    [caches.getjson]
+        dir = ":cacheDir/:project"
+        maxAge = "5m"
+
 [languages]
   [languages.ru]
     baseURL = 'https://radio-tochka.com/'
@@ -21,7 +26,7 @@ enableRobotsTXT = true
     weight = 2
     [languages.ru.params]
       subtitle = 'Платформа Интернет-Радио'
-      
+
     [languages.ru.menus]
       [[languages.ru.menus.main]]
         name = 'Главная'
