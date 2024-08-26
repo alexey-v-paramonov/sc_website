@@ -1,0 +1,17 @@
+
+  {{ with .GetPage "/docs" }}
+     {{- $currentPage := . -}}
+     {{- $docs_section := $currentPage.Section -}}
+     <ul>
+     {{ range .Sections }}
+       <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+       <ul>
+       {{ range .Data.Pages }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+       {{ end }}
+       </ul>
+
+     {{ end }}
+     </ul>
+       
+  {{ end }}

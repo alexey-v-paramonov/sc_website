@@ -37,7 +37,7 @@ enableRobotsTXT = true
         weight = 30
       [[languages.ru.menus.main]]
         name = 'Инфо'
-        pageRef = '/documentation'
+        pageRef = '/docs'
         weight = 40
       [[languages.ru.menus.main]]
         name = 'Вход'
@@ -71,7 +71,7 @@ enableRobotsTXT = true
         weight = 30
       [[languages.en.menus.main]]
         name = 'Docs'
-        pageRef = '/documentation'
+        pageRef = '/docs'
         weight = 40
       [[languages.en.menus.main]]
         name = 'Sign In'
