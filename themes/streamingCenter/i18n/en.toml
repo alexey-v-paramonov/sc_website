@@ -24,3 +24,15 @@ other = "Have our software installed and running. That includes hosting provider
 
 [stats_apps_hint]
 other = "We have created and published into Google Play and Apple App Store."
+
+[news]
+other = "News"
+
+[all_news]
+other = "More News"
+
+[advantages]
+other = "Advantages"
+
+[all_advantages]
+other = "All Advantages"
