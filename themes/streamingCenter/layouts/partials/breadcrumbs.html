@@ -1,28 +1,28 @@
-<br><br><br><br>
-<ol class="" itemscope itemtype="https://schema.org/BreadcrumbList">
+
+<ul class="" itemscope itemtype="https://schema.org/BreadcrumbList">
     {{- /* declare a 'variable' to store the each link position */}}
     {{- $data := newScratch }}
   
     {{- range $index, $value := .Ancestors.Reverse }}
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" style="display: inline;">
             {{- /* read the index from loop and add 'one', because it starts counting from zero */}}
             {{- $data.Set "counter" $index }}
             {{- $data.Add "counter" 1 }}
             <a itemprop="item" href="{{.Permalink}}">
-                <span itemprop="name">{{.Title}}</span>
+                <span itemprop="name">/ {{.Title}}</span>
             </a>
             {{- /* pass the counter value into schema attribute */}}
             <meta itemprop="position" content='{{ $data.Get "counter"}}' />
         </li>         
     {{- end }}
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" style="display: inline;">
             {{- /* add 'one' one more time for the last link position */}}
             {{- $data.Add "counter" 1 }}
             <a itemprop="item" href="{{ .Permalink }}">
-                <span itemprop="name">{{.Title}}</span>
+                <span itemprop="name">/ {{.Title}}</span>
             </a>
             {{- /* pass the counter value into schema attribute */}}
             <meta itemprop="position" content='{{ $data.Get "counter"}}' />
         </li>
-  </ol>
+  </ul>
   
