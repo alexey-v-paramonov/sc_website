@@ -36,3 +36,15 @@ other = "Advantages"
 
 [all_advantages]
 other = "All Advantages"
+
+[signup]
+other = "Sign up"
+
+[request_demo]
+other = "Request a demo"
+
+[full_account]
+other = "Create a full-fledged account: register to get full access to all the services"
+
+[try_account]
+other = "Try before you buy: we will create a test station and send you access credentials so you can try out our radio panel."
