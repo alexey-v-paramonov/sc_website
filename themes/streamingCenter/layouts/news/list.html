@@ -2,11 +2,11 @@
 {{ partial "breadcrumbs.html" . }}
 
   <h1>{{ .Title }}</h1>
-  {{ $paginator := .Paginate .Pages.ByDate 2 }}
+  {{ $paginator := .Paginate .Pages.ByDate.Reverse 10 }}
 
   {{ range $paginator.Pages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-    {{ .Summary }}
+    {{.Date | time.Format ":date_medium"}}
+    <h2><a href="{{ .RelPermalink }}"> {{ .LinkTitle }}</a></h2>
   {{ end }}
 
   {{ template "_internal/pagination.html" . }}
