@@ -1,0 +1,19 @@
+{{ define "main" }}
+
+<div class="pure-g">
+
+    <div class="pure-u-1">
+    {{ partial "breadcrumbs.html" . }}
+    <div>{{.Date | time.Format ":date_medium"}}</div>
+
+    <div>{{ .Content }}</div>
+
+    <div class="pure-u-1">
+      <a href="/news">{{ T "all_news" }}</a>
+    </div>
+
+  </div>
+
+</div>
+
+{{ end }}
