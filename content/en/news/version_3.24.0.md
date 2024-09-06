@@ -1,5 +1,5 @@
 ---
-title: "Версия 3.24.0: Stereo Tool is now supported!"
+title: "Version 3.24.0: Stereo Tool is now supported!"
 date: 2024-05-07T13:50:08+03:00
 ---
 

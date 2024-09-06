@@ -1,5 +1,5 @@
 ---
-title: "Версия 3.24.1: URL branding support added"
+title: "Version 3.24.1: URL branding support added"
 date: 2024-07-07T13:50:08+03:00
 ---
 
