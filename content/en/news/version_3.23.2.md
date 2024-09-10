@@ -1,5 +1,5 @@
 ---
-title: "Version 3.23.2: New features in the scheduler and the player"
+title: "Version 3.23.2: Dj stream recording"
 date: 2023-03-17T13:50:08+03:00
 ---
 
