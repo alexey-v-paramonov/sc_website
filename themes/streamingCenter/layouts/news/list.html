@@ -2,7 +2,7 @@
 {{ partial "breadcrumbs.html" . }}
 
   <h1>{{ .Title }}</h1>
-  {{ $paginator := .Paginate .Pages.ByDate.Reverse 10 }}
+  {{ $paginator := .Paginate .Pages.ByDate.Reverse 15 }}
 
   {{ range $paginator.Pages }}
     {{.Date | time.Format ":date_medium"}}
