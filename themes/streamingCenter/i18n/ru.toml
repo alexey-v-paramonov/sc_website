@@ -11,7 +11,7 @@ other = "Радистанций"
 other = "Серверов"
 
 [stats_apps]
-other = "Приложений"
+other = "Android/iOS Приложений"
 
 [stats_listeners_hint]
 other = "Подключены и слушают различные Интернет-радио прямо сейчас!"

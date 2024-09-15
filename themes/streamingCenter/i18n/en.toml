@@ -11,7 +11,7 @@ other = "Stations"
 other = "Servers"
 
 [stats_apps]
-other = "Apps"
+other = "Android/iOS Apps"
 
 [stats_listeners_hint]
 other = "Are listening to Online stations built with our software right now!"
