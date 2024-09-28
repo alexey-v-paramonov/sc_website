@@ -3,4 +3,4 @@ title: "Low CPU usage"
 date: 2024-08-18T11:03:55+03:00
 ---
 
-Движок, который мы используем для вещания и обработки звука, написан на С++ и сильно оптимизирован, поэтому нагрузка на процессор сервера очень низкая. Чтобы запустить до 5 радио на одном сервере - Вам будет достаточно сервера с 1 ядром процессора и 1Gb оперативной памяти, а на современном сервере на процессоре, например, Core i5 13500 можно запустить до 300 Интернет-радио. По этому параметру наш продукт выигрывает по производительности у радио, построенных на Liquidsoap примерно на 15-20%.
+The engine that we use for broadcasting and audio processing is written in C++ and is highly optimized, so the load on the server processor is very low. To run up to 5 radios on one server, you will only need a server with 1 processor core and 1GB of RAM, and on a modern server on a processor, for example, Core i5 13500, you can run up to 300 Internet radios simultaneously. Our product outperforms radios based Liquidsoap by about 15-20% in terms of CPU performance.
