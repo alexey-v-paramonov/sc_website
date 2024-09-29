@@ -28,3 +28,4 @@ run
 *.sln
 *.sw?
 .hugo_build.lock
+resources

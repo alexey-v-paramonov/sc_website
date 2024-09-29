@@ -1,0 +1,22 @@
+{{ define "main" }}
+
+<div class="pure-g">
+
+    <div class="pure-u-1">
+    {{ partial "breadcrumbs.html" . }}
+
+    {{ $thumbnailPath := print "images/" .File.BaseFileName ".png" }}
+    {{ $image := .Parent.Resources.Get $thumbnailPath }}
+
+    {{ if $image }}
+      {{ $image := $image.Process "resize 300x" }}
+      <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}"> 
+    {{ end }}
+
+    {{ .Content }}
+
+  </div>
+
+</div>
+
+{{ end }}

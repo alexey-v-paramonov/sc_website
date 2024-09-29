@@ -1,0 +1,18 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ partial "breadcrumbs.html" . }}
+
+  {{ range .Pages }}
+    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+
+    {{ $thumbnailPath := print "images/" .File.BaseFileName ".png" }}
+    {{ $image := .Parent.Resources.Get $thumbnailPath }}
+    {{ if $image }}
+      {{ $image := $image.Process "resize 200x" }}
+      <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}"> 
+    {{ end }}
+
+    {{ .Content }}
+
+  {{ end }}
+{{ end }}

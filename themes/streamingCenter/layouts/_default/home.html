@@ -79,8 +79,18 @@
 
     {{ range where .Site.Pages "Section" "advantages" }} {{ range first 6 (shuffle
     .Pages) }}
+    {{ $thumbnailPath := print "images/" .File.BaseFileName ".png" }}
     <div class="pure-u-1 pure-u-md-1-3 news-box">
-        <a href="{{ .RelPermalink }}"> - {{ .Title }} - {{ .Summary }}<br /></a>
+        
+        <a href="{{ .RelPermalink }}">
+            {{ $image := .Parent.Resources.Get $thumbnailPath }}
+
+            {{ if $image }}
+                {{ $image := $image.Process "resize 100x" }}
+                <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}"> 
+            {{ end }}
+            {{ .Title }} - {{ .Summary }}<br />
+        </a>
     </div>
 
     {{ end }} {{ end }}
