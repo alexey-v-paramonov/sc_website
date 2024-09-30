@@ -1,0 +1,54 @@
+{{ define "main" }}
+{{ partial "breadcrumbs.html" . }}
+
+<div class="pure-g">
+    <div class="pure-u-1">
+        <h2><a href="/tour/radio">Internet Radio Control panel</a></h2>
+        <p>
+            {{ with .GetPage "/tour/radio" }}
+                {{ $image := .Resources.Get "image.png" }}
+                {{ if $image }}
+                    {{ $image := $image.Process "resize 200x" }}
+                    <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" align="left" vspace="5" hspace="5"> 
+                {{ end }}
+                {{ .Content }}
+            {{ end }}
+        </p>
+    </div>
+</div>
+
+<div class="pure-g">
+    <div class="pure-u-1">
+        <h2><a href="/tour/website">Website</a></h2>
+        <p>
+            {{ with .GetPage "/tour/website" }}
+                {{ $image := .Resources.Get "image.png" }}
+                {{ if $image }}
+                    {{ $image := $image.Process "resize 200x" }}
+                    <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" align="right" vspace="5" hspace="5"> 
+                {{ end }}
+                {{ .Content }}
+            {{ end }}
+        </p>        
+    </div>
+</div>
+
+<div class="pure-g">
+    <div class="pure-u-1">
+        <h2><a href="/tour/apps">Mobile applications</a></h2>
+        <p>
+            {{ with .GetPage "/tour/apps" }}
+                {{ $image := .Resources.Get "image.png" }}
+                {{ if $image }}
+                    {{ $image := $image.Process "resize 200x" }}
+                    <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" align="left" vspace="5" hspace="5"> 
+                {{ end }}
+                {{ .Content }}
+            {{ end }}
+        </p>                
+    </div>
+</div>
+
+
+{{ end }}
+
