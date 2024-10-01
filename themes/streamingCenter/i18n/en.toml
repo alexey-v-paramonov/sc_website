@@ -43,6 +43,9 @@ other = "Sign up"
 [request_demo]
 other = "Request a demo"
 
+[invalid_email]
+other = "Invalid Email"
+
 [full_account]
 other = "Create a full-fledged account: register to get full access to all the services"
 

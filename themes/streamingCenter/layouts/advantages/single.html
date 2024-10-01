@@ -10,7 +10,7 @@
 
     {{ if $image }}
       {{ $image := $image.Process "resize 300x" }}
-      <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}"> 
+      <img class="pure-img"  src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}"> 
     {{ end }}
 
     {{ .Content }}

@@ -9,7 +9,7 @@
             {{ $image := .Resources.Get "image.png" }}
             {{ if $image }}
                 {{ $image := $image.Process "resize 200x" }}
-                <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" align="left" vspace="5" hspace="5"> 
+                <img class="pure-img"  src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" align="left" vspace="5" hspace="5"> 
             {{ end }}
             {{ .Content }}
         </p>
@@ -25,7 +25,7 @@
             {{ $image := .Resources.Get "image.png" }}
             {{ if $image }}
                 {{ $image := $image.Process "resize 200x" }}
-                <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" align="right" vspace="5" hspace="5"> 
+                <img class="pure-img"  src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" align="right" vspace="5" hspace="5"> 
             {{ end }}
             {{ .Content }}
         </p>        
@@ -41,7 +41,7 @@
             {{ $image := .Resources.Get "image.png" }}
             {{ if $image }}
                 {{ $image := $image.Process "resize 200x" }}
-                <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" align="left" vspace="5" hspace="5"> 
+                <img class="pure-img"  src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" align="left" vspace="5" hspace="5"> 
             {{ end }}
             {{ .Content }}
         </p>                

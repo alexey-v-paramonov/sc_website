@@ -447,3 +447,13 @@ label {
   min-height: 120px;
   padding: 10px;
 }
+
+.form-error input[type=email] {
+  background-color: #fce4e4;
+  border: 1px solid #cc0033;
+  outline: none;
+}
+
+.button-error {
+  background: rgb(202, 60, 60);
+}

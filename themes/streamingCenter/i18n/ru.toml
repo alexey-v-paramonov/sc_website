@@ -43,6 +43,9 @@ other = "Регистрация"
 [request_demo]
 other = "Заказать демо"
 
+[invalid_email]
+other = "Неверный Email"
+
 [full_account]
 other = "Заказ полноценного аккаунта, чтобы работать со всеми услугами серввиса"
 
