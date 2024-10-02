@@ -10,13 +10,16 @@
     <div class="pure-u-1-2" style="text-align: center;">
         <a class="pure-button pure-button-primary" href="https://app.streaming.center">{{ T "signup" }}</a>
     </div>
-    <div class="pure-u-1-2" style="text-align: center;">
-        <form class="pure-form pure-g" >
+    <div class="pure-u-1-2" style="text-align: center;" id="try-container">
+        <form class="pure-form pure-g">
             <div class="pure-u-1-2" id="try-form">
                 <input type="email" placeholder="Email" class="pure-input-1"  id="try-email" />
             </div>
             <div class="pure-u-1-2" style="text-align: left;">
-                <button type="submit" class="pure-button pure-button-primary" id="try-btn" data-invalid-email="{{ T "invalid_email" }}">{{ T "request_demo" }}</button>
+                <button type="submit" class="pure-button pure-button-primary" id="try-btn" data-success-text="{{ T "try_account_success" }}" data-lang="{{ .Lang }}" data-invalid-email="{{ T "invalid_email" }}">
+                    {{ T "request_demo" }}
+                    
+                </button>
             </div>
         </form>
     </div>
