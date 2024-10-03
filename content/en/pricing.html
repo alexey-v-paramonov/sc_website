@@ -17,14 +17,193 @@ js: js/pricing.js
     </div>
 
     <div class="pure-u-1-2" style="text-align: center;">
-        <i>Use any hosting to install the standalone version of our Panel.</i>
+        <i>Use any VDS/VPS/Cloud hosting to install the standalone version of our Platform.</i>
     </div>
     <div class="pure-u-1-2" style="text-align: center;">
         <i>You will need to provide documents confirming the legality of your stream in order to use our hosting</i>
     </div>
 
+
+
+    <div class="pure-u-1-2" style="text-align: center;">
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <p>Number of stations on the server:</p>
+            </div>
+        </div>
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <select id="self-hosted-stations">
+                    <option value="5">5 or less</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30 or more</option>
+                </select>
+            </div>
+        </div>
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <p>Remove Streaming.center branding:</p>
+            </div>
+        </div>
+        <div class="pure-g">
+            <div class="pure-u-1-2" style="text-align: right; padding: 5px;">
+                <input type="radio" name="branding" id="self-hosted-whitelabel-no" checked> No
+            </div>
+            <div class="pure-u-1-2" style="text-align: left; padding: 5px;">
+                <input type="radio" name="branding" id="self-hosted-whitelabel-yes"> Yes
+            </div>
+        </div>
+
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <p>Number of listeners, disk space:</p>
+            </div>
+        </div>
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <b>Unlimited</b>, only limited by the server capacity/bandwidth.
+            </div>
+        </div>
+
+    </div>
+
+    <div class="pure-u-1-2" style="text-align: center;">
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <p>Max. number of simultaneous listeners:</p>
+            </div>
+        </div>
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <select id="hosted-listeners">
+                    <option label="5" value="5">5</option>
+                    <option label="10" value="10">10</option>
+                    <option label="15" value="15">15</option>
+                    <option label="20" value="20">20</option>
+                    <option label="25" value="25">25</option>
+                    <option label="30" value="30">30</option>
+                    <option label="35" value="35">35</option>
+                    <option label="40" value="40">40</option>
+                    <option label="50" value="50" selected="selected">50</option>
+                    <option label="60" value="60">60</option>
+                    <option label="70" value="70">70</option>
+                    <option label="80" value="80">80</option>
+                    <option label="90" value="90">90</option>
+                    <option label="100" value="100">100</option>
+                    <option label="120" value="120">120</option>
+                    <option label="150" value="150">150</option>
+                    <option label="200" value="200">200</option>
+                    <option label="250" value="250">250</option>
+                    <option label="300" value="300">300</option>
+                    <option label="350" value="350">350</option>
+                    <option label="400" value="400">400</option>
+                    <option label="450" value="450">450</option>
+                    <option label="500" value="500">500</option>
+                    <option label="600" value="600">600</option>
+                    <option label="700" value="700">700</option>
+                </select>
+            </div>
+        </div>
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <p>Bitrate:</p>
+            </div>
+        </div>
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <select id="hosted-bitrate">
+                    <option label="16 kbps" value="16">16 kbps</option>
+                    <option label="24 kbps" value="24">24 kbps</option>
+                    <option label="32 kbps" value="32">32 kbps</option>
+                    <option label="64 kbps" value="64">64 kbps</option>
+                    <option label="96 kbps" value="96">96 kbps</option>
+                    <option label="128 kbps" value="128" selected="selected">128 kbps</option>
+                    <option label="160 kbps" value="160">160 kbps</option>
+                    <option label="192 kbps" value="192">192 kbps</option>
+                    <option label="256 kbps" value="256">256 kbps</option>
+                    <option label="320 kbps" value="320">320 kbps</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <p>Disk space:</p>
+            </div>
+        </div>
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <select id="hosted-du">
+                    <option label="5 Gb" value="5" selected="selected">5 Gb</option>
+                    <option label="6 Gb" value="6">6 Gb</option>
+                    <option label="7 Gb" value="7">7 Gb</option>
+                    <option label="9 Gb" value="9">9 Gb</option>
+                    <option label="10 Gb" value="10">10 Gb</option>
+                    <option label="15 Gb" value="15">15 Gb</option>
+                    <option label="20 Gb" value="20">20 Gb</option>
+                    <option label="25 Gb" value="25">25 Gb</option>
+                    <option label="30 Gb" value="30">30 Gb</option>
+                    <option label="40 Gb" value="40">40 Gb</option>
+                    <option label="50 Gb" value="50">50 Gb</option>
+                    <option label="60 Gb" value="60">60 Gb</option>
+                    <option label="70 Gb" value="70">70 Gb</option>
+                    <option label="80 Gb" value="80">80 Gb</option>
+                    <option label="90 Gb" value="90">90 Gb</option>
+                    <option label="100 Gb" value="100">100 Gb</option>
+                    <option label="120 Gb" value="120">120 Gb</option>
+                    <option label="140 Gb" value="140">140 Gb</option>
+                    <option label="150 Gb" value="150">150 Gb</option>
+                    <option label="160 Gb" value="160">160 Gb</option>
+                    <option label="180 Gb" value="180">180 Gb</option>
+                    <option label="200 Gb" value="200">200 Gb</option>
+                </select>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="pure-u-1-2" style="text-align: center;">
+        <hr>
+        <b>Price: <span id="self-hosted-price"></span>$</b>
+    </div>
+    <div class="pure-u-1-2" style="text-align: center;">
+        <hr>
+        <b>Price: <span id="hosted-price"></span>$</b>
+    </div>
+
+    <div class="pure-u-1-1" style="text-align: center;">
+        <a class="pure-button pure-button-primary" href="https://app.streaming.center">Signup</a>
+    </div>
+
+
     <div class="pure-u-1-1" style="text-align: center;">
         <h1>Internet-Radio mobile application</h1>
+        <i>Radio player app that you can customize by uploading your branding, streams and stations into the application
+            builder </i>
     </div>
     <div class="pure-u-1-2" style="text-align: center;">
         <h2>Android</h2>
@@ -38,6 +217,88 @@ js: js/pricing.js
     </div>
     <div class="pure-u-1-2" style="text-align: center;">
         <i>App App Store publication is included in the price</i>
+    </div>
+
+    <div class="pure-u-1-2" style="text-align: center;">
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <p>Google Play publishing</p>
+            </div>
+        </div>
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <select  id="android-app-publishing">
+                    <option value="0">Publish using Streaming.center developer account</option>
+                    <option value="1">I will provide my developer account credentials for publishing</option>
+                    <option value="2" selected>APK file only</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="pure-u-1-2" style="text-align: center;">
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <p>Apple App Store publishing:</p>
+            </div>
+        </div>
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <select  id="ios-app-publishing">
+                    <option value="0">Publish using Streaming.center developer account</option>
+                    <option value="1">I will provide my developer account credentials for publishing</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="pure-u-1-2" style="text-align: center;">
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <p>Copyright settings</p>
+            </div>
+        </div>
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <select  id="android-app-copyright">
+                    <option value="0">Keep Streaming.center Copyright</option>
+                    <option value="1">Remove any copyright (white-label)</option>
+                    <option value="2">Use your own copyright</option>
+                </select>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="pure-u-1-2" style="text-align: center;">
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <p>Copyright settings:</p>
+            </div>
+        </div>
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <select id="ios-app-copyright">
+                    <option value="0">Keep Streaming.center Copyright</option>
+                    <option value="1">Remove any copyright (white-label)</option>
+                    <option value="2">Use your own copyright</option>
+                </select>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="pure-u-1-2" style="text-align: center;">
+        <hr>
+        <b>Price: <span id="android-app-price"></span>$</b>
+    </div>
+    <div class="pure-u-1-2" style="text-align: center;">
+        <hr>
+        <b>Price: <span id="ios-app-price"></span>$</b>
+    </div>
+
+    <div class="pure-u-1-1" style="text-align: center;">
+        <a class="pure-button pure-button-primary" href="https://app.streaming.center">Signup</a>
     </div>
 
 </div>
