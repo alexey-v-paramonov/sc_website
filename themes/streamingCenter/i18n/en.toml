@@ -41,7 +41,7 @@ other = "All Advantages"
 other = "Sign up"
 
 [request_demo]
-other = "Request a free trial"
+other = "Get a free trial"
 
 [invalid_email]
 other = "Invalid Email"
