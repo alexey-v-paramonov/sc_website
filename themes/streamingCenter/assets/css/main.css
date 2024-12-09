@@ -545,3 +545,11 @@ label {
     pointer-events: initial;
   }
   /* This is the end of CSSBox */
+
+
+div.highlight pre {
+    overflow-x: scroll;
+} 
+
+
+
