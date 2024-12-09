@@ -3,6 +3,9 @@ defaultContentLanguage = 'en'
 defaultContentLanguageInSubdir = true
 enableRobotsTXT = true
 
+[markup.goldmark.renderer]
+unsafe= true
+
 [sitemap]
   changeFreq = 'weekly'
   disable = false
