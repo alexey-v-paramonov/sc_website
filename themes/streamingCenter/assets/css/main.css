@@ -551,5 +551,21 @@ div.highlight pre {
     overflow-x: scroll;
 } 
 
+div.api-block{
+  background: #fafafa;
+  color: #333;
+  font-family: monospace;
+  font-size: 90%;
+  border-color: #eee;
+  border-style: solid;
+  border-width: 1px;
+  overflow-x: auto ;
+  padding: 1em;
+  overflow-x: auto;
+}
 
 
+.code-wrap code {
+  white-space: pre-wrap;
+  word-wrap: break-word
+}
