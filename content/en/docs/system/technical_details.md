@@ -9,96 +9,55 @@ Our streaming platform consists of several components:
 - Broadcaster interface, where radio owner manages his stations
 - Streaming core application which does the audio porcessing, scheduling, encoding and the actual streming
 
-It also depends on some system-wide services like Nginx, Apache, MySQL, Cron, Supervisord, Python and system libraries, etc.
+It also depends on some system-wide services like Nginx, Apache, MySQL, Cron, Supervisord, ProFTPd, Python and system libraries, etc.
 
 
-
-#### Admin application
-
-This is a Django/Python/Javascript application located in 
-`/opt/sc_radio`
-
-
-#### Broadcaster applications
-
-This is a Django/Python/Javascript application located in 
-`/var/users/<USERNAME>/app`
-
-
-#### Streaming core 
-It has 2 binaries:
-- content_indexer - utility to process audio files for streaming by Auto-DJ
-- radiopoint - the main process, which manages the Djs, Channels, audio encoding, processing and streaming.
-
-These are high performance C++ applications located in **/usr/local/bin** directory.
-
-### Debugging:
+### Debugging general rules:
 In case if some component of the system is not functional, you can:
 - check the corresponding files are present on the filesystem
 - check if component is running
 - in case if it does not - enable logging and see what went wrong
 
 
-### Debugging the admin application
-see if application can start with
-`cd /var/users/<USERNAME>/app`
+### Admin application
+This is a Django/Python/Javascript application located in `/opt/sc_radio`. The application is running in a Python uWSGI container, configuration files are available in:
+- <b>Supervisord</b>: `/etc/supervisor/conf.d/sc_radio.conf`
+- <b>Nginx</b>: `/etc/nginx/conf.d/sc_radio.conf`
 
-or
-
-`/opt/sc_radio`
-
-for admin app and
-
-`./manage.py shell`
-
-if this command does not crash and ends up showing the console - application is fine, otherwise a traceback with an error description is displayed.
+*Debugging:*
+1. See if uWSGI process is running with `ps -Af | grep uwsgi | grep sc_radio`
+2. Check system-wide Supervisord logs in `/var/log/supervisor/supervisord.log`
+3. Check system-wide Nginx logs in `/var/log/nginx/error.log`
+4. If Supervisord service is running fine and no isses in the main log try to enable logging in `/etc/supervisor/conf.d/sc_radio.conf` by chaning `stdout_logfile=/dev/null` to a log file, for example `stdout_logfile=/tmp/sc_uwsgi.log` then restart Supervisor service with `service supervisor restart` and check Admin application log in `/tmp/sc_uwsgi.log`
+5. Check if Admin application compiles and starts with no isses by chaging to `/opt/sc_radio` directory and running `./manage.py shell` if this command does not crash and ends up showing the console - application is fine, otherwise a traceback with an error description is displayed.
 Common issues are related to broken Python dependencies or broken packages or database connection issues.
 
 
-Software depends on the following system-level services, so make sure all of them are running.
-
-
-**uWsgi**
-
-uWsgi (https://uwsgi-docs.readthedocs.io/en/latest/) is a container app that runs Broadcaster and Admin Django applications.
-Configuration files are available in 
-
-`/etc/supervisor/conf.d/<USERNAME>.conf` - for broadcaster applications
-
-`/etc/supervisor/conf.d/sc_radio.conf` - for admin application
-
-**Supervisord**
-
-This service is a daemon that makes sure all admin and broadcaster uWsgi applications are running and restarts the automatically if they crash.
+### Broadcaster applications
+This is a Django/Python/Javascript application located in `/var/users/<USERNAME>/app`. The application is running in a Python uWSGI container, configuration files are available in:
+- <b>Supervisord</b>: `/etc/supervisor/conf.d/<USERNAME>.conf`
+- <b>Nginx</b>: `/etc/nginx/conf.d/<USERNAME>.conf`
 
 *Debugging:*
-
-If some broadcaster is not working try to open its config file in 
-
-`/etc/supervisor/conf.d/<USERNAME>.conf`
-
-and change
-
-`stdout_logfile=/dev/null`
-
-to
-
-`stdout_logfile=/path/to/file.log`
-
-Restart supervisord with
-
-`service supervisord restart`
-
-After that log will have a detailed description in case Django application for that account is broken and not running.
+1. See if uWSGI process is running with `ps -Af | grep uwsgi | grep <USERNAME>`
+2. Check system-wide Supervisord logs in `/var/log/supervisor/supervisord.log`
+3. Check system-wide Nginx logs in `/var/log/nginx/error.log`
+4. If Supervisord service is running fine and no isses in the main log try to enable logging in `/etc/supervisor/conf.d/<USERNAME>.conf` by chaning `stdout_logfile=/dev/null` to a log file, for example `stdout_logfile=/tmp/sc_uwsgi.log` then restart Supervisor service with `service supervisor restart` and check Admin application log in `/tmp/sc_uwsgi.log`
+5. Check if Admin application compiles and starts with no isses by chaging to `/var/users/<USERNAME>/app` directory and running `./manage.py shell` if this command does not crash and ends up showing the console - application is fine, otherwise a traceback with an error description is displayed.
+Common issues are related to broken Python dependencies or broken packages or database connection issues.
 
 
-**Music Indexing service**
+### Streaming core 
+It has 2 binaries:
+- content_indexer - utility to process audio files for streaming by Auto-DJ
+- radiopoint - the main process, which manages the Djs, Channels, audio encoding, processing and streaming.
 
-Used to look for mp3/flac files that users upload via web interface or FTP. It syncronizes files on the file system with the database information, calculates file length, extracts images and so on.
-It is using 2 extenral programs:
+These are high performance C++ applications located in **/usr/local/bin** directory.
 
- 1. sox (http://sox.sourceforge.net/) to extract mp3 data from audio file
- 2. mp3gain (http://mp3gain.sourceforge.net/) to apply volume normalization.
+
+### Music processing service
+Used to look for MP3/FLAC files that users upload via the WEB interface or FTP. It syncronizes files on the file system with the database information, calculates file length, extracts images and so on.
+It is using and extenral programs: [loudgain](https://github.com/Moonbase59/loudgain) to calculate volume levels in the media files.
 
 This service is running every 10 minutes according to this CRON rule:
 `*/5 * * * * root /usr/local/bin/content_indexer 1>/dev/null 2>/dev/null`
@@ -106,7 +65,6 @@ This service is running every 10 minutes according to this CRON rule:
 this line is configured in `/etc/crontab`.
 
 *Debugging:*
-
 
 A log of this service for every user is located in 
 
@@ -120,7 +78,22 @@ to
 
 `*/5 * * * * root /usr/local/bin/content_indexer 1>>/path/to/output.log 2>>/path/to/error.log`
 
-Indexing service is using configuration file `/opt/bin/indexer.cfg` and it is using MySQL root password to operate, so if MySQL root password changes - it should be changed in this config file as well.
+You can also just run `content_indexer` from the server console to see the output, if there is a database connection problem or any other issues - most likely you will see an error message in your console.
+
+Indexing service is using a configuration file `/opt/bin/indexer.cfg` and it is using MySQL root password to operate, so if MySQL root password changes - it should be changed in this config file as well.
+
+
+
+
+
+
+
+Software depends on the following system-level services, so make sure all of them are running.
+
+**Supervisord**
+- command to restart the service: `service supervisor restart`
+- system-wide log file: `/var/log/supervisor/supervisord.log`
+
 
 
 **Nginx**
