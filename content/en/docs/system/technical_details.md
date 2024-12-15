@@ -11,8 +11,8 @@ Our streaming platform consists of several components:
 
 It also depends on some system-wide services like Nginx, Apache, MySQL, Cron, Supervisord, ProFTPd, Python and system libraries, etc.
 
-
 ### Debugging general rules:
+
 In case if some component of the system is not functional, you can:
 - check the corresponding files are present on the filesystem
 - check if component is running
@@ -83,12 +83,23 @@ You can also just run `content_indexer` from the server console to see the outpu
 Indexing service is using a configuration file `/opt/bin/indexer.cfg` and it is using MySQL root password to operate, so if MySQL root password changes - it should be changed in this config file as well.
 
 
+### Streaming core
+Normally if user account is not suspended and running fine - a running "radiopoint" process shuld be present in the system for that user.
+You can check that by running `ps -Af | grep radiopoint | grep <USERNAME>"`, one user may have several "radiopoint" processes running at the same, one per each radio station in his account.
 
 
+*Debugging:*
+Configuration file is avaialbe at: `/var/users/<USERNAME>/conf/radiopoint_<SERVER_ID>.conf`
+
+You can change
+`LOG=0` to `LOG=3` in config file, so the log file from `LOGPATH` setting will have a detailed report how radio station is operating (radio station restart is required).
+Process can be started from the broadcaster web interface, or killed using SSH using standard kill command.
+It also gets restarted automatically by utilities and scripts if the process is not running.
+
+It is also possible to enable the logs without restarting the station by sending a `SIGUSR2` signal to "radiopoint" process. You can get the process ID by running `ps -Af | grep radiopoint | grep <USERNAME>"` and then run `kill -SIGUSR2 <PID>` and it will enable logging. Sending the same signal one more time will disable the logs.
 
 
-
-Software depends on the following system-level services, so make sure all of them are running.
+Our streaming platform also depends on the following system-level services, so make sure all of them are running.
 
 **Supervisord**
 - command to restart the service: `service supervisor restart`
@@ -100,16 +111,13 @@ Software depends on the following system-level services, so make sure all of the
 
 Nginx is used to server Django applications for broadcaster and admin interfaces.
 Configuration files are located in 
-
 `/etc/nginx/conf.d/<USERNAME>.conf` - for broadcaster app
-
 `/etc/nginx/conf.d/sc_radio.conf` - for admin app
-
 *Debugging:*
 
-By default all Nginx logs are disabled to save disk space. Enable by changing
+By default all Nginx logs are disabled to save the disk space. Enable it by changing
 ```
-access_log  /dev/null ;
+access_log  /dev/null;
 error_log   /dev/null;
 ```
 to
@@ -117,11 +125,9 @@ to
 access_log  /path/to/access.log;
 error_log   /path/to/error.log;
 ```
-And restarting Nginx with
+In the user config file to see each user account Nginx log individually, but in most cases it is enough to check the main Nginx log file in `/var/log/nginx/error.log`
 
-`service nginx restart`
-
-Also see system logs.
+- Command to restart the service: `service nginx restart`
 
 
 **MySQL**
@@ -135,7 +141,7 @@ When MySQL root password changes it should be also updated in:
 
 *Debugging:*
 
-Most common problem with MySQL is a crash or unable to start, see system logs for details.
+Most common problem with MySQL is a crash or unable to start, see system logs in `/var/log/mysql` for details.
 Depending on what MySQL version (MariaDB or original MySQL) is installed use corresponding command to restart it:
 
 `service mysql restart`
@@ -147,47 +153,23 @@ or
 **ProFTP**
 
 This is a default FTP server running on port 21. It has a default configuration with MySQL extension enabled for broadcaster accounts.
-Configuration is located in /etc/proftpd.conf (CentoS)
-Restart with 
+Configuration is located in `/etc/proftpd.conf` for CentoS and `/etc/proftpd/` for Ubuntu Linux.
 
-`service proftpd restart`
+- command to restart the service: `service proftpd restart`
+- system-wide log file: `/var/log/proftpd/proftpd.log`
 
-**RadioPoint**
-
-This is a core process that runs user radio stream.
-Configuration is available in 
-
-`/var/users/<USERNAME>/conf/radiopoint_<SERVER_ID>.conf`
-
-*Debugging:*
-
-Change 
-
-`LOG=0`
-
-to 
-
-`LOG=3`
-
-in config file, so log file from
-
-`LOGPATH`
-
-setting will have a detailed report how radio station is operating.
-Process can be started from the broadcaster web interface, or killed using SSH using standard kill command.
-It restarts automatically every minute.
-
+Restart with `service proftpd restart`
 
 **Utilities**
 
-Additional system utilities are run y CRON, configuration from /etc/crontab usually looks like this:
+Additional system utilities are run y CRON, configuration from `/etc/crontab` usually looks like this:
 
 ```
 1. */5 * * * * root /usr/local/bin/content_indexer 1>/dev/null 2>/dev/null
-2. */1 * * * * root python3.6 /opt/bin/sc_stats 1>/dev/null 2>/dev/null
-3. */15 * * * * root python3.6 /opt/bin/sc_backup 1>/dev/null 2>/dev/null
-4. */1  * * * * root python3.6 /opt/bin/sc_accounts 1>/dev/null 2>/dev/null
-5. 0    * * * * root python3.6 /opt/bin/awstats 1>/dev/null 2>/dev/null
+2. */1 * * * * root python3 /opt/bin/sc_stats 1>/dev/null 2>/dev/null
+3. */15 * * * * root python3 /opt/bin/sc_backup 1>/dev/null 2>/dev/null
+4. */1  * * * * root python3 /opt/bin/sc_accounts 1>/dev/null 2>/dev/null
+5. 0    * * * * root python3 /opt/bin/awstats 1>/dev/null 2>/dev/null
 6. 30 2 * * 1 root /usr/bin/letsencrypt renew
 ```
 
@@ -201,4 +183,4 @@ Additional system utilities are run y CRON, configuration from /etc/crontab usua
 *Debugging:*
 
 1. Change 1>/dev/null 2>/dev/null to real stdout/stderr log files to see what utils are doing and for possible issues.
-2. Try to run utility by hand via console, for example python3.6 /opt/bin/sc_accounts to see the output for potential issues.
+2. Try to run utility by hand via console, for example `python3 /opt/bin/sc_accounts` to see the output for potential issues.
