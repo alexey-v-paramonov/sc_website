@@ -1,6 +1,7 @@
 ---
 title: "Getting started"
 date: 2024-08-24T11:37:29+03:00
+weight: 1
 ---
 
 Here and in the following subsections, we will explain how to use the API of our Internet Radio control panel 

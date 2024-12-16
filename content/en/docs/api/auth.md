@@ -1,7 +1,7 @@
 ---
 title: "Authentication"
 date: 2024-08-23T11:37:26+03:00
-draft: true
+weight: 2
 ---
 
 Most API requests are aimed at getting information about the status of the radio, but in some cases there is a need:
