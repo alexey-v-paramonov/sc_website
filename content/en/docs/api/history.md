@@ -7,6 +7,7 @@ weight: 3
 <div class="api-block">
 <b>Endpoint:</b> /api/v2/history/ <br/>
 <b>HTTP methods:</b> GET <br/>
+<b>Authentication:</b> not required<br/>
 <b>Parameters:</b> <br/>
 <b>limit: </b> the number of records in response<br/>
 <b>offset:</b> offest, idicates the starting record<br/>
@@ -26,7 +27,7 @@ print(response.json())
 
 {{< / highlight >}}
 
-#### Output
+#### Example Output
 
 {{< highlight json  >}}
 
