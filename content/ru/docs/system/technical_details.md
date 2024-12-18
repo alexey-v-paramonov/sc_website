@@ -1,30 +1,30 @@
 ---
-title: "Technical details"
+title: "Техническое описание"
 date: 2024-08-23T11:40:53+03:00
 draft: true
 ---
 
-Our streaming platform consists of several components:
-- Admin interface, where you create radio accounts on your server
-- Broadcaster interface, where radio owner manages his stations
-- Streaming core application which does the audio porcessing, scheduling, encoding and the actual streming
+Наша Платформа Интернет-радио состоит из нескольких основных компонентов:
+- Интерфейс администратора, где администратор может создавать новые радио аккаунты на сервере.
+- Интерфейс радио-вещателя, где владелец станции управляет эфиром станции.
+- Вещательное "ядро", которое осуществляет обработку звука, планирование эфира и формирует стрим радио.
 
-It also depends on some system-wide services like Nginx, Apache, MySQL, Cron, Supervisord, ProFTPd, Python and system libraries, etc.
+Она так же зависит от системных сервисов операционной системы Linux, таких так:  Nginx, Apache, MySQL, Cron, Supervisord, ProFTPd, FFMPEG, Python и различные системные библиотеки.
 
-### Debugging general rules:
+### Основные правила отладки:
 
-In case if some component of the system is not functional, you can:
-- check the corresponding files are present on the filesystem
-- check if component is running
-- in case if it does not - enable logging and see what went wrong
+В случае, если какой-либо компонент перестал функционировать, Вы можете:
+- проверить, что файлы этого компонента находятся на сервере и не повреждены
+- проверить, что сервис запущен и работает
+- если нет - подключить логи и проверить по сообщениям в лог-файлах что именно пошло не так
 
 
-### Admin application
-This is a Django/Python/Javascript application located in `/opt/sc_radio`. The application is running in a Python uWSGI container, configuration files are available in:
+### Интерфейс администратора
+Является Django/Python/Javascript приложением, находящемся в папке `/opt/sc_radio` сервера. Приложение работает под управлением Python контейнера uWSGI, файлы конфигурации сервисов доступны в:
 - <b>Supervisord</b>: `/etc/supervisor/conf.d/sc_radio.conf`
 - <b>Nginx</b>: `/etc/nginx/conf.d/sc_radio.conf`
 
-*Debugging:*
+*Отладка:*
 1. See if uWSGI process is running with `ps -Af | grep uwsgi | grep sc_radio`
 2. Check system-wide Supervisord logs in `/var/log/supervisor/supervisord.log`
 3. Check system-wide Nginx logs in `/var/log/nginx/error.log`

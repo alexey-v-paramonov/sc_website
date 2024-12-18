@@ -99,6 +99,33 @@ It also gets restarted automatically by utilities and scripts if the process is 
 It is also possible to enable the logs without restarting the station by sending a `SIGUSR2` signal to "radiopoint" process. You can get the process ID by running `ps -Af | grep radiopoint | grep <USERNAME>"` and then run `kill -SIGUSR2 <PID>` and it will enable logging. Sending the same signal one more time will disable the logs.
 
 
+
+**Utilities**
+
+Additional system utilities are run y CRON, configuration from `/etc/crontab` usually looks like this:
+
+```
+1. */5 * * * * root /usr/local/bin/content_indexer 1>/dev/null 2>/dev/null
+2. */1 * * * * root python3 /opt/bin/sc_stats 1>/dev/null 2>/dev/null
+3. */15 * * * * root python3 /opt/bin/sc_backup 1>/dev/null 2>/dev/null
+4. */1  * * * * root python3 /opt/bin/sc_accounts 1>/dev/null 2>/dev/null
+5. 0    * * * * root python3 /opt/bin/awstats 1>/dev/null 2>/dev/null
+6. 30 2 * * 1 root /usr/bin/letsencrypt renew
+```
+
+- (1) - music indexing service
+- (2) - utility that goes through every broadcaster account and collects Shoutcast/Icecast listener statistics.
+- (3) - Backup script userd to create or restore broadcaster accounts backups.
+- (4) - used to create or delete broadcaster accounts 
+- (5) - AWSTATS module that generates advances listener reports based on Icecast/Shoutcast access log files.
+- (6) - Optional, in case SSL certificate is configured.
+
+*Debugging:*
+
+1. Change 1>/dev/null 2>/dev/null to real stdout/stderr log files to see what utils are doing and for possible issues.
+2. Try to run utility by hand via console, for example `python3 /opt/bin/sc_accounts` to see the output for potential issues.
+
+
 Our streaming platform also depends on the following system-level services, so make sure all of them are running.
 
 **Supervisord**
@@ -159,28 +186,3 @@ Configuration is located in `/etc/proftpd.conf` for CentoS and `/etc/proftpd/` f
 - system-wide log file: `/var/log/proftpd/proftpd.log`
 
 Restart with `service proftpd restart`
-
-**Utilities**
-
-Additional system utilities are run y CRON, configuration from `/etc/crontab` usually looks like this:
-
-```
-1. */5 * * * * root /usr/local/bin/content_indexer 1>/dev/null 2>/dev/null
-2. */1 * * * * root python3 /opt/bin/sc_stats 1>/dev/null 2>/dev/null
-3. */15 * * * * root python3 /opt/bin/sc_backup 1>/dev/null 2>/dev/null
-4. */1  * * * * root python3 /opt/bin/sc_accounts 1>/dev/null 2>/dev/null
-5. 0    * * * * root python3 /opt/bin/awstats 1>/dev/null 2>/dev/null
-6. 30 2 * * 1 root /usr/bin/letsencrypt renew
-```
-
-- (1) - music indexing service
-- (2) - utility that goes through every broadcaster account and collects Shoutcast/Icecast listener statistics.
-- (3) - Backup script userd to create or restore broadcaster accounts backups.
-- (4) - used to create or delete broadcaster accounts 
-- (5) - AWSTATS module that generates advances listener reports based on Icecast/Shoutcast access log files.
-- (6) - Optional, in case SSL certificate is configured.
-
-*Debugging:*
-
-1. Change 1>/dev/null 2>/dev/null to real stdout/stderr log files to see what utils are doing and for possible issues.
-2. Try to run utility by hand via console, for example `python3 /opt/bin/sc_accounts` to see the output for potential issues.
