@@ -25,23 +25,21 @@ draft: true
 - <b>Nginx</b>: `/etc/nginx/conf.d/sc_radio.conf`
 
 *Отладка:*
-1. See if uWSGI process is running with `ps -Af | grep uwsgi | grep sc_radio`
-2. Check system-wide Supervisord logs in `/var/log/supervisor/supervisord.log`
-3. Check system-wide Nginx logs in `/var/log/nginx/error.log`
-4. If Supervisord service is running fine and no isses in the main log try to enable logging in `/etc/supervisor/conf.d/sc_radio.conf` by chaning `stdout_logfile=/dev/null` to a log file, for example `stdout_logfile=/tmp/sc_uwsgi.log` then restart Supervisor service with `service supervisor restart` and check Admin application log in `/tmp/sc_uwsgi.log`
-5. Check if Admin application compiles and starts with no isses by chaging to `/opt/sc_radio` directory and running `./manage.py shell` if this command does not crash and ends up showing the console - application is fine, otherwise a traceback with an error description is displayed.
-Common issues are related to broken Python dependencies or broken packages or database connection issues.
+1. Проверьте запущен ли uWSGI процесс командой `ps -Af | grep uwsgi | grep sc_radio`
+2. Проверьте системные логи Supervisord в `/var/log/supervisor/supervisord.log`
+3. Проверьте системные логи Nginx в `/var/log/nginx/error.log`
+4. Если сервис Supervisord запущен и работает и при этом нет ошибок в системном логе, попробуйте включить логи идивидуально в `/etc/supervisor/conf.d/sc_radio.conf` заменив `stdout_logfile=/dev/null` на путь к лог-файлу, например `stdout_logfile=/tmp/sc_uwsgi.log`, перезапустите Supervisor сервис командой `service supervisor restart` и проверьте логи админки в файле `/tmp/sc_uwsgi.log`
+5. Проверьте запускается ли административный интерфейс с консоли сервера, перейдя в директорию `/opt/sc_radio` и выполнив команду в терминале `./manage.py shell`. Если команда успешно выполняется (не показывает ошибок, например, соединения с БД) и показывает консоль - приложение в порядке, в противном случае она выведет подробную информацию о возможной ошибке или сбое. Наиболее типичными ошибками являются ошибки с зависимостями в пакетах Python и невозможносью подключиться к Базе Данных.
 
-
-### Broadcaster applications
-This is a Django/Python/Javascript application located in `/var/users/<USERNAME>/app`. The application is running in a Python uWSGI container, configuration files are available in:
+### Интерфейс радио-вещателя
+Django/Python/Javascript приложение, находится в папке `/var/users/<USERNAME>/app`. Приложение работает под управлением Python контейнера uWSGI, файлы конфигурации сервисов доступны в:
 - <b>Supervisord</b>: `/etc/supervisor/conf.d/<USERNAME>.conf`
 - <b>Nginx</b>: `/etc/nginx/conf.d/<USERNAME>.conf`
 
-*Debugging:*
-1. See if uWSGI process is running with `ps -Af | grep uwsgi | grep <USERNAME>`
-2. Check system-wide Supervisord logs in `/var/log/supervisor/supervisord.log`
-3. Check system-wide Nginx logs in `/var/log/nginx/error.log`
+*Отладка:*
+1. Проверьте запущен ли uWSGI процесс командой `ps -Af | grep uwsgi | grep <USERNAME>`
+2. Проверьте системные логи Supervisord в `/var/log/supervisor/supervisord.log`
+3. Проверьте системные логи Nginx в `/var/log/nginx/error.log`
 4. If Supervisord service is running fine and no isses in the main log try to enable logging in `/etc/supervisor/conf.d/<USERNAME>.conf` by chaning `stdout_logfile=/dev/null` to a log file, for example `stdout_logfile=/tmp/sc_uwsgi.log` then restart Supervisor service with `service supervisor restart` and check Admin application log in `/tmp/sc_uwsgi.log`
 5. Check if Admin application compiles and starts with no isses by chaging to `/var/users/<USERNAME>/app` directory and running `./manage.py shell` if this command does not crash and ends up showing the console - application is fine, otherwise a traceback with an error description is displayed.
 Common issues are related to broken Python dependencies or broken packages or database connection issues.
