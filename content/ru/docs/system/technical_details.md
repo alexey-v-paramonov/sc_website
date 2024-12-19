@@ -40,45 +40,44 @@ Django/Python/Javascript приложение, находится в папке 
 1. Проверьте запущен ли uWSGI процесс командой `ps -Af | grep uwsgi | grep <USERNAME>`
 2. Проверьте системные логи Supervisord в `/var/log/supervisor/supervisord.log`
 3. Проверьте системные логи Nginx в `/var/log/nginx/error.log`
-4. If Supervisord service is running fine and no isses in the main log try to enable logging in `/etc/supervisor/conf.d/<USERNAME>.conf` by chaning `stdout_logfile=/dev/null` to a log file, for example `stdout_logfile=/tmp/sc_uwsgi.log` then restart Supervisor service with `service supervisor restart` and check Admin application log in `/tmp/sc_uwsgi.log`
-5. Check if Admin application compiles and starts with no isses by chaging to `/var/users/<USERNAME>/app` directory and running `./manage.py shell` if this command does not crash and ends up showing the console - application is fine, otherwise a traceback with an error description is displayed.
-Common issues are related to broken Python dependencies or broken packages or database connection issues.
+4. Если сервис Supervisord запущен и работает и при этом нет ошибок в системном логе, попробуйте включить логи идивидуально в `/etc/supervisor/conf.d/<USERNAME>.conf` заменив `stdout_logfile=/dev/null` на путь к лог-файлу, например `stdout_logfile=/tmp/sc_uwsgi.log`, перезапустите Supervisor сервис командой `service supervisor restart` и проверьте логи панели управления в файле `/tmp/sc_uwsgi.log`
+5. Проверьте запускается ли административный интерфейс с консоли сервера, перейдя в директорию `/var/users/<USERNAME>/app` и выполнив команду в терминале `./manage.py shell`. Если команда успешно выполняется (не показывает ошибок, например, соединения с БД) и показывает консоль - приложение в порядке, в противном случае она выведет подробную информацию о возможной ошибке или сбое. Наиболее типичными ошибками являются ошибки с зависимостями в пакетах Python и невозможносью подключиться к Базе Данных.
 
 
-### Streaming core 
-It has 2 binaries:
-- content_indexer - utility to process audio files for streaming by Auto-DJ
-- radiopoint - the main process, which manages the Djs, Channels, audio encoding, processing and streaming.
+### Вещательное ядро
+Состоит из двух бинарных файлов:
+- content_indexer - утилита, которая обрабатывает закачанную на сервер для вещания через Авто-диджей музыку. Она вытаскивает обложки из треков (или ищет их на музыкальных сервисах), расчитывает уроверь громкости в файлах, обрабатывает ID тэги.
+- radiopoint - главный процесс, который непосредственно создает поток на радио, управляет эфиром диджеев, кодирует аудио и управляет каналами вещания.
 
-These are high performance C++ applications located in **/usr/local/bin** directory.
+Эти программы сильно оптимизированы на быстродействие и написаны на языке C++. Находятся они в папке **/usr/local/bin** сервера.
 
 
-### Music processing service
-Used to look for MP3/FLAC files that users upload via the WEB interface or FTP. It syncronizes files on the file system with the database information, calculates file length, extracts images and so on.
-It is using and extenral programs: [loudgain](https://github.com/Moonbase59/loudgain) to calculate volume levels in the media files.
+### Сервис обработки музыки
+Используется для обработки MP3/FLAC файлов, закачиваемых пользователями через WEB-интерфейс панели управления вещателя или через FTP. Этот сервис синхронизирует файлы на диске с музыкальной библиотекой радио, расчитывает длительность воспроизведения, уровень звука, подгружает обложки треков.
+Сервис использует сторонную программу: [loudgain](https://github.com/Moonbase59/loudgain) для расчёта уровня громкости в файлах.
 
-This service is running every 10 minutes according to this CRON rule:
+Этот сервис запускается вещательным ядром, если оно обнаруживает новые файлы на диске и дополнительно каждые 5 минут через CRON правило:
 `*/5 * * * * root /usr/local/bin/content_indexer 1>/dev/null 2>/dev/null`
 
-this line is configured in `/etc/crontab`.
+это правило прописано в `/etc/crontab`.
 
-*Debugging:*
+*Отладка:*
 
-A log of this service for every user is located in 
+Лог этого сервиса находится индивидуально в папке каждого радио аккаунта в
 
 `/var/users/<USERNAME>/log/indexer.log`
 
-Also it is possible to save STDERR/STDOUT of this process by changing CRON rule from 
+Плюс к этому, можно перенаправить потоки STDERR/STDOUT этого сервиса, если в CRON правиле
 
 `*/5 * * * * root /usr/local/bin/content_indexer 1>/dev/null 2>/dev/null`
 
-to
+поменять команду на
 
 `*/5 * * * * root /usr/local/bin/content_indexer 1>>/path/to/output.log 2>>/path/to/error.log`
 
-You can also just run `content_indexer` from the server console to see the output, if there is a database connection problem or any other issues - most likely you will see an error message in your console.
+Либо можно просто запустить `content_indexer` в консоли сервера и посмотреть вывод команды. Если есть проблема с подключением к БД или другие проблемы - Вы сможете это увидеть в консоли.
 
-Indexing service is using a configuration file `/opt/bin/indexer.cfg` and it is using MySQL root password to operate, so if MySQL root password changes - it should be changed in this config file as well.
+Сервис использует файл конфигурации `/opt/bin/indexer.cfg` и подключается к серверу MySQL с правами root и пароль пользователя root указан в этом файле, т.е. если Вы сменили пароль root для MySQL - его необходимо поменять и в этом конфиге.
 
 
 ### Streaming core

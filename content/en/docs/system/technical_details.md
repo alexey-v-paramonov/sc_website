@@ -42,7 +42,7 @@ This is a Django/Python/Javascript application located in `/var/users/<USERNAME>
 1. See if uWSGI process is running with `ps -Af | grep uwsgi | grep <USERNAME>`
 2. Check system-wide Supervisord logs in `/var/log/supervisor/supervisord.log`
 3. Check system-wide Nginx logs in `/var/log/nginx/error.log`
-4. If Supervisord service is running fine and no isses in the main log try to enable logging in `/etc/supervisor/conf.d/<USERNAME>.conf` by chaning `stdout_logfile=/dev/null` to a log file, for example `stdout_logfile=/tmp/sc_uwsgi.log` then restart Supervisor service with `service supervisor restart` and check Admin application log in `/tmp/sc_uwsgi.log`
+4. If Supervisord service is running fine and no isses in the main log try to enable logging in `/etc/supervisor/conf.d/<USERNAME>.conf` by chaning `stdout_logfile=/dev/null` to a log file, for example `stdout_logfile=/tmp/sc_uwsgi.log` then restart Supervisor service with `service supervisor restart` and check Broadcaster application log in `/tmp/sc_uwsgi.log`
 5. Check if Admin application compiles and starts with no isses by chaging to `/var/users/<USERNAME>/app` directory and running `./manage.py shell` if this command does not crash and ends up showing the console - application is fine, otherwise a traceback with an error description is displayed.
 Common issues are related to broken Python dependencies or broken packages or database connection issues.
 
@@ -57,9 +57,9 @@ These are high performance C++ applications located in **/usr/local/bin** direct
 
 ### Music processing service
 Used to look for MP3/FLAC files that users upload via the WEB interface or FTP. It syncronizes files on the file system with the database information, calculates file length, extracts images and so on.
-It is using and extenral programs: [loudgain](https://github.com/Moonbase59/loudgain) to calculate volume levels in the media files.
+It is using an extenral program: [loudgain](https://github.com/Moonbase59/loudgain) to calculate volume levels in the media files.
 
-This service is running every 10 minutes according to this CRON rule:
+This service is running every 5 minutes according to this CRON rule:
 `*/5 * * * * root /usr/local/bin/content_indexer 1>/dev/null 2>/dev/null`
 
 this line is configured in `/etc/crontab`.
