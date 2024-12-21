@@ -80,86 +80,26 @@ Django/Python/Javascript приложение, находится в папке 
 Сервис использует файл конфигурации `/opt/bin/indexer.cfg` и подключается к серверу MySQL с правами root и пароль пользователя root указан в этом файле, т.е. если Вы сменили пароль root для MySQL - его необходимо поменять и в этом конфиге.
 
 
-### Streaming core
-Normally if user account is not suspended and running fine - a running "radiopoint" process shuld be present in the system for that user.
-You can check that by running `ps -Af | grep radiopoint | grep <USERNAME>"`, one user may have several "radiopoint" processes running at the same, one per each radio station in his account.
+### Вещательное ядро
+Обычно, если аккаунт пользователя не отключен и работает без ошибок, в системе должен быть запущен процесс "radiopoint" с конфиг-файлом пользователя.
+Это можно проверить командой `ps -Af | grep radiopoint | grep <USERNAME>"`, у одного пользователя может быть запущено несколько таких процессов - по одному на каждую станцию в аккаунте.
 
 
-*Debugging:*
-Configuration file is avaialbe at: `/var/users/<USERNAME>/conf/radiopoint_<SERVER_ID>.conf`
+*Отладка:*
+Файл конфигурации находится в: `/var/users/<USERNAME>/conf/radiopoint_<SERVER_ID>.conf`
 
-You can change
-`LOG=0` to `LOG=3` in config file, so the log file from `LOGPATH` setting will have a detailed report how radio station is operating (radio station restart is required).
-Process can be started from the broadcaster web interface, or killed using SSH using standard kill command.
-It also gets restarted automatically by utilities and scripts if the process is not running.
+В этом конфиге можно поменять `LOG=0` на `LOG=3`, чтобы в лог-файле, указанном в параметре `LOGPATH` появился детальный отчёт (лог) о работе вещательного ядра. После смены этого параметра в конфиг-файле необходим перезапуск радио через
+WEB-интерфейс радио вещателя или командой `kill` в терминале.
+Утилиты, которые запускаются периодически для сбора статистики слушателей также проверяют запущен ли этот процесс и перезапускают его автоматически, если он по каким-либо причинам не запущен.
 
-It is also possible to enable the logs without restarting the station by sending a `SIGUSR2` signal to "radiopoint" process. You can get the process ID by running `ps -Af | grep radiopoint | grep <USERNAME>"` and then run `kill -SIGUSR2 <PID>` and it will enable logging. Sending the same signal one more time will disable the logs.
+Для подклчюения логов без необходимости перезапуска радио можно отправить сигнал `SIGUSR2` процессу "radiopoint" этого пользователя через команду `kill`.
 
+Для этого сначала получите PID запущенноо процесса командой `ps -Af | grep radiopoint | grep <USERNAME>"` и далее запустите `kill -SIGUSR2 <PID>` для подключения логов. Повторная отправка этого сигнала процессу остановит подробные логи.
 
-Our streaming platform also depends on the following system-level services, so make sure all of them are running.
-
-**Supervisord**
-- command to restart the service: `service supervisor restart`
-- system-wide log file: `/var/log/supervisor/supervisord.log`
-
-
-
-**Nginx**
-
-Nginx is used to server Django applications for broadcaster and admin interfaces.
-Configuration files are located in 
-`/etc/nginx/conf.d/<USERNAME>.conf` - for broadcaster app
-`/etc/nginx/conf.d/sc_radio.conf` - for admin app
-*Debugging:*
-
-By default all Nginx logs are disabled to save the disk space. Enable it by changing
-```
-access_log  /dev/null;
-error_log   /dev/null;
-```
-to
-```
-access_log  /path/to/access.log;
-error_log   /path/to/error.log;
-```
-In the user config file to see each user account Nginx log individually, but in most cases it is enough to check the main Nginx log file in `/var/log/nginx/error.log`
-
-- Command to restart the service: `service nginx restart`
-
-
-**MySQL**
-
-MySQL is used to store all the data for broadcaster/admin accounts. Default system-level configuration is uses with default settings.
-When MySQL root password changes it should be also updated in:
-
-`/opt/bin/indexer.cfg`
-
-`/opt/bin/utils.ini` under "[MySQL]" section.
-
-*Debugging:*
-
-Most common problem with MySQL is a crash or unable to start, see system logs in `/var/log/mysql` for details.
-Depending on what MySQL version (MariaDB or original MySQL) is installed use corresponding command to restart it:
-
-`service mysql restart`
-
-or
-
-`service mariadb restart`
-
-**ProFTP**
-
-This is a default FTP server running on port 21. It has a default configuration with MySQL extension enabled for broadcaster accounts.
-Configuration is located in `/etc/proftpd.conf` for CentoS and `/etc/proftpd/` for Ubuntu Linux.
-
-- command to restart the service: `service proftpd restart`
-- system-wide log file: `/var/log/proftpd/proftpd.log`
-
-Restart with `service proftpd restart`
 
 **Utilities**
 
-Additional system utilities are run y CRON, configuration from `/etc/crontab` usually looks like this:
+Дополнительные утилиты, необходимые для работы нашей Платформы Интернет-радио запускаются через системный сервис CRON, расписание их запуска хранится в файле `/etc/crontab` и выглядит примерно так:
 
 ```
 1. */5 * * * * root /usr/local/bin/content_indexer 1>/dev/null 2>/dev/null
@@ -170,14 +110,83 @@ Additional system utilities are run y CRON, configuration from `/etc/crontab` us
 6. 30 2 * * 1 root /usr/bin/letsencrypt renew
 ```
 
-- (1) - music indexing service
-- (2) - utility that goes through every broadcaster account and collects Shoutcast/Icecast listener statistics.
-- (3) - Backup script userd to create or restore broadcaster accounts backups.
-- (4) - used to create or delete broadcaster accounts 
-- (5) - AWSTATS module that generates advances listener reports based on Icecast/Shoutcast access log files.
-- (6) - Optional, in case SSL certificate is configured.
+- (1) - Сервис обработки аудио-файлов.
+- (2) - Утилита, которая обходит каждый радио-аккаунт и собирает данные статистики слушателей с Shoutcast/Icecast.
+- (3) - Скрипт бэкапа и восстановления пользовательских аккаунтов (настраивается в административном интерфейсе).
+- (4) - Создаёт и удаляет аккаунты радио на сервере, когда Вы их добавляете или удаляете из админки. 
+- (5) - Скрипт сбора статистики на AWSTATS, который использует логи Icecast/Shoutcast для генерации отчётов.
+- (6) - Обновляет SSL сертификаты на сервере через LetsEncrupt.
 
-*Debugging:*
+Вы можете запустить каждую из этих утилит отдельно в терминале, чтобы проверить её работу.
 
-1. Change 1>/dev/null 2>/dev/null to real stdout/stderr log files to see what utils are doing and for possible issues.
-2. Try to run utility by hand via console, for example `python3 /opt/bin/sc_accounts` to see the output for potential issues.
+*Отладка:*
+
+1. Измените `1>/dev/null 2>/dev/null` на настоящие файлы логов для сохранения потоков stdout/stderr каждой из утилит, чтобы посмотреть логи их рабты.
+2. Попробуйте запустить каждую из утилит вручную из терминала, чтобы посмотреть их вывод и возможные сообщения об ошибках, например `python3 /opt/bin/sc_accounts` покажет Вам сообщения от утилиты, создающей аккаунты на сервере.
+
+
+Наша Платформа Интернет-радио зависит от описанных ниже системных сервисов Linux, в случае возникновения проблем имеет смысл проверить их работоспособность.
+
+**Supervisord**
+- команда перезапуска сервиса: `service supervisor restart`
+- системный лог сервиса: `/var/log/supervisor/supervisord.log`
+
+
+
+**Nginx**
+
+Nginx отвечает за доступность через браузер интерфейсов администратора и вещателя, файлы конфигурации доступны в: 
+
+- `/etc/nginx/conf.d/<USERNAME>.conf` - для интерфейса вещателя
+- `/etc/nginx/conf.d/sc_radio.conf` - для приложения админа
+
+*Отладка:*
+
+По умолчанию, логи Nginx отключены для экономии жесткого диска, их можно подключить изменив строки
+```
+access_log  /dev/null;
+error_log   /dev/null;
+```
+
+на
+
+```
+access_log  /path/to/access.log;
+error_log   /path/to/error.log;
+```
+
+в каждом из файлов конфигурации интерфейсов админа или вещателя, но обычно достаточно проверки общесистемного лога Nginx в файле `/var/log/nginx/error.log`
+
+- Команда перезапуска сервиса: `service nginx restart`
+
+
+**MySQL**
+
+MySQL хранит данные от интерфейсов администратора и вещателя в базах данных. Используется дефолтный конфигурационный файл дистрибутива Linux без изменений. 
+Если после установки нашей Платформы Вы по какой-либо причине поменяли пароль пользователя root от MySQL - поменяйте его в следующих конфигурационных файлах:
+
+- `/opt/bin/indexer.cfg`
+- `/opt/bin/utils.ini` в секции "[MySQL]"
+
+*Отладка:*
+
+Наиболее частые проблемы с MySQL - это выход его из строя, повреждение таблиц БД (из-за проблем с диском, например или отключением питания), что приводит к невозможности его запуска.
+Конкретную проблему можно получить из системного лог файла MySQL в папке `/var/log/mysql` сервера.
+Для перезапуска сервиса используйте команду
+`service mysql restart`
+
+или
+
+`service mariadb restart`
+
+Если установлен сервер MariaDB.
+
+**ProFTP**
+
+Сервер FTP по умолчанию, запущен и работает на порту 21. Он имеет стандартную настройку, дополненную поддержкой сервера MySQL для хранения учетных записей пользователей.
+
+Файл конфигурации находится в файле `/etc/proftpd.conf` для CentoS Linux и папке `/etc/proftpd/` для Ubuntu Linux.
+
+- команда перезапуска сервиса: `service proftpd restart`
+- системный лог-файл: `/var/log/proftpd/proftpd.log`
+

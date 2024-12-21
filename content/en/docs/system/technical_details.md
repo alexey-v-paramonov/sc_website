@@ -184,5 +184,3 @@ Configuration is located in `/etc/proftpd.conf` for CentoS and `/etc/proftpd/` f
 
 - command to restart the service: `service proftpd restart`
 - system-wide log file: `/var/log/proftpd/proftpd.log`
-
-Restart with `service proftpd restart`
