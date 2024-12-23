@@ -14,6 +14,7 @@ It also depends on some system-wide services like Nginx, Apache, MySQL, Cron, Su
 ### Debugging general rules:
 
 In case if some component of the system is not functional, you can:
+- check the general health of the system: CPU load, amount of free RAM, whether the disk is completely full
 - check the corresponding files are present on the filesystem
 - check if component is running
 - in case if it does not - enable logging and see what went wrong
