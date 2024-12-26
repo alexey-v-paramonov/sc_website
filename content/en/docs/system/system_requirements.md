@@ -23,7 +23,7 @@ The information below will be useful if Streaming.Center Radio Platform is insta
 ### System requirements for radio hostings and large projects
 **Works if**: You are a hosting provider with many stations.
 - CPU: We recommend a fully dedicated processor rather than a virtual one. The more powerful it is, the more radios you can host on a single server. According to our tests, the Intel Core i7 8700 processor can handle approximately 100 radios on a single server, while the Intel Core i5 13500 processor can handle 200-250 radios on a single server.
-- RAM: 32-64Gb
+- RAM: 16-32Gb
 - Disk space: at least 100Gb
 
 
