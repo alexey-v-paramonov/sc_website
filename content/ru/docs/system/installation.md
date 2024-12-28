@@ -18,12 +18,26 @@ weight: 20
 В этом примере мы установим панель управления на сервер со следующими параметрами:
 - IP адрес: 109.172.7.21
 - Доменное имя: demo.radio-tochka.com
-- Пароль root SSH: XqWgxD901jP0
+- Имя пользователя: root
+- Пароль root: XqWgxD901jP0
 - Операционная система: Ubuntu 24.04
 
+Ваш IP адрес и пароль пользователя root будет, естественно, отличаться от указанных здесь.
+
+
+#### Linux/MacOS: 
 Для подключения к серверу выполняем в терминале `ssh root@109.172.7.21` и вводим пароль `XqWgxD901jP0`
 
 {{< lightbox "/images/installation/ru/ssh_01.png" "/images/installation/ru/ssh_01.png" >}}
 
+#### Windows и Putty: 
 
+После установки Putty на главном экране необходимо ввести IP адрес сервера
+
+{{< lightbox "/images/installation/putty.png" "/images/installation/putty.png" >}}
+
+При нажатии кнопки Open будет запрошено имя пользователя: вводим root и пароль - XqWgxD901jP0
+{{< lightbox "/images/installation/putty2.png" "/images/installation/putty2.png" >}}
+
+Далее команды в терминале одинаковы и не зависят от Вашей операционной системы.
 
