@@ -1,5 +1,6 @@
 <div class="cssbox">
-    <a id="image{{ .Get 2 }}" href="#image{{ .Get 2 }}"><img class="cssbox_thumb" src="{{ .Get 0 }}" />
+    {{ $var := math.Rand | mul 999999 | math.Ceil  }}
+    <a id="image{{ $var }}" href="#image{{ $var }}"><img class="cssbox_thumb" src="{{ .Get 0 }}" />
         <span class="cssbox_full"><img src="{{ .Get 1 }}" /></span>
     </a>
     <a class="cssbox_close" href="#void"></a>
