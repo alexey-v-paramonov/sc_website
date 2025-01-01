@@ -574,3 +574,12 @@ code {
   border-color: #e1e1e1;
   background: #e2e2e2;
 }
+
+.selected-section {
+	font-weight: bold;
+}
+
+.selected-section-article {
+	font-weight: bold;
+  font-style: italic;
+}
