@@ -6,16 +6,19 @@
      {{- $docs_section := $currentPage.Section -}}
      <ul>
      {{ range .Sections }}
-       <li>
-        
-        <a {{ if strings.Contains $rootPage.Page.Path .Path }} class="selected-section" {{ end }} href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-       <ul>
+       <li>  
+        <a {{ if strings.Contains $rootPage.Page.Path .Path }} class="selected-section" {{ end }} href="{{ .RelPermalink }}">{{ .Title }}</a>
+       </li>
+
+      {{ if strings.Contains $rootPage.Page.Path .Path }}
+      <ul>
        {{ range .Data.Pages }}
         <li>
-          
-          <a {{ if eq $rootPage.Page.Path .Path }} class="selected-section-article" {{ end }} href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+          <a {{ if eq $rootPage.Page.Path .Path }} class="selected-section-article" {{ end }} href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </li>
        {{ end }}
-       </ul>
+      </ul>
+      {{ end }}
 
      {{ end }}
      </ul>
