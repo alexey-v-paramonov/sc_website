@@ -43,7 +43,7 @@ weight: 20
 
 ### Полное видео процесса установки
 
-<iframe width="720" height="405" src="https://rutube.ru/play/embed/878ba67e254fdd5d0f0daeaec2fa23bb" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+<iframe width="720" height="405" src="https://rutube.ru/play/embed/26efe7a3aed816dcbf1db1325c14457c" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 
 ### Запуск скрипта установки
 Скопируйте и выполните в терминале команду: `bash <(wget -qO- https://streaming.center/dist/install.sh)`
