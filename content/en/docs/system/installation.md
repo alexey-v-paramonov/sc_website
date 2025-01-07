@@ -137,7 +137,7 @@ Password: Njc3OGNjOT
 
 Для создания радио перейдите в раздел "Радио" (или Broadcasters, в разделе настроек можно переключиться на русский) админки и создайте там радиостанцию, после чего в нее можно будет зайти либо по созданному логину и паролю, либо нажав на синюю иконку входа в админ панели и настроить вещание. Сразу после установки у Вас будет 2 дня бесплатной работы панели управления радио, по истечению которых для продолжения работы радио необходимо пополнить баланс в [личном кабинете](https://app.radio-tochka.com/).
 
-### Быстрый старт после установки, создание радио: видео
+### Post-install quickstart: creating a radio
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/NNOm9wGtNd8?si=_cvQz7SfeJN0N-lq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 

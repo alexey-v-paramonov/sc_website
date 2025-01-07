@@ -43,7 +43,7 @@ weight: 20
 
 ### Полное видео процесса установки
 
-<iframe width="720" height="405" src="https://rutube.ru/play/embed/26efe7a3aed816dcbf1db1325c14457c" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+<iframe src="https://vkvideo.ru/video_ext.php?oid=190379704&id=456239024&hd=1&autoplay=1" width="640" height="360" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
 
 
 ### Запуск скрипта установки
@@ -139,7 +139,8 @@ Password: Njc3OGNjOT
 
 ### Быстрый старт после установки, создание радио: видео
 
-<iframe width="720" height="405" src="https://rutube.ru/play/embed/1c33d38de57d306f67c5dd26dfa00252" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+<iframe src="https://vkvideo.ru/video_ext.php?oid=190379704&id=456239025&hd=1&autoplay=1" width="640" height="360" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
+
 
 <br />
 <br />
