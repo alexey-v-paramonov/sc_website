@@ -4,53 +4,54 @@ date: 2024-08-23T11:40:53+03:00
 weight: 20
 ---
 
-Установка происходит на сервер, который удовлетворяет [требованиям](/docs/system/system_requirements), не имеющий никаких других установленных панелей управления, только "голый" Linux, доступ на сервер происходит через терминал и протокол SSH.
+You can install our Streaming Platform on a virtual or any type of dedicated server that meets the [mininum requirements](/docs/system/system_requirements). Installation is only possible on a clean server, you must have SSH access to the server.
 
-**Важно**: если описанная ниже процедура вызывает у Вас сложности, Вы боитесь что-то сломать или не уверены в резуальтате - никаких проблем нет, просто предоставьте нашим специалистам доступ к серверу на время установки (пароли потом можете сменить) и мы осуществим установку абсолютно **бесплатно**.
+**Important**: if the procedure described below causes difficulties for you, you are afraid of breaking something or you do not have experience - no problem, just provide our specialists with access to the server during installation (you can change your passwords later) and we will perform the installation **free of charge**.
 
-### Подключение к серверу:
-Для подключения понадобятся:
-- IP адрес сервера
-- Пароль пользователя root (либо SSH-ключ)
-- Программма-терминал. В операционных системах MacOS и Linux можно использовать встроенный терминал, под Windows можно использовать [Putty](https://www.putty.org/)
+### Connecting to the server:
+To perform the installation, you will need:
+- server IP address
+- root user password (SSH key will also work)
+- Terminal program. MacOS and Linux have native built-in terminals, on Windows you can use [Putty](https://www.putty.org/)
 
-### Установка:
-В этом примере мы установим панель управления на сервер со следующими параметрами:
-- IP адрес: 109.172.7.21
-- Доменное имя: demo.radio-tochka.com
-- Имя пользователя: root
-- Пароль root: XqWgxD901jP0
-- Операционная система: Ubuntu 24.04
+### Installation:
+In this example article we will install the software on a server with the following parameters:
+- IP address: 109.172.7.21
+- Domain name: demo.streaming.center
+- SSH Username: root
+- SSH Password: XqWgxD901jP0
+- Operating system: Ubuntu Linux 24.04
 
-Ваш IP адрес и пароль пользователя root будет, естественно, отличаться от указанных здесь.
-
+Your IP address and the password of the root user will differ from those that we have here.
 
 #### Linux/MacOS: 
-Для подключения к серверу выполняем в терминале `ssh root@109.172.7.21` и вводим пароль `XqWgxD901jP0`
+To connect to the server, run ssh in the terminal 
+Run this command in your terminal to connect to the server: `ssh root@109.172.7.21` and provide `XqWgxD901jP0` password when asked:
 
 {{< lightbox "/images/installation/ru/ssh_01.png" "/images/installation/ru/ssh_01.png" >}}
 
 #### Windows и Putty: 
 
-После установки Putty на главном экране необходимо ввести IP адрес сервера
+After installing Putty, you must enter the server's IP address on the home screen:
 
 {{< lightbox "/images/installation/putty.png" "/images/installation/putty.png" >}}
 
-При нажатии кнопки Open будет запрошено имя пользователя: вводим root и пароль - XqWgxD901jP0
+When you click the Open button, you will be prompted for the username: enter `root` and password - `XqWgxD901jP0`:
+
 {{< lightbox "/images/installation/putty2.png" "/images/installation/putty2.png" >}}
 
-Далее команды в терминале одинаковы и не зависят от Вашей операционной системы.
+Further commands in the terminal are the same and do not depend on your operating system.
 
-### Полное видео процесса установки
+### Full video of the installation process
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/E6Q3_xGWCQI?si=0zJs6iRI91XD8Rz1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
-### Запуск скрипта установки
-Скопируйте и выполните в терминале команду: `bash <(wget -qO- https://streaming.center/dist/install.sh)`
+### Starting the installation script
+Copy and run this command in your terminal: `bash <(wget -qO- https://streaming.center/dist/install.sh)`
 
-### Выбор раздела на жестком диске для установки
-На первом шаге система выдаст следующее сообщение, которое требует подтверждения с Вашей стороны:
+### Choosing disk drive partition
+At the first step, the system will display the following message, which requires confirmation from your side:
 
 {{< highlight bash  >}}
 
@@ -61,81 +62,87 @@ Press [y] to continue or any other key to quit.
 {{< / highlight >}}
 
 
-На этом шаге система сообщает, что для размещения файлов радио (включая и аудио-файлы, которые занимают наибольшее количество мегабайт на диске) будет использоваться раздел `/var/users/`.
-Если Ваш диск не разбит на разделы, просто соглашайтесь с этим вопросом по умолчанию, если же на Вашем диске партиция с наибольшем количеством мегабайт находится, например,  в разделе `/home` - то можно, например, заранее сделать символическую ссылку с `/var/users` на `/home/users`, чтобы хватило места для пользовательских данных радиостанций.
-Для подтверждения нажмите "y" или прервите установку, подготовьте разделы диска и запустите снова.
+At this step, the system informs you that the `/var/users/` partition will be used to store radio files (including audio files that take the most disk space).
 
-### Выбор домена для установки радио
-Наличие доменного имени для радио очень важно, так как иметь ссылки на прослушивание, URL адрес для входа в саму Панель Управления радио через домен, например stream.radio.ru намного удобнее, чем цифровой IP адрес. 
-Более того, если в дальнейшем Вы заходите переехать на сервер с другим IP адресом, то ссылки на потоки и вход в панель управления не изменятся, так как домен просто можно перенастроить на новый IP путем настройки ДНС и для слушателей не изменится вообще ничего.
+If your disk is not partitioned, just accept this question by default, but if your disk has the partition with the largest number of megabytes, for example, in the `/home` partition, then you can, for example, make a symbolic link from `/var/users` to `/home/users` in advance, before continuing the installation, so that there is enough space for user data and files.
 
-Дополнительно, при наличии доменного имени для радио можно без проблем настроить бесплатный SSL сертификат.
-Скрипт установке на этом этапе выдает следующее:
+To confirm, press "y" or abort the installation, prepare the disk partitions and start again.
+
+
+### Setting the domain name
+Having a domain name for the radio is very important, as listening link URLs will use it, a URL for logging into the Radio Control Panel itself will also be using the domain name, for example using `stream.radio.com` it is much more convenient than a digital IP address.
+
+Moreover, if in the future you want to move to a server with a different IP address, then the links to the streams and the control panel will not change, since the domain can simply be reconfigured to a new IP by configuring DNS and nothing will change at all for your listeners.
+
+Additionally, if you have a domain name for the radio, you can easily set up a free SSL certificate.
+
+The installation script at this stage outputs the following:
 
 {{< highlight bash  >}}
 Please enter your domain name or leave blank to run the software on IP address [109.172.7.21]:
 NOTE: SSL encryption is available for valid domains only and not available for IP address
 {{< / highlight >}}
 
-(адрес 109.172.7.21 в Вашем случае будет другой - это адрес Вашего сервера)
-В нашем примере мы уже заранее настроили домен **demo.radio-tochka.com** и привязали его к IP адресу **109.172.7.21** путем создания записи типа "А" с именем `demo` и значением `109.172.7.21` в ДНС настройках домена `radio-tochka.com`, поэтому указываем его:
+(the address 109.172.7.21 in your case will be different - this is the IP address of *your* server.)
+We will be using **demo.streaming.center** domain in our example and this domain is already configured to resolve to **109.172.7.21** IP address by creating an `А` record type with `demo` nama and `109.172.7.21` as a value in the DNS settings of the root `streaming.center` domain, so we provide it to the installation script:
 
 {{< highlight bash  >}}
-demo.radio-tochka.com
+demo.streaming.center
 {{< / highlight >}}
 
-И нажимаем Enter для продолжения установки.
+Press Enter to continue.
+The domain name must be configured and linked to the server's IP address (109.172.7.21 in our case) via DNS before installation begins. If you install the panel on a domain that is linked to another IP address, the control panel will not work properly.
 
-### Email адрес администратора
-На эту почту будут приходить отчеты системы, пароли и прочая служебная информация. Используя этот email можно в дальнейшем восстановить пароль администратора.
+### Admin Email address
+System reports, passwords, and other official information will be sent to this email. Using this email, you can later restore the administrator password.
 
 {{< highlight bash  >}}
 Please enter your admin account email:
 {{< / highlight >}}
 
-Вводим наш email:
+We enter our email address:
 {{< highlight bash  >}}
-info@radio-tochka.com
+info@streaming.center
 {{< / highlight >}}
 
-### SSL сертификат
-На следующем шаге скрипт установки запросит про установку SSL сертификата:
+### SSL certificate
+In the next step, the installation script will request the installation of an SSL certificate:
 
 {{< highlight bash  >}}
 Do you want to create Let's Encrypt SSL certificate for your domain? [y/N] 
 {{< / highlight >}}
 
-SSL сертификат настраивается бесплатный через Letsencrypt.org, он обновляется каждые 90 дней автоматически и сразу подключается и к Панели Управления радио и радио потокам. Рекомедуем согласиться и продолжить установку, нажав "y", если же по какой-либо причине в сертификате нет необходимости, или настроить его сможете позже - жмите "N".
-Если при установке панели ранее вы не указывали доменное имя и ставите панель на IP адрес - этот вопрос не появится.
-В случае согласия с установкой сертификата скрипт запросит служебный email на который будут отправляться нотификации о работе сертификата и его обновлении:
+The SSL certificate is configured via Letsencrypt.org service and it is free. It is updated every 90 days automatically and immediately connects to both the Radio Control Panel and radio streams. We recommend that you agree and continue the installation by pressing "y", but if for some reason the certificate is not necessary, or you want to configure it later, press "N".
+If you did not specify a domain name earlier when installing the panel and set the panel to an IP address, this question will not appear.
+If you agree to install the certificate, the script will request a service email address to which notifications about the operation of the certificate and its update will be sent:
 
 {{< highlight bash  >}}
 Enter your email address (required by Let's Encrypt SSL cenrtificate): 
 {{< / highlight >}}
 
-Обычно вводится тот же емейл, который указывали для email адреса администратора:
+Usually you can just use the same admin email that you used before:
 {{< highlight bash  >}}
-info@radio-tochka.com
+info@streaming.center
 {{< / highlight >}}
 
 
-### Завершение установки, пароль для входа
-Итак, если всё прошло хорошо - на последнем шаге скрипт установки выдаст Вам URL адрес, логин и пароль для входа в интерфейс администратора:
+### Finishing the installation, getting your credentials
+So, if everything went well, at the last step, the installation script will give you the URL, username, and password to log in to the admin interface:
 {{< highlight bash  >}}
 Installation is complete, you can now sign in to the control panel:
-URL: https://demo.radio-tochka.com:2345
+URL: https://demo.streaming.center:2345
 
 Username: admin
 Password: Njc3OGNjOT
 {{< / highlight >}}
 
-### Интерфейс админа
-После входа Вы должны увидет панель управления администратора:
+### Admin Interface
+After logging in, you should see the admin control panel:
 
-{{< lightbox "/images/installation/ru/installed.png" "/images/installation/ru/installed.png" "2">}}
+{{< lightbox "/images/installation/en/installed.png" "/images/installation/en/installed.png">}}
 
 
-Для создания радио перейдите в раздел "Радио" (или Broadcasters, в разделе настроек можно переключиться на русский) админки и создайте там радиостанцию, после чего в нее можно будет зайти либо по созданному логину и паролю, либо нажав на синюю иконку входа в админ панели и настроить вещание. Сразу после установки у Вас будет 2 дня бесплатной работы панели управления радио, по истечению которых для продолжения работы радио необходимо пополнить баланс в [личном кабинете](https://app.radio-tochka.com/).
+To create a radio, go to the "Broadcasters" section of the admin panel and create a radio station there, after which you can log in either using your created username and password, or by clicking on the blue icon of the entrance to the admin panel and set up broadcasting. Immediately after installation, you will have 2 days of free operation of the radio control panel, after which, in order for the radio to continue working, you must top up your balance in [your account](https://app.streaming.center).
 
 ### Post-install quickstart: creating a radio
 
