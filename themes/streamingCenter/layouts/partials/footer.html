@@ -1,3 +1,12 @@
 <div class="footer l-box is-center">
-    +7 495 741 16 71
+    {{ if eq .Lang "en" }}
+      Telegram: <a href="https://t.me/StreamingCenter">StreamingCenter</a>
+      <a href="mailto:info@streaming.center">info@streaming.center</a>
+
+    {{ else  }}
+      +7 495 741 16 71
+      Telegram: <a href="https://t.me/StreamingCenter">StreamingCenter</a>
+      <a href="https://vk.com/radiotochkacom">ВКонтакте</a>
+      <a href="mailto:info@radio-tochka.com">info@radio-tochka.com</a>
+    {{ end }}
 </div>
