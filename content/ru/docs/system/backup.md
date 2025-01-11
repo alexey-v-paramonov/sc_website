@@ -25,20 +25,20 @@ weight: 60
 ##### Запуск резервного копирования в консоли сервера
 Кроме WEB-интерфейса администратора, Вы можете запустить резервное копирование через консоль:
 {{< highlight bash  >}}
-cd /opt/sc_radio
+cd /opt/bin
 python3 sc_backup
 {{< / highlight >}}
 Запуск команды без параметров запустит резервное копирование согласно настройкам, выставленным в WEB-интерфейсе.
 
 Команда поддерживает параметры, например, резервное копирование всех аккаунтов:
 {{< highlight bash  >}}
-cd /opt/sc_radio
+cd /opt/bin
 python3 sc_backup all
 {{< / highlight >}}
 
 **Быстрое** резервное копирование всех аккаунтов:
 {{< highlight bash  >}}
-cd /opt/sc_radio
+cd /opt/bin
 python3 sc_backup all quick
 {{< / highlight >}}
 
@@ -54,7 +54,7 @@ python3 sc_backup all quick
 
 1. Создать полную резервную копию всех аккаунтов
 {{< highlight bash  >}}
-cd /opt/sc_radio
+cd /opt/bin
 python3 sc_backup all
 {{< / highlight >}}
 

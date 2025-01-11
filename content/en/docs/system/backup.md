@@ -26,7 +26,7 @@ If you don't have enough space on your server to store backups, you can connect 
 ##### Running the backup via the sevre console
 In addition to the WEB-based administrator interface, you can run backups via the terminal:
 {{< highlight bash  >}}
-cd /opt/sc_radio
+cd /opt/bin
 python3 sc_backup
 {{< / highlight >}}
 Running the command without parameters will start the backup according to the settings configured in the WEB interface.
@@ -34,14 +34,14 @@ Running the command without parameters will start the backup according to the se
 The script supports command-line parameters, for example, to backup all the accounts on your server, run:
 
 {{< highlight bash  >}}
-cd /opt/sc_radio
+cd /opt/bin
 python3 sc_backup all
 {{< / highlight >}}
 
 To start the **quick backup**, run the folling command
 
 {{< highlight bash  >}}
-cd /opt/sc_radio
+cd /opt/bin
 python3 sc_backup all quick
 {{< / highlight >}}
 
@@ -60,7 +60,7 @@ If you are upgrading your hardware, or the old server has started to fail, migra
 
 1. Create a full backup of all accounts
 {{< highlight bash  >}}
-cd /opt/sc_radio
+cd /opt/bin
 python3 sc_backup all
 {{< / highlight >}}
 

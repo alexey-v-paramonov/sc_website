@@ -20,7 +20,7 @@ New 'admin' user password:  Pup3C9ObEY
 Эта утилита позволяет изменять доменное имя, на которое установлена панель управления. Например, во время настройки у Вас еще не было домена и он был настроен и привязан к серверу через ДНС позже, либо есть необходимость поменять доменое имя панели, скажем с stream.radio.com на air.radio.com, для этого подойдёт утилита **change_host**:
 
 {{< highlight bash  >}}
-cd /opt/sc_radio
+cd /opt/bin
 ./change_host
 {{< / highlight >}}
 
@@ -30,7 +30,7 @@ cd /opt/sc_radio
 ### Подключение SSL сертификата:
 
 {{< highlight bash  >}}
-cd /opt/sc_radio
+cd /opt/bin
 ./ssl_enable
 {{< / highlight >}}
 
@@ -39,14 +39,14 @@ cd /opt/sc_radio
 
 ### Смена паролей всех радио-аккаунтов:
 {{< highlight bash  >}}
-cd /opt/sc_radio
+cd /opt/bin
 ./change_account_passwords
 {{< / highlight >}}
 Данная команда полезна, если, например, сервер подвергся взлому и срочно необходимо поменять все пароли на вход в Панель Управления вещателя всех радио-станций на сервере.
 
 ### Смена паролей всех FTP аккаунтов:
 {{< highlight bash  >}}
-cd /opt/sc_radio
+cd /opt/bin
 ./change_ftp_passwords
 {{< / highlight >}}
 

@@ -21,7 +21,7 @@ A new random administrator password is generated and set, and the password itsel
 This utility allows you to change the domain name on which the Control Panel is installed. For example, at the time of configuration, you did not have a domain yet and it was configured and linked to the server via DNS later, or there is a need to change the domain name of the panel, say from `stream.radio.com` to `air.radio.com`, then **change_host** utility can do this for you:
 
 {{< highlight bash  >}}
-cd /opt/sc_radio
+cd /opt/bin
 ./change_host
 {{< / highlight >}}
 
@@ -31,7 +31,7 @@ When started, the utility outputs the current domain name or IP address and requ
 ### Сonfiguring an SSL certificate:
 
 {{< highlight bash  >}}
-cd /opt/sc_radio
+cd /opt/bin
 ./ssl_enable
 {{< / highlight >}}
 
@@ -41,14 +41,14 @@ A free certificate from Letsencrypt is installed, which is updated automatically
 
 ### Changing passwords for all radio accounts:
 {{< highlight bash  >}}
-cd /opt/sc_radio
+cd /opt/bin
 ./change_account_passwords
 {{< / highlight >}}
 This command is useful if, for example, the server has been hacked and it is urgently necessary to change all passwords for logging into the Broadcaster Panel of all radio stations on the server.
 
 ### Changing passwords of all FTP accounts:
 {{< highlight bash  >}}
-cd /opt/sc_radio
+cd /opt/bin
 ./change_ftp_passwords
 {{< / highlight >}}
 
