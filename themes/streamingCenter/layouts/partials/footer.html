@@ -9,4 +9,22 @@
       <a href="https://vk.com/radiotochkacom">ВКонтакте</a>
       <a href="mailto:info@radio-tochka.com">info@radio-tochka.com</a>
     {{ end }}
-</div>
+
+    <p>
+      {{ if eq .Lang "en" }}
+      <a href="/faq">F.A.Q.</a>
+      <a href="/payments">Payment methods</a>
+      <a href="/contacts">Contacts</a>
+      <a href="/agreement">Agreement</a>
+      <a href="/content/privacy_policy">Privacy Policy</a>
+      {{ else  }}
+      <a href="/faq">F.A.Q.</a>
+      <a href="/payments">Способы оплаты</a>
+      <a href="/contacts">Контакты</a>
+      <a href="/agreement">Договор</a>
+      <a href="/content/privacy_policy">Политика конфиденциальности</a>
+      {{ end }}
+    </p>
+  
+  </div>
+
