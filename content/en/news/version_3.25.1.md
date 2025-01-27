@@ -1,6 +1,6 @@
 ---
 title: "Version 3.25.1: Bugfix release"
-date: 2025-01-27T13:50:08+03:00
+date: 2025-01-26T13:50:08+03:00
 ---
 
 Version 3.25.1 is out:
