@@ -30,7 +30,7 @@ Run this command in your terminal to connect to the server: `ssh root@109.172.7.
 
 {{< lightbox "/images/installation/ru/ssh_01.png" "/images/installation/ru/ssh_01.png" >}}
 
-#### Windows и Putty: 
+#### Windows and Putty: 
 
 After installing Putty, you must enter the server's IP address on the home screen:
 
