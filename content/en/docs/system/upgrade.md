@@ -6,7 +6,28 @@ weight: 30
 
 If you already have our Internet Radio Platform [installed](/docs/system/installation) and you want to update it to the latest version, just run the update command in the server terminal by connecting via SSH:
 
+#### Linux/MacOS: 
+To connect to the server, run ssh in the terminal 
+Run this command in your terminal to connect to the server: `ssh root@your-server-ip` and provide your password when asked:
+
+{{< lightbox "/images/installation/ru/ssh_01.png" "/images/installation/ru/ssh_01.png" >}}
+
+#### Windows and Putty: 
+
+After installing Putty, you must enter the server's IP address on the home screen:
+
+{{< lightbox "/images/installation/putty.png" "/images/installation/putty.png" >}}
+
+When you click the Open button, you will be prompted for the username: enter `root` and your password :
+
+{{< lightbox "/images/installation/putty2.png" "/images/installation/putty2.png" >}}
+
+Further commands in the terminal are the same and do not depend on your operating system.
+
+
 ### The update script:
+
+Run the following command in your terminal:
 
 {{< highlight bash  >}}
 bash <(curl -s https://streaming.center/dist/update.sh)

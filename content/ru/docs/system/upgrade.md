@@ -6,7 +6,26 @@ weight: 30
 
 Если у Вас уже [установлена](/docs/system/installation), наша Платформа Интернет-радио и Вы хотите обновить ее до последней версии - достаточно выполнить команду обновления в терминале сервера, подключившись по SSH:
 
+#### Linux/MacOS: 
+Для подключения к серверу выполняем в терминале `ssh root@ip-адрес-сервера` и вводим пароль
+
+{{< lightbox "/images/installation/ru/ssh_01.png" "/images/installation/ru/ssh_01.png" >}}
+
+#### Windows и Putty: 
+
+После установки Putty на главном экране необходимо ввести IP адрес сервера
+
+{{< lightbox "/images/installation/putty.png" "/images/installation/putty.png" >}}
+
+При нажатии кнопки Open будет запрошено имя пользователя: вводим root и пароль
+{{< lightbox "/images/installation/putty2.png" "/images/installation/putty2.png" >}}
+
+Далее команды в терминале одинаковы и не зависят от Вашей операционной системы.
+
+
 ### Скрипт обновления:
+
+Выполните в терминале следующую команду:
 
 {{< highlight bash  >}}
 bash <(curl -s https://streaming.center/dist/update.sh)

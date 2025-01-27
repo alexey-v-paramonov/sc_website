@@ -23,7 +23,7 @@ Backup settings can be saved for a sigle particular account, or applied to all a
 Backups are created in the `/var/users/backup` directory, each file there is a copy of the user's folder and its database, the file is named similarly to the username in the system.
 If you don't have enough space on your server to store backups, you can connect network storage to this directory using Linux tools, for example via NFS, SSHFS, S3 Storage, and so on.
 
-##### Running the backup via the sevre console
+##### Running the backup via the sever console
 In addition to the WEB-based administrator interface, you can run backups via the terminal:
 {{< highlight bash  >}}
 cd /opt/bin
