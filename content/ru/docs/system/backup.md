@@ -52,7 +52,7 @@ python3 sc_backup all quick
 
 **На *старом* сервере**:
 
-1. Обновитесь до последней версии Streaming.center: `bash <(wget -qO- https://streaming.center/dist/update.sh)`
+1. [Обновитесь](/docs/system/upgrade) до последней версии Streaming.center: `bash <(wget -qO- https://streaming.center/dist/update.sh)`
 
 2. Создать полную резервную копию всех аккаунтов
 {{< highlight bash  >}}
