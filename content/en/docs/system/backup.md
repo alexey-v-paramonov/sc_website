@@ -58,11 +58,14 @@ If you are upgrading your hardware, or the old server has started to fail, migra
 
 **On the *old* server**:
 
-1. Create a full backup of all accounts
+1. [Update](/docs/system/upgrade) to the latest version of Streaming.center: `bash <(wget -qO- https://streaming.center/dist/update.sh)`
+2. Create a full backup of all accounts
 {{< highlight bash  >}}
 cd /opt/bin
 python3 sc_backup all
 {{< / highlight >}}
+
+Keep in mind that you have to have enought disk space to create a full backup.
 
 **On the *new* server**:
 
