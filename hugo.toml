@@ -83,7 +83,7 @@ unsafe= true
         weight = 40
       [[languages.en.menus.main]]
         name = 'Sign In'
-        pageRef = 'https://app.radio-tochka.com/login'
+        pageRef = 'https://app.streaming.center/login'
         weight = 50
 
 [markup]
