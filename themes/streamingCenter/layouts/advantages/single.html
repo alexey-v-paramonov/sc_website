@@ -4,6 +4,7 @@
 
     <div class="pure-u-1">
     {{ partial "breadcrumbs.html" . }}
+    <div class="content-box">
 
     {{ $thumbnailPath := print "images/" .File.BaseFileName ".png" }}
     {{ $image := .Parent.Resources.Get $thumbnailPath }}
@@ -14,6 +15,7 @@
     {{ end }}
 
     {{ .Content }}
+  </div>
 
   </div>
 

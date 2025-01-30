@@ -9,9 +9,12 @@
   <div class="pure-u-1 pure-u-md-4-5">
     {{ partial "breadcrumbs.html" . }}
 
-    {{ range .Pages }}
-      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-    {{ end }}
+    <div class="content-box">
+
+      {{ range .Pages }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </div>
   </div>
 
 </div>

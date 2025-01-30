@@ -81,15 +81,15 @@
         <p>{{ T "try_account" }}</p>
     </div>    
     <div class="pure-u-1-2" style="text-align: center;">
-        <a class="pure-button pure-button-primary" href="https://app.streaming.center">{{ T "signup" }}</a>
+        <a class="pure-button pure-button-primary" href="https://app.streaming.center" style="height: 40px;">{{ T "signup" }}</a>
     </div>
     <div class="pure-u-1-2" style="text-align: center;" id="try-container">
         <form class="pure-form pure-g">
             <div class="pure-u-1-2" id="try-form">
-                <input type="email" placeholder="Email" class="pure-input-1"  id="try-email" />
+                <input type="email" placeholder="Email" class="pure-input-1" id="try-email" style="height: 40px;     " />
             </div>
             <div class="pure-u-1-2" style="text-align: left;">
-                <button type="submit" class="pure-button pure-button-primary" id="try-btn" data-success-text="{{ T "try_account_success" }}" data-lang="{{ .Lang }}" data-invalid-email="{{ T "invalid_email" }}">
+                <button style="margin-left: 10px; height: 40px;" type="submit" class="pure-button pure-button-primary" id="try-btn" data-success-text="{{ T "try_account_success" }}" data-lang="{{ .Lang }}" data-invalid-email="{{ T "invalid_email" }}">
                     {{ T "request_demo" }}
                     
                 </button>
@@ -97,8 +97,6 @@
         </form>
     </div>
 </div>
-
-
 
 {{ $data := getJSON
 "https://radio-tochka.com/radio/stats/display.php" }}

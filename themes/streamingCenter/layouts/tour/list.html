@@ -2,7 +2,7 @@
 {{ partial "breadcrumbs.html" . }}
 
 <div class="pure-g">
-    <div class="pure-u-1">
+    <div class="pure-u-1 content-box">
         {{ with .GetPage "/tour/radio" }}
         <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
         <p>            
@@ -18,7 +18,7 @@
 </div>
 
 <div class="pure-g">
-    <div class="pure-u-1">
+    <div class="pure-u-1 content-box">
         {{ with .GetPage "/tour/website" }}
         <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
         <p>
@@ -34,7 +34,7 @@
 </div>
 
 <div class="pure-g">
-    <div class="pure-u-1">
+    <div class="pure-u-1  content-box">
         {{ with .GetPage "/tour/apps" }}
         <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
         <p>

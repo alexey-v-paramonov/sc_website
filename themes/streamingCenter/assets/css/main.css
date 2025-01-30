@@ -193,6 +193,23 @@ label {
   height: auto;
 }
 
+.breadcrumbs-box{
+  font-weight: 600;
+  padding: 0.5em;
+  background-color: #fff;
+  border-radius: 1rem;
+  margin: 1em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+}
+
+.content-box{
+  padding: 1em;
+  background-color: #fff;
+  border-radius: 1rem;
+  margin: 1em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
 /*
 * -- LAYOUT STYLES --
 * These are some useful classes which I will need
@@ -268,13 +285,12 @@ label {
 */
 
 .home-menu {
-  padding: 0.5em;
-  text-align: center;
-  box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
+  display: flex;
+  align-items: center;
+  padding: 0.5em 1em;
+  background-color: #fff;
 }
-.home-menu {
-  background: #fff;
-}
+
 .pure-menu.pure-menu-fixed {
   /* Fixed menus normally have a border at the bottom. */
   border-bottom: none;
@@ -282,10 +298,11 @@ label {
   z-index: 4;
 }
 
-.home-menu .pure-menu-heading {
-  color: white;
-  font-weight: 400;
-  font-size: 120%;
+.pure-menu-heading {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
 }
 
 .home-menu .pure-menu-selected a {
@@ -351,6 +368,9 @@ label {
   opacity: 0.8;
 }
 
+.header {
+  background-color: #fff;
+}
 /*
 * -- CONTENT STYLES --
 * This represents the content area (everything below the blue section)
@@ -390,10 +410,13 @@ label {
 
 /* This is the class used for the footer */
 .footer {
-  background: #111;
-  position: fixed;
+  background: #2d3e50;
   bottom: 0;
+  color: #fff;
   width: 100%;
+}
+.footer a {
+  color: #fff;
 }
 
 /*
@@ -460,12 +483,158 @@ label {
   letter-spacing: .6px;
   line-height: 1;
   padding: 0 0 0 5px;
+  margin-left: 0.5em;
 }
 
+
+.lang-switch {
+  margin-left: 1em;
+  text-decoration: none;
+  color: inherit;
+}
+
+
+.pure-menu-list {
+  margin-left: auto !important;
+  display: flex;
+  align-items: center;
+}
 
 .news-box {
   padding: 1em;
 }
+/* Hide checkbox */
+.menu-toggle {
+    display: none;
+}
+
+/* Hamburger menu styles */
+.menu-toggle-label {
+    display: none;
+    cursor: pointer;
+    padding: 0.5em;
+    margin-left: auto;
+}
+
+.hamburger {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #000;
+    position: relative;
+    transition: background 0.2s;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #000;
+    transition: transform 0.3s ease;
+}
+
+.hamburger::before {
+    top: -6px;
+}
+
+.hamburger::after {
+    bottom: -6px;
+}
+
+/* Optional: Add hover effects for menu items */
+.pure-menu-link {
+  transition: background-color 0.3s ease;
+  margin-left: auto;
+}
+
+.pure-menu-link:hover {
+  background-color: rgba(0,0,0,0.05);
+}
+/* Mobile styles */
+@media (max-width: 768px) {
+    .menu-toggle-label {
+        display: block;
+    }
+
+    .pure-menu-list {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        padding: 1em 0;
+        flex-direction: column;
+    }
+
+    .pure-menu-item {
+        width: 100%;
+        text-align: center;
+    }
+
+    .pure-menu-link {
+        padding: 1em !important;
+    }
+
+    /* Show menu when checkbox is checked */
+    .menu-toggle:checked ~ .pure-menu-list {
+        display: flex;
+    }
+
+    /* Animate hamburger to X when menu is open */
+    .menu-toggle:checked ~ .menu-toggle-label .hamburger {
+        background: transparent;
+    }
+
+    .menu-toggle:checked ~ .menu-toggle-label .hamburger::before {
+        transform: rotate(45deg);
+        top: 0;
+    }
+
+    .menu-toggle:checked ~ .menu-toggle-label .hamburger::after {
+        transform: rotate(-45deg);
+        bottom: 0;
+    }
+
+    .home-menu {
+        flex-wrap: wrap;
+    }
+
+    .lang-switch {
+        margin-left: auto;
+        margin-right: 1em;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+    .logo-text {
+        display: none;
+    }
+}
+
+/* Ensure menu is visible on desktop */
+@media (min-width: 769px) {
+    .pure-menu-list {
+        display: flex !important;
+    }
+}
+
+/* Optional: Add smooth transitions */
+.pure-menu-list {
+    transition: display 0.3s ease;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    transition: all 0.3s ease;
+}
+
 
 .news-box a {
   display: block;
@@ -626,4 +795,20 @@ code {
 .selected-section-article {
 	font-weight: bold;
   font-style: italic;
+}
+
+.breadcrumbs a:hover {
+  background: #e9ecef;
+}
+
+.breadcrumbs li:last-child a:hover {
+  background: #0036b5;
+}
+
+.breadcrumbs a:active {
+  transform: skew(-20deg) scale(0.98);
+}
+
+.breadcrumbs a:active span {
+  transform: skew(20deg);
 }

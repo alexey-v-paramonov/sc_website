@@ -1,5 +1,6 @@
 
   {{ $rootPage := . }}
+  <div class="content-box">
 
   {{ with .GetPage "/docs" }}
      {{- $currentPage := . -}}
@@ -24,3 +25,4 @@
      </ul>
        
   {{ end }}
+</div>

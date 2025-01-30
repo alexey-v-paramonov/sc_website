@@ -6,10 +6,14 @@
           <span class="logo-text">Streaming.Center</span>
         </a>
         {{ if eq .Lang "en" }}
-          <a href="{{ (index $.Translations 0).Permalink  }}">🇷🇺 | Rus</a>
+          <a href="{{ (index $.Translations 0).Permalink  }}" class="lang-switch">🇷🇺 | Rus</a>
         {{ else if eq .Lang "ru" }}
-          <a href="{{ (index $.Translations 0).Permalink  }}">🌎 | Eng</a>
+          <a href="{{ (index $.Translations 0).Permalink  }}" class="lang-switch">🌎 | Eng</a>
         {{ end }}
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-toggle-label" aria-label="Menu">
+            <span class="hamburger"></span>
+        </label>
 
         <ul class="pure-menu-list">
           {{ $currentPage := . }}
@@ -24,6 +28,4 @@
         
         </ul>
     </div>
-
-    <hr>
 </div>      
