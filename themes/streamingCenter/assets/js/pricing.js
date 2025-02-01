@@ -15,14 +15,14 @@ const PRICING = {
         },
         app:{
             android: {
-                base: 15000,
-                publishing: 2000,
-                whitelabel: 1500,
+                base: 17000,
+                publishing: 3000,
+                whitelabel: 2500,
             },
             ios: {
-                base: 18000,
+                base: 21000,
                 publishing: 0,
-                whitelabel: 1500,
+                whitelabel: 2500,
             }
         }
     },
@@ -38,13 +38,13 @@ const PRICING = {
         app:{
             android: {
                 base: 250,
-                publishing: 30,
-                whitelabel: 30,
+                publishing: 40,
+                whitelabel: 40,
             },
             ios: {
                 base: 300,
                 publishing: 0,
-                whitelabel: 30,
+                whitelabel: 40,
             }
         }
     }
