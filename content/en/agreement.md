@@ -8,7 +8,7 @@ BY USING THIS WEBSITE OR ANY REGERY OPERATED ECOMMERCE SOLUTION OR SUBMITTING PE
 
 ### Requisites
 
-Paramonov Alexey
+Paramonov Alexey Vladimirovich
 
 Registration number (IIN): 811028050587
 
