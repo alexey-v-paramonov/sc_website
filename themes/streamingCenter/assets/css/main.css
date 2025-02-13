@@ -812,3 +812,45 @@ code {
 .breadcrumbs a:active span {
   transform: skew(20deg);
 }
+
+/* decimal lists in license agreement */
+
+
+.decimal-list {
+  counter-reset: list1;
+}
+
+.decimal-list > li {
+  counter-increment: list1;
+  list-style: none;
+}
+
+.decimal-list > li::before {
+  content: counter(list1) ". ";
+  font-weight: bold;
+}
+
+.decimal-list ol {
+  counter-reset: list2;
+}
+
+.decimal-list ol > li {
+  counter-increment: list2;
+  list-style: none;
+}
+
+.decimal-list ol > li::before {
+  content: counter(list1) "." counter(list2) " ";
+}
+
+.decimal-list ol ol {
+  counter-reset: list3;
+}
+
+.decimal-list ol ol > li {
+  counter-increment: list3;
+}
+
+.decimal-list ol ol > li::before {
+  content: counter(list1) "." counter(list2) "." counter(list3) " ";
+}
