@@ -54,20 +54,31 @@ unsafe= true
 
       [[languages.ru.menus.agreement]]
         name = 'Оферта'
-        pageRef = '#tos'
+        pageRef = '#agreement'
         weight = 10
       [[languages.ru.menus.agreement]]
-        name = 'Термины и Общие положения'
+        name = 'Термины и определения'
         pageRef = '#terms'
         weight = 20
+
+      [[languages.ru.menus.agreement]]
+        name = 'Предмет договора'
+        pageRef = '#subject'
+        weight = 30
+
+      [[languages.ru.menus.agreement]]
+        name = 'Права и обязанности сторон'
+        pageRef = '#rights'
+        weight = 40
+
       [[languages.ru.menus.agreement]]
         name = 'Порядок оплаты'
         pageRef = '#billing'
-        weight = 30
+        weight = 50
       [[languages.ru.menus.agreement]]
         name = 'Персональные данные, конфиденциальность'
         pageRef = '#privacy'
-        weight = 40
+        weight = 60
 
       [[languages.ru.menus.agreement]]
         name = 'Реквизиты'
