@@ -1,6 +1,8 @@
 ---
 title: "Version 3.24.3: Audio-editor update"
 date: 2024-09-20T13:50:08+03:00
+icon: waveform.svg
+
 ---
 
 Our Internet Radio control panel 3.24.2 has been released:

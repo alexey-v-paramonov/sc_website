@@ -174,7 +174,7 @@
     {{ range (where .Site.Pages "Section" "news").ByDate }}
     {{ range first 3 .Pages }}
     <div class="pure-u-1 pure-u-md-1-3 news-box">
-        <a href="{{ .RelPermalink }}"> - {{ .Title }} - {{.Date | time.Format ":date_medium"}}<br /></a>
+        <a href="{{ .RelPermalink }}">{{ if .Params.icon }}<img src="/images/icons/{{.Params.icon}}" style="width: 80px; height: 80px">{{ end }}<b>{{ .Title }}</b> - {{.Date | time.Format ":date_medium"}}<br /></a>
     </div>
     {{ end }}
     {{ end }}

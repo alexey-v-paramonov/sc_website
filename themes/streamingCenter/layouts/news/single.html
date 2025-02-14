@@ -6,7 +6,7 @@
       {{ partial "breadcrumbs.html" . }}
       <div class="content-box">
       <div>{{.Date | time.Format ":date_medium"}}</div>
-
+      {{ if .Params.icon }}<img src="/images/icons/{{.Params.icon}}" style="width: 80px; height: 80px">{{ end }}
       <div>{{ .Content }}</div>
     </div>
 

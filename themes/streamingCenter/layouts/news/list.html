@@ -9,7 +9,7 @@
   {{ range $paginator.Pages }}
     {{.Date | time.Format ":date_medium"}}
     <h2><a href="{{ .RelPermalink }}"> {{ .LinkTitle }}</a></h2>
-    {{ .Summary }}
+    {{ if .Params.icon }}<img src="/images/icons/{{.Params.icon}}" style="width: 80px; height: 80px">{{ end }}{{ .Summary }}
   {{ end }}
 
   {{ template "_internal/pagination.html" . }}
