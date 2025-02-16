@@ -29,3 +29,4 @@ run
 *.sw?
 .hugo_build.lock
 resources
+upload_en
