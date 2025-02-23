@@ -26,7 +26,7 @@ The service does not collect user data except for information necessary for user
 Our applications are designed solely for listening to internet radio stations:
 - They do not collect any user information.
 - The applications request phone state permission (`android.permission.READ_PHONE_STATE`) to pause audio playback during phone calls. Once the call ends, the application resumes the player. The application does not collect any data about the calls or their content.
-- Users can independently connect third-party services for app analytics, such as Yandex AppMetrica. This Privacy Policy does not apply to such third-party services.
+- Users can independently connect third-party services for app analytics. This Privacy Policy does not apply to such third-party services.
 - The applications contain in-app purchases, except for those specified in Google Play or Apple AppStore.
 
 Anonymous information we receive about the application from third-party services, such as Google Crashlytics, Google Play, Apple AppStore, and others, includes:
