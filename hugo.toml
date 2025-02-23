@@ -97,9 +97,14 @@ unsafe= true
         weight = 90
 
       [[languages.ru.menus.agreement]]
+        name = 'Иные условия'
+        pageRef = '#other'
+        weight = 100
+
+      [[languages.ru.menus.agreement]]
         name = 'Реквизиты'
         pageRef = '#requisites'
-        weight = 100
+        weight = 110
 
         
 
