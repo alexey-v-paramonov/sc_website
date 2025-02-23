@@ -87,6 +87,16 @@ unsafe= true
         weight = 70
 
       [[languages.ru.menus.agreement]]
+        name = 'Обстоятельства непреодолимой силы'
+        pageRef = '#forcemajeure'
+        weight = 80
+
+      [[languages.ru.menus.agreement]]
+        name = 'Порядок разрешения споров'
+        pageRef = '#disputes'
+        weight = 90
+
+      [[languages.ru.menus.agreement]]
         name = 'Реквизиты'
         pageRef = '#requisites'
         weight = 100
