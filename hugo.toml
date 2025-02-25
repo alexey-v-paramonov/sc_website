@@ -56,6 +56,7 @@ unsafe= true
         name = 'Оферта'
         pageRef = '#agreement'
         weight = 10
+
       [[languages.ru.menus.agreement]]
         name = 'Термины и определения'
         pageRef = '#terms'
@@ -144,24 +145,58 @@ unsafe= true
 
       [[languages.en.menus.agreement]]
         name = 'Agreement'
-        pageRef = '#tos'
+        pageRef = '#agreement'
         weight = 10
+
       [[languages.en.menus.agreement]]
-        name = 'Terms'
+        name = 'Terms and definitions'
         pageRef = '#terms'
         weight = 20
+
       [[languages.en.menus.agreement]]
-        name = 'Billing and Payment'
-        pageRef = '#billing'
+        name = 'Subject of the agreement'
+        pageRef = '#subject'
         weight = 30
+
+      [[languages.en.menus.agreement]]
+        name = 'Rights and obligations of the parties'
+        pageRef = '#rights'
+        weight = 40
+
+      [[languages.en.menus.agreement]]
+        name = 'Payments'
+        pageRef = '#billing'
+        weight = 50
+
       [[languages.en.menus.agreement]]
         name = 'Privacy policy'
         pageRef = '#privacy'
-        weight = 40
+        weight = 60
+
+      [[languages.en.menus.agreement]]
+        name = 'Validity period'
+        pageRef = '#period'
+        weight = 70
+
+      [[languages.en.menus.agreement]]
+        name = 'Force majeure'
+        pageRef = '#forcemajeure'
+        weight = 80
+
+      [[languages.en.menus.agreement]]
+        name = 'Disputes'
+        pageRef = '#disputes'
+        weight = 90
+
+      [[languages.en.menus.agreement]]
+        name = 'Other conditions'
+        pageRef = '#other'
+        weight = 100
+
       [[languages.en.menus.agreement]]
         name = 'Requisites'
         pageRef = '#requisites'
-        weight = 100
+        weight = 110
 
 
 
