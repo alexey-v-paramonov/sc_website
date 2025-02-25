@@ -144,22 +144,22 @@ unsafe= true
         weight = 50
 
       [[languages.en.menus.agreement]]
-        name = 'Agreement'
+        name = 'Service Agreement'
         pageRef = '#agreement'
         weight = 10
 
       [[languages.en.menus.agreement]]
-        name = 'Terms and definitions'
+        name = 'Definitions'
         pageRef = '#terms'
         weight = 20
 
       [[languages.en.menus.agreement]]
-        name = 'Subject of the agreement'
+        name = 'Services Provided'
         pageRef = '#subject'
         weight = 30
 
       [[languages.en.menus.agreement]]
-        name = 'Rights and obligations of the parties'
+        name = 'Rights and Obligations'
         pageRef = '#rights'
         weight = 40
 
@@ -169,27 +169,27 @@ unsafe= true
         weight = 50
 
       [[languages.en.menus.agreement]]
-        name = 'Privacy policy'
+        name = 'Privacy Policy'
         pageRef = '#privacy'
         weight = 60
 
       [[languages.en.menus.agreement]]
-        name = 'Validity period'
+        name = 'Term and Termination'
         pageRef = '#period'
         weight = 70
 
       [[languages.en.menus.agreement]]
-        name = 'Force majeure'
+        name = 'Force Majeure'
         pageRef = '#forcemajeure'
         weight = 80
 
       [[languages.en.menus.agreement]]
-        name = 'Disputes'
+        name = 'Dispute Resolution'
         pageRef = '#disputes'
         weight = 90
 
       [[languages.en.menus.agreement]]
-        name = 'Other conditions'
+        name = 'Miscellaneous'
         pageRef = '#other'
         weight = 100
 
