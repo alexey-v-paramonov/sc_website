@@ -1,7 +1,6 @@
 ---
 title: "Internet-radio mobile applications (Android, iOS)"
 date: 2024-08-18T11:45:44+03:00
-draft: true
 ---
 
 According to our customers reviews who already use our mobile applications, more than 30% of listeners come to their radio from mobile applications.
@@ -24,6 +23,7 @@ Some of the features of our applications:
 - synchronization of radio streams between the application builder and the application itself, that is, you do not have to update the application if the URL of the radio stream has changed
 - radio shutdown timer
 - timer alarm clock that turns on the radio at a certain time
+- optimization for visually impaired people, simplifying interaction with the application via screen readers
 - HLS streaming support
 
 The application can be made and published both from our developer account and yours when providing access to it at the time of publication. We support publishing on Google Play, Apple App Store and other on-demand stores. And yes, we even pay 100 USD per year for an Apple developer account and you do not need to pay anything (if the application is published from our account, of course).
