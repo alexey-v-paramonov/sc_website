@@ -6,7 +6,8 @@ date: 2024-08-23T11:39:41+03:00
 ### Internet Radio Explained
 
 #### How It Works
-Internet radio streams audio content (live or pre-recorded) over the internet using servers that broadcast continuous audio feeds (Icecast, Shoutcast, etc.). Listeners connect via apps, websites, or compatible devices. Streaming protocols (e.g., HTTP, HTTPS) and codecs (e.g., MP3, AAC, AAC++, OPUS, OGG Vorbis) compress audio for efficient transmission.
+Internet radio (also known as online, web, or streaming radio) streams audio content (live or pre-recorded) over the internet using servers that broadcast continuous audio feeds (Icecast, Shoutcast, etc.). Listeners connect via apps, websites, or compatible devices. Streaming protocols (e.g., HTTP, HTTPS) and codecs (e.g., MP3, AAC, AAC++, OPUS, FLAC, OGG Vorbis) compress audio for efficient transmission.
+Instead of using traditional broadcast frequencies, it uses streaming technology to deliver a continuous flow of audio—much like traditional radio but without geographic restrictions.
 
 #### Internet Radio vs. on-demand music streaming services like Spotify or Apple Music
 Unlike streaming services, internet radio works like a traditional FM station: the audio stream plays continuously without pauses between tracks, and the listener cannot independently choose songs or change their order. While music platforms allow users to listen to individual tracks on demand and have full control over their playlists,
@@ -40,7 +41,7 @@ Unlike streaming services, internet radio works like a traditional FM station: t
 
 
 #### How to Listen
-1. **Apps/Websites**: Use platforms like TuneIn, iHeartRadio, or station-specific apps.
+1. **Apps/Websites**: Use platforms like TuneIn, iHeartRadio, or station-specific apps and websites.
 2. **Smart Speakers**: "Alexa, play [station name]."
 3. **Car**: Connect via Bluetooth/aux with a smartphone app, or use in-car systems (e.g., Android Auto, Apple CarPlay).
 4. **Dedicated Devices**: Internet radio receivers (e.g., Grace Digital).
@@ -50,6 +51,9 @@ Unlike streaming services, internet radio works like a traditional FM station: t
 - **Advantages**:
   - Free global access to diverse content (niche genres, international stations).
   - No account required for most stations. 
+  - Cost-Effective: Lower broadcasting costs compared to maintaining terrestrial transmitters.
+  - Supports additional multimedia content (e.g., images, news, audio and video pre-rolls, lyrics).
+  - Better audience tracking for Internet radio owners.
   - Organic music discovery.
 
 - **Disadvantages**:
@@ -109,7 +113,7 @@ Internet radio enables real-time engagement through:
 - **Gamification**: Quizzes, contests, or loyalty rewards.
 
 #### Music Royalties
-Internet Radio that stream music content should pay royalties to both songwriters and performers (e.g., via SoundExchange in the U.S.)  in order to be legal in its country. Rates are often calculated per stream or as a revenue percentage. Royalty costs can strain smaller internet stations, unlike big ad-supported FM stations.
+Internet Radio that stream music content should pay royalties to both songwriters and performers (e.g., via SoundExchange in the U.S., ASCAP, BMI)  in order to be legal in its country. Rates are often calculated per stream or as a revenue percentage. Royalty costs can strain smaller internet stations, unlike big ad-supported FM stations.
 
 
 #### Summary
