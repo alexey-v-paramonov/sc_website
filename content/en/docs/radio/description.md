@@ -1,6 +1,7 @@
 ---
 title: "What is Internet radio?"
 date: 2024-08-23T11:39:41+03:00
+weight: 10
 ---
 
 ### Internet Radio Explained
@@ -125,7 +126,7 @@ Internet radio enables real-time engagement through:
 - **Live Chat/Text**: Interact with hosts or other listeners.
 - **Song Requests/Voting**: Influence playlists or polls.
 - **Social Media Integration**: Share content or participate in discussions.
-- **Personalized Features**: Customizable playlists or location-based content.
+- **Personalized Features**: Listeners can create an account to keep their settings, pay for stream subscriptions.
 - **Gamification**: Quizzes, contests, or loyalty rewards.
 
 #### Music Royalties
