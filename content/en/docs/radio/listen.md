@@ -33,7 +33,7 @@ Some radio players available on operating systems:
   - Foobar2000 – Lightweight and customizable.
   - AIMP – Good for music and radio streaming.
 
-- **Mac**
+- **MacOS**
   - VLC Media Player – Best for streaming radio.
   - iTunes (Apple Music) – Add a custom station by entering a stream URL.
   - Clementine – A great alternative for managing and playing radio streams.
@@ -71,8 +71,6 @@ If an official app is not available, you can use the following players for Andro
   - Foobar2000 – Highly customizable, supports streaming links.
   - Evermusic – A music player that supports network streams.
   - Apple Music (iTunes Radio Feature) - Apple Music has a built-in internet radio feature. You can manually add a stream URL by selecting File > Open Stream in iTunes (Mac) and syncing it to your library.
-
-
 
 #### Dedicated Hardware
 If you want to listen to internet radio without using a phone or computer, you can use dedicated internet radio hardware like Wi-Fi radios. These devices connect directly to the internet and stream radio stations without requiring a separate app or software.
