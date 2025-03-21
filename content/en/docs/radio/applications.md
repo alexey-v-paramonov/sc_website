@@ -1,5 +1,5 @@
 ---
-title: "Why Start a Radio?"
+title: "Why start a radio?"
 date: 2024-08-23T11:39:51+03:00
 weight: 30
 ---
