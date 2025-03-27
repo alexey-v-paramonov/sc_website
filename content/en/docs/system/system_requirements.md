@@ -47,3 +47,26 @@ Netwrok bandwidth is the main factor that affects the simultaneous listener limi
 
 - **100 mbps**: can host up to ~**700** simultaneous listeners in 128Kbps MP3
 - **1 Gbps**: can host up to ~**7.000** simultaneous listeners in 128Kbps MP3
+
+
+### Important Notice About Unreliable Hosting Providers and Potential Issues
+
+Over the years of working with various hosting providers, we have gained extensive experience in dealing with different services. Based on this experience, we strongly recommend that our clients carefully evaluate the quality of the hosting they choose in advance.
+
+**Key Issues You May Encounter:**
+
+#### 1. Weak Hardware Sold as a Powerful Server
+Some providers may offer servers with seemingly high specifications, but in reality, they use outdated components. For example, you may be sold a server advertised as having a quad-core processor, but in fact, it could be a 15-year-old model. Such a processor would barely be sufficient for running our internet radio platform, and if high computational power is required (e.g., for **StereoTools**), the CPU may become overloaded and fail to handle the workload.
+
+#### 2. Bandwidth Limitations
+Shared hosting services often suffer from artificially reduced network bandwidth. For instance, a provider may promise a 100 Mbps connection but actually allocate only 20 Mbps. This can lead to instability in streaming and data transfer issues.
+
+#### 3. Slow and Outdated Storage
+Using old **HDDs** instead of modern **SSDs** or **NVMe** drives can significantly slow down server performance, especially when performing resource-intensive tasks such as data backups. We strongly recommend choosing servers equipped with SSDs or NVMe drives for stable and fast operation.
+
+#### 4. Cooling System Failures
+There have been cases where server cooling systems failed, causing processors to overheat and **throttle** (reduce their clock speed). This results in a severe drop in performance, making it impossible for our platform to function properly.
+
+**Conclusion**
+
+All of these factors directly impact the stability and performance of our software. To avoid frequent support requests due to system instability, make sure to choose a **reliable hosting provider and a high-quality server** in advance. Doing so will save you time, effort, and ensure the smooth operation of your internet radio platform.
