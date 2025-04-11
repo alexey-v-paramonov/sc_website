@@ -10,9 +10,10 @@
     {{ partial "breadcrumbs.html" . }}
 
     <div class="content-box">
+      {{ .Content }}
 
       {{ range .Pages }}
-        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a> {{- if not (eq .Summary "x") -}}<p style="padding-left: 50px;">{{ .Summary }}</p>{{end}}</li>
       {{ end }}
     </div>
   </div>

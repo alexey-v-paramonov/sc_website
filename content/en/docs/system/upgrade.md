@@ -35,3 +35,8 @@ bash <(curl -s https://streaming.center/dist/update.sh)
 
 The update is fully automatic, the script does not ask any additional questions, if an error occurs during the update, the script will report it.
 The update script also re-generates configuration files and performs other technical checks on the server, so if for any reason you have problems with our Platform, the update script can try to fix them.
+
+### Post-update script (optional):
+In some cases, you may need to run additional custom commands after the update script has finished. To do this, you can create a script at `/opt/bin/sc_post_update_hook`. If this script exists, the installer will automatically execute it immediately after the update completes.
+
+The script can be written in BASH or any other language, as long as it is marked as executable.
