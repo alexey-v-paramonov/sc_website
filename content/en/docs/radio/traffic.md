@@ -1,7 +1,8 @@
 ---
 title: "Traffic Usage"
 date: 2024-08-23T11:40:05+03:00
-weight: 60
+weight: 70
+summary: "Internet radio streaming consumes varying amounts of data depending on stream quality, with listeners using about 60 MB per hour. Use our interactive traffic calculator to get the actual numbers."
 js: js/traf_calc.js
 ---
 

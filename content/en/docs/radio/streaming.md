@@ -2,6 +2,8 @@
 title: "How to stream"
 date: 2024-08-23T11:39:51+03:00
 weight: 30
+summary: "Internet radio can be broadcast either automatically from a media library using playlists and scheduling (Auto-DJ) or live via a studio or device with broadcasting software, with platforms often supporting seamless switching between both methods."
+
 ---
 
 ### Primary ways of Internet Radio Broadcasting

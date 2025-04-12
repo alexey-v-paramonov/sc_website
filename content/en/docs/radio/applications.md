@@ -1,7 +1,8 @@
 ---
 title: "Why start a radio?"
 date: 2024-08-23T11:39:51+03:00
-weight: 30
+weight: 40
+summary: "Starting an Internet-radio station offers diverse opportunities across entertainment, education, branding, community-building, and more, transcending geographical limits to serve niche and global audiences alike."
 ---
 
 ### Why start an Internet-radio station?

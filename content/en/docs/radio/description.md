@@ -2,7 +2,8 @@
 title: "What is Internet radio?"
 date: 2024-08-23T11:39:41+03:00
 weight: 10
-summary: 'x'
+summary: "Internet radio delivers continuous audio streams over the Internet - offering global, interactive, and cost-effective broadcasting with limited playback control - differing from on-demand services like Spotify, and evolving through AI, niche content, and enhanced listener engagement."
+
 ---
 
 ### Internet Radio Explained
