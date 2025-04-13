@@ -14,9 +14,9 @@ Want to launch a mobile app for your radio station quickly and affordably? We of
 - The app is compatible with any Internet radio hosted on our platform, as well as any stations using Shoutcast or Icecast servers
 - App publishing on Google Play and Huawei App Gallery via our developer account or yours
 - Support for all popular Android platforms: Android Auto, Android TV
-- Custom development of the base app is available per request
+- Custom development of additional app features is available upon request
 - Affordable one-time payment
-- One-time payment: no monthly fees or recurring charges required.
+- One-time payment: no monthly fees or recurring charges required
 
 **What you get:**
 - A sleek design with your branding and visual identity
