@@ -2,6 +2,7 @@
 title: "Backup"
 date: 2024-08-23T11:40:53+03:00
 weight: 60
+summary: "Regular backups in the admin panel ensure data safety, settings, and user account protection, and allow for server migration, with options for full or quick backups depending on disk space availability."
 ---
 
 Regular backups, which can be configured in the admin panel, not only allows you to ensure the safety of data, settings, and user accounts, but also allows you to transfer Streaming Radio Platform accounts from one server to another.

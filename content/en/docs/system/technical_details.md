@@ -1,7 +1,8 @@
 ---
 title: "Technical details"
 date: 2024-08-23T11:40:53+03:00
-draft: true
+weight: 20
+summary: The streaming platform includes components for admin and broadcaster interfaces, audio processing, and streaming, relying on system services like Nginx, MySQL, and Python, with debugging utilities for troubleshooting issues across these services.
 ---
 
 Our streaming platform consists of several components:

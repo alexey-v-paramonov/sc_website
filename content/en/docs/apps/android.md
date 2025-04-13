@@ -2,7 +2,7 @@
 title: "Android"
 date: 2024-08-23T11:40:53+03:00
 weight: 10
-summary: "Android application for your Internet-radio"
+summary: "You can quickly and affordably create a branded Android app for your radio station using our platform, with customizable design, stream integration, and optional publishing to Google Play: no coding required, free updates, and only a one-time payment after testing."
 ---
 
 # Creating an Android App for Your Radio Station

@@ -2,6 +2,7 @@
 title: "System requirements"
 date: 2024-08-23T11:40:53+03:00
 weight: 10
+summary: "To ensure stable and efficient operation of the Streaming.Center Radio Platform, users must choose appropriate server resources and reliable hosting providers based on their project size, with considerations for CPU, RAM, storage type, bandwidth, and hardware quality."
 ---
 
 The information below will be useful if Streaming.Center Radio Platform is installed on a dedicated or a virtual server. If the radio is hosted on our servers, all system requirements have already been taken into account by us.

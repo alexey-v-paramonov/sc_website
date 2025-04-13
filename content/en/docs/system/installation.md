@@ -1,7 +1,8 @@
 ---
 title: "Installation"
 date: 2024-08-23T11:40:53+03:00
-weight: 20
+weight: 30
+summary: "You can install the Streaming.Center Platform on a clean Linux server with SSH access by following step-by-step instructions or letting the support team handle it for free, after which you'll configure the domain, SSL, and admin settings to access the control panel and start broadcasting."
 ---
 
 You can install our Streaming Platform on a virtual or any type of dedicated server that meets the [mininum requirements](/docs/system/system_requirements). Installation is only possible on a clean server, you must have SSH access to the server.
