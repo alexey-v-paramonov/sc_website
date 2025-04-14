@@ -90,21 +90,163 @@
       <div class="home-form__wrapper">
         <div class="home-form__list df aic">
           <div class="home-form__title df aic"><img class="db" src="/img/gift.svg" alt="">
-            <p><b>Попробуйте </b><br>перед покупкой</p>
+            <p><b>{{ T "try" }} </b><br>{{ T "before_buy" }}</p>
           </div>
           <form class="home-form__form df aic jcsb">
             <div class="modal-input posr">
-              <input class="df aic" type="email" placeholder="Введите ваш E-mail" required><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <input class="df aic" type="email" placeholder="{{ T "try_email" }}" required><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M0.125058 2.625C0.125058 2.21079 0.460845 1.875 0.875058 1.875H13.1251C13.5393 1.875 13.8751 2.21079 13.8751 2.625V12.25C13.8751 12.6642 13.5393 13 13.1251 13H0.875058C0.460845 13 0.125058 12.6642 0.125058 12.25V2.625ZM1.62506 3.375V11.5H12.3751V3.375H1.62506Z"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M0.264758 3.06407C0.505515 2.72701 0.973927 2.64894 1.31099 2.8897L7.00006 6.95332L12.6891 2.8897C13.0262 2.64894 13.4946 2.72701 13.7354 3.06407C13.9761 3.40113 13.898 3.86954 13.561 4.1103L7.43599 8.4853C7.17521 8.67157 6.8249 8.67157 6.56413 8.4853L0.43913 4.1103C0.10207 3.86954 0.0240014 3.40113 0.264758 3.06407Z"/>
 </svg>
             </div>
-            <button class="modal-btn btn"><img class="db" src="img/marker.svg" alt=""><span class="db">Получите пробную версию</span></button>
+            <button class="modal-btn btn"><img class="db" src="img/marker.svg" alt=""><span class="db">{{ T "try_get" }}</span></button>
           </form>
         </div>
-        <div class="home-form__bottom">Мы создадим “Тестовую станцию” и вышлем вам учетные данные для доступа, чтобы вы могли опробовать нашу радиопанель</div>
+        <div class="home-form__bottom">{{ T "try_description" }}</div>
       </div>
     </div>
   </div>
+  <section class="stream pt">
+    {{ $data := getJSON "https://radio-tochka.com/radio/stats/display.php" }}
+    <div class="container">
+      <h2 class="title center df aifs jcc stream-title"><img class="db" src="img/stream-logo.svg" alt=""><span class="db">{{ T "stats_total" }}</span></h2>
+      <div class="stream-list df fxw jcsb">
+        <div class="stream-item center">
+          <div class="stream-item__title index"><span class="db">{{ $data.listeners }}</span>
+            <p>{{ T "stats_listeners" }}</p>
+          </div>
+          <div class="stream-item__text index">{{ T "stats_listeners_hint" }}</div>
+        </div>
+        <div class="stream-item center">
+          <div class="stream-item__title index"><span class="db">{{ $data.radios }}</span>
+            <p>{{ T "stats_radios" }}</p>
+          </div>
+          <div class="stream-item__text index">{{ T "stats_radios_hint" }}</div>
+        </div>
+        <div class="stream-item center">
+          <div class="stream-item__title index"><span class="db">{{ $data.servers }}</span>
+            <p>{{ T "stats_servers" }}</p>
+          </div>
+          <div class="stream-item__text index">{{ T "stats_servers_hint" }}</div>
+        </div>
+        <div class="stream-item center">
+          <div class="stream-item__title index"><span class="db">200+</span>
+            <p>{{ T "stats_apps" }}</p>
+          </div>
+          <div class="stream-item__text index">{{ T "stats_apps_hint" }}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="catalog pb pt">
+    <div class="container">
+      <div class="catalog-list row">
+        <div class="catalog-block col">
+          <div class="catalog-item posr transition">
+            <div class="catalog-item__title df aic jcc center transition">Послушать</div>
+            <div class="catalog-item__links"><a class="catalog-item__link db link center transition" href="#">Каталог радио</a><a class="catalog-item__link db link center transition" href="#">Как слушать?</a><a class="catalog-item__link db link center transition" href="#">Добавить свое радио</a><a class="catalog-item__link db link center transition" href="#">Посчитать трафик</a></div><a class="catalog-item__btn btn" href="#"><img class="db" src="img/marker.svg" alt=""><span class="db">Слушать</span></a><img class="catalog-item__img img posa pointer" src="img/catalog-1.png" alt="">
+          </div>
+        </div>
+        <div class="catalog-block col">
+          <div class="catalog-item posr transition">
+            <div class="catalog-item__title df aic jcc center transition">Создать свое радио</div>
+            <div class="catalog-item__links"><a class="catalog-item__link db link center transition" href="#">Что такое Интернет-радио</a><a class="catalog-item__link db link center transition" href="#">Инструкции по&nbsp;настройке</a><a class="catalog-item__link db link center transition" href="#">Вопросы-ответы</a><a class="catalog-item__link db link center transition" href="#">Карта сайта</a></div><a class="catalog-item__btn btn" href="#"><img class="db" src="img/marker.svg" alt=""><span class="db">Создать</span></a><img class="catalog-item__img img posa pointer" src="img/catalog-2.png" alt="">
+          </div>
+        </div>
+        <div class="catalog-block col">
+          <div class="catalog-item posr transition">
+            <div class="catalog-item__title df aic jcc center transition">Узнать больше</div>
+            <div class="catalog-item__links"><a class="catalog-item__link db link center transition" href="#">Заказать демо</a><a class="catalog-item__link db link center transition" href="#">Возможности сервиса</a><a class="catalog-item__link db link center transition" href="#">Цены</a><a class="catalog-item__link db link center transition" href="#">Получить консультацию</a></div><a class="catalog-item__btn btn" href="#"><img class="db" src="img/marker.svg" alt=""><span class="db">Узнать</span></a><img class="catalog-item__img img posa pointer" src="img/catalog-3.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="benefits pt pb">
+    <div class="container posr">
+      <h2 class="title benefits-title">{{ T "advantages" }}</h2>
+      <div class="benefits-list row">
+
+        {{ range where .Site.Pages "Section" "advantages" }} {{ range first 6 (shuffle .Pages) }}
+        {{ $thumbnailPath := print "images/" .File.BaseFileName ".png" }}
+          <div class="benefits-block col">
+            <div class="benefits-item posr"><a class="benefits-item__link db posa" href="{{ .RelPermalink }}"></a>
+              <div class="benefits-item__img posr">
+                {{ $image := .Parent.Resources.Get $thumbnailPath }}
+                {{ if $image }}
+                    {{ $image := $image.Process "resize 100x" }}
+                    <img class="img posa" src="{{ $image.RelPermalink }}" alt="{{ .Title }}" width="{{ $image.Width }}" height="{{ $image.Height }}">
+                {{ else }}
+                    <img class="img posa" src="img/benefits-2.png" alt="">
+                {{ end }}
+              </div>
+              <div class="benefits-item__title">{{ .Title }} </div>
+              <div class="benefits-item__text">{{ .Content }}</div>
+            </div>
+          </div>
+        {{ end }} {{ end }}
+      </div>
+      <div class="center"><a class="benefits-btn btn btn-border" href="/advantages">{{ T "all_advantages" }}</a></div>
+    </div>
+  </section>  
+
+  <!-- Last 3 news -->
+  <section class="blog pt pb">
+    <div class="container posr">
+      <h2 class="title benefits-title">{{ T "news" }}</h2>
+      <div class="benefits-list row">
+
+        {{ range (where .Site.Pages "Section" "news").ByDate }}
+        {{ range first 3 .Pages }}
+          <div class="benefits-block col">
+            <div class="blog-item posr"><a class="benefits-item__link db posa" href="{{ .RelPermalink }}"></a>
+              <div class="blog-item__top df aic">
+                {{ $newsDate := print .Date | time.Format "2 01.06" }}
+                {{ $newsDay := index (split $newsDate " ") 0 }}
+                {{ $newsMonthYear := index (split $newsDate " ") 1 }}
+                <div class="blog-item__date center df aic fxw">{{$newsDay}}<span>{{$newsMonthYear}}</span></div>
+                <div class="blog-item__title">{{ .Title }}</div>
+              </div>
+              <div class="blog-item__text">{{ .Content }}</div>
+            </div>
+          </div>
+        {{ end }}
+        {{ end }}
+      </div>
+      <div class="center"><a class="benefits-btn btn btn-border" href="/news">{{ T "all_news" }}</a></div>
+    </div>
+  </section>
+  <section class="clients pt pb">
+    <div class="container">
+      <h2 class="title">Наши клиенты</h2>
+      <div class="clients-slider swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img class="clients-img img" src="img/c-1.png" alt=""></div>
+          <div class="swiper-slide"><img class="clients-img img" src="img/c-2.png" alt=""></div>
+          <div class="swiper-slide"><img class="clients-img img" src="img/c-3.png" alt=""></div>
+          <div class="swiper-slide"><img class="clients-img img" src="img/c-4.png" alt=""></div>
+          <div class="swiper-slide"><img class="clients-img img" src="img/c-5.png" alt=""></div>
+          <div class="swiper-slide"><img class="clients-img img" src="img/c-6.png" alt=""></div>
+          <div class="swiper-slide"><img class="clients-img img" src="img/c-7.png" alt=""></div>
+          <div class="swiper-slide"><img class="clients-img img" src="img/c-8.png" alt=""></div>
+          <div class="swiper-slide"><img class="clients-img img" src="img/c-9.png" alt=""></div>
+          <div class="swiper-slide"><img class="clients-img img" src="img/c-10.png" alt=""></div>
+        </div>
+      </div>
+      <div class="clients-mobile hide aic jcsb">
+        <div class="clients-item df aic jcc"><img class="img" src="img/c-1.png" alt=""></div>
+        <div class="clients-item df aic jcc"><img class="img" src="img/c-2.png" alt=""></div>
+        <div class="clients-item df aic jcc"><img class="img" src="img/c-3.png" alt=""></div>
+        <div class="clients-item df aic jcc"><img class="img" src="img/c-4.png" alt=""></div>
+        <div class="clients-item df aic jcc"><img class="img" src="img/c-5.png" alt=""></div>
+        <div class="clients-item df aic jcc"><img class="img" src="img/c-6.png" alt=""></div>
+        <div class="clients-item df aic jcc"><img class="img" src="img/c-7.png" alt=""></div>
+        <div class="clients-item df aic jcc"><img class="img" src="img/c-8.png" alt=""></div>
+        <div class="clients-item df aic jcc"><img class="img" src="img/c-9.png" alt=""></div>
+        <div class="clients-item df aic jcc"><img class="img" src="img/c-10.png" alt=""></div>
+      </div>
+    </div>
+  </section>
 
 {{ end }}

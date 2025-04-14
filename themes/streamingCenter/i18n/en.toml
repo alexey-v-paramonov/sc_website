@@ -11,7 +11,7 @@ other = "Stations"
 other = "Servers"
 
 [stats_apps]
-other = "Android/iOS Apps"
+other = "Applications"
 
 [stats_listeners_hint]
 other = "Are listening to Online stations built with our software at this moment!"
@@ -26,7 +26,7 @@ other = "Have our software installed and running. That includes hosting provider
 other = "We have created and published into Google Play and Apple App Store."
 
 [news]
-other = "News"
+other = "Latest News"
 
 [all_news]
 other = "More News"
@@ -125,3 +125,17 @@ other = "Privacy policy"
 [payments]
 other = "Payments"
 
+[try]
+other = "Try"
+
+[before_buy]
+other = "before buy"
+
+[try_email]
+other = "Enter your E-mail"
+
+[try_get]
+other = "Get a free trial"
+
+[try_description]
+other = "We will set up a test radio station for you and send access credentials so you can explore the features of our radio panel"
