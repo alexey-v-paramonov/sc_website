@@ -10,14 +10,13 @@
   <header class="header">
     {{ partial "header.html" . }}
   </header>
-  <main>
-    <div class="spacer" style="height: 55px;">
-      &nbsp;
-    </div>
+
+  <main class="main posr">
     <div class="content">
       {{ block "main" . }}{{ end }}
     </div>
   </main>
+
   <footer>
     {{ partial "footer.html" . }}
   </footer>

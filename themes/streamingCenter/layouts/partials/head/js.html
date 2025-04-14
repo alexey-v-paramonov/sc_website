@@ -1,7 +1,5 @@
-{{ if .Params.js }}
-  {{- with resources.Get .Params.js }}
-    {{- with . | js.Build }}
-      <script src="{{ .RelPermalink }}"></script>
-    {{- end }}
-  {{- end }}
-{{ end }}
+<script src="/libs/jquery.min.js"></script>
+<script src="/libs/swiper/swiper-bundle.min.js"></script>
+<script src="/libs/nice-select2/nice-select2.js"></script>
+<script src="/libs/fslightbox.js"></script>
+<script src="/js/main.js?v=1.12"></script>

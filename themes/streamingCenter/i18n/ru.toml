@@ -67,3 +67,40 @@ other = "Заказать демо версию радио панели"
 
 [signin_signup]
 other = "Вход/Регистрация"
+
+[slide1_title]
+other = "Интернет-радио"
+
+[slide2_title]
+other = "Android приложения"
+
+[slide3_title]
+other = "iOs приложения"
+
+[slide4_title]
+other = "Сайт радио"
+
+[slide1_description]
+other = "Мечтаешь о собственном радио? Сделай это легко и красиво с нашей удобной и надёжной панелью - это всё, что нужно для запуска и роста твоей Интернет-радиостанции."
+
+[slide2_description]
+other = "Вход/Регистрация"
+
+[slide3_description]
+other = "Вход/Регистрация"
+
+[slide4_description]
+other = "Вход/Регистрация"
+
+
+[slide1_cta]
+other = "Создать радио!"
+
+[slide2_cta]
+other = "Вход/Регистрация"
+
+[slide3_cta]
+other = "Вход/Регистрация"
+
+[slide4_cta]
+other = "Вход/Регистрация"

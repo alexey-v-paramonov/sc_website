@@ -1,403 +1,403 @@
-const JSCarousel = ({
-    carouselSelector,
-    slideSelector,
-    enablePagination = true,
-    enableAutoplay = true,
-    autoplayInterval = 2000,
-}) => {
-    /*
-     * Initialize variables to keep track of carousel state and
-     * references to different elements.
-     */
-    let currentSlideIndex = 0;
-    let prevBtn, nextBtn;
-    let autoplayTimer;
-    let paginationContainer;
+// const JSCarousel = ({
+//     carouselSelector,
+//     slideSelector,
+//     enablePagination = true,
+//     enableAutoplay = true,
+//     autoplayInterval = 2000,
+// }) => {
+//     /*
+//      * Initialize variables to keep track of carousel state and
+//      * references to different elements.
+//      */
+//     let currentSlideIndex = 0;
+//     let prevBtn, nextBtn;
+//     let autoplayTimer;
+//     let paginationContainer;
 
-    // Find the carousel element in the DOM.
-    const carousel = document.querySelector(carouselSelector);
+//     // Find the carousel element in the DOM.
+//     const carousel = document.querySelector(carouselSelector);
 
-    // If carousel element is not found, log an error and exit.
-    if (!carousel) {
-        console.error("Specify a valid selector for the carousel.");
-        return null;
-    }
+//     // If carousel element is not found, log an error and exit.
+//     if (!carousel) {
+//         console.error("Specify a valid selector for the carousel.");
+//         return null;
+//     }
 
-    // Find all slides within the carousel
-    const slides = carousel.querySelectorAll(slideSelector);
+//     // Find all slides within the carousel
+//     const slides = carousel.querySelectorAll(slideSelector);
 
-    // If no slides are found, log an error and exit.
-    if (!slides.length) {
-        console.error("Specify a valid selector for slides.");
-        return null;
-    }
+//     // If no slides are found, log an error and exit.
+//     if (!slides.length) {
+//         console.error("Specify a valid selector for slides.");
+//         return null;
+//     }
 
-    /*
-     * Utility function to create and append HTML elements with
-     * attributes and children.
-     */
-    const addElement = (tag, attributes, children) => {
-        const element = document.createElement(tag);
+//     /*
+//      * Utility function to create and append HTML elements with
+//      * attributes and children.
+//      */
+//     const addElement = (tag, attributes, children) => {
+//         const element = document.createElement(tag);
 
-        if (attributes) {
-            // Set attributes to the element.
-            Object.entries(attributes).forEach(([key, value]) => {
-                element.setAttribute(key, value);
-            });
-        }
+//         if (attributes) {
+//             // Set attributes to the element.
+//             Object.entries(attributes).forEach(([key, value]) => {
+//                 element.setAttribute(key, value);
+//             });
+//         }
 
-        if (children) {
-            // Set content to the element.
-            if (typeof children === "string") {
-                element.textContent = children;
-            } else {
-                children.forEach((child) => {
-                    if (typeof child === "string") {
-                        element.appendChild(document.createTextNode(child));
-                    } else {
-                        element.appendChild(child);
-                    }
-                });
-            }
-        }
+//         if (children) {
+//             // Set content to the element.
+//             if (typeof children === "string") {
+//                 element.textContent = children;
+//             } else {
+//                 children.forEach((child) => {
+//                     if (typeof child === "string") {
+//                         element.appendChild(document.createTextNode(child));
+//                     } else {
+//                         element.appendChild(child);
+//                     }
+//                 });
+//             }
+//         }
 
-        return element;
-    };
+//         return element;
+//     };
 
-    /*
-     * Modify the DOM structure and add required containers and controls
-     * to the carousel element.
-     */
-    const tweakStructure = () => {
-        carousel.setAttribute("tabindex", "0");
+//     /*
+//      * Modify the DOM structure and add required containers and controls
+//      * to the carousel element.
+//      */
+//     const tweakStructure = () => {
+//         carousel.setAttribute("tabindex", "0");
 
-        // Create a div for carousel inner content.
-        const carouselInner = addElement("div", {
-            class: "carousel-inner",
-        });
-        carousel.insertBefore(carouselInner, slides[0]);
+//         // Create a div for carousel inner content.
+//         const carouselInner = addElement("div", {
+//             class: "carousel-inner",
+//         });
+//         carousel.insertBefore(carouselInner, slides[0]);
 
-        // If pagination is enabled, create and append pagination buttons.
-        if (enablePagination) {
-            paginationContainer = addElement("nav", {
-                class: "carousel-pagination",
-                role: "tablist",
-            });
-            carousel.appendChild(paginationContainer);
-        }
+//         // If pagination is enabled, create and append pagination buttons.
+//         if (enablePagination) {
+//             paginationContainer = addElement("nav", {
+//                 class: "carousel-pagination",
+//                 role: "tablist",
+//             });
+//             carousel.appendChild(paginationContainer);
+//         }
 
-        /*
-         * Move slides from the carousel element to the carousel inner
-         * container to facilitate alignment.
-         */
-        slides.forEach((slide, index) => {
-            carouselInner.appendChild(slide);
-            slide.style.transform = `translateX(${index * 100}%)`;
-            if (enablePagination) {
-                const paginationBtn = addElement(
-                    "btn",
-                    {
-                        class: `carousel-btn caroursel-btn--${index + 1}`,
-                        role: "tab",
-                    },
-                    `${index + 1}`
-                );
+//         /*
+//          * Move slides from the carousel element to the carousel inner
+//          * container to facilitate alignment.
+//          */
+//         slides.forEach((slide, index) => {
+//             carouselInner.appendChild(slide);
+//             slide.style.transform = `translateX(${index * 100}%)`;
+//             if (enablePagination) {
+//                 const paginationBtn = addElement(
+//                     "btn",
+//                     {
+//                         class: `carousel-btn caroursel-btn--${index + 1}`,
+//                         role: "tab",
+//                     },
+//                     `${index + 1}`
+//                 );
 
-                paginationContainer.appendChild(paginationBtn);
+//                 paginationContainer.appendChild(paginationBtn);
 
-                if (index === 0) {
-                    paginationBtn.classList.add("carousel-btn--active");
-                    paginationBtn.setAttribute("aria-selected", true);
-                }
+//                 if (index === 0) {
+//                     paginationBtn.classList.add("carousel-btn--active");
+//                     paginationBtn.setAttribute("aria-selected", true);
+//                 }
 
-                paginationBtn.addEventListener("click", () => {
-                    handlePaginationBtnClick(index);
-                });
-            }
-        });
+//                 paginationBtn.addEventListener("click", () => {
+//                     handlePaginationBtnClick(index);
+//                 });
+//             }
+//         });
 
-        // Create and append previous button.
-        prevBtn = addElement(
-            "btn",
-            {
-                class: "carousel-btn carousel-btn--prev-next carousel-btn--prev",
-                "aria-label": "Previous Slide",
-            },
-            "<"
-        );
-        carouselInner.appendChild(prevBtn);
+//         // Create and append previous button.
+//         prevBtn = addElement(
+//             "btn",
+//             {
+//                 class: "carousel-btn carousel-btn--prev-next carousel-btn--prev",
+//                 "aria-label": "Previous Slide",
+//             },
+//             "<"
+//         );
+//         carouselInner.appendChild(prevBtn);
 
-        // Create and append next button.
-        nextBtn = addElement(
-            "btn",
-            {
-                class: "carousel-btn carousel-btn--prev-next carousel-btn--next",
-                "aria-label": "Next Slide",
-            },
-            ">"
-        );
-        carouselInner.appendChild(nextBtn);
+//         // Create and append next button.
+//         nextBtn = addElement(
+//             "btn",
+//             {
+//                 class: "carousel-btn carousel-btn--prev-next carousel-btn--next",
+//                 "aria-label": "Next Slide",
+//             },
+//             ">"
+//         );
+//         carouselInner.appendChild(nextBtn);
 
-    };
+//     };
 
-    // Adjust slide positions according to the currently selected slide.
-    const adjustSlidePosition = () => {
-        slides.forEach((slide, i) => {
-            slide.style.transform = `translateX(${100 * (i - currentSlideIndex)}%)`;
-        });
-    };
+//     // Adjust slide positions according to the currently selected slide.
+//     const adjustSlidePosition = () => {
+//         slides.forEach((slide, i) => {
+//             slide.style.transform = `translateX(${100 * (i - currentSlideIndex)}%)`;
+//         });
+//     };
 
-    /*
-     * Update the state of pagination buttons according to the currently
-     * selected slide.
-     */
-    const updatePaginationBtns = () => {
-        const paginationBtns = paginationContainer.children;
-        const prevActiveBtns = Array.from(paginationBtns).filter((btn) =>
-            btn.classList.contains("carousel-btn--active")
-        );
-        prevActiveBtns.forEach((btn) => {
-            btn.classList.remove("carousel-btn--active");
-            btn.removeAttribute("aria-selected");
-        });
+//     /*
+//      * Update the state of pagination buttons according to the currently
+//      * selected slide.
+//      */
+//     const updatePaginationBtns = () => {
+//         const paginationBtns = paginationContainer.children;
+//         const prevActiveBtns = Array.from(paginationBtns).filter((btn) =>
+//             btn.classList.contains("carousel-btn--active")
+//         );
+//         prevActiveBtns.forEach((btn) => {
+//             btn.classList.remove("carousel-btn--active");
+//             btn.removeAttribute("aria-selected");
+//         });
 
-        const currActiveBtns = paginationBtns[currentSlideIndex];
-        if (currActiveBtns) {
-            currActiveBtns.classList.add("carousel-btn--active");
-            currActiveBtns.setAttribute("aria-selected", true);
-        }
-    };
+//         const currActiveBtns = paginationBtns[currentSlideIndex];
+//         if (currActiveBtns) {
+//             currActiveBtns.classList.add("carousel-btn--active");
+//             currActiveBtns.setAttribute("aria-selected", true);
+//         }
+//     };
 
-    // Update the overall carousel state.
-    const updateCarouselState = () => {
-        if (enablePagination) {
-            updatePaginationBtns();
-        }
-        adjustSlidePosition();
-    };
+//     // Update the overall carousel state.
+//     const updateCarouselState = () => {
+//         if (enablePagination) {
+//             updatePaginationBtns();
+//         }
+//         adjustSlidePosition();
+//     };
 
-    // Move slide left and right based on direction provided.
-    const moveSlide = (direction) => {
-        const newSlideIndex =
-            direction === "next"
-                ? (currentSlideIndex + 1) % slides.length
-                : (currentSlideIndex - 1 + slides.length) % slides.length;
-        currentSlideIndex = newSlideIndex;
-        updateCarouselState();
-    };
+//     // Move slide left and right based on direction provided.
+//     const moveSlide = (direction) => {
+//         const newSlideIndex =
+//             direction === "next"
+//                 ? (currentSlideIndex + 1) % slides.length
+//                 : (currentSlideIndex - 1 + slides.length) % slides.length;
+//         currentSlideIndex = newSlideIndex;
+//         updateCarouselState();
+//     };
 
-    // Event handler for pagination button click event.
-    const handlePaginationBtnClick = (index) => {
-        currentSlideIndex = index;
-        updateCarouselState();
-    };
+//     // Event handler for pagination button click event.
+//     const handlePaginationBtnClick = (index) => {
+//         currentSlideIndex = index;
+//         updateCarouselState();
+//     };
 
-    // Event handlers for previous and next button clicks.
-    const handlePrevBtnClick = () => moveSlide("prev");
-    const handleNextBtnClick = () => moveSlide("next");
+//     // Event handlers for previous and next button clicks.
+//     const handlePrevBtnClick = () => moveSlide("prev");
+//     const handleNextBtnClick = () => moveSlide("next");
 
-    // Start autoplaying of slides.
-    const startAutoplay = () => {
-        autoplayTimer = setInterval(() => {
-            moveSlide("next");
-        }, autoplayInterval);
-    };
+//     // Start autoplaying of slides.
+//     const startAutoplay = () => {
+//         autoplayTimer = setInterval(() => {
+//             moveSlide("next");
+//         }, autoplayInterval);
+//     };
 
-    // Stop autoplaying of slides.
-    const stopAutoplay = () => clearInterval(autoplayTimer);
+//     // Stop autoplaying of slides.
+//     const stopAutoplay = () => clearInterval(autoplayTimer);
 
-    /* Event handlers to manage autoplaying intelligentally on mouse
-     * enter and leave events.
-     */
-    const handleMouseEnter = () => stopAutoplay();
-    const handleMouseLeave = () => startAutoplay();
+//     /* Event handlers to manage autoplaying intelligentally on mouse
+//      * enter and leave events.
+//      */
+//     const handleMouseEnter = () => stopAutoplay();
+//     const handleMouseLeave = () => startAutoplay();
 
-    // Event handler for keyboard navigation.
-    const handleKeyboardNav = (event) => {
-        // Exit, if carousel is not the event target.
-        if (!carousel.contains(event.target)) return;
-        // Exit, if the default action on the event is already prevented.
-        if (event.defaultPrevented) return;
+//     // Event handler for keyboard navigation.
+//     const handleKeyboardNav = (event) => {
+//         // Exit, if carousel is not the event target.
+//         if (!carousel.contains(event.target)) return;
+//         // Exit, if the default action on the event is already prevented.
+//         if (event.defaultPrevented) return;
 
-        /*
-         * Move slides in the respective directions when left and right
-         * keys are pressed.
-         */
-        switch (event.key) {
-            case "ArrowLeft":
-                moveSlide("prev");
-                break;
-            case "ArrowRight":
-                moveSlide("next");
-                break;
-            default:
-                return;
-        }
+//         /*
+//          * Move slides in the respective directions when left and right
+//          * keys are pressed.
+//          */
+//         switch (event.key) {
+//             case "ArrowLeft":
+//                 moveSlide("prev");
+//                 break;
+//             case "ArrowRight":
+//                 moveSlide("next");
+//                 break;
+//             default:
+//                 return;
+//         }
 
-        /*
-         * Stop the default actions of the event in question when the
-         * carousel is the event target.
-         */
-        event.preventDefault();
-    };
+//         /*
+//          * Stop the default actions of the event in question when the
+//          * carousel is the event target.
+//          */
+//         event.preventDefault();
+//     };
 
-    // Attach event listeners to relevant elements.
-    const attachEventListeners = () => {
-        prevBtn.addEventListener("click", handlePrevBtnClick);
-        nextBtn.addEventListener("click", handleNextBtnClick);
-        carousel.addEventListener("keydown", handleKeyboardNav);
+//     // Attach event listeners to relevant elements.
+//     const attachEventListeners = () => {
+//         prevBtn.addEventListener("click", handlePrevBtnClick);
+//         nextBtn.addEventListener("click", handleNextBtnClick);
+//         carousel.addEventListener("keydown", handleKeyboardNav);
 
-        if (enableAutoplay && autoplayInterval !== null) {
-            carousel.addEventListener("mouseenter", handleMouseEnter);
-            carousel.addEventListener("mouseleave", handleMouseLeave);
-        }
-    };
+//         if (enableAutoplay && autoplayInterval !== null) {
+//             carousel.addEventListener("mouseenter", handleMouseEnter);
+//             carousel.addEventListener("mouseleave", handleMouseLeave);
+//         }
+//     };
 
-    // Initialize/create the carousel.
-    const create = () => {
-        tweakStructure();
-        attachEventListeners();
-        if (enableAutoplay && autoplayInterval !== null) {
-            startAutoplay();
-        }
-    };
+//     // Initialize/create the carousel.
+//     const create = () => {
+//         tweakStructure();
+//         attachEventListeners();
+//         if (enableAutoplay && autoplayInterval !== null) {
+//             startAutoplay();
+//         }
+//     };
 
-    // Destroy the carousel/clean-up.
-    const destroy = () => {
-        // Remove event listeners.
-        prevBtn.removeEventListener("click", handlePrevBtnClick);
-        nextBtn.removeEventListener("click", handleNextBtnClick);
-        carousel.removeEventListener("keydown", handleKeyboardNav);
-        if (enablePagination) {
-            const paginationBtns =
-                paginationContainer.querySelectorAll(".carousel-btn");
-            if (paginationBtns.length) {
-                paginationBtns.forEach((btn) => {
-                    btn.removeEventListener("click", handlePaginationBtnClick);
-                });
-            }
-        }
+//     // Destroy the carousel/clean-up.
+//     const destroy = () => {
+//         // Remove event listeners.
+//         prevBtn.removeEventListener("click", handlePrevBtnClick);
+//         nextBtn.removeEventListener("click", handleNextBtnClick);
+//         carousel.removeEventListener("keydown", handleKeyboardNav);
+//         if (enablePagination) {
+//             const paginationBtns =
+//                 paginationContainer.querySelectorAll(".carousel-btn");
+//             if (paginationBtns.length) {
+//                 paginationBtns.forEach((btn) => {
+//                     btn.removeEventListener("click", handlePaginationBtnClick);
+//                 });
+//             }
+//         }
 
-        // Clear autoplay intervals if autoplay is enabled.
-        if (enableAutoplay && autoplayInterval !== null) {
-            carousel.removeEventListener("mouseenter", handleMouseEnter);
-            carousel.removeEventListener("mouseleave", handleMouseLeave);
-            stopAutoplay();
-        }
-    };
+//         // Clear autoplay intervals if autoplay is enabled.
+//         if (enableAutoplay && autoplayInterval !== null) {
+//             carousel.removeEventListener("mouseenter", handleMouseEnter);
+//             carousel.removeEventListener("mouseleave", handleMouseLeave);
+//             stopAutoplay();
+//         }
+//     };
 
-    // Return an object with methods to create and destroy the carousel.
-    return { create, destroy };
-};
-
-
+//     // Return an object with methods to create and destroy the carousel.
+//     return { create, destroy };
+// };
 
 
-let originalButtonText = "";
-
-const validateEmail = (email) => {
-    return email.match(
-        /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    );
-};
 
 
-function restoreButton() {
-    const tryBtn = document.getElementById("try-btn");
-    tryBtn.classList.remove('button-error');
-    tryBtn.innerHTML = originalButtonText;
-    tryBtn.removeAttribute("disabled");
-}
+// let originalButtonText = "";
 
-function addErrorToButton(text) {
-    const tryForm = document.getElementById("try-form");
-    const tryBtn = document.getElementById("try-btn");
-
-    tryForm.classList.add('form-error');
-    tryBtn.classList.add('button-error');
-    tryBtn.innerHTML = text;
-    tryBtn.setAttribute("disabled", "disabled");
-    setTimeout(restoreButton, 2000)
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-
-    const tryForm = document.getElementById("try-form");
-    const tryEmail = document.getElementById("try-email");
-    const tryBtn = document.getElementById("try-btn");
-
-    originalButtonText = tryBtn.innerHTML;
-    const invalidEmailText = tryBtn.getAttribute('data-invalid-email');
-    const langCode = tryBtn.getAttribute('data-lang');
-    const trySuccessText = tryBtn.getAttribute('data-success-text');
-    const tryContainer = document.getElementById("try-container");
-
-    tryBtn.addEventListener('click', async function (event) {
-        event.preventDefault();
-        tryForm.classList.remove('form-error');
-        restoreButton();
-        if (!tryEmail.value || !validateEmail(tryEmail.value)) {
-            addErrorToButton(invalidEmailText);
-            return;
-        }
-
-        tryBtn.setAttribute("disabled", "disabled");
-
-        try {
-            const response = await fetch("https://streaming.center/api/v1/users/", {
-                method: "POST",
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ email: tryEmail.value, language: langCode == 'en' ? 0 : 1, currency: langCode == 'en' ? 0 : 1 })
-            });
-            if (!response.ok) {
-                // const data = await response.json();
-                // const error_code = data['email'][0];
-                // tryBtn.removeAttribute("disabled");
-                addErrorToButton(invalidEmailText);
-                //let errorText = invalidEmailText;
-                // switch(error_code){
-                //     case 'unique':
-                //     // case 'email':
-                // }
-                return;
-            }
-            tryBtn.removeAttribute("disabled");
-
-            // All good: show greeting
-            tryContainer.innerHTML = `${trySuccessText} <b>${tryEmail.value}<b>`;
-            tryContainer.classList.add('area-success');
-
-        }
-        catch (err) {
-            console.log("Error: ", err)
-            tryBtn.removeAttribute("disabled");
-
-        }
+// const validateEmail = (email) => {
+//     return email.match(
+//         /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+//     );
+// };
 
 
-    });
+// function restoreButton() {
+//     const tryBtn = document.getElementById("try-btn");
+//     tryBtn.classList.remove('button-error');
+//     tryBtn.innerHTML = originalButtonText;
+//     tryBtn.removeAttribute("disabled");
+// }
 
-    tryEmail.addEventListener('change', async function (event) {
-        tryForm.classList.remove('form-error');
-    });
+// function addErrorToButton(text) {
+//     const tryForm = document.getElementById("try-form");
+//     const tryBtn = document.getElementById("try-btn");
 
-    tryEmail.addEventListener('keydown', async function (event) {
-        tryForm.classList.remove('form-error');
-    });
+//     tryForm.classList.add('form-error');
+//     tryBtn.classList.add('button-error');
+//     tryBtn.innerHTML = text;
+//     tryBtn.setAttribute("disabled", "disabled");
+//     setTimeout(restoreButton, 2000)
+// }
 
-    /// Carousel
-    const carousel1 = JSCarousel({
-        carouselSelector: "#carousel-1",
-        slideSelector: ".slide",
-        enablePagination: true,
-    });
+// document.addEventListener('DOMContentLoaded', function () {
 
-    carousel1.create();
+//     const tryForm = document.getElementById("try-form");
+//     const tryEmail = document.getElementById("try-email");
+//     const tryBtn = document.getElementById("try-btn");
 
-    window.addEventListener("unload", () => {
-        carousel1.destroy();
-    });
-});
+//     originalButtonText = tryBtn.innerHTML;
+//     const invalidEmailText = tryBtn.getAttribute('data-invalid-email');
+//     const langCode = tryBtn.getAttribute('data-lang');
+//     const trySuccessText = tryBtn.getAttribute('data-success-text');
+//     const tryContainer = document.getElementById("try-container");
+
+//     tryBtn.addEventListener('click', async function (event) {
+//         event.preventDefault();
+//         tryForm.classList.remove('form-error');
+//         restoreButton();
+//         if (!tryEmail.value || !validateEmail(tryEmail.value)) {
+//             addErrorToButton(invalidEmailText);
+//             return;
+//         }
+
+//         tryBtn.setAttribute("disabled", "disabled");
+
+//         try {
+//             const response = await fetch("https://streaming.center/api/v1/users/", {
+//                 method: "POST",
+//                 headers: {
+//                     'Accept': 'application/json',
+//                     'Content-Type': 'application/json'
+//                 },
+//                 body: JSON.stringify({ email: tryEmail.value, language: langCode == 'en' ? 0 : 1, currency: langCode == 'en' ? 0 : 1 })
+//             });
+//             if (!response.ok) {
+//                 // const data = await response.json();
+//                 // const error_code = data['email'][0];
+//                 // tryBtn.removeAttribute("disabled");
+//                 addErrorToButton(invalidEmailText);
+//                 //let errorText = invalidEmailText;
+//                 // switch(error_code){
+//                 //     case 'unique':
+//                 //     // case 'email':
+//                 // }
+//                 return;
+//             }
+//             tryBtn.removeAttribute("disabled");
+
+//             // All good: show greeting
+//             tryContainer.innerHTML = `${trySuccessText} <b>${tryEmail.value}<b>`;
+//             tryContainer.classList.add('area-success');
+
+//         }
+//         catch (err) {
+//             console.log("Error: ", err)
+//             tryBtn.removeAttribute("disabled");
+
+//         }
+
+
+//     });
+
+//     tryEmail.addEventListener('change', async function (event) {
+//         tryForm.classList.remove('form-error');
+//     });
+
+//     tryEmail.addEventListener('keydown', async function (event) {
+//         tryForm.classList.remove('form-error');
+//     });
+
+//     /// Carousel
+//     const carousel1 = JSCarousel({
+//         carouselSelector: "#carousel-1",
+//         slideSelector: ".slide",
+//         enablePagination: true,
+//     });
+
+//     carousel1.create();
+
+//     window.addEventListener("unload", () => {
+//         carousel1.destroy();
+//     });
+// });

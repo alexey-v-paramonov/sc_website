@@ -1,193 +1,88 @@
-{{ define "main" }} 
-
-<div id="carousel-1" class="carousel" role="region" aria-labelledby="carousel-1-title">
-    <div class="slide" role="tabpanel" aria-labelledby="carousel-1-slide-1-title">
-        <div class="slide-content">
-            <div class="slide-caption">
-                <h3 id="carousel-1-slide-1-title">Internet Radio</h3>
-                <p>Streaming panel</p>
+{{ define "main" }}
+<main class="main posr">
+    <div class="main-slider swiper">
+        <div class="main-arrow main-prev cursor posa transition">
+            <img class="db" src="/img/arrow.svg" alt="" />
+        </div>
+        <div class="main-arrow main-next cursor posa transition">
+            <img class="db" src="/img/arrow.svg" alt="" />
+        </div>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="main-wrapper posr">
+                    <div class="container index">
+                        <div class="main-box">
+                            <h1 class="main-title h1">{{ T "slide1_title" }}</h1>
+                            <div class="main-subtitle maxw">{{ T "slide1_description" }}</div>
+                            <a class="main-btn btn" href="{{ T "signup_url" }}" target="_blank">{{ T "slide1_cta" }}</a>
+                            <img class="main-mobile hide" src="/img/main.png" alt="" />
+                        </div>
+                    </div>
+                    <div class="main-desktop posa pointer">
+                        <div class="container index">
+                            <img class="db" src="/img/main.png" alt="" />
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <img src="/images/panel.png" alt="Internet Radio" width="800"
-                height="350" />
-        </div>
-    </div>
-
-    <div class="slide" role="tabpanel" aria-labelledby="carousel-1-slide-2-title">
-        <div class="slide-content">
-            <div class="slide-caption">
-                <h3 id="carousel-1-slide-2-title">Android application</h3>
-                <p>Mobile Radio player</p>
+            <div class="swiper-slide">
+                <div class="main-wrapper posr">
+                    <div class="container index">
+                        <div class="main-box">
+                            <h1 class="main-title h1">{{ T "slide2_title" }}</h1>
+                            <div class="main-subtitle maxw">
+                                {{ T "slide2_description" }}
+                            </div>
+                            <a class="main-btn btn" href="#form" data-modal-btn>{{ T "slide2_cta" }}</a><img
+                                class="main-mobile hide" src="/img/main.png" alt="" />
+                        </div>
+                    </div>
+                    <div class="main-desktop posa pointer">
+                        <div class="container index">
+                            <img class="db" src="/img/main.png" alt="" />
+                        </div>
+                    </div>
+                </div>
             </div>
-            <img src="/images/app_android.png" alt="Android application" width="800"
-                height="350" />
-        </div>
-    </div>
-
-    <div class="slide" role="tabpanel" aria-labelledby="carousel-1-slide-3-title">
-        <div class="slide-content">
-            <div class="slide-caption">
-                <h3 id="carousel-1-slide-3-title">Apple iOS application</h3>
-                <p>Mobile Radio player</p>
+            <div class="swiper-slide">
+                <div class="main-wrapper posr">
+                    <div class="container index">
+                        <div class="main-box">
+                            <h1 class="main-title h1">{{ T "slide3_title" }}</h1>
+                            <div class="main-subtitle maxw">{{ T "slide3_description" }}</div>
+                            <a class="main-btn btn" href="#form" data-modal-btn>{{ T "slide3_cta" }}</a><img
+                                class="main-mobile hide" src="/img/main.png" alt="" />
+                        </div>
+                    </div>
+                    <div class="main-desktop posa pointer">
+                        <div class="container index">
+                            <img class="db" src="/img/main.png" alt="" />
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <img src="/images/app_ios.png" alt="Apple iOS application" width="800"
-                height="350" />
-        </div>
-    </div>
-    <div class="slide" role="tabpanel" aria-labelledby="carousel-1-slide-4-title">
-        <div class="slide-content">
-            <div class="slide-caption">
-                <h3 id="carousel-1-slide-4-title">Radio start page</h3>
-                <p>Ready to use website</p>
+            <div class="swiper-slide">
+                <div class="main-wrapper posr">
+                    <div class="container index">
+                        <div class="main-box">
+                            <h1 class="main-title h1">{{ T "slide4_title" }}</h1>
+                            <div class="main-subtitle maxw">
+                                {{ T "slide4_description" }}
+                            </div>
+                            <a class="main-btn btn" href="#form" data-modal-btn>{{ T "slide4_cta" }}</a><img
+                                class="main-mobile hide" src="/img/main.png" alt="" />
+                        </div>
+                    </div>
+                    <div class="main-desktop posa pointer">
+                        <div class="container index">
+                            <img class="db" src="/img/main.png" alt="" />
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <img src="/images/website.png" alt="Radio website" width="800"
-                height="350" />
         </div>
+        <div class="swiper-pagination"></div>
     </div>
+</main>
 
-    <div class="slide" role="tabpanel" aria-labelledby="carousel-1-slide-5-title">
-        <div class="slide-content">
-            <div class="slide-caption">
-                <h3 id="carousel-1-slide-5-title">TV support</h3>
-                <p>Listen to your radio on TV!</p>
-            </div>
-
-            <img src="/images/app_tv.png" alt="TV support" width="800"
-                height="350" />
-        </div>
-    </div>
-
-    <div class="slide" role="tabpanel" aria-labelledby="carousel-1-slide-6-title">
-        <div class="slide-content">
-            <div class="slide-caption">
-                <h3 id="carousel-1-slide-6-title">Android Auto support</h3>
-                <p>Listen to your radio in a car</p>
-            </div>
-
-            <img src="/images/app_auto.png" alt="Android Auto support" width="800"
-                height="350" />
-        </div>
-    </div>
-
-</div>
-
-<div class="pure-g">
-    <div class="pure-u-1-2" style="text-align: center;">
-        <p>{{ T "full_account" }}</p>
-    </div>
-    <div class="pure-u-1-2" style="text-align: center;">
-        <p>{{ T "try_account" }}</p>
-    </div>    
-    <div class="pure-u-1-2" style="text-align: center;">
-        <a class="pure-button pure-button-primary" href="https://app.streaming.center" style="height: 40px;">{{ T "signup" }}</a>
-    </div>
-    <div class="pure-u-1-2" style="text-align: center;" id="try-container">
-        <form class="pure-form pure-g">
-            <div class="pure-u-1-2" id="try-form">
-                <input type="email" placeholder="Email" class="pure-input-1" id="try-email" style="height: 40px;     " />
-            </div>
-            <div class="pure-u-1-2" style="text-align: left;">
-                <button style="margin-left: 10px; height: 40px;" type="submit" class="pure-button pure-button-primary" id="try-btn" data-success-text="{{ T "try_account_success" }}" data-lang="{{ .Lang }}" data-invalid-email="{{ T "invalid_email" }}">
-                    {{ T "request_demo" }}
-                    
-                </button>
-            </div>
-        </form>
-    </div>
-</div>
-
-{{ $data := getJSON
-"https://radio-tochka.com/radio/stats/display.php" }}
-
-<div class="pure-g">
-    <div class="pure-u-1">
-        <h2>{{ T "stats_total" }}</h2>
-    </div>
-
-    <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-        <div class="l-box">
-            <h1>{{ $data.listeners }}</h1>
-            <h3>{{ T "stats_listeners" }}</h3>
-            <p>{{ T "stats_listeners_hint" }}</p>
-        </div>
-    </div>
-    <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-        <div class="l-box">
-            <h1>{{ $data.radios }}</h1>
-            <h3>{{ T "stats_radios" }}</h3>
-            <p>{{ T "stats_radios_hint" }}</p>
-        </div>
-    </div>
-    <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-        <div class="l-box">
-            <h1>{{ $data.servers }}</h1>
-            <h3>{{ T "stats_servers" }}</h3>
-            <p>{{ T "stats_servers_hint" }}</p>
-        </div>
-    </div>
-    <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-        <div class="l-box">
-            <h1>200+</h1>
-            <h3>{{ T "stats_apps" }}</h3>
-            <p>{{ T "stats_apps_hint" }}</p>
-        </div>
-    </div>
-</div>
-
-<div class="pure-g">
-    <div class="pure-u-1">
-        <h2>{{ T "advantages" }}</h2>
-    </div>
-
-    {{ range where .Site.Pages "Section" "advantages" }} {{ range first 6 (shuffle
-    .Pages) }}
-    {{ $thumbnailPath := print "images/" .File.BaseFileName ".png" }}
-    <div class="pure-u-1 pure-u-md-1-3 news-box">
-        
-        <a href="{{ .RelPermalink }}">
-            {{ $image := .Parent.Resources.Get $thumbnailPath }}
-
-            {{ if $image }}
-                {{ $image := $image.Process "resize 100x" }}
-                <img class="pure-img"  src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}"> 
-            {{ end }}
-            {{ .Title }} - {{ .Summary }}<br />
-        </a>
-    </div>
-
-    {{ end }} {{ end }}
-
-    <div class="pure-u-1">
-        <a href="/advantages">{{ T "all_advantages" }}</a>
-    </div>
-</div>
-
-<hr />
-
-<div class="pure-g">
-    <div class="pure-u-1">
-        <h2>{{ T "news" }}</h2>
-    </div>
-
-    {{ range (where .Site.Pages "Section" "news").ByDate }}
-    {{ range first 3 .Pages }}
-    <div class="pure-u-1 pure-u-md-1-3 news-box">
-        <a href="{{ .RelPermalink }}">{{ if .Params.icon }}<img src="/images/icons/{{.Params.icon}}" style="width: 80px; height: 80px">{{ end }}<b>{{ .Title }}</b> - {{.Date | time.Format ":date_medium"}}<br /></a>
-    </div>
-    {{ end }}
-    {{ end }}
-
-    <div class="pure-u-1">
-        <a href="/news">{{ T "all_news" }}</a>
-    </div>
-
-</div>
-
-
-<br />
-<br />
-<br />
-<br />
 {{ end }}

@@ -66,3 +66,40 @@ other = "Try before you buy: we will create a test station and send you access c
 
 [signin_signup]
 other = "Log In/ Sign up"
+
+
+[slide1_title]
+other = "Internet-Radio"
+
+[slide2_title]
+other = "Android Apps"
+
+[slide3_title]
+other = "iOs Apps"
+
+[slide4_title]
+other = "Radio Website"
+
+[slide1_description]
+other = "Your station, your vibe. Whether you're just starting out or going big, our Internet-radio streaming panel makes it easy to get on the air and sound amazing."
+
+[slide2_description]
+other = "Вход/Регистрация"
+
+[slide3_description]
+other = "Вход/Регистрация"
+
+[slide4_description]
+other = "Вход/Регистрация"
+
+[slide1_cta]
+other = "Create your Radio!"
+
+[slide2_cta]
+other = "Вход/Регистрация"
+
+[slide3_cta]
+other = "Вход/Регистрация"
+
+[slide4_cta]
+other = "Вход/Регистрация"
