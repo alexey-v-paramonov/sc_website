@@ -8,7 +8,7 @@ summary: "Our company offers a simple, cost-effective solution for creating cust
 # Creating an iOS App for Your Internet Radio
 Our company develops mobile applications of any complexity for all popular mobile platforms, including Apple iOS. We offer both comprehensive solutions with custom design, and if you're looking for a simple, reliable, and affordable solution — our iOS app builder service is perfect for you.
 
-**Our advantages:**
+## Our advantages:
 - Instant creation of an app under your brand: logos, colors, description – you customize all of this in the app builder yourself.
 - We regularly update and maintain our app engine, adding support for the latest iOS versions and expanding functionality.
 - The app is compatible with both internet radios built on our platform and any other that work with Shoutcast or Icecast broadcasting servers.
@@ -18,7 +18,7 @@ Our company develops mobile applications of any complexity for all popular mobil
 - Affordable cost of the app.
 - Payment for the app is one-time, with no subscription fees.
 
-**What you get:**
+## What you get:
 - Stylish design with your brand elements and branding.
 - A reliable player for streaming radio.
 - A user-friendly interface for listeners.

@@ -40,6 +40,16 @@ other = "Все преимущества"
 [signup]
 other = "Регистрация"
 
+[signin]
+other = "Вход"
+
+[signup_url]
+other = "https://app.radio-tochka.com/signup/"
+
+[signin_url]
+other = "https://app.radio-tochka.com/login/"
+
+
 [request_demo]
 other = "Заказать демо"
 
@@ -54,3 +64,6 @@ other = "Заказ полноценного аккаунта, чтобы раб
 
 [try_account]
 other = "Заказать демо версию радио панели"
+
+[signin_signup]
+other = "Вход/Регистрация"

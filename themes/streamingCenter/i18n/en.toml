@@ -40,6 +40,15 @@ other = "All Advantages"
 [signup]
 other = "Sign up"
 
+[signin]
+other = "Log in"
+
+[signup_url]
+other = "https://app.streaming.center/signup/"
+
+[signin_url]
+other = "https://app.streaming.center/login/"
+
 [request_demo]
 other = "Get a free trial"
 
@@ -54,3 +63,6 @@ other = "Create a full-fledged account: register to get full access to all the s
 
 [try_account]
 other = "Try before you buy: we will create a test station and send you access credentials so you can try out our radio panel."
+
+[signin_signup]
+other = "Log In/ Sign up"

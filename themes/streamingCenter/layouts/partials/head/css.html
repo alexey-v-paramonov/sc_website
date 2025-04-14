@@ -1,13 +1,6 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"
-integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css" />
+<link href="/libs/swiper/swiper-bundle.min.css" rel="stylesheet">
+<link href="/libs/nice-select2/nice-select2.css" rel="stylesheet">
+<link href="/libs/modal.css" rel="stylesheet">
+<link href="/libs/start.css" rel="stylesheet">
+<link href="/css/main.css?v=1.12" rel="stylesheet">
 
-{{- with resources.Get "css/main.css" }}
-  {{- if eq hugo.Environment "development" }}
-    <link rel="stylesheet" href="{{ .RelPermalink }}">
-  {{- else }}
-    {{- with . | minify | fingerprint }}
-      <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-    {{- end }}
-  {{- end }}
-{{- end }}
