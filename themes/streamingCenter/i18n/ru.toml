@@ -104,3 +104,21 @@ other = "Вход/Регистрация"
 
 [slide4_cta]
 other = "Вход/Регистрация"
+
+[menu]
+other = "Меню"
+
+[contacts]
+other = "Контакты"
+
+[we_love_radio]
+other = "Мы ♥ Интернет-радио"
+
+[platform]
+other = "Универсальная платформа для создания Интернет-радио"
+
+[agreement]
+other = "Договор-Оферта"
+
+[privacy_policy]
+other = "Конфиденциальность"

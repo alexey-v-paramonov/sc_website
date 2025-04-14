@@ -335,6 +335,23 @@ html, body {
 .footer-phone:hover {
   text-decoration: underline;
 }
+
+.footer-telegram {
+  margin: 26px 0 25px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 16px;
+  background-image: url("../img/telegram.svg");
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 24px;
+}
+.footer-telegram:hover {
+  text-decoration: underline;
+}
+
+
 .footer-email {
   margin: 26px 0 45px;
   color: #fff;
@@ -2135,6 +2152,15 @@ html, body {
     display: inline-flex;
     margin: 34px 0 40px;
   }
+  .footer-telegram {
+    font-size: 20px;
+    line-height: 16px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    margin: 34px 0 40px;
+  }
+
   .footer-phone {
     font-size: 26px;
     line-height: 20px;

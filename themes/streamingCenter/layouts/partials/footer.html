@@ -1,30 +1,37 @@
-<div class="footer l-box is-center">
-    {{ if eq .Lang "en" }}
-      Telegram: <a href="https://t.me/StreamingCenter">StreamingCenter</a>
-      <a href="mailto:info@streaming.center">info@streaming.center</a>
-
-    {{ else  }}
-      +7 495 741 16 71
-      Telegram: <a href="https://t.me/StreamingCenter">StreamingCenter</a>
-      <a href="https://vk.com/radiotochkacom">ВКонтакте</a>
-      <a href="mailto:info@radio-tochka.com">info@radio-tochka.com</a>
-    {{ end }}
-
-    <p>
-      {{ if eq .Lang "en" }}
-      <a href="/faq">F.A.Q.</a>
-      <a href="/payments">Payment methods</a>
-      <a href="/contacts">Contacts</a>
-      <a href="/agreement">Agreement</a>
-      <a href="/content/privacy_policy">Privacy Policy</a>
-      {{ else  }}
-      <a href="/faq">F.A.Q.</a>
-      <a href="/payments">Способы оплаты</a>
-      <a href="/contacts">Контакты</a>
-      <a href="/agreement">Договор</a>
-      <a href="/content/privacy_policy">Политика конфиденциальности</a>
-      {{ end }}
-    </p>
-  
+<div class="container">
+  <div class="footer-list posr df aifs">
+    <div class="footer-nav__wrapper">
+      <div class="footer-nav__title">{{ T "menu" }}</div>
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="/agreement">{{ T "agreement" }}</a></li>
+          <li><a href="/faq">F.A.Q.</a></li>
+          <li><a href="/payments">Payment methods</a></li>
+          <li><a href="/content/privacy_policy">{{ T "privacy_policy" }}</a></li>
+          <li><a href="{{ T "signin_url" }}">{{ T "signin" }}</a></li>
+          <li><a href="{{ T "signup_url" }}">{{ T "signup" }}</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-left">
+      <a class="footer-logo dif link" href="/"><img class="img" src="/img/logo.png" alt=""></a>
+      <div class="footer-subtitle">{{ T "platform" }}</div>
+      <div class="footer-right posa">
+        <div class="footer-nav__title">{{ T "contacts" }}</div>
+        
+        {{ if eq .Lang "en" }}
+        <a class="footer-phone df aic link transition" href="tel:+77057813997">+7 (705) 781-39-97</a>
+        <a class="footer-telegram df aic link transition" href="https://t.me/StreamingCenter_eng">Telegram: StreamingCenter</a>
+        
+        <a class="footer-email df aic link transition" href="mailto:info@streaming.center">info@streaming.center</a>
+        {{ else  }}
+        <a class="footer-phone df aic link transition" href="tel:+74957411671">+7 (495) 741-16-71</a>
+        <a class="footer-telegram df aic link transition" href="https://t.me/StreamingCenter">Telegram: StreamingCenter</a>
+        <a class="footer-email df aic link transition" href="mailto:info@radio-tochka.com">info@radio-tochka.com</a>
+        {{ end }}
+        <!--<a class="footer-btn btn" href="#form" data-modal-btn>Задать вопрос</a>-->
+      </div>
+      <div class="footer-copy">{{ T "we_love_radio" }} © 2006 - {{ now.Year }}</div>
+    </div>
   </div>
-
+</div>
