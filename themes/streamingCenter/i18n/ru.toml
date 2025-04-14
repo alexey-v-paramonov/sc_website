@@ -122,3 +122,7 @@ other = "Договор-Оферта"
 
 [privacy_policy]
 other = "Конфиденциальность"
+
+
+[payments]
+other = "Оплата"

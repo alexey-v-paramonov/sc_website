@@ -121,3 +121,7 @@ other = "Agreement"
 
 [privacy_policy]
 other = "Privacy policy"
+
+[payments]
+other = "Payments"
+
