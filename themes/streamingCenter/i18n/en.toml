@@ -142,3 +142,9 @@ other = "We will set up a test radio station for you and send access credentials
 
 [our_clients]
 other = "Our clients"
+
+[tour_cta]
+other = "Start streaming easily!"
+
+[tour_try]
+other = "Get a free trial"

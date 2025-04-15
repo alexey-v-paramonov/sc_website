@@ -1,28 +1,20 @@
-
-  {{ $rootPage := . }}
-  <div class="content-box">
-
-  {{ with .GetPage "/docs" }}
-     {{- $currentPage := . -}}
-     {{- $docs_section := $currentPage.Section -}}
-     <ul>
-     {{ range .Sections }}
-       <li>  
-        <a {{ if strings.Contains $rootPage.Page.Path .Path }} class="selected-section" {{ end }} href="{{ .RelPermalink }}">{{ .Title }}</a>
-       </li>
-
-      {{ if strings.Contains $rootPage.Page.Path .Path }}
-      <ul>
-       {{ range .Data.Pages }}
-        <li>
-          <a {{ if eq $rootPage.Page.Path .Path }} class="selected-section-article" {{ end }} href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </li>
-       {{ end }}
-      </ul>
+<div class="doc-left">
+  <nav class="doc-nav">
+    {{ $rootPage := . }}
+    {{ with .GetPage "/docs" }}
+    {{- $currentPage := . -}}
+    {{- $docs_section := $currentPage.Section -}}
+    <ul>
+      {{ range .Sections }}
+      <li class="menu-item-has-children {{ if strings.Contains $rootPage.Page.Path .Path }} open {{ end }}"><a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        <ul>
+          {{ range .Data.Pages }}
+          <li {{ if eq $rootPage.Page.Path .Path }} class="active" {{ end }}><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+          {{ end }}
+        </ul>
+      </li>
       {{ end }}
-
-     {{ end }}
-     </ul>
-       
-  {{ end }}
+    </ul>
+    {{ end }}
+  </nav>
 </div>

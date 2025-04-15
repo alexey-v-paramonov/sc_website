@@ -1,21 +1,25 @@
 {{ define "main" }}
 
-<div class="pure-g">
+<main class="view pb posr bg-light">
+    <img class="bg-light__img posa pointer db" src="/img/view-bg.svg" alt="">
+    <div class="container index">
+      {{ partial "breadcrumbs.html" . }}
+      <div class="view-items">
+        <div class="view-item index">
+          <h2 class="title center df aifs jcc stream-title index"><img class="db" src="/img/stream-logo.svg" alt=""><span class="db">{{ .Title }}</span></h2>
+          <div class="view-item__list df fxw jcsb index">
+            {{ .Content }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 
-    <div class="pure-u-1" >
-    {{ partial "breadcrumbs.html" . }}
-wtf
-    {{ $image := .Resources.Get "image.png" }}
-    {{ if $image }}
-        {{ $image := $image.Process "resize 200x" }}
-        <img class="pure-img"  src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" align="left" vspace="5" hspace="5"> 
-    {{ end }}
-
-
-    {{ .Content }}
-    
-  </div>
-
-</div>
+  <section class="demo posr">
+    <div class="container index">
+      <h2 class="demo-title center index white title">{{ T "tour_cta" }}</h2><a class="demo-btn btn" href="https://app.streaming.center/signup">{{ T "tour_try" }}</a>
+    </div>
+  </section>
 
 {{ end }}
+
