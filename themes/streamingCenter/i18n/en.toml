@@ -139,3 +139,6 @@ other = "Get a free trial"
 
 [try_description]
 other = "We will set up a test radio station for you and send access credentials so you can explore the features of our radio panel"
+
+[our_clients]
+other = "Our clients"

@@ -1,50 +1,15 @@
-<nav class="breadcrumbs" style="padding: 0.2em 1.3em; margin: 0em 0;">
-
-    <ul style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center;" itemscope itemtype="https://schema.org/BreadcrumbList">
-    {{- /* declare a 'variable' to store the each link position */}}
+<ul class="breadcrumbs">
     {{- $data := newScratch }}
-  
+
     {{- range $index, $value := .Ancestors.Reverse }}
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" style="display: inline-block; position: relative; margin-right: 5px;">
-            {{- /* read the index from loop and add 'one', because it starts counting from zero */}}
-            {{- $data.Set "counter" $index }}
-            {{- $data.Add "counter" 1 }}
-            <a itemprop="item" href="{{.Permalink}}" style="
-            display: block;
-            border: 1px solid #e1e1e1;
-            background: #fff;
-            padding: 8px 30px 8px 20px;
-            color: #333;
-            text-decoration: none;
-            position: relative;
-            border-radius: 4px;
-            transition: background 0.3s ease;
-            transform: skew(-20deg);
-        ">
-                <span itemprop="name"style="display: inline-block; transform: skew(20deg);"> {{.Title}}</span>
-            </a>
-            {{- /* pass the counter value into schema attribute */}}
-            <meta itemprop="position" content='{{ $data.Get "counter"}}' />
-        </li>         
+    <li>
+        {{- $data.Set "counter" $index }}
+        {{- $data.Add "counter" 1 }}
+        <a href="{{.Permalink}}" >
+            {{.Title}}
+        </a>
+    </li>
     {{- end }}
-        <li style="display: inline-block; position: relative;" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            {{- /* add 'one' one more time for the last link position */}}
-            {{- $data.Add "counter" 1 }}
-            <a itemprop="item" href="{{ .Permalink }}" style="
-            display: block;
-            background: #274C77;
-            padding: 8px 30px 8px 20px;
-            color: white;
-            text-decoration: none;
-            position: relative;
-            border-radius: 4px;
-            transition: background 0.3s ease;
-            transform: skew(-20deg);
-        ">
-                <span style="display: inline-block; transform: skew(20deg);" itemprop="name"> {{.Title}}</span>
-            </a>
-            {{- /* pass the counter value into schema attribute */}}
-            <meta itemprop="position" content='{{ $data.Get "counter"}}' />
-        </li>
-  </ul>
-</nav>
+    <li>{{.Title}}</li>
+</ul>
+
