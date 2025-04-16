@@ -4,291 +4,259 @@ date: 2024-08-18T11:18:55+03:00
 js: js/pricing.js
 ---
 <div class="price-items">
-<div class="price-item index">
-    <div class="price-item__title df aifs jcc title index"><img class="db" src="img/stream-logo.svg" alt=""><span class="db">Платформа для потоковой передачи интернет-радио</span></div>
-    <div class="price-item__list df fxw jcsb index">
-    <div class="price-item__block">
-        <form class="price-calc df direction fxw">
-        <div class="price-calc__title center">Self-hosted</div>
-        <div class="price-calc__wrapper">
-            <div class="price-calc__subtitle">Используйте любой VDS/VPS/облачный хостинг для установки автономной версии нашей платформы.</div>
-            <div class="price-calc__box">
-            <div class="price-calc__box-title center">Количество станций на сервере</div>
-            <div class="price-calc__box-select">
-                <div class="select">
-                <select>
-                    <option value="5 или меньше" selected>5 или меньше</option>
-                    <option value="5 или меньше">5 или меньше</option>
-                    <option value="5 или меньше">5 или меньше</option>
-                </select>
+    <div class="price-item index">
+        <div class="price-item__title df aifs jcc title index"><img class="db" src="/img/stream-logo.svg" alt=""><span class="db">Internet-Radio Streaming Platform</span></div>
+        <div class="price-item__list df fxw jcsb index">
+        <div class="price-item__block">
+            <form class="price-calc df direction fxw">
+            <div class="price-calc__title center">Self-hosted</div>
+            <div class="price-calc__wrapper">
+                <div class="price-calc__subtitle">Use any VDS/VPS/Cloud hosting to install the standalone version of our Platform</div>
+                <div class="price-calc__box">
+                <div class="price-calc__box-title center">Number of stations on the server:</div>
+                <div class="price-calc__box-select">
+                    <div class="select">
+                    <select id="self-hosted-stations">
+                        <option value="5" selected="selected">5 or less</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30 or more</option>
+                        </select>
+                    </div>
                 </div>
+                </div>
+                <div class="price-calc__box">
+                <div class="price-calc__box-title center">Remove Streaming.center branding:</div>
+                <div class="price-calc__box-radios df aic jcc fxw">
+                    <label class="price-calc__box-radio cursor df aic">
+                    <input type="radio" name="question" checked id="self-hosted-whitelabel-no"><b class="db posr"></b><span class="db">No</span>
+                    </label>
+                    <label class="price-calc__box-radio cursor df aic">
+                    <input type="radio" name="question" id="self-hosted-whitelabel-yes"><b class="db posr"></b><span class="db">Yes</span>
+                    </label>
+                </div>
+                </div>
+                <div class="price-calc__box">
+                <div class="price-calc__box-title center">Number of listeners, disk space:</div>
+                <div class="price-calc__box-text center"><b>Unlimited,</b> only limited by the server capacity/bandwidth</div>
+                </div>
+                <div class="price-calc__mb"></div>
+                <div class="price-calc__price center" id="self-hosted-price"></div><a class="price-calc__btn btn" href="https://app.streaming.center/signup"><img class="db" src="/img/marker.svg" alt=""><span class="db">Create radio</span></a>
             </div>
-            </div>
-            <div class="price-calc__box">
-            <div class="price-calc__box-title center">Удалить фирменный знак Streaming.center</div>
-            <div class="price-calc__box-radios df aic jcc fxw">
-                <label class="price-calc__box-radio cursor df aic">
-                <input type="radio" name="question" checked><b class="db posr"></b><span class="db">Нет</span>
-                </label>
-                <label class="price-calc__box-radio cursor df aic">
-                <input type="radio" name="question"><b class="db posr"></b><span class="db">Да</span>
-                </label>
-            </div>
-            </div>
-            <div class="price-calc__box">
-            <div class="price-calc__box-title center">Количество слушателей, объем дискового пространства</div>
-            <div class="price-calc__box-text center"><b>Неограниченный,</b> ограниченный только пропускной способностью сервера.</div>
-            </div>
-            <div class="price-calc__mb"></div>
-            <div class="price-calc__price center">820 ₽</div><a class="price-calc__btn btn" href="#form" data-modal-btn><img class="db" src="img/marker.svg" alt=""><span class="db">Регистрация</span></a>
+            </form>
         </div>
-        </form>
-    </div>
-    <div class="price-item__block">
-        <form class="price-calc df direction fxw">
-        <div class="price-calc__title center">Hosted by Streaming.center</div>
-        <div class="price-calc__wrapper">
-            <div class="price-calc__subtitle">Вам необходимо будет предоставить документы, подтверждающие законность вашей трансляции, чтобы воспользоваться нашим хостингом</div>
-            <div class="price-calc__box">
-            <div class="price-calc__box-title center">Максимальное количество одновременных слушателей</div>
-            <div class="price-calc__box-select">
-                <div class="select">
-                <select>
-                    <option value="50" selected>50</option>
-                    <option value="50">50</option>
-                    <option value="50">50</option>
-                </select>
+        <div class="price-item__block">
+            <form class="price-calc df direction fxw">
+            <div class="price-calc__title center">Hosted by Streaming.center</div>
+            <div class="price-calc__wrapper">
+                <div class="price-calc__subtitle">You will need to provide documents confirming the legality of your stream in order to use our hosting</div>
+                <div class="price-calc__box">
+                <div class="price-calc__box-title center">Max. number of simultaneous listeners:</div>
+                <div class="price-calc__box-select">
+                    <div class="select">
+                        <select id="hosted-listeners">
+                            <option label="5" value="5">5</option>
+                            <option label="10" value="10">10</option>
+                            <option label="15" value="15">15</option>
+                            <option label="20" value="20">20</option>
+                            <option label="25" value="25">25</option>
+                            <option label="30" value="30">30</option>
+                            <option label="35" value="35">35</option>
+                            <option label="40" value="40">40</option>
+                            <option label="50" value="50" selected="selected">50</option>
+                            <option label="60" value="60">60</option>
+                            <option label="70" value="70">70</option>
+                            <option label="80" value="80">80</option>
+                            <option label="90" value="90">90</option>
+                            <option label="100" value="100">100</option>
+                            <option label="120" value="120">120</option>
+                            <option label="150" value="150">150</option>
+                            <option label="200" value="200">200</option>
+                            <option label="250" value="250">250</option>
+                            <option label="300" value="300">300</option>
+                            <option label="350" value="350">350</option>
+                            <option label="400" value="400">400</option>
+                            <option label="450" value="450">450</option>
+                            <option label="500" value="500">500</option>
+                            <option label="600" value="600">600</option>
+                            <option label="700" value="700">700</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
-            </div>
-            <div class="price-calc__box">
-            <div class="price-calc__box-title center">Скорость передачи данных в битах</div>
-            <div class="price-calc__box-select">
-                <div class="select">
-                <select>
-                    <option value="128 kbps" selected>128 kbps</option>
-                    <option value="128 kbps">128 kbps</option>
-                    <option value="128 kbps">128 kbps</option>
-                </select>
                 </div>
-            </div>
-            </div>
-            <div class="price-calc__box">
-            <div class="price-calc__box-title center">Свободное место на диске</div>
-            <div class="price-calc__box-select">
-                <div class="select">
-                <select>
-                    <option value="5 Gb" selected>5 Gb</option>
-                    <option value="10 Gb">10 Gb</option>
-                    <option value="15 Gb">15 Gb</option>
-                </select>
+                <div class="price-calc__box">
+                <div class="price-calc__box-title center">Bitrate:</div>
+                <div class="price-calc__box-select">
+                    <div class="select">
+                        <select id="hosted-bitrate">
+                            <option label="16 kbps" value="16">16 Kbps</option>
+                            <option label="24 kbps" value="24">24 Kbps</option>
+                            <option label="32 kbps" value="32">32 Kbps</option>
+                            <option label="64 kbps" value="64">64 Kbps</option>
+                            <option label="96 kbps" value="96">96 Kbps</option>
+                            <option label="128 kbps" value="128" selected="selected">128 Kbps</option>
+                            <option label="160 kbps" value="160">160 Kbps</option>
+                            <option label="192 kbps" value="192">192 Kbps</option>
+                            <option label="256 kbps" value="256">256 Kbps</option>
+                            <option label="320 kbps" value="320">320 Kbps</option>
+                        </select>
+                    </div>
                 </div>
+                </div>
+                <div class="price-calc__box">
+                <div class="price-calc__box-title center">Disk space:</div>
+                <div class="price-calc__box-select">
+                    <div class="select">
+                        <select id="hosted-du">
+                            <option label="5 Gb" value="5" selected="selected">5 Gb</option>
+                            <option label="6 Gb" value="6">6 Gb</option>
+                            <option label="7 Gb" value="7">7 Gb</option>
+                            <option label="9 Gb" value="9">9 Gb</option>
+                            <option label="10 Gb" value="10">10 Gb</option>
+                            <option label="15 Gb" value="15">15 Gb</option>
+                            <option label="20 Gb" value="20">20 Gb</option>
+                            <option label="25 Gb" value="25">25 Gb</option>
+                            <option label="30 Gb" value="30">30 Gb</option>
+                            <option label="40 Gb" value="40">40 Gb</option>
+                            <option label="50 Gb" value="50">50 Gb</option>
+                            <option label="60 Gb" value="60">60 Gb</option>
+                            <option label="70 Gb" value="70">70 Gb</option>
+                            <option label="80 Gb" value="80">80 Gb</option>
+                            <option label="90 Gb" value="90">90 Gb</option>
+                            <option label="100 Gb" value="100">100 Gb</option>
+                            <option label="120 Gb" value="120">120 Gb</option>
+                            <option label="140 Gb" value="140">140 Gb</option>
+                            <option label="150 Gb" value="150">150 Gb</option>
+                            <option label="160 Gb" value="160">160 Gb</option>
+                            <option label="180 Gb" value="180">180 Gb</option>
+                            <option label="200 Gb" value="200">200 Gb</option>
+                        </select>
+                    </div>
+                </div>
+                </div>
+                <div class="price-calc__mb"></div>
+                <div class="price-calc__price center" id="hosted-price"></div><a class="price-calc__btn btn" href="https://app.streaming.center/signup"><img class="db" src="/img/marker.svg" alt=""><span class="db">Create radio</span></a>
             </div>
-            </div>
-            <div class="price-calc__mb"></div>
-            <div class="price-calc__price center">240 ₽</div><a class="price-calc__btn btn" href="#form" data-modal-btn><img class="db" src="img/marker.svg" alt=""><span class="db">Регистрация</span></a>
+            </form>
         </div>
-        </form>
-    </div>
-    </div>
-</div>
-<div class="price-item index">
-    <div class="price-item__title df aifs jcc title index"><img class="db" src="img/stream-logo.svg" alt=""><span class="db">Мобильное приложение для&nbsp;интернет-радио</span></div>
-    <div class="price-item__title-small">Приложение для радиоплеера, которое вы можете настроить, загрузив свой фирменный стиль, трансляции и станции в конструктор приложений</div>
-    <div class="price-item__list df fxw jcsb index">
-    <div class="price-item__block">
-        <form class="price-calc df direction fxw">
-        <div class="price-calc__title center">Android</div>
-        <div class="price-calc__wrapper">
-            <div class="price-calc__subtitle">Поддерживаются смартфоны, планшеты, Android TV <br>и Adnroid Auto.</div>
-            <div class="price-calc__box">
-            <div class="price-calc__box-title center">Публикация в Google Play</div>
-            <div class="price-calc__box-select">
-                <div class="select">
-                <select>
-                    <option value="Только файл APK" selected>Только файл APK</option>
-                    <option value="Только файл APK">Только файл APK</option>
-                </select>
-                </div>
-            </div>
-            </div>
-            <div class="price-calc__box">
-            <div class="price-calc__box-title center">Настройки авторских прав</div>
-            <div class="price-calc__box-select">
-                <div class="select">
-                <select>
-                    <option value="Keep Streaming.center Copyright" selected>Keep Streaming.center Copyright</option>
-                    <option value="Keep Streaming.center Copyright">Keep Streaming.center Copyright</option>
-                </select>
-                </div>
-            </div>
-            </div>
-            <div class="price-calc__mb"></div>
-            <div class="price-calc__price center">18 500 ₽</div><a class="price-calc__btn btn" href="#form" data-modal-btn><img class="db" src="img/marker.svg" alt=""><span class="db">Регистрация</span></a>
         </div>
-        </form>
     </div>
-    <div class="price-item__block">
-        <form class="price-calc df direction fxw">
-        <div class="price-calc__title center">Apple iOs</div>
-        <div class="price-calc__wrapper">
-            <div class="price-calc__subtitle">Публикация приложения в App Store включена в&nbsp;стоимость</div>
-            <div class="price-calc__box">
-            <div class="price-calc__box-title center">Публикация в Apple App Store</div>
-            <div class="price-calc__box-select">
-                <div class="select">
-                <select>
-                    <option value="Публикация с использованием lorem text" selected>Публикация с использованием lorem text</option>
-                    <option value="Публикация с использованием lorem text">Публикация с использованием lorem text</option>
-                    <option value="Публикация с использованием lorem text">Публикация с использованием lorem text</option>
-                </select>
+    <div class="price-item index">
+        <div class="price-item__title df aifs jcc title index"><img class="db" src="/img/stream-logo.svg" alt=""><span class="db">Internet-Radio Mobile Application</span></div>
+        <div class="price-item__title-small">Radio player app that you can customize by uploading your branding, streams and stations into the application builder</div>
+        <div class="price-item__list df fxw jcsb index">
+        <div class="price-item__block">
+            <form class="price-calc df direction fxw">
+            <div class="price-calc__title center">Android</div>
+            <div class="price-calc__wrapper">
+                <div class="price-calc__subtitle">Smartphones, Tablets, Android TV and Adnroid Auto are supported</div>
+                <div class="price-calc__box">
+                <div class="price-calc__box-title center">Google Play publishing</div>
+                <div class="price-calc__box-select">
+                    <div class="select">
+                        <select  id="android-app-publishing">
+                            <option value="0">Publish using Streaming.center developer account</option>
+                            <option value="1">I will provide my developer account credentials for publishing</option>
+                            <option value="2" selected="selected">APK file only</option>
+                        </select>                        
+                    </div>
                 </div>
-            </div>
-            </div>
-            <div class="price-calc__box">
-            <div class="price-calc__box-title center">Настройки авторских прав</div>
-            <div class="price-calc__box-select">
-                <div class="select">
-                <select>
-                    <option value="Keep Streaming.center Copyright" selected>Keep Streaming.center Copyright</option>
-                    <option value="Keep Streaming.center Copyright">Keep Streaming.center Copyright</option>
-                </select>
                 </div>
+                <div class="price-calc__box">
+                <div class="price-calc__box-title center">Copyright settings</div>
+                <div class="price-calc__box-select">
+                    <div class="select">
+                        <select  id="android-app-copyright">
+                            <option value="0" selected="selected">Keep Streaming.center Copyright</option>
+                            <option value="1">Remove any copyright (white-label)</option>
+                            <option value="2">Use your own copyright</option>
+                        </select>
+                    </div>
+                </div>
+                </div>
+                <div class="price-calc__mb"></div>
+                <div class="price-calc__price center" id="android-app-price"></div><a class="price-calc__btn btn" href="https://app.streaming.center/signup"><img class="db" src="/img/marker.svg" alt=""><span class="db">Create app</span></a>
             </div>
-            </div>
-            <div class="price-calc__mb"></div>
-            <div class="price-calc__price center">24 000 ₽</div><a class="price-calc__btn btn" href="#form" data-modal-btn><img class="db" src="img/marker.svg" alt=""><span class="db">Регистрация</span></a>
+            </form>
         </div>
-        </form>
+        <div class="price-item__block">
+            <form class="price-calc df direction fxw">
+            <div class="price-calc__title center">Apple iOs</div>
+            <div class="price-calc__wrapper">
+                <div class="price-calc__subtitle">App App Store publication is included in the price</div>
+                <div class="price-calc__box">
+                <div class="price-calc__box-title center">Apple App Store publishing</div>
+                <div class="price-calc__box-select">
+                    <div class="select">
+                        <select  id="ios-app-publishing">
+                            <option value="0" selected="selected">Publish using Streaming.center developer account</option>
+                            <option value="1">I will provide my developer account credentials for publishing</option>
+                        </select>
+                    </div>
+                </div>
+                </div>
+                <div class="price-calc__box">
+                <div class="price-calc__box-title center">Copyright settings</div>
+                <div class="price-calc__box-select">
+                    <div class="select">
+                        <select id="ios-app-copyright">
+                            <option value="0" selected="selected">Keep Streaming.center Copyright</option>
+                            <option value="1">Remove any copyright (white-label)</option>
+                            <option value="2">Use your own copyright</option>
+                        </select>
+                    </div>
+                </div>
+                </div>
+                <div class="price-calc__mb"></div>
+                <div class="price-calc__price center" id="ios-app-price"></div><a class="price-calc__btn btn" href="https://app.streaming.center/signup"><img class="db" src="/img/marker.svg" alt=""><span class="db">Create app</span></a>
+            </div>
+            </form>
+        </div>
+        </div>
     </div>
     </div>
-</div>
-</div>
-</div>
-<div class="container index view-container">
-<div class="price-tables">
-<div class="price-tables__title title center">Полный перечень услуг с ценами</div>
-<div class="price-tables__items">
-    <div class="price-tables__item">
-    <div class="price-tables__item-title df aic"><img class="db" src="img/stream-logo.svg" alt=""><span class="db">Интернет-радио</span></div>
-    <table class="price-tables__item-block">
-        <tbody>
-        <tr>
-            <th>Услуга</th>
-            <th>Стоимость: физ. лица</th>
-            <th>Стоимость: юр. лица</th>
-        </tr>
-        <tr>
-            <td><b>Панель управления Интернет-радио для установки на выделенный сервер, до 5 радио станций</b></td>
-            <td><b>549 ₽</b>/мес</td>
-            <td><b>3.500 ₽</b>/мес</td>
-        </tr>
-        <tr>
-            <td><b>Стоимость каждого дополнительного радио (свыше 5)</b></td>
-            <td><b>80 ₽</b>/мес</td>
-            <td><b>150 ₽</b>/мес</td>
-        </tr>
-        <tr>
-            <td><b>Помощь в установке панели управления (первые две установки бесплатно, далее - платно)</b></td>
-            <td><b>1.500 ₽</b></td>
-            <td><b>3.000 ₽</b></td>
-        </tr>
-        <tr>
-            <td><b>Приоритетное абонентское облуживание (тех. поддержка) радио-сервера</b><small>* услуга не является обязательной и подключается по необходимости</small></td>
-            <td><b>3.500 ₽/</b>мес</td>
-            <td>включено в абон. плату</td>
-        </tr>
-        </tbody>
-    </table>
     </div>
-    <div class="price-tables__item">
-    <div class="price-tables__item-title df aic"><img class="db" src="img/stream-logo.svg" alt=""><span class="db">Мобильные приложения</span></div>
-    <table class="price-tables__item-block">
-        <tbody>
-        <tr>
-            <th>Услуга</th>
-            <th>Стоимость: физ. лица</th>
-            <th>Стоимость: юр. лица</th>
-        </tr>
-        <tr>
-            <td><b>Базовое мобильное приложение для Android</b></td>
-            <td><b>17.000 ₽</b></td>
-            <td><b>20.000 ₽</b></td>
-        </tr>
-        <tr>
-            <td><b>Публикация Android приложения в Google Play/RuStore/NashStore</b><small>* Стоимость за публикацию в одном магазине приложений по выбору, возможна публикация во всех трёх</small></td>
-            <td><b>3.000 ₽</b></td>
-            <td><b>5.000 ₽</b></td>
-        </tr>
-        <tr>
-            <td><b>Базовое мобильное приложение для Apple iOS</b><small>* стоимость публикации в AppStore включена</small></td>
-            <td><b>21.000 ₽</b></td>
-            <td><b>5.000 ₽</b></td>
-        </tr>
-        <tr>
-            <td><b>Обновление Android приложения в Google Play</b></td>
-            <td><b>3.000 ₽</b></td>
-            <td><b>5.000 ₽</b></td>
-        </tr>
-        <tr>
-            <td><b>Передача Android приложения в другой аккаунт разработчика</b></td>
-            <td><b>3.000 ₽</b></td>
-            <td><b>25.000 ₽</b></td>
-        </tr>
-        <tr>
-            <td><b>Обновление iOs приложения в Apptore</b></td>
-            <td><b>4.000 ₽</b></td>
-            <td><b>5.000 ₽</b></td>
-        </tr>
-        <tr>
-            <td><b>Подключение PUSH уведомлений в Android приложении</b></td>
-            <td><b>4.000 ₽</b></td>
-            <td><b>5.000 ₽</b></td>
-        </tr>
-        <tr>
-            <td><b>Подключение PUSH уведомлений в iOS приложении</b></td>
-            <td><b>5.000 ₽</b></td>
-            <td><b>5.000 ₽</b></td>
-        </tr>
-        <tr>
-            <td><b>Передача iOS приложения в другой аккаунт разработчика</b></td>
-            <td><b>3.000 ₽</b></td>
-            <td><b>5.000 ₽</b></td>
-        </tr>
-        <tr>
-            <td><b>Разработка индивидуального приложения для Android</b></td>
-            <td><b>от 150.000 ₽</b></td>
-            <td><b>от 200.000 ₽</b></td>
-        </tr>
-        <tr>
-            <td><b>Разработка индивидуального (дизайн, функционал) приложения для iOS</b></td>
-            <td><b>от 150.000 ₽</b></td>
-            <td><b>от 200.000 ₽</b></td>
-        </tr>
-        </tbody>
-    </table>
+    <div class="container index view-container">
+    <div class="price-tables">
+    <div class="price-tables__title title center">Additional services</div>
+    <div class="price-tables__items">
+        <div class="price-tables__item">
+        <div class="price-tables__item-title df aic"><img class="db" src="/img/stream-logo.svg" alt=""><span class="db">Internet-radio</span></div>
+        <table class="price-tables__item-block">
+            <tbody>
+            <tr>
+                <th>Service</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td><b>On-demand Technical support, custom development	</b></td>
+                <td><b>50$</b>/hour</td>
+            </tr>
+            </tbody>
+        </table>
+        </div>
     </div>
-    <div class="price-tables__item">
-    <div class="price-tables__item-title df aic"><img class="db" src="img/stream-logo.svg" alt=""><span class="db">Прочее</span></div>
-    <table class="price-tables__item-block">
-        <tbody>
-        <tr>
-            <th>Услуга</th>
-            <th>Стоимость: физ. лица</th>
-            <th>Стоимость: юр. лица</th>
-        </tr>
-        <tr>
-            <td><b>Программирование, администрирование, тех. поддержка</b></td>
-            <td><b>3.500 ₽</b>/час</td>
-            <td><b>5.000 ₽</b>/час</td>
-        </tr>
-        <tr>
-            <td><b>Юридическая помощь при регистрации радио в РАО и ВОИС</b></td>
-            <td><b>20.000 ₽</b></td>
-            <td><b>30.000 ₽</b></td>
-        </tr>
-        </tbody>
-    </table>
     </div>
-</div>
 </div>

@@ -1,6 +1,8 @@
 let lang = 'ru';    
+let currency = "₽";
 if(document.location.host.indexOf("localhost:1313") || document.location.host.indexOf("streaming.center")){
     lang = 'en';
+    currency = "$";
 }
 console.log("Lang: ", lang);
 const PRICING = {
@@ -63,7 +65,7 @@ function calculateSelfHostedPrice(){
         price += PRICING[lang]["selfhosted"]["whitelabel"];
     }
 
-    selfHostedPriceContainer.innerHTML = price;
+    selfHostedPriceContainer.innerHTML = price + currency;
 }
 
 function calculateHostedPrice(){
@@ -93,7 +95,7 @@ function calculateHostedPrice(){
     if(extraGb > 0){
         price = parseFloat(price) + parseFloat(PRICING[lang]["hosted"]["price_per_gb"] * extraGb);
     }
-    hostedPriceContainer.innerHTML = price;
+    hostedPriceContainer.innerHTML = price + currency;
 }
 
 function calculateAndroidAppPrice(){
@@ -108,7 +110,7 @@ function calculateAndroidAppPrice(){
     if(copyrightSelect.value != "0"){
         price += PRICING[lang]["app"]["android"]["whitelabel"];
     }
-    androidPriceContainer.innerHTML = price;
+    androidPriceContainer.innerHTML = price + currency;
 
 }
 
@@ -120,7 +122,7 @@ function calculateiOsAppPrice(){
     if(copyrightSelect.value != "0"){
         price += PRICING[lang]["app"]["ios"]["whitelabel"];
     }
-    iosPriceContainer.innerHTML = price;
+    iosPriceContainer.innerHTML = price + currency;
 }
 
 function calcEverything(){
