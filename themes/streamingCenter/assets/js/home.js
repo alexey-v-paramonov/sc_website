@@ -64,6 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
                 body: JSON.stringify({ email: tryEmail.value, language: langCode == 'en' ? 0 : 1, currency: langCode == 'en' ? 0 : 1 })
             });
+            tryEmail.removeAttribute("disabled");
             if (!response.ok) {
                 console.log("Error")
                 // const data = await response.json();
@@ -82,7 +83,6 @@ document.addEventListener('DOMContentLoaded', function () {
             tryContainer.innerHTML = `<div>${trySuccessText} <b>${tryEmail.value}</b></div>`;
             tryContainer.classList.add('area-success');
             tryBtn.removeAttribute("disabled");
-            tryEmail.removeAttribute("disabled");
             tryBtn.innerHTML = originalButtonText;
         }
         catch (err) {

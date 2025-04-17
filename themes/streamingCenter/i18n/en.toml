@@ -49,6 +49,9 @@ other = "https://app.streaming.center/signup/"
 [signin_url]
 other = "https://app.streaming.center/login/"
 
+[email]
+other = "info@streaming.center"
+
 [request_demo]
 other = "Get a free trial"
 
@@ -84,29 +87,38 @@ other = "iOs Apps"
 [slide4_title]
 other = "Radio Website"
 
+[slide5_title]
+other = "Extras"
+
 [slide1_description]
 other = "Your station, your vibe. Whether you're just starting out or going big, our Internet-radio streaming panel makes it easy to get on the air and sound amazing."
 
 [slide2_description]
-other = "Вход/Регистрация"
+other = "Create a ready-to-use app in just 10 minutes! 5-day free trial — pay only afterwards. Supports Android Auto, Android TV, tablets, and smartphones."
 
 [slide3_description]
-other = "Вход/Регистрация"
+other = "Having trouble with iOS apps? We’ve got it covered! Over 100 radio apps successfully published on the App Store."
 
 [slide4_description]
-other = "Вход/Регистрация"
+other = "Got a radio stream but no listeners yet? Use our ready-made, free website — it's built right into our Radio Platform. Name, description, social links, live stream, and an easy-to-use player — all set up out of the box!"
+
+[slide5_description]
+other = "We've been creating internet radio for 20 years. We know all the ins and outs, can help bring your ideas to life, and answer any questions"
 
 [slide1_cta]
 other = "Create your Radio!"
 
 [slide2_cta]
-other = "Вход/Регистрация"
+other = "Build"
 
 [slide3_cta]
-other = "Вход/Регистрация"
+other = "Build"
 
 [slide4_cta]
-other = "Вход/Регистрация"
+other = "Website & Radio"
+
+[slide5_cta]
+other = "Contact us"
 
 [menu]
 other = "Menu"
