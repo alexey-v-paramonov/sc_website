@@ -177,7 +177,7 @@
               <div class="benefits-item__img posr">
                 {{ $image := .Parent.Resources.Get $thumbnailPath }}
                 {{ if $image }}
-                    {{ $image := $image.Process "resize 100x" }}
+                    
                     <img class="img posa" src="{{ $image.RelPermalink }}" alt="{{ .Title }}" width="{{ $image.Width }}" height="{{ $image.Height }}">
                 {{ else }}
                     <img class="img posa" src="img/benefits-2.png" alt="">
