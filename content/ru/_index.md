@@ -1,4 +1,4 @@
 ---
 title: "Домой"
-js: js/main.js
+js: js/home.js
 ---

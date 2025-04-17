@@ -12,7 +12,7 @@ date: 2024-08-18T11:45:30+03:00
     </div>
     <a class="view-item__btn btn" href="https://app.streaming.center/signup"><img class="db" src="/img/marker.svg" alt=""><span class="db">SignUp</span></a>
 </div>
-<div class="view-item__block"><a class="view-item__video db posr overflow" href="https://www.youtube.com/watch?v=7X8II6J-6mU" data-fslightbox> <img class="img" src="img/screen-2.png" alt=""></a></div>
+<div class="view-item__block"><a class="view-item__video db posr overflow" href="https://www.youtube.com/watch?v=7X8II6J-6mU" data-fslightbox> <img class="img" src="/img/screen-2.png" alt=""></a></div>
 </div>
 <div class="view-item__bottom index">
 <div class="view-item__bold">On your website, listeners can:</div>
