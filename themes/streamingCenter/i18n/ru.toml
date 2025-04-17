@@ -56,6 +56,9 @@ other = "Заказать демо"
 [invalid_email]
 other = "Неверный Email"
 
+[try_loading]
+other = "Минутку..."
+
 [try_account_success]
 other = "Данные доступа в аккаунт будут отправлены Вам через 5 минут на почту:"
 

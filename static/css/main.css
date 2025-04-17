@@ -2657,3 +2657,14 @@ html, body {
     font-size: 13px;
   }
 }
+
+.button-error {
+  background: rgb(202, 60, 60) !important;
+}
+
+
+.form-error input[type=email] {
+  background-color: #fce4e4;
+  border: 1px solid #cc0033;
+  outline: none;
+}

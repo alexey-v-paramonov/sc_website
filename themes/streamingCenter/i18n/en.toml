@@ -56,7 +56,11 @@ other = "Get a free trial"
 other = "Invalid Email"
 
 [try_account_success]
-other = "In 5 minutes we will send you the account credentials to:"
+other = "In 5 minutes we will send the account credentials to:"
+
+[try_loading]
+other = "Loading..."
+
 
 [full_account]
 other = "Create a full-fledged account: register to get full access to all the services"
