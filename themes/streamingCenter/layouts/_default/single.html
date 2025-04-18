@@ -4,7 +4,19 @@
   <img class="bg-light__img posa pointer db" src="/img/view-bg.svg" alt="">
   <div class="container index">
     {{ partial "breadcrumbs.html" . }}
-    {{ .Content }}
+    
+    <div class="view-items">
+      <div class="view-item index">
+        
+        <h2 class="title center df aifs jcc stream-title index">
+          <span class="db">{{ .Title }}</span>
+        </h2>
+        <div class="view-item__list df fxw jcsb index">
+          {{ .Content }}
+        </div>
+      
+      </div>
+    </div>
   </div>
 </main>
 

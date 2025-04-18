@@ -1,18 +1,34 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  {{ partial "breadcrumbs.html" . }}
 
-  {{ range .Pages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+<main class="view pb posr bg-light">
+  <img class="bg-light__img posa pointer db" src="/img/view-bg.svg" alt="" />
+  <div class="container index">
+    {{ partial "breadcrumbs.html" . }}
+    <div class="view-items">
+      {{ range .Pages }}
 
-    {{ $thumbnailPath := print "images/" .File.BaseFileName ".png" }}
-    {{ $image := .Parent.Resources.Get $thumbnailPath }}
-    {{ if $image }}
-      {{ $image := $image.Process "resize 200x" }}
-      <img class="pure-img"  src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}"> 
-    {{ end }}
+      <div class="view-item index">
+        
+        <h2 class="title center df aifs jcc stream-title index">
+          <span class="db"><a href="{{ .RelPermalink }}">{{ .Title }}</a></span
+          >
+        </h2>
+        <div class="view-item__list df fxw jcsb index">
+          {{ $thumbnailPath := print "images/" .File.BaseFileName ".png" }}
+          {{ $image := .Parent.Resources.Get $thumbnailPath }}
+          {{ if $image }}
+          {{ $image := $image.Process "resize 200x" }}
+          <img class="pure-img"  src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}"> 
+        {{ end }}
+    
+          {{ .Content }}
+        </div>
+      
+      </div>
+      {{ end }}
 
-    {{ .Content }}
+    </div>
+  </div>
+</main>
 
-  {{ end }}
 {{ end }}

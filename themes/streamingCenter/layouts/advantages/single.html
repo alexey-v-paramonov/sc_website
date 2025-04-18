@@ -1,24 +1,37 @@
 {{ define "main" }}
 
-<div class="pure-g">
 
-    <div class="pure-u-1">
+<main class="view pb posr bg-light">
+  <img class="bg-light__img posa pointer db" src="/img/view-bg.svg" alt="" />
+  <div class="container index">
     {{ partial "breadcrumbs.html" . }}
-    <div class="content-box">
+    <div class="view-items">
+      <div class="view-item index">
+        
+        <h2 class="title center df aifs jcc stream-title index">
+          <span class="db">{{ .Title }}</span>
+        </h2>
+        <div class="view-item__list df fxw jcsb index">
+          {{ $thumbnailPath := print "images/" .File.BaseFileName ".png" }}
+          {{ $image := .Parent.Resources.Get $thumbnailPath }}
+          {{ if $image }}
+          
+          <img class="pure-img"  src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}"> 
+          {{ end }}
 
-    {{ $thumbnailPath := print "images/" .File.BaseFileName ".png" }}
-    {{ $image := .Parent.Resources.Get $thumbnailPath }}
+          {{ .Content }}
+          
 
-    {{ if $image }}
-      {{ $image := $image.Process "resize 300x" }}
-      <img class="pure-img"  src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}"> 
-    {{ end }}
-
-    {{ .Content }}
+        </div>
+      
+      </div>
+    </div>
   </div>
+</main>
 
+<section class="demo posr">
+  <div class="container index">
+    <h2 class="demo-title center index white title">{{ T "tour_cta" }}</h2><a class="demo-btn btn" href="https://app.streaming.center/signup">{{ T "tour_try" }}</a>
   </div>
-
-</div>
-
+</section>
 {{ end }}
