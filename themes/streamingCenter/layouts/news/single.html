@@ -1,27 +1,43 @@
 {{ define "main" }}
 
-<div class="pure-g">
+<main class="view pb posr bg-light">
+  <img class="bg-light__img posa pointer db" src="/img/view-bg.svg" alt="" />
+  <div class="container index">
+    {{ partial "breadcrumbs.html" . }}
+    <div class="view-items">
+      <div class="view-item index">
+        
+        <h2 class="title center df aifs jcc stream-title index">
+          {{ $newsDate := print .Date | time.Format "2 01.06" }}
+          {{ $newsDay := index (split $newsDate " ") 0 }}
+          {{ $newsMonthYear := index (split $newsDate " ") 1 }}
+          <div class="blog-item__date center df aic fxw">{{$newsDay}}<span>{{$newsMonthYear}}</span></div>
 
-    <div class="pure-u-1">
-      {{ partial "breadcrumbs.html" . }}
-      <div class="content-box">
-      <div>{{.Date | time.Format ":date_medium"}}</div>
-      {{ if .Params.icon }}<img src="/images/icons/{{.Params.icon}}" style="width: 80px; height: 80px">{{ end }}
-      <div>{{ .Content }}</div>
+          <span class="db"
+            >{{ .Title }}</span
+          >
+        </h2>
+        <div class="view-item__list df fxw jcsb index">
+
+          {{ .Content }}
+          
+
+          <div class="below-text-row">
+            <a class="changelog-btn btn btn-border" href="https://streaming.center/dist/changelog.txt" target="_blank">Changelog</a>
+            <a class="news-btn btn btn-border" href="/news">{{ T "all_news" }}</a>
+          </div>
+
+        </div>
+      
+      </div>
     </div>
+  </div>
+</main>
 
-    </div>
-</div>
-
-<div class="pure-g content-box">
-    <div class="pure-u-1-2">
-      <a href="https://streaming.center/dist/changelog.txt" target="_blank">Changelog</a>
-    </div>
-
-    <div class="pure-u-1-2">
-      <a href="/news">{{ T "all_news" }}</a>
-    </div>
-
-</div>
+<section class="demo posr">
+  <div class="container index">
+    <h2 class="demo-title center index white title">{{ T "tour_cta" }}</h2><a class="demo-btn btn" href="https://app.streaming.center/signup">{{ T "tour_try" }}</a>
+  </div>
+</section>
 
 {{ end }}

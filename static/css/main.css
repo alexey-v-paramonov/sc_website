@@ -2658,6 +2658,34 @@ html, body {
   }
 }
 
+.below-text-row{
+  margin-top: 40px;
+}
+
+.news-btn {
+  padding: 0 39px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: absolute;
+  right: 0;
+  z-index: 2;
+
+}
+
+.changelog-btn {
+  padding: 0 39px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: absolute;
+  left: 0;
+  z-index: 2;
+  
+}
+
+
+
 .button-error {
   background: rgb(202, 60, 60) !important;
 }
