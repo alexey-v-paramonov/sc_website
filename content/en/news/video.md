@@ -1,6 +1,6 @@
 ---
 title: "New video lessons are now available"
-date: 2007-05-30T10:54:49+03:00
+date: 2007-05-30T10:54:49
 ---
 
 

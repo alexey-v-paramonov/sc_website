@@ -1,6 +1,6 @@
 ---
 title: "Version 3.24.3: Audio-editor update"
-date: 2024-09-20T13:50:08+03:00
+date: 2024-09-20T13:50:08
 icon: waveform.svg
 
 ---

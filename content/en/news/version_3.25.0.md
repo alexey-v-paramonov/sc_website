@@ -1,6 +1,6 @@
 ---
 title: "Version 3.25.0: New random playback algorithm"
-date: 2024-11-26T13:50:08+03:00
+date: 2024-11-26T13:50:08
 icon: shuffle.svg
 
 ---

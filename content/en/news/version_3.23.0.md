@@ -1,6 +1,6 @@
 ---
 title: "Version 3.23.0: Audio editor and the new mp3 decoder engine"
-date: 2023-01-24T13:50:08+03:00
+date: 2023-01-24T13:50:08
 ---
 
 Internet Radio control panel 3.23.0 is out: in the core engine, we switched to a new MP3 decoder, which increased the speed by 5-10%. A tag editor is now available for jingles, as well as for tracks from the playlist. An audio editor has been added for jingles, you can define entry and exit points for playback. An audio editor has been added for tracks from playlists, you can define entry and exit points for playback. In the widget of the current track, an option has been added to change the outline around the widget, you can disable it altogether or change the color. The option not to download track covers from music services has been added to the settings. Fixed some rotation issues related to playlist playback. Fixed a bug in rotations where a track by the same artist could be repeated, even if the settings prohibit repetitions. Fixed a bug where FLAC files could not be correctly transcoded into an AAC++ stream.

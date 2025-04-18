@@ -1,6 +1,6 @@
 ---
 title: "Android app update, Shoutcast 2.6 support"
-date: 2019-10-10T10:54:49+03:00
+date: 2019-10-10T10:54:49
 ---
 
 
