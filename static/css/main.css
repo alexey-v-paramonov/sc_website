@@ -2696,3 +2696,45 @@ html, body {
   border: 1px solid #cc0033;
   outline: none;
 }
+
+/* decimal lists in license agreement */
+.decimal-list {
+  counter-reset: list1 !important;
+}
+
+.decimal-list > li {
+  counter-increment: list1 !important;
+  list-style: none;
+}
+
+.decimal-list > li::before {
+  content: counter(list1) ". "  !important;
+  font-weight: bold;
+}
+
+.decimal-list ol {
+  counter-reset: list2  !important;
+  margin: 20px 0 40px;
+}
+
+.decimal-list ol > li {
+  counter-increment: list2  !important;
+  list-style: none;
+}
+
+.decimal-list ol > li::before {
+  content: counter(list1) "." counter(list2) " " !important;
+}
+
+.decimal-list ol ol {
+  counter-reset: list3 !important;
+}
+
+.decimal-list ol ol > li {
+  counter-increment: list3  !important;
+  padding-left: 50px;
+}
+
+.decimal-list ol ol > li::before {
+  content: counter(list1) "." counter(list2) "." counter(list3) " "  !important;
+}
