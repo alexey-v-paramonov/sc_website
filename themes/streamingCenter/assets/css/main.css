@@ -813,9 +813,8 @@ code {
   transform: skew(20deg);
 }
 
+
 /* decimal lists in license agreement */
-
-
 .decimal-list {
   counter-reset: list1;
 }

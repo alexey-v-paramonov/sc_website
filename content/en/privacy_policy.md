@@ -4,12 +4,11 @@ date: 2024-08-18T11:26:05+03:00
 url: /content/privacy_policy
 ---
 
-## Privacy Policy
 This Privacy Policy outlines the terms under which the "Streaming.Center" service and its mobile applications for listening to internet radio collect and use information.
 
 We take privacy very seriously.
 
-### Internet Radio Creation Service "Streaming.Center"
+## Internet Radio Creation Service "Streaming.Center"
 
 The service does not collect user data except for information necessary for user authentication within the Personal Account.
 

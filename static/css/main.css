@@ -2732,7 +2732,7 @@ html, body {
 
 .decimal-list ol ol > li {
   counter-increment: list3  !important;
-  padding-left: 50px;
+  padding-left: 60px;
 }
 
 .decimal-list ol ol > li::before {
