@@ -1,14 +1,15 @@
 {{ define "main" }}
-<main class="doc pb posr"><img class="bg-light__img posa pointer db" src="/img/doc-bg.svg" alt="">
+<main class="doc pb posr">
+  <img class="bg-light__img posa pointer db" src="/img/doc-bg.svg" alt="" />
   <div class="container index doc-container">
     {{ partial "breadcrumbs.html" . }}
     <div class="doc-list df aifs jcsb">
-    {{ partial "docs_menu.html" . }}
-    <div class="doc-right">
-      {{ .Content }}
+      {{ partial "docs_menu.html" . }}
+      <div class="doc-right">
+        <div class="doc-content">{{ .Content }}</div>
+      </div>
     </div>
   </div>
-</div>
 </main>
 
 {{ end }}

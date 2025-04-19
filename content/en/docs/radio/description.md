@@ -15,15 +15,13 @@ Instead of using traditional broadcast frequencies, it uses streaming technology
 #### Internet Radio vs. on-demand music streaming services like Spotify or Apple Music
 Unlike streaming services, internet radio works like a traditional FM station: the audio stream plays continuously without pauses between tracks, and the listener cannot independently choose songs or change their order. While music platforms allow users to listen to individual tracks on demand and have full control over their playlists,
 
-<table width="100%" border="1">
-<thead>
+<table>
+<tbody>
 <tr>
 <th></th>
 <th>Internet Radio</th>
 <th>Streaming Services</th>
 </tr>
-</thead>
-<tbody>
 <tr>
 <td>Content Type</td>
 <td>Linear, scheduled programming</td>
@@ -73,15 +71,13 @@ Internet radio continues to evolve, reshaping media consumption by merging acces
 
 
 #### Internet Radio vs. FM Radio
-<table  width="100%" border="1">
-<thead>
+<table >
+<tbody>
 <tr>
 <th></th>
 <th>Internet Radio</th>
 <th>FM Radio</th>
 </tr>
-</thead>
-<tbody>
 <tr>
 <td>Coverage</td>
 <td>Global (internet required)</td>
