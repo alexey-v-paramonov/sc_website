@@ -5,10 +5,11 @@
     <div class="doc-list df aifs jcsb">
     {{ partial "docs_menu.html" . }}
     <div class="doc-right">
-      {{ .Content }}
+      <div class="doc-content">{{ .Content }}
       {{ range .Pages }}
       <li><a href="{{ .RelPermalink }}">{{ .Title }}</a> {{- if not (eq .Summary "x") -}}<p style="padding-left: 50px;">{{ .Summary }}</p>{{end}}</li>
     {{ end }}
+  </div>
 
     </div>
   </div>
