@@ -14,7 +14,15 @@
       </nav>
     </div>
     <div class="footer-left">
-      <a class="footer-logo dif link" href="/"><img class="img" src="/img/logo.png" alt=""></a>
+      <a class="footer-logo dif link" href="/">
+        
+        {{ if eq .Lang "en" }}
+        <img class="img" src="/img/logoeng.png" alt="">
+        {{ else if eq .Lang "ru" }}
+        <img class="img" src="/img/logo.png" alt="">
+        {{ end }}      
+
+      </a>
       <div class="footer-subtitle">{{ T "platform" }}</div>
       <div class="footer-right posa">
         <div class="footer-nav__title">{{ T "contacts" }}</div>
