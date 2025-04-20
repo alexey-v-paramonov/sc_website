@@ -17,7 +17,7 @@
           {{ $thumbnailPath := print "images/" .File.BaseFileName ".png" }}
           {{ $image := .Parent.Resources.Get $thumbnailPath }}
           {{ if $image }}
-            <img src="{{ $image.RelPermalink }}" width="420" height="210"> 
+            <img src="{{ $image.RelPermalink }}" width="410" height="220"> 
           {{ end }}
     
           {{ .Content }}
