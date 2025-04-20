@@ -1,0 +1,11 @@
+{{ define "main" }}
+
+<main class="view pb posr bg-light">
+  <img class="bg-light__img posa pointer db" src="/img/view-bg.svg" alt="">
+  <div class="container index">
+    {{ partial "breadcrumbs.html" . }}
+    {{ .Content }}
+  </div>
+</main>
+
+{{ end }}
