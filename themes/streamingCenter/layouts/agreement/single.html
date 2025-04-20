@@ -1,27 +1,24 @@
 {{ define "main" }}
 
-<main class="doc pb posr"><img class="bg-light__img posa pointer db" src="/img/doc-bg.svg" alt="">
+<main class="doc pb posr">
+  <img class="bg-light__img posa pointer db" src="/img/doc-bg.svg" alt="" />
   <div class="container index doc-container">
     {{ partial "breadcrumbs.html" . }}
     <div class="doc-list df aifs jcsb">
       <div class="doc-left">
         <nav class="doc-nav">
-              <ul>
-                {{- range site.Menus.agreement }}
-                <li><a href="{{ or .URL .PageRef }}">{{ .Name }}</a></li>
-                {{ end }}
-              </ul>
+          <ul>
+            {{- range site.Menus.agreement }}
+            <li><a href="{{ or .URL .PageRef }}">{{ .Name }}</a></li>
+            {{ end }}
+          </ul>
         </nav>
       </div>
-    <div class="doc-right">
-      <div class="doc-content">
-      {{ .Content }}
-    </div>
+      <div class="doc-right">
+        <div class="doc-content">{{ .Content }}</div>
+      </div>
     </div>
   </div>
-</div>
 </main>
-
-
 
 {{ end }}
