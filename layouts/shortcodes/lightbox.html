@@ -1,8 +1,4 @@
-<div class="cssbox">
-    {{ $var := math.Rand | mul 999999 | math.Ceil  }}
-    <a id="image{{ $var }}" href="#image{{ $var }}"><img class="cssbox_thumb" src="{{ .Get 0 }}" />
-        <span class="cssbox_full"><img src="{{ .Get 1 }}" /></span>
-    </a>
-    <a class="cssbox_close" href="#void"></a>
 
-</div>
+
+<a class="img-zoom" href="{{ .Get 0 }}" data-fslightbox="doc"><img src="{{ .Get 1 }}" alt=""></a>
+
