@@ -15,10 +15,10 @@ The currently available payment methods are listed in the "Payments" section of 
 Some payment methods support automatic crediting of funds, while others require you to notify us after making a payment.
 
 ## One-Time Payments
-For one-time services (e.g., mobile app development, script creation, technical support, etc.), the payment is deducted once after the service is rendered. Before this, you must top up your balance in advance with the required amount.
+For one-time services (e.g., mobile app development, script creation, technical support, etc.), the payment is deducted **once after the service is rendered**. Before this, you must **top up your balance in advance** with the required amount.
 
 ## Subscription Fees
-For subscription-based services, charges are deducted daily in the morning.
+For subscription-based services, charges are deducted **daily** in the morning.
 The cost is calculated as a proportional part of the monthly fee. For example, if a service costs 30 USD per month, then with a 30-day month, 30 ÷ 30 = 1 USD will be deducted each day.
 
 This gives you flexibility to:
@@ -27,4 +27,4 @@ This gives you flexibility to:
 - cancel services,
 - add new ones at any time.
 
-For instance, if you add another service costing 60 USD per month, the daily deduction will be: 1 USD (first service) + 60 ÷ 30 = 2 (second service) = 3 USD per day.
+For instance, if you add another service costing 60 USD per month, the daily deduction will be: 1 USD (first service) + 60 ÷ 30 = 2 (second service) = **3 USD per day**.
