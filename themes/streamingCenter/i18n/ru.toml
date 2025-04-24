@@ -49,6 +49,10 @@ other = "https://app.radio-tochka.com/signup/"
 [signin_url]
 other = "https://app.radio-tochka.com/login/"
 
+[dashboard_url]
+other = "https://app.radio-tochka.com/"
+
+
 [email]
 other = "info@radio-tochka.com"
 

@@ -49,6 +49,9 @@ other = "https://app.streaming.center/signup/"
 [signin_url]
 other = "https://app.streaming.center/login/"
 
+[dashboard_url]
+other = "https://app.streaming.center/"
+
 [email]
 other = "info@streaming.center"
 
