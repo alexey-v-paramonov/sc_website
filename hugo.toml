@@ -112,7 +112,7 @@ unsafe= true
     languageCode = 'en-US'
     languageDirection = 'ltr'
     languageName = 'English'
-    title = 'Streaming.center'
+    title = 'Streaming.center: Professional Internet Radio Control Panel & Mobile App Solutions'
     weight = 1
     [languages.en.params]
       subtitle = 'Internet-radio streaming platform'
