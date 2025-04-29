@@ -32,7 +32,10 @@ Don't waste time and money building from scratch — use our ready-made solution
 **Step-by-step guide**
 1. Go to the <a href="https://app.streaming.center/login/" target="_blank">order page and register</a>
 2. In your dashboard, open the "Applications" -> "Android" section
+    {{< lightbox "/images/android_app/en/app_builder1_mini.png" "/images/android_app/en/app_builder1.png" >}}
 3. Click "Create Mobile App" and choose the basic app settings: name, publishing parameters, and copyright settings
+    {{< lightbox "/images/android_app/en/app_builder2_mini.png" "/images/android_app/en/app_builder2.png" >}}
+
 4. Fill out all fields in the "Information" section: full and short description, upload logos and icons
 5. Customize the app appearance in the "Design" section: choose a ready-made skin or set all color elements individually
 6. In the "Radios" section, you can add **unlimited radio streams** to the app. If multiple stations are added, a station-switching menu will appear in the app
