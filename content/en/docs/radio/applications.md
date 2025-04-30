@@ -5,7 +5,7 @@ weight: 40
 summary: "Starting an Internet-radio station offers diverse opportunities across entertainment, education, branding, community-building, and more, transcending geographical limits to serve niche and global audiences alike."
 ---
 
-### Why start an Internet-radio station?
+# Why start an Internet-radio station?
 
 
 Internet radio, with its digital reach and versatility, offers a wide array of applications across various domains. Here’s a structured overview of its potential uses:

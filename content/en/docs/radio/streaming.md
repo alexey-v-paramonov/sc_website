@@ -6,7 +6,7 @@ summary: "Internet radio can be broadcast either automatically from a media libr
 
 ---
 
-### Primary ways of Internet Radio Broadcasting
+# Primary ways of Internet Radio Broadcasting
 
 1. #### Broadcasting from a Media Library (Automated)
 This is the simplest method to set up and maintain. It involves uploading audio files to a server, creating and configuring playlists, rotations, and jingles, and scheduling broadcasts using a programming grid (assigning specific playlists and rotations to play at designated times). The audio is streamed in a fully automated mode via a rotation program, commonly referred to as an "Auto-DJ."

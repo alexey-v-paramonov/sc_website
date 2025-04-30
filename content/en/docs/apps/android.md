@@ -31,17 +31,28 @@ Don't waste time and money building from scratch — use our ready-made solution
 
 **Step-by-step guide**
 1. Go to the <a href="https://app.streaming.center/login/" target="_blank">order page and register</a>
-2. In your dashboard, open the "Applications" -> "Android" section
+2. In your dashboard, open the "Applications" -> "Android" section:
     {{< lightbox "/images/android_app/en/app_builder1_mini.png" "/images/android_app/en/app_builder1.png" >}}
-3. Click "Create Mobile App" and choose the basic app settings: name, publishing parameters, and copyright settings
+3. Click "Create Mobile App" and choose the basic app settings: name, publishing parameters, and copyright settings:
     {{< lightbox "/images/android_app/en/app_builder2_mini.png" "/images/android_app/en/app_builder2.png" >}}
 
-4. Fill out all fields in the "Information" section: full and short description, upload logos and icons
-5. Customize the app appearance in the "Design" section: choose a ready-made skin or set all color elements individually
-6. In the "Radios" section, you can add **unlimited radio streams** to the app. If multiple stations are added, a station-switching menu will appear in the app
-7. Each station can have its own logo, stream links, social media links, and a custom "Info" section
-8. Once all information is filled out correctly, click the "Build App" button in the top menu and wait for the compilation to complete — typically 10–15 minutes
-9. Once your app is ready, the download button for the APK file will become available — this file can be downloaded and installed on Android devices (you may need to allow installation from unknown sources on your device)
+4. Fill out all fields in the "Information" section: full and short description, upload logos and icons:
+    {{< lightbox "/images/android_app/en/app_builder3_mini.png" "/images/android_app/en/app_builder3.png" >}}
+
+5. Customize the app appearance in the "Design" section: choose a ready-made skin or set all color elements individually:
+    {{< lightbox "/images/android_app/en/app_builder4_mini.png" "/images/android_app/en/app_builder4.png" >}}
+
+6. In the "Radios" section, you can add **unlimited radio streams** to the app. If multiple stations are added, a station-switching menu will appear in the app:
+    {{< lightbox "/images/android_app/en/app_builder5_mini.png" "/images/android_app/en/app_builder5.png" >}}
+
+7. Each station can have its own logo, stream links, social media links, and a custom "Info" section:
+    {{< lightbox "/images/android_app/en/app_builder6_mini.png" "/images/android_app/en/app_builder6.png" >}}
+
+8. Once all information is filled out correctly, click the "Build App" button in the top menu and wait for the compilation to complete — typically 10–15 minutes:
+    {{< lightbox "/images/android_app/en/app_builder7_mini.png" "/images/android_app/en/app_builder7.png" >}}
+
+9. Once your app is ready, the download button for the APK file will become available — this file can be downloaded and installed on Android devices (you may need to allow installation from unknown sources on your device):
+    {{< lightbox "/images/android_app/en/app_builder8_mini.png" "/images/android_app/en/app_builder8.png" >}}
 
 After the app is created, you will have **5 days of free testing** - install it on various Android devices to fully test its functionality. During testing, you can return to the builder, change any settings, and rebuild the app — all free of charge.
 

@@ -6,7 +6,7 @@ summary: "Internet radio delivers continuous audio streams over the Internet - o
 
 ---
 
-### Internet Radio Explained
+# Internet Radio Explained
 
 #### How It Works
 Internet radio (also known as online, web, or streaming radio) streams audio content (live or pre-recorded) over the internet using servers that broadcast continuous audio feeds (Icecast, Shoutcast, etc.). Listeners connect via apps, websites, or compatible devices. Streaming protocols (e.g., HTTP, HTTPS) and codecs (e.g., MP3, AAC, AAC++, OPUS, FLAC, OGG Vorbis) compress audio for efficient transmission.

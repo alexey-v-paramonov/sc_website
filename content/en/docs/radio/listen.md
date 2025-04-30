@@ -5,7 +5,7 @@ weight: 20
 summary: "Listening to Internet radio is easy and versatile, with options ranging from official websites and mobile apps to dedicated hardware, smart speakers, and car systems, allowing users to stream content across virtually any device or platform."
 ---
 
-### Listening to Internet radio
+# Listening to Internet radio
 
 Listening to Internet radio is easy and can be done using various software and hardware options across different devices and operating systems. Below is a detailed guide.
 

@@ -1242,6 +1242,12 @@ html, body {
   max-width: 100%;
   height: auto;
 }
+.doc-content h1{
+  margin-bottom: 24px;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 30px;
+}
 .doc-content h2, .doc-content h3, .doc-content h4, .doc-content h5, .doc-content h6 {
   margin-bottom: 24px;
   font-size: 24px;
@@ -1291,6 +1297,7 @@ html, body {
   display: -ms-inline-flexbox;
   display: inline-flex;
   max-width: 100%;
+  margin-top: 10px;
   margin-bottom: 40px;
   position: relative;
 }
@@ -1302,11 +1309,11 @@ html, body {
 .img-zoom::after {
   content: "";
   position: absolute;
-  right: 30px;
-  bottom: 30px;
-  width: 60px;
+  right: 0px;
+  bottom: -20px;
+  width: 50px;
   z-index: 1;
-  height: 60px;
+  height: 50px;
   border-radius: 100%;
   background-color: #4F835B;
   -webkit-box-shadow: 0px 0px 8px 0px rgba(255, 255, 255, 0.2) inset;
@@ -2737,4 +2744,25 @@ html, body {
 
 .decimal-list ol ol > li::before {
   content: counter(list1) "." counter(list2) "." counter(list3) " "  !important;
+}
+
+.common-table{
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+table.common-table  tr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 5px;
+  border-bottom: 1px solid rgba(79, 131, 91, 0.15);
+  background: transparent;
+  margin-top: 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }

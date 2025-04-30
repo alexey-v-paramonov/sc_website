@@ -6,7 +6,7 @@ summary: "Internet radio streaming consumes varying amounts of data depending on
 js: js/traf_calc.js
 ---
 
-### Internet Radio Streaming and Traffic Consumption
+# Internet Radio Streaming and Traffic Consumption
 
 #### For Listeners:
 When listening to internet radio, it feels like an "endless" file download because the streaming audio is played almost in real-time while gradually being "downloaded" to the listener's device. At the same time:
@@ -43,86 +43,91 @@ When you order internet radio hosting from us, traffic is not metered and does n
 
 ### Internet-radio Trafic Calculator:
 
-<div class="pure-g">
-    <div class="pure-u-1-2">
-        Quality, Kbps:
-    </div>
-    <div class="pure-u-1-2">
-        <select id="quality"  class="form-control input-small">
-            <option value="24">24 kbps</option>
-            <option value="32">32 kbps</option>
-            <option value="64">64 kbps</option>
-            <option value="96">96 kbps</option>
-            <option value="128" selected>128 kbps</option>
-            <option value="192">192 kbps</option>
-            <option value="256">256 kbps</option>
-            <option value="320">320 kbps</option>
-        </select>
-    </div>
-    <div class="pure-u-1-2">
-        Сoncurrent listeners:
-    </div>
-    <div class="pure-u-1-2">
-        <select id="listeners">
-            <option value="1" selected="">1</option>
-            <option value="5">5</option>
-            <option value="10">10</option>
-            <option value="15">15</option>
-            <option value="20">20</option>
-            <option value="25">25</option>
-            <option value="30">30</option>
-            <option value="35">35</option>
-            <option value="40">40</option>
-            <option value="50">50</option>
-            <option value="60">60</option>
-            <option value="70">70</option>
-            <option value="80">80</option>
-            <option value="90">90</option>
-            <option value="100">100</option>
-            <option value="150">150</option>
-            <option value="200">200</option>
-            <option value="250">250</option>
-            <option value="300">300</option>
-            <option value="350">350</option>
-            <option value="400">400</option>
-            <option value="450">450</option>
-            <option value="500">500</option>
-            <option value="600">600</option>
-            <option value="700">700</option>
-            <option value="800">800</option>
-            <option value="900">900</option>
-            <option value="1000">1000</option>
-        </select>
-    </div>
-    <div class="pure-u-1-2">
-        Time Period:
-    </div>
-    <div class="pure-u-1-2">
-        <select id="period" class="form-control input-small">
-            <option value="0.5">30 minutes</option>
-            <option value="1" selected="selected">1 hour</option>
-            <option value="2">2 hours</option>
-            <option value="4">4 hours</option>
-            <option value="8">8 hours</option>
-            <option value="24">1 day</option>
-            <option value="168">Week (7 days)</option>
-            <option value="720">Month (30 days)</option>
-        </select>    
-    </div>
-    <div class="pure-u-1-2">
-        Total traffic:
-    </div>
-    <div class="pure-u-1-2">
-        <span id="sum_m"></span> Megabytes = <span id="sum_g"></span> Gigabytes
-    </div>
-    <div class="pure-u-1-2">
-        Data transfer rate:
-    </div>
-    <div class="pure-u-1-2">
-        <span id="netspeed_k"></span> Kbps = <span id="netspeed_m"></span> Mbps
-    </div>
-
-</div>
+<table class="common-table">
+    <tr>
+    <td>Quality, Kbps:</td>
+    <td>
+        <div class="select">
+            <select id="quality"  class="form-control input-small">
+                <option value="24">24 kbps</option>
+                <option value="32">32 kbps</option>
+                <option value="64">64 kbps</option>
+                <option value="96">96 kbps</option>
+                <option value="128" selected>128 kbps</option>
+                <option value="192">192 kbps</option>
+                <option value="256">256 kbps</option>
+                <option value="320">320 kbps</option>
+            </select>
+        </div>
+    </td>
+    </tr>
+    <tr>
+        <td>Сoncurrent listeners:</td>
+        <td>
+            <div class="select">
+                <select id="listeners">
+                    <option value="1" selected="">1</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                    <option value="25">25</option>
+                    <option value="30">30</option>
+                    <option value="35">35</option>
+                    <option value="40">40</option>
+                    <option value="50">50</option>
+                    <option value="60">60</option>
+                    <option value="70">70</option>
+                    <option value="80">80</option>
+                    <option value="90">90</option>
+                    <option value="100">100</option>
+                    <option value="150">150</option>
+                    <option value="200">200</option>
+                    <option value="250">250</option>
+                    <option value="300">300</option>
+                    <option value="350">350</option>
+                    <option value="400">400</option>
+                    <option value="450">450</option>
+                    <option value="500">500</option>
+                    <option value="600">600</option>
+                    <option value="700">700</option>
+                    <option value="800">800</option>
+                    <option value="900">900</option>
+                    <option value="1000">1000</option>
+                </select>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>Time Period:</td>
+        <td>
+            <div class="select">
+            <select id="period">
+                <option value="0.5">30 minutes</option>
+                <option value="1" selected="selected">1 hour</option>
+                <option value="2">2 hours</option>
+                <option value="4">4 hours</option>
+                <option value="8">8 hours</option>
+                <option value="24">1 day</option>
+                <option value="168">Week (7 days)</option>
+                <option value="720">Month (30 days)</option>
+            </select>    
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>Total traffic:</td>
+        <td>
+            <span id="sum_m"></span> Megabytes = <span id="sum_g"></span> Gigabytes
+        </td>
+    </tr>
+    <tr>
+        <td>Data transfer rate:</td>
+        <td>
+            <span id="netspeed_k"></span> Kbps = <span id="netspeed_m"></span> Mbps
+        </td>
+    </tr>
+</table>
 
 
 

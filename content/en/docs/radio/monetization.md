@@ -5,7 +5,7 @@ weight: 60
 summary: "Monetizing an Internet radio involves leveraging listener payments for interactive features, crowdfunding, premium content subscriptions, mobile apps, advertising integrations, brand partnerships, music promotions, and banner advertising to generate revenue."
 ---
 
-### How to Monetize Your Internet Radio Station
+# How to Monetize Your Internet Radio Station
 
 Creating your own Internet radio station is an exciting project, but it’s important to understand how to make it profitable.
 Our service handles the technical side of setting up and supporting Internet radio. However, based on our experience working with many radio stations, we’ve prepared useful recommendations and an overview of the main monetization methods.
