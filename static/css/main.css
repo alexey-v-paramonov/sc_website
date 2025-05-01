@@ -1713,6 +1713,27 @@ html, body {
   font-weight: 700;
   line-height: 30px;
 }
+.select ul li::before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 7px;
+  width: 14px;
+  height: 14px;
+  background-image: none;
+  background-repeat: no-repeat;
+}
+.select ul li:first-child {
+  margin-top: 10px;
+}
+.common-table .select {
+  border: 1px solid rgba(79, 131, 91, 0.15);
+  border-radius: 5px;
+  width: 50%;
+}
+.common-table .nice-select .option {
+  padding-left: 30px;
+}
 .select .nice-select > span {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1721,6 +1742,7 @@ html, body {
 .select .nice-select::after {
   display: none;
 }
+
 .select .nice-select::before {
   content: "";
   position: absolute;
@@ -2751,7 +2773,6 @@ html, body {
   width: 100%;
   max-width: 100%;
   border-radius: 5px;
-  overflow: hidden;
 }
 
 table.common-table  tr {

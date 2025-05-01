@@ -64,7 +64,7 @@ When you order internet radio hosting from us, traffic is not metered and does n
     <tr>
         <td>Сoncurrent listeners:</td>
         <td>
-            <div class="select">
+            <div class="select small">
                 <select id="listeners">
                     <option value="1" selected="">1</option>
                     <option value="5">5</option>
@@ -128,6 +128,6 @@ When you order internet radio hosting from us, traffic is not metered and does n
         </td>
     </tr>
 </table>
-
+<br />
 
 
