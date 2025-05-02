@@ -31,9 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     //nice select2
-    console.log("WTF")
     $(".select select").each(function (s) {
-        console.log("SEL: ", s)
         if ($(this).parent().hasClass("select-search")) {
             NiceSelect.bind(this, { searchable: true });
         } else {

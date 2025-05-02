@@ -181,6 +181,7 @@ html, body {
 }
 .benefits-item:hover .benefits-item__title {
   color: #4F835B;
+  text-decoration: underline;
 }
 
 .blog {
@@ -2786,4 +2787,26 @@ table.common-table  tr {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+
+.view-item h2 a{
+  text-decoration: none;
+  color: #274C77;
+}
+
+.view-item h2 a:visited{
+  color: #274C77;
+}
+
+.view-item h2 a:hover{
+  text-decoration: underline;
+}
+
+.benefits-item a:hover{
+  text-decoration: underline;
+}
+
+.doc-content a{
+  color: #274C77;
 }
