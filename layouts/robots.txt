@@ -19,8 +19,8 @@ Disallow: /*.swf$
 Disallow: /*.qtl$
 Disallow: /*showImage
 Disallow: *mailto*
- 
-Host: radio-tochka.com
+
+Host: {{ T "hostname" }}
  
 User-agent: *
 Disallow: /icon
@@ -41,4 +41,4 @@ Disallow: /*.swf$
 Disallow: /*.qtl$
 Disallow: /*showImage
 Disallow: *mailto*
-Sitemap: https://radio-tochka.com/sitemap.xml
+Sitemap: https://{{ T "hostname" }}/sitemap.xml

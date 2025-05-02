@@ -56,6 +56,9 @@ other = "https://app.radio-tochka.com/"
 [email]
 other = "info@radio-tochka.com"
 
+[hostname]
+other = "radio-tochka.com"
+
 
 [request_demo]
 other = "Заказать демо"

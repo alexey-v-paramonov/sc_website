@@ -55,6 +55,10 @@ other = "https://app.streaming.center/"
 [email]
 other = "info@streaming.center"
 
+[hostname]
+other = "streaming.center"
+
+
 [request_demo]
 other = "Get a free trial"
 
