@@ -54,6 +54,10 @@ Don't waste time and money building from scratch — use our ready-made solution
 9. Once your app is ready, the download button for the APK file will become available — this file can be downloaded and installed on Android devices (you may need to allow installation from unknown sources on your device):
     {{< lightbox "/images/android_app/en/app_builder8_mini.png" "/images/android_app/en/app_builder8.png" >}}
 
+## See the video tutorial on Youtube:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4UmvmazxkH4?si=M5TTHY9-_hdFeZos" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
 After the app is created, you will have **5 days of free testing** - install it on various Android devices to fully test its functionality. During testing, you can return to the builder, change any settings, and rebuild the app — all free of charge.
 
 Only when you're completely satisfied do you need to make a payment and order publishing of your app in app stores.
