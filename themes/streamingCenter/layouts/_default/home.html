@@ -127,7 +127,8 @@
     </div>
   </div>
   <section class="stream pt">
-    {{ with resources.GetRemote "https://radio-tochka.com/radio/stats/display.php" }}
+    {{ $timestamp := now.Unix }}
+    {{ with resources.GetRemote (printf "https://radio-tochka.com/radio/stats/display.php?t=%d" $timestamp) }}
       {{ $data := . | transform.Unmarshal }}
     <div class="container">
       <h2 class="title center df aifs jcc stream-title"><img class="db" src="img/stream-logo.svg" alt=""><span class="db">{{ T "stats_total" }}</span></h2>
