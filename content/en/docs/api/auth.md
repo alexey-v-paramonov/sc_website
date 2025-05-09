@@ -2,6 +2,8 @@
 title: "Authentication"
 date: 2024-08-23T11:37:26+03:00
 weight: 2
+seo_title: "API Authentication & Authorization | Streaming.Center API Docs"
+description: "Learn how to securely authenticate with the Streaming.Center API using API keys. Step-by-step guide with code examples for implementing secure API authentication."
 ---
 
 Most API requests are aimed at getting information about the status of the radio, but in some cases there is a need:

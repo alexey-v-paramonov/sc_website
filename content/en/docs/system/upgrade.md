@@ -3,6 +3,8 @@ title: "Installing updates"
 date: 2024-08-23T11:40:53+03:00
 weight: 40
 summary: "To update your installed Streaming.Ceter radio Platform to the latest version, simply connect to your server via SSH and run the provided update command, which will automatically apply updates and perform system checks, with optional support for custom post-update scripts."
+seo_title: "Upgrade Guide for Internet Radio Control Panel | Streaming.Center"
+description: "Learn how to safely upgrade your Internet radio control panel to the latest version, with step-by-step instructions and troubleshooting tips."
 ---
 
 If you already have our Internet Radio Platform [installed](/docs/system/installation) and you want to update it to the latest version, just run the update command in the server terminal by connecting via SSH:

@@ -1,6 +1,8 @@
 ---
 title: "Accept your listeners calls directly from your browser"
 date: 2024-08-18T11:05:18+03:00
+seo_title: "Listener Call-in Feature for Internet Radio"
+description: "Engage with your audience through live calls. Our platform makes it easy to receive, queue, and broadcast listener calls directly through your online radio station."
 ---
 
 

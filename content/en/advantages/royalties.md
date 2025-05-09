@@ -1,6 +1,8 @@
 ---
 title: "Royalty reports"
 date: 2024-08-18T11:05:34+03:00
+seo_title: "SoundExchange Compatible Radio Royalty Reports"
+description: "Generate comprehensive royalty reports for your internet radio station, including SoundExchange compatible track statistics, listening hours, and playback counts."
 ---
 
 

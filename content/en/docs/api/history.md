@@ -2,6 +2,8 @@
 title: "What's on air"
 date: 2024-08-22T11:37:29+03:00
 weight: 3
+seo_title: "Track History API | Streaming.Center Radio API Documentation"
+description: "Access and retrieve your Internet radio station's track history with our History API. Complete reference with JSON examples for integrating playback history into your applications."
 ---
 
 <div class="api-block">

@@ -2,6 +2,8 @@
 title: "Playlists"
 date: 2024-08-22T11:37:29+03:00
 weight: 40
+seo_title: "Playlists API Reference | Streaming.Center Radio API"
+description: "Complete guide to managing Internet radio playlists programmatically. Learn how to create, modify, copy playlists and add tracks with the Streaming.Center API."
 ---
 
 /api/v2/playlists/      playlists.views.PlaylistViewSet playlist-list

@@ -2,6 +2,8 @@
 title: "Podcasts"
 date: 2024-08-22T11:37:29+03:00
 weight: 50
+seo_title: "Podcasts API for Internet Radio | Streaming.Center Documentation"
+description: "Integrate podcast functionality with your Internet radio station. API reference for retrieving, creating and managing podcasts with detailed examples and response formats."
 ---
 
 <div class="api-block">

@@ -3,6 +3,8 @@ title: "Utilities"
 date: 2024-08-23T11:40:53+03:00
 weight: 50
 summary: You can manage your installed Streaming.Center platform via SSH by using built-in server utilities to change admin, radio, and FTP passwords, update the domain name, and configure an SSL certificate.
+seo_title: "Utilities for Internet Radio Control Panel | Streaming.Center"
+description: "Discover essential utilities for managing and configuring your Internet radio control panel, including tools for SSL, domain, and server maintenance."
 ---
 
 The main utilities that you can use on a server which already has our Streaming Platform [installed](/docs/system/installation) are described below. Normally you run these utilities by connecting to the server terminal via SSH.

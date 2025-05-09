@@ -3,6 +3,8 @@ title: "iOS radio app"
 date: 2024-08-23T11:41:02+03:00
 weight: 20
 summary: "Our company offers a simple, cost-effective solution for creating custom iOS apps for internet radio stations, featuring easy customization, support for Shoutcast and Icecast streaming, and no subscription fees."
+seo_title: "Build a Custom iOS App for Your Internet Radio Station – No Coding Required | Streaming.Center"
+description: "Create a professional iOS app for your radio station with our easy app builder. Branded design, iPhone/iPad support, Apple Store publishing, and no monthly fees — all with a simple one-time payment."
 ---
 
 # Creating an iOS App for Your Internet Radio

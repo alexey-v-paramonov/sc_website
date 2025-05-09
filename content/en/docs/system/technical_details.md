@@ -3,6 +3,8 @@ title: "Technical details"
 date: 2024-08-23T11:40:53+03:00
 weight: 20
 summary: The streaming platform includes components for admin and broadcaster interfaces, audio processing, and streaming, relying on system services like Nginx, MySQL, and Python, with debugging utilities for troubleshooting issues across these services.
+seo_title: "Technical Details of Internet Radio Control Panel | Streaming.Center"
+description: "Explore technical documentation for the Internet radio control panel, including music processing, cron jobs, debugging, and system architecture."
 ---
 
 Our streaming platform consists of several components:
