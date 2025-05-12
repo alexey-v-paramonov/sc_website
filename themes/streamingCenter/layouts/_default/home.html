@@ -201,9 +201,9 @@
               <div class="benefits-item__img posr">
                 {{ $image := .Parent.Resources.Get $thumbnailPath }}
                 {{ if $image }}
-                    <img class="img posa" src="{{ $image.RelPermalink }}" alt="{{ .Title }}">
+                    <img class="img posa" src="{{ $image.RelPermalink }}" alt="{{ .Title }}" loading='lazy'>
                 {{ else }}
-                    <img class="img posa" src="img/benefits-2.png" alt="">
+                    <img class="img posa" src="img/benefits-2.png" alt="" loading='lazy'>
                 {{ end }}
               </div>
               <div class="benefits-item__title">{{ .Title }} </div>
@@ -248,46 +248,46 @@
       <div class="clients-slider swiper">
         <div class="swiper-wrapper">
           {{ if eq .Lang "en" }}
-          <div class="swiper-slide"><img class="clients-img img" src="/img/clients/1.png" alt=""></div>
-          <div class="swiper-slide"><img class="clients-img img" src="/img/clients/2.png" alt=""></div>
-          <div class="swiper-slide"><img class="clients-img img" src="/img/clients/3.png" alt=""></div>
-          <div class="swiper-slide"><img class="clients-img img" src="/img/clients/4.png" alt=""></div>
-          <div class="swiper-slide"><img class="clients-img img" src="/img/clients/5.png" alt=""></div>
-          <div class="swiper-slide"><img class="clients-img img" src="/img/clients/6.png" alt=""></div>
+          <div class="swiper-slide"><img class="clients-img img" src="/img/clients/1.png" alt="" loading='lazy'></div>
+          <div class="swiper-slide"><img class="clients-img img" src="/img/clients/2.png" alt="" loading='lazy'></div>
+          <div class="swiper-slide"><img class="clients-img img" src="/img/clients/3.png" alt="" loading='lazy'></div>
+          <div class="swiper-slide"><img class="clients-img img" src="/img/clients/4.png" alt="" loading='lazy'></div>
+          <div class="swiper-slide"><img class="clients-img img" src="/img/clients/5.png" alt="" loading='lazy'></div>
+          <div class="swiper-slide"><img class="clients-img img" src="/img/clients/6.png" alt="" loading='lazy' ></div>
 
           {{ else if eq .Lang "ru" }}
-          <div class="swiper-slide"><img class="clients-img img" src="/img/c-1.png" alt=""></div>
-          <div class="swiper-slide"><img class="clients-img img" src="/img/c-2.png" alt=""></div>
-          <div class="swiper-slide"><img class="clients-img img" src="/img/c-3.png" alt=""></div>
-          <div class="swiper-slide"><img class="clients-img img" src="/img/c-4.png" alt=""></div>
-          <div class="swiper-slide"><img class="clients-img img" src="/img/c-5.png" alt=""></div>
-          <div class="swiper-slide"><img class="clients-img img" src="/img/c-6.png" alt=""></div>
-          <div class="swiper-slide"><img class="clients-img img" src="/img/c-7.png" alt=""></div>
-          <div class="swiper-slide"><img class="clients-img img" src="/img/c-8.png" alt=""></div>
-          <div class="swiper-slide"><img class="clients-img img" src="/img/c-9.png" alt=""></div>
-          <div class="swiper-slide"><img class="clients-img img" src="/img/c-10.png" alt=""></div>
+          <div class="swiper-slide"><img class="clients-img img" src="/img/c-1.png" alt="" loading='lazy'></div>
+          <div class="swiper-slide"><img class="clients-img img" src="/img/c-2.png" alt="" loading='lazy'></div>
+          <div class="swiper-slide"><img class="clients-img img" src="/img/c-3.png" alt="" loading='lazy'></div>
+          <div class="swiper-slide"><img class="clients-img img" src="/img/c-4.png" alt="" loading='lazy'></div>
+          <div class="swiper-slide"><img class="clients-img img" src="/img/c-5.png" alt="" loading='lazy'></div>
+          <div class="swiper-slide"><img class="clients-img img" src="/img/c-6.png" alt="" loading='lazy'></div>
+          <div class="swiper-slide"><img class="clients-img img" src="/img/c-7.png" alt="" loading='lazy'></div>
+          <div class="swiper-slide"><img class="clients-img img" src="/img/c-8.png" alt="" loading='lazy'></div>
+          <div class="swiper-slide"><img class="clients-img img" src="/img/c-9.png" alt="" loading='lazy'></div>
+          <div class="swiper-slide"><img class="clients-img img" src="/img/c-10.png" alt="" loading='lazy'></div>
           {{ end }}
         </div>
       </div>
       <div class="clients-mobile hide aic jcsb">
         {{ if eq .Lang "en" }}
-        <div class="swiper-slide"><img class="clients-img img" src="/img/clients/1.png" alt=""></div>        
-        <div class="swiper-slide"><img class="clients-img img" src="/img/clients/2.png" alt=""></div>        
-        <div class="swiper-slide"><img class="clients-img img" src="/img/clients/3.png" alt=""></div>     
-        <div class="swiper-slide"><img class="clients-img img" src="/img/clients/4.png" alt=""></div>             
-        <div class="swiper-slide"><img class="clients-img img" src="/img/clients/5.png" alt=""></div>
-        <div class="swiper-slide"><img class="clients-img img" src="/img/clients/6.png" alt=""></div>
+        <div class="swiper-slide"><img class="clients-img img" src="/img/clients/1.png" alt="" loading='lazy'></div>        
+        <div class="swiper-slide"><img class="clients-img img" src="/img/clients/2.png" alt="" loading='lazy'></div>        
+        <div class="swiper-slide"><img class="clients-img img" src="/img/clients/3.png" alt="" loading='lazy'></div>     
+        <div class="swiper-slide"><img class="clients-img img" src="/img/clients/4.png" alt="" loading='lazy'></div>             
+        <div class="swiper-slide"><img class="clients-img img" src="/img/clients/5.png" alt="" loading='lazy'></div>
+        <div class="swiper-slide"><img class="clients-img img" src="/img/clients/6.png" alt="" loading='lazy'></div>
         {{ else if eq .Lang "ru" }}
-        <div class="clients-item df aic jcc"><img class="img" src="/img/c-1.png" alt=""></div>
-        <div class="clients-item df aic jcc"><img class="img" src="/img/c-2.png" alt=""></div>
-        <div class="clients-item df aic jcc"><img class="img" src="/img/c-3.png" alt=""></div>
-        <div class="clients-item df aic jcc"><img class="img" src="/img/c-4.png" alt=""></div>
-        <div class="clients-item df aic jcc"><img class="img" src="/img/c-5.png" alt=""></div>
-        <div class="clients-item df aic jcc"><img class="img" src="/img/c-6.png" alt=""></div>
-        <div class="clients-item df aic jcc"><img class="img" src="/img/c-7.png" alt=""></div>
-        <div class="clients-item df aic jcc"><img class="img" src="/img/c-8.png" alt=""></div>
-        <div class="clients-item df aic jcc"><img class="img" src="/img/c-9.png" alt=""></div>
-        <div class="clients-item df aic jcc"><img class="img" src="/img/c-10.png" alt=""></div>
+        <div class="clients-item df aic jcc"><img class="img" src="/img/c-1.png" alt="" loading='lazy'></div>
+        <div class="clients-item df aic jcc"><img class="img" src="/img/c-2.png" alt="" loading='lazy'></div>
+        <div class="clients-item df aic jcc"><img class="img" src="/img/c-3.png" alt="" loading='lazy'></div>
+        <div class="clients-item df aic jcc"><img class="img" src="/img/c-4.png" alt="" loading='lazy'></div>
+        <div class="clients-item df aic jcc"><img class="img" src="/img/c-5.png" alt="" loading='lazy'></div>
+        <div class="clients-item df aic jcc"><img class="img" src="/img/c-6.png" alt="" loading='lazy'></div>
+        <div class="clients-item df aic jcc"><img class="img" src="/img/c-7.png" alt="" loading='lazy'></div>
+        <div class="clients-item df aic jcc"><img class="img" src="/img/c-8.png" alt="" loading='lazy'></div>
+        <div class="clients-item df aic jcc"><img class="img" src="/img/c-9.png" alt="" loading='lazy'></div>
+        <div class="clients-item df aic jcc"><img class="img" src="/img/c-10.png" alt="" loading='lazy'></div>
         {{ end }}        
       </div>
     </div>
