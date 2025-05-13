@@ -12,7 +12,7 @@
           <span class="db">{{ .Title }}</span>
         </h2>
         <div class="view-item__list df jcsb index">
-          {{ $thumbnailPath := print "images/" .File.BaseFileName ".png" }}
+          {{ $thumbnailPath := print "images/" .File.BaseFileName ".web" }}
           {{ $image := .Parent.Resources.Get $thumbnailPath }}
           {{ if $image }}
           

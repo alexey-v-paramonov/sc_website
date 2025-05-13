@@ -14,7 +14,7 @@
           >
         </h2>
         <div class="view-item__list df jcsb index">
-          {{ $thumbnailPath := print "images/" .File.BaseFileName ".png" }}
+          {{ $thumbnailPath := print "images/" .File.BaseFileName ".webp" }}
           {{ $image := .Parent.Resources.Get $thumbnailPath }}
           {{ if $image }}
             <img src="{{ $image.RelPermalink }}" width="410" height="220" style="margin: 0px 20px 0px 0px"> 

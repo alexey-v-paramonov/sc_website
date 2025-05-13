@@ -195,7 +195,7 @@
       <div class="benefits-list row">
 
         {{ range where .Site.Pages "Section" "advantages" }} {{ range first 6 (shuffle .Pages) }}
-        {{ $thumbnailPath := print "images/" .File.BaseFileName ".png" }}
+        {{ $thumbnailPath := print "images/" .File.BaseFileName ".webp" }}
           <div class="benefits-block col">
             <div class="benefits-item posr"><a class="benefits-item__link db posa" href="{{ .RelPermalink }}"></a>
               <div class="benefits-item__img posr">
