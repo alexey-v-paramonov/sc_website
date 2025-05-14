@@ -8,6 +8,7 @@ date: 2024-08-18T11:45:44+03:00
     </a>
     <div class="view-item__bold">Some of the features of our applications:</div>
     <ul class="view-item__green">
+    <li>100% Native Android & iOS apps</li>
     <li>Stable operation of the radio stream, including the restoration of communication and audio playback after a connection break or an incoming call.</li>
     <li>Full Bluetooth support, including the transmission of track covers via Bluetooth to devices that support it (for example, multimedia headsets in cars)</li>
     <li>Android Auto support</li>

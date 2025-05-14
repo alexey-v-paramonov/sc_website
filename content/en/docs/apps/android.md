@@ -12,6 +12,7 @@ Want to launch a mobile app for your radio station quickly and affordably? We of
 
 **Our advantages:**
 - Instant app creation under your brand: logos, colors, descriptions - all easily customized using our app builder
+- 100% Native Android & iOS apps
 - We regularly update and maintain our app engine, adding support for the latest Android versions and expanding functionality
 - The app is compatible with any Internet radio hosted on our platform, as well as any stations using Shoutcast or Icecast servers
 - App publishing on Google Play and Huawei App Gallery via our developer account or yours

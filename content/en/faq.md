@@ -20,3 +20,8 @@ date: 2024-08-18T11:27:53+03:00
 3. Can I use my own domain name for the radio and streams?
 
     Yes, you can. Whether our broadcasting platform is hosted on your server or ours, you can configure it to work with your own domain. HTTPS is fully supported (a free SSL certificate is provided), and even the direct audio stream URLs will use your domain.
+
+4. How does the payment work?
+
+    All payments are made through your [personal account](https://app.streaming.center/), which becomes available after registration. You top up your account balance in advance, and when a service is provided, the required amount is automatically deducted according to its cost.
+
