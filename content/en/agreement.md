@@ -174,7 +174,7 @@ By registering for an account on the Streaming.Center platform ("Personal Accoun
         <li>Streaming.Center does not moderate or bear responsibility for user comments and reviews in app stores.</li>
         <li>Streaming.Center does not guarantee app functionality across all possible combinations of mobile device hardware, software, screen sizes, and resolutions.</li>
         <li>If even a single complaint is received, the application will be immediately blocked in our developer account. Restoring its operation will only be possible after transferring the app to the developer account owned by the app’s rightful owner. We also reserve the right to refuse the publication of an application in our developer account without providing any explanation.</li>
-        <li>As a developer, Streaming.Center is responsible solely for developing the application and submitting it for publication. If Apple or Google request additional data, confirmations, or any other information regarding the app, the client is responsible for preparing and providing these materials. We can assist with the technical submission of this information, but its preparation is entirely the client’s responsibility.</li>
+         <li>As a developer, Streaming.Center is responsible solely for developing the application and submitting it for publication. If Apple or Google request additional data, confirmations, or any other information regarding the app, the client is responsible for preparing and providing these materials. We can assist with the technical submission of this information, but its preparation is entirely the client’s responsibility.</li>
       </ol>
   </li>
   </ol>
