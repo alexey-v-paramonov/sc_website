@@ -2,9 +2,9 @@
 title: "WHMCS integration"
 date: 2024-08-23T11:40:53+03:00
 weight: 41
-summary: "To update your installed Streaming.Ceter radio Platform to the latest version, simply connect to your server via SSH and run the provided update command, which will automatically apply updates and perform system checks, with optional support for custom post-update scripts."
-seo_title: "Upgrade Guide for Internet Radio Control Panel | Streaming.Center"
-description: "Learn how to safely upgrade your Internet radio control panel to the latest version, with step-by-step instructions and troubleshooting tips."
+summary: "Streaming.Center platform offers an open-source WHMCS module that integrates with your WHMCS system to automate radio account management. Features include automated provisioning, service management, billing integration, and compatibility with the latest WHMCS versions."
+seo_title: "WHMCS Integration Guide for Streaming.Center | Automated Radio Account Management"
+description: "Learn how to integrate Streaming.Center with WHMCS using the open-source provisioning module. Step-by-step instructions for installation, configuration, and automated radio account management for web hosting businesses."
 ---
 
 # WHMCS Provisioning Module
