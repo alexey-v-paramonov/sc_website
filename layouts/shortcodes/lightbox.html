@@ -1,4 +1,4 @@
 
 
-<br /><a class="img-zoom" href="{{ .Get 1 }}" data-fslightbox="doc" style="max-width: 450px;"><img src="{{ .Get 0 }}" alt=""></a>
+<br /><a class="img-zoom" href="{{ .Get 1 }}" data-fslightbox="doc" {{ if not (.Get 2) }}style="max-width: 450px;"{{ end }}><img src="{{ .Get 0 }}" alt=""></a>
 
