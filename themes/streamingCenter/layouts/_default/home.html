@@ -134,25 +134,25 @@
       <h2 class="title center df aifs jcc stream-title"><img class="db" src="img/stream-logo.svg" alt=""><span class="db">{{ T "stats_total" }}</span></h2>
       <div class="stream-list df fxw jcsb">
         <div class="stream-item center">
-          <div class="stream-item__title index"><span class="db">{{ $data.listeners }}</span>
+          <div class="stream-item__title index"><span class="db"><b data-count="{{ $data.listeners }}">0</b></span>
             <p>{{ T "stats_listeners" }}</p>
           </div>
           <div class="stream-item__text index">{{ T "stats_listeners_hint" }}</div>
         </div>
         <div class="stream-item center">
-          <div class="stream-item__title index"><span class="db">{{ $data.radios }}</span>
+          <div class="stream-item__title index"><span class="db"><b data-count="{{ $data.radios }}">0</b></span>
             <p>{{ T "stats_radios" }}</p>
           </div>
           <div class="stream-item__text index">{{ T "stats_radios_hint" }}</div>
         </div>
         <div class="stream-item center">
-          <div class="stream-item__title index"><span class="db">{{ $data.servers }}</span>
+          <div class="stream-item__title index"><span class="db"><b data-count="{{ $data.servers }}">0</b></span>
             <p>{{ T "stats_servers" }}</p>
           </div>
           <div class="stream-item__text index">{{ T "stats_servers_hint" }}</div>
         </div>
         <div class="stream-item center">
-          <div class="stream-item__title index"><span class="db">200+</span>
+          <div class="stream-item__title index"><span class="db"><b data-count="200">0</b>+</span>
             <p>{{ T "stats_apps" }}</p>
           </div>
           <div class="stream-item__text index">{{ T "stats_apps_hint" }}</div>
@@ -248,12 +248,12 @@
       <div class="clients-slider swiper">
         <div class="swiper-wrapper">
           {{ if eq .Lang "en" }}
-          <div class="swiper-slide"><img class="clients-img img" src="/img/clients/1.webp" alt="" loading='lazy'></div>
-          <div class="swiper-slide"><img class="clients-img img" src="/img/clients/2.webp" alt="" loading='lazy'></div>
-          <div class="swiper-slide"><img class="clients-img img" src="/img/clients/3.webp" alt="" loading='lazy'></div>
-          <div class="swiper-slide"><img class="clients-img img" src="/img/clients/4.webp" alt="" loading='lazy'></div>
-          <div class="swiper-slide"><img class="clients-img img" src="/img/clients/5.webp" alt="" loading='lazy'></div>
-          <div class="swiper-slide"><img class="clients-img img" src="/img/clients/6.webp" alt="" loading='lazy' ></div>
+          <div class="swiper-slide"><a href="https://icast7.com/" target="_blank"><img class="clients-img img" src="/img/clients/1.webp" alt="" loading='lazy'></a></div>
+          <div class="swiper-slide"><a href="https://torontocast.com/quickstart/" target="_blank"><img class="clients-img img" src="/img/clients/2.webp" alt="" loading='lazy'></a></div>
+          <div class="swiper-slide"><a href="https://supremehosting.nl/" target="_blank"><img class="clients-img img" src="/img/clients/3.webp" alt="" loading='lazy'></a></div>
+          <div class="swiper-slide"><a href="https://fastcast4u.com" target="_blank"><img class="clients-img img" src="/img/clients/4.webp" alt="" loading='lazy'></a></div>
+          <div class="swiper-slide"><a href="https://www.yesstreaming.com/" target="_blank"><img class="clients-img img" src="/img/clients/5.webp" alt="" loading='lazy'></a></div>
+          <div class="swiper-slide"><a href="https://www.location-webradio-streaming.com/" target="_blank"><img class="clients-img img" src="/img/clients/6.webp" alt="" loading='lazy'></a></div>
 
           {{ else if eq .Lang "ru" }}
           <div class="swiper-slide"><img class="clients-img img" src="/img/c-1.png" alt="" loading='lazy'></div>

@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 clickable: true,
             },
             slidesPerView: 1,
-            autoHeight: true,
+            //autoHeight: true,
             autoplay: {
                 delay: 4000,
                 disableOnInteraction: false,
@@ -88,6 +88,57 @@ document.addEventListener("DOMContentLoaded", function () {
         e.preventDefault();
         $(this).parent().toggleClass("open");
     });
+
+    //count animted
+    console.log("############", $(".stream-list").length)
+    if ($(".stream-list").length) {
+        let animated = false;
+
+        function animateCount($el, target, duration) {
+            let start = 0;
+            let startTime = null;
+
+            function update(timestamp) {
+                if (!startTime) startTime = timestamp;
+                let progress = Math.min((timestamp - startTime) / duration, 1);
+                let value = Math.floor(progress * target);
+                $el.text(value.toLocaleString("ru-RU"));
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                } else {
+                    $el.text(target.toLocaleString("ru-RU"));
+                }
+            }
+
+            requestAnimationFrame(update);
+        }
+
+        function isInViewport(elem) {
+            let elementTop = $(elem).offset().top;
+            let elementBottom = elementTop + $(elem).outerHeight();
+            let viewportTop = $(window).scrollTop();
+            let viewportBottom = viewportTop + $(window).height();
+            return elementBottom > viewportTop && elementTop < viewportBottom;
+        }
+
+        $(window).on("scroll", function () {
+            handlerStreamScroll();
+        });
+        handlerStreamScroll();
+
+        function handlerStreamScroll() {
+            console.log("1")
+            if (!animated && isInViewport(".stream-list")) {
+                console.log("2")
+                animated = true;
+                $(".stream-list b[data-count]").each(function () {
+                    let $this = $(this);
+                    let target = parseInt($this.attr("data-count"), 10);
+                    animateCount($this, target, 2000);
+                });
+            }
+        }
+    }
 });
 
 //modals

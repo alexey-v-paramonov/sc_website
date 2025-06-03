@@ -6,7 +6,4 @@
 <meta name="title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ if .Params.Seo_Title }}{{.Params.Seo_Title}}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}{{ end }}"/>
 {{ if .Params.Description }}<meta name="description" content="{{ .Params.Description }}">{{ end }}
 <link rel="icon" href="/img/favicon.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 {{ partialCached "head/css.html" . }}
