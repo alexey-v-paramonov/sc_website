@@ -3,7 +3,7 @@ title: "Internet Radio Control panel"
 date: 2024-08-18T11:45:30+03:00
 ---
 <div class="view-item__block">
-    {{< lightbox "/images/tour/en/tour.png" "/images/tour/en/tour.png" "0">}}
+    {{< lightbox "/images/tour/en/tour_mini.png" "/images/tour/en/tour.png" "0">}}
     <div class="view-item__bold">Our platform allows you to:</div>
     <ul class="view-item__green">
     <li>Broadcast synchronously in different formats (MP3, AAC++, FLAC, bitrates from 16kbps to 320kbps)</li>
