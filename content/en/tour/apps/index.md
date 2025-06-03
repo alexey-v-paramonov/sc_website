@@ -3,9 +3,7 @@ title: "Internet-radio mobile applications (Android, iOS)"
 date: 2024-08-18T11:45:44+03:00
 ---
 <div class="view-item__block">
-    <a class="view-item__video db posr overflow" href="/tour/radio" data-fslightbox>
-        <img class="img" src="{{ $image.RelPermalink }}" alt="" width="{{ $image.Width }}" height="{{ $image.Height }}">
-    </a>
+    {{< lightbox "/images/tour/en/app.webp" "/images/tour/en/app.webp">}}
     <div class="view-item__bold">Some of the features of our applications:</div>
     <ul class="view-item__green">
     <li>100% Native Android & iOS apps</li>
