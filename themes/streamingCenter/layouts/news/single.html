@@ -6,12 +6,13 @@
     {{ partial "breadcrumbs.html" . }}
     <div class="view-items">
       <div class="view-item index">
-        
+        {{ $newsDate := print .Date | time.Format "2 01.06" }}
+        {{ $newsDay := index (split $newsDate " ") 0 }}
+        {{ $newsMonthYear := index (split $newsDate " ") 1 }}
+
+        <div class="view-item__date df aic jcc fxw center posa"><span>{{$newsDay}}</span>{{$newsMonthYear}}</div>
+
         <h2 class="title center df aifs jcc stream-title index">
-          {{ $newsDate := print .Date | time.Format "2 01.06" }}
-          {{ $newsDay := index (split $newsDate " ") 0 }}
-          {{ $newsMonthYear := index (split $newsDate " ") 1 }}
-          <div class="blog-item__date center df aic fxw">{{$newsDay}}<span>{{$newsMonthYear}}</span></div>
 
           <span class="db"
             >{{ .Title }}</span
