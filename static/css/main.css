@@ -1657,6 +1657,12 @@ body {
     margin-top: 45px;
     width: calc(50% - 25px);
 }
+
+.price-item__block_full {
+    margin-top: 45px;
+    width: 100%;
+}
+
 .price-calc {
     overflow: hidden;
     border-radius: 5px;
@@ -2202,6 +2208,11 @@ body {
         margin-top: 32px;
         width: calc(50% - 12px);
     }
+    .price-item__block_full {
+        margin-top: 32px;
+        width: 100%;
+    }
+
     .mobile-btn {
         display: -webkit-box;
         display: -ms-flexbox;
