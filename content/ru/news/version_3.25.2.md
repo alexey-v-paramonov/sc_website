@@ -1,5 +1,5 @@
 ---
-title: "Version 3.25.2: Bugfix release"
+title: "Версия 3.25.2: исправление ошибок"
 date: 2025-05-12T11:15:21Z
 
 ---
