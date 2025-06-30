@@ -1,6 +1,6 @@
-let lang = 'ru';    
+let lang = 'ru';
 let currency = "₽";
-if(document.location.host.indexOf("localhost:1313") || document.location.host.indexOf("streaming.center")){
+if(document.location.host.indexOf("localhost:1313") >= 0 || document.location.host.indexOf("streaming.center") >= 0){
     lang = 'en';
     currency = "$";
 }
