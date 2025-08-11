@@ -1,13 +1,91 @@
 ---
 title: "Playlists"
 date: 2024-08-22T11:37:29+03:00
-draft: true
 weight: 40
 seo_title: "Playlists API Reference | Streaming.Center Radio API"
 description: "Complete guide to managing Internet radio playlists programmatically. Learn how to create, modify, copy playlists and add tracks with the Streaming.Center API."
 ---
 
-/api/v2/playlists/      playlists.views.PlaylistViewSet playlist-list
+<div class="api-block">
+<b>Endpoint:</b> /api/v2/playlists/<br/>
+<b>HTTP methods:</b> GET, POST <br/>
+<b>Authentication:</b> requred<br/>
+<b>Parameters:</b> <br/>
+<b>server:</b> radio server ID<br/>
+</div>
+
+<br />
+Manages your station playlists.
+<br />
+<br />
+
+#### Example: GET
+
+Fetch all the playlists from server ID 1:
+
+{{< highlight python  >}}
+
+import requests
+API_KEY = "6aNLaqRN.87L4xZ5LUXwWLCkK7dBswDafWZNcaLOB"
+
+headers = {"SC-API-KEY": API_KEY}
+
+response = requests.get("https://demo.streaming.center:1030/api/v2/playlists/?server=1", headers=headers)
+print(response.json())
+
+{{< / highlight >}}
+
+#### Example Output
+{{< highlight json  >}}
+
+[
+   {
+      "id":1,
+      "duration":9244067,
+      "playlist_files_per_page":1000,
+      "tracks_num":55,
+      "name":"All music",
+      "is_default":true,
+      "is_random":true,
+      "on_air":false,
+      "directory_name":"",
+      "current_track_order":-9,
+      "server":1
+   },
+   {
+      "id":2,
+      "duration":9240712,
+      "playlist_files_per_page":1000,
+      "tracks_num":54,
+      "name":"Morning shows",
+      "is_default":false,
+      "is_random":false,
+      "on_air":true,
+      "directory_name":"",
+      "current_track_order":43,
+      "server":1
+   }
+]
+{{< / highlight >}}
+
+#### Description
+This API endpoint returns an array of your playlists. Each playlist has the following properties:
+
+- id: unique playlist ID
+- duration: playlist playback duration in milliseconds
+- playlist_files_per_page: a  special setting that limits the number of playlist tracks per page. Only affects the playlist display in the admin web interface.
+- tracks_num: the number of tracks in the playlist
+- name: The playlist name
+- is_default: boolean value indicating whether the playlist is a default playlist on the server. You cannot remove the default playlists.  All music you upload to the server is added to the default playlist, which is used as a fallback when Auto DJ has nothing else to play. There can be only one default playlist on the server. In our case, "All music" is the default playlist on server 1.
+- is_random: indicates whether the playlist is shuffled or plays sequentially in order.
+- on_air: true if the playlist is currently playing.
+- directory_name: indicates whether the playlist is created from a server directory with the sync option enabled.
+- current_track_order: the number indicating the current playback position in the playlist.
+- server: number, current server ID.
+
+
+
+      playlists.views.PlaylistViewSet playlist-list
 /api/v2/playlists/<pk>/ playlists.views.PlaylistViewSet playlist-detail
 /api/v2/playlists/<pk>/add_recording/   playlists.views.PlaylistViewSet playlist-add-recording
 /api/v2/playlists/<pk>/add_tracks/      playlists.views.PlaylistViewSet playlist-add-tracks

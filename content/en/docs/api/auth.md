@@ -38,7 +38,7 @@ payload = {
 }
 
 headers = {"SC-API-KEY": "p6HLVit4.trl8xfTaFCGpdv74FO3YHNeUsBSDofDx"}
-response = requests.post("https://demoaccount.s02.radio-tochka.com:8080/api/v2/playlists/", headers=headers, json=payload)
+response = requests.post("https://demo.streaming.center:8080/api/v2/playlists/", headers=headers, json=payload)
 
 {{< / highlight >}}
 

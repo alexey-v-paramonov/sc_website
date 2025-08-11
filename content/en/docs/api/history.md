@@ -24,7 +24,7 @@ The history of tracks on the radio, the last track in the output of this API is 
 
 import requests
 
-response = requests.get("https://demoaccount.s02.radio-tochka.com:8080/api/v2/history/?limit=1&offset=0&server=1")
+response = requests.get("https://demo.streaming.center:8080/api/v2/history/?limit=1&offset=0&server=1")
 print(response.json())
 
 {{< / highlight >}}
@@ -35,7 +35,7 @@ print(response.json())
 
 {
    "count":500,
-   "next":"https://demoaccount.s02.radio-tochka.com:8080/api/v2/history/?limit=1&offset=1&server=1",
+   "next":"https://demo.streaming.center:8080/api/v2/history/?limit=1&offset=1&server=1",
    "previous":"None",
    "results":[
       {
@@ -49,9 +49,9 @@ print(response.json())
          "genre":"None",
          "id":11552,
          "img_fetched":true,
-         "img_large_url":"https://demoaccount.s02.radio-tochka.com:8080/media/tracks/trackImage1190_large.jpg",
-         "img_medium_url":"https://demoaccount.s02.radio-tochka.com:8080/media/tracks/trackImage1190_medium.jpg",
-         "img_url":"https://demoaccount.s02.radio-tochka.com:8080/media/tracks/trackImage1190.jpg",
+         "img_large_url":"https://demo.streaming.center:8080/media/tracks/trackImage1190_large.jpg",
+         "img_medium_url":"https://demo.streaming.center:8080/media/tracks/trackImage1190_medium.jpg",
+         "img_url":"https://demo.streaming.center:8080/media/tracks/trackImage1190.jpg",
          "isrc":"None",
          "jingle_id":"None",
          "label":"None",
