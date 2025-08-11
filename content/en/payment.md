@@ -28,3 +28,7 @@ This gives you flexibility to:
 - add new ones at any time.
 
 For instance, if you add another service costing 60 USD per month, the daily deduction will be: 1 USD (first service) + 60 ÷ 30 = 2 (second service) = **3 USD per day**.
+
+You must keep your balance above zero to keep the services running. If your account balance falls below zero, the service may be interrupted. When your balance is close to zero, you will receive a notification email, usually **7 days before** the balance runs out.
+
+
