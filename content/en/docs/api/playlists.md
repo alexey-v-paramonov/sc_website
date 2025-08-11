@@ -83,10 +83,61 @@ This API endpoint returns an array of your playlists. Each playlist has the foll
 - current_track_order: the number indicating the current playback position in the playlist.
 - server: number, current server ID.
 
+#### Example: POST
 
+Create a playlist on server ID 1:
 
-      playlists.views.PlaylistViewSet playlist-list
-/api/v2/playlists/<pk>/ playlists.views.PlaylistViewSet playlist-detail
+{{< highlight python  >}}
+
+import requests
+API_KEY = "6aNLaqRN.87L4xZ5LUXwWLCkK7dBswDafWZNcaLOA"
+
+headers = {"SC-API-KEY": API_KEY}
+
+response = requests.post(
+    "https://demo.streaming.center:1030/api/v2/playlists/", 
+    headers=headers, 
+    json={"name":"New playlist","is_random":True,"server":1}
+)
+
+if response.ok:
+    print("The playlist was created successfully")
+    newly_created_playlist = response.json()
+
+{{< / highlight >}}
+
+To create a playlist you need to send the following JSON payload:
+
+- name: new playlist name
+- is_random: pass `true`  if you want the playlist to be shuffled
+- server: an integer representing the server ID.
+
+<div class="api-block">
+<b>Endpoint:</b> /api/v2/playlists/:id/<br/>
+<b>HTTP methods:</b> GET, PUT, DELETE <br/>
+<b>Authentication:</b> requred<br/>
+<b>Parameters:</b> <br/>
+<b>id:</b> playlist ID<br/>
+</div>
+
+Allows you to load a specific playlist by ID when using the **GET** method and update a playlist when using the **PUT** method.
+With the **DELETE** method, you can delete a playlist by ID.
+
+<div class="api-block">
+<b>Endpoint:</b> /api/v2/playlists/:id/add_tracks_ordered/<br/>
+<b>HTTP methods:</b> POST <br/>
+<b>Authentication:</b> requred<br/>
+<b>Parameters:</b> <br/>
+<b>id:</b> playlist ID<br/>
+</div>
+
+### Example payload:
+
+```[40, 52, 7]```
+
+This endpoint allows you to add tracks to a playlist. You need to pass an array of music IDs for the tracks you want to add. The order of IDs in the payload is important - tracks will be added to the playlist in the exact same order as they appear in the array.
+
+<!--
 /api/v2/playlists/<pk>/add_recording/   playlists.views.PlaylistViewSet playlist-add-recording
 /api/v2/playlists/<pk>/add_tracks/      playlists.views.PlaylistViewSet playlist-add-tracks
 /api/v2/playlists/<pk>/add_tracks_ordered/      playlists.views.PlaylistViewSet playlist-add-tracks-ordered
@@ -103,93 +154,4 @@ This API endpoint returns an array of your playlists. Each playlist has the foll
 
 
 
-Playlists API.
-Getting all the playlist for a radio server.
-Endpoint: /api/v2/playlists/
-Params: server:int - radio server ID
-Example: /api/v2/playlists/?server=1
-
-Description:
-Gets all server playlists as an array. Available without authentication.
-
-JSON data description:
-{
- "id": - playlist ID
- "duration": playlist playback duration in milliseconds
- "playlist_files_per_page": - number of tracks displayed on a single page
- "tracks_num": - the total number of all tracks in the playlist
- "name": - playlist title
- "is_default": - whatever this playlist is a default (fallback) playlist for the server. Typical "default" playlist is a playlist that has all the music and called "All music" 
- "is_random": - true if playlist is shuffled
- "on_air": - true if playlist is playing now
- "directory_name": - if playlist folders sync is enabled in settings - this is the directory name that playlist belongs to
- "current_track_order": - current playing track order in the playlist. Only makes sense for non-shuffled playlist that play in order
- "server": - radio server ID that this playlist belongs to
-}
-
-
-Getting a particular playlist from the server.
-Endpoint: /api/v2/playlists/ID:int/
-Params: ID: playlist ID
-Example: /api/v2/playlists/1/
-
-Returns a single playlist from the server by ID specified.
-
-JSON data description:
-{
- "id": - playlist ID
- "duration": playlist playback duration in milliseconds
- "playlist_files_per_page": - number of tracks displayed on a single page
- "tracks_num": - the total number of all tracks in the playlist
- "name": - playlist title
- "is_default": - whatever this playlist is a default (fallback) playlist for the server. Typical "default" playlist is a playlist that has all the music and called "All music" 
- "is_random": - true if playlist is shuffled
- "on_air": - true if playlist is playing now
- "directory_name": - if playlist folders sync is enabled in settings - this is the directory name that playlist belongs to
- "current_track_order": - current playing track order in the playlist. Only makes sense for non-shuffled playlist that play in order
- "server": - radio server ID that this playlist belongs to
-}
-
-
-Creating a playlist
-Requires authentication: yes
-Endpoint: /api/v2/playlists/
-HTTP method: POST
-Example: /api/v2/playlists/1/
-Payload:
-{
- "name": - playlist title
- "is_random": -tru if you want a shuffled playlist
- "server": - radio server ID
-}
-
-
-Changing a playlist
-Requires authentication: yes
-Endpoint: /api/v2/playlists/ID:int/
-Params: ID: playlist ID
-HTTP method: PUT
-Example: /api/v2/playlists/1/
-Payload:
-{
- "name": - playlist title
- "is_random": - true if you want a shuffled playlist
- "server": - radio server ID
-}
-
-
-Deleting a playlist
-Requires authentication: yes
-Endpoint: /api/v2/playlists/ID:int/
-HTTP method: DELETE
-Example: /api/v2/playlists/1/
-
-
-Getting playlist tracks:
-Endpoint: /api/v2/playlists/ID:int/tracks/
-Params: 
-  ID: playlist ID
-  limit: maximum number of tracks (optional)
-  offset: starting offset for a list of tracks (optional)
-HTTP method: GET
-Example: /api/v2/playlists/78/tracks/?limit=1000&offset=0
+-->
