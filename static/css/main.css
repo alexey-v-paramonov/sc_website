@@ -3015,3 +3015,40 @@ table.common-table tr {
 .doc-content a {
     color: #274c77;
 }
+
+
+div.api-block {
+  background: #fafafa;
+  color: #333;
+  font-family: monospace;
+  font-size: 90%;
+  border-color: #eee;
+  border-style: solid;
+  border-width: 1px;
+  overflow-x: auto;
+  padding: 1em;
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+
+
+.code-wrap code {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+code {
+  border-color: #e1e1e1;
+  background: #e2e2e2;
+}
+
+div.highlight pre {
+  overflow-x: scroll;
+  padding:10px;
+}
+
+.highlight {
+  font-size: 12px;
+  line-height: 16px;
+}

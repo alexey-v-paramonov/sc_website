@@ -14,10 +14,7 @@ description: "Complete guide to managing Internet radio playlists programmatical
 <b>server:</b> radio server ID<br/>
 </div>
 
-<br />
 Manages your station playlists.
-<br />
-<br />
 
 #### Example: GET
 
@@ -30,7 +27,10 @@ API_KEY = "6aNLaqRN.87L4xZ5LUXwWLCkK7dBswDafWZNcaLOB"
 
 headers = {"SC-API-KEY": API_KEY}
 
-response = requests.get("https://demo.streaming.center:1030/api/v2/playlists/?server=1", headers=headers)
+response = requests.get(
+  "https://demo.streaming.center:1030/api/v2/playlists/?server=1",
+  headers=headers
+)
 print(response.json())
 
 {{< / highlight >}}
@@ -139,7 +139,6 @@ This endpoint allows you to add tracks to a playlist. You need to pass an array 
 
 <!--
 /api/v2/playlists/<pk>/add_recording/   playlists.views.PlaylistViewSet playlist-add-recording
-/api/v2/playlists/<pk>/add_tracks/      playlists.views.PlaylistViewSet playlist-add-tracks
 /api/v2/playlists/<pk>/add_tracks_ordered/      playlists.views.PlaylistViewSet playlist-add-tracks-ordered
 /api/v2/playlists/<pk>/clean_duplicates/        playlists.views.PlaylistViewSet playlist-clean-duplicates
 /api/v2/playlists/<pk>/copy/    playlists.views.PlaylistViewSet playlist-copy

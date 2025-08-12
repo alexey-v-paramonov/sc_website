@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap");
 
 :root {
   --carousel-height: 350px;
-  --carousel-radius: 0.0em;
+  --carousel-radius: 0em;
   --carousel-nav-btn-dim: 3em;
   --carousel-page-nav-btn-dim: 0.5em;
   --carousel-caption-padding: 2em;
@@ -26,7 +26,7 @@
   --text-color: #1e293b;
   --secondary-bg: #fff;
   --accent-color: #f472b6;
-  --muted-color: #64748b;  
+  --muted-color: #64748b;
 }
 
 /* Box-sizing reset */
@@ -159,7 +159,6 @@ iframe {
   background-color: var(--carousel-pagination-btn-active-bg);
 }
 
-
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -171,12 +170,11 @@ iframe {
 * Most of these are inherited from Base, but I want to change a few.
 */
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   background-color: #f8fafc;
   color: var(--text-color);
   line-height: 1.6;
 }
-
 
 h1,
 h2,
@@ -193,17 +191,16 @@ label {
   height: auto;
 }
 
-.breadcrumbs-box{
+.breadcrumbs-box {
   font-weight: 600;
   padding: 0.5em;
   background-color: #fff;
   border-radius: 1rem;
   margin: 1em;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-
 }
 
-.content-box{
+.content-box {
   padding: 1em;
   background-color: #fff;
   border-radius: 1rem;
@@ -224,7 +221,7 @@ label {
 }
 
 .l-box h1 {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #274c77;
   font-size: 2.5em;
   margin-bottom: 0.2em;
@@ -237,14 +234,12 @@ label {
 }
 .l-box-lrg {
   padding: 2em;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .is-center {
   text-align: center;
 }
-
-
 
 /*
 * -- PURE FORM STYLES --
@@ -278,7 +273,6 @@ label {
   font-size: 120%;
 }
 
-
 /*
 * -- MENU STYLES --
 * I want to customize how my .pure-menu looks at the top of the page
@@ -307,7 +301,7 @@ label {
 
 .home-menu .pure-menu-selected a {
   color: white !important;
-  background: #274C77;
+  background: #274c77;
 }
 
 .home-menu a {
@@ -317,9 +311,8 @@ label {
 .home-menu li a:focus {
   background: none;
   border: none;
-  color: #AECFE5;
+  color: #aecfe5;
 }
-
 
 /*
 * -- SPLASH STYLES --
@@ -344,7 +337,10 @@ label {
   height: 50%;
   margin: auto;
   position: absolute;
-  top: 100px; left: 0; bottom: 0; right: 0;
+  top: 100px;
+  left: 0;
+  bottom: 0;
+  right: 0;
   text-align: center;
   text-transform: uppercase;
 }
@@ -398,9 +394,9 @@ label {
 .content-subhead {
   color: #1f8dd6;
 }
-  .content-subhead i {
-      margin-right: 7px;
-  }
+.content-subhead i {
+  margin-right: 7px;
+}
 
 /* This is the class used for the dark-background areas. */
 .ribbon {
@@ -425,43 +421,40 @@ label {
 * of the mobile styles.
 */
 @media (min-width: 48em) {
-
   /* We increase the body font size */
   body {
-      font-size: 16px;
+    font-size: 16px;
   }
-  
+
   /* We can align the menu header to the left, but float the
   menu items to the right. */
   .home-menu {
-      text-align: left;
+    text-align: left;
   }
-      .home-menu ul {
-          float: right;
-      }
+  .home-menu ul {
+    float: right;
+  }
 
   /* We increase the height of the splash-container */
-/*    .splash-container {
+  /*    .splash-container {
       height: 500px;
   }*/
 
   /* We decrease the width of the .splash, since we have more width
   to work with */
   .splash {
-      width: 50%;
-      height: 50%;
+    width: 50%;
+    height: 50%;
   }
 
   .splash-head {
-      font-size: 250%;
+    font-size: 250%;
   }
-
 
   /* We remove the border-separator assigned to .l-box-lrg */
   .l-box-lrg {
-      border: none;
+    border: none;
   }
-
 }
 
 /*
@@ -472,7 +465,7 @@ label {
 @media (min-width: 78em) {
   /* We increase the header font size even more */
   .splash-head {
-      font-size: 300%;
+    font-size: 300%;
   }
 }
 
@@ -480,19 +473,17 @@ label {
   color: #000;
   font-size: 15px;
   font-weight: 600;
-  letter-spacing: .6px;
+  letter-spacing: 0.6px;
   line-height: 1;
   padding: 0 0 0 5px;
   margin-left: 0.5em;
 }
-
 
 .lang-switch {
   margin-left: 1em;
   text-decoration: none;
   color: inherit;
 }
-
 
 .pure-menu-list {
   margin-left: auto !important;
@@ -505,43 +496,43 @@ label {
 }
 /* Hide checkbox */
 .menu-toggle {
-    display: none;
+  display: none;
 }
 
 /* Hamburger menu styles */
 .menu-toggle-label {
-    display: none;
-    cursor: pointer;
-    padding: 0.5em;
-    margin-left: auto;
+  display: none;
+  cursor: pointer;
+  padding: 0.5em;
+  margin-left: auto;
 }
 
 .hamburger {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: #000;
-    position: relative;
-    transition: background 0.2s;
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #000;
+  position: relative;
+  transition: background 0.2s;
 }
 
 .hamburger::before,
 .hamburger::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: #000;
-    transition: transform 0.3s ease;
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #000;
+  transition: transform 0.3s ease;
 }
 
 .hamburger::before {
-    top: -6px;
+  top: -6px;
 }
 
 .hamburger::after {
-    bottom: -6px;
+  bottom: -6px;
 }
 
 /* Optional: Add hover effects for menu items */
@@ -551,90 +542,89 @@ label {
 }
 
 .pure-menu-link:hover {
-  background-color: rgba(0,0,0,0.05);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 /* Mobile styles */
 @media (max-width: 768px) {
-    .menu-toggle-label {
-        display: block;
-    }
+  .menu-toggle-label {
+    display: block;
+  }
 
-    .pure-menu-list {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: white;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        padding: 1em 0;
-        flex-direction: column;
-    }
+  .pure-menu-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1em 0;
+    flex-direction: column;
+  }
 
-    .pure-menu-item {
-        width: 100%;
-        text-align: center;
-    }
+  .pure-menu-item {
+    width: 100%;
+    text-align: center;
+  }
 
-    .pure-menu-link {
-        padding: 1em !important;
-    }
+  .pure-menu-link {
+    padding: 1em !important;
+  }
 
-    /* Show menu when checkbox is checked */
-    .menu-toggle:checked ~ .pure-menu-list {
-        display: flex;
-    }
+  /* Show menu when checkbox is checked */
+  .menu-toggle:checked ~ .pure-menu-list {
+    display: flex;
+  }
 
-    /* Animate hamburger to X when menu is open */
-    .menu-toggle:checked ~ .menu-toggle-label .hamburger {
-        background: transparent;
-    }
+  /* Animate hamburger to X when menu is open */
+  .menu-toggle:checked ~ .menu-toggle-label .hamburger {
+    background: transparent;
+  }
 
-    .menu-toggle:checked ~ .menu-toggle-label .hamburger::before {
-        transform: rotate(45deg);
-        top: 0;
-    }
+  .menu-toggle:checked ~ .menu-toggle-label .hamburger::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
 
-    .menu-toggle:checked ~ .menu-toggle-label .hamburger::after {
-        transform: rotate(-45deg);
-        bottom: 0;
-    }
+  .menu-toggle:checked ~ .menu-toggle-label .hamburger::after {
+    transform: rotate(-45deg);
+    bottom: 0;
+  }
 
-    .home-menu {
-        flex-wrap: wrap;
-    }
+  .home-menu {
+    flex-wrap: wrap;
+  }
 
-    .lang-switch {
-        margin-left: auto;
-        margin-right: 1em;
-    }
+  .lang-switch {
+    margin-left: auto;
+    margin-right: 1em;
+  }
 }
 
 /* Extra small screens */
 @media (max-width: 480px) {
-    .logo-text {
-        display: none;
-    }
+  .logo-text {
+    display: none;
+  }
 }
 
 /* Ensure menu is visible on desktop */
 @media (min-width: 769px) {
-    .pure-menu-list {
-        display: flex !important;
-    }
+  .pure-menu-list {
+    display: flex !important;
+  }
 }
 
 /* Optional: Add smooth transitions */
 .pure-menu-list {
-    transition: display 0.3s ease;
+  transition: display 0.3s ease;
 }
 
 .hamburger,
 .hamburger::before,
 .hamburger::after {
-    transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
-
 
 .news-box a {
   display: block;
@@ -652,16 +642,14 @@ label {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-
-
-.advantage-box{
+.advantage-box {
   border: 1px solid rgb(51, 51, 51);
   border-radius: 8px;
   min-height: 120px;
   padding: 10px;
 }
 
-.form-error input[type=email] {
+.form-error input[type="email"] {
   background-color: #fce4e4;
   border: 1px solid #cc0033;
   outline: none;
@@ -675,112 +663,98 @@ label {
   background-color: #5eb95e;
 }
 
-
 /* The work below, CSSBox, is released under the Creative Commons
    Attribution-ShareAlike 4.0 license and is available on
    https://github.com/TheLastProject/CSSBox. You are not required to add
    additional credit to your website, just leave the above text in this file */
-   div.cssbox {
-    display: inline-block;
-  }
-  
-  span.cssbox_full {
-    z-index: 999999;
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0,0,0,0.8);
-    top: 0;
-    left: 0;
-    opacity: 0;
-    pointer-events: none;
-    cursor: default;
-    transition: opacity 0.5s linear;
-  }
-  
-  span.cssbox_full img {
-    position: fixed;
-    background-color: white;
-    margin: 0;
-    padding: 0;
-    max-height: 90%;
-    max-width: 90%;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 0 20px black;
-  }
-  
-  a.cssbox_close,
-  a.cssbox_prev,
-  a.cssbox_next {
-    z-index: 999999;
-    position: fixed;
-    text-decoration: none;
-    visibility: hidden;
-    color: white;
-    font-size: 36px;
-  }
-  
-  a.cssbox_close {
-    top: 1%;
-    right: 1%
-  }
-  
-  a.cssbox_close::after {
-    content: '\00d7';
-  }
-  
-  a.cssbox_prev,
-  a.cssbox_next {
-    top: 50%;
-    transform: translate(0%, -50%);
-  }
-  
-  a.cssbox_prev {
-    left: 5%;
-  }
-  
-  a.cssbox_next {
-    right: 5%;
-  }
-  
-  a:target ~ a.cssbox_close,
-  a:target ~ a.cssbox_prev,
-  a:target ~ a.cssbox_next {
-    visibility: visible;
-  }
-  
-  a:target > img.cssbox_thumb + span.cssbox_full {
-    visibility: visible;
-    opacity: 1;
-    pointer-events: initial;
-  }
-  /* This is the end of CSSBox */
+div.cssbox {
+  display: inline-block;
+}
 
+span.cssbox_full {
+  z-index: 999999;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  cursor: default;
+  transition: opacity 0.5s linear;
+}
+
+span.cssbox_full img {
+  position: fixed;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  max-height: 90%;
+  max-width: 90%;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 20px black;
+}
+
+a.cssbox_close,
+a.cssbox_prev,
+a.cssbox_next {
+  z-index: 999999;
+  position: fixed;
+  text-decoration: none;
+  visibility: hidden;
+  color: white;
+  font-size: 36px;
+}
+
+a.cssbox_close {
+  top: 1%;
+  right: 1%;
+}
+
+a.cssbox_close::after {
+  content: "\00d7";
+}
+
+a.cssbox_prev,
+a.cssbox_next {
+  top: 50%;
+  transform: translate(0%, -50%);
+}
+
+a.cssbox_prev {
+  left: 5%;
+}
+
+a.cssbox_next {
+  right: 5%;
+}
+
+a:target ~ a.cssbox_close,
+a:target ~ a.cssbox_prev,
+a:target ~ a.cssbox_next {
+  visibility: visible;
+}
+
+a:target > img.cssbox_thumb + span.cssbox_full {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: initial;
+}
+/* This is the end of CSSBox */
 
 div.highlight pre {
-    overflow-x: scroll;
-} 
-
-div.api-block{
-  background: #fafafa;
-  color: #333;
-  font-family: monospace;
-  font-size: 90%;
-  border-color: #eee;
-  border-style: solid;
-  border-width: 1px;
-  overflow-x: auto ;
-  padding: 1em;
-  overflow-x: auto;
+  overflow-x: scroll;
 }
+
 
 
 .code-wrap code {
   white-space: pre-wrap;
-  word-wrap: break-word
+  word-wrap: break-word;
 }
 
 code {
@@ -789,11 +763,11 @@ code {
 }
 
 .selected-section {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 .selected-section-article {
-	font-weight: bold;
+  font-weight: bold;
   font-style: italic;
 }
 
@@ -812,7 +786,6 @@ code {
 .breadcrumbs a:active span {
   transform: skew(20deg);
 }
-
 
 /* decimal lists in license agreement */
 .decimal-list {
