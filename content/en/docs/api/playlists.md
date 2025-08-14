@@ -14,7 +14,7 @@ description: "Complete guide to managing Internet radio playlists programmatical
 <b>server:</b> radio server ID<br/>
 </div>
 
-Manages your station playlists.
+This API allows you to manage your station playlists.
 
 #### Example: GET
 
@@ -111,6 +111,36 @@ To create a playlist you need to send the following JSON payload:
 - name: new playlist name
 - is_random: pass `true`  if you want the playlist to be shuffled
 - server: an integer representing the server ID.
+
+#### Example: POST request that imports an M3U playlist file.
+
+To import an M3U file, you must first upload the actual audio files to the server (via FTP or the web interface). Then send a **POST** request with the `Content-Type` header set to `multipart/form-data`. Here’s how to do it in Python:
+
+{{< highlight python  >}}
+import requests
+
+API_KEY = "oaChhEn3.5Dnmm0rkJiJA4TNVE7266ypdOcp4Uakl"
+
+headers = {"SC-API-KEY": API_KEY}
+
+m3u_file = "import.m3u"
+data = {
+    "name":"m3u import",
+    "is_random":True,
+    "server":1
+}
+files = {
+    'm3u': (m3u_file, open(m3u_file, 'rb'),)
+}
+response = requests.post(
+    "https://demo.streaming.center:1030/api/v2/playlists/", 
+    headers=headers, 
+    data=data,
+    files=files
+)
+
+{{< / highlight >}}
+
 
 <div class="api-block">
 <b>Endpoint:</b> /api/v2/playlists/:id/<br/>
