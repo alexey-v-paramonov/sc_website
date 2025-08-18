@@ -167,6 +167,17 @@ With the **DELETE** method, you can delete a playlist by ID.
 
 This endpoint allows you to add tracks to a playlist. You need to pass an array of music IDs for the tracks you want to add. The order of IDs in the payload is important - tracks will be added to the playlist in the exact same order as they appear in the array.
 
+
+<div class="api-block">
+<b>Endpoint:</b> /api/v2/playlists/:id/start_broadcasting/<br/>
+<b>HTTP methods:</b> POST <br/>
+<b>Authentication:</b> requred<br/>
+<b>Parameters:</b> <br/>
+<b>id:</b> playlist ID<br/>
+</div>
+
+Allows you to schedule playlist playback. The playback will start at the next full minute. For example, if you call this API at 11:30:25, an event will be created in the scheduler at 11:31 to start this playlist. This endpoint does not require a payload.
+
 <!--
 /api/v2/playlists/<pk>/add_recording/   playlists.views.PlaylistViewSet playlist-add-recording
 /api/v2/playlists/<pk>/add_tracks_ordered/      playlists.views.PlaylistViewSet playlist-add-tracks-ordered
@@ -175,7 +186,6 @@ This endpoint allows you to add tracks to a playlist. You need to pass an array 
 /api/v2/playlists/<pk>/excel/   playlists.views.PlaylistViewSet playlist-excel
 /api/v2/playlists/<pk>/order_tracks/    playlists.views.PlaylistViewSet playlist-order-tracks
 /api/v2/playlists/<pk>/shuffle_tracks/  playlists.views.PlaylistViewSet playlist-shuffle-tracks
-/api/v2/playlists/<pk>/start_broadcasting/      playlists.views.PlaylistViewSet playlist-start-broadcasting
 /api/v2/playlists/<playlist_pk>/tracks/ playlists.views.PlaylistTracksViewSet   track-list
 /api/v2/playlists/<playlist_pk>/tracks/<pk>/    playlists.views.PlaylistTracksViewSet   track-detail
 /api/v2/playlists/<playlist_pk>/tracks/bulk_delete/     playlists.views.PlaylistTracksViewSet   track-bulk-delete
