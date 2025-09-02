@@ -1,10 +1,14 @@
 let lang = 'ru';
 let currency = "₽";
+let period = " / мес";
+let period2 = " Разовый платёж";
 if(document.location.host.indexOf("localhost:1313") >= 0 || document.location.host.indexOf("streaming.center") >= 0){
     lang = 'en';
     currency = "$";
+    period = " monthly";
+    period2 = " one-time";
+
 }
-console.log("Lang: ", lang);
 const PRICING = {
     ru: {
         selfhosted: {
@@ -65,10 +69,13 @@ function calculateSelfHostedPrice(){
         price += PRICING[lang]["selfhosted"]["whitelabel"];
     }
 
-    selfHostedPriceContainer.innerHTML = price + currency;
+    selfHostedPriceContainer.innerHTML = price + currency + period;
 }
 
 function calculateHostedPrice(){
+    if (lang == 'ru') {
+        return;
+    }
     const listenersSelect = document.getElementById("hosted-listeners");
     const bitrateSelect = document.getElementById("hosted-listeners");
     const duSelect = document.getElementById("hosted-du");
@@ -95,7 +102,7 @@ function calculateHostedPrice(){
     if(extraGb > 0){
         price = parseFloat(price) + parseFloat(PRICING[lang]["hosted"]["price_per_gb"] * extraGb);
     }
-    hostedPriceContainer.innerHTML = price + currency;
+    hostedPriceContainer.innerHTML = price + currency + period;
 }
 
 function calculateAndroidAppPrice(){
@@ -110,7 +117,7 @@ function calculateAndroidAppPrice(){
     if(copyrightSelect.value != "0"){
         price += PRICING[lang]["app"]["android"]["whitelabel"];
     }
-    androidPriceContainer.innerHTML = price + currency;
+    androidPriceContainer.innerHTML = price + currency + "<span style='font-size: 14px'>" + period2 + "</span>";
 
 }
 
@@ -122,7 +129,7 @@ function calculateiOsAppPrice(){
     if(copyrightSelect.value != "0"){
         price += PRICING[lang]["app"]["ios"]["whitelabel"];
     }
-    iosPriceContainer.innerHTML = price + currency;
+    iosPriceContainer.innerHTML = price + currency + "<span style='font-size: 14px'>" + period2 + "</span>";
 }
 
 function calcEverything(){
@@ -146,9 +153,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const bitrateSelect = document.getElementById("hosted-listeners");
     const duSelect = document.getElementById("hosted-du");
 
-    listenersSelect.addEventListener("change", calculateHostedPrice );
-    bitrateSelect.addEventListener("change", calculateHostedPrice );
-    duSelect.addEventListener("change", calculateHostedPrice );
+    listenersSelect && listenersSelect.addEventListener("change", calculateHostedPrice );
+    bitrateSelect && bitrateSelect.addEventListener("change", calculateHostedPrice );
+    duSelect && duSelect.addEventListener("change", calculateHostedPrice );
 
     // Android app
     const publishingSelect = document.getElementById("android-app-publishing");

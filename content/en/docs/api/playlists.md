@@ -180,7 +180,6 @@ Allows you to schedule playlist playback. The playback will start at the next fu
 
 <!--
 /api/v2/playlists/<pk>/add_recording/   playlists.views.PlaylistViewSet playlist-add-recording
-/api/v2/playlists/<pk>/add_tracks_ordered/      playlists.views.PlaylistViewSet playlist-add-tracks-ordered
 /api/v2/playlists/<pk>/clean_duplicates/        playlists.views.PlaylistViewSet playlist-clean-duplicates
 /api/v2/playlists/<pk>/copy/    playlists.views.PlaylistViewSet playlist-copy
 /api/v2/playlists/<pk>/excel/   playlists.views.PlaylistViewSet playlist-excel
