@@ -1,6 +1,6 @@
 ---
 title: "Version 3.26.1: Scheduler, Rotations, WHMCS & fixes"
-date: 2025-09-05T11:27:31+03:00
+date: 2025-09-05
 ---
 
 Version 3.26.1 is out:
