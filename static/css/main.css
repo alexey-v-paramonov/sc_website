@@ -3043,6 +3043,11 @@ code {
   background: #e2e2e2;
 }
 
+.highlight code {
+  background: inherit;
+  border-color: inherit;
+ 
+
 div.highlight pre {
   overflow-x: scroll;
   padding:10px;
