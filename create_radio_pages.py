@@ -3,7 +3,7 @@ import os
 
 def create_radio_pages():
     json_file_path = 'data/exported_radios.json'
-    
+
     with open(json_file_path, 'r') as f:
         radios = json.load(f)
 
@@ -12,7 +12,7 @@ def create_radio_pages():
             continue
 
         slug = radio.get('slug', f"radio-{radio['id']}")
-        
+
         # English page
         en_path = f"content/en/catalog/{slug}.md"
         os.makedirs(os.path.dirname(en_path), exist_ok=True)
@@ -20,6 +20,7 @@ def create_radio_pages():
             f.write('---\n')
             title = radio.get("name", "").replace("\"", "'")
             f.write(f'title: "{title}"\n')
+            f.write(f'type: "catalog_item"\n')
             f.write(f'logo: "{radio.get("logo", "")}"\n')
             f.write(f'website_url: "{radio.get("website_url", "")}"\n')
             description = radio.get("description", "").replace("\"", "'")
@@ -33,6 +34,7 @@ def create_radio_pages():
             f.write('---\n')
             title = radio.get("name", "").replace("\"", "'")
             f.write(f'title: "{title}"\n')
+            f.write(f'type: "catalog_item"\n')
             f.write(f'logo: "{radio.get("logo", "")}"\n')
             f.write(f'website_url: "{radio.get("website_url", "")}"\n')
             description = radio.get("description", "").replace("\"", "'")

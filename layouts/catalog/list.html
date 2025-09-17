@@ -1,94 +1,24 @@
 {{ define "main" }}
-<main class="view pb posr bg-light">
+<main class="doc pb posr">
   <img class="bg-light__img posa pointer db" src="/img/view-bg.svg" alt="" />
-  <div class="container index">
+  <div class="container index doc-container">
     {{ partial "breadcrumbs.html" . }}
-    <div class="view-items">
-      {{ $items := .Site.Data.exported_radios }}
-      
-      <!-- Manual pagination calculation -->
-      {{ $pageSize := 15 }}
-      {{ $totalItems := len $items }}
-      {{ $totalPages := div $totalItems $pageSize }}
-      {{ if gt (mod $totalItems $pageSize) 0 }}
-        {{ $totalPages = add $totalPages 1 }}
-      {{ end }}
-      
-      {{ $page := $.Page }}
-      {{ if isset $.Site.Params "currentpage" }}
-        {{ $page = $.Site.Params.currentpage }}
-      {{ end }}
-      
-      {{ $currentPage := 1 }}
-      {{ with .Paginator }}
-        {{ $currentPage = .PageNumber }}
-      {{ end }}
-      
-      <!-- Calculate start and end indices -->
-      {{ $start := mul (sub $currentPage 1) $pageSize }}
-      {{ $end := add $start $pageSize }}
-      {{ if gt $end $totalItems }}
-        {{ $end = $totalItems }}
-      {{ end }}
-      
-      <!-- Display items for current page -->
-      {{ range seq $start $end }}
-        {{ $index := sub . 1 }}
-        {{ with index $items $index }}
-        <div class="view-item index">
-          <div class="view-item__date df aic jcc fxw center posa">
-            <span>
-              {{ if .created_at }}
-                {{ .created_at | time.Format "2" }}
-              {{ else }}
-                {{ now | time.Format "2" }}
-              {{ end }}
-            </span>
-            {{ if .created_at }}
-              {{ .created_at | time.Format "01.06" }}
-            {{ else }}
-              {{ now | time.Format "01.06" }}
-            {{ end }}
-          </div>
-          <h2 class="title center df aifs jcc stream-title index">
-            <span class="db">
-              <a href="/catalog/{{ .slug }}">
-                {{ .name | default .title | default "Untitled Radio" }}
-              </a>
-            </span>
-          </h2>
-          <div class="view-item__list df fxw jcsb index">
-            <div class="doc-content">
-              {{ .description | default .frequency | markdownify }}
+    <div>
+        {{ $paginator := .Paginate (where .Pages "Type" "catalog_item") 16 }}
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 20px; margin-bottom: 30px;">
+          {{ range $paginator.Pages }}
+          <div class="catalog-item2">
+            <h2>
+              <span class="db"><a href="{{ .RelPermalink }}">{{ .Title }}</a></span>
+            </h2>
+            <div>
+              <img src="{{ .Params.logo }}" alt="{{ .Title }}" />
+              <div class="doc-content">{{ .Summary }}</div>
             </div>
           </div>
+          {{ end }}
         </div>
-        {{ end }}
-      {{ end }}
-      
-      <!-- Manual pagination -->
-      {{ if gt $totalPages 1 }}
-      <nav class="pagination">
-        <ul>
-          {{ if ne $currentPage 1 }}
-          <li><a href="?page={{ sub $currentPage 1 }}">Previous</a></li>
-          {{ end }}
-          
-          {{ range seq 1 $totalPages }}
-            {{ if eq . $currentPage }}
-            <li class="active"><span>{{ . }}</span></li>
-            {{ else }}
-            <li><a href="?page={{ . }}">{{ . }}</a></li>
-            {{ end }}
-          {{ end }}
-          
-          {{ if ne $currentPage $totalPages }}
-          <li><a href="?page={{ add $currentPage 1 }}">Next</a></li>
-          {{ end }}
-        </ul>
-      </nav>
-      {{ end }}
-      
+        {{ template "_internal/pagination.html" . }}
     </div>
   </div>
 </main>

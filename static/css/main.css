@@ -3046,7 +3046,7 @@ code {
 .highlight code {
   background: inherit;
   border-color: inherit;
- 
+}
 
 div.highlight pre {
   overflow-x: scroll;
@@ -3056,4 +3056,19 @@ div.highlight pre {
 .highlight {
   font-size: 12px;
   line-height: 16px;
+}
+
+.catalog-item2 {
+  background-color: #fff;
+  gap: 5px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  padding: 20px;
+  background: #ffff;
+}
+
+.catalog-item2:hover {
+    background: #fff;
+    -webkit-filter: drop-shadow(0px 30px 80px rgba(28, 47, 45, 0.1));
+    filter: drop-shadow(0px 30px 80px rgba(28, 47, 45, 0.1));
 }
