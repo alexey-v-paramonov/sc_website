@@ -1,0 +1,95 @@
+{{ define "main" }}
+<main class="view pb posr bg-light">
+  <img class="bg-light__img posa pointer db" src="/img/view-bg.svg" alt="" />
+  <div class="container index">
+    {{ partial "breadcrumbs.html" . }}
+    <div class="view-items">
+      {{ $items := .Site.Data.exported_radios }}
+      
+      <!-- Manual pagination calculation -->
+      {{ $pageSize := 15 }}
+      {{ $totalItems := len $items }}
+      {{ $totalPages := div $totalItems $pageSize }}
+      {{ if gt (mod $totalItems $pageSize) 0 }}
+        {{ $totalPages = add $totalPages 1 }}
+      {{ end }}
+      
+      {{ $page := $.Page }}
+      {{ if isset $.Site.Params "currentpage" }}
+        {{ $page = $.Site.Params.currentpage }}
+      {{ end }}
+      
+      {{ $currentPage := 1 }}
+      {{ with .Paginator }}
+        {{ $currentPage = .PageNumber }}
+      {{ end }}
+      
+      <!-- Calculate start and end indices -->
+      {{ $start := mul (sub $currentPage 1) $pageSize }}
+      {{ $end := add $start $pageSize }}
+      {{ if gt $end $totalItems }}
+        {{ $end = $totalItems }}
+      {{ end }}
+      
+      <!-- Display items for current page -->
+      {{ range seq $start $end }}
+        {{ $index := sub . 1 }}
+        {{ with index $items $index }}
+        <div class="view-item index">
+          <div class="view-item__date df aic jcc fxw center posa">
+            <span>
+              {{ if .created_at }}
+                {{ .created_at | time.Format "2" }}
+              {{ else }}
+                {{ now | time.Format "2" }}
+              {{ end }}
+            </span>
+            {{ if .created_at }}
+              {{ .created_at | time.Format "01.06" }}
+            {{ else }}
+              {{ now | time.Format "01.06" }}
+            {{ end }}
+          </div>
+          <h2 class="title center df aifs jcc stream-title index">
+            <span class="db">
+              <a href="/catalog/{{ .slug }}">
+                {{ .name | default .title | default "Untitled Radio" }}
+              </a>
+            </span>
+          </h2>
+          <div class="view-item__list df fxw jcsb index">
+            <div class="doc-content">
+              {{ .description | default .frequency | markdownify }}
+            </div>
+          </div>
+        </div>
+        {{ end }}
+      {{ end }}
+      
+      <!-- Manual pagination -->
+      {{ if gt $totalPages 1 }}
+      <nav class="pagination">
+        <ul>
+          {{ if ne $currentPage 1 }}
+          <li><a href="?page={{ sub $currentPage 1 }}">Previous</a></li>
+          {{ end }}
+          
+          {{ range seq 1 $totalPages }}
+            {{ if eq . $currentPage }}
+            <li class="active"><span>{{ . }}</span></li>
+            {{ else }}
+            <li><a href="?page={{ . }}">{{ . }}</a></li>
+            {{ end }}
+          {{ end }}
+          
+          {{ if ne $currentPage $totalPages }}
+          <li><a href="?page={{ add $currentPage 1 }}">Next</a></li>
+          {{ end }}
+        </ul>
+      </nav>
+      {{ end }}
+      
+    </div>
+  </div>
+</main>
+{{ end }}
