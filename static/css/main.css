@@ -75,6 +75,7 @@ body {
   font-size: 48px;
   font-weight: 700;
   line-height: 56px;
+  
 }
 
 .h1 {
@@ -471,6 +472,7 @@ body {
   font-size: 24px;
   font-weight: 700;
   line-height: 30px;
+  -webkit-line-clamp: 2; 
 }
 .catalog-item__links {
   padding-top: 26px;
@@ -3152,16 +3154,19 @@ div.highlight pre {
        - but never more than 250px
     */
   /* max-height: min(60%, 250px); */
+  padding-top: 4px;      /* optional micro breathing room */
+  padding-bottom: 4px;
 }
 
-/* Image: fit into height (≤250px), width follows proportionally */
+/* Replace your .thumb with this: */
 .catalog-thumb {
-  height: 250px; /* fill the wrapper's height */
-  width: auto; /* keep aspect ratio */
-  max-height: 250px; /* hard cap by requirement */
-  max-width: 100%; /* don't overflow horizontally */
-  object-fit: contain; /* no cropping */
-  border-radius: 8px;
+  /* Fit by HEIGHT (never exceed 250px), preserve aspect, never overflow width */
+  max-height: 250px;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  object-fit: contain;   /* no cropping */
+  border-radius: 8px;    /* keep nice corners only on the image */
   border: 1px solid #eee;
 }
 
