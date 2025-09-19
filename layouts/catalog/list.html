@@ -4,16 +4,20 @@
   <div class="container index doc-container">
     {{ partial "breadcrumbs.html" . }}
     <div>
-        {{ $paginator := .Paginate (where .Pages "Type" "catalog_item") 16 }}
-        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 20px; margin-bottom: 30px;">
+        {{ $paginator := .Paginate (where .Pages "Type" "catalog_item") 30 }}
+        <div class="catalog-grid">
           {{ range $paginator.Pages }}
-          <div class="catalog-item2">
-            <h2>
-              <span class="db"><a href="{{ .RelPermalink }}">{{ .Title }}</a></span>
-            </h2>
-            <div>
-              <img src="{{ .Params.logo }}" alt="{{ .Title }}" />
-              <div class="doc-content">{{ .Summary }}</div>
+          <div class="catalog-card">
+            <img class="catalog-card-flag" src="flags/us.svg" alt="USA" />
+            <div class="catalog-card__inner">
+              <div class="catalog-thumb-wrap">
+                <a href="{{ .RelPermalink }}"><img class="catalog-thumb" src="{{ .Params.logo }}" alt="{{ .Title }}" /></a>
+              </div>
+              <div class="catalog-card-title" title="{{ .Title }}"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+              <div class="catalog-card-meta">
+                <a class="catalog-card-link" href="#" target="_blank" rel="noopener">site</a>
+                <div class="catalog-card-rating" aria-label="Rating 4.5 out of 5"><span class="star" aria-hidden="true">★</span><span>4.5</span></div>
+              </div>
             </div>
           </div>
           {{ end }}
