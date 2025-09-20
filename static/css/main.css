@@ -3176,10 +3176,16 @@ div.highlight pre {
   width: 100%;
   text-align: center;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.0;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
+  text-overflow: hidden;
+  text-decoration: none;
+
+}
+.catalog-card-title a{
+  text-decoration: none;
+  color: #000;
 }
 
 .catalog-card-meta {
@@ -3227,13 +3233,13 @@ div.highlight pre {
 
 .catalog-card-tags {
   display: flex;
-  flex-wrap: wrap;
-  gap: 4px 6px;
+  flex-wrap: nowrap;
+  gap: 2px 2px;
   justify-content: center;
-  font-size: 13px;
-  line-height: 1.2;
+  font-size: 12px;
+  line-height: 1.1;
   color: #555;
-  margin-top: 4px;
+  margin-top: 3px;
   padding: 0 6px;
   text-align: center;
 }

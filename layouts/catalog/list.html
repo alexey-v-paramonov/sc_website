@@ -8,7 +8,7 @@
       <div class="catalog-grid">
         {{ range $paginator.Pages }}
         <div class="catalog-card">
-          <img class="catalog-card-flag" src="flags/{{ .Params.country_code }}.png" alt="{{ .Params.country_code }}" />
+          <img class="catalog-card-flag" src="/flags/{{ .Params.country_code }}.png" alt="{{ .Params.country_name }}"  title="{{ .Params.country_name }}" />
           <div class="catalog-card__inner">
             <div class="catalog-thumb-wrap">
               <a href="{{ .RelPermalink }}"
@@ -16,6 +16,7 @@
                   class="catalog-thumb"
                   src="{{ .Params.logo }}"
                   alt="{{ .Title }}"
+                  title="{{ .Title }}"
               /></a>
             </div>
             <div class="catalog-card-title" title="{{ .Title }}">
@@ -30,13 +31,13 @@
                 >{{ .Params.website_url }}</a
               >
               <div class="catalog-card-rating" aria-label="Rating 4.5 out of 5">
-                <span class="star" aria-hidden="true">★</span><span>4.5</span>
+                <span class="star" aria-hidden="true">★</span><span>{{ .Params.rating }}</span>
               </div>
             </div>
             <div class="catalog-card-tags">
-              <span>#rock</span>
-              <span>#live</span>
-              <span>#usa</span>
+              {{ range .Params.genres }}
+                  <span>#{{ . }}</span>
+              {{ end }}              
             </div>
           </div>
         </div>
