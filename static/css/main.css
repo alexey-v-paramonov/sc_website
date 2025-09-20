@@ -3167,7 +3167,7 @@ div.highlight pre {
   width: auto;
   object-fit: contain;
   border-radius: 8px;
-  border: 1px solid #eee;
+  
     transition: transform 0.4s ease-in-out; /* smooth zoom */
 
 }
