@@ -47,6 +47,10 @@ unsafe= true
         name = 'Инфо'
         pageRef = '/docs'
         weight = 40
+      [[languages.ru.menus.main]]
+        name = 'Каталог'
+        pageRef = '/catalog'
+        weight = 50
 
       [[languages.ru.menus.agreement]]
         name = 'Оферта'
@@ -134,6 +138,11 @@ unsafe= true
         name = 'Docs'
         pageRef = '/docs'
         weight = 40
+
+      [[languages.en.menus.main]]
+        name = 'Catalog'
+        pageRef = '/catalog'
+        weight = 50
 
       [[languages.en.menus.agreement]]
         name = 'Service Agreement'

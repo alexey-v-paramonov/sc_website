@@ -1,0 +1,50 @@
+{{ define "main" }}
+<main class="doc pb posr">
+  <img class="bg-light__img posa pointer db" src="/img/view-bg.svg" alt="" />
+  <div class="container index doc-container">
+    {{ partial "breadcrumbs.html" . }}
+    <div>
+      {{ $paginator := .Paginate (where .Pages "Type" "catalog_item") 30 }}
+      <div class="catalog-grid">
+        {{ range $paginator.Pages }}
+        <div class="catalog-card">
+          <img class="catalog-card-flag" src="flags/{{ .Params.country_code }}.png" alt="{{ .Params.country_name }}"  title="{{ .Params.country_name }}" />
+          <div class="catalog-card__inner">
+            <div class="catalog-thumb-wrap">
+              <a href="{{ .RelPermalink }}"
+                ><img
+                  class="catalog-thumb"
+                  src="{{ .Params.logo }}"
+                  alt="{{ .Title }}"
+                  title="{{ .Title }}"
+              /></a>
+            </div>
+            <div class="catalog-card-title" title="{{ .Title }}">
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </div>
+            <div class="catalog-card-meta">
+              <a
+                class="catalog-card-link"
+                href="{{ .Params.website_url }}"
+                target="_blank"
+                rel="noopener"
+                >{{ .Params.website_url }}</a
+              >
+              <div class="catalog-card-rating" aria-label="Rating 4.5 out of 5">
+                <span class="star" aria-hidden="true">★</span><span>{{ .Params.rating }}</span>
+              </div>
+            </div>
+            <div class="catalog-card-tags">
+              {{ range .Params.genres }}
+                  <span>#{{ . }}</span>
+              {{ end }}              
+            </div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+      {{ template "_internal/pagination.html" . }}
+    </div>
+  </div>
+</main>
+{{ end }}

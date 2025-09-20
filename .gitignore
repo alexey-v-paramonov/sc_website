@@ -16,6 +16,8 @@ hugo_run
 package-lock.json
 public/
 run
+content/en/catalog/
+content/ru/catalog/
 
 # Editor directories and files
 .vscode/*
