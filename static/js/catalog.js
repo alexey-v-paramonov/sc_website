@@ -156,7 +156,30 @@ document.addEventListener('DOMContentLoaded', function() {
             const step = Math.floor(bufferLength / totalBars);
             const maxBarLength = 20; // Maximum bar length in pixels
             
-            ctx.fillStyle = 'rgba(0, 100, 255, 0.5)'; // Blue with 50% transparency
+            // Winamp classic equalizer colors function
+            function createWinampGradient(ctx, x1, y1, x2, y2, value) {
+                const gradient = ctx.createLinearGradient(x1, y1, x2, y2);
+                const intensity = value / 255;
+                
+                if (intensity < 0.25) {
+                    // Low intensity: pastel mint to pastel green
+                    gradient.addColorStop(0, 'rgba(144, 238, 144, 0.7)'); // Light green
+                    gradient.addColorStop(1, 'rgba(152, 251, 152, 0.8)'); // Pale green
+                } else if (intensity < 0.5) {
+                    // Medium-low: pastel green to pastel yellow
+                    gradient.addColorStop(0, 'rgba(152, 251, 152, 0.7)'); // Pale green
+                    gradient.addColorStop(1, 'rgba(255, 255, 153, 0.8)'); // Light yellow
+                } else if (intensity < 0.75) {
+                    // Medium-high: pastel yellow to pastel orange
+                    gradient.addColorStop(0, 'rgba(255, 255, 153, 0.7)'); // Light yellow
+                    gradient.addColorStop(1, 'rgba(255, 218, 185, 0.8)'); // Peach
+                } else {
+                    // High intensity: pastel orange to pastel red
+                    gradient.addColorStop(0, 'rgba(255, 218, 185, 0.7)'); // Peach
+                    gradient.addColorStop(1, 'rgba(255, 182, 193, 0.8)'); // Light pink
+                }
+                return gradient;
+            }
             
             // Top side bars (extending downward into the card)
             const topBarWidth = cardWidth / barsPerSide;
@@ -166,10 +189,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 const x = i * topBarWidth;
                 const y = 0;
                 
-                // Create gradient for each bar
-                const gradient = ctx.createLinearGradient(x, y, x, y + barLength);
-                gradient.addColorStop(0, 'rgba(39, 76, 119, 0.3)');     // Dark blue at top (30% opacity)
-                gradient.addColorStop(1, 'rgba(79, 131, 91, 0.3)');     // Green at bottom (30% opacity)
+                // Create Winamp-style gradient for each bar
+                const gradient = createWinampGradient(ctx, x, y, x, y + barLength, value);
                 ctx.fillStyle = gradient;
                 
                 ctx.fillRect(x, y, topBarWidth - 1, barLength);
@@ -183,10 +204,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 const x = cardWidth - barLength;
                 const y = i * rightBarHeight;
                 
-                // Create gradient for each bar (horizontal)
-                const gradient = ctx.createLinearGradient(cardWidth, y, cardWidth - barLength, y);
-                gradient.addColorStop(0, 'rgba(39, 76, 119, 0.3)');     // Dark blue at edge (30% opacity)
-                gradient.addColorStop(1, 'rgba(79, 131, 91, 0.3)');     // Green at inner end (30% opacity)
+                // Create Winamp-style gradient for each bar (horizontal)
+                const gradient = createWinampGradient(ctx, cardWidth, y, cardWidth - barLength, y, value);
                 ctx.fillStyle = gradient;
                 
                 ctx.fillRect(x, y, barLength, rightBarHeight - 1);
@@ -200,10 +219,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 const x = i * bottomBarWidth;
                 const y = cardHeight - barLength;
                 
-                // Create gradient for each bar (bottom to top)
-                const gradient = ctx.createLinearGradient(x, cardHeight, x, cardHeight - barLength);
-                gradient.addColorStop(0, 'rgba(39, 76, 119, 0.3)');     // Dark blue at bottom edge (30% opacity)
-                gradient.addColorStop(1, 'rgba(79, 131, 91, 0.3)');     // Green at inner end (30% opacity)
+                // Create Winamp-style gradient for each bar (bottom to top)
+                const gradient = createWinampGradient(ctx, x, cardHeight, x, cardHeight - barLength, value);
                 ctx.fillStyle = gradient;
                 
                 ctx.fillRect(x, y, bottomBarWidth - 1, barLength);
@@ -217,10 +234,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 const x = 0;
                 const y = i * leftBarHeight;
                 
-                // Create gradient for each bar (horizontal)
-                const gradient = ctx.createLinearGradient(x, y, x + barLength, y);
-                gradient.addColorStop(0, 'rgba(39, 76, 119, 0.3)');     // Dark blue at left edge (30% opacity)
-                gradient.addColorStop(1, 'rgba(79, 131, 91, 0.3)');     // Green at inner end (30% opacity)
+                // Create Winamp-style gradient for each bar (horizontal)
+                const gradient = createWinampGradient(ctx, x, y, x + barLength, y, value);
                 ctx.fillStyle = gradient;
                 
                 ctx.fillRect(x, y, barLength, leftBarHeight - 1);
