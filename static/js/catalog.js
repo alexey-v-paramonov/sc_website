@@ -156,6 +156,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 const x = i * topBarWidth;
                 const y = 0;
                 
+                // Create gradient for each bar
+                const gradient = ctx.createLinearGradient(x, y, x, y + barLength);
+                gradient.addColorStop(0, 'rgba(39, 76, 119, 0.3)');     // Dark blue at top (30% opacity)
+                gradient.addColorStop(1, 'rgba(79, 131, 91, 0.3)');     // Green at bottom (30% opacity)
+                ctx.fillStyle = gradient;
+                
                 ctx.fillRect(x, y, topBarWidth - 1, barLength);
             }
             
@@ -166,6 +172,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 const barLength = (value / 255) * maxBarLength;
                 const x = cardWidth - barLength;
                 const y = i * rightBarHeight;
+                
+                // Create gradient for each bar (horizontal)
+                const gradient = ctx.createLinearGradient(cardWidth, y, cardWidth - barLength, y);
+                gradient.addColorStop(0, 'rgba(39, 76, 119, 0.3)');     // Dark blue at edge (30% opacity)
+                gradient.addColorStop(1, 'rgba(79, 131, 91, 0.3)');     // Green at inner end (30% opacity)
+                ctx.fillStyle = gradient;
                 
                 ctx.fillRect(x, y, barLength, rightBarHeight - 1);
             }
@@ -178,6 +190,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 const x = i * bottomBarWidth;
                 const y = cardHeight - barLength;
                 
+                // Create gradient for each bar (bottom to top)
+                const gradient = ctx.createLinearGradient(x, cardHeight, x, cardHeight - barLength);
+                gradient.addColorStop(0, 'rgba(39, 76, 119, 0.3)');     // Dark blue at bottom edge (30% opacity)
+                gradient.addColorStop(1, 'rgba(79, 131, 91, 0.3)');     // Green at inner end (30% opacity)
+                ctx.fillStyle = gradient;
+                
                 ctx.fillRect(x, y, bottomBarWidth - 1, barLength);
             }
             
@@ -188,6 +206,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 const barLength = (value / 255) * maxBarLength;
                 const x = 0;
                 const y = i * leftBarHeight;
+                
+                // Create gradient for each bar (horizontal)
+                const gradient = ctx.createLinearGradient(x, y, x + barLength, y);
+                gradient.addColorStop(0, 'rgba(39, 76, 119, 0.3)');     // Dark blue at left edge (30% opacity)
+                gradient.addColorStop(1, 'rgba(79, 131, 91, 0.3)');     // Green at inner end (30% opacity)
+                ctx.fillStyle = gradient;
                 
                 ctx.fillRect(x, y, barLength, leftBarHeight - 1);
             }
