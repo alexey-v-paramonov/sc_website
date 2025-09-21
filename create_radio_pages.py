@@ -20,7 +20,7 @@ def create_radio_pages():
             if file != "_index.md" and file.endswith(".md"):
                 os.remove(os.path.join(catalog_dir_ru, file))
 
-    for radio in radios:
+    for index, radio in enumerate(radios):
         if not radio.get('enabled'):
             continue
 
@@ -39,7 +39,7 @@ def create_radio_pages():
             title = radio.get("name", "").replace("\"", "'")
             f.write(f'title: "{title}"\n')
             f.write(f'type: "catalog_item"\n')
-            f.write(f'type: "catalog_item"\n')
+            f.write(f'weight: "{index + 1}"\n')
             if country_code:
                 f.write(f'country_code: "{country_code}"\n')
             f.write(f'country_name: "{country_name_eng}"\n')
@@ -62,6 +62,7 @@ def create_radio_pages():
             title = radio.get("name", "").replace("\"", "'")
             f.write(f'title: "{title}"\n')
             f.write(f'type: "catalog_item"\n')
+            f.write(f'weight: "{index + 1}"\n')
             if country_code:
                 f.write(f'country_code: "{country_code}"\n')
             f.write(f'country_name: "{country_name}"\n')
