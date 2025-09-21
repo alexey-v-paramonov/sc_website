@@ -3148,15 +3148,15 @@ div.highlight pre {
 
 /* Image wrapper ensures we never exceed 250px height, and also never overflow the square */
 .catalog-thumb-wrap {
+  position: relative;
+  overflow: hidden;
   flex: 0 0 auto;
   height: min(250px, calc(100% - 84px));
   aspect-ratio: 1 / 1;     /* makes it a square */
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 4px; 
-    overflow: hidden;  /* keep zoom inside rounded border */
-
+  margin-bottom: 4px;
 }
 
 /* Replace your .thumb with this: */
@@ -3167,9 +3167,7 @@ div.highlight pre {
   width: auto;
   object-fit: contain;
   border-radius: 8px;
-  
-    transition: transform 0.4s ease-in-out; /* smooth zoom */
-
+  transition: transform 0.4s ease-in-out; /* smooth zoom */
 }
 
 .catalog-card-title {
@@ -3225,6 +3223,40 @@ div.highlight pre {
 .catalog-link:focus {
   outline: 2px solid #b9cdfc;
   outline-offset: 2px;
+}
+
+.catalog-thumb-wrap::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    z-index: 1;
+}
+
+.catalog-thumb-wrap::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%, -50%);
+    border-left: 15px solid white;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    z-index: 2;
+}
+
+.catalog-card:hover .catalog-thumb-wrap.has-stream::before,
+.catalog-card:hover .catalog-thumb-wrap.has-stream::after {
+    opacity: 1;
 }
 
 .catalog-card:hover .catalog-thumb {
