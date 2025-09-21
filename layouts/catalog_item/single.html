@@ -1,0 +1,81 @@
+{{ define "main" }}
+<main class="view pb posr bg-light">
+  <img class="bg-light__img posa pointer db" src="/img/view-bg.svg" alt="" />
+  <div class="container index">
+    {{ partial "breadcrumbs.html" . }}
+    <div class="view-items">
+      <div class="view-item index">
+        <div class="view-item__list df jcsb index">
+
+      <div class="single-radio-header">
+        <div class="single-radio-logo-wrap">
+          <img class="single-radio-logo" src="{{ .Params.logo }}" alt="{{ .Title }}" title="{{ .Title }}" />
+        </div>
+        <div class="single-radio-title-wrap">
+          <h1 class="single-radio-title">{{ .Title }}</h1>
+          <div class="single-radio-meta">
+            <a class="single-radio-link" href="{{ .Params.website_url }}" target="_blank" rel="noopener">{{ .Params.website_url }}</a>
+            <div class="single-radio-rating" aria-label="Rating {{ .Params.rating }} out of 5">
+              <span class="star" aria-hidden="true">★</span><span>{{ .Params.rating }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="single-radio-body">
+        <div class="single-radio-main">
+          <div class="single-radio-description">
+            {{ .Content }}
+          </div>
+
+          <h3>Listen Live</h3>
+          <a href="{{ .Params.listen_url }}" class="listen-link" target="_blank" rel="noopener">Listen Now</a>
+          <div class="single-radio-player">
+            <audio controls>
+              <source src="{{ .Params.listen_url }}" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+        </div>
+
+        <div class="single-radio-sidebar">
+          <div class="sidebar-block">
+            <h4>Details</h4>
+            <ul>
+              <li><strong>Country:</strong> {{ .Params.country_name }}</li>
+              {{ with .Params.region_name }}<li><strong>Region:</strong> {{ . }}</li>{{ end }}
+              {{ with .Params.city_name }}<li><strong>City:</strong> {{ . }}</li>{{ end }}
+              <li><strong>Added:</strong> {{ .Date.Format "January 2, 2006" }}</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-block">
+            <h4>Genres</h4>
+            <div class="catalog-card-tags">
+              {{ range .Params.genres }}
+                <a href="{{ "/catalog/genres/" | relLangURL }}{{ . | urlize }}/">#{{ . }}</a>
+              {{ end }}
+            </div>
+          </div>
+
+          <div class="sidebar-block">
+            <h4>Rate this station</h4>
+            <form class="rating-form">
+              <fieldset class="rating">
+                <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="5 stars"></label>
+                <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4 stars"></label>
+                <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="3 stars"></label>
+                <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2 stars"></label>
+                <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 star"></label>
+              </fieldset>
+              <button type="submit">Vote</button>
+            </form>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</main>
+{{ end }}
