@@ -11,7 +11,7 @@
           <img class="catalog-card-flag" src="flags/{{ .Params.country_code }}.png" alt="{{ .Params.country_name }}"  title="{{ .Params.country_name }}" />
           <div class="catalog-card__inner">
             <div class="catalog-thumb-wrap" {{ if .Params.default_stream }}data-stream-url="{{.Params.default_stream}}"{{ end }}>
-              <a href="{{ .RelPermalink }}"
+              <a href="#"
                 ><img
                   class="catalog-thumb"
                   src="{{ .Params.logo }}"
@@ -20,7 +20,7 @@
               /></a>
             </div>
             <div class="catalog-card-title" title="{{ .Title }}">
-              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+              <a href="#">{{ .Title }}</a>
             </div>
             <div class="catalog-card-meta">
               <a

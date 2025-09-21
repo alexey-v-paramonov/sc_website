@@ -77,6 +77,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (card) {
                     card.classList.remove('is-buffering'); // Remove buffering state
                     card.classList.add('is-playing');
+                    
+                    // Ensure all other cards are completely cleaned up
+                    document.querySelectorAll('.catalog-card.is-playing').forEach(otherCard => {
+                        if (otherCard !== card) {
+                            otherCard.classList.remove('is-playing');
+                            const otherCanvas = otherCard.querySelector('.visualizer-canvas');
+                            if (otherCanvas) {
+                                const otherCtx = otherCanvas.getContext('2d');
+                                otherCanvas.width = otherCanvas.width; // Complete reset
+                                otherCtx.clearRect(0, 0, otherCanvas.width, otherCanvas.height);
+                            }
+                        }
+                    });
+                    
                     startVisualization(currentlyPlayingItem);
                     startTitleBlinking(card);
                 }
@@ -97,6 +111,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function startVisualization(item) {
+        // First, stop any existing visualization
+        if (animationFrameId) {
+            cancelAnimationFrame(animationFrameId);
+            animationFrameId = null;
+        }
+        
         const card = item.closest('.catalog-card');
         if (!card) return;
 
@@ -296,16 +316,23 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function stopAllPlayingCards() {
+        // Stop any running visualization first
+        if (animationFrameId) {
+            cancelAnimationFrame(animationFrameId);
+            animationFrameId = null;
+        }
+        
         // Find all cards that are currently playing and stop them
         const playingCards = document.querySelectorAll('.catalog-card.is-playing');
         playingCards.forEach(card => {
             card.classList.remove('is-playing');
             stopTitleBlinking(card);
             
-            // Clear canvas
+            // Clear canvas completely
             const canvas = card.querySelector('.visualizer-canvas');
             if (canvas) {
                 const ctx = canvas.getContext('2d');
+                canvas.width = canvas.width; // This completely clears the canvas
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
             }
             
@@ -323,11 +350,16 @@ document.addEventListener('DOMContentLoaded', function() {
             card.classList.remove('is-buffering');
         });
         
-        // Stop any running visualization
-        if (animationFrameId) {
-            cancelAnimationFrame(animationFrameId);
-            animationFrameId = null;
-        }
+        // Clear all canvases to ensure no leftover visualization
+        const allCanvases = document.querySelectorAll('.visualizer-canvas');
+        allCanvases.forEach(canvas => {
+            const ctx = canvas.getContext('2d');
+            canvas.width = canvas.width; // Reset canvas completely
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        });
+        
+        // Reset currentlyPlayingItem
+        currentlyPlayingItem = null;
     }
 
     function stopVisualization() {
