@@ -3197,6 +3197,20 @@ div.highlight pre {
   transition: color 0.2s ease;
 }
 
+/* Spinning animation for buffering state */
+.catalog-card.is-buffering .catalog-thumb {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: scale(1.08) rotate(0deg);
+  }
+  100% {
+    transform: scale(1.08) rotate(360deg);
+  }
+}
+
 .catalog-card-meta {
   width: 100%;
   display: flex;
@@ -3317,4 +3331,5 @@ div.highlight pre {
   height: 100%;
   pointer-events: none;
   z-index: 1;
+  border-radius: 14px;
 }

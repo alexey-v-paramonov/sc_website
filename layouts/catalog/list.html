@@ -10,7 +10,7 @@
         <div class="catalog-card">
           <img class="catalog-card-flag" src="flags/{{ .Params.country_code }}.png" alt="{{ .Params.country_name }}"  title="{{ .Params.country_name }}" />
           <div class="catalog-card__inner">
-            <div class="catalog-thumb-wrap" {{ if .Params.website_url }}data-stream-url="https://radio.autoliferadio.com:8005/radio"{{ end }}>
+            <div class="catalog-thumb-wrap" {{ if .Params.default_stream }}data-stream-url="{{.Params.default_stream}}"{{ end }}>
               <a href="{{ .RelPermalink }}"
                 ><img
                   class="catalog-thumb"

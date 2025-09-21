@@ -74,7 +74,8 @@
     "total_score": 14809,
     "user_id": 1130,
     "rating": 7.123136123136123,
-    "created": "2024-11-23T19:43:17"
+    "created": "2024-11-23T19:43:17",
+    "default_stream": "https://online.star33radio.com:1085/stream"
   },
   {
     "id": 337,
@@ -151,7 +152,8 @@
     "total_score": 18937,
     "user_id": 869,
     "rating": 6.753566333808845,
-    "created": "2018-11-27T16:24:58"
+    "created": "2018-11-27T16:24:58",
+    "default_stream": "https://radio.radioshansonplus.com:8075/radio"
   },
   {
     "id": 216,
@@ -235,7 +237,8 @@
     "total_score": 30284,
     "user_id": 483,
     "rating": 6.573475146516171,
-    "created": "2016-09-02T05:37:34"
+    "created": "2016-09-02T05:37:34",
+    "default_stream": "https://radio.radioshansonplus.com:8235/radio"
   },
   {
     "id": 358,
@@ -305,7 +308,8 @@
     "total_score": 3584,
     "user_id": 1808,
     "rating": 6.4,
-    "created": "2019-07-02T21:19:53"
+    "created": "2019-07-02T21:19:53",
+    "default_stream": "https://stream.laut.fm/svoystil"
   },
   {
     "id": 340,
@@ -370,7 +374,8 @@
     "total_score": 21705,
     "user_id": 1791,
     "rating": 5.811244979919679,
-    "created": "2018-12-29T14:53:44"
+    "created": "2018-12-29T14:53:44",
+    "default_stream": "https://listen.myrh.ru/id02707"
   },
   {
     "id": 567,
@@ -440,7 +445,8 @@
     "total_score": 346,
     "user_id": 1994,
     "rating": 5.492063492063492,
-    "created": "2024-06-24T13:45:06"
+    "created": "2024-06-24T13:45:06",
+    "default_stream": "https://myradio24.org/9708"
   },
   {
     "id": 399,
@@ -510,7 +516,8 @@
     "total_score": 2006,
     "user_id": 1845,
     "rating": 5.349333333333333,
-    "created": "2020-05-31T11:01:35"
+    "created": "2020-05-31T11:01:35",
+    "default_stream": "https://gamaun.online:8025/radio"
   },
   {
     "id": 309,
@@ -577,7 +584,8 @@
     "total_score": 30974,
     "user_id": 1762,
     "rating": 5.3440303657694965,
-    "created": "2018-03-05T09:51:49"
+    "created": "2018-03-05T09:51:49",
+    "default_stream": null
   },
   {
     "id": 555,
@@ -642,7 +650,8 @@
     "total_score": 1040,
     "user_id": 1055,
     "rating": 5.279187817258883,
-    "created": "2023-09-21T15:11:22"
+    "created": "2023-09-21T15:11:22",
+    "default_stream": "https://myradio24.org/maxim"
   },
   {
     "id": 408,
@@ -712,7 +721,8 @@
     "total_score": 3555,
     "user_id": 1853,
     "rating": 5.235640648011782,
-    "created": "2020-08-04T16:35:58"
+    "created": "2020-08-04T16:35:58",
+    "default_stream": "https://myradio24.org/74127"
   },
   {
     "id": 333,
@@ -775,7 +785,8 @@
     "total_score": 3627,
     "user_id": 868,
     "rating": 5.218705035971223,
-    "created": "2018-10-26T13:53:26"
+    "created": "2018-10-26T13:53:26",
+    "default_stream": null
   },
   {
     "id": 404,
@@ -845,7 +856,8 @@
     "total_score": 78,
     "user_id": 1850,
     "rating": 5.2,
-    "created": "2020-07-20T11:18:04"
+    "created": "2020-07-20T11:18:04",
+    "default_stream": null
   },
   {
     "id": 310,
@@ -915,7 +927,8 @@
     "total_score": 181,
     "user_id": 1763,
     "rating": 5.171428571428572,
-    "created": "2018-03-30T15:22:50"
+    "created": "2018-03-30T15:22:50",
+    "default_stream": "https://stream.salyutfm.ru:4000/stream"
   },
   {
     "id": 606,
@@ -978,7 +991,8 @@
     "total_score": 670,
     "user_id": 2027,
     "rating": 5.114503816793893,
-    "created": "2025-05-08T12:58:25"
+    "created": "2025-05-08T12:58:25",
+    "default_stream": "https://oldhit.ru:8000"
   },
   {
     "id": 292,
@@ -1048,7 +1062,8 @@
     "total_score": 4321,
     "user_id": 1746,
     "rating": 5.095518867924528,
-    "created": "2017-11-13T04:16:43"
+    "created": "2017-11-13T04:16:43",
+    "default_stream": "https://myradio24.org/alexx333"
   },
   {
     "id": 437,
@@ -1125,7 +1140,8 @@
     "total_score": 478,
     "user_id": 1880,
     "rating": 5.085106382978723,
-    "created": "2021-03-12T00:39:33"
+    "created": "2021-03-12T00:39:33",
+    "default_stream": "https://c34.radioboss.fm/stream/441"
   },
   {
     "id": 368,
@@ -1195,7 +1211,8 @@
     "total_score": 1542,
     "user_id": 1816,
     "rating": 5.072368421052632,
-    "created": "2019-09-25T23:17:16"
+    "created": "2019-09-25T23:17:16",
+    "default_stream": "https://myradio24.org/23297"
   },
   {
     "id": 506,
@@ -1272,7 +1289,8 @@
     "total_score": 709,
     "user_id": 1947,
     "rating": 5.064285714285714,
-    "created": "2022-11-02T16:22:11"
+    "created": "2022-11-02T16:22:11",
+    "default_stream": "https://myradio24.org/9316_320"
   },
   {
     "id": 595,
@@ -1335,7 +1353,8 @@
     "total_score": 1817,
     "user_id": 1237,
     "rating": 5.061281337047354,
-    "created": "2025-01-31T16:44:29"
+    "created": "2025-01-31T16:44:29",
+    "default_stream": null
   },
   {
     "id": 112,
@@ -1412,7 +1431,8 @@
     "total_score": 23829,
     "user_id": 1586,
     "rating": 5.051727793088828,
-    "created": "2014-08-15T11:17:54"
+    "created": "2014-08-15T11:17:54",
+    "default_stream": "https://listen6.myradio24.com/2411"
   },
   {
     "id": 526,
@@ -1477,7 +1497,8 @@
     "total_score": 136,
     "user_id": 1964,
     "rating": 5.037037037037037,
-    "created": "2023-02-24T23:40:14"
+    "created": "2023-02-24T23:40:14",
+    "default_stream": "https://listen.myrh.ru/RadioIskra"
   },
   {
     "id": 86,
@@ -1554,7 +1575,8 @@
     "total_score": 11453,
     "user_id": 1562,
     "rating": 5.005681818181818,
-    "created": "2013-09-16T12:19:09"
+    "created": "2013-09-16T12:19:09",
+    "default_stream": null
   },
   {
     "id": 197,
@@ -1638,7 +1660,8 @@
     "total_score": 10470,
     "user_id": 654,
     "rating": 5.004780114722753,
-    "created": "2016-04-11T13:54:50"
+    "created": "2016-04-11T13:54:50",
+    "default_stream": null
   },
   {
     "id": 138,
@@ -1698,7 +1721,8 @@
     "total_score": 5002,
     "user_id": 1607,
     "rating": 5.002,
-    "created": "2015-06-19T19:17:14"
+    "created": "2015-06-19T19:17:14",
+    "default_stream": null
   },
   {
     "id": 127,
@@ -1768,7 +1792,8 @@
     "total_score": 15314,
     "user_id": 161,
     "rating": 5.001306335728282,
-    "created": "2015-03-14T02:37:17"
+    "created": "2015-03-14T02:37:17",
+    "default_stream": null
   },
   {
     "id": 297,
@@ -1821,7 +1846,8 @@
     "total_score": 872,
     "user_id": 1751,
     "rating": 4.982857142857143,
-    "created": "2017-12-04T19:44:25"
+    "created": "2017-12-04T19:44:25",
+    "default_stream": "https://myradio24.org/bsj"
   },
   {
     "id": 211,
@@ -1891,7 +1917,8 @@
     "total_score": 259,
     "user_id": 1673,
     "rating": 4.980769230769231,
-    "created": "2016-08-02T11:38:16"
+    "created": "2016-08-02T11:38:16",
+    "default_stream": "https://listen6.myradio24.com/61733"
   },
   {
     "id": 579,
@@ -1968,7 +1995,8 @@
     "total_score": 148,
     "user_id": 2004,
     "rating": 4.933333333333334,
-    "created": "2024-10-18T06:29:34"
+    "created": "2024-10-18T06:29:34",
+    "default_stream": "https://siberian-station.online:8000/radio.mp3"
   },
   {
     "id": 266,
@@ -2045,7 +2073,8 @@
     "total_score": 419,
     "user_id": 833,
     "rating": 4.929411764705883,
-    "created": "2017-06-04T17:25:20"
+    "created": "2017-06-04T17:25:20",
+    "default_stream": "https://myradio24.org/angels"
   },
   {
     "id": 410,
@@ -2108,7 +2137,8 @@
     "total_score": 147,
     "user_id": 1855,
     "rating": 4.9,
-    "created": "2020-08-22T01:55:05"
+    "created": "2020-08-22T01:55:05",
+    "default_stream": null
   },
   {
     "id": 243,
@@ -2171,7 +2201,8 @@
     "total_score": 632,
     "user_id": 1701,
     "rating": 4.89922480620155,
-    "created": "2017-02-03T12:39:04"
+    "created": "2017-02-03T12:39:04",
+    "default_stream": null
   },
   {
     "id": 514,
@@ -2224,7 +2255,8 @@
     "total_score": 826,
     "user_id": 1955,
     "rating": 4.887573964497041,
-    "created": "2022-12-25T09:04:18"
+    "created": "2022-12-25T09:04:18",
+    "default_stream": "https://glassroomrec.s02.radio-tochka.com:5015/stream"
   },
   {
     "id": 137,
@@ -2294,7 +2326,8 @@
     "total_score": 1047,
     "user_id": 360,
     "rating": 4.869767441860465,
-    "created": "2015-06-18T20:46:13"
+    "created": "2015-06-18T20:46:13",
+    "default_stream": null
   },
   {
     "id": 543,
@@ -2364,7 +2397,8 @@
     "total_score": 423,
     "user_id": 1979,
     "rating": 4.862068965517241,
-    "created": "2023-07-04T16:21:59"
+    "created": "2023-07-04T16:21:59",
+    "default_stream": "https://myradio24.org/92398"
   },
   {
     "id": 566,
@@ -2434,7 +2468,8 @@
     "total_score": 68,
     "user_id": 1993,
     "rating": 4.857142857142857,
-    "created": "2024-06-24T09:13:36"
+    "created": "2024-06-24T09:13:36",
+    "default_stream": null
   },
   {
     "id": 568,
@@ -2494,7 +2529,8 @@
     "total_score": 34,
     "user_id": 1995,
     "rating": 4.857142857142857,
-    "created": "2024-06-25T21:56:13"
+    "created": "2024-06-25T21:56:13",
+    "default_stream": "https://api.ilarefm.ru/main"
   },
   {
     "id": 294,
@@ -2564,7 +2600,8 @@
     "total_score": 68,
     "user_id": 1748,
     "rating": 4.857142857142857,
-    "created": "2017-11-20T12:27:09"
+    "created": "2017-11-20T12:27:09",
+    "default_stream": null
   },
   {
     "id": 549,
@@ -2634,7 +2671,8 @@
     "total_score": 34,
     "user_id": 587,
     "rating": 4.857142857142857,
-    "created": "2023-08-26T19:34:50"
+    "created": "2023-08-26T19:34:50",
+    "default_stream": "https://c22.radioboss.fm:8416/piratfm"
   },
   {
     "id": 401,
@@ -2711,7 +2749,8 @@
     "total_score": 68,
     "user_id": 1847,
     "rating": 4.857142857142857,
-    "created": "2020-06-13T16:03:00"
+    "created": "2020-06-13T16:03:00",
+    "default_stream": "https://listen5.myradio24.com/seethesea"
   },
   {
     "id": 443,
@@ -2781,7 +2820,8 @@
     "total_score": 34,
     "user_id": 1886,
     "rating": 4.857142857142857,
-    "created": "2021-05-18T12:38:28"
+    "created": "2021-05-18T12:38:28",
+    "default_stream": null
   },
   {
     "id": 343,
@@ -2851,7 +2891,8 @@
     "total_score": 102,
     "user_id": 1794,
     "rating": 4.857142857142857,
-    "created": "2019-01-30T17:40:51"
+    "created": "2019-01-30T17:40:51",
+    "default_stream": "https://listen6.myradio24.com/walcon"
   },
   {
     "id": 461,
@@ -2914,7 +2955,8 @@
     "total_score": 34,
     "user_id": 1902,
     "rating": 4.857142857142857,
-    "created": "2021-12-15T15:05:06"
+    "created": "2021-12-15T15:05:06",
+    "default_stream": null
   },
   {
     "id": 613,
@@ -2984,7 +3026,8 @@
     "total_score": 34,
     "user_id": 2032,
     "rating": 4.857142857142857,
-    "created": "2025-07-01T01:17:40"
+    "created": "2025-07-01T01:17:40",
+    "default_stream": null
   },
   {
     "id": 529,
@@ -3042,7 +3085,8 @@
     "total_score": 68,
     "user_id": 1967,
     "rating": 4.857142857142857,
-    "created": "2023-03-19T20:43:46"
+    "created": "2023-03-19T20:43:46",
+    "default_stream": "https://stream.volnorez.com/live-app/879346"
   },
   {
     "id": 367,
@@ -3119,7 +3163,8 @@
     "total_score": 251,
     "user_id": 1442,
     "rating": 4.735849056603773,
-    "created": "2019-09-13T13:39:12"
+    "created": "2019-09-13T13:39:12",
+    "default_stream": null
   },
   {
     "id": 34,
@@ -3196,7 +3241,8 @@
     "total_score": 552,
     "user_id": 238,
     "rating": 4.717948717948718,
-    "created": "2011-10-07T11:20:33"
+    "created": "2011-10-07T11:20:33",
+    "default_stream": null
   },
   {
     "id": 274,
@@ -3266,7 +3312,8 @@
     "total_score": 80,
     "user_id": 1731,
     "rating": 4.705882352941177,
-    "created": "2017-08-09T16:34:13"
+    "created": "2017-08-09T16:34:13",
+    "default_stream": null
   },
   {
     "id": 369,
@@ -3324,7 +3371,8 @@
     "total_score": 155,
     "user_id": 1817,
     "rating": 4.696969696969697,
-    "created": "2019-10-10T15:27:05"
+    "created": "2019-10-10T15:27:05",
+    "default_stream": null
   },
   {
     "id": 233,
@@ -3401,7 +3449,8 @@
     "total_score": 1610,
     "user_id": 930,
     "rating": 4.6938775510204085,
-    "created": "2017-01-06T14:22:31"
+    "created": "2017-01-06T14:22:31",
+    "default_stream": null
   },
   {
     "id": 490,
@@ -3471,7 +3520,8 @@
     "total_score": 103,
     "user_id": 1931,
     "rating": 4.681818181818182,
-    "created": "2022-07-08T11:45:59"
+    "created": "2022-07-08T11:45:59",
+    "default_stream": "https://live.rock-wawe.ru:8001/RockWawe"
   },
   {
     "id": 56,
@@ -3555,7 +3605,8 @@
     "total_score": 25868,
     "user_id": 433,
     "rating": 4.670157068062827,
-    "created": "2012-11-02T11:20:10"
+    "created": "2012-11-02T11:20:10",
+    "default_stream": "https://listen.radionestandart.ru/nestandart-320.mp3"
   },
   {
     "id": 406,
@@ -3625,7 +3676,8 @@
     "total_score": 42,
     "user_id": 1852,
     "rating": 4.666666666666667,
-    "created": "2020-07-27T12:02:27"
+    "created": "2020-07-27T12:02:27",
+    "default_stream": "https://listen6.myradio24.com/unicorn"
   },
   {
     "id": 466,
@@ -3678,7 +3730,8 @@
     "total_score": 158,
     "user_id": 1907,
     "rating": 4.647058823529412,
-    "created": "2022-03-26T13:07:35"
+    "created": "2022-03-26T13:07:35",
+    "default_stream": "https://myradio24.org/sohofm"
   },
   {
     "id": 154,
@@ -3748,7 +3801,8 @@
     "total_score": 2133,
     "user_id": 1620,
     "rating": 4.636956521739131,
-    "created": "2015-10-23T15:12:34"
+    "created": "2015-10-23T15:12:34",
+    "default_stream": null
   },
   {
     "id": 486,
@@ -3825,7 +3879,8 @@
     "total_score": 88,
     "user_id": 1926,
     "rating": 4.631578947368421,
-    "created": "2022-06-12T13:23:00"
+    "created": "2022-06-12T13:23:00",
+    "default_stream": "https://myradio24.org/rockataka"
   },
   {
     "id": 352,
@@ -3895,7 +3950,8 @@
     "total_score": 125,
     "user_id": 1803,
     "rating": 4.62962962962963,
-    "created": "2019-04-05T17:47:15"
+    "created": "2019-04-05T17:47:15",
+    "default_stream": "https://listen.myrh.ru/sk-radio/mobile"
   },
   {
     "id": 101,
@@ -3953,7 +4009,8 @@
     "total_score": 675,
     "user_id": 1575,
     "rating": 4.623287671232877,
-    "created": "2014-04-10T11:57:50"
+    "created": "2014-04-10T11:57:50",
+    "default_stream": null
   },
   {
     "id": 128,
@@ -4016,7 +4073,8 @@
     "total_score": 203,
     "user_id": 1601,
     "rating": 4.613636363636363,
-    "created": "2015-03-19T08:56:03"
+    "created": "2015-03-19T08:56:03",
+    "default_stream": "https://stream.musicaldecadence.ru/live"
   },
   {
     "id": 505,
@@ -4086,7 +4144,8 @@
     "total_score": 23,
     "user_id": 1946,
     "rating": 4.6,
-    "created": "2022-10-29T21:22:03"
+    "created": "2022-10-29T21:22:03",
+    "default_stream": "https://myradio24.org/5129"
   },
   {
     "id": 360,
@@ -4144,7 +4203,8 @@
     "total_score": 69,
     "user_id": 1810,
     "rating": 4.6,
-    "created": "2019-07-15T11:17:22"
+    "created": "2019-07-15T11:17:22",
+    "default_stream": "https://listen.myrh.ru/id022065"
   },
   {
     "id": 544,
@@ -4209,7 +4269,8 @@
     "total_score": 23,
     "user_id": 870,
     "rating": 4.6,
-    "created": "2023-07-10T18:12:31"
+    "created": "2023-07-10T18:12:31",
+    "default_stream": "https://nostalgie.dagfm.ru/"
   },
   {
     "id": 519,
@@ -4279,7 +4340,8 @@
     "total_score": 207,
     "user_id": 1959,
     "rating": 4.6,
-    "created": "2023-01-25T19:11:10"
+    "created": "2023-01-25T19:11:10",
+    "default_stream": "https://myradio24.org/40905"
   },
   {
     "id": 344,
@@ -4349,7 +4411,8 @@
     "total_score": 23,
     "user_id": 1795,
     "rating": 4.6,
-    "created": "2019-02-02T20:38:33"
+    "created": "2019-02-02T20:38:33",
+    "default_stream": null
   },
   {
     "id": 329,
@@ -4419,7 +4482,8 @@
     "total_score": 46,
     "user_id": 1783,
     "rating": 4.6,
-    "created": "2018-10-02T19:51:01"
+    "created": "2018-10-02T19:51:01",
+    "default_stream": "https://azura.radioplato.by/radio/8000/radio.mp3"
   },
   {
     "id": 291,
@@ -4489,7 +4553,8 @@
     "total_score": 23,
     "user_id": 1745,
     "rating": 4.6,
-    "created": "2017-11-09T20:18:18"
+    "created": "2017-11-09T20:18:18",
+    "default_stream": null
   },
   {
     "id": 334,
@@ -4559,7 +4624,8 @@
     "total_score": 23,
     "user_id": 1787,
     "rating": 4.6,
-    "created": "2018-11-09T21:58:11"
+    "created": "2018-11-09T21:58:11",
+    "default_stream": null
   },
   {
     "id": 598,
@@ -4624,7 +4690,8 @@
     "total_score": 23,
     "user_id": 2020,
     "rating": 4.6,
-    "created": "2025-02-19T21:32:39"
+    "created": "2025-02-19T21:32:39",
+    "default_stream": null
   },
   {
     "id": 379,
@@ -4677,7 +4744,8 @@
     "total_score": 23,
     "user_id": 1826,
     "rating": 4.6,
-    "created": "2020-02-08T23:50:16"
+    "created": "2020-02-08T23:50:16",
+    "default_stream": null
   },
   {
     "id": 325,
@@ -4747,7 +4815,8 @@
     "total_score": 115,
     "user_id": 1779,
     "rating": 4.6,
-    "created": "2018-08-20T16:43:07"
+    "created": "2018-08-20T16:43:07",
+    "default_stream": "https://myradio24.org/4156"
   },
   {
     "id": 120,
@@ -4817,7 +4886,8 @@
     "total_score": 1323,
     "user_id": 1594,
     "rating": 4.59375,
-    "created": "2014-12-07T18:09:22"
+    "created": "2014-12-07T18:09:22",
+    "default_stream": null
   },
   {
     "id": 149,
@@ -4887,7 +4957,8 @@
     "total_score": 335,
     "user_id": 1616,
     "rating": 4.589041095890411,
-    "created": "2015-09-09T16:41:51"
+    "created": "2015-09-09T16:41:51",
+    "default_stream": null
   },
   {
     "id": 180,
@@ -4957,7 +5028,8 @@
     "total_score": 1349,
     "user_id": 1645,
     "rating": 4.58843537414966,
-    "created": "2016-02-17T12:29:24"
+    "created": "2016-02-17T12:29:24",
+    "default_stream": null
   },
   {
     "id": 279,
@@ -5027,7 +5099,8 @@
     "total_score": 87,
     "user_id": 977,
     "rating": 4.578947368421052,
-    "created": "2017-09-04T11:37:39"
+    "created": "2017-09-04T11:37:39",
+    "default_stream": null
   },
   {
     "id": 336,
@@ -5097,7 +5170,8 @@
     "total_score": 64,
     "user_id": 1789,
     "rating": 4.571428571428571,
-    "created": "2018-11-26T15:52:29"
+    "created": "2018-11-26T15:52:29",
+    "default_stream": "https://server32349.streamplus.de/;stream.mp3"
   },
   {
     "id": 487,
@@ -5164,7 +5238,8 @@
     "total_score": 653,
     "user_id": 1927,
     "rating": 4.566433566433567,
-    "created": "2022-06-16T22:35:36"
+    "created": "2022-06-16T22:35:36",
+    "default_stream": "https://myradio24.org/74828"
   },
   {
     "id": 194,
@@ -5234,7 +5309,8 @@
     "total_score": 41,
     "user_id": 1660,
     "rating": 4.555555555555555,
-    "created": "2016-03-27T12:13:10"
+    "created": "2016-03-27T12:13:10",
+    "default_stream": null
   },
   {
     "id": 551,
@@ -5304,7 +5380,8 @@
     "total_score": 82,
     "user_id": 1983,
     "rating": 4.555555555555555,
-    "created": "2023-09-05T16:54:51"
+    "created": "2023-09-05T16:54:51",
+    "default_stream": "https://myradio24.org/paradise"
   },
   {
     "id": 460,
@@ -5374,7 +5451,8 @@
     "total_score": 59,
     "user_id": 1901,
     "rating": 4.538461538461538,
-    "created": "2021-12-15T00:56:26"
+    "created": "2021-12-15T00:56:26",
+    "default_stream": null
   },
   {
     "id": 145,
@@ -5444,7 +5522,8 @@
     "total_score": 95,
     "user_id": 1613,
     "rating": 4.523809523809524,
-    "created": "2015-08-26T01:58:02"
+    "created": "2015-08-26T01:58:02",
+    "default_stream": null
   },
   {
     "id": 453,
@@ -5504,7 +5583,8 @@
     "total_score": 36,
     "user_id": 1894,
     "rating": 4.5,
-    "created": "2021-10-28T20:44:41"
+    "created": "2021-10-28T20:44:41",
+    "default_stream": null
   },
   {
     "id": 582,
@@ -5567,7 +5647,8 @@
     "total_score": 27,
     "user_id": 2007,
     "rating": 4.5,
-    "created": "2024-11-22T17:02:40"
+    "created": "2024-11-22T17:02:40",
+    "default_stream": "https://myradio24.org/mirshirok"
   },
   {
     "id": 383,
@@ -5627,7 +5708,8 @@
     "total_score": 81,
     "user_id": 1830,
     "rating": 4.5,
-    "created": "2020-03-14T23:12:08"
+    "created": "2020-03-14T23:12:08",
+    "default_stream": null
   },
   {
     "id": 189,
@@ -5690,7 +5772,8 @@
     "total_score": 197,
     "user_id": 1655,
     "rating": 4.4772727272727275,
-    "created": "2016-02-21T01:28:53"
+    "created": "2016-02-21T01:28:53",
+    "default_stream": null
   },
   {
     "id": 186,
@@ -5748,7 +5831,8 @@
     "total_score": 197,
     "user_id": 1652,
     "rating": 4.4772727272727275,
-    "created": "2016-02-21T00:57:58"
+    "created": "2016-02-21T00:57:58",
+    "default_stream": null
   },
   {
     "id": 162,
@@ -5818,7 +5902,8 @@
     "total_score": 94,
     "user_id": 1628,
     "rating": 4.476190476190476,
-    "created": "2015-12-16T12:37:45"
+    "created": "2015-12-16T12:37:45",
+    "default_stream": null
   },
   {
     "id": 604,
@@ -5881,7 +5966,8 @@
     "total_score": 58,
     "user_id": 2025,
     "rating": 4.461538461538462,
-    "created": "2025-04-04T08:25:43"
+    "created": "2025-04-04T08:25:43",
+    "default_stream": "https://myradio24.org/danceradio"
   },
   {
     "id": 177,
@@ -5944,7 +6030,8 @@
     "total_score": 58,
     "user_id": 1642,
     "rating": 4.461538461538462,
-    "created": "2016-02-17T00:41:32"
+    "created": "2016-02-17T00:41:32",
+    "default_stream": null
   },
   {
     "id": 130,
@@ -6014,7 +6101,8 @@
     "total_score": 174,
     "user_id": 476,
     "rating": 4.461538461538462,
-    "created": "2015-03-24T03:18:55"
+    "created": "2015-03-24T03:18:55",
+    "default_stream": null
   },
   {
     "id": 147,
@@ -6081,7 +6169,8 @@
     "total_score": 71,
     "user_id": 1614,
     "rating": 4.4375,
-    "created": "2015-09-03T18:38:05"
+    "created": "2015-09-03T18:38:05",
+    "default_stream": null
   },
   {
     "id": 103,
@@ -6151,7 +6240,8 @@
     "total_score": 2692,
     "user_id": 1577,
     "rating": 4.420361247947455,
-    "created": "2014-05-11T09:22:46"
+    "created": "2014-05-11T09:22:46",
+    "default_stream": null
   },
   {
     "id": 187,
@@ -6214,7 +6304,8 @@
     "total_score": 198,
     "user_id": 1653,
     "rating": 4.4,
-    "created": "2016-02-21T01:14:09"
+    "created": "2016-02-21T01:14:09",
+    "default_stream": null
   },
   {
     "id": 455,
@@ -6277,7 +6368,8 @@
     "total_score": 22,
     "user_id": 1896,
     "rating": 4.4,
-    "created": "2021-11-24T06:15:55"
+    "created": "2021-11-24T06:15:55",
+    "default_stream": null
   },
   {
     "id": 193,
@@ -6340,7 +6432,8 @@
     "total_score": 105,
     "user_id": 1659,
     "rating": 4.375,
-    "created": "2016-03-20T01:55:31"
+    "created": "2016-03-20T01:55:31",
+    "default_stream": null
   },
   {
     "id": 403,
@@ -6403,7 +6496,8 @@
     "total_score": 35,
     "user_id": 1849,
     "rating": 4.375,
-    "created": "2020-07-14T11:02:19"
+    "created": "2020-07-14T11:02:19",
+    "default_stream": null
   },
   {
     "id": 42,
@@ -6466,7 +6560,8 @@
     "total_score": 105,
     "user_id": 1523,
     "rating": 4.375,
-    "created": "2012-01-15T09:09:56"
+    "created": "2012-01-15T09:09:56",
+    "default_stream": "https://listen2.myradio24.com/8118"
   },
   {
     "id": 253,
@@ -6543,7 +6638,8 @@
     "total_score": 35,
     "user_id": 1712,
     "rating": 4.375,
-    "created": "2017-03-04T09:05:33"
+    "created": "2017-03-04T09:05:33",
+    "default_stream": "https://listen2.myradio24.com/8032"
   },
   {
     "id": 381,
@@ -6601,7 +6697,8 @@
     "total_score": 35,
     "user_id": 1828,
     "rating": 4.375,
-    "created": "2020-03-01T00:24:26"
+    "created": "2020-03-01T00:24:26",
+    "default_stream": null
   },
   {
     "id": 191,
@@ -6671,7 +6768,8 @@
     "total_score": 35,
     "user_id": 1657,
     "rating": 4.375,
-    "created": "2016-03-05T17:24:41"
+    "created": "2016-03-05T17:24:41",
+    "default_stream": null
   },
   {
     "id": 355,
@@ -6741,7 +6839,8 @@
     "total_score": 35,
     "user_id": 1111,
     "rating": 4.375,
-    "created": "2019-06-17T17:32:55"
+    "created": "2019-06-17T17:32:55",
+    "default_stream": null
   },
   {
     "id": 84,
@@ -6811,7 +6910,8 @@
     "total_score": 117,
     "user_id": 821,
     "rating": 4.333333333333333,
-    "created": "2013-09-08T17:42:20"
+    "created": "2013-09-08T17:42:20",
+    "default_stream": null
   },
   {
     "id": 445,
@@ -6871,7 +6971,8 @@
     "total_score": 13,
     "user_id": 1888,
     "rating": 4.333333333333333,
-    "created": "2021-07-06T22:53:56"
+    "created": "2021-07-06T22:53:56",
+    "default_stream": null
   },
   {
     "id": 104,
@@ -6948,7 +7049,8 @@
     "total_score": 2508,
     "user_id": 1578,
     "rating": 4.324137931034483,
-    "created": "2014-05-17T07:18:10"
+    "created": "2014-05-17T07:18:10",
+    "default_stream": "https://online.pilotfm.ru/pilot_aacplus"
   },
   {
     "id": 370,
@@ -7018,7 +7120,8 @@
     "total_score": 60,
     "user_id": 1818,
     "rating": 4.285714285714286,
-    "created": "2019-11-05T03:28:56"
+    "created": "2019-11-05T03:28:56",
+    "default_stream": "https://listen.myrh.ru/elfradio"
   },
   {
     "id": 199,
@@ -7088,7 +7191,8 @@
     "total_score": 47,
     "user_id": 1664,
     "rating": 4.2727272727272725,
-    "created": "2016-04-15T00:29:23"
+    "created": "2016-04-15T00:29:23",
+    "default_stream": null
   },
   {
     "id": 188,
@@ -7151,7 +7255,8 @@
     "total_score": 200,
     "user_id": 1654,
     "rating": 4.25531914893617,
-    "created": "2016-02-21T01:21:10"
+    "created": "2016-02-21T01:21:10",
+    "default_stream": null
   },
   {
     "id": 32,
@@ -7214,7 +7319,8 @@
     "total_score": 821,
     "user_id": 1514,
     "rating": 4.253886010362694,
-    "created": "2011-05-05T23:18:37"
+    "created": "2011-05-05T23:18:37",
+    "default_stream": null
   },
   {
     "id": 600,
@@ -7284,7 +7390,8 @@
     "total_score": 34,
     "user_id": 2022,
     "rating": 4.25,
-    "created": "2025-02-27T21:32:14"
+    "created": "2025-02-27T21:32:14",
+    "default_stream": null
   },
   {
     "id": 24,
@@ -7351,7 +7458,8 @@
     "total_score": 9334,
     "user_id": 723,
     "rating": 4.246587807097361,
-    "created": "2011-01-21T19:18:22"
+    "created": "2011-01-21T19:18:22",
+    "default_stream": "https://myradio24.org/radiometal"
   },
   {
     "id": 73,
@@ -7416,7 +7524,8 @@
     "total_score": 828,
     "user_id": 1552,
     "rating": 4.246153846153846,
-    "created": "2013-03-17T22:22:43"
+    "created": "2013-03-17T22:22:43",
+    "default_stream": null
   },
   {
     "id": 63,
@@ -7479,7 +7588,8 @@
     "total_score": 174,
     "user_id": 540,
     "rating": 4.2439024390243905,
-    "created": "2013-01-04T23:04:52"
+    "created": "2013-01-04T23:04:52",
+    "default_stream": null
   },
   {
     "id": 8,
@@ -7512,7 +7622,8 @@
     "total_score": 4136,
     "user_id": 1491,
     "rating": 4.169354838709677,
-    "created": "2010-03-10T15:21:22"
+    "created": "2010-03-10T15:21:22",
+    "default_stream": null
   },
   {
     "id": 423,
@@ -7575,7 +7686,8 @@
     "total_score": 25,
     "user_id": 1867,
     "rating": 4.166666666666667,
-    "created": "2020-11-21T22:34:54"
+    "created": "2020-11-21T22:34:54",
+    "default_stream": "https://radio.mil.by/live"
   },
   {
     "id": 116,
@@ -7633,7 +7745,8 @@
     "total_score": 112,
     "user_id": 1590,
     "rating": 4.148148148148148,
-    "created": "2014-09-09T01:14:58"
+    "created": "2014-09-09T01:14:58",
+    "default_stream": null
   },
   {
     "id": 1,
@@ -7673,7 +7786,8 @@
     "total_score": 232,
     "user_id": 1484,
     "rating": 4.142857142857143,
-    "created": "2009-01-24T03:53:30"
+    "created": "2009-01-24T03:53:30",
+    "default_stream": null
   },
   {
     "id": 349,
@@ -7736,7 +7850,8 @@
     "total_score": 29,
     "user_id": 1800,
     "rating": 4.142857142857143,
-    "created": "2019-03-03T15:11:34"
+    "created": "2019-03-03T15:11:34",
+    "default_stream": "https://listen2.myradio24.com/8000"
   },
   {
     "id": 190,
@@ -7799,7 +7914,8 @@
     "total_score": 153,
     "user_id": 1656,
     "rating": 4.135135135135135,
-    "created": "2016-02-23T20:20:21"
+    "created": "2016-02-23T20:20:21",
+    "default_stream": null
   },
   {
     "id": 174,
@@ -7864,7 +7980,8 @@
     "total_score": 37,
     "user_id": 1640,
     "rating": 4.111111111111111,
-    "created": "2016-02-13T17:21:54"
+    "created": "2016-02-13T17:21:54",
+    "default_stream": null
   },
   {
     "id": 430,
@@ -7929,7 +8046,8 @@
     "total_score": 49,
     "user_id": 1874,
     "rating": 4.083333333333333,
-    "created": "2020-12-25T22:28:16"
+    "created": "2020-12-25T22:28:16",
+    "default_stream": null
   },
   {
     "id": 36,
@@ -7994,7 +8112,8 @@
     "total_score": 449,
     "user_id": 1517,
     "rating": 4.081818181818182,
-    "created": "2011-10-14T21:44:05"
+    "created": "2011-10-14T21:44:05",
+    "default_stream": "https://listen2.myradio24.com/8144"
   },
   {
     "id": 416,
@@ -8064,7 +8183,8 @@
     "total_score": 89,
     "user_id": 800,
     "rating": 4.045454545454546,
-    "created": "2020-10-06T16:51:01"
+    "created": "2020-10-06T16:51:01",
+    "default_stream": "https://air.radio2000x.com:8005/stream"
   },
   {
     "id": 479,
@@ -8127,7 +8247,8 @@
     "total_score": 12,
     "user_id": 1919,
     "rating": 4.0,
-    "created": "2022-05-04T21:42:46"
+    "created": "2022-05-04T21:42:46",
+    "default_stream": "https://radio.bbz.ru/radio/8000/192.mp3"
   },
   {
     "id": 359,
@@ -8190,7 +8311,8 @@
     "total_score": 12,
     "user_id": 1809,
     "rating": 4.0,
-    "created": "2019-07-05T03:33:44"
+    "created": "2019-07-05T03:33:44",
+    "default_stream": null
   },
   {
     "id": 195,
@@ -8260,7 +8382,8 @@
     "total_score": 12,
     "user_id": 1661,
     "rating": 4.0,
-    "created": "2016-03-28T20:27:41"
+    "created": "2016-03-28T20:27:41",
+    "default_stream": null
   },
   {
     "id": 545,
@@ -8351,7 +8474,8 @@
     "total_score": 12,
     "user_id": 1045,
     "rating": 4.0,
-    "created": "2023-07-19T18:46:53"
+    "created": "2023-07-19T18:46:53",
+    "default_stream": "https://listen4.myradio24.com/22582"
   },
   {
     "id": 500,
@@ -8421,7 +8545,8 @@
     "total_score": 24,
     "user_id": 1941,
     "rating": 4.0,
-    "created": "2022-10-11T03:00:28"
+    "created": "2022-10-11T03:00:28",
+    "default_stream": "https://ais-sa2.cdnstream1.com/2447_192.mp3"
   },
   {
     "id": 200,
@@ -8491,7 +8616,8 @@
     "total_score": 48,
     "user_id": 1665,
     "rating": 4.0,
-    "created": "2016-04-16T20:41:04"
+    "created": "2016-04-16T20:41:04",
+    "default_stream": null
   },
   {
     "id": 249,
@@ -8561,7 +8687,8 @@
     "total_score": 12,
     "user_id": 1707,
     "rating": 4.0,
-    "created": "2017-02-15T14:35:16"
+    "created": "2017-02-15T14:35:16",
+    "default_stream": null
   },
   {
     "id": 288,
@@ -8631,7 +8758,8 @@
     "total_score": 20,
     "user_id": 1742,
     "rating": 4.0,
-    "created": "2017-10-24T15:57:45"
+    "created": "2017-10-24T15:57:45",
+    "default_stream": "https://kamchatkalive.ru:8103/dance"
   },
   {
     "id": 289,
@@ -8696,7 +8824,8 @@
     "total_score": 12,
     "user_id": 1743,
     "rating": 4.0,
-    "created": "2017-10-24T16:43:18"
+    "created": "2017-10-24T16:43:18",
+    "default_stream": "https://kamchatkalive.ru:8103/rock"
   },
   {
     "id": 205,
@@ -8754,7 +8883,8 @@
     "total_score": 12,
     "user_id": 1668,
     "rating": 4.0,
-    "created": "2016-05-09T10:54:54"
+    "created": "2016-05-09T10:54:54",
+    "default_stream": null
   },
   {
     "id": 69,
@@ -8817,7 +8947,8 @@
     "total_score": 24,
     "user_id": 1548,
     "rating": 4.0,
-    "created": "2013-01-28T11:40:11"
+    "created": "2013-01-28T11:40:11",
+    "default_stream": null
   },
   {
     "id": 610,
@@ -8880,7 +9011,8 @@
     "total_score": 12,
     "user_id": 2030,
     "rating": 4.0,
-    "created": "2025-05-30T18:03:55"
+    "created": "2025-05-30T18:03:55",
+    "default_stream": "https://myradio24.org/metalchet"
   },
   {
     "id": 565,
@@ -8964,7 +9096,8 @@
     "total_score": 12,
     "user_id": 1992,
     "rating": 4.0,
-    "created": "2024-06-08T17:55:49"
+    "created": "2024-06-08T17:55:49",
+    "default_stream": "https://daystream.palmerablanca.com/daystream-192.mp3"
   },
   {
     "id": 99,
@@ -9041,7 +9174,8 @@
     "total_score": 48,
     "user_id": 1573,
     "rating": 4.0,
-    "created": "2014-04-07T13:22:29"
+    "created": "2014-04-07T13:22:29",
+    "default_stream": null
   },
   {
     "id": 49,
@@ -9104,7 +9238,8 @@
     "total_score": 16,
     "user_id": 1530,
     "rating": 4.0,
-    "created": "2012-06-15T14:18:52"
+    "created": "2012-06-15T14:18:52",
+    "default_stream": null
   },
   {
     "id": 202,
@@ -9167,7 +9302,8 @@
     "total_score": 12,
     "user_id": 1666,
     "rating": 4.0,
-    "created": "2016-04-23T21:27:01"
+    "created": "2016-04-23T21:27:01",
+    "default_stream": null
   },
   {
     "id": 35,
@@ -9230,7 +9366,8 @@
     "total_score": 20,
     "user_id": 1516,
     "rating": 4.0,
-    "created": "2011-10-09T22:24:47"
+    "created": "2011-10-09T22:24:47",
+    "default_stream": null
   },
   {
     "id": 413,
@@ -9293,7 +9430,8 @@
     "total_score": 12,
     "user_id": 1858,
     "rating": 4.0,
-    "created": "2020-09-20T16:58:13"
+    "created": "2020-09-20T16:58:13",
+    "default_stream": null
   },
   {
     "id": 350,
@@ -9356,7 +9494,8 @@
     "total_score": 12,
     "user_id": 1801,
     "rating": 4.0,
-    "created": "2019-03-27T17:03:43"
+    "created": "2019-03-27T17:03:43",
+    "default_stream": null
   },
   {
     "id": 462,
@@ -9433,7 +9572,8 @@
     "total_score": 12,
     "user_id": 1903,
     "rating": 4.0,
-    "created": "2022-01-16T15:38:50"
+    "created": "2022-01-16T15:38:50",
+    "default_stream": "https://myradio24.org/vinila"
   },
   {
     "id": 436,
@@ -9496,7 +9636,8 @@
     "total_score": 24,
     "user_id": 1879,
     "rating": 4.0,
-    "created": "2021-02-28T17:17:38"
+    "created": "2021-02-28T17:17:38",
+    "default_stream": null
   },
   {
     "id": 75,
@@ -9566,7 +9707,8 @@
     "total_score": 36,
     "user_id": 682,
     "rating": 4.0,
-    "created": "2013-04-09T21:02:29"
+    "created": "2013-04-09T21:02:29",
+    "default_stream": null
   },
   {
     "id": 356,
@@ -9643,7 +9785,8 @@
     "total_score": 24,
     "user_id": 1806,
     "rating": 4.0,
-    "created": "2019-06-18T00:22:30"
+    "created": "2019-06-18T00:22:30",
+    "default_stream": "https://a4.radioheart.ru:9036/RH13170"
   },
   {
     "id": 523,
@@ -9713,7 +9856,8 @@
     "total_score": 12,
     "user_id": 1962,
     "rating": 4.0,
-    "created": "2023-02-20T13:11:29"
+    "created": "2023-02-20T13:11:29",
+    "default_stream": "https://stream.discoveryfm.ru/discovery256.mp3"
   },
   {
     "id": 593,
@@ -9783,7 +9927,8 @@
     "total_score": 12,
     "user_id": 2016,
     "rating": 4.0,
-    "created": "2025-01-23T02:28:21"
+    "created": "2025-01-23T02:28:21",
+    "default_stream": "https://stream.svobodnoe.media/freemp3"
   },
   {
     "id": 541,
@@ -9846,7 +9991,8 @@
     "total_score": 24,
     "user_id": 1977,
     "rating": 4.0,
-    "created": "2023-06-28T17:15:16"
+    "created": "2023-06-28T17:15:16",
+    "default_stream": "https://listen3.myradio24.com/djsevro"
   },
   {
     "id": 51,
@@ -9930,7 +10076,8 @@
     "total_score": 12,
     "user_id": 1532,
     "rating": 4.0,
-    "created": "2012-07-13T14:07:58"
+    "created": "2012-07-13T14:07:58",
+    "default_stream": null
   },
   {
     "id": 454,
@@ -10000,7 +10147,8 @@
     "total_score": 12,
     "user_id": 1895,
     "rating": 4.0,
-    "created": "2021-11-23T14:04:09"
+    "created": "2021-11-23T14:04:09",
+    "default_stream": "https://listen7.myradio24.com/listen"
   },
   {
     "id": 378,
@@ -10070,7 +10218,8 @@
     "total_score": 188,
     "user_id": 1825,
     "rating": 4.0,
-    "created": "2020-02-02T21:58:31"
+    "created": "2020-02-02T21:58:31",
+    "default_stream": "https://stream.laut.fm/radio90s"
   },
   {
     "id": 146,
@@ -10168,7 +10317,8 @@
     "total_score": 95,
     "user_id": 780,
     "rating": 3.9583333333333335,
-    "created": "2015-09-03T13:55:34"
+    "created": "2015-09-03T13:55:34",
+    "default_stream": "https://stream.motoradio.online/high-mp3"
   },
   {
     "id": 345,
@@ -10231,7 +10381,8 @@
     "total_score": 67,
     "user_id": 1796,
     "rating": 3.9411764705882355,
-    "created": "2019-02-04T02:41:59"
+    "created": "2019-02-04T02:41:59",
+    "default_stream": null
   },
   {
     "id": 67,
@@ -10294,7 +10445,8 @@
     "total_score": 43,
     "user_id": 1546,
     "rating": 3.909090909090909,
-    "created": "2013-01-21T11:53:56"
+    "created": "2013-01-21T11:53:56",
+    "default_stream": null
   },
   {
     "id": 29,
@@ -10327,7 +10479,8 @@
     "total_score": 23,
     "user_id": 1511,
     "rating": 3.8333333333333335,
-    "created": "2011-03-11T10:53:43"
+    "created": "2011-03-11T10:53:43",
+    "default_stream": null
   },
   {
     "id": 158,
@@ -10392,7 +10545,8 @@
     "total_score": 61,
     "user_id": 1624,
     "rating": 3.8125,
-    "created": "2015-11-22T13:35:19"
+    "created": "2015-11-22T13:35:19",
+    "default_stream": null
   },
   {
     "id": 66,
@@ -10455,7 +10609,8 @@
     "total_score": 26,
     "user_id": 1545,
     "rating": 3.7142857142857144,
-    "created": "2013-01-19T12:21:56"
+    "created": "2013-01-19T12:21:56",
+    "default_stream": null
   },
   {
     "id": 227,
@@ -10522,7 +10677,8 @@
     "total_score": 37,
     "user_id": 1687,
     "rating": 3.7,
-    "created": "2016-11-15T14:14:35"
+    "created": "2016-11-15T14:14:35",
+    "default_stream": null
   },
   {
     "id": 338,
@@ -10606,7 +10762,8 @@
     "total_score": 74,
     "user_id": 1790,
     "rating": 3.7,
-    "created": "2018-11-28T17:41:52"
+    "created": "2018-11-28T17:41:52",
+    "default_stream": "https://s05.volnorez.com/live-app/788219"
   },
   {
     "id": 219,
@@ -10690,7 +10847,8 @@
     "total_score": 25,
     "user_id": 1679,
     "rating": 3.5714285714285716,
-    "created": "2016-09-21T15:33:42"
+    "created": "2016-09-21T15:33:42",
+    "default_stream": null
   },
   {
     "id": 452,
@@ -10760,7 +10918,8 @@
     "total_score": 25,
     "user_id": 1338,
     "rating": 3.5714285714285716,
-    "created": "2021-10-11T23:33:56"
+    "created": "2021-10-11T23:33:56",
+    "default_stream": "https://listen7.myradio24.com/69366"
   },
   {
     "id": 60,
@@ -10813,7 +10972,8 @@
     "total_score": 20,
     "user_id": 1540,
     "rating": 3.3333333333333335,
-    "created": "2012-11-29T12:32:11"
+    "created": "2012-11-29T12:32:11",
+    "default_stream": null
   },
   {
     "id": 389,
@@ -10878,7 +11038,8 @@
     "total_score": 49,
     "user_id": 1836,
     "rating": 3.2666666666666666,
-    "created": "2020-04-16T13:06:53"
+    "created": "2020-04-16T13:06:53",
+    "default_stream": null
   },
   {
     "id": 301,
@@ -10948,7 +11109,8 @@
     "total_score": 13,
     "user_id": 1754,
     "rating": 3.25,
-    "created": "2017-12-26T01:40:12"
+    "created": "2017-12-26T01:40:12",
+    "default_stream": "https://myradio24.org/95451"
   },
   {
     "id": 111,
@@ -11018,7 +11180,8 @@
     "total_score": 13,
     "user_id": 1585,
     "rating": 3.25,
-    "created": "2014-08-01T14:11:19"
+    "created": "2014-08-01T14:11:19",
+    "default_stream": null
   },
   {
     "id": 380,
@@ -11095,7 +11258,8 @@
     "total_score": 13,
     "user_id": 1827,
     "rating": 3.25,
-    "created": "2020-02-22T15:48:33"
+    "created": "2020-02-22T15:48:33",
+    "default_stream": null
   },
   {
     "id": 280,
@@ -11165,7 +11329,8 @@
     "total_score": 13,
     "user_id": 1736,
     "rating": 3.25,
-    "created": "2017-09-08T16:36:04"
+    "created": "2017-09-08T16:36:04",
+    "default_stream": null
   },
   {
     "id": 192,
@@ -11228,7 +11393,8 @@
     "total_score": 13,
     "user_id": 1658,
     "rating": 3.25,
-    "created": "2016-03-15T09:41:20"
+    "created": "2016-03-15T09:41:20",
+    "default_stream": null
   },
   {
     "id": 168,
@@ -11293,7 +11459,8 @@
     "total_score": 13,
     "user_id": 1634,
     "rating": 3.25,
-    "created": "2016-01-25T01:23:22"
+    "created": "2016-01-25T01:23:22",
+    "default_stream": null
   },
   {
     "id": 102,
@@ -11356,7 +11523,8 @@
     "total_score": 13,
     "user_id": 1576,
     "rating": 3.25,
-    "created": "2014-04-11T16:36:44"
+    "created": "2014-04-11T16:36:44",
+    "default_stream": null
   },
   {
     "id": 184,
@@ -11416,7 +11584,8 @@
     "total_score": 13,
     "user_id": 1650,
     "rating": 3.25,
-    "created": "2016-02-19T00:00:18"
+    "created": "2016-02-19T00:00:18",
+    "default_stream": null
   },
   {
     "id": 384,
@@ -11469,7 +11638,8 @@
     "total_score": 13,
     "user_id": 1831,
     "rating": 3.25,
-    "created": "2020-03-19T19:36:55"
+    "created": "2020-03-19T19:36:55",
+    "default_stream": "https://a7.radioheart.ru:9005/RH24945"
   },
   {
     "id": 377,
@@ -11532,7 +11702,8 @@
     "total_score": 13,
     "user_id": 1824,
     "rating": 3.25,
-    "created": "2020-01-29T01:36:43"
+    "created": "2020-01-29T01:36:43",
+    "default_stream": null
   },
   {
     "id": 179,
@@ -11595,7 +11766,8 @@
     "total_score": 13,
     "user_id": 1644,
     "rating": 3.25,
-    "created": "2016-02-17T07:16:57"
+    "created": "2016-02-17T07:16:57",
+    "default_stream": null
   },
   {
     "id": 19,
@@ -11665,7 +11837,8 @@
     "total_score": 39,
     "user_id": 1502,
     "rating": 3.25,
-    "created": "2010-10-04T11:11:05"
+    "created": "2010-10-04T11:11:05",
+    "default_stream": null
   },
   {
     "id": 348,
@@ -11735,7 +11908,8 @@
     "total_score": 39,
     "user_id": 1799,
     "rating": 3.25,
-    "created": "2019-02-26T22:09:13"
+    "created": "2019-02-26T22:09:13",
+    "default_stream": "https://listen.myrh.ru/id09449"
   },
   {
     "id": 497,
@@ -11805,7 +11979,8 @@
     "total_score": 13,
     "user_id": 1938,
     "rating": 3.25,
-    "created": "2022-09-04T15:20:08"
+    "created": "2022-09-04T15:20:08",
+    "default_stream": null
   },
   {
     "id": 398,
@@ -11889,7 +12064,8 @@
     "total_score": 6,
     "user_id": 973,
     "rating": 3.0,
-    "created": "2020-05-26T15:56:24"
+    "created": "2020-05-26T15:56:24",
+    "default_stream": null
   },
   {
     "id": 515,
@@ -11952,7 +12128,8 @@
     "total_score": 20,
     "user_id": 1956,
     "rating": 2.857142857142857,
-    "created": "2023-01-01T06:46:51"
+    "created": "2023-01-01T06:46:51",
+    "default_stream": null
   },
   {
     "id": 178,
@@ -12015,7 +12192,8 @@
     "total_score": 14,
     "user_id": 1643,
     "rating": 2.8,
-    "created": "2016-02-17T05:54:19"
+    "created": "2016-02-17T05:54:19",
+    "default_stream": null
   },
   {
     "id": 431,
@@ -12092,7 +12270,8 @@
     "total_score": 14,
     "user_id": 893,
     "rating": 2.8,
-    "created": "2021-01-25T17:50:57"
+    "created": "2021-01-25T17:50:57",
+    "default_stream": "https://stream.cassiopeia-station.ru:1075/stream"
   },
   {
     "id": 136,
@@ -12155,7 +12334,8 @@
     "total_score": 14,
     "user_id": 1606,
     "rating": 2.8,
-    "created": "2015-06-06T18:42:27"
+    "created": "2015-06-06T18:42:27",
+    "default_stream": null
   },
   {
     "id": 169,
@@ -12225,7 +12405,8 @@
     "total_score": 14,
     "user_id": 1635,
     "rating": 2.8,
-    "created": "2016-01-26T21:27:17"
+    "created": "2016-01-26T21:27:17",
+    "default_stream": null
   },
   {
     "id": 165,
@@ -12283,7 +12464,8 @@
     "total_score": 14,
     "user_id": 1631,
     "rating": 2.8,
-    "created": "2015-12-21T21:47:10"
+    "created": "2015-12-21T21:47:10",
+    "default_stream": null
   },
   {
     "id": 525,
@@ -12346,7 +12528,8 @@
     "total_score": 14,
     "user_id": 1963,
     "rating": 2.8,
-    "created": "2023-02-24T00:43:48"
+    "created": "2023-02-24T00:43:48",
+    "default_stream": "https://myradio24.org/25274_32"
   },
   {
     "id": 135,
@@ -12423,7 +12606,8 @@
     "total_score": 14,
     "user_id": 1605,
     "rating": 2.8,
-    "created": "2015-05-30T18:29:46"
+    "created": "2015-05-30T18:29:46",
+    "default_stream": null
   },
   {
     "id": 521,
@@ -12486,7 +12670,8 @@
     "total_score": 14,
     "user_id": 1960,
     "rating": 2.8,
-    "created": "2023-02-12T20:03:00"
+    "created": "2023-02-12T20:03:00",
+    "default_stream": null
   },
   {
     "id": 617,
@@ -12539,7 +12724,8 @@
     "total_score": 14,
     "user_id": 1438,
     "rating": 2.8,
-    "created": "2025-07-24T19:46:17"
+    "created": "2025-07-24T19:46:17",
+    "default_stream": "https://myradio24.org/4807"
   },
   {
     "id": 608,
@@ -12602,7 +12788,8 @@
     "total_score": 14,
     "user_id": 2029,
     "rating": 2.8,
-    "created": "2025-05-19T18:39:23"
+    "created": "2025-05-19T18:39:23",
+    "default_stream": "https://myradio24.org/88350"
   },
   {
     "id": 159,
@@ -12665,7 +12852,8 @@
     "total_score": 15,
     "user_id": 1625,
     "rating": 2.5,
-    "created": "2015-11-26T12:57:32"
+    "created": "2015-11-26T12:57:32",
+    "default_stream": null
   },
   {
     "id": 533,
@@ -12728,7 +12916,8 @@
     "total_score": 15,
     "user_id": 179,
     "rating": 2.5,
-    "created": "2023-04-04T01:26:51"
+    "created": "2023-04-04T01:26:51",
+    "default_stream": "https://listen7.myradio24.com/96203"
   },
   {
     "id": 201,
@@ -12798,7 +12987,8 @@
     "total_score": 16,
     "user_id": 976,
     "rating": 2.2857142857142856,
-    "created": "2016-04-23T21:06:41"
+    "created": "2016-04-23T21:06:41",
+    "default_stream": null
   },
   {
     "id": 331,
@@ -12863,7 +13053,8 @@
     "total_score": 19,
     "user_id": 1785,
     "rating": 1.9,
-    "created": "2018-10-09T12:56:10"
+    "created": "2018-10-09T12:56:10",
+    "default_stream": "https://myradio24.org/50904"
   },
   {
     "id": 532,
@@ -12933,7 +13124,8 @@
     "total_score": 23,
     "user_id": 1969,
     "rating": 1.6428571428571428,
-    "created": "2023-04-04T00:55:22"
+    "created": "2023-04-04T00:55:22",
+    "default_stream": "https://myradio24.org/96203"
   },
   {
     "id": 306,
@@ -12998,7 +13190,8 @@
     "total_score": 2,
     "user_id": 1759,
     "rating": 1.0,
-    "created": "2018-02-08T13:08:33"
+    "created": "2018-02-08T13:08:33",
+    "default_stream": null
   },
   {
     "id": 203,
@@ -13063,7 +13256,8 @@
     "total_score": 3,
     "user_id": 1015,
     "rating": 1.0,
-    "created": "2016-04-23T21:33:43"
+    "created": "2016-04-23T21:33:43",
+    "default_stream": null
   },
   {
     "id": 204,
@@ -13133,7 +13327,8 @@
     "total_score": 4,
     "user_id": 1667,
     "rating": 1.0,
-    "created": "2016-04-29T03:52:47"
+    "created": "2016-04-29T03:52:47",
+    "default_stream": null
   },
   {
     "id": 223,
@@ -13198,7 +13393,8 @@
     "total_score": 3,
     "user_id": 1683,
     "rating": 1.0,
-    "created": "2016-11-04T15:32:44"
+    "created": "2016-11-04T15:32:44",
+    "default_stream": null
   },
   {
     "id": 209,
@@ -13261,7 +13457,8 @@
     "total_score": 1,
     "user_id": 1671,
     "rating": 1.0,
-    "created": "2016-07-28T18:06:34"
+    "created": "2016-07-28T18:06:34",
+    "default_stream": null
   },
   {
     "id": 290,
@@ -13326,7 +13523,8 @@
     "total_score": 1,
     "user_id": 1744,
     "rating": 1.0,
-    "created": "2017-10-24T16:46:13"
+    "created": "2017-10-24T16:46:13",
+    "default_stream": "https://kamchatkalive.ru:8103/chillout"
   },
   {
     "id": 400,
@@ -13396,7 +13594,8 @@
     "total_score": 1,
     "user_id": 1846,
     "rating": 1.0,
-    "created": "2020-06-06T16:30:17"
+    "created": "2020-06-06T16:30:17",
+    "default_stream": null
   },
   {
     "id": 256,
@@ -13466,7 +13665,8 @@
     "total_score": 6,
     "user_id": 1715,
     "rating": 1.0,
-    "created": "2017-03-23T22:18:50"
+    "created": "2017-03-23T22:18:50",
+    "default_stream": null
   },
   {
     "id": 402,
@@ -13529,7 +13729,8 @@
     "total_score": 1,
     "user_id": 1848,
     "rating": 1.0,
-    "created": "2020-07-08T21:20:43"
+    "created": "2020-07-08T21:20:43",
+    "default_stream": null
   },
   {
     "id": 215,
@@ -13599,7 +13800,8 @@
     "total_score": 1,
     "user_id": 1677,
     "rating": 1.0,
-    "created": "2016-09-01T22:41:29"
+    "created": "2016-09-01T22:41:29",
+    "default_stream": null
   },
   {
     "id": 198,
@@ -13662,7 +13864,8 @@
     "total_score": 1,
     "user_id": 1663,
     "rating": 1.0,
-    "created": "2016-04-13T12:46:43"
+    "created": "2016-04-13T12:46:43",
+    "default_stream": null
   },
   {
     "id": 347,
@@ -13725,7 +13928,8 @@
     "total_score": 1,
     "user_id": 1798,
     "rating": 1.0,
-    "created": "2019-02-11T13:41:52"
+    "created": "2019-02-11T13:41:52",
+    "default_stream": null
   },
   {
     "id": 463,
@@ -13795,7 +13999,8 @@
     "total_score": 1,
     "user_id": 1904,
     "rating": 1.0,
-    "created": "2022-01-28T13:08:43"
+    "created": "2022-01-28T13:08:43",
+    "default_stream": "https://schoolradio.hostingradio.ru:18026/schoolradio128.mp3"
   },
   {
     "id": 464,
@@ -13853,7 +14058,8 @@
     "total_score": 1,
     "user_id": 1905,
     "rating": 1.0,
-    "created": "2022-01-29T12:51:00"
+    "created": "2022-01-29T12:51:00",
+    "default_stream": "https://myradio24.org/djmashkoff"
   },
   {
     "id": 489,
@@ -13923,7 +14129,8 @@
     "total_score": 1,
     "user_id": 1930,
     "rating": 1.0,
-    "created": "2022-06-30T09:02:11"
+    "created": "2022-06-30T09:02:11",
+    "default_stream": "https://myradio24.org/5894"
   },
   {
     "id": 512,
@@ -13986,7 +14193,8 @@
     "total_score": 3,
     "user_id": 1953,
     "rating": 1.0,
-    "created": "2022-12-10T18:17:49"
+    "created": "2022-12-10T18:17:49",
+    "default_stream": "https://stream.volnorez.com/live-app/900927"
   },
   {
     "id": 247,
@@ -14056,7 +14264,8 @@
     "total_score": 2,
     "user_id": 1705,
     "rating": 1.0,
-    "created": "2017-02-10T11:01:12"
+    "created": "2017-02-10T11:01:12",
+    "default_stream": null
   },
   {
     "id": 421,
@@ -14123,7 +14332,8 @@
     "total_score": 1,
     "user_id": 1865,
     "rating": 1.0,
-    "created": "2020-11-18T12:50:33"
+    "created": "2020-11-18T12:50:33",
+    "default_stream": "https://myradio24.org/63908"
   },
   {
     "id": 603,
@@ -14193,7 +14403,8 @@
     "total_score": 0,
     "user_id": 2024,
     "rating": 0.0,
-    "created": "2025-03-13T23:21:32"
+    "created": "2025-03-13T23:21:32",
+    "default_stream": null
   },
   {
     "id": 536,
@@ -14260,7 +14471,8 @@
     "total_score": 0,
     "user_id": 1972,
     "rating": 0.0,
-    "created": "2023-04-12T09:11:13"
+    "created": "2023-04-12T09:11:13",
+    "default_stream": null
   },
   {
     "id": 614,
@@ -14330,7 +14542,8 @@
     "total_score": 0,
     "user_id": 2033,
     "rating": 0.0,
-    "created": "2025-07-05T13:13:23"
+    "created": "2025-07-05T13:13:23",
+    "default_stream": "https://a8.radioheart.ru:8014/RH54354"
   },
   {
     "id": 449,
@@ -14393,7 +14606,8 @@
     "total_score": 0,
     "user_id": 1891,
     "rating": 0.0,
-    "created": "2021-08-05T11:55:13"
+    "created": "2021-08-05T11:55:13",
+    "default_stream": null
   },
   {
     "id": 620,
@@ -14446,7 +14660,8 @@
     "total_score": 0,
     "user_id": 1059,
     "rating": 0.0,
-    "created": "2025-08-16T18:05:39"
+    "created": "2025-08-16T18:05:39",
+    "default_stream": "https://aircast.breaking-bass.ru:8443/air"
   },
   {
     "id": 589,
@@ -14516,7 +14731,8 @@
     "total_score": 0,
     "user_id": 2013,
     "rating": 0.0,
-    "created": "2024-12-31T23:19:30"
+    "created": "2024-12-31T23:19:30",
+    "default_stream": "https://myradio24.org/bosscomaz"
   },
   {
     "id": 407,
@@ -14579,7 +14795,8 @@
     "total_score": 0,
     "user_id": 970,
     "rating": 0.0,
-    "created": "2020-07-29T21:11:09"
+    "created": "2020-07-29T21:11:09",
+    "default_stream": null
   },
   {
     "id": 444,
@@ -14649,7 +14866,8 @@
     "total_score": 0,
     "user_id": 1887,
     "rating": 0.0,
-    "created": "2021-06-29T10:22:21"
+    "created": "2021-06-29T10:22:21",
+    "default_stream": "https://edmdnb.com:8000/radio.mp3"
   },
   {
     "id": 592,
@@ -14719,7 +14937,8 @@
     "total_score": 0,
     "user_id": 2015,
     "rating": 0.0,
-    "created": "2025-01-12T22:05:31"
+    "created": "2025-01-12T22:05:31",
+    "default_stream": "https://myradio24.org/dsound_192"
   },
   {
     "id": 561,
@@ -14782,7 +15001,8 @@
     "total_score": 0,
     "user_id": 1990,
     "rating": 0.0,
-    "created": "2024-05-07T03:51:06"
+    "created": "2024-05-07T03:51:06",
+    "default_stream": "https://myradio24.org/endlessjoy"
   },
   {
     "id": 591,
@@ -14845,7 +15065,8 @@
     "total_score": 0,
     "user_id": 674,
     "rating": 0.0,
-    "created": "2025-01-09T20:47:18"
+    "created": "2025-01-09T20:47:18",
+    "default_stream": "https://stream.drugradio.ru:8010/stream128"
   },
   {
     "id": 484,
@@ -14908,7 +15129,8 @@
     "total_score": 0,
     "user_id": 1924,
     "rating": 0.0,
-    "created": "2022-05-31T21:27:32"
+    "created": "2022-05-31T21:27:32",
+    "default_stream": "https://myradio24.org/65462"
   },
   {
     "id": 586,
@@ -14973,7 +15195,8 @@
     "total_score": 0,
     "user_id": 2010,
     "rating": 0.0,
-    "created": "2024-12-13T17:03:29"
+    "created": "2024-12-13T17:03:29",
+    "default_stream": null
   },
   {
     "id": 493,
@@ -15026,7 +15249,8 @@
     "total_score": 0,
     "user_id": 1934,
     "rating": 0.0,
-    "created": "2022-07-17T18:54:26"
+    "created": "2022-07-17T18:54:26",
+    "default_stream": "https://eu4.fastcast4u.com/proxy/acqxlwdo?mp=/1"
   },
   {
     "id": 622,
@@ -15096,7 +15320,8 @@
     "total_score": 0,
     "user_id": 2038,
     "rating": 0.0,
-    "created": "2025-09-09T22:57:37"
+    "created": "2025-09-09T22:57:37",
+    "default_stream": "https://myradio24.org/18357"
   },
   {
     "id": 623,
@@ -15173,7 +15398,8 @@
     "total_score": 0,
     "user_id": 2039,
     "rating": 0.0,
-    "created": "2025-09-09T23:08:17"
+    "created": "2025-09-09T23:08:17",
+    "default_stream": "https://myradio24.org/67739"
   },
   {
     "id": 590,
@@ -15243,7 +15469,8 @@
     "total_score": 0,
     "user_id": 2014,
     "rating": 0.0,
-    "created": "2025-01-08T08:50:19"
+    "created": "2025-01-08T08:50:19",
+    "default_stream": null
   },
   {
     "id": 364,
@@ -15320,7 +15547,8 @@
     "total_score": 0,
     "user_id": 1813,
     "rating": 0.0,
-    "created": "2019-08-11T18:52:27"
+    "created": "2019-08-11T18:52:27",
+    "default_stream": null
   },
   {
     "id": 499,
@@ -15390,7 +15618,8 @@
     "total_score": 0,
     "user_id": 1940,
     "rating": 0.0,
-    "created": "2022-09-30T03:04:01"
+    "created": "2022-09-30T03:04:01",
+    "default_stream": null
   },
   {
     "id": 599,
@@ -15460,7 +15689,8 @@
     "total_score": 0,
     "user_id": 2021,
     "rating": 0.0,
-    "created": "2025-02-26T11:32:00"
+    "created": "2025-02-26T11:32:00",
+    "default_stream": "https://c32.radioboss.fm:8775/stream"
   },
   {
     "id": 624,
@@ -15520,7 +15750,8 @@
     "total_score": 0,
     "user_id": 2040,
     "rating": 0.0,
-    "created": "2025-09-14T06:04:51"
+    "created": "2025-09-14T06:04:51",
+    "default_stream": null
   },
   {
     "id": 481,
@@ -15583,7 +15814,8 @@
     "total_score": 0,
     "user_id": 1921,
     "rating": 0.0,
-    "created": "2022-05-19T23:35:40"
+    "created": "2022-05-19T23:35:40",
+    "default_stream": "https://stream.vyshka24.ru/radio24"
   },
   {
     "id": 573,
@@ -15650,7 +15882,8 @@
     "total_score": 0,
     "user_id": 1072,
     "rating": 0.0,
-    "created": "2024-08-09T14:22:27"
+    "created": "2024-08-09T14:22:27",
+    "default_stream": null
   },
   {
     "id": 612,
@@ -15720,7 +15953,8 @@
     "total_score": 0,
     "user_id": 1449,
     "rating": 0.0,
-    "created": "2025-06-11T18:24:16"
+    "created": "2025-06-11T18:24:16",
+    "default_stream": "https://realfm.net/onair"
   },
   {
     "id": 572,
@@ -15790,7 +16024,8 @@
     "total_score": 0,
     "user_id": 1997,
     "rating": 0.0,
-    "created": "2024-08-09T09:58:34"
+    "created": "2024-08-09T09:58:34",
+    "default_stream": "https://a7.asurahosting.com:6970/radio.mp3"
   },
   {
     "id": 442,
@@ -15853,7 +16088,8 @@
     "total_score": 0,
     "user_id": 1885,
     "rating": 0.0,
-    "created": "2021-05-17T10:37:33"
+    "created": "2021-05-17T10:37:33",
+    "default_stream": null
   },
   {
     "id": 587,
@@ -15916,7 +16152,8 @@
     "total_score": 0,
     "user_id": 2011,
     "rating": 0.0,
-    "created": "2024-12-22T17:32:28"
+    "created": "2024-12-22T17:32:28",
+    "default_stream": "https://myradio24.org/dvachu"
   },
   {
     "id": 621,
@@ -15986,7 +16223,8 @@
     "total_score": 0,
     "user_id": 2037,
     "rating": 0.0,
-    "created": "2025-09-02T17:44:54"
+    "created": "2025-09-02T17:44:54",
+    "default_stream": "https://radio.veshok.com:8443/veshokradio"
   },
   {
     "id": 628,
@@ -16059,7 +16297,8 @@
     "total_score": 0,
     "user_id": 33,
     "rating": 0.0,
-    "created": "2025-09-18T08:00:06.639"
+    "created": "2025-09-18T08:00:06.639",
+    "default_stream": "https://trucker.autoliferadio.com:1045/stream"
   },
   {
     "id": 468,
@@ -16122,7 +16361,8 @@
     "total_score": 0,
     "user_id": 1908,
     "rating": 0.0,
-    "created": "2022-04-04T04:17:00"
+    "created": "2022-04-04T04:17:00",
+    "default_stream": null
   },
   {
     "id": 477,
@@ -16175,7 +16415,8 @@
     "total_score": 0,
     "user_id": 1917,
     "rating": 0.0,
-    "created": "2022-04-06T22:58:27"
+    "created": "2022-04-06T22:58:27",
+    "default_stream": null
   },
   {
     "id": 475,
@@ -16238,7 +16479,8 @@
     "total_score": 0,
     "user_id": 1915,
     "rating": 0.0,
-    "created": "2022-04-04T04:30:31"
+    "created": "2022-04-04T04:30:31",
+    "default_stream": "https://stream.vyshka24.ru/wowcover"
   },
   {
     "id": 473,
@@ -16301,7 +16543,8 @@
     "total_score": 0,
     "user_id": 1913,
     "rating": 0.0,
-    "created": "2022-04-04T04:27:11"
+    "created": "2022-04-04T04:27:11",
+    "default_stream": "https://stream.vyshka24.ru/wowgold"
   },
   {
     "id": 471,
@@ -16354,7 +16597,8 @@
     "total_score": 0,
     "user_id": 1911,
     "rating": 0.0,
-    "created": "2022-04-04T04:24:31"
+    "created": "2022-04-04T04:24:31",
+    "default_stream": null
   },
   {
     "id": 472,
@@ -16407,7 +16651,8 @@
     "total_score": 0,
     "user_id": 1912,
     "rating": 0.0,
-    "created": "2022-04-04T04:25:42"
+    "created": "2022-04-04T04:25:42",
+    "default_stream": null
   },
   {
     "id": 469,
@@ -16465,7 +16710,8 @@
     "total_score": 0,
     "user_id": 1909,
     "rating": 0.0,
-    "created": "2022-04-04T04:19:34"
+    "created": "2022-04-04T04:19:34",
+    "default_stream": null
   },
   {
     "id": 470,
@@ -16523,7 +16769,8 @@
     "total_score": 0,
     "user_id": 1910,
     "rating": 0.0,
-    "created": "2022-04-04T04:23:22"
+    "created": "2022-04-04T04:23:22",
+    "default_stream": null
   },
   {
     "id": 571,
@@ -16576,7 +16823,8 @@
     "total_score": 0,
     "user_id": 1216,
     "rating": 0.0,
-    "created": "2024-07-24T23:04:36"
+    "created": "2024-07-24T23:04:36",
+    "default_stream": "https://myradio24.org/barsukfm"
   },
   {
     "id": 625,
@@ -16639,7 +16887,8 @@
     "total_score": 0,
     "user_id": 674,
     "rating": 0.0,
-    "created": "2025-09-18T08:00:06.639"
+    "created": "2025-09-18T08:00:06.639",
+    "default_stream": "https://stream.drugradio.ru:8000/stream128"
   },
   {
     "id": 605,
@@ -16702,7 +16951,8 @@
     "total_score": 0,
     "user_id": 2026,
     "rating": 0.0,
-    "created": "2025-04-16T06:25:11"
+    "created": "2025-04-16T06:25:11",
+    "default_stream": "https://myradio24.org/dushevnoe"
   },
   {
     "id": 629,
@@ -16757,7 +17007,8 @@
     "total_score": 0,
     "user_id": 1369,
     "rating": 0.0,
-    "created": "2025-09-18T14:25:20.265"
+    "created": "2025-09-18T14:25:20.265",
+    "default_stream": null
   },
   {
     "id": 542,
@@ -16827,7 +17078,8 @@
     "total_score": 0,
     "user_id": 1978,
     "rating": 0.0,
-    "created": "2023-06-29T00:22:47"
+    "created": "2023-06-29T00:22:47",
+    "default_stream": "https://myradio24.org/kinozaltv"
   },
   {
     "id": 441,
@@ -16897,7 +17149,8 @@
     "total_score": 0,
     "user_id": 1884,
     "rating": 0.0,
-    "created": "2021-04-30T14:09:49"
+    "created": "2021-04-30T14:09:49",
+    "default_stream": "https://myradio24.org/traveller"
   },
   {
     "id": 507,
@@ -16955,7 +17208,8 @@
     "total_score": 0,
     "user_id": 1948,
     "rating": 0.0,
-    "created": "2022-11-08T23:07:12"
+    "created": "2022-11-08T23:07:12",
+    "default_stream": null
   },
   {
     "id": 498,
@@ -17008,7 +17262,8 @@
     "total_score": 0,
     "user_id": 1939,
     "rating": 0.0,
-    "created": "2022-09-22T19:25:50"
+    "created": "2022-09-22T19:25:50",
+    "default_stream": "https://stream.vyshka24.ru/kz"
   },
   {
     "id": 557,
@@ -17071,7 +17326,8 @@
     "total_score": 0,
     "user_id": 1987,
     "rating": 0.0,
-    "created": "2023-09-25T22:24:13"
+    "created": "2023-09-25T22:24:13",
+    "default_stream": "https://stream.vyshka24.ru/uzbekistan"
   },
   {
     "id": 588,
@@ -17136,7 +17392,8 @@
     "total_score": 0,
     "user_id": 2012,
     "rating": 0.0,
-    "created": "2024-12-25T09:42:03"
+    "created": "2024-12-25T09:42:03",
+    "default_stream": "https://listen5.myradio24.com/malina"
   },
   {
     "id": 328,
@@ -17194,7 +17451,8 @@
     "total_score": 0,
     "user_id": 1782,
     "rating": 0.0,
-    "created": "2018-10-02T18:34:40"
+    "created": "2018-10-02T18:34:40",
+    "default_stream": null
   },
   {
     "id": 616,
@@ -17264,7 +17522,8 @@
     "total_score": 0,
     "user_id": 2034,
     "rating": 0.0,
-    "created": "2025-07-21T11:36:12"
+    "created": "2025-07-21T11:36:12",
+    "default_stream": "https://stream.vyshka24.ru/nadache24"
   },
   {
     "id": 615,
@@ -17324,7 +17583,8 @@
     "total_score": 0,
     "user_id": 1436,
     "rating": 0.0,
-    "created": "2025-07-21T11:24:14"
+    "created": "2025-07-21T11:24:14",
+    "default_stream": "https://stream.vyshka24.ru/radioretro24"
   },
   {
     "id": 424,
@@ -17401,7 +17661,8 @@
     "total_score": 0,
     "user_id": 1868,
     "rating": 0.0,
-    "created": "2020-11-24T08:20:28"
+    "created": "2020-11-24T08:20:28",
+    "default_stream": null
   },
   {
     "id": 450,
@@ -17471,7 +17732,8 @@
     "total_score": 0,
     "user_id": 1892,
     "rating": 0.0,
-    "created": "2021-08-12T21:32:31"
+    "created": "2021-08-12T21:32:31",
+    "default_stream": "https://myradio24.org/bolshevek"
   },
   {
     "id": 518,
@@ -17529,7 +17791,8 @@
     "total_score": 0,
     "user_id": 1958,
     "rating": 0.0,
-    "created": "2023-01-11T18:08:42"
+    "created": "2023-01-11T18:08:42",
+    "default_stream": "https://myradio24.org/radiodetki"
   },
   {
     "id": 607,
@@ -17582,7 +17845,8 @@
     "total_score": 0,
     "user_id": 2028,
     "rating": 0.0,
-    "created": "2025-05-08T14:17:32"
+    "created": "2025-05-08T14:17:32",
+    "default_stream": "https://myradio24.org/49731"
   },
   {
     "id": 596,
@@ -17640,7 +17904,8 @@
     "total_score": 0,
     "user_id": 2018,
     "rating": 0.0,
-    "created": "2025-02-08T10:06:22"
+    "created": "2025-02-08T10:06:22",
+    "default_stream": "https://rusdriveradio.ru:8000/live_aac64"
   },
   {
     "id": 366,
@@ -17724,7 +17989,8 @@
     "total_score": 0,
     "user_id": 622,
     "rating": 0.0,
-    "created": "2019-09-12T07:28:35"
+    "created": "2019-09-12T07:28:35",
+    "default_stream": "https://stream.salyutfm.ru:8015/stream"
   },
   {
     "id": 601,
@@ -17789,7 +18055,8 @@
     "total_score": 0,
     "user_id": 1306,
     "rating": 0.0,
-    "created": "2025-03-10T22:07:03"
+    "created": "2025-03-10T22:07:03",
+    "default_stream": "https://drh-node-03.dline-media.com/smorodina"
   },
   {
     "id": 611,
@@ -17854,6 +18121,7 @@
     "total_score": 0,
     "user_id": 2031,
     "rating": 0.0,
-    "created": "2025-06-03T06:40:28"
+    "created": "2025-06-03T06:40:28",
+    "default_stream": "https://drh-node-03.dline-media.com/ShalaevRadio"
   }
 ]

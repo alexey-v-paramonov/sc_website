@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
             player.style.left = '20px';
             player.style.width = 'calc(100% - 40px)';
             player.style.zIndex = '9999';
+            player.style.display = 'none'; // Hide the HTML5 player
             document.body.appendChild(player);
 
             player.addEventListener('play', () => {
@@ -55,12 +56,18 @@ document.addEventListener('DOMContentLoaded', function() {
             player.pause();
         }
         
-        // Stop visualization on the old item
-        stopVisualization();
+        // Stop all other playing cards
+        stopAllPlayingCards();
         
         // Set new stream URL and handle loading
         player.src = streamUrl;
         currentlyPlayingItem = item;
+        
+        // Add buffering state immediately
+        const card = item.closest('.catalog-card');
+        if (card) {
+            card.classList.add('is-buffering');
+        }
         
         // Wait for the audio to be ready before playing
         const playAudio = async () => {
@@ -68,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 await player.play();
                 const card = currentlyPlayingItem.closest('.catalog-card');
                 if (card) {
+                    card.classList.remove('is-buffering'); // Remove buffering state
                     card.classList.add('is-playing');
                     startVisualization(currentlyPlayingItem);
                     startTitleBlinking(card);
@@ -78,6 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 currentlyPlayingItem = null;
                 const card = item.closest('.catalog-card');
                 if (card) {
+                    card.classList.remove('is-buffering');
                     card.classList.remove('is-playing');
                 }
             }
@@ -271,6 +280,41 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    function stopAllPlayingCards() {
+        // Find all cards that are currently playing and stop them
+        const playingCards = document.querySelectorAll('.catalog-card.is-playing');
+        playingCards.forEach(card => {
+            card.classList.remove('is-playing');
+            stopTitleBlinking(card);
+            
+            // Clear canvas
+            const canvas = card.querySelector('.visualizer-canvas');
+            if (canvas) {
+                const ctx = canvas.getContext('2d');
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }
+            
+            // Reset thumbnail transform
+            const thumbnail = card.querySelector('.catalog-thumb');
+            if (thumbnail) {
+                thumbnail.style.transition = 'transform 0.3s ease';
+                thumbnail.style.transform = 'scale(1.08)';
+            }
+        });
+        
+        // Also remove buffering state from all cards
+        const bufferingCards = document.querySelectorAll('.catalog-card.is-buffering');
+        bufferingCards.forEach(card => {
+            card.classList.remove('is-buffering');
+        });
+        
+        // Stop any running visualization
+        if (animationFrameId) {
+            cancelAnimationFrame(animationFrameId);
+            animationFrameId = null;
+        }
+    }
+
     function stopVisualization() {
         if (animationFrameId) {
             cancelAnimationFrame(animationFrameId);
@@ -280,6 +324,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const card = currentlyPlayingItem.closest('.catalog-card');
             if (card) {
                 card.classList.remove('is-playing');
+                card.classList.remove('is-buffering'); // Also remove buffering state
                 stopTitleBlinking(card);
                 const canvas = card.querySelector('.visualizer-canvas');
                 if (canvas) {

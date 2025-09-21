@@ -32,6 +32,7 @@ def create_radio_pages():
         country_code = country.get("iso2", None).lower()
         country_name = country.get("name", None)
         country_name_eng = country.get("name_eng", None)
+        default_stream = radio.get("default_stream", None)
         genres = radio.get("genres", [])
         with open(en_path, 'w') as f:
             f.write('---\n')
@@ -47,6 +48,8 @@ def create_radio_pages():
             f.write(f'genres: [{", ".join(genre_names)}]\n')
             f.write(f'rating: "{radio.get("rating", 0.):.2f}"\n')
             f.write(f'website_url: "{radio.get("website_url", "")}"\n')
+            if default_stream:
+                f.write(f'default_stream: "{default_stream}"\n')
             description = radio.get("description", "").replace("\"", "'")
             f.write('description: "' + description + '"\n')
             f.write('---\n')
@@ -67,6 +70,9 @@ def create_radio_pages():
             f.write(f'genres: [{", ".join(genre_names)}]\n')
             f.write(f'rating: "{radio.get("rating", 0):.2f}"\n')
             f.write(f'website_url: "{radio.get("website_url", "")}"\n')
+            if default_stream:
+                f.write(f'default_stream: "{default_stream}"\n')
+            
             description = radio.get("description", "").replace("\"", "'")
             f.write('description: "' + description + '"\n')
             f.write('---\n')
