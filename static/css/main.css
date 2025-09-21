@@ -3270,6 +3270,21 @@ div.highlight pre {
     opacity: 1;
 }
 
+/* Stop button (square) when playing - only show on hover */
+.catalog-card.is-playing:hover .catalog-thumb-wrap::before {
+    opacity: 1;
+    border: none;
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    transform: translate(-50%, -50%);
+    border-radius: 2px;
+}
+
+.catalog-card.is-playing:hover .catalog-thumb-wrap::after {
+    opacity: 1;
+}
+
 .catalog-card:hover .catalog-thumb {
   transform: scale(1.08);  /* zoom in slightly */
 }
