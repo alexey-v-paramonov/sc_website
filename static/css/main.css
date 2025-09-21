@@ -3186,6 +3186,17 @@ div.highlight pre {
   color: #000;
 }
 
+/* Character blinking effects for playing state */
+.catalog-card.is-playing .catalog-card-title a {
+  color: #274c77;
+  transition: all 0.3s ease;
+}
+
+.catalog-card.is-playing .catalog-card-title .char {
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
 .catalog-card-meta {
   width: 100%;
   display: flex;

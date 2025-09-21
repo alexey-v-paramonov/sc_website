@@ -70,6 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (card) {
                     card.classList.add('is-playing');
                     startVisualization(currentlyPlayingItem);
+                    startTitleBlinking(card);
                 }
             } catch (error) {
                 console.error("Error playing audio:", error);
@@ -219,6 +220,57 @@ document.addEventListener('DOMContentLoaded', function() {
         draw();
     }
 
+    // --- Title Character Blinking Functions ---
+    let titleBlinkingInterval = null;
+
+    function startTitleBlinking(card) {
+        const titleLink = card.querySelector('.catalog-card-title a');
+        if (!titleLink) return;
+
+        // Split text into individual characters and wrap them in spans
+        const originalText = titleLink.textContent;
+        titleLink.innerHTML = originalText.split('').map(char => 
+            char === ' ' ? ' ' : `<span class="char">${char}</span>`
+        ).join('');
+
+        const chars = titleLink.querySelectorAll('.char');
+        const colors = [
+            '#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#ffeaa7',
+            '#dda0dd', '#98d8c8', '#fdcb6e', '#6c5ce7', '#a29bfe',
+            '#fd79a8', '#e17055', '#00b894', '#0984e3', '#b2bec3'
+        ];
+
+        // Start random blinking
+        titleBlinkingInterval = setInterval(() => {
+            chars.forEach(char => {
+                if (Math.random() < 0.3) { // 30% chance to blink each character
+                    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                    char.style.color = randomColor;
+                    
+                    // Reset color after a short time
+                    setTimeout(() => {
+                        char.style.color = '#274c77';
+                    }, 200 + Math.random() * 300); // Random duration between 200-500ms
+                }
+            });
+        }, 150); // Check every 150ms
+    }
+
+    function stopTitleBlinking(card) {
+        if (titleBlinkingInterval) {
+            clearInterval(titleBlinkingInterval);
+            titleBlinkingInterval = null;
+        }
+
+        const titleLink = card.querySelector('.catalog-card-title a');
+        if (titleLink) {
+            // Restore original text without spans
+            const originalText = titleLink.textContent;
+            titleLink.innerHTML = originalText;
+            titleLink.style.color = '#000'; // Reset to original color
+        }
+    }
+
     function stopVisualization() {
         if (animationFrameId) {
             cancelAnimationFrame(animationFrameId);
@@ -228,6 +280,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const card = currentlyPlayingItem.closest('.catalog-card');
             if (card) {
                 card.classList.remove('is-playing');
+                stopTitleBlinking(card);
                 const canvas = card.querySelector('.visualizer-canvas');
                 if (canvas) {
                     const ctx = canvas.getContext('2d');
