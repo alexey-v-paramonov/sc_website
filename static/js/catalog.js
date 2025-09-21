@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!audioContext) {
             audioContext = new (window.AudioContext || window.webkitAudioContext)();
             analyser = audioContext.createAnalyser();
-            analyser.fftSize = 64; // Small FFT for fewer bars
+            analyser.fftSize = 256; // Increased FFT size for more frequency bins (128 bins)
             source = audioContext.createMediaElementSource(player);
             source.connect(analyser);
             analyser.connect(audioContext.destination);
@@ -140,45 +140,57 @@ document.addEventListener('DOMContentLoaded', function() {
                 thumbnail.style.transform = `scale(1.08) translate(${smoothShakeX}px, ${smoothShakeY}px)`;
             }
 
-            // Wave visualization
-            const wavePoints = 32; // Number of points for the wave
-            const step = Math.floor(bufferLength / wavePoints);
-            const maxWaveHeight = cardHeight * 0.10; // 10% of card height
-
-            // Draw top wave
-            ctx.beginPath();
-            ctx.strokeStyle = 'rgba(79, 131, 91, 0.8)';
-            ctx.lineWidth = 2;
+            // Spectrum analyzer bars around the perimeter
+            const barsPerSide = 32; // Number of bars per side (doubled from 16)
+            const totalBars = barsPerSide * 4; // 128 bars total around perimeter
+            const step = Math.floor(bufferLength / totalBars);
+            const maxBarLength = 20; // Maximum bar length in pixels
             
-            for (let i = 0; i < wavePoints; i++) {
+            ctx.fillStyle = 'rgba(0, 100, 255, 0.5)'; // Blue with 50% transparency
+            
+            // Top side bars (extending downward into the card)
+            const topBarWidth = cardWidth / barsPerSide;
+            for (let i = 0; i < barsPerSide; i++) {
                 const value = dataArray[i * step];
-                const waveHeight = (value / 255) * maxWaveHeight;
-                const x = (i / (wavePoints - 1)) * cardWidth;
-                const y = waveHeight;
+                const barLength = (value / 255) * maxBarLength;
+                const x = i * topBarWidth;
+                const y = 0;
                 
-                if (i === 0) {
-                    ctx.moveTo(x, y);
-                } else {
-                    ctx.lineTo(x, y);
-                }
+                ctx.fillRect(x, y, topBarWidth - 1, barLength);
             }
-            ctx.stroke();
-
-            // Draw bottom wave (mirrored)
-            ctx.beginPath();
-            for (let i = 0; i < wavePoints; i++) {
-                const value = dataArray[i * step];
-                const waveHeight = (value / 255) * maxWaveHeight;
-                const x = (i / (wavePoints - 1)) * cardWidth;
-                const y = cardHeight - waveHeight;
+            
+            // Right side bars (extending leftward into the card)
+            const rightBarHeight = cardHeight / barsPerSide;
+            for (let i = 0; i < barsPerSide; i++) {
+                const value = dataArray[(barsPerSide + i) * step];
+                const barLength = (value / 255) * maxBarLength;
+                const x = cardWidth - barLength;
+                const y = i * rightBarHeight;
                 
-                if (i === 0) {
-                    ctx.moveTo(x, y);
-                } else {
-                    ctx.lineTo(x, y);
-                }
+                ctx.fillRect(x, y, barLength, rightBarHeight - 1);
             }
-            ctx.stroke();
+            
+            // Bottom side bars (extending upward into the card)
+            const bottomBarWidth = cardWidth / barsPerSide;
+            for (let i = 0; i < barsPerSide; i++) {
+                const value = dataArray[(barsPerSide * 2 + i) * step];
+                const barLength = (value / 255) * maxBarLength;
+                const x = i * bottomBarWidth;
+                const y = cardHeight - barLength;
+                
+                ctx.fillRect(x, y, bottomBarWidth - 1, barLength);
+            }
+            
+            // Left side bars (extending rightward into the card)
+            const leftBarHeight = cardHeight / barsPerSide;
+            for (let i = 0; i < barsPerSide; i++) {
+                const value = dataArray[(barsPerSide * 3 + i) * step];
+                const barLength = (value / 255) * maxBarLength;
+                const x = 0;
+                const y = i * leftBarHeight;
+                
+                ctx.fillRect(x, y, barLength, leftBarHeight - 1);
+            }
         }
         draw();
     }
