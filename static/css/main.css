@@ -75,7 +75,6 @@ body {
   font-size: 48px;
   font-weight: 700;
   line-height: 56px;
-  
 }
 
 .h1 {
@@ -472,7 +471,7 @@ body {
   font-size: 24px;
   font-weight: 700;
   line-height: 30px;
-  -webkit-line-clamp: 2; 
+  -webkit-line-clamp: 2;
 }
 .catalog-item__links {
   padding-top: 26px;
@@ -3075,17 +3074,16 @@ div.highlight pre {
 .catalog-grid {
   display: grid;
   grid-template-columns: 2fr; /* smallest */
-  gap:12px;
+  gap: 12px;
   /* max-width: 1200px; */
   margin: 0 auto;
   list-style: none;
   padding: 0;
-    margin: 0;
-    padding: 16px;
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    background: #f6f7fb;
-    color:  #1f2328;
-
+  margin: 0;
+  padding: 16px;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: #f6f7fb;
+  color: #1f2328;
 }
 @media (min-width: 600px) {
   .catalog-grid {
@@ -3109,7 +3107,7 @@ div.highlight pre {
 }
 .catalog-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 /* Empty placeholders to keep 16 squares */
 .catalog-card.empty {
@@ -3152,7 +3150,7 @@ div.highlight pre {
   overflow: hidden;
   flex: 0 0 auto;
   height: min(250px, calc(100% - 84px));
-  aspect-ratio: 1 / 1;     /* makes it a square */
+  aspect-ratio: 1 / 1; /* makes it a square */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3174,14 +3172,13 @@ div.highlight pre {
   width: 100%;
   text-align: center;
   font-weight: 600;
-  line-height: 1.0;
+  line-height: 1;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: hidden;
   text-decoration: none;
-
 }
-.catalog-card-title a{
+.catalog-card-title a {
   text-decoration: none;
   color: #000;
 }
@@ -3238,7 +3235,7 @@ div.highlight pre {
   font-weight: 600;
 }
 .catalog-card-rating .star {
-  color:  #f6b400;
+  color: #f6b400;
   font-size: 16px;
   line-height: 1;
 }
@@ -3251,56 +3248,56 @@ div.highlight pre {
 }
 
 .catalog-thumb-wrap::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50px;
-    height: 50px;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
-    opacity: 0;
-    transition: opacity 0.2s ease-in-out;
-    z-index: 1;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  z-index: 1;
 }
 
 .catalog-thumb-wrap::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-40%, -50%);
-    border-left: 15px solid white;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    opacity: 0;
-    transition: opacity 0.2s ease-in-out;
-    z-index: 2;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  border-left: 15px solid white;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  z-index: 2;
 }
 
 .catalog-card:hover .catalog-thumb-wrap.has-stream::before,
 .catalog-card:hover .catalog-thumb-wrap.has-stream::after {
-    opacity: 1;
+  opacity: 1;
 }
 
 /* Stop button (square) when playing - only show on hover */
 .catalog-card.is-playing:hover .catalog-thumb-wrap::before {
-    opacity: 1;
-    border: none;
-    width: 16px;
-    height: 16px;
-    background-color: white;
-    transform: translate(-50%, -50%);
-    border-radius: 2px;
+  opacity: 1;
+  border: none;
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  transform: translate(-50%, -50%);
+  border-radius: 2px;
 }
 
 .catalog-card.is-playing:hover .catalog-thumb-wrap::after {
-    opacity: 1;
+  opacity: 1;
 }
 
 .catalog-card:hover .catalog-thumb {
-  transform: scale(1.08);  /* zoom in slightly */
+  transform: scale(1.08); /* zoom in slightly */
 }
 
 .catalog-card-tags {
@@ -3332,4 +3329,53 @@ div.highlight pre {
   pointer-events: none;
   z-index: 1;
   border-radius: 14px;
+}
+
+/* SIngle catalog page classes */
+.single-radio-logo-wrap {
+  flex: 0 0 250px;
+  height: 250px;
+  min-width: 250px ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 30px;
+}
+
+
+.radio-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.radio-title {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: #3498db;
+}
+
+.radio-description {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.radio-meta {
+    display: flex
+;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.meta-item {
+    display: flex
+;
+    align-items: center;
+}
+
+.meta-item i {
+    margin-right: 10px;
+    color: #3498db;
+    font-size: 1.2rem;
 }

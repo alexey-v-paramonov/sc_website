@@ -5,13 +5,13 @@
     {{ partial "breadcrumbs.html" . }}
     <div class="view-items">
       <div class="view-item index">
-        <div class="view-item__list df jcsb index">
+        <div class="df jcsb index">
 
       <div class="single-radio-header">
         <div class="single-radio-logo-wrap">
           <img class="single-radio-logo" src="{{ .Params.logo }}" alt="{{ .Title }}" title="{{ .Title }}" />
         </div>
-        <div class="single-radio-title-wrap">
+        <!--<div class="single-radio-title-wrap">
           <h1 class="single-radio-title">{{ .Title }}</h1>
           <div class="single-radio-meta">
             <a class="single-radio-link" href="{{ .Params.website_url }}" target="_blank" rel="noopener">{{ .Params.website_url }}</a>
@@ -19,9 +19,25 @@
               <span class="star" aria-hidden="true">★</span><span>{{ .Params.rating }}</span>
             </div>
           </div>
-        </div>
+        </div>-->
       </div>
-
+<div class="radio-info">
+                    <h2 class="radio-title">{{ .Title }}</h2>
+                    <p class="radio-description">
+                        {{ .Params.description }}
+                    </p>
+                    <div class="radio-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-globe"></i>
+                            <span><a href="{{ .Params.website_url }}" target="_blank" style="color: #3498db;">{{ .Params.website_url }}</a></span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Added: {{ .Date.Format "January 2, 2006" }}</span>
+                        </div>
+                    </div>
+                </div>      
+<!--
       <div class="single-radio-body">
         <div class="single-radio-main">
           <div class="single-radio-description">
@@ -71,6 +87,7 @@
               <button type="submit">Vote</button>
             </form>
           </div>
+        -->
         </div>
         </div>
       </div>
