@@ -30,57 +30,108 @@ def create_radio_pages():
         en_path = f"content/en/catalog/{slug}.md"
         os.makedirs(os.path.dirname(en_path), exist_ok=True)
         country = radio.get("country", {})
-        country_code = country.get("iso2", None).lower()
+        region = radio.get("region", {})
+        city = radio.get("city", {})
+        
+        country_code = country.get("iso2", "").lower()
         country_name = country.get("name", None)
+        region_name = region.get("name", None) if region else {}
+        city_name = city.get("name", None) if city else {}
+
         country_name_eng = country.get("name_eng", None)
+        region_name_eng = region.get("name_eng", None) if region else {}
+        city_name_eng = city.get("name_eng", None) if city else {}
+        
+        # Languages
+        languages = radio.get("languages", [])
+        language_names = [lang['name'] for lang in languages]
+        language_names_eng = [lang['name_eng'] for lang in languages]
+        
+        # Genres
+        genres = radio.get("genres", [])        
+        genre_names = [g['name'] for g in genres]
+        genre_names_eng = [g['name_eng'] for g in genres]
+
         default_stream = radio.get("default_stream", None)
-        genres = radio.get("genres", [])
         created_date = datetime.fromisoformat(radio["created"]).strftime('%d/%m/%Y')
+        info = {
+            "title": radio.get("name", ""),
+            "type": "catalog_item",
+            "weight": f"{index + 1}",
+            "country_code": country_code if country_code else None,
+            "logo": radio["logo"],
+            "rating": f'{radio.get("rating", 0.):.2f}',
+            "website_url": radio["website_url"],
+            "created": created_date,
+            "default_stream": default_stream,
+            "description": radio["description"],
+            "streams": radio.get("streams", []),
+        }
         with open(en_path, 'w') as f:
-            f.write('---\n')
-            title = radio.get("name", "").replace("\"", "'")
-            f.write(f'title: "{title}"\n')
-            f.write(f'type: "catalog_item"\n')
-            f.write(f'weight: "{index + 1}"\n')
-            if country_code:
-                f.write(f'country_code: "{country_code}"\n')
-            f.write(f'country_name: "{country_name_eng}"\n')
-            f.write(f'logo: "{radio.get("logo", "")}"\n')
-            genre_names = [f"\"{g['name_eng']}\"" for g in genres]
-            f.write(f'genres: [{", ".join(genre_names)}]\n')
-            f.write(f'rating: "{radio.get("rating", 0.):.2f}"\n')
-            f.write(f'website_url: "{radio.get("website_url", "")}"\n')
-            f.write(f'created: "{created_date}"\n')
-            if default_stream:
-                f.write(f'default_stream: "{default_stream}"\n')
-            description = radio.get("description", "").replace("\"", "'")
-            f.write('description: "' + description + '"\n')
-            f.write('---\n')
+            info.update({
+               "genres": [g['name_eng'] for g in genres],
+               "country_name": country_name_eng,
+               "region_name": region_name_eng,
+               "city_name": city_name_eng,
+               "languages": language_names_eng,
+               "genres": genre_names_eng,
+            })
+            f.write(json.dumps(info, indent=4))
+            
+            #f.write('---\n')
+            #title = radio.get("name", "").replace("\"", "'")
+            #f.write(f'title: "{title}"\n')
+            #f.write(f'type: "catalog_item"\n')
+            #f.write(f'weight: "{index + 1}"\n')
+            #if country_code:
+            #    f.write(f'country_code: "{country_code}"\n')
+            #f.write(f'country_name: "{country_name_eng}"\n')
+            #f.write(f'logo: "{radio.get("logo", "")}"\n')
+            
+            #f.write(f'genres: [{", ".join(genre_names)}]\n')
+            #f.write(f'rating: "{radio.get("rating", 0.):.2f}"\n')
+            #f.write(f'website_url: "{radio.get("website_url", "")}"\n')
+            #f.write(f'created: "{created_date}"\n')
+            #if default_stream:
+            #    f.write(f'default_stream: "{default_stream}"\n')
+            #description = radio.get("description", "").replace("\"", "'")
+            #f.write('description: "' + description + '"\n')
+            #f.write('---\n')
 
         # Russian page
         ru_path = f"content/ru/catalog/{slug}.md"
         os.makedirs(os.path.dirname(ru_path), exist_ok=True)
         with open(ru_path, 'w') as f:
-            f.write('---\n')
-            title = radio.get("name", "").replace("\"", "'")
-            f.write(f'title: "{title}"\n')
-            f.write(f'type: "catalog_item"\n')
-            f.write(f'weight: "{index + 1}"\n')
-            if country_code:
-                f.write(f'country_code: "{country_code}"\n')
-            f.write(f'country_name: "{country_name}"\n')
-            f.write(f'logo: "{radio.get("logo", "")}"\n')
-            genre_names = [f"\"{g['name']}\"" for g in genres]
-            f.write(f'genres: [{", ".join(genre_names)}]\n')
-            f.write(f'rating: "{radio.get("rating", 0):.2f}"\n')
-            f.write(f'website_url: "{radio.get("website_url", "")}"\n')
-            f.write(f'created: "{created_date}"\n')
-            if default_stream:
-                f.write(f'default_stream: "{default_stream}"\n')
+            info.update({
+               "genres": [g['name'] for g in genres],
+               "country_name": country_name,
+               "region_name": region_name,
+               "city_name": city_name,
+               "languages": language_names,
+               "genres": genre_names,
+            })
+            f.write(json.dumps(info, indent=4))
             
-            description = radio.get("description", "").replace("\"", "'")
-            f.write('description: "' + description + '"\n')
-            f.write('---\n')
+            # f.write('---\n')
+            # title = radio.get("name", "").replace("\"", "'")
+            # f.write(f'title: "{title}"\n')
+            # f.write(f'type: "catalog_item"\n')
+            # f.write(f'weight: "{index + 1}"\n')
+            # if country_code:
+            #     f.write(f'country_code: "{country_code}"\n')
+            # f.write(f'country_name: "{country_name}"\n')
+            # f.write(f'logo: "{radio.get("logo", "")}"\n')
+            # genre_names = [f"\"{g['name']}\"" for g in genres]
+            # f.write(f'genres: [{", ".join(genre_names)}]\n')
+            # f.write(f'rating: "{radio.get("rating", 0):.2f}"\n')
+            # f.write(f'website_url: "{radio.get("website_url", "")}"\n')
+            # f.write(f'created: "{created_date}"\n')
+            # if default_stream:
+            #     f.write(f'default_stream: "{default_stream}"\n')
+            
+            # description = radio.get("description", "").replace("\"", "'")
+            # f.write('description: "' + description + '"\n')
+            # f.write('---\n')
 
 if __name__ == '__main__':
     create_radio_pages()

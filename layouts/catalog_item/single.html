@@ -91,7 +91,47 @@
             </form>
           </div>
         -->
+
         </div>
+                
+          <div class="df jcsb index">
+            <h4>Location:  </h4>
+            <div class="df">
+              <img src="/catalog/flags/{{ .Params.country_code }}.png" alt="{{ .Params.country_name }}"  title="{{ .Params.country_name }}" />
+              {{ .Params.country_name }} > 
+              {{ if .Params.region_name }}
+              {{ .Params.region_name }} >
+              {{ end }}
+              {{ if .Params.city_name }}
+              {{ .Params.city_name }}
+              {{ end }}
+              </div>
+          </div>
+
+          <div class="df jcsb index">
+            <h4>Language:  </h4>
+            <div class="df">
+              {{ range .Params.languages }}
+                  <span>{{ . }}</span>
+              {{ end }}              
+          </div>
+
+          <div class="df jcsb index">
+            <h4>Genres:  </h4>
+            <div class="df">
+              {{ range .Params.genres }}
+                  <span>#{{ . }}</span>
+              {{ end }}              
+          </div>
+
+          <div class="df jcsb index">
+            <h4>Links:  </h4>
+            <div class="df">
+              {{ range .Params.streams }}
+                  <span>{{ .bitrare }}kbps {{ .audio_format }} {{ .stream_url }}</span>
+              {{ end }}              
+          </div>
+
       </div>
     </div>
   </div>
