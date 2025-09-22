@@ -3342,6 +3342,10 @@ div.highlight pre {
   margin-right: 30px;
 }
 
+.single-radio-logo{
+  max-width: 250px;
+}
+
 
 .radio-info {
     flex: 1;
@@ -3351,7 +3355,6 @@ div.highlight pre {
 .radio-title {
     font-size: 2.2rem;
     margin-bottom: 15px;
-    color: #3498db;
 }
 
 .radio-description {

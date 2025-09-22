@@ -1,5 +1,6 @@
 import json
 import os
+from datetime import datetime
 
 def create_radio_pages():
     json_file_path = 'data/exported_radios.json'
@@ -34,6 +35,7 @@ def create_radio_pages():
         country_name_eng = country.get("name_eng", None)
         default_stream = radio.get("default_stream", None)
         genres = radio.get("genres", [])
+        created_date = datetime.fromisoformat(radio["created"]).strftime('%d/%m/%Y')
         with open(en_path, 'w') as f:
             f.write('---\n')
             title = radio.get("name", "").replace("\"", "'")
@@ -48,6 +50,7 @@ def create_radio_pages():
             f.write(f'genres: [{", ".join(genre_names)}]\n')
             f.write(f'rating: "{radio.get("rating", 0.):.2f}"\n')
             f.write(f'website_url: "{radio.get("website_url", "")}"\n')
+            f.write(f'created: "{created_date}"\n')
             if default_stream:
                 f.write(f'default_stream: "{default_stream}"\n')
             description = radio.get("description", "").replace("\"", "'")
@@ -71,6 +74,7 @@ def create_radio_pages():
             f.write(f'genres: [{", ".join(genre_names)}]\n')
             f.write(f'rating: "{radio.get("rating", 0):.2f}"\n')
             f.write(f'website_url: "{radio.get("website_url", "")}"\n')
+            f.write(f'created: "{created_date}"\n')
             if default_stream:
                 f.write(f'default_stream: "{default_stream}"\n')
             

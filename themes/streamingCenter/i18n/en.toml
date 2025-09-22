@@ -171,3 +171,6 @@ other = "Start streaming easily!"
 
 [tour_try]
 other = "Get a free trial"
+
+[catalog_created]
+other = "Listed since"
