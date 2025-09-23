@@ -195,7 +195,7 @@
 
                 async function submitVote(radioId, score) {
                   try {
-                    const response = await fetch('/catalog/vote/', {
+                    const response = await fetch('https://streaming.center:8080/catalog/vote/', {
                       method: 'POST',
                       headers: {
                         'Content-Type': 'application/json',
