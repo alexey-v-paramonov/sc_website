@@ -3382,3 +3382,26 @@ div.highlight pre {
     color: #3498db;
     font-size: 1.2rem;
 }
+
+              .voting-bar {
+                display: flex;
+                gap: 8px;
+                justify-content: center;
+                align-items: flex-start;
+                margin: 24px 0;
+              }
+              .voting-item {
+                text-align: center;
+              }
+              .voting-face {
+                cursor: pointer;
+                transition: transform 0.2s;
+              }
+              .voting-face:hover {
+                transform: scale(1.1);
+              }
+              .voting-score {
+                margin-top: 4px;
+                font-size: 12px;
+                color: #555;
+              }
