@@ -143,7 +143,7 @@
             <div class="voting-bar">
               {{ range $i := seq 1 10 }}
                 <div class="voting-item">
-                  <div class="voting-face" data-score="{{ $i }}">
+                  <div class="voting-face" data-score="{{ $i }}" data-radio-id="{{ $.Params.id }}">
                     <svg width="32" height="32" viewBox="0 0 40 40">
                       {{ $green := div (mul (sub $i 1) 215) 9 }}
                       {{ $color := printf "rgb(255, %d, 0)" $green }}
@@ -167,20 +167,77 @@
                 </div>
               {{ end }}
             </div>
-            <style>
-            </style>
+            <div id="vote-alert" class="vote-alert" style="display: none;"></div>
             <script>
               document.addEventListener('DOMContentLoaded', function() {
                 const votingItems = document.querySelectorAll('.voting-item');
                 const originalColors = new Map();
+                let hasVoted = false;
+
+                function showAlert(message, type) {
+                  const alert = document.getElementById('vote-alert');
+                  alert.textContent = message;
+                  alert.className = `vote-alert ${type}`;
+                  alert.style.display = 'block';
+                  
+                  setTimeout(() => {
+                    alert.style.display = 'none';
+                  }, 5000);
+                }
+
+                function disableVoting() {
+                  hasVoted = true;
+                  votingItems.forEach(item => {
+                    const face = item.querySelector('.voting-face');
+                    face.classList.add('disabled');
+                  });
+                }
+
+                async function submitVote(radioId, score) {
+                  try {
+                    const response = await fetch('/catalog/vote/', {
+                      method: 'POST',
+                      headers: {
+                        'Content-Type': 'application/json',
+                      },
+                      body: JSON.stringify({
+                        radio_id: radioId,
+                        score: score
+                      })
+                    });
+
+                    if (response.ok) {
+                      showAlert('Vote submitted successfully!', 'success');
+                      disableVoting();
+                    } else if (response.status === 403) {
+                      showAlert('You have already voted for this radio station.', 'error');
+                      disableVoting();
+                    } else {
+                      showAlert('Error submitting vote. Please try again.', 'error');
+                    }
+                  } catch (error) {
+                    showAlert('Network error. Please check your connection.', 'error');
+                  }
+                }
 
                 votingItems.forEach(item => {
                   const face = item.querySelector('.voting-face');
                   const circle = face.querySelector('.face-circle');
                   const score = parseInt(face.getAttribute('data-score'), 10);
+                  const radioId = face.getAttribute('data-radio-id');
                   originalColors.set(score, circle.getAttribute('fill'));
 
+                  // Click event for voting
+                  item.addEventListener('click', () => {
+                    if (!hasVoted && !face.classList.contains('disabled')) {
+                      submitVote(radioId, score);
+                    }
+                  });
+
+                  // Hover effects
                   item.addEventListener('mouseover', () => {
+                    if (hasVoted) return;
+                    
                     const hoveredScore = score;
                     votingItems.forEach(innerItem => {
                       const innerFace = innerItem.querySelector('.voting-face');
@@ -199,6 +256,8 @@
                   });
 
                   item.addEventListener('mouseout', () => {
+                    if (hasVoted) return;
+                    
                     votingItems.forEach(innerItem => {
                       const innerFace = innerItem.querySelector('.voting-face');
                       const innerCircle = innerFace.querySelector('.face-circle');

@@ -97,6 +97,7 @@ def create_radio_pages():
 
 
         info = {
+            "id": radio['id'],
             "title": radio.get("name", ""),
             "type": "catalog_item",
             "weight": f"{index + 1}",
