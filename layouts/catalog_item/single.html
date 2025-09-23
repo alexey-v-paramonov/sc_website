@@ -128,7 +128,9 @@
             <h4>Links:  </h4>
             <div class="df">
               {{ range .Params.streams }}
-                  <span>{{ .bitrare }}kbps {{ .audio_format }} {{ .stream_url }}</span>
+                  <span>{{ .bitrate }}kbps {{ .audio_format }} {{ .stream_url }}</span>
+                  <a href="/listen/stream_{{ .id }}.m3u" download>M3U</a>
+                  <a href="/listen/stream_{{ .id }}.pls" download>PLS</a>
               {{ end }}              
           </div>
 

@@ -2,6 +2,37 @@ import json
 import os
 from datetime import datetime
 
+def generate_listen_links(radio):
+
+    streams = radio.get("streams", [])
+    radio_id = radio.get("id", 0)
+    
+    for idx, stream in enumerate(streams):
+        m3u_content = "#EXTM3U\n"
+        pls_content = "[playlist]\nNumberOfEntries=1\n"
+        
+        stream_url = stream.get("stream_url", "")
+        if stream_url:
+            m3u_content += "#EXTINF:-1,{}\n{}\n".format(radio.get("name", "Unknown"), stream_url)
+            pls_content += "File{}={}\n".format(idx + 1, stream_url)
+            pls_content += "Title{}={}\n".format(idx + 1, radio.get("name", "Unknown"))
+            pls_content += "Length{}=-1\n".format(idx + 1)
+        pls_content += "Version=2\n"
+
+        # Save M3U file
+        m3u_dir = f"static/listen/"
+        os.makedirs(m3u_dir, exist_ok=True)
+        m3u_path = os.path.join(m3u_dir, f"stream_{stream['id'] + 1}.m3u")
+        with open(m3u_path, 'w') as m3u_file:
+            m3u_file.write(m3u_content)
+
+        # Save PLS file
+        pls_path = os.path.join(m3u_dir, f"stream_{stream['id'] + 1}.pls")
+        with open(pls_path, 'w') as pls_file:
+            pls_file.write(pls_content) 
+            
+
+
 def create_radio_pages():
     json_file_path = 'data/exported_radios.json'
 
@@ -10,6 +41,12 @@ def create_radio_pages():
     # Clean existing radio files in content/en/catalog/ except _index.md
     catalog_dir_en = "content/en/catalog/"
     catalog_dir_ru = "content/ru/catalog/"
+
+    m3u_dir = f"static/listen/"
+    if os.path.exists(m3u_dir):
+        for file in os.listdir(m3u_dir):
+            if file.endswith(".m3u") or file.endswith(".pls"):
+                os.remove(os.path.join(m3u_dir, file))
 
     if os.path.exists(catalog_dir_en):
         for file in os.listdir(catalog_dir_en):
@@ -54,6 +91,11 @@ def create_radio_pages():
 
         default_stream = radio.get("default_stream", None)
         created_date = datetime.fromisoformat(radio["created"]).strftime('%d/%m/%Y')
+        streams = radio.get("streams", [])
+        
+        generate_listen_links(radio)
+
+
         info = {
             "title": radio.get("name", ""),
             "type": "catalog_item",
@@ -65,7 +107,7 @@ def create_radio_pages():
             "created": created_date,
             "default_stream": default_stream,
             "description": radio["description"],
-            "streams": radio.get("streams", []),
+            "streams": streams
         }
         with open(en_path, 'w') as f:
             info.update({
