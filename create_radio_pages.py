@@ -5,7 +5,6 @@ from datetime import datetime
 def generate_listen_links(radio):
 
     streams = radio.get("streams", [])
-    radio_id = radio.get("id", 0)
     
     for idx, stream in enumerate(streams):
         m3u_content = "#EXTM3U\n"
@@ -22,12 +21,12 @@ def generate_listen_links(radio):
         # Save M3U file
         m3u_dir = f"static/listen/"
         os.makedirs(m3u_dir, exist_ok=True)
-        m3u_path = os.path.join(m3u_dir, f"stream_{stream['id'] + 1}.m3u")
+        m3u_path = os.path.join(m3u_dir, f"stream_{stream['id']}.m3u")
         with open(m3u_path, 'w') as m3u_file:
             m3u_file.write(m3u_content)
 
         # Save PLS file
-        pls_path = os.path.join(m3u_dir, f"stream_{stream['id'] + 1}.pls")
+        pls_path = os.path.join(m3u_dir, f"stream_{stream['id']}.pls")
         with open(pls_path, 'w') as pls_file:
             pls_file.write(pls_content) 
             
