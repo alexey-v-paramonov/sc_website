@@ -63,169 +63,179 @@
               <span>{{ . }}</span>
               {{ end }}
             </div>
-
-            <div class="index">
-              <h4>Genres: </h4>
-              <div class="df">
-                {{ range .Params.genres }}
-                <span>#{{ . }}</span>
-                {{ end }}
-              </div>
-            </div>
-
-            <div class="index">
-              <h4>Links: </h4>
-              {{ range .Params.streams }}
-              <div>
-
-                <span>{{ .bitrate }}kbps {{ .audio_format }} {{ .stream_url }}</span>
-                <a href="/listen/stream_{{ .id }}.m3u" download>M3U</a>
-                <a href="/listen/stream_{{ .id }}.pls" download>PLS</a>
-
-              </div>
-              {{ end }}
-            </div>
-
-
-            <div class="voting-bar" id="radio-voting-bar" data-server-url="{{ $.Site.BaseURL }}"
-              data-radio-id="{{ $.Params.id }}">
-              {{ range $i := seq 1 10 }}
-              <div class="voting-item">
-                <div class="voting-face" data-score="{{ $i }}">
-                  <svg width="32" height="32" viewBox="0 0 40 40">
-                    {{ $green := div (mul (sub $i 1) 215) 9 }}
-                    {{ $color := printf "rgb(255, %d, 0)" $green }}
-                    <circle class="face-circle" cx="20" cy="20" r="18" fill="{{ $color }}" stroke="#ccc"
-                      stroke-width="2" />
-                    <!-- Speaker cone -->
-                    <rect x="12" y="16" width="4" height="8" fill="#333" />
-                    <polygon points="16,16 22,12 22,28 16,24" fill="#333" />
-                    <!-- Sound waves based on volume level -->
-                    {{ if ge $i 3 }}
-                    <path d="M 24 18 Q 26 16 26 20 Q 26 24 24 22" stroke="#333" stroke-width="1.5" fill="none" />
-                    {{ end }}
-                    {{ if ge $i 6 }}
-                    <path d="M 26 16 Q 29 14 29 20 Q 29 26 26 24" stroke="#333" stroke-width="1.5" fill="none" />
-                    {{ end }}
-                    {{ if ge $i 9 }}
-                    <path d="M 28 14 Q 32 12 32 20 Q 32 28 28 26" stroke="#333" stroke-width="1.5" fill="none" />
-                    {{ end }}
-                  </svg>
-                </div>
-                <div class="voting-score">{{ $i }}</div>
-              </div>
-              {{ end }}
-            </div>
-            <div id="vote-alert" class="vote-alert" style="display: none;"></div>
           </div>
+
+          <div class="index">
+            <h4>Genres: </h4>
+            <div class="df">
+              {{ range .Params.genres }}
+              <span>#{{ . }}</span>
+              {{ end }}
+            </div>
+          </div>
+
+          <div class="index">
+            <h4>Links: </h4>
+            {{ range .Params.streams }}
+            <div>
+
+              <span>{{ .bitrate }}kbps {{ .audio_format }} {{ .stream_url }}</span>
+              <a href="/listen/stream_{{ .id }}.m3u" download>M3U</a>
+              <a href="/listen/stream_{{ .id }}.pls" download>PLS</a>
+
+            </div>
+            {{ end }}
+          </div>
+
+
+          <div class="voting-bar" id="radio-voting-bar" data-server-url="{{ $.Site.BaseURL }}"
+            data-radio-id="{{ $.Params.id }}">
+            {{ range $i := seq 1 10 }}
+            <div class="voting-item">
+              <div class="voting-face" data-score="{{ $i }}">
+                <svg width="32" height="32" viewBox="0 0 40 40">
+                  {{ $green := div (mul (sub $i 1) 215) 9 }}
+                  {{ $color := printf "rgb(255, %d, 0)" $green }}
+                  <circle class="face-circle" cx="20" cy="20" r="18" fill="{{ $color }}" stroke="#ccc"
+                    stroke-width="2" />
+                  <!-- Speaker cone -->
+                  <rect x="12" y="16" width="4" height="8" fill="#333" />
+                  <polygon points="16,16 22,12 22,28 16,24" fill="#333" />
+                  <!-- Sound waves based on volume level -->
+                  {{ if ge $i 3 }}
+                  <path d="M 24 18 Q 26 16 26 20 Q 26 24 24 22" stroke="#333" stroke-width="1.5" fill="none" />
+                  {{ end }}
+                  {{ if ge $i 6 }}
+                  <path d="M 26 16 Q 29 14 29 20 Q 29 26 26 24" stroke="#333" stroke-width="1.5" fill="none" />
+                  {{ end }}
+                  {{ if ge $i 9 }}
+                  <path d="M 28 14 Q 32 12 32 20 Q 32 28 28 26" stroke="#333" stroke-width="1.5" fill="none" />
+                  {{ end }}
+                </svg>
+              </div>
+              <div class="voting-score">{{ $i }}</div>
+            </div>
+            {{ end }}
+          </div>
+          <div id="vote-alert" class="vote-alert" style="display: none;"></div>
+        </div>
+
+
+        <!-- Facebook Comments Plugin -->
+        <div class="fb-comments" data-href="{{ .Permalink }}" data-width="100%" data-numposts="7">
         </div>
       </div>
     </div>
+  </div>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const votingBar = document.getElementById('radio-voting-bar');
-        const votingItems = document.querySelectorAll('.voting-item');
-        const originalColors = new Map();
-        let hasVoted = false;
-        const serverUrl = votingBar.getAttribute('data-server-url');
-        const radioId = parseInt(votingBar.getAttribute('data-radio-id'));
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const votingBar = document.getElementById('radio-voting-bar');
+      const votingItems = document.querySelectorAll('.voting-item');
+      const originalColors = new Map();
+      let hasVoted = false;
+      const serverUrl = votingBar.getAttribute('data-server-url');
+      const radioId = parseInt(votingBar.getAttribute('data-radio-id'));
 
 
-        function showAlert(message, type) {
-          const alert = document.getElementById('vote-alert');
-          alert.textContent = message;
-          alert.className = `vote-alert ${type}`;
-          alert.style.display = 'block';
+      function showAlert(message, type) {
+        const alert = document.getElementById('vote-alert');
+        alert.textContent = message;
+        alert.className = `vote-alert ${type}`;
+        alert.style.display = 'block';
 
-          setTimeout(() => {
-            alert.style.display = 'none';
-          }, 5000);
-        }
+        setTimeout(() => {
+          alert.style.display = 'none';
+        }, 5000);
+      }
 
-        function disableVoting() {
-          hasVoted = true;
-          votingItems.forEach(item => {
-            const face = item.querySelector('.voting-face');
-            face.classList.add('disabled');
-          });
-        }
-
-        async function submitVote(radioId, score, serverUrl) {
-          console.log("serverUrl: ", serverUrl)
-          try {
-            const response = await fetch(`${serverUrl}/api/v1/catalog/vote`, {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify({
-                radio_id: radioId,
-                score: score
-              })
-            });
-
-            if (response.ok) {
-              showAlert('Vote submitted successfully!', 'success');
-              disableVoting();
-            } else if (response.status === 403) {
-              showAlert('You have already voted for this radio station.', 'error');
-              disableVoting();
-            } else {
-              showAlert('Error submitting vote. Please try again.', 'error');
-            }
-          } catch (error) {
-            showAlert('Network error. Please check your connection.', 'error');
-          }
-        }
-
+      function disableVoting() {
+        hasVoted = true;
         votingItems.forEach(item => {
           const face = item.querySelector('.voting-face');
-          const circle = face.querySelector('.face-circle');
-          const score = parseInt(face.getAttribute('data-score'), 10);
-          originalColors.set(score, circle.getAttribute('fill'));
+          face.classList.add('disabled');
+        });
+      }
 
-          // Click event for voting
-          item.addEventListener('click', () => {
-            if (!hasVoted && !face.classList.contains('disabled')) {
-              submitVote(radioId, score, serverUrl);
+      async function submitVote(radioId, score, serverUrl) {
+        console.log("serverUrl: ", serverUrl)
+        try {
+          const response = await fetch(`${serverUrl}/api/v1/catalog/vote`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              radio_id: radioId,
+              score: score
+            })
+          });
+
+          if (response.ok) {
+            showAlert('Vote submitted successfully!', 'success');
+            disableVoting();
+          } else if (response.status === 403) {
+            showAlert('You have already voted for this radio station.', 'error');
+            disableVoting();
+          } else {
+            showAlert('Error submitting vote. Please try again.', 'error');
+          }
+        } catch (error) {
+          showAlert('Network error. Please check your connection.', 'error');
+        }
+      }
+
+      votingItems.forEach(item => {
+        const face = item.querySelector('.voting-face');
+        const circle = face.querySelector('.face-circle');
+        const score = parseInt(face.getAttribute('data-score'), 10);
+        originalColors.set(score, circle.getAttribute('fill'));
+
+        // Click event for voting
+        item.addEventListener('click', () => {
+          if (!hasVoted && !face.classList.contains('disabled')) {
+            submitVote(radioId, score, serverUrl);
+          }
+        });
+
+        // Hover effects
+        item.addEventListener('mouseover', () => {
+          if (hasVoted) return;
+
+          const hoveredScore = score;
+          votingItems.forEach(innerItem => {
+            const innerFace = innerItem.querySelector('.voting-face');
+            const innerCircle = innerFace.querySelector('.face-circle');
+            const innerScore = parseInt(innerFace.getAttribute('data-score'), 10);
+
+            if (innerScore <= hoveredScore) {
+              const green = Math.round(255 * (innerScore - 1) / 9);
+              const red = 255 - green;
+              const highlightColor = `rgb(${red}, ${green}, 0)`;
+              innerCircle.setAttribute('fill', highlightColor);
+            } else {
+              innerCircle.setAttribute('fill', originalColors.get(innerScore));
             }
           });
+        });
 
-          // Hover effects
-          item.addEventListener('mouseover', () => {
-            if (hasVoted) return;
+        item.addEventListener('mouseout', () => {
+          if (hasVoted) return;
 
-            const hoveredScore = score;
-            votingItems.forEach(innerItem => {
-              const innerFace = innerItem.querySelector('.voting-face');
-              const innerCircle = innerFace.querySelector('.face-circle');
-              const innerScore = parseInt(innerFace.getAttribute('data-score'), 10);
-
-              if (innerScore <= hoveredScore) {
-                const green = Math.round(255 * (innerScore - 1) / 9);
-                const red = 255 - green;
-                const highlightColor = `rgb(${red}, ${green}, 0)`;
-                innerCircle.setAttribute('fill', highlightColor);
-              } else {
-                innerCircle.setAttribute('fill', originalColors.get(innerScore));
-              }
-            });
-          });
-
-          item.addEventListener('mouseout', () => {
-            if (hasVoted) return;
-
-            votingItems.forEach(innerItem => {
-              const innerFace = innerItem.querySelector('.voting-face');
-              const innerCircle = innerFace.querySelector('.face-circle');
-              const innerScore = parseInt(innerFace.getAttribute('data-score'), 10);
-              innerCircle.setAttribute('fill', originalColors.get(innerScore));
-            });
+          votingItems.forEach(innerItem => {
+            const innerFace = innerItem.querySelector('.voting-face');
+            const innerCircle = innerFace.querySelector('.face-circle');
+            const innerScore = parseInt(innerFace.getAttribute('data-score'), 10);
+            innerCircle.setAttribute('fill', originalColors.get(innerScore));
           });
         });
       });
-    </script>
+    });
+  </script>
+
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0">
+  </script>
 
 </main>
 {{ end }}
