@@ -122,7 +122,6 @@
 
 
         <div class="index">
-          {{.Lang}} !!
           {{ if eq .Lang "en" }}
           <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
             <a class="a2a_button_email"></a>
@@ -168,7 +167,6 @@
       <div class="index fb-comments" data-href="{{ .Permalink }}" data-width="100%" data-numposts="7">
 
       </div>
-      XXX
       {{ end }}
 
       {{ if eq .Lang "ru" }}
@@ -286,7 +284,7 @@
     });
   </script>
 
-  {{ if eq .Lang "ru" }}
+  {{ if eq .Lang "en" }}
   <div id="fb-root"></div>
   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0">
   </script>
