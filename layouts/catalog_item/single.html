@@ -88,7 +88,7 @@
           </div>
 
 
-          <div class="voting-bar" id="radio-voting-bar" data-server-url="{{ $.Site.BaseURL }}"
+          <div class="index voting-bar" id="radio-voting-bar" data-server-url="{{ $.Site.BaseURL }}"
             data-radio-id="{{ $.Params.id }}">
             {{ range $i := seq 1 10 }}
             <div class="voting-item">
@@ -122,7 +122,7 @@
 
 
         <!-- Facebook Comments Plugin -->
-        <div class="fb-comments" data-href="{{ .Permalink }}" data-width="100%" data-numposts="7">
+        <div class="index fb-comments" data-href="{{ .Permalink }}" data-width="100%" data-numposts="7">
         </div>
       </div>
     </div>
