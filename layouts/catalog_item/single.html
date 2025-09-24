@@ -175,7 +175,7 @@
                 const originalColors = new Map();
                 let hasVoted = false;
                 const serverUrl = votingBar.getAttribute('data-server-url');
-                const radioId = votingBar.getAttribute('data-radio-id');
+                const radioId = parseInt(votingBar.getAttribute('data-radio-id'));
 
 
                 function showAlert(message, type) {
