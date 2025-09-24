@@ -108,7 +108,8 @@ def create_radio_pages():
             "created": created_date,
             "default_stream": default_stream,
             "description": radio["description"],
-            "streams": streams
+            "streams": streams,
+            "total_votes": radio['total_votes'],
         }
         with open(en_path, 'w') as f:
             info.update({
