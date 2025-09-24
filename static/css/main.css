@@ -3335,118 +3335,111 @@ div.highlight pre {
 .single-radio-logo-wrap {
   flex: 0 0 250px;
   height: 250px;
-  min-width: 250px ;
+  min-width: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 30px;
 }
 
-.single-radio-logo{
+.single-radio-logo {
   max-width: 250px;
 }
 
-
 .radio-info {
-    flex: 1;
-    min-width: 300px;
+  flex: 1;
+  min-width: 300px;
 }
 
 .radio-title {
-    font-size: 2.2rem;
-    margin-bottom: 15px;
+  font-size: 2.2rem;
+  margin-bottom: 15px;
 }
 
 .radio-description {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-    line-height: 1.7;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  line-height: 1.7;
 }
 
 .radio-meta {
-    display: flex
-;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
 }
 
 .meta-item {
-    display: flex
-;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .meta-item i {
-    margin-right: 10px;
-    color: #3498db;
-    font-size: 1.2rem;
+  margin-right: 10px;
+  color: #3498db;
+  font-size: 1.2rem;
 }
 
-              .voting-bar {
-                display: flex;
-                gap: 8px;
-                justify-content: center;
-                align-items: flex-start;
-                margin: 24px 0;
-              }
-              .voting-item {
-                text-align: center;
-              }
-              .voting-face {
-                cursor: pointer;
-                transition: transform 0.2s;
-              }
-              .voting-face:hover {
-                transform: scale(1.1);
-              }
-              .voting-score {
-                margin-top: 4px;
-                font-size: 12px;
-                color: #555;
-              }
+.voting-bar {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 24px 0;
+}
+.voting-item {
+  text-align: center;
+}
+.voting-face {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.voting-face:hover {
+  transform: scale(1.1);
+}
+.voting-score {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #555;
+}
 
+.voting-bar {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 24px 0;
+}
+.voting-item {
+  text-align: center;
+}
+.voting-face {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.voting-face:hover {
+  transform: scale(1.1);
+}
+.voting-face.disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.voting-score {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #555;
+}
 
-                            .voting-bar {
-                display: flex;
-                gap: 8px;
-                justify-content: center;
-                align-items: flex-start;
-                margin: 24px 0;
-              }
-              .voting-item {
-                text-align: center;
-              }
-              .voting-face {
-                cursor: pointer;
-                transition: transform 0.2s;
-              }
-              .voting-face:hover {
-                transform: scale(1.1);
-              }
-              .voting-face.disabled {
-                cursor: not-allowed;
-                opacity: 0.6;
-              }
-              .voting-score {
-                margin-top: 4px;
-                font-size: 12px;
-                color: #555;
-              }
-              .vote-alert {
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                padding: 12px 20px;
-                border-radius: 4px;
-                color: white;
-                font-weight: bold;
-                z-index: 1000;
-                transition: opacity 0.3s;
-              }
-              .vote-alert.success {
-                background-color: #28a745;
-              }
-              .vote-alert.error {
-                background-color: #dc3545;
-              }
+.vote-alert {
+  padding: 12px 20px;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  z-index: 1000;
+}
+.vote-alert.success {
+  background-color: #28a745;
+}
+.vote-alert.error {
+  background-color: #dc3545;
+}
