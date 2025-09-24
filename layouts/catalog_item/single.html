@@ -140,10 +140,10 @@
   </div>
   </div>
 
-            <div class="voting-bar">
+            <div class="voting-bar" id="radio-voting-bar" data-server-url="{{ $.Site.BaseURL }}" data-radio-id="{{ $.Params.id }}">
               {{ range $i := seq 1 10 }}
                 <div class="voting-item">
-                  <div class="voting-face" data-score="{{ $i }}" data-radio-id="{{ $.Params.id }}">
+                  <div class="voting-face" data-score="{{ $i }}">
                     <svg width="32" height="32" viewBox="0 0 40 40">
                       {{ $green := div (mul (sub $i 1) 215) 9 }}
                       {{ $color := printf "rgb(255, %d, 0)" $green }}
@@ -170,9 +170,13 @@
             <div id="vote-alert" class="vote-alert" style="display: none;"></div>
             <script>
               document.addEventListener('DOMContentLoaded', function() {
+                const votingBar = document.getElementById('radio-voting-bar');
                 const votingItems = document.querySelectorAll('.voting-item');
                 const originalColors = new Map();
                 let hasVoted = false;
+                const serverUrl = votingBar.getAttribute('data-server-url');
+                const radioId = votingBar.getAttribute('data-radio-id');
+
 
                 function showAlert(message, type) {
                   const alert = document.getElementById('vote-alert');
@@ -193,9 +197,10 @@
                   });
                 }
 
-                async function submitVote(radioId, score) {
+                async function submitVote(radioId, score, serverUrl) {
+                  console.log("serverUrl: ", serverUrl )
                   try {
-                    const response = await fetch('https://streaming.center:8080/catalog/vote/', {
+                    const response = await fetch(`${serverUrl}/api/v1/catalog/vote`, {
                       method: 'POST',
                       headers: {
                         'Content-Type': 'application/json',
@@ -224,13 +229,12 @@
                   const face = item.querySelector('.voting-face');
                   const circle = face.querySelector('.face-circle');
                   const score = parseInt(face.getAttribute('data-score'), 10);
-                  const radioId = face.getAttribute('data-radio-id');
                   originalColors.set(score, circle.getAttribute('fill'));
 
                   // Click event for voting
                   item.addEventListener('click', () => {
                     if (!hasVoted && !face.classList.contains('disabled')) {
-                      submitVote(radioId, score);
+                      submitVote(radioId, score, serverUrl);
                     }
                   });
 
