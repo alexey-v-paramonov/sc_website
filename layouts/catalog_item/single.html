@@ -145,6 +145,11 @@
         <!-- Facebook Comments Plugin -->
         <div class="index fb-comments" data-href="{{ .Permalink }}" data-width="100%" data-numposts="7">
         </div>
+
+        <div class="comments-wrap">
+          <!-- VK comments container -->
+          <div id="vk_comments"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -257,6 +262,22 @@
   <div id="fb-root"></div>
   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0">
   </script>
+
   <script defer src="https://static.addtoany.com/menu/page.js"></script>
+
+  <script src="https://vk.com/js/api/openapi.js?172" defer></script>
+  <script>
+    window.addEventListener('load', function () {
+      VK.init({ onlyWidgets: true });
+      VK.Widgets.Comments("vk_comments", {
+        limit: 10,
+        attach: "*",
+        pageUrl: "{{ .Permalink }}",
+        width: "100%"
+      });
+    });
+  </script>
+
+
 </main>
 {{ end }}
