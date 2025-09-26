@@ -76,13 +76,24 @@
 
           <div class="index">
             <h4>Links: </h4>
+            <div class="volume-control df aic mb1">
+              <label for="volume-slider" class="mr1">Volume:</label>
+              <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.8">
+            </div>
             {{ range .Params.streams }}
-            <div>
-
-              <span>{{ .bitrate }}kbps {{ .audio_format }} {{ .stream_url }}</span>
-              <a href="/listen/stream_{{ .id }}.m3u" download>M3U</a>
-              <a href="/listen/stream_{{ .id }}.pls" download>PLS</a>
-
+            <div class="stream-player df aic mb1">
+              <button class="play-pause-btn" data-stream-id="stream-audio-{{ .id }}">
+                <svg class="play-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                <svg class="pause-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="display: none;"><path d="M6 6h12v12H6z"/></svg>
+              </button>
+              <span class="mh1">{{ .bitrate }}kbps {{ .audio_format }}</span>
+              <audio id="stream-audio-{{ .id }}" class="stream-audio" preload="none">
+                <source src="{{ .stream_url }}" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+              <a href="/listen/stream_{{ .id }}.m3u" download class="mh1">M3U</a> |
+              <a href="/listen/stream_{{ .id }}.pls" download>PLS</a> |
+              <a href="{{ .stream_url }}" >WEB</a>
             </div>
             {{ end }}
           </div>
@@ -181,106 +192,149 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      const votingBar = document.getElementById('radio-voting-bar');
-      const votingItems = document.querySelectorAll('.voting-item');
-      const originalColors = new Map();
-      let hasVoted = false;
-      const serverUrl = votingBar.getAttribute('data-server-url');
-      const radioId = parseInt(votingBar.getAttribute('data-radio-id'));
+      // Audio Player Logic
+      const playPauseButtons = document.querySelectorAll('.play-pause-btn');
+      const audioElements = document.querySelectorAll('.stream-audio');
+      const volumeSlider = document.getElementById('volume-slider');
 
-
-      function showAlert(message, type) {
-        const alert = document.getElementById('vote-alert');
-        alert.textContent = message;
-        alert.className = `vote-alert ${type}`;
-        alert.style.display = 'block';
-
-        setTimeout(() => {
-          alert.style.display = 'none';
-        }, 5000);
-      }
-
-      function disableVoting() {
-        hasVoted = true;
-        votingItems.forEach(item => {
-          const face = item.querySelector('.voting-face');
-          face.classList.add('disabled');
+      function stopAllStreams() {
+        audioElements.forEach(audio => {
+          audio.pause();
+          audio.currentTime = 0;
+        });
+        playPauseButtons.forEach(btn => {
+          btn.querySelector('.play-icon').style.display = 'inline';
+          btn.querySelector('.pause-icon').style.display = 'none';
         });
       }
 
-      async function submitVote(radioId, score, serverUrl) {
-        console.log("serverUrl: ", serverUrl)
-        try {
-          const response = await fetch(`${serverUrl}/api/v1/catalog/vote`, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              radio_id: radioId,
-              score: score
-            })
-          });
+      playPauseButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const streamId = button.getAttribute('data-stream-id');
+          const audio = document.getElementById(streamId);
+          const isPlaying = !audio.paused;
 
-          if (response.ok) {
-            showAlert('Vote submitted successfully!', 'success');
-            disableVoting();
-          } else if (response.status === 403) {
-            showAlert('You have already voted for this radio station.', 'error');
-            disableVoting();
-          } else {
-            showAlert('Error submitting vote. Please try again.', 'error');
+          stopAllStreams();
+
+          if (!isPlaying) {
+            audio.volume = volumeSlider.value;
+            audio.play().catch(e => console.error("Playback failed:", e));
+            button.querySelector('.play-icon').style.display = 'none';
+            button.querySelector('.pause-icon').style.display = 'inline';
           }
-        } catch (error) {
-          showAlert('Network error. Please check your connection.', 'error');
-        }
-      }
-
-      votingItems.forEach(item => {
-        const face = item.querySelector('.voting-face');
-        const circle = face.querySelector('.face-circle');
-        const score = parseInt(face.getAttribute('data-score'), 10);
-        originalColors.set(score, circle.getAttribute('fill'));
-
-        // Click event for voting
-        item.addEventListener('click', () => {
-          if (!hasVoted && !face.classList.contains('disabled')) {
-            submitVote(radioId, score, serverUrl);
-          }
-        });
-
-        // Hover effects
-        item.addEventListener('mouseover', () => {
-          if (hasVoted) return;
-
-          const hoveredScore = score;
-          votingItems.forEach(innerItem => {
-            const innerFace = innerItem.querySelector('.voting-face');
-            const innerCircle = innerFace.querySelector('.face-circle');
-            const innerScore = parseInt(innerFace.getAttribute('data-score'), 10);
-
-            if (innerScore <= hoveredScore) {
-              const green = Math.round(255 * (innerScore - 1) / 9);
-              const red = 255 - green;
-              const highlightColor = `rgb(${red}, ${green}, 0)`;
-              innerCircle.setAttribute('fill', highlightColor);
-            } else {
-              innerCircle.setAttribute('fill', originalColors.get(innerScore));
-            }
-          });
-        });
-
-        item.addEventListener('mouseout', () => {
-          if (hasVoted) return;
-
-          votingItems.forEach(innerItem => {
-            const innerFace = innerItem.querySelector('.voting-face');
-            const innerCircle = innerFace.querySelector('.face-circle');
-            const innerScore = parseInt(innerFace.getAttribute('data-score'), 10);
-            innerCircle.setAttribute('fill', originalColors.get(innerScore));
-          });
         });
       });
+
+      volumeSlider.addEventListener('input', () => {
+        const volume = volumeSlider.value;
+        audioElements.forEach(audio => {
+          audio.volume = volume;
+        });
+      });
+
+      // Existing Voting Bar Logic
+      const votingBar = document.getElementById('radio-voting-bar');
+      if (votingBar) {
+        const votingItems = document.querySelectorAll('.voting-item');
+        const originalColors = new Map();
+        let hasVoted = false;
+        const serverUrl = votingBar.getAttribute('data-server-url');
+        const radioId = parseInt(votingBar.getAttribute('data-radio-id'));
+
+
+        function showAlert(message, type) {
+          const alert = document.getElementById('vote-alert');
+          alert.textContent = message;
+          alert.className = `vote-alert ${type}`;
+          alert.style.display = 'block';
+
+          setTimeout(() => {
+            alert.style.display = 'none';
+          }, 5000);
+        }
+
+        function disableVoting() {
+          hasVoted = true;
+          votingItems.forEach(item => {
+            const face = item.querySelector('.voting-face');
+            face.classList.add('disabled');
+          });
+        }
+
+        async function submitVote(radioId, score, serverUrl) {
+          console.log("serverUrl: ", serverUrl)
+          try {
+            const response = await fetch(`${serverUrl}/api/v1/catalog/vote`, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                radio_id: radioId,
+                score: score
+              })
+            });
+
+            if (response.ok) {
+              showAlert('Vote submitted successfully!', 'success');
+              disableVoting();
+            } else if (response.status === 403) {
+              showAlert('You have already voted for this radio station.', 'error');
+              disableVoting();
+            } else {
+              showAlert('Error submitting vote. Please try again.', 'error');
+            }
+          } catch (error) {
+            showAlert('Network error. Please check your connection.', 'error');
+          }
+        }
+
+        votingItems.forEach(item => {
+          const face = item.querySelector('.voting-face');
+          const circle = face.querySelector('.face-circle');
+          const score = parseInt(face.getAttribute('data-score'), 10);
+          originalColors.set(score, circle.getAttribute('fill'));
+
+          // Click event for voting
+          item.addEventListener('click', () => {
+            if (!hasVoted && !face.classList.contains('disabled')) {
+              submitVote(radioId, score, serverUrl);
+            }
+          });
+
+          // Hover effects
+          item.addEventListener('mouseover', () => {
+            if (hasVoted) return;
+
+            const hoveredScore = score;
+            votingItems.forEach(innerItem => {
+              const innerFace = innerItem.querySelector('.voting-face');
+              const innerCircle = innerFace.querySelector('.face-circle');
+              const innerScore = parseInt(innerFace.getAttribute('data-score'), 10);
+
+              if (innerScore <= hoveredScore) {
+                const green = Math.round(255 * (innerScore - 1) / 9);
+                const red = 255 - green;
+                const highlightColor = `rgb(${red}, ${green}, 0)`;
+                innerCircle.setAttribute('fill', highlightColor);
+              } else {
+                innerCircle.setAttribute('fill', originalColors.get(innerScore));
+              }
+            });
+          });
+
+          item.addEventListener('mouseout', () => {
+            if (hasVoted) return;
+
+            votingItems.forEach(innerItem => {
+              const innerFace = innerItem.querySelector('.voting-face');
+              const innerCircle = innerFace.querySelector('.face-circle');
+              const innerScore = parseInt(innerFace.getAttribute('data-score'), 10);
+              innerCircle.setAttribute('fill', originalColors.get(innerScore));
+            });
+          });
+        });
+      }
     });
   </script>
 
