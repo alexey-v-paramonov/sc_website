@@ -245,7 +245,7 @@
         function showAlert(message, type) {
           const alert = document.getElementById('vote-alert');
           alert.textContent = message;
-          alert.className = `vote-alert ${type}`;
+          alert.className = `index vote-alert ${type}`;
           alert.style.display = 'block';
 
           setTimeout(() => {
