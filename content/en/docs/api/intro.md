@@ -1,7 +1,7 @@
 ---
 title: "Getting started"
 date: 2024-08-24T11:37:29+03:00
-weight: 1
+weight: 10
 seo_title: "Getting Started with Streaming.Center API | Internet Radio API Guide"
 description: "Introduction to Streaming.Center's Internet radio API. Learn basic concepts, make your first API request, and understand the structure of API responses with practical examples."
 ---
