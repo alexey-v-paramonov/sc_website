@@ -1,6 +1,6 @@
 ---
-title: "Version 3.27.0: Media Manager, Priority Track Queue, minor improvements"
-date: 2025-11-23T11:15:21Z
+title: "Version 3.27.0: Media Manager, Priority Track Queue"
+date: 2025-11-23
 ---
 
 Version 3.27.0 is out:
