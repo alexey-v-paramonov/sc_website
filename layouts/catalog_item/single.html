@@ -121,94 +121,23 @@
           </div>
         </div>
 
-        <div class="card-soc">
+        <div class="card-soc" id="radio-voting-bar" data-server-url="{{ $.Site.BaseURL }}" data-radio-id="{{ $.Params.id }}">
           <div class="card-soc__wrapper">
-            <div class="card-soc__title"><img src="img/radio.svg" alt="">Рейтинг <span>Оцените радио от 1 до 10</span>
+            <div class="card-soc__title"><img src="/img/radio.svg" alt="">Рейтинг <span>Оцените радио от 1 до 10</span>
             </div>
             <div class="card-soc__scroll">
               <div class="card-soc__list">
 
-                <div class="card-soc__block">
-                  <label class="card-soc__radio">
-                    <input type="radio" name="rating">
-                    <img src="img/smile_1.svg" alt="" class="img">
-                    <span>1</span>
-                    <small></small>
-                  </label>
-                </div>
-                <div class="card-soc__block">
-                  <label class="card-soc__radio">
-                    <input type="radio" name="rating">
-                    <img src="img/smile_2.svg" alt="" class="img">
-                    <span>2</span>
-                    <small></small>
-                  </label>
-                </div>
-                <div class="card-soc__block">
-                  <label class="card-soc__radio">
-                    <input type="radio" name="rating">
-                    <img src="img/smile_3.svg" alt="" class="img">
-                    <span>3</span>
-                    <small></small>
-                  </label>
-                </div>
-                <div class="card-soc__block">
-                  <label class="card-soc__radio">
-                    <input type="radio" name="rating">
-                    <img src="img/smile_4.svg" alt="" class="img">
-                    <span>4</span>
-                    <small></small>
-                  </label>
-                </div>
-                <div class="card-soc__block">
-                  <label class="card-soc__radio">
-                    <input type="radio" name="rating">
-                    <img src="img/smile_5.svg" alt="" class="img">
-                    <span>5</span>
-                    <small></small>
-                  </label>
-                </div>
-                <div class="card-soc__block">
-                  <label class="card-soc__radio">
-                    <input type="radio" name="rating">
-                    <img src="img/smile_6.svg" alt="" class="img">
-                    <span>6</span>
-                    <small></small>
-                  </label>
-                </div>
-                <div class="card-soc__block">
-                  <label class="card-soc__radio">
-                    <input type="radio" name="rating">
-                    <img src="img/smile_7.svg" alt="" class="img">
-                    <span>7</span>
-                    <small></small>
-                  </label>
-                </div>
-                <div class="card-soc__block">
-                  <label class="card-soc__radio">
-                    <input type="radio" name="rating">
-                    <img src="img/smile_8.svg" alt="" class="img">
-                    <span>8</span>
-                    <small></small>
-                  </label>
-                </div>
-                <div class="card-soc__block">
-                  <label class="card-soc__radio">
-                    <input type="radio" name="rating">
-                    <img src="img/smile_10.svg" alt="" class="img">
-                    <span>10</span>
-                    <small></small>
-                  </label>
-                </div>
-                <div class="card-soc__block">
-                  <label class="card-soc__radio">
-                    <input type="radio" name="rating">
-                    <img src="img/smile_10.svg" alt="" class="img">
-                    <span>10</span>
-                    <small></small>
-                  </label>
-                </div>
-
+                {{ range $i := seq 1 10 }}
+                  <div class="card-soc__block">
+                    <label class="card-soc__radio">
+                      <input type="radio" name="rating">
+                      <img src="/img/smile_{{ $i }}.svg" alt="" class="img">
+                      <span>{{ $i }}</span>
+                      <small></small>
+                    </label>
+                  </div>
+                {{ end }}
               </div>
             </div>
           </div>
@@ -225,71 +154,23 @@
 
         <h2 class="card-h2">Отзывы слушателей</h2>
 
-        <div class="card-box">
-          <div class="card-box__wrapper">
-            <form class="card-form">
-              <img src="img/review.png" alt="" class="card-form__img">
-              <div class="card-form__right">
-                <textarea class="card-form__textarea" required placeholder="Add a comment ..."></textarea>
-                <div class="card-form__bottom">
-                  <a href="#" class="card-form__fb">
-                    <img src="img/fb.svg" alt="">
-                    <span>Facebook Comments Plugin</span>
-                  </a>
-                  <button class="card-form__btn btn">
-                    <img src="img/marker.svg" alt="">
-                    <span>отправить</span>
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
 
         <div class="card-box card-reviews">
           <div class="card-box__wrapper">
-            <div class="card-review">
-              <div class="card-review__top">
-                <img src="img/star-gold.svg" alt="">
-                <span>9.0</span>
-                <p>15 минут назад</p>
-              </div>
-              <div class="card-review__list">
-                <img src="img/review.png" alt="" class="card-review__img">
-                <p>Я такой станции еще не встречала... Музыка прктически не повторяется, а я слушаю постоянно и на
-                  работе и дома. Никогда не знаешь чем тебя удивят. Конечно бывает что-то не&nbsp;в&nbsp;моем вкусе, но
-                  это на любой станции такое быть может. Очень довольна!</p>
-              </div>
-            </div>
-            <div class="card-review">
-              <div class="card-review__top">
-                <img src="img/star-gold.svg" alt="">
-                <span>8.0</span>
-                <p>2 месяца назад</p>
-              </div>
-              <div class="card-review__list">
-                <img src="img/review.png" alt="" class="card-review__img">
-                <p>Очень классное радио! Советую!</p>
-              </div>
-            </div>
-            <div class="card-review">
-              <div class="card-review__top">
-                <img src="img/star-gold.svg" alt="">
-                <span>10</span>
-                <p>1 год назад</p>
-              </div>
-              <div class="card-review__list">
-                <img src="img/review.png" alt="" class="card-review__img">
-                <p>Класс!</p>
-              </div>
-            </div>
+            
+            {{ if eq .Lang "en" }}
+            <!-- Facebook Comments Plugin -->
+            <div class="index fb-comments" data-href="{{ .Permalink }}" data-width="100%" data-numposts="7"></div>
+            {{ end }}
+
+            {{ if eq .Lang "ru" }}
+            <!-- VK comments container -->
+            <div class="index comments-wrap"><div id="vk_comments"></div></div>
+            {{ end }}
           </div>
         </div>
-
-        <a href="#" class="card-loader btn btn-border">Загрузить еще</a>
-
-
       </div>
+
       <div class="card-right">
         <div class="card-sticky">
           <div class="card-right__box">
@@ -327,7 +208,7 @@
             </div>
 
           </div>
-          <a class="card-right__btn btn" href="#form" data-modal-btn><img class="db" src="img/marker.svg" alt=""><span
+          <a class="card-right__btn btn" href="#form" data-modal-btn><img class="db" src="/img/marker.svg" alt=""><span
               class="db">Submit Your Radio</span></a>
         </div>
       </div>
