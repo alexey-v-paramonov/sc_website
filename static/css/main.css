@@ -3956,6 +3956,17 @@ div.highlight pre {
 .player-btn.active {
     background-image: url('/img/stop.svg');
 }
+.player-btn.loading {
+    animation: spin-button 1s linear infinite;
+}
+@keyframes spin-button {
+    from {
+        transform: translateY(-50%) rotate(0deg);
+    }
+    to {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
 .player-time {
     color: #FFF;
     font-size: 14px;
