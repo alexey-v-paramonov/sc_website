@@ -282,7 +282,7 @@ body {
 }
 
 .footer {
-  background-image: url("../img/footer-bg.svg");
+  background-image: url("/img/footer-bg.svg");
   background-size: cover;
   background-position: center;
   padding: 100px 0 120px;
@@ -385,7 +385,7 @@ body {
   font-size: 18px;
   font-weight: 500;
   line-height: 16px;
-  background-image: url("../img/telegram.svg");
+  background-image: url("/img/telegram.svg");
   background-repeat: no-repeat;
   background-position: left center;
   padding-left: 24px;
@@ -400,7 +400,7 @@ body {
   font-size: 18px;
   font-weight: 500;
   line-height: 16px;
-  background-image: url("../img/email.svg");
+  background-image: url("/img/email.svg");
   background-repeat: no-repeat;
   background-position: left center;
   padding-left: 24px;
@@ -450,7 +450,7 @@ body {
   width: 100%;
   height: 100%;
   background-size: 100% auto;
-  background-image: url("../img/stream-bg.svg");
+  background-image: url("/img/stream-bg.svg");
   background-repeat: no-repeat;
   background-position: top center;
 }
@@ -627,7 +627,7 @@ body {
   top: 10px;
   width: 25px;
   height: 25px;
-  background-image: url("../img/close.svg");
+  background-image: url("/img/close.svg");
   background-repeat: no-repeat;
 }
 .modal-container {
@@ -795,7 +795,7 @@ body {
 }
 .main-wrapper {
   padding: 158px 0 220px;
-  background-image: url("../img/bg-main.svg");
+  background-image: url("/img/bg-main.svg");
   background-size: cover;
   background-position: center;
   min-height: 100%;
@@ -928,7 +928,7 @@ body {
 
 .demo {
   padding: 78px 0 90px;
-  background-image: url("../img/demo.png");
+  background-image: url("/img/demo.png");
   background-size: cover;
   background-position: center;
 }
@@ -997,7 +997,7 @@ body {
   font-size: 0;
   width: 14px;
   height: 14px;
-  background-image: url("../img/home.svg");
+  background-image: url("/img/home.svg");
   background-repeat: no-repeat;
 }
 
@@ -1090,7 +1090,7 @@ body {
   box-shadow: 0px 0px 8px 0px rgba(255, 255, 255, 0.2) inset;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url(../img/zoom.svg);
+  background-image: url("/img/zoom.svg");
 }
 /*.view-item__video::after {
     content: "";
@@ -1193,7 +1193,7 @@ body {
   left: 0;
   top: 11px;
   position: absolute;
-  background-image: url("../img/green-arrow.svg");
+  background-image: url("/img/green-arrow.svg");
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -1254,7 +1254,7 @@ body {
   display: block;
   width: 30px;
   height: 15px;
-  background-image: url("../img/nav-arrow.svg");
+  background-image: url("/img/nav-arrow.svg");
   background-repeat: no-repeat;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
@@ -1371,7 +1371,7 @@ body {
   top: 7px;
   width: 14px;
   height: 14px;
-  background-image: url("../img/check.svg");
+  background-image: url("/img/check.svg");
   background-repeat: no-repeat;
 }
 .doc-content ol {
@@ -1417,7 +1417,7 @@ body {
   box-shadow: 0px 0px 8px 0px rgba(255, 255, 255, 0.2) inset;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url("../img/zoom.svg");
+  background-image: url("/img/zoom.svg");
 }
 .img-zoom.blue-color::after {
   background-color: #3369e8;
@@ -1488,7 +1488,7 @@ body {
 }
 .doc-content table th::before {
   content: "";
-  background-image: url("../img/stream-logo.svg");
+  background-image: url("/img/stream-logo.svg");
   background-repeat: no-repeat;
   background-position: center;
   width: 24px;
@@ -1856,7 +1856,7 @@ body {
   position: absolute;
   width: 30px;
   height: 15px;
-  background-image: url("../img/select-arrow.svg");
+  background-image: url("/img/select-arrow.svg");
   background-repeat: no-repeat;
   right: 30px;
   top: calc(50% - 7px);
@@ -2292,7 +2292,7 @@ body {
     line-height: 24px;
   }
   .footer {
-    background-image: url("../img/footer-bg-mobile.svg");
+    background-image: url("/img/footer-bg-mobile.svg");
     padding: 71px 0 61px;
     text-align: center;
   }
@@ -2765,7 +2765,7 @@ body {
     min-width: 100%;
   }
   .main-wrapper {
-    background-image: url("../img/bg-main-mobile.svg");
+    background-image: url("/img/bg-main-mobile.svg");
   }
   .view-item {
     margin-left: -20px;
@@ -3926,7 +3926,7 @@ div.highlight pre {
 
 .player {
     padding: 15px 40px 15px 100px;
-    background-image: url('../img/player.svg');
+    background-image: url('/img/player.svg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -3946,7 +3946,7 @@ div.highlight pre {
     background: #3369E8;
     top: 50%;
     transform: translateY(-50%);
-    background-image: url('../img/play-2.svg');
+    background-image: url('/img/play-2.svg');
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -3954,7 +3954,7 @@ div.highlight pre {
     position: relative;
 }
 .player-btn.active {
-    background-image: url('../img/stop.svg');
+    background-image: url('/img/stop.svg');
 }
 .player-time {
     color: #FFF;
@@ -3995,7 +3995,7 @@ div.highlight pre {
     height: 16px;
     right: 11px;
     min-width: 16px;
-    background-image: url('../img/select-arrow-2.svg');
+    background-image: url('/img/select-arrow-2.svg');
 }
 .player-select .nice-select .option.selected {
     background: #1f3e60 !important;
@@ -4006,12 +4006,12 @@ div.highlight pre {
     height: 20px;
     min-width: 20px;
     user-select: none;
-    background-image: url('../img/volume-1.svg');
+    background-image: url('/img/volume-1.svg');
     background-repeat: no-repeat;
     margin-right: 20px;
 }
 .volume-icon.active {
-    background-image: url('../img/volume-2.svg');
+    background-image: url('/img/volume-2.svg');
 }
 .volume-slider {
   flex-grow: 1;
