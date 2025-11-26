@@ -406,6 +406,7 @@
         audioEl.addEventListener('playing', function () {
           playerBtn.classList.remove('loading');
           playerBtn.classList.add('playing');
+          playerBtn.classList.add('active');
           // start timer
           if (playerTimer) clearInterval(playerTimer);
           playerTimer = setInterval(function () {
@@ -423,6 +424,7 @@
         audioEl.addEventListener('pause', function () {
           playerBtn.classList.remove('playing');
           playerBtn.classList.remove('loading');
+          playerBtn.classList.remove('active');
           if (playerTimer) { clearInterval(playerTimer); playerTimer = null; }
           elapsedSeconds = 0;
           if (playerTimeEl) playerTimeEl.textContent = '00:00';
