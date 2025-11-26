@@ -26,8 +26,12 @@
           <div class="card-right__item">
             <div class="card-right__item-title">Location:</div>
             <div class="card-right__item-flex df aic">
-              <img src="img/lang-1.svg" alt="" class="img">
-              <span class="db">Israel > Central District > Netanya</span>
+                <img src="/catalog/flags/{{ .Params.country_code }}.png" alt="{{ .Params.country_name }}"
+                  title="{{ .Params.country_name }}" class="img"/> &nbsp;
+
+                <span class="db"> {{ .Params.country_name }} {{ if .Params.region_name }}> {{ .Params.region_name }}{{
+                  end }} {{ if .Params.city_name }}> {{ .Params.city_name }}{{ end }}
+                </span>
             </div>
           </div>
           <div class="card-right__item">
@@ -152,7 +156,7 @@
               class="db">Добавить свое радио</span></a>
         </div>
 
-        <h2 class="card-h2">Отзывы слушателей</h2>
+        <!--<h2 class="card-h2">Отзывы слушателей</h2>-->
 
 
         <div class="card-box card-reviews">
@@ -180,7 +184,7 @@
               <div class="card-right__item-title">Location:</div>
               <div class="card-right__item-flex df aic">
                 <img src="/catalog/flags/{{ .Params.country_code }}.png" alt="{{ .Params.country_name }}"
-                  title="{{ .Params.country_name }}" /> &nbsp;
+                  title="{{ .Params.country_name }}" class="img"/> &nbsp;
 
                 <span class="db"> {{ .Params.country_name }} {{ if .Params.region_name }}> {{ .Params.region_name }}{{
                   end }} {{ if .Params.city_name }}> {{ .Params.city_name }}{{ end }}
