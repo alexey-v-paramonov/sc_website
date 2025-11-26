@@ -176,7 +176,7 @@ other = "Get a free trial"
 other = "Listed since"
 
 [vote_success]
-other = "Vote submitted successfully!"
+other = "Vote submitted successfully! It will be counted after processing."
 
 [vote_already_voted]
 other = "Already voted"
@@ -200,7 +200,7 @@ other = "Rating"
 other = "Rate the radio from 1 to 10"
 
 [final_rating]
-other = "Final rating:"
+other = "Rating:"
 
 [out_of]
 other = "out of 10"
