@@ -434,19 +434,11 @@
         if (streamSelect) {
           streamSelect.addEventListener('change', function () {
             const newUrl = streamSelect.value;
-            const wasPlaying = !audioEl.paused && !audioEl.ended;
             audioEl.src = newUrl;
             audioEl.load();
-            if (wasPlaying) {
-              playerBtn.classList.add('loading');
-              audioEl.play().catch(err => console.error('Playback failed after stream switch:', err));
-            } else {
-              // reset UI
-              if (playerTimer) { clearInterval(playerTimer); playerTimer = null; }
-              elapsedSeconds = 0;
-              if (playerTimeEl) playerTimeEl.textContent = '00:00';
-              playerBtn.classList.remove('playing', 'loading');
-            }
+            // always start playing when a new stream is selected
+            playerBtn.classList.add('loading');
+            audioEl.play().catch(err => console.error('Playback failed after stream switch:', err));
           });
         }
       }
