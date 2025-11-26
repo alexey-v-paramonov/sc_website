@@ -341,43 +341,8 @@
 
           // Click event for voting
           item.addEventListener('click', () => {
-            //if (!hasVoted && !face.classList.contains('disabled')) {
             submitVote(radioId, score, serverUrl);
           }, { once: true });
-
-          // Hover effects
-          /*
-          item.addEventListener('mouseover', () => {
-            if (hasVoted) return;
-
-            const hoveredScore = score;
-            votingItems.forEach(innerItem => {
-              const innerFace = innerItem.querySelector('.voting-face');
-              const innerCircle = innerFace.querySelector('.face-circle');
-              const innerScore = parseInt(innerFace.getAttribute('data-score'), 10);
-
-              if (innerScore <= hoveredScore) {
-                const green = Math.round(255 * (innerScore - 1) / 9);
-                const red = 255 - green;
-                const highlightColor = `rgb(${red}, ${green}, 0)`;
-                innerCircle.setAttribute('fill', highlightColor);
-              } else {
-                innerCircle.setAttribute('fill', originalColors.get(innerScore));
-              }
-            });
-          });
-
-          item.addEventListener('mouseout', () => {
-            if (hasVoted) return;
-
-            votingItems.forEach(innerItem => {
-              const innerFace = innerItem.querySelector('.voting-face');
-              const innerCircle = innerFace.querySelector('.face-circle');
-              const innerScore = parseInt(innerFace.getAttribute('data-score'), 10);
-              innerCircle.setAttribute('fill', originalColors.get(innerScore));
-            });
-          });
-          */
         });
       }
     });

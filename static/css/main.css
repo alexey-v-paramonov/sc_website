@@ -3387,9 +3387,6 @@ div.highlight pre {
   align-items: flex-start;
   margin: 24px 0;
 }
-.voting-item {
-  text-align: center;
-}
 .voting-face {
   cursor: pointer;
   transition: transform 0.2s;
@@ -3412,6 +3409,11 @@ div.highlight pre {
 }
 .voting-item {
   text-align: center;
+}
+.voting-item.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
 }
 .voting-face {
   cursor: pointer;
