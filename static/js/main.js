@@ -89,8 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
         $(this).parent().toggleClass("open");
     });
 
-    //count animted
-    console.log("############", $(".stream-list").length)
+    //count animated
     if ($(".stream-list").length) {
         let animated = false;
 

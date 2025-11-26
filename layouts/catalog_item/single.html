@@ -154,7 +154,7 @@
               <div class="card-soc__list">
 
                 {{ range $i := seq 1 10 }}
-                  <div class="card-soc__block">
+                  <div class="card-soc__block voting-item" data-score="{{ $i }}">
                     <label class="card-soc__radio">
                       <input type="radio" name="rating">
                       <img src="/img/smile_{{ $i }}.svg" alt="" class="img">
@@ -166,9 +166,10 @@
               </div>
             </div>
           </div>
+          <div id="vote-alert" class="index vote-alert" style="display: none;"></div>
           <div class="card-soc__bottom">
-            <span>Итоговая оценка: <strong>7.13</strong> из 10</span>
-            <small>(153 голоса)</small>
+            <span>Итоговая оценка: <strong>{{ .Params.rating }}</strong> из 10</span>
+            <small>({{ .Params.total_votes }} голоса)</small>
           </div>
         </div>
 
@@ -176,8 +177,6 @@
           <a class="card-right__btn btn" href="#form" data-modal-btn><img class="db" src="/img/marker.svg" alt=""><span
               class="db">Добавить свое радио</span></a>
         </div>
-
-        <!--<h2 class="card-h2">Отзывы слушателей</h2>-->
 
 
         <div class="card-box card-reviews">
@@ -276,22 +275,14 @@
         });
       });
 
-      volumeSlider.addEventListener('input', () => {
-        const volume = volumeSlider.value;
-        audioElements.forEach(audio => {
-          audio.volume = volume;
-        });
-      });
-
       // Existing Voting Bar Logic
       const votingBar = document.getElementById('radio-voting-bar');
       if (votingBar) {
         const votingItems = document.querySelectorAll('.voting-item');
-        const originalColors = new Map();
+        // const originalColors = new Map();
         let hasVoted = false;
         const serverUrl = votingBar.getAttribute('data-server-url');
         const radioId = parseInt(votingBar.getAttribute('data-radio-id'));
-
 
         function showAlert(message, type) {
           const alert = document.getElementById('vote-alert');
@@ -307,12 +298,16 @@
         function disableVoting() {
           hasVoted = true;
           votingItems.forEach(item => {
-            const face = item.querySelector('.voting-face');
-            face.classList.add('disabled');
+            // const face = item.querySelector('.voting-face');
+            item.classList.add('disabled');
           });
         }
 
         async function submitVote(radioId, score, serverUrl) {
+          if(hasVoted){
+            showAlert('Already voted', 'success');
+            return;
+          };
           console.log("serverUrl: ", serverUrl)
           try {
             const response = await fetch(`${serverUrl}/api/v1/catalog/vote`, {
@@ -341,19 +336,21 @@
         }
 
         votingItems.forEach(item => {
-          const face = item.querySelector('.voting-face');
-          const circle = face.querySelector('.face-circle');
-          const score = parseInt(face.getAttribute('data-score'), 10);
-          originalColors.set(score, circle.getAttribute('fill'));
+          //const face = item.querySelector('.voting-face');
+          //const circle = face.querySelector('.face-circle');
+          const score = parseInt(item.getAttribute('data-score'), 10);
+          // originalColors.set(score, circle.getAttribute('fill'));
 
           // Click event for voting
           item.addEventListener('click', () => {
-            if (!hasVoted && !face.classList.contains('disabled')) {
+            //if (!hasVoted && !face.classList.contains('disabled')) {
+            if (!hasVoted) {
               submitVote(radioId, score, serverUrl);
             }
           });
 
           // Hover effects
+          /*
           item.addEventListener('mouseover', () => {
             if (hasVoted) return;
 
@@ -384,6 +381,7 @@
               innerCircle.setAttribute('fill', originalColors.get(innerScore));
             });
           });
+          */
         });
       }
     });

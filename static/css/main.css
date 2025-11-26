@@ -3497,7 +3497,7 @@ div.highlight pre {
     letter-spacing: 0.7px;
     text-transform: uppercase;
     padding-left: 19px;
-    background-image: url('../img/play-link.svg');
+    background-image: url('/img/play-link.svg');
     background-repeat: no-repeat;
     background-position: left center;
 }
