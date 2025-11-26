@@ -174,3 +174,54 @@ other = "Заказать Демо-версию"
 
 [catalog_created]
 other = "В каталоге с"
+
+[vote_success]
+other = "Голос успешно отправлен!"
+
+[vote_already_voted]
+other = "Уже проголосовали"
+
+[vote_forbidden]
+other = "Вы уже голосовали за эту радиостанцию."
+
+[vote_error]
+other = "Ошибка отправки голоса. Попробуйте еще раз."
+
+[vote_network_error]
+other = "Ошибка сети. Проверьте подключение к интернету."
+
+[share_save_radio]
+other = "Отправить/Сохранить радио в социальных сетях:"
+
+[rating_title]
+other = "Рейтинг"
+
+[rate_radio]
+other = "Оцените радио от 1 до 10"
+
+[final_rating]
+other = "Итоговая оценка:"
+
+[out_of]
+other = "из 10"
+
+[votes]
+other = "голоса"
+
+[add_your_radio]
+other = "Добавить свое радио"
+
+[total_votes]
+other = "Всего голосов:"
+
+[location]
+other = "Местоположение:"
+
+[language]
+other = "Язык:"
+
+[genres]
+other = "Жанры:"
+
+[links]
+other = "Ссылки:"

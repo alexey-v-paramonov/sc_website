@@ -174,3 +174,54 @@ other = "Get a free trial"
 
 [catalog_created]
 other = "Listed since"
+
+[vote_success]
+other = "Vote submitted successfully!"
+
+[vote_already_voted]
+other = "Already voted"
+
+[vote_forbidden]
+other = "You have already voted for this radio station."
+
+[vote_error]
+other = "Error submitting vote. Please try again."
+
+[vote_network_error]
+other = "Network error. Please check your connection."
+
+[share_save_radio]
+other = "Share/Save radio on social networks:"
+
+[rating_title]
+other = "Rating"
+
+[rate_radio]
+other = "Rate the radio from 1 to 10"
+
+[final_rating]
+other = "Final rating:"
+
+[out_of]
+other = "out of 10"
+
+[votes]
+other = "votes"
+
+[add_your_radio]
+other = "Submit Your Radio"
+
+[total_votes]
+other = "Total Votes:"
+
+[location]
+other = "Location:"
+
+[language]
+other = "Language:"
+
+[genres]
+other = "Genres:"
+
+[links]
+other = "Links:"

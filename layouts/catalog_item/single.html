@@ -11,7 +11,7 @@
             <img src="/img/star.svg" alt="" class="img">
             <span>{{ .Params.rating }}</span>
           </div>
-          <div class="card-top__item card-top__item-votes df aic">Total Votes: <span>{{ .Params.total_votes }}</span>
+          <div class="card-top__item card-top__item-votes df aic">{{ T "total_votes" }} <span>{{ .Params.total_votes }}</span>
           </div>
           <div class="card-top__item df aic"><img src="/img/radio.svg" alt="">{{ T "catalog_created" }}: <span>{{ .Params.created
               }}</span></div>
@@ -24,7 +24,7 @@
 
         <div class="card-mobile hide">
           <div class="card-right__item">
-            <div class="card-right__item-title">Location:</div>
+            <div class="card-right__item-title">{{ T "location" }}</div>
             <div class="card-right__item-flex df aic">
                 <img src="/catalog/flags/{{ .Params.country_code }}.png" alt="{{ .Params.country_name }}"
                   title="{{ .Params.country_name }}" class="img"/> &nbsp;
@@ -35,7 +35,7 @@
             </div>
           </div>
           <div class="card-right__item">
-            <div class="card-right__item-title">Language:</div>
+            <div class="card-right__item-title">{{ T "language" }}</div>
             <div class="card-right__item-flex df aic">
               <!-- <img src="img/lang-2.svg" alt="" class="img"> -->
               <span class="db"> {{ range .Params.languages }}
@@ -46,7 +46,7 @@
             </div>
           </div>
           <div class="card-right__item">
-            <div class="card-right__item-title">Genres:</div>
+            <div class="card-right__item-title">{{ T "genres" }}</div>
             <div class="card-right__item-list df aic fxw">
               {{ range .Params.genres }}
                 <div class="card-right__item-hash dif aic">#{{ . }}</div>
@@ -94,7 +94,7 @@
           {{ end }}
 
           <div class="card-flex__right">
-            <div class="card-flex__right-title">Links:</div>
+            <div class="card-flex__right-title">{{ T "links" }}</div>
             <div class="card-flex__right-list">
               <a id="link-m3u" href="/listen/stream_{{ (index .Params.streams 0).id }}.m3u" download class="card-flex__right-link">
                 <img src="/img/link-1.svg" alt="" class="img">
@@ -113,7 +113,7 @@
         </div>
 
         <div class="card-save">
-          <div class="card-soc__title"><img src="/img/radio.svg" alt=""><strong>Отправить/Сохранить радио в социальных сетях:</strong></div>
+          <div class="card-soc__title"><img src="/img/radio.svg" alt=""><strong>{{ T "share_save_radio" }}</strong></div>
           <div class="card-save__list">
             {{ if eq .Lang "en" }}
             <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
@@ -154,9 +154,16 @@
           </div>
         </div>
 
-        <div class="card-soc" id="radio-voting-bar" data-server-url="{{ $.Site.BaseURL }}" data-radio-id="{{ $.Params.id }}">
+        <div class="card-soc" id="radio-voting-bar" 
+             data-server-url="{{ $.Site.BaseURL }}" 
+             data-radio-id="{{ $.Params.id }}"
+             data-msg-success="{{ T "vote_success" }}"
+             data-msg-already-voted="{{ T "vote_already_voted" }}"
+             data-msg-forbidden="{{ T "vote_forbidden" }}"
+             data-msg-error="{{ T "vote_error" }}"
+             data-msg-network-error="{{ T "vote_network_error" }}">
           <div class="card-soc__wrapper">
-            <div class="card-soc__title"><img src="/img/radio.svg" alt="">Рейтинг <span>Оцените радио от 1 до 10</span>
+            <div class="card-soc__title"><img src="/img/radio.svg" alt="">{{ T "rating_title" }} <span>{{ T "rate_radio" }}</span>
             </div>
             <div class="card-soc__scroll">
               <div class="card-soc__list">
@@ -176,14 +183,14 @@
           </div>
           <div id="vote-alert" class="index vote-alert" style="display: none;"></div>
           <div class="card-soc__bottom">
-            <span>Итоговая оценка: <strong>{{ .Params.rating }}</strong> из 10</span>
-            <small>({{ .Params.total_votes }} голоса)</small>
+            <span>{{ T "final_rating" }} <strong>{{ .Params.rating }}</strong> {{ T "out_of" }}</span>
+            <small>({{ .Params.total_votes }} {{ T "votes" }})</small>
           </div>
         </div>
 
         <div class="card-left__mobile">
           <a class="card-right__btn btn" href="{{ T "signup_url" }}"><img class="db" src="/img/marker.svg" alt=""><span
-              class="db">Добавить свое радио</span></a>
+              class="db">{{ T "add_your_radio" }}</span></a>
         </div>
 
 
@@ -209,7 +216,7 @@
             <img src="{{ .Params.logo }}" alt="{{ .Title }}" title="{{ .Title }}" class="img card-right__img">
 
             <div class="card-right__item">
-              <div class="card-right__item-title">Location:</div>
+              <div class="card-right__item-title">{{ T "location" }}</div>
               <div class="card-right__item-flex df aic">
                 <img src="/catalog/flags/{{ .Params.country_code }}.png" alt="{{ .Params.country_name }}"
                   title="{{ .Params.country_name }}" class="img"/> &nbsp;
@@ -220,7 +227,7 @@
               </div>
             </div>
             <div class="card-right__item">
-              <div class="card-right__item-title">Language:</div>
+              <div class="card-right__item-title">{{ T "language" }}</div>
               <div class="card-right__item-flex df aic">
                 <!--<img src="img/lang-2.svg" alt="" class="img">-->
                 <span class="db"> {{ range .Params.languages }}
@@ -230,7 +237,7 @@
               </div>
             </div>
             <div class="card-right__item">
-              <div class="card-right__item-title">Genres:</div>
+              <div class="card-right__item-title">{{ T "genres" }}</div>
               <div class="card-right__item-list df aic fxw">
                 {{ range .Params.genres }}
                 <div class="card-right__item-hash dif aic">#{{ . }}</div>
@@ -241,7 +248,7 @@
 
           </div>
           <a class="card-right__btn btn" href="{{ T "signup_url" }}"><img class="db" src="/img/marker.svg" alt=""><span
-              class="db">Submit Your Radio</span></a>
+              class="db">{{ T "add_your_radio" }}</span></a>
         </div>
       </div>
     </div>
@@ -447,10 +454,18 @@
       const votingBar = document.getElementById('radio-voting-bar');
       if (votingBar) {
         const votingItems = document.querySelectorAll('.voting-item');
-        // const originalColors = new Map();
         let hasVoted = false;
         const serverUrl = votingBar.getAttribute('data-server-url');
         const radioId = parseInt(votingBar.getAttribute('data-radio-id'));
+        
+        // Get translated messages
+        const messages = {
+          success: votingBar.getAttribute('data-msg-success'),
+          alreadyVoted: votingBar.getAttribute('data-msg-already-voted'),
+          forbidden: votingBar.getAttribute('data-msg-forbidden'),
+          error: votingBar.getAttribute('data-msg-error'),
+          networkError: votingBar.getAttribute('data-msg-network-error')
+        };
 
         function showAlert(message, type) {
           const alert = document.getElementById('vote-alert');
@@ -466,14 +481,13 @@
         function disableVoting() {
           hasVoted = true;
           votingItems.forEach(item => {
-            // const face = item.querySelector('.voting-face');
             item.classList.add('disabled');
           });
         }
 
         async function submitVote(radioId, score, serverUrl) {
           if(hasVoted){
-            showAlert('Already voted', 'success');
+            showAlert(messages.alreadyVoted, 'success');
             return;
           };
           try {
@@ -489,16 +503,16 @@
             });
 
             if (response.ok) {
-              showAlert('Vote submitted successfully!', 'success');
+              showAlert(messages.success, 'success');
               disableVoting();
             } else if (response.status === 403) {
-              showAlert('You have already voted for this radio station.', 'error');
+              showAlert(messages.forbidden, 'error');
               disableVoting();
             } else {
-              showAlert('Error submitting vote. Please try again.', 'error');
+              showAlert(messages.error, 'error');
             }
           } catch (error) {
-            showAlert('Network error. Please check your connection.', 'error');
+            showAlert(messages.networkError, 'error');
           }
         }
 
