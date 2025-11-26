@@ -65,6 +65,11 @@
 
         <div class="card-flex">
           {{ if .Params.default_stream }}
+          <audio id="stream-audio" class="stream-audio" preload="none">
+            <source src="{{ .Params.default_stream }}" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+
           <div class="card-player">
             <div class="player">
               <div class="player-btn"></div>
@@ -250,32 +255,62 @@
       const audioElements = document.querySelectorAll('.stream-audio');
       const volumeSlider = document.getElementById('volume-slider');
 
-      function stopAllStreams() {
-        audioElements.forEach(audio => {
-          audio.pause();
-          audio.currentTime = 0;
-        });
-        playPauseButtons.forEach(btn => {
-          btn.querySelector('.play-icon').style.display = 'inline';
-          btn.querySelector('.pause-icon').style.display = 'none';
-        });
+      // Toggle active class on player button or volume icon (delegated)
+      document.addEventListener('click', function (e) {
+        const btn = e.target.closest('.player-btn, .volume-icon');
+        if (btn) btn.classList.toggle('active');
+      });
+
+      // Volume slider (vanilla)
+      const sliders = Array.from(document.querySelectorAll('.volume-slider'));
+      let isDown = false;
+      let activeSlider = null;
+      let activeFill = null;
+
+      function setVolumeFor(slider, fill, e) {
+        if (!slider || !fill) return;
+        const rect = slider.getBoundingClientRect();
+        const offset = e.pageX - (rect.left + window.pageXOffset);
+        const width = rect.width || 1;
+        let percent = (offset / width) * 100;
+        percent = Math.max(0, Math.min(100, percent));
+        fill.style.width = percent + '%';
+        // apply volume to the audio player if present
+        try {
+          const audioEl = document.getElementById('stream-audio');
+          if (audioEl) audioEl.volume = percent / 100;
+        } catch (e) {
+          // ignore in environments without DOM or audio
+        }
       }
 
-      playPauseButtons.forEach(button => {
-        button.addEventListener('click', () => {
-          const streamId = button.getAttribute('data-stream-id');
-          const audio = document.getElementById(streamId);
-          const isPlaying = !audio.paused;
+      sliders.forEach(slider => {
+        const fill = slider.querySelector('.volume-fill');
 
-          stopAllStreams();
-
-          if (!isPlaying) {
-            audio.volume = volumeSlider.value;
-            audio.play().catch(e => console.error("Playback failed:", e));
-            button.querySelector('.play-icon').style.display = 'none';
-            button.querySelector('.pause-icon').style.display = 'inline';
-          }
+        slider.addEventListener('mousedown', function (e) {
+          isDown = true;
+          activeSlider = slider;
+          activeFill = fill;
+          setVolumeFor(activeSlider, activeFill, e);
+          // prevent text selection while dragging
+          e.preventDefault();
         });
+
+        slider.addEventListener('click', function (e) {
+          setVolumeFor(slider, fill, e);
+        });
+      });
+
+      document.addEventListener('mouseup', function () {
+        isDown = false;
+        activeSlider = null;
+        activeFill = null;
+      });
+
+      document.addEventListener('mousemove', function (e) {
+        if (isDown && activeSlider && activeFill) {
+          setVolumeFor(activeSlider, activeFill, e);
+        }
       });
 
       // Update links when stream select changes
@@ -305,7 +340,90 @@
         updateStreamLinks();
       }
 
-      // Existing Voting Bar Logic
+      // Player controls (vanilla JS) — works only if <audio id="stream-audio"> exists
+      const playerBtn = document.querySelector('.player-btn');
+      const audioEl = document.getElementById('stream-audio');
+      const playerTimeEl = document.querySelector('.player-time');
+      let playerTimer = null;
+      let elapsedSeconds = 0;
+
+      function formatTime(sec) {
+        const m = Math.floor(sec / 60).toString().padStart(2, '0');
+        const s = Math.floor(sec % 60).toString().padStart(2, '0');
+        return m + ':' + s;
+      }
+
+      if (audioEl && playerBtn) {
+        // set initial volume from UI fill if present
+        const initialFill = document.querySelector('.volume-fill');
+        if (initialFill) {
+          const pct = parseFloat(initialFill.style.width) || 70;
+          audioEl.volume = pct / 100;
+        }
+
+        // toggle play/pause
+        playerBtn.addEventListener('click', function () {
+          if (audioEl.paused) {
+            // start loading / playing
+            playerBtn.classList.add('loading');
+            audioEl.play().catch(err => {
+              console.error('Playback failed:', err);
+              playerBtn.classList.remove('loading');
+            });
+          } else {
+            // stop playback
+            audioEl.pause();
+          }
+        });
+
+        // when playback actually starts
+        audioEl.addEventListener('playing', function () {
+          playerBtn.classList.remove('loading');
+          playerBtn.classList.add('playing');
+          // start timer
+          if (playerTimer) clearInterval(playerTimer);
+          playerTimer = setInterval(function () {
+            elapsedSeconds += 1;
+            if (playerTimeEl) playerTimeEl.textContent = formatTime(elapsedSeconds);
+          }, 1000);
+        });
+
+        // loading state
+        audioEl.addEventListener('waiting', function () {
+          playerBtn.classList.add('loading');
+        });
+
+        // pause/stop
+        audioEl.addEventListener('pause', function () {
+          playerBtn.classList.remove('playing');
+          playerBtn.classList.remove('loading');
+          if (playerTimer) { clearInterval(playerTimer); playerTimer = null; }
+          elapsedSeconds = 0;
+          if (playerTimeEl) playerTimeEl.textContent = '00:00';
+        });
+
+        // switch stream when select changes
+        if (streamSelect) {
+          streamSelect.addEventListener('change', function () {
+            const newUrl = streamSelect.value;
+            const wasPlaying = !audioEl.paused && !audioEl.ended;
+            audioEl.src = newUrl;
+            audioEl.load();
+            if (wasPlaying) {
+              playerBtn.classList.add('loading');
+              audioEl.play().catch(err => console.error('Playback failed after stream switch:', err));
+            } else {
+              // reset UI
+              if (playerTimer) { clearInterval(playerTimer); playerTimer = null; }
+              elapsedSeconds = 0;
+              if (playerTimeEl) playerTimeEl.textContent = '00:00';
+              playerBtn.classList.remove('playing', 'loading');
+            }
+          });
+        }
+      }
+
+      // Voting Bar
       const votingBar = document.getElementById('radio-voting-bar');
       if (votingBar) {
         const votingItems = document.querySelectorAll('.voting-item');
