@@ -174,7 +174,7 @@
         </div>
 
         <div class="card-left__mobile">
-          <a class="card-right__btn btn" href="#form" data-modal-btn><img class="db" src="/img/marker.svg" alt=""><span
+          <a class="card-right__btn btn" href="{{ T "signup_url" }}" data-modal-btn><img class="db" src="/img/marker.svg" alt=""><span
               class="db">Добавить свое радио</span></a>
         </div>
 
@@ -304,12 +304,10 @@
         }
 
         async function submitVote(radioId, score, serverUrl) {
-          console.log("submitVote")
           if(hasVoted){
             showAlert('Already voted', 'success');
             return;
           };
-          console.log("serverUrl: ", serverUrl)
           try {
             const response = await fetch(`${serverUrl}api/v1/catalog/vote`, {
               method: 'POST',
