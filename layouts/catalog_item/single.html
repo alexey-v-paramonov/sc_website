@@ -255,17 +255,13 @@
       const audioElements = document.querySelectorAll('.stream-audio');
       const volumeSlider = document.getElementById('volume-slider');
 
-      // Toggle active class on player button or volume icon (delegated)
-      document.addEventListener('click', function (e) {
-        const btn = e.target.closest('.player-btn, .volume-icon');
-        if (btn) btn.classList.toggle('active');
-      });
-
       // Volume slider (vanilla)
       const sliders = Array.from(document.querySelectorAll('.volume-slider'));
       let isDown = false;
       let activeSlider = null;
       let activeFill = null;
+      let savedVolume = 0.7; // track volume before mute
+      let isMuted = false;
 
       function setVolumeFor(slider, fill, e) {
         if (!slider || !fill) return;
@@ -312,6 +308,36 @@
           setVolumeFor(activeSlider, activeFill, e);
         }
       });
+
+      // Volume icon mute/unmute toggle
+      const volumeIcon = document.querySelector('.volume-icon');
+      
+      if (volumeIcon) {
+        volumeIcon.addEventListener('click', function (e) {
+          e.stopPropagation(); // prevent event bubbling
+          const audioEl = document.getElementById('stream-audio');
+          if (!audioEl) return;
+          
+          if (isMuted) {
+            // unmute: restore saved volume
+            audioEl.volume = savedVolume;
+            isMuted = false;
+            volumeIcon.classList.remove('active');
+            // restore visual slider
+            const fill = document.querySelector('.volume-fill');
+            if (fill) fill.style.width = (savedVolume * 100) + '%';
+          } else {
+            // mute: save current volume and set to 0
+            savedVolume = audioEl.volume;
+            audioEl.volume = 0;
+            isMuted = true;
+            volumeIcon.classList.add('active');
+            // update visual slider
+            const fill = document.querySelector('.volume-fill');
+            if (fill) fill.style.width = '0%';
+          }
+        });
+      }
 
       // Update links when stream select changes
       const streamSelect = document.getElementById('stream-select');
