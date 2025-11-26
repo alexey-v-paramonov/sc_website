@@ -69,10 +69,10 @@
               <div class="player-btn"></div>
               <div class="player-select">
                 <div class="select">
-                  <select>
-                    <option value="320kbps, mp3" selected>320kbps, mp3</option>
-                    <option value="320kbps, mp3">320kbps, mp3</option>
-                    <option value="320kbps, mp3">320kbps, mp3</option>
+                  <select id="stream-select">
+                    {{ range $i, $stream := .Params.streams }}
+                    <option value="{{ $stream.stream_url }}" data-id="{{ $stream.id }}" {{ if eq $i 0 }}selected{{ end }}>{{ $stream.bitrate }}kbps, {{ $stream.audio_format }}</option>
+                    {{ end }}
                   </select>
                 </div>
               </div>
@@ -88,15 +88,15 @@
           <div class="card-flex__right">
             <div class="card-flex__right-title">Links:</div>
             <div class="card-flex__right-list">
-              <a href="#" class="card-flex__right-link">
+              <a id="link-m3u" href="/listen/stream_{{ (index .Params.streams 0).id }}.m3u" download class="card-flex__right-link">
                 <img src="/img/link-1.svg" alt="" class="img">
                 <span>m3u</span>
               </a>
-              <a href="#" class="card-flex__right-link">
+              <a id="link-pls" href="/listen/stream_{{ (index .Params.streams 0).id }}.pls" download class="card-flex__right-link">
                 <img src="/img/link-1.svg" alt="" class="img">
                 <span>PLS</span>
               </a>
-              <a href="#" class="card-flex__right-link">
+              <a id="link-web" href="{{ (index .Params.streams 0).stream_url }}" class="card-flex__right-link">
                 <img src="/img/link-1.svg" alt="" class="img">
                 <span>Web</span>
               </a>
@@ -274,6 +274,33 @@
           }
         });
       });
+
+      // Update links when stream select changes
+      const streamSelect = document.getElementById('stream-select');
+      const linkM3U = document.getElementById('link-m3u');
+      const linkPLS = document.getElementById('link-pls');
+      const linkWeb = document.getElementById('link-web');
+
+      function updateStreamLinks() {
+        if (!streamSelect) return;
+        const selectedOption = streamSelect.options[streamSelect.selectedIndex];
+        const streamId = selectedOption ? selectedOption.getAttribute('data-id') : null;
+        const streamUrl = selectedOption ? selectedOption.value : null;
+
+        if (streamId) {
+          if (linkM3U) linkM3U.href = '/listen/stream_' + streamId + '.m3u';
+          if (linkPLS) linkPLS.href = '/listen/stream_' + streamId + '.pls';
+        }
+        if (streamUrl && linkWeb) {
+          linkWeb.href = streamUrl;
+        }
+      }
+
+      if (streamSelect) {
+        streamSelect.addEventListener('change', updateStreamLinks);
+        // ensure links are in sync on load
+        updateStreamLinks();
+      }
 
       // Existing Voting Bar Logic
       const votingBar = document.getElementById('radio-voting-bar');
