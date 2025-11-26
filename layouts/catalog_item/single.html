@@ -336,17 +336,12 @@
         }
 
         votingItems.forEach(item => {
-          //const face = item.querySelector('.voting-face');
-          //const circle = face.querySelector('.face-circle');
           const score = parseInt(item.getAttribute('data-score'), 10);
-          // originalColors.set(score, circle.getAttribute('fill'));
 
           // Click event for voting
           item.addEventListener('click', () => {
             //if (!hasVoted && !face.classList.contains('disabled')) {
-            if (!hasVoted) {
-              submitVote(radioId, score, serverUrl);
-            }
+            submitVote(radioId, score, serverUrl);
           });
 
           // Hover effects
