@@ -64,6 +64,7 @@
         <div class="card-text">{{ .Params.description }}</div>
 
         <div class="card-flex">
+          {{ if .Params.default_stream }}
           <div class="card-player">
             <div class="player">
               <div class="player-btn"></div>
@@ -85,6 +86,8 @@
               <div class="player-time">00:00</div>
             </div>
           </div>
+          {{ end }}
+
           <div class="card-flex__right">
             <div class="card-flex__right-title">Links:</div>
             <div class="card-flex__right-list">

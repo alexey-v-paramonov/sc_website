@@ -3924,7 +3924,127 @@ div.highlight pre {
     height: auto;
 }
 
-
+.player {
+    padding: 15px 40px 15px 100px;
+    background-image: url('../img/player.svg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    border-radius: 100px 5px 5px 100px;
+}
+.player-btn {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    background: #3369e8;
+    display: block;
+    user-select: none;
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    background: #3369E8;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: url('../img/play-2.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.player {
+    position: relative;
+}
+.player-btn.active {
+    background-image: url('../img/stop.svg');
+}
+.player-time {
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+}
+.player-select {
+    position: relative;
+    width: 165px;
+    margin-right: auto;
+    height: 40px;
+}
+.player-select .select {
+    height: 100%;
+    width: 100%;
+}
+.player-select .select .nice-select {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding-left: 14px;
+    background: transparent;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 26px;
+    padding-right: 11px;
+}
+.player-select .select .nice-select > span {
+    max-width: calc(100% - 10px);
+    margin-right: auto;
+}
+.player-select .nice-select .nice-select-dropdown {
+    background: #274C77;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.player-select .select .nice-select::before {
+    width: 16px;
+    height: 16px;
+    right: 11px;
+    min-width: 16px;
+    background-image: url('../img/select-arrow-2.svg');
+}
+.player-select .nice-select .option.selected {
+    background: #1f3e60 !important;
+}
+.volume-icon {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    user-select: none;
+    background-image: url('../img/volume-1.svg');
+    background-repeat: no-repeat;
+    margin-right: 20px;
+}
+.volume-icon.active {
+    background-image: url('../img/volume-2.svg');
+}
+.volume-slider {
+  flex-grow: 1;
+  height: 10px;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  border-radius: 10px;
+  height: 3px;
+  background: #A3CEF1;
+}
+.volume-fill {
+  height: 100%;
+  background: #FFFFFF;
+  border-radius: 10px;
+  position: relative;
+}
+.volume-fill span {
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    border-radius: 14px;
+    background: #fff;
+    right: -7px;
+    top: -5px
+}
+.volume-wrapper {
+    width: 202px;
+    margin-right: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
 
 @media (max-width: 1330px) {
     .card-right {
