@@ -3972,6 +3972,8 @@ div.highlight pre {
     font-size: 14px;
     font-weight: 500;
     line-height: 16px;
+    min-width: 45px;
+    text-align: center;
 }
 .player-select {
     position: relative;
