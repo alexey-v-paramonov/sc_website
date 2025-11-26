@@ -4127,6 +4127,9 @@ div.highlight pre {
     .card-mobile {
         display: block;
     }
+    .volume-wrapper {
+        display: none;
+    }
     .card-right {
         display: none;
     }
