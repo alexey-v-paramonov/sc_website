@@ -37,22 +37,26 @@
           <div class="card-right__item">
             <div class="card-right__item-title">Language:</div>
             <div class="card-right__item-flex df aic">
-              <img src="img/lang-2.svg" alt="" class="img">
-              <span class="db">English</span>
+              <!-- <img src="img/lang-2.svg" alt="" class="img"> -->
+              <span class="db"> {{ range .Params.languages }}
+                  <span>{{ . }}</span>
+                  {{ end }}
+              </span>
+
             </div>
           </div>
           <div class="card-right__item">
             <div class="card-right__item-title">Genres:</div>
             <div class="card-right__item-list df aic fxw">
-              <div class="card-right__item-hash dif aic">#Dance</div>
-              <div class="card-right__item-hash dif aic">#Electronic</div>
-              <div class="card-right__item-hash dif aic">#Dj sets</div>
+              {{ range .Params.genres }}
+                <div class="card-right__item-hash dif aic">#{{ . }}</div>
+              {{ end }}
             </div>
           </div>
         </div>
 
         <div class="card-mob-list hide">
-          <div class="card-top__item df aic"><img src="img/radio.svg" alt="">Listed since: <span>23/11/2024</span></div>
+          <div class="card-top__item df aic"><img src="/img/radio.svg" alt="">{{ T "catalog_created" }}: <span>{{ .Params.created }}</span></div>
         </div>
         
         <a href="{{ .Params.website_url }}" target="_blank"
@@ -61,22 +65,21 @@
 
         <div class="card-flex">
           <div class="card-player">
-            <img class="img-desk" src="img/player.png" alt="">
-            <img class="img-mob" src="img/mob.png" alt="">
+            <!-- Player -->
           </div>
           <div class="card-flex__right">
             <div class="card-flex__right-title">Links:</div>
             <div class="card-flex__right-list">
               <a href="#" class="card-flex__right-link">
-                <img src="img/link-1.svg" alt="" class="img">
+                <img src="/img/link-1.svg" alt="" class="img">
                 <span>m3u</span>
               </a>
               <a href="#" class="card-flex__right-link">
-                <img src="img/link-1.svg" alt="" class="img">
+                <img src="/img/link-1.svg" alt="" class="img">
                 <span>PLS</span>
               </a>
               <a href="#" class="card-flex__right-link">
-                <img src="img/link-1.svg" alt="" class="img">
+                <img src="/img/link-1.svg" alt="" class="img">
                 <span>Web</span>
               </a>
             </div>
