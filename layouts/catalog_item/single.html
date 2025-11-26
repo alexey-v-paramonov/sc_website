@@ -71,7 +71,7 @@
                 <div class="select">
                   <select id="stream-select">
                     {{ range $i, $stream := .Params.streams }}
-                    <option value="{{ $stream.stream_url }}" data-id="{{ $stream.id }}" {{ if eq $i 0 }}selected{{ end }}>{{ $stream.bitrate }}kbps, {{ $stream.audio_format }}</option>
+                    <option value="{{ $stream.stream_url }}" data-id="{{ $stream.id }}" {{ if eq $i 0 }}selected{{ end }}>{{ $stream.bitrate }}kbps {{ $stream.audio_format }}</option>
                     {{ end }}
                   </select>
                 </div>
