@@ -304,6 +304,7 @@
         }
 
         async function submitVote(radioId, score, serverUrl) {
+          console.log("submitVote")
           if(hasVoted){
             showAlert('Already voted', 'success');
             return;
@@ -342,7 +343,7 @@
           item.addEventListener('click', () => {
             //if (!hasVoted && !face.classList.contains('disabled')) {
             submitVote(radioId, score, serverUrl);
-          });
+          }, { once: true });
 
           // Hover effects
           /*
