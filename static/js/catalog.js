@@ -1,17 +1,14 @@
 
-document.addEventListener('DOMContentLoaded', function() {
-    // --- Global variables for audio player and visualizer ---
-    let player;
-    let audioContext;
-    let analyser;
-    let source;
-    let animationFrameId;
-    let currentlyPlayingItem = null;
+// --- Global variables for audio player and visualizer ---
+let player;
+let audioContext;
+let analyser;
+let source;
+let animationFrameId;
+let currentlyPlayingItem = null;
 
-    const catalogItems = document.querySelectorAll('.catalog-thumb-wrap');
-
-    // --- Audio Player and Visualizer Setup ---
-    function setupAudio(streamUrl, item) {
+// --- Audio Player and Visualizer Setup ---
+function setupAudio(streamUrl, item) {
         if (!player) {
             player = document.createElement('audio');
             player.id = 'sc-catalog-audio-player';
@@ -360,35 +357,38 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Reset currentlyPlayingItem
         currentlyPlayingItem = null;
-    }
+}
 
-    function stopVisualization() {
-        if (animationFrameId) {
-            cancelAnimationFrame(animationFrameId);
-            animationFrameId = null;
-        }
-        if (currentlyPlayingItem) {
-            const card = currentlyPlayingItem.closest('.catalog-card');
-            if (card) {
-                card.classList.remove('is-playing');
-                card.classList.remove('is-buffering'); // Also remove buffering state
-                stopTitleBlinking(card);
-                const canvas = card.querySelector('.visualizer-canvas');
-                if (canvas) {
-                    const ctx = canvas.getContext('2d');
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
-                }
-                // Reset thumbnail transform and restore transition
-                const thumbnail = card.querySelector('.catalog-thumb');
-                if (thumbnail) {
-                    thumbnail.style.transition = 'transform 0.3s ease';
-                    thumbnail.style.transform = 'scale(1.08)';
-                }
+function stopVisualization() {
+    if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+        animationFrameId = null;
+    }
+    if (currentlyPlayingItem) {
+        const card = currentlyPlayingItem.closest('.catalog-card');
+        if (card) {
+            card.classList.remove('is-playing');
+            card.classList.remove('is-buffering'); // Also remove buffering state
+            stopTitleBlinking(card);
+            const canvas = card.querySelector('.visualizer-canvas');
+            if (canvas) {
+                const ctx = canvas.getContext('2d');
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }
+            // Reset thumbnail transform and restore transition
+            const thumbnail = card.querySelector('.catalog-thumb');
+            if (thumbnail) {
+                thumbnail.style.transition = 'transform 0.3s ease';
+                thumbnail.style.transform = 'scale(1.08)';
             }
         }
     }
+}
 
-    // --- Event Listeners ---
+// --- Event Listeners Initialization ---
+function initCatalogListeners() {
+    const catalogItems = document.querySelectorAll('.catalog-thumb-wrap');
+    
     catalogItems.forEach(item => {
         const streamUrl = item.dataset.streamUrl;
 
@@ -411,4 +411,12 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     });
-});
+}
+
+// Export initialization function for SPA re-initialization
+window.initializeCatalogAudio = function() {
+    initCatalogListeners();
+};
+
+// Initialize on DOM ready
+document.addEventListener('DOMContentLoaded', initCatalogListeners);
