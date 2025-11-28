@@ -4,12 +4,12 @@ This document outlines the backend API requirements to support the Single Page A
 
 ## Base URL
 ```
-https://streaming.center/api/v1/catalog/
+https://streaming.center/api/v1/catalog/public/
 ```
 
 ## Endpoints
 
-### 1. GET /api/v1/catalog/
+### 1. GET /api/v1/catalog/public/
 
 Retrieve a paginated list of radio stations with optional filtering and sorting.
 
@@ -31,16 +31,16 @@ Retrieve a paginated list of radio stations with optional filtering and sorting.
 
 ```bash
 # Get first page with default sorting (by rating)
-GET /api/v1/catalog/?page=1&per_page=30&sort=rating
+GET /api/v1/catalog/public/?page=1&per_page=30&sort=rating
 
 # Search for stations
-GET /api/v1/catalog/?search=rock&page=1
+GET /api/v1/catalog/public/?search=rock&page=1
 
 # Filter by country and genre
-GET /api/v1/catalog/?country=United%20States&genre=Rock
+GET /api/v1/catalog/public/?country=United%20States&genre=Rock
 
 # Sort by number of votes
-GET /api/v1/catalog/?sort=votes&page=1
+GET /api/v1/catalog/public/?sort=votes&page=1
 ```
 
 #### Response Format
@@ -261,7 +261,7 @@ The API should ensure that `.m3u` and `.pls` files are generated and available a
 
 ## Implementation Checklist
 
-- [ ] Implement GET /api/v1/catalog/ endpoint
+- [ ] Implement GET /api/v1/catalog/public/ endpoint
 - [ ] Add pagination support
 - [ ] Implement search functionality
 - [ ] Add filtering by genre, country, region, city, language
@@ -277,7 +277,7 @@ The API should ensure that `.m3u` and `.pls` files are generated and available a
 ## Example Backend Implementation (Pseudocode)
 
 ```python
-@app.get("/api/v1/catalog/")
+@app.get("/api/v1/catalog/public/")
 def get_catalog(
     page: int = 1,
     per_page: int = 30,

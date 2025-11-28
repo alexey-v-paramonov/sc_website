@@ -5,7 +5,7 @@
 
 class CatalogSPA {
   constructor() {
-    this.apiBaseUrl = 'https://streaming.center/api/v1/catalog/';
+    this.apiBaseUrl = 'https://streaming.center/api/v1/catalog/public/';
     this.currentView = 'list'; // 'list' or 'detail'
     this.searchDebounceTimer = null;
     this.currentPage = 1;
@@ -37,7 +37,7 @@ class CatalogSPA {
     
     // Determine initial view based on URL
     const path = window.location.pathname;
-    const lang = this.detectLanguage();
+    // const lang = this.detectLanguage();
     
     if (path.includes('/catalog/') && !path.endsWith('/catalog/')) {
       // We're on a detail page
@@ -50,12 +50,12 @@ class CatalogSPA {
     }
   }
 
-  detectLanguage() {
-    const path = window.location.pathname;
-    if (path.startsWith('/en/')) return 'en';
-    if (path.startsWith('/ru/')) return 'ru';
-    return 'en'; // default
-  }
+  // detectLanguage() {
+  //   const path = window.location.pathname;
+  //   if (path.startsWith('/en/')) return 'en';
+  //   if (path.startsWith('/ru/')) return 'ru';
+  //   return 'en'; // default
+  // }
 
   setupListView() {
     // Create and inject SPA controls if they don't exist
@@ -223,6 +223,7 @@ class CatalogSPA {
       const link = e.target.closest('.catalog-card-title a, .catalog-thumb-wrap a');
       if (link && link.href) {
         const url = new URL(link.href);
+        console.log('Intercepting link click to:', url.pathname);
         
         // Only intercept catalog item links
         if (url.pathname.includes('/catalog/') && !url.pathname.endsWith('/catalog/')) {
@@ -381,8 +382,8 @@ class CatalogSPA {
       return;
     }
 
-    const lang = this.detectLanguage();
-    const cardsHTML = items.map(item => this.renderCatalogCard(item, lang)).join('');
+    // const lang = this.detectLanguage();
+    const cardsHTML = items.map(item => this.renderCatalogCard(item)).join('');
     grid.innerHTML = cardsHTML;
 
     // Re-attach card click listeners
@@ -394,8 +395,8 @@ class CatalogSPA {
     }
   }
 
-  renderCatalogCard(item, lang) {
-    const permalink = `/${lang}/catalog/${item.slug || item.id}/`;
+  renderCatalogCard(item) {
+    const permalink = `/catalog/${item.slug || item.id}/`;
     const defaultStream = item.default_stream || (item.streams && item.streams[0]?.stream_url) || '';
     
     return `
@@ -545,7 +546,7 @@ class CatalogSPA {
       }
 
     } catch (error) {
-      console.error('Error loading detail view:', error);
+      console.error('Error loading detail view:', error, path);
       this.showError(this.getTranslation('error_loading'));
     } finally {
       this.showLoading(false);
@@ -593,8 +594,7 @@ class CatalogSPA {
   handlePopState(e) {
     const state = e.state;
     const path = window.location.pathname;
-    const lang = this.detectLanguage();
-
+ 
     if (path.includes('/catalog/') && !path.endsWith('/catalog/')) {
       // Detail view
       this.currentView = 'detail';
@@ -644,7 +644,8 @@ class CatalogSPA {
   }
 
   getTranslation(key) {
-    const lang = this.detectLanguage();
+    // const lang = this.detectLanguage();
+    const lang = "en";
     
     const translations = {
       en: {
