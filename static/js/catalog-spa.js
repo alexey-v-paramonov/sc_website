@@ -37,7 +37,6 @@ class CatalogSPA {
     
     // Determine initial view based on URL
     const path = window.location.pathname;
-    // const lang = this.detectLanguage();
     
     if (path.includes('/catalog/') && !path.endsWith('/catalog/')) {
       // We're on a detail page
@@ -50,106 +49,24 @@ class CatalogSPA {
     }
   }
 
-  // detectLanguage() {
-  //   const path = window.location.pathname;
-  //   if (path.startsWith('/en/')) return 'en';
-  //   if (path.startsWith('/ru/')) return 'ru';
-  //   return 'en'; // default
-  // }
-
-  setupListView() {
-    // Create and inject SPA controls if they don't exist
-    if (!document.getElementById('catalog-spa-controls')) {
-      this.injectListControls();
+  detectLanguage() {
+    // Get language from the data attribute set by Hugo
+    const controls = document.getElementById('catalog-spa-controls');
+    if (controls && controls.dataset.lang) {
+      return controls.dataset.lang;
     }
     
-    // Attach event listeners
+    // Default fallback
+    return 'en';
+  }
+
+  setupListView() {
+    // Controls are now server-rendered in the template
+    // Just attach event listeners
     this.attachListEventListeners();
-    
-    // Extract filter options from existing static content
-    this.extractFiltersFromStaticContent();
     
     // Don't load data on initial page load - use server-rendered content
     // API calls will only happen when user interacts (search, filter, sort, paginate)
-  }
-
-  injectListControls() {
-    const container = document.querySelector('.catalog-grid');
-    if (!container) return;
-
-    const controlsHTML = `
-      <div id="catalog-spa-controls" class="catalog-spa-controls">
-        <div class="catalog-controls-row">
-          <div class="catalog-search-wrapper">
-            <input 
-              type="text" 
-              id="catalog-search" 
-              class="catalog-search-input" 
-              placeholder="${this.getTranslation('search_placeholder')}"
-              autocomplete="off"
-            />
-            <span class="search-icon">🔍</span>
-          </div>
-
-          <div class="catalog-sort-wrapper">
-            <label for="catalog-sort">${this.getTranslation('sort_by')}:</label>
-            <select id="catalog-sort" class="catalog-sort-select">
-              <option value="rating" selected>${this.getTranslation('sort_rating')}</option>
-              <option value="votes">${this.getTranslation('sort_votes')}</option>
-              <option value="created">${this.getTranslation('sort_date')}</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="catalog-filters-row">
-          <div class="catalog-filter-wrapper">
-            <label for="filter-genre">${this.getTranslation('genre')}:</label>
-            <select id="filter-genre" class="catalog-filter-select">
-              <option value="">${this.getTranslation('all')}</option>
-            </select>
-          </div>
-
-          <div class="catalog-filter-wrapper">
-            <label for="filter-country">${this.getTranslation('country')}:</label>
-            <select id="filter-country" class="catalog-filter-select">
-              <option value="">${this.getTranslation('all')}</option>
-            </select>
-          </div>
-
-          <div class="catalog-filter-wrapper">
-            <label for="filter-region">${this.getTranslation('region')}:</label>
-            <select id="filter-region" class="catalog-filter-select">
-              <option value="">${this.getTranslation('all')}</option>
-            </select>
-          </div>
-
-          <div class="catalog-filter-wrapper">
-            <label for="filter-city">${this.getTranslation('city')}:</label>
-            <select id="filter-city" class="catalog-filter-select">
-              <option value="">${this.getTranslation('all')}</option>
-            </select>
-          </div>
-
-          <div class="catalog-filter-wrapper">
-            <label for="filter-language">${this.getTranslation('language')}:</label>
-            <select id="filter-language" class="catalog-filter-select">
-              <option value="">${this.getTranslation('all')}</option>
-            </select>
-          </div>
-
-          <button id="reset-filters" class="catalog-reset-btn">
-            ${this.getTranslation('reset_filters')}
-          </button>
-        </div>
-
-        <div id="catalog-loading" class="catalog-loading" style="display: none;">
-          <div class="spinner"></div>
-          <span>${this.getTranslation('loading')}</span>
-        </div>
-      </div>
-    `;
-
-    container.insertAdjacentHTML('beforebegin', controlsHTML);
   }
 
   attachListEventListeners() {
@@ -243,6 +160,7 @@ class CatalogSPA {
       params.append('page', this.currentPage);
       params.append('per_page', this.itemsPerPage);
       params.append('sort', this.currentFilters.sort);
+      params.append('lang', this.detectLanguage()); // Add language parameter
       
       if (this.currentFilters.search) params.append('search', this.currentFilters.search);
       if (this.currentFilters.genre) params.append('genre', this.currentFilters.genre);
@@ -278,79 +196,26 @@ class CatalogSPA {
   }
 
   updateFilterOptions(data) {
-    // Extract unique values for filters from the API response
+    // Only update filter options when API provides them
+    // Don't clear existing options if API doesn't provide filters
     if (data.filters) {
-      // If API provides filter options directly
-      this.populateFilterSelect('genre', data.filters.genres || []);
-      this.populateFilterSelect('country', data.filters.countries || []);
-      this.populateFilterSelect('region', data.filters.regions || []);
-      this.populateFilterSelect('city', data.filters.cities || []);
-      this.populateFilterSelect('language', data.filters.languages || []);
-    } else if (data.results || data.radios) {
-      // Extract from results
-      const items = data.results || data.radios || [];
-      this.extractFiltersFromResults(items);
-    }
-  }
-
-  extractFiltersFromResults(items) {
-    const genres = new Set();
-    const countries = new Set();
-    const regions = new Set();
-    const cities = new Set();
-    const languages = new Set();
-
-    items.forEach(item => {
-      if (item.genres) item.genres.forEach(g => genres.add(g));
-      if (item.country_name) countries.add(item.country_name);
-      if (item.region_name) regions.add(item.region_name);
-      if (item.city_name) cities.add(item.city_name);
-      if (item.languages) item.languages.forEach(l => languages.add(l));
-    });
-
-    this.populateFilterSelect('genre', Array.from(genres).sort());
-    this.populateFilterSelect('country', Array.from(countries).sort());
-    this.populateFilterSelect('region', Array.from(regions).sort());
-    this.populateFilterSelect('city', Array.from(cities).sort());
-    this.populateFilterSelect('language', Array.from(languages).sort());
-  }
-
-  extractFiltersFromStaticContent() {
-    // Extract filter options from the existing static HTML content
-    const cards = document.querySelectorAll('.catalog-card');
-    if (cards.length === 0) return;
-
-    const genres = new Set();
-    const countries = new Set();
-    const regions = new Set();
-    const cities = new Set();
-    const languages = new Set();
-
-    cards.forEach(card => {
-      // Extract genres from tags
-      const genreTags = card.querySelectorAll('.catalog-card-tags span');
-      genreTags.forEach(tag => {
-        const genre = tag.textContent.replace('#', '').trim();
-        if (genre) genres.add(genre);
-      });
-
-      // Extract country from flag image
-      const flag = card.querySelector('.catalog-card-flag');
-      if (flag && flag.alt) {
-        countries.add(flag.alt);
+      // If API provides filter options directly, update them
+      if (data.filters.genres && data.filters.genres.length > 0) {
+        this.populateFilterSelect('genre', data.filters.genres);
       }
-    });
-
-    // Populate filter dropdowns with extracted data
-    if (genres.size > 0) {
-      this.populateFilterSelect('genre', Array.from(genres).sort());
+      if (data.filters.countries && data.filters.countries.length > 0) {
+        this.populateFilterSelect('country', data.filters.countries);
+      }
+      if (data.filters.regions && data.filters.regions.length > 0) {
+        this.populateFilterSelect('region', data.filters.regions);
+      }
+      if (data.filters.cities && data.filters.cities.length > 0) {
+        this.populateFilterSelect('city', data.filters.cities);
+      }
+      if (data.filters.languages && data.filters.languages.length > 0) {
+        this.populateFilterSelect('language', data.filters.languages);
+      }
     }
-    if (countries.size > 0) {
-      this.populateFilterSelect('country', Array.from(countries).sort());
-    }
-    
-    // Note: regions, cities, and languages will be populated when API is called
-    // after user interaction, as they're not readily available in static HTML
   }
 
   populateFilterSelect(filterType, options) {
@@ -359,11 +224,12 @@ class CatalogSPA {
 
     const currentValue = select.value;
     
-    // Keep the "All" option and add new options
+    // Clear all options except "All"
     const allOption = select.querySelector('option[value=""]');
     select.innerHTML = '';
-    if (allOption) select.appendChild(allOption);
+    if (allOption) select.appendChild(allOption.cloneNode(true));
 
+    // Add new options from API
     options.forEach(option => {
       const optionEl = document.createElement('option');
       optionEl.value = option;
@@ -371,6 +237,11 @@ class CatalogSPA {
       if (option === currentValue) optionEl.selected = true;
       select.appendChild(optionEl);
     });
+    
+    // If current value is not in the new options and it's not empty, restore it
+    if (currentValue && !options.includes(currentValue)) {
+      select.value = '';
+    }
   }
 
   renderCatalogGrid(items) {
@@ -396,6 +267,7 @@ class CatalogSPA {
   }
 
   renderCatalogCard(item) {
+    // Use the slug directly without language prefix since domains are different
     const permalink = `/catalog/${item.slug || item.id}/`;
     const defaultStream = item.default_stream || (item.streams && item.streams[0]?.stream_url) || '';
     
@@ -644,8 +516,7 @@ class CatalogSPA {
   }
 
   getTranslation(key) {
-    // const lang = this.detectLanguage();
-    const lang = "en";
+    const lang = this.detectLanguage();
     
     const translations = {
       en: {

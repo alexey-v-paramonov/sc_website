@@ -6,6 +6,114 @@
     {{ partial "breadcrumbs.html" . }}
     <div>
       {{ $paginator := .Paginate (where .Pages "Type" "catalog_item") 30 }}
+      
+      {{/* Load filter data based on language */}}
+      {{ $genres := slice }}
+      {{ $countries := slice }}
+      {{ $regions := slice }}
+      {{ $cities := slice }}
+      {{ $languages := slice }}
+      
+      {{ if eq .Lang "ru" }}
+        {{ $genres = .Site.Data.genres_ru }}
+        {{ $countries = .Site.Data.countries_ru }}
+        {{ $regions = .Site.Data.regions_ru }}
+        {{ $cities = .Site.Data.cities_ru }}
+        {{ $languages = .Site.Data.languages_ru }}
+      {{ else }}
+        {{ $genres = .Site.Data.genres_eng }}
+        {{ $countries = .Site.Data.countries_eng }}
+        {{ $regions = .Site.Data.regions_eng }}
+        {{ $cities = .Site.Data.cities_eng }}
+        {{ $languages = .Site.Data.languages_eng }}
+      {{ end }}
+
+      {{/* SPA Controls */}}
+      <div id="catalog-spa-controls" class="catalog-spa-controls" data-lang="{{ .Lang }}">
+        <div class="catalog-controls-row">
+          <div class="catalog-search-wrapper">
+            <input 
+              type="text" 
+              id="catalog-search" 
+              class="catalog-search-input" 
+              placeholder="{{ if eq .Lang "ru" }}Поиск радиостанций...{{ else }}Search radio stations...{{ end }}"
+              autocomplete="off"
+            />
+            <span class="search-icon">🔍</span>
+          </div>
+
+          <div class="catalog-sort-wrapper">
+            <label for="catalog-sort">{{ if eq .Lang "ru" }}Сортировка{{ else }}Sort by{{ end }}:</label>
+            <select id="catalog-sort" class="catalog-sort-select">
+              <option value="rating" selected>{{ if eq .Lang "ru" }}Рейтинг{{ else }}Rating{{ end }}</option>
+              <option value="votes">{{ if eq .Lang "ru" }}Количество голосов{{ else }}Number of votes{{ end }}</option>
+              <option value="created">{{ if eq .Lang "ru" }}Дата добавления{{ else }}Date added{{ end }}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="catalog-filters-row">
+          <div class="catalog-filter-wrapper">
+            <label for="filter-genre">{{ if eq .Lang "ru" }}Жанр{{ else }}Genre{{ end }}:</label>
+            <select id="filter-genre" class="catalog-filter-select">
+              <option value="">{{ if eq .Lang "ru" }}Все{{ else }}All{{ end }}</option>
+              {{ range $genres }}
+                <option value="{{ . }}">{{ . }}</option>
+              {{ end }}
+            </select>
+          </div>
+
+          <div class="catalog-filter-wrapper">
+            <label for="filter-country">{{ if eq .Lang "ru" }}Страна{{ else }}Country{{ end }}:</label>
+            <select id="filter-country" class="catalog-filter-select">
+              <option value="">{{ if eq .Lang "ru" }}Все{{ else }}All{{ end }}</option>
+              {{ range $countries }}
+                <option value="{{ . }}">{{ . }}</option>
+              {{ end }}
+            </select>
+          </div>
+
+          <div class="catalog-filter-wrapper">
+            <label for="filter-region">{{ if eq .Lang "ru" }}Регион{{ else }}Region{{ end }}:</label>
+            <select id="filter-region" class="catalog-filter-select">
+              <option value="">{{ if eq .Lang "ru" }}Все{{ else }}All{{ end }}</option>
+              {{ range $regions }}
+                <option value="{{ . }}">{{ . }}</option>
+              {{ end }}
+            </select>
+          </div>
+
+          <div class="catalog-filter-wrapper">
+            <label for="filter-city">{{ if eq .Lang "ru" }}Город{{ else }}City{{ end }}:</label>
+            <select id="filter-city" class="catalog-filter-select">
+              <option value="">{{ if eq .Lang "ru" }}Все{{ else }}All{{ end }}</option>
+              {{ range $cities }}
+                <option value="{{ . }}">{{ . }}</option>
+              {{ end }}
+            </select>
+          </div>
+
+          <div class="catalog-filter-wrapper">
+            <label for="filter-language">{{ if eq .Lang "ru" }}Язык{{ else }}Language{{ end }}:</label>
+            <select id="filter-language" class="catalog-filter-select">
+              <option value="">{{ if eq .Lang "ru" }}Все{{ else }}All{{ end }}</option>
+              {{ range $languages }}
+                <option value="{{ . }}">{{ . }}</option>
+              {{ end }}
+            </select>
+          </div>
+
+          <button id="reset-filters" class="catalog-reset-btn">
+            {{ if eq .Lang "ru" }}Сбросить фильтры{{ else }}Reset filters{{ end }}
+          </button>
+        </div>
+
+        <div id="catalog-loading" class="catalog-loading" style="display: none;">
+          <div class="spinner"></div>
+          <span>{{ if eq .Lang "ru" }}Загрузка...{{ else }}Loading...{{ end }}</span>
+        </div>
+      </div>
+
       <div class="catalog-grid">
         {{ range $paginator.Pages }}
         <div class="catalog-card">
