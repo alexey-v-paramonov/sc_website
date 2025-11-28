@@ -28,6 +28,9 @@ class CatalogSPA {
       languages: new Set()
     };
     
+    // Detect and store language early before DOM changes
+    this.language = this.detectLanguage();
+    
     this.init();
   }
 
@@ -54,6 +57,11 @@ class CatalogSPA {
     const controls = document.getElementById('catalog-spa-controls');
     if (controls && controls.dataset.lang) {
       return controls.dataset.lang;
+    }
+    
+    // Fallback: check hostname (radio-tochka.com = ru, streaming.center = en)
+    if (window.location.hostname.includes('radio-tochka')) {
+      return 'ru';
     }
     
     // Default fallback
@@ -166,7 +174,7 @@ class CatalogSPA {
       params.append('page', this.currentPage);
       params.append('per_page', this.itemsPerPage);
       params.append('sort', this.currentFilters.sort);
-      params.append('lang', this.detectLanguage()); // Add language parameter
+      params.append('lang', this.language); // Add language parameter
       
       if (this.currentFilters.search) params.append('search', this.currentFilters.search);
       if (this.currentFilters.genre) params.append('genre', this.currentFilters.genre);
@@ -265,8 +273,7 @@ class CatalogSPA {
       return;
     }
 
-    const lang = this.detectLanguage();
-    const cardsHTML = items.map(item => this.renderCatalogCard(item, lang)).join('');
+    const cardsHTML = items.map(item => this.renderCatalogCard(item)).join('');
     grid.innerHTML = cardsHTML;
 
     // Re-attach card click listeners
@@ -442,7 +449,18 @@ class CatalogSPA {
   }
 
   navigateToDetail(path) {
-    // Update browser history
+    // Save current list view state before navigating away
+    const listState = {
+      view: 'list',
+      filters: { ...this.currentFilters },
+      page: this.currentPage,
+      language: this.language
+    };
+    
+    // Replace current state with list state (so back button returns here)
+    window.history.replaceState(listState, '', window.location.pathname);
+    
+    // Push new detail state
     window.history.pushState({ view: 'detail', path }, '', path);
     
     // Load detail view
@@ -479,6 +497,11 @@ class CatalogSPA {
           
           // Re-execute any scripts in the new content
           this.executeScripts(mainContent);
+          
+          // Reinitialize audio player if available
+          if (typeof window.initializeCatalogAudio === 'function') {
+            window.initializeCatalogAudio();
+          }
         }
       }
 
@@ -502,8 +525,9 @@ class CatalogSPA {
     backButton.className = 'spa-back-button btn';
     backButton.innerHTML = `<span>← ${this.getTranslation('back_to_catalog')}</span>`;
     
-    backButton.addEventListener('click', () => {
-      window.history.back();
+    backButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      this.navigateBackToCatalog();
     });
 
     // Insert at the top of the container
@@ -512,6 +536,44 @@ class CatalogSPA {
       breadcrumbs.insertAdjacentElement('afterend', backButton);
     } else {
       container.insertAdjacentElement('afterbegin', backButton);
+    }
+  }
+
+  async navigateBackToCatalog() {
+    // Don't use history.back() - it's unreliable
+    // Instead, directly navigate and restore the view
+    
+    this.currentView = 'list';
+    
+    // Try to get the previous state before we navigate back
+    // We need to look at what was saved when we navigated to detail
+    let savedState = null;
+    
+    // Attempt to go back in history and capture state
+    // But don't wait for it - do the navigation immediately
+    const catalogUrl = '/catalog/';
+    
+    // Check if there are any active filters to restore
+    const hasActiveFilters = this.currentFilters.search || 
+                             this.currentFilters.genre || 
+                             this.currentFilters.country || 
+                             this.currentFilters.region || 
+                             this.currentFilters.city || 
+                             this.currentFilters.language ||
+                             this.currentPage > 1;
+    
+    // Update URL without triggering a page load
+    window.history.pushState({ view: 'list', filters: this.currentFilters, page: this.currentPage, language: this.language }, '', catalogUrl);
+    
+    // Restore the list view structure
+    await this.restoreListView();
+    
+    // Restore UI to match current filters
+    this.restoreFilterUI();
+    
+    // If we have active filters, reload data
+    if (hasActiveFilters) {
+      this.loadCatalogData();
     }
   }
 
@@ -528,18 +590,99 @@ class CatalogSPA {
     });
   }
 
-  handlePopState(e) {
+  async handlePopState(e) {
     const state = e.state;
     const path = window.location.pathname;
  
     if (path.endsWith('/catalog/') || path.includes('/catalog/page/')) {
-      // List view - reload the page to restore original state
-      window.location.reload();
+      // Going back to list view
+      this.currentView = 'list';
+      
+      // Check if we have saved state with filters
+      if (state && state.view === 'list' && state.filters) {
+        // Restore language if saved
+        if (state.language) {
+          this.language = state.language;
+        }
+        
+        // Restore the list page structure first
+        await this.restoreListView();
+        
+        // Restore filters and page from saved state
+        this.currentFilters = { ...state.filters };
+        this.currentPage = state.page || 1;
+        
+        // Restore UI controls to match saved state
+        this.restoreFilterUI();
+        
+        // Load catalog data with saved filters
+        this.loadCatalogData();
+      } else {
+        // No saved state, reload to show original server-rendered content
+        window.location.reload();
+      }
     } else if (path.includes('/catalog/')) {
       // Detail view
       this.currentView = 'detail';
       this.loadDetailView(path);
     }
+  }
+
+  async restoreListView() {
+    // Fetch the catalog list page to restore the proper structure
+    // Hugo uses different domains for languages, so URL is just /catalog/
+    const catalogUrl = '/catalog/';
+    
+    try {
+      const response = await fetch(catalogUrl);
+      if (!response.ok) {
+        throw new Error(`Failed to load catalog page: ${response.status}`);
+      }
+
+      const html = await response.text();
+      
+      // Parse HTML and extract the main content
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+      const mainContent = doc.querySelector('main');
+      
+      if (mainContent) {
+        // Replace current main content
+        const currentMain = document.querySelector('main');
+        if (currentMain) {
+          currentMain.replaceWith(mainContent);
+          
+          // Re-attach event listeners to the controls
+          this.attachListEventListeners();
+        }
+      }
+    } catch (error) {
+      console.error('Error restoring list view:', error);
+      // Fallback to reload
+      window.location.reload();
+    }
+  }
+
+  restoreFilterUI() {
+    // Restore search input
+    const searchInput = document.getElementById('catalog-search');
+    if (searchInput) {
+      searchInput.value = this.currentFilters.search || '';
+    }
+    
+    // Restore sort select
+    const sortSelect = document.getElementById('catalog-sort');
+    if (sortSelect) {
+      sortSelect.value = this.currentFilters.sort || 'rating';
+    }
+    
+    // Restore filter selects
+    ['genre', 'country', 'region', 'city', 'language'].forEach(filterType => {
+      const select = document.getElementById(`filter-${filterType}`);
+      if (select) {
+        select.value = this.currentFilters[filterType] || '';
+      }
+    });
   }
 
   resetFilters() {
@@ -581,7 +724,7 @@ class CatalogSPA {
   }
 
   getTranslation(key) {
-    const lang = this.detectLanguage();
+    const lang = this.language;
     
     const translations = {
       en: {
