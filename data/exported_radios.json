@@ -1,7 +1,186 @@
 [
   {
+    "id": 596,
+    "name": "Русский Драйв FM",
+    "slug": "russkii-draiv-fm-russkii-draiv",
+    "description": "\r\nРусский Драйв FM — это радиостанция, ориентированная на русскоязычную аудиторию. Она транслирует популярные хиты, сочетая в себе различные музыкальные жанры, такие как поп, рок и хип-хоп, с акцентом на современные музыкальные тренды. Станция предлагает динамичное вещание, которое отражает энергичную атмосферу и драйв, характерный для молодежной культуры. Русский Драйв FM идеально подходит для тех, кто ищет позитивные и вдохновляющие треки для активного и насыщенного дня.\r\n",
+    "enabled": true,
+    "website_url": "https://rusdriveradio.ru",
+    "logo": "https://app.streaming.center/media/catalog_logos/radio_71206.png",
+    "country": {
+      "id": 192,
+      "iso2": "ru",
+      "name": "Россия",
+      "name_eng": "Russia"
+    },
+    "region": {
+      "id": 2783,
+      "name": "Самарская Область",
+      "name_eng": "Samara Oblast"
+    },
+    "city": {
+      "id": 182254,
+      "name": "Самара",
+      "name_eng": "Samara"
+    },
+    "genres": [
+      {
+        "id": 10,
+        "name": "Танцевальное",
+        "name_eng": "Dance"
+      },
+      {
+        "id": 18,
+        "name": "Поп",
+        "name_eng": "Pop"
+      }
+    ],
+    "languages": [
+      {
+        "id": 1,
+        "name": "Русский",
+        "name_eng": "Russian"
+      }
+    ],
+    "streams": [
+      {
+        "id": 492,
+        "stream_url": "https://rusdriveradio.ru:8000/live_aac64",
+        "audio_format": "mp3",
+        "bitrate": 128,
+        "server_type": "icecast"
+      }
+    ],
+    "total_votes": 1,
+    "total_score": 10,
+    "user_id": 2018,
+    "rating": 10.0,
+    "created": "2025-02-08T10:06:22",
+    "default_stream": "https://rusdriveradio.ru:8000/live_aac64"
+  },
+  {
+    "id": 629,
+    "name": "КАЗАНТИПЫ",
+    "slug": "kazantipy",
+    "description": "Развлекательное радио с утренними, дневными и вечерними шоу, уникальными подкастами о музыке, медицине, отношениях и другом!\r\n\r\nШоу #КАЗАНТИПЫУТРО - Артём Рычёв и Руслан Мазитов по будням с  08:00 до 09:00",
+    "enabled": true,
+    "website_url": "https://kazantipyradio.bigtwinmusic.ru/",
+    "logo": "https://app.streaming.center/media/catalog_logos/%D1%80%D0%BE%D0%B7%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D0%BD%D0%B3.png",
+    "country": {
+      "id": 192,
+      "iso2": "ru",
+      "name": "Россия",
+      "name_eng": "Russia"
+    },
+    "region": null,
+    "city": null,
+    "genres": [
+      {
+        "id": 3,
+        "name": "Разговорное",
+        "name_eng": "Talk"
+      },
+      {
+        "id": 4,
+        "name": "Новости",
+        "name_eng": "News"
+      },
+      {
+        "id": 42,
+        "name": "Юмор",
+        "name_eng": "Humor"
+      }
+    ],
+    "languages": [
+      {
+        "id": 1,
+        "name": "Русский",
+        "name_eng": "Russian"
+      }
+    ],
+    "streams": [
+      {
+        "id": 544,
+        "stream_url": "http://kazantipyradio.bigtwinmusic.ru:1040/stream",
+        "audio_format": "mp3",
+        "bitrate": 128,
+        "server_type": "icecast"
+      }
+    ],
+    "total_votes": 1,
+    "total_score": 9,
+    "user_id": 1369,
+    "rating": 9.0,
+    "created": "2025-09-18T14:25:20.265",
+    "default_stream": null
+  },
+  {
+    "id": 645,
+    "name": "Estudio 76",
+    "slug": "estudio-76",
+    "description": "On air since 2013, Estúdio 76 has been bringing you the best music from the 70s, 80s, and 90s. Live versions, remixes, national and international. Quality programming for those who enjoy good music. In the beginning, we never imagined it would take on the proportions it has. Today we have thousands of hits, from Brazil and around the world. So, let's travel back in time through music.",
+    "enabled": true,
+    "website_url": "https://estudio76.com.br",
+    "logo": "https://app.streaming.center/media/catalog_logos/logo_2-512x512.png",
+    "country": {
+      "id": 31,
+      "iso2": "br",
+      "name": "Бразилия",
+      "name_eng": "Brazil"
+    },
+    "region": {
+      "id": 374,
+      "name": "Минас-Жерайс",
+      "name_eng": "Minas Gerais"
+    },
+    "city": {
+      "id": 16629,
+      "name": "Посус-ди-Калдас",
+      "name_eng": "Poços de Caldas"
+    },
+    "genres": [
+      {
+        "id": 11,
+        "name": "Диско",
+        "name_eng": "Disco"
+      },
+      {
+        "id": 17,
+        "name": "Старые песни",
+        "name_eng": "Oldies"
+      },
+      {
+        "id": 47,
+        "name": "Ретро",
+        "name_eng": "Retro"
+      }
+    ],
+    "languages": [
+      {
+        "id": 28,
+        "name": "Португальский",
+        "name_eng": "Portuguese"
+      }
+    ],
+    "streams": [
+      {
+        "id": 588,
+        "stream_url": "https://everest.servercast.com.br:1060/stream",
+        "audio_format": "mp3",
+        "bitrate": 128,
+        "server_type": "shoutcast"
+      }
+    ],
+    "total_votes": 3,
+    "total_score": 25,
+    "user_id": 1227,
+    "rating": 8.333333333333334,
+    "created": "2025-10-01T22:47:37.102",
+    "default_stream": "https://everest.servercast.com.br:1060/stream"
+  },
+  {
     "id": 584,
-    "name": "Star 33 Radiostation",
+    "name": "Star 33 RadioStation",
     "slug": "star-33-radiostationcovremennoe-din",
     "description": "Cовременное динамичное радио, наполненное исключительно отборными треками из мира электронной музыки. Основа музыкального эфира - Techno, House и Trance различных ответвлений. \r\n\r\nStar 33 - танцевальная поддержка твоего настроения на целый день, независимо от того, где ты находишься: дома, на работе или в дороге за рулём ; )",
     "enabled": true,
@@ -49,31 +228,31 @@
     ],
     "streams": [
       {
-        "id": 545,
+        "id": 601,
         "stream_url": "http://online.star33radio.com:1080/stream",
         "audio_format": "mp3",
         "bitrate": 320,
         "server_type": "icecast"
       },
       {
-        "id": 546,
+        "id": 602,
         "stream_url": "https://online.star33radio.com:1085/stream",
         "audio_format": "mp3",
         "bitrate": 320,
         "server_type": "icecast"
       },
       {
-        "id": 547,
+        "id": 603,
         "stream_url": "http://online.star33radio.com:1070/;?type=http&nocache=1738919778",
         "audio_format": "mp3",
         "bitrate": 320,
         "server_type": "shoutcast"
       }
     ],
-    "total_votes": 2079,
-    "total_score": 14809,
+    "total_votes": 2084,
+    "total_score": 14858,
     "user_id": 1130,
-    "rating": 7.123136123136123,
+    "rating": 7.129558541266794,
     "created": "2024-11-23T19:43:17",
     "default_stream": "https://online.star33radio.com:1085/stream"
   },
@@ -148,12 +327,72 @@
         "server_type": "icecast"
       }
     ],
-    "total_votes": 2804,
-    "total_score": 18937,
+    "total_votes": 2808,
+    "total_score": 18944,
     "user_id": 869,
-    "rating": 6.753566333808845,
+    "rating": 6.746438746438747,
     "created": "2018-11-27T16:24:58",
     "default_stream": "https://radio.radioshansonplus.com:8075/radio"
+  },
+  {
+    "id": 637,
+    "name": "Star FM",
+    "slug": "star-fm",
+    "description": "Your Super Star Radio Station",
+    "enabled": true,
+    "website_url": "https://www.starfm.lk/",
+    "logo": "https://app.streaming.center/media/catalog_logos/STAR-FM.JPG",
+    "country": {
+      "id": 131,
+      "iso2": "lk",
+      "name": "Шри-Ланка",
+      "name_eng": "Sri Lanka"
+    },
+    "region": null,
+    "city": {
+      "id": 134581,
+      "name": "Коломбо",
+      "name_eng": "Colombo"
+    },
+    "genres": [
+      {
+        "id": 21,
+        "name": "Рок",
+        "name_eng": "Rock"
+      },
+      {
+        "id": 68,
+        "name": "Азиатская",
+        "name_eng": "Asian"
+      },
+      {
+        "id": 69,
+        "name": "Индийская",
+        "name_eng": "Indian"
+      }
+    ],
+    "languages": [
+      {
+        "id": 33,
+        "name": "Тамильский",
+        "name_eng": "Tamil"
+      }
+    ],
+    "streams": [
+      {
+        "id": 565,
+        "stream_url": "https://stream.starfm.lk:12025/stream",
+        "audio_format": "mp3",
+        "bitrate": 320,
+        "server_type": "icecast"
+      }
+    ],
+    "total_votes": 3,
+    "total_score": 20,
+    "user_id": 988,
+    "rating": 6.666666666666667,
+    "created": "2025-09-23T08:56:58.891",
+    "default_stream": "https://stream.starfm.lk:12025/stream"
   },
   {
     "id": 216,
@@ -233,10 +472,10 @@
         "server_type": "icecast"
       }
     ],
-    "total_votes": 4607,
-    "total_score": 30284,
+    "total_votes": 4608,
+    "total_score": 30291,
     "user_id": 483,
-    "rating": 6.573475146516171,
+    "rating": 6.573567708333333,
     "created": "2016-09-02T05:37:34",
     "default_stream": "https://radio.radioshansonplus.com:8235/radio"
   },
@@ -378,6 +617,124 @@
     "default_stream": "https://listen.myrh.ru/id02707"
   },
   {
+    "id": 347,
+    "name": "Джаз Филармоник Радио",
+    "slug": "dzhaz-filarmonik-radiodzhaz-filarmonik",
+    "description": "Джаз Филармоник радио из Санкт_Петербурга дарит вам лучшее из джазового мейнстрима: классики жанра, великие имена, представители современной джазовой сцены. \r\nВ эфире звучат джазовые стандарты, удивительные импровизации, авторские произведения.  Руководитель проекта- народный артист России, руководитель Филармонии джазовой музыки- Давид Голощекин. Так же слушайте в эфире авторские программы, интервью и концертную афишу.\r\n",
+    "enabled": true,
+    "website_url": "http://radio.jazz-hall.ru/",
+    "logo": "https://app.streaming.center/media/catalog_logos/radio_70463.jpg",
+    "country": {
+      "id": 192,
+      "iso2": "ru",
+      "name": "Россия",
+      "name_eng": "Russia"
+    },
+    "region": {
+      "id": 2801,
+      "name": "Санкт-Петербург",
+      "name_eng": "Leningrad"
+    },
+    "city": {
+      "id": 182244,
+      "name": "Санкт-Петербург",
+      "name_eng": "Saint Petersburg\n"
+    },
+    "genres": [
+      {
+        "id": 15,
+        "name": "Джаз",
+        "name_eng": "Jazz"
+      },
+      {
+        "id": 36,
+        "name": "Соул",
+        "name_eng": "Soul"
+      },
+      {
+        "id": 47,
+        "name": "Ретро",
+        "name_eng": "Retro"
+      }
+    ],
+    "languages": [
+      {
+        "id": 1,
+        "name": "Русский",
+        "name_eng": "Russian"
+      }
+    ],
+    "streams": [
+      {
+        "id": 262,
+        "stream_url": "http://broad.jazz-hall.ru:8000/jphradio64.mp3",
+        "audio_format": "mp3",
+        "bitrate": 64,
+        "server_type": "icecast"
+      }
+    ],
+    "total_votes": 2,
+    "total_score": 11,
+    "user_id": 1798,
+    "rating": 5.5,
+    "created": "2019-02-11T13:41:52",
+    "default_stream": null
+  },
+  {
+    "id": 379,
+    "name": "Радио Респект",
+    "slug": "radio-respektradio-respect",
+    "description": "Radio Respect – это стильно – музыкальный  сетевой радио проект.",
+    "enabled": true,
+    "website_url": "http://radiorespect.com.ua/",
+    "logo": "https://app.streaming.center/media/catalog_logos/radio_70590.png",
+    "country": {
+      "id": 231,
+      "iso2": "ua",
+      "name": "Украина",
+      "name_eng": "Ukraine"
+    },
+    "region": {
+      "id": 3593,
+      "name": "Киев",
+      "name_eng": "Kyiv City"
+    },
+    "city": {
+      "id": 197402,
+      "name": "Киев",
+      "name_eng": "Kyiv"
+    },
+    "genres": [
+      {
+        "id": 18,
+        "name": "Поп",
+        "name_eng": "Pop"
+      }
+    ],
+    "languages": [
+      {
+        "id": 1,
+        "name": "Русский",
+        "name_eng": "Russian"
+      }
+    ],
+    "streams": [
+      {
+        "id": 296,
+        "stream_url": "http://listen6.myradio24.com:9000/95451",
+        "audio_format": "mp3",
+        "bitrate": 320,
+        "server_type": "icecast"
+      }
+    ],
+    "total_votes": 6,
+    "total_score": 33,
+    "user_id": 1826,
+    "rating": 5.5,
+    "created": "2020-02-08T23:50:16",
+    "default_stream": null
+  },
+  {
     "id": 567,
     "name": "Aktiv Radio",
     "slug": "aktiv-radioradio-aktiv-eto",
@@ -512,10 +869,10 @@
         "server_type": "icecast"
       }
     ],
-    "total_votes": 375,
-    "total_score": 2006,
+    "total_votes": 378,
+    "total_score": 2036,
     "user_id": 1845,
-    "rating": 5.349333333333333,
+    "rating": 5.386243386243386,
     "created": "2020-05-31T11:01:35",
     "default_stream": "https://gamaun.online:8025/radio"
   },
@@ -580,10 +937,10 @@
         "server_type": "icecast"
       }
     ],
-    "total_votes": 5796,
-    "total_score": 30974,
+    "total_votes": 5797,
+    "total_score": 30975,
     "user_id": 1762,
-    "rating": 5.3440303657694965,
+    "rating": 5.34328100741763,
     "created": "2018-03-05T09:51:49",
     "default_stream": null
   },
@@ -646,10 +1003,10 @@
         "server_type": "icecast"
       }
     ],
-    "total_votes": 197,
-    "total_score": 1040,
+    "total_votes": 198,
+    "total_score": 1047,
     "user_id": 1055,
-    "rating": 5.279187817258883,
+    "rating": 5.287878787878788,
     "created": "2023-09-21T15:11:22",
     "default_stream": "https://myradio24.org/maxim"
   },
@@ -1064,297 +1421,6 @@
     "rating": 5.095518867924528,
     "created": "2017-11-13T04:16:43",
     "default_stream": "https://myradio24.org/alexx333"
-  },
-  {
-    "id": 437,
-    "name": "Ермак Урал",
-    "slug": "ermak-uralpervaia-radiosta",
-    "description": "Первая радиостанция, вещающая из города Кушвы!!!\r\n\r\nОбозреваем жизнь и новости в Кушве, Красноуральске, Верхней Туре, Баранчинском, поселке Азиатская, Новой Ляле, Лобве, Верхотурье, близлежащих окрестностей и всей Свердловской области.\r\n\r\nВ гостях студии – интересные люди: руководители муниципалитетов и предприятий, артисты, активисты, общественники.\r\n\r\nОбсуждаемые вопросы: развитие территории, творчество, история Урала, музеи области, интересные места и путешествия.\r\n\r\nИ конечно - только ЛУЧШАЯ МУЗЫКА!!!!!!!",
-    "enabled": true,
-    "website_url": "https://radio.ermak-ural.ru",
-    "logo": "https://app.streaming.center/media/catalog_logos/radio_70769.jpg",
-    "country": {
-      "id": 192,
-      "iso2": "ru",
-      "name": "Россия",
-      "name_eng": "Russia"
-    },
-    "region": {
-      "id": 2830,
-      "name": "Свердловская Область",
-      "name_eng": "Sverdlovsk Oblast"
-    },
-    "city": {
-      "id": 183293,
-      "name": "Кушва",
-      "name_eng": "Kushva"
-    },
-    "genres": [
-      {
-        "id": 5,
-        "name": "Информационное",
-        "name_eng": "Informational"
-      },
-      {
-        "id": 18,
-        "name": "Поп",
-        "name_eng": "Pop"
-      },
-      {
-        "id": 56,
-        "name": "Разное",
-        "name_eng": "Various"
-      }
-    ],
-    "languages": [
-      {
-        "id": 1,
-        "name": "Русский",
-        "name_eng": "Russian"
-      }
-    ],
-    "streams": [
-      {
-        "id": 343,
-        "stream_url": "https://c34.radioboss.fm/stream/441",
-        "audio_format": "aac",
-        "bitrate": 192,
-        "server_type": "icecast"
-      },
-      {
-        "id": 345,
-        "stream_url": "https://c34.radioboss.fm/stream/441",
-        "audio_format": "aac",
-        "bitrate": 192,
-        "server_type": "icecast"
-      },
-      {
-        "id": 344,
-        "stream_url": "https://myradio24.org/27818",
-        "audio_format": "aac",
-        "bitrate": 191,
-        "server_type": "icecast"
-      }
-    ],
-    "total_votes": 94,
-    "total_score": 478,
-    "user_id": 1880,
-    "rating": 5.085106382978723,
-    "created": "2021-03-12T00:39:33",
-    "default_stream": "https://c34.radioboss.fm/stream/441"
-  },
-  {
-    "id": 368,
-    "name": "Наше Дежавю",
-    "slug": "nashe-dezhaviuradio-nashe-dezh",
-    "description": "Радио «Наше Дежавю» — это не только способ хорошо провести время, но и верный путь к приобретению новых друзей. От мала до велика. Возраст здесь не имеет значения. Слушая нашу радиостанцию, вы поймёте, что времени на самом деле не существует. Проекты и рубрики, конкурсы и концерты, и самое главное — безграничный поток музыки. \r\n\r\nСледи за расписанием, посещай эфиры любимых ведущих, делись информацией в предлагаемые новости. \r\n",
-    "enabled": true,
-    "website_url": "https://vk.com/radio_dejavu",
-    "logo": "https://app.streaming.center/media/catalog_logos/radio_70550.jpg",
-    "country": {
-      "id": 192,
-      "iso2": "ru",
-      "name": "Россия",
-      "name_eng": "Russia"
-    },
-    "region": {
-      "id": 1888,
-      "name": "Единецкий район",
-      "name_eng": "Raionul Edineţ"
-    },
-    "city": {
-      "id": 182975,
-      "name": "Москва",
-      "name_eng": "Moscow"
-    },
-    "genres": [
-      {
-        "id": 17,
-        "name": "Старые песни",
-        "name_eng": "Oldies"
-      },
-      {
-        "id": 43,
-        "name": "Топ",
-        "name_eng": "Top"
-      },
-      {
-        "id": 56,
-        "name": "Разное",
-        "name_eng": "Various"
-      }
-    ],
-    "languages": [
-      {
-        "id": 2,
-        "name": "Английский",
-        "name_eng": "English"
-      }
-    ],
-    "streams": [
-      {
-        "id": 288,
-        "stream_url": "https://myradio24.org/23297",
-        "audio_format": "mp3",
-        "bitrate": 128,
-        "server_type": "icecast"
-      },
-      {
-        "id": 289,
-        "stream_url": "https://myradio24.org/23297",
-        "audio_format": "mp3",
-        "bitrate": 128,
-        "server_type": "icecast"
-      }
-    ],
-    "total_votes": 304,
-    "total_score": 1542,
-    "user_id": 1816,
-    "rating": 5.072368421052632,
-    "created": "2019-09-25T23:17:16",
-    "default_stream": "https://myradio24.org/23297"
-  },
-  {
-    "id": 506,
-    "name": "MaxRadio",
-    "slug": "maxradiomaxradio-eto",
-    "description": "MaxRadio - это новое танцевальное интернет радио, создано ди-джеями из города Санкт-Петербурга. Музыка проверена танцполом. Стиль: Dance, Club, Deep. А также звучат миксы диджеев.",
-    "enabled": true,
-    "website_url": "https://vk.com/maxradio",
-    "logo": "https://app.streaming.center/media/catalog_logos/radio_70939.jpg",
-    "country": {
-      "id": 192,
-      "iso2": "ru",
-      "name": "Россия",
-      "name_eng": "Russia"
-    },
-    "region": {
-      "id": 2801,
-      "name": "Санкт-Петербург",
-      "name_eng": "Leningrad"
-    },
-    "city": {
-      "id": 182244,
-      "name": "Санкт-Петербург",
-      "name_eng": "Leningrad"
-    },
-    "genres": [
-      {
-        "id": 10,
-        "name": "Танцевальное",
-        "name_eng": "Dance"
-      },
-      {
-        "id": 53,
-        "name": "Клубное",
-        "name_eng": "Club"
-      },
-      {
-        "id": 58,
-        "name": "Dj сеты",
-        "name_eng": "Dj sets"
-      }
-    ],
-    "languages": [
-      {
-        "id": 1,
-        "name": "Русский",
-        "name_eng": "Russian"
-      }
-    ],
-    "streams": [
-      {
-        "id": 406,
-        "stream_url": "https://myradio24.org/9316_320",
-        "audio_format": "mp3",
-        "bitrate": 320,
-        "server_type": "icecast"
-      },
-      {
-        "id": 408,
-        "stream_url": "https://myradio24.org/9316_320",
-        "audio_format": "mp3",
-        "bitrate": 320,
-        "server_type": "icecast"
-      },
-      {
-        "id": 407,
-        "stream_url": "https://myradio24.org/9316",
-        "audio_format": "mp3",
-        "bitrate": 128,
-        "server_type": "icecast"
-      }
-    ],
-    "total_votes": 140,
-    "total_score": 709,
-    "user_id": 1947,
-    "rating": 5.064285714285714,
-    "created": "2022-11-02T16:22:11",
-    "default_stream": "https://myradio24.org/9316_320"
-  },
-  {
-    "id": 595,
-    "name": "One DJ Radio",
-    "slug": "one-dj-radioone-dj-radio",
-    "description": "One DJ Radio - интернет радио нового поколения!\r\nВсе краски танцевальной музыки, хаус, техно, брейкс, транс и многое другое. Авторские программы, миксы и живые DJ сеты от известных и начинающих DJ.\r\nСлушайте нас в любое время и в любой точке мира! Круглосуточно онлайн!",
-    "enabled": true,
-    "website_url": "https://onedjradio.ru",
-    "logo": "https://app.streaming.center/media/catalog_logos/radio_71205.png",
-    "country": {
-      "id": 192,
-      "iso2": "ru",
-      "name": "Россия",
-      "name_eng": "Russia"
-    },
-    "region": {
-      "id": 2839,
-      "name": "Челябинская Область",
-      "name_eng": "Chelyabinsk Oblast"
-    },
-    "city": {
-      "id": 185324,
-      "name": "Копейск",
-      "name_eng": "Kopeysk"
-    },
-    "genres": [
-      {
-        "id": 22,
-        "name": "Техно",
-        "name_eng": "Techno"
-      },
-      {
-        "id": 34,
-        "name": "Хаус",
-        "name_eng": "House"
-      },
-      {
-        "id": 58,
-        "name": "Dj сеты",
-        "name_eng": "Dj sets"
-      }
-    ],
-    "languages": [
-      {
-        "id": 1,
-        "name": "Русский",
-        "name_eng": "Russian"
-      }
-    ],
-    "streams": [
-      {
-        "id": 491,
-        "stream_url": "http://stream.volnorez.com:8001/live-app/911492",
-        "audio_format": "mp3",
-        "bitrate": 128,
-        "server_type": "icecast"
-      }
-    ],
-    "total_votes": 359,
-    "total_score": 1817,
-    "user_id": 1237,
-    "rating": 5.061281337047354,
-    "created": "2025-01-31T16:44:29",
-    "default_stream": null
   },
   {
     "id": 112,
@@ -1796,6 +1862,77 @@
     "default_stream": null
   },
   {
+    "id": 400,
+    "name": "Minatrix.FM",
+    "slug": "minatrix-fmminatriks-fm-pr",
+    "description": "Минатрикс.FM представляет собой современный прогрессивный проект онлайн радио в музыкально-развлекательном формате. Здесь вы услышите авторские программы самых популярных отечественных и зарубежных ди-джеев, прямые трансляции клубов и имеете возможность пообщаться с диджеями лично.",
+    "enabled": true,
+    "website_url": "https://minatrix.fm",
+    "logo": "https://app.streaming.center/media/catalog_logos/radio_70663.png",
+    "country": {
+      "id": 231,
+      "iso2": "ua",
+      "name": "Украина",
+      "name_eng": "Ukraine"
+    },
+    "region": {
+      "id": 3588,
+      "name": "Одесская область",
+      "name_eng": "Odesa Oblast"
+    },
+    "city": {
+      "id": 196932,
+      "name": "Одесса",
+      "name_eng": "Odesa"
+    },
+    "genres": [
+      {
+        "id": 10,
+        "name": "Танцевальное",
+        "name_eng": "Dance"
+      },
+      {
+        "id": 53,
+        "name": "Клубное",
+        "name_eng": "Club"
+      },
+      {
+        "id": 58,
+        "name": "Dj сеты",
+        "name_eng": "Dj sets"
+      }
+    ],
+    "languages": [
+      {
+        "id": 1,
+        "name": "Русский",
+        "name_eng": "Russian"
+      }
+    ],
+    "streams": [
+      {
+        "id": 312,
+        "stream_url": "http://minatrix.fm:8000/play",
+        "audio_format": "mp3",
+        "bitrate": 128,
+        "server_type": "icecast"
+      },
+      {
+        "id": 313,
+        "stream_url": "http://minatrix.fm:8000/play",
+        "audio_format": "mp3",
+        "bitrate": 128,
+        "server_type": "icecast"
+      }
+    ],
+    "total_votes": 2,
+    "total_score": 10,
+    "user_id": 1846,
+    "rating": 5.0,
+    "created": "2020-06-06T16:30:17",
+    "default_stream": null
+  },
+  {
     "id": 297,
     "name": "Smooth Jazz Radio BSJ",
     "slug": "smooth-jazz-radio-bsj24-chasa-v-sutki",
@@ -1911,6 +2048,20 @@
         "audio_format": "mp3",
         "bitrate": 128,
         "server_type": "icecast"
+      },
+      {
+        "id": 173,
+        "stream_url": "https://s0.radioheart.ru:8000/tanzfm",
+        "audio_format": "aac",
+        "bitrate": 96,
+        "server_type": "icecast"
+      },
+      {
+        "id": 174,
+        "stream_url": "https://s0.radioheart.ru:8000/tfm48",
+        "audio_format": "aac",
+        "bitrate": 48,
+        "server_type": "icecast"
       }
     ],
     "total_votes": 52,
@@ -1919,84 +2070,6 @@
     "rating": 4.980769230769231,
     "created": "2016-08-02T11:38:16",
     "default_stream": "https://listen6.myradio24.com/61733"
-  },
-  {
-    "id": 579,
-    "name": "СИБИРСКАЯ СТАНЦИЯ",
-    "slug": "sibirskaia-stantsiiavsia-neformalna",
-    "description": "Вся неформальная музыка СИБИРИ от Electro/Dark/Ambient и Dungeon Synth до Emo/Black/Brutal/Death Metal. Возможны аудиоматериалы 18+.",
-    "enabled": true,
-    "website_url": "http://vk.com/siberian_station",
-    "logo": "https://app.streaming.center/media/catalog_logos/radio_71156.png",
-    "country": {
-      "id": 192,
-      "iso2": "ru",
-      "name": "Россия",
-      "name_eng": "Russia"
-    },
-    "region": {
-      "id": 2837,
-      "name": "Кузба́сс",
-      "name_eng": "Kemerovo Oblast"
-    },
-    "city": {
-      "id": 185170,
-      "name": "Новокузнецк",
-      "name_eng": "Novokuznetsk"
-    },
-    "genres": [
-      {
-        "id": 26,
-        "name": "Хэви-метал",
-        "name_eng": "Heavy Metal"
-      },
-      {
-        "id": 29,
-        "name": "Эмбиент",
-        "name_eng": "Ambient"
-      },
-      {
-        "id": 56,
-        "name": "Разное",
-        "name_eng": "Various"
-      }
-    ],
-    "languages": [
-      {
-        "id": 1,
-        "name": "Русский",
-        "name_eng": "Russian"
-      }
-    ],
-    "streams": [
-      {
-        "id": 467,
-        "stream_url": "https://siberian-station.online:8000/radio.mp3",
-        "audio_format": "mp3",
-        "bitrate": 192,
-        "server_type": "icecast"
-      },
-      {
-        "id": 468,
-        "stream_url": "https://siberian-station.online:8000/radio.mp3",
-        "audio_format": "mp3",
-        "bitrate": 192,
-        "server_type": "icecast"
-      },
-      {
-        "id": 469,
-        "stream_url": "https://siberian-station.online:8000/radio.mp3",
-        "audio_format": "mp3",
-        "bitrate": 192,
-        "server_type": "icecast"
-      }
-    ],
-    "total_votes": 30,
-    "total_score": 148,
-    "user_id": 2004,
-    "rating": 4.933333333333334,
-    "created": "2024-10-18T06:29:34",
-    "default_stream": "https://siberian-station.online:8000/radio.mp3"
   },
   {
     "id": 266,
@@ -2075,6 +2148,77 @@
     "rating": 4.929411764705883,
     "created": "2017-06-04T17:25:20",
     "default_stream": "https://myradio24.org/angels"
+  },
+  {
+    "id": 543,
+    "name": "RadIO Chicago.161",
+    "slug": "radio-chicago-161angloiazychnyi-za",
+    "description": "Англоязычный зарубежный ОлдСкул и Миллениал Хип-Хап! Нон стоп вещание!",
+    "enabled": true,
+    "website_url": "https://vk.com/realniggarap161chicago",
+    "logo": "https://app.streaming.center/media/catalog_logos/radio_71056.png",
+    "country": {
+      "id": 192,
+      "iso2": "ru",
+      "name": "Россия",
+      "name_eng": "Russia"
+    },
+    "region": {
+      "id": 2785,
+      "name": "Ростовская Область",
+      "name_eng": "Rostov Oblast"
+    },
+    "city": {
+      "id": 182303,
+      "name": "Ростов-на-Дону",
+      "name_eng": "Rostov-on-Don"
+    },
+    "genres": [
+      {
+        "id": 6,
+        "name": "Рэп",
+        "name_eng": "Rap"
+      },
+      {
+        "id": 14,
+        "name": "Хип-хоп",
+        "name_eng": "Hip-Hop"
+      },
+      {
+        "id": 58,
+        "name": "Dj сеты",
+        "name_eng": "Dj sets"
+      }
+    ],
+    "languages": [
+      {
+        "id": 2,
+        "name": "Английский",
+        "name_eng": "English"
+      }
+    ],
+    "streams": [
+      {
+        "id": 434,
+        "stream_url": "https://myradio24.org/92398",
+        "audio_format": "mp3",
+        "bitrate": 128,
+        "server_type": "icecast"
+      },
+      {
+        "id": 435,
+        "stream_url": "https://myradio24.org/92398",
+        "audio_format": "mp3",
+        "bitrate": 128,
+        "server_type": "icecast"
+      }
+    ],
+    "total_votes": 88,
+    "total_score": 433,
+    "user_id": 1979,
+    "rating": 4.920454545454546,
+    "created": "2023-07-04T16:21:59",
+    "default_stream": "https://myradio24.org/92398"
   },
   {
     "id": 410,
@@ -2327,148 +2471,6 @@
     "user_id": 360,
     "rating": 4.869767441860465,
     "created": "2015-06-18T20:46:13",
-    "default_stream": null
-  },
-  {
-    "id": 543,
-    "name": "RadIO Chicago.161",
-    "slug": "radio-chicago-161angloiazychnyi-za",
-    "description": "Англоязычный зарубежный ОлдСкул и Миллениал Хип-Хап! Нон стоп вещание!",
-    "enabled": true,
-    "website_url": "https://vk.com/realniggarap161chicago",
-    "logo": "https://app.streaming.center/media/catalog_logos/radio_71056.png",
-    "country": {
-      "id": 192,
-      "iso2": "ru",
-      "name": "Россия",
-      "name_eng": "Russia"
-    },
-    "region": {
-      "id": 2785,
-      "name": "Ростовская Область",
-      "name_eng": "Rostov Oblast"
-    },
-    "city": {
-      "id": 182303,
-      "name": "Ростов-на-Дону",
-      "name_eng": "Rostov-on-Don"
-    },
-    "genres": [
-      {
-        "id": 6,
-        "name": "Рэп",
-        "name_eng": "Rap"
-      },
-      {
-        "id": 14,
-        "name": "Хип-хоп",
-        "name_eng": "Hip-Hop"
-      },
-      {
-        "id": 58,
-        "name": "Dj сеты",
-        "name_eng": "Dj sets"
-      }
-    ],
-    "languages": [
-      {
-        "id": 2,
-        "name": "Английский",
-        "name_eng": "English"
-      }
-    ],
-    "streams": [
-      {
-        "id": 434,
-        "stream_url": "https://myradio24.org/92398",
-        "audio_format": "mp3",
-        "bitrate": 128,
-        "server_type": "icecast"
-      },
-      {
-        "id": 435,
-        "stream_url": "https://myradio24.org/92398",
-        "audio_format": "mp3",
-        "bitrate": 128,
-        "server_type": "icecast"
-      }
-    ],
-    "total_votes": 87,
-    "total_score": 423,
-    "user_id": 1979,
-    "rating": 4.862068965517241,
-    "created": "2023-07-04T16:21:59",
-    "default_stream": "https://myradio24.org/92398"
-  },
-  {
-    "id": 566,
-    "name": "ARBUZ FM",
-    "slug": "arbuz-fmradio-arbuz-fm",
-    "description": "Радио ARBUZ FM это радио для Любителям Восточного Шансона , современной Восточной Музыки , для машины и в кругу друзей , семьи . Приятного прослушивания",
-    "enabled": true,
-    "website_url": "https://arbuzfm.ru",
-    "logo": "https://app.streaming.center/media/catalog_logos/radio_71118.jpg",
-    "country": {
-      "id": 192,
-      "iso2": "ru",
-      "name": "Россия",
-      "name_eng": "Russia"
-    },
-    "region": {
-      "id": 1888,
-      "name": "Единецкий район",
-      "name_eng": "Raionul Edineţ"
-    },
-    "city": {
-      "id": 182975,
-      "name": "Москва",
-      "name_eng": "Moscow"
-    },
-    "genres": [
-      {
-        "id": 10,
-        "name": "Танцевальное",
-        "name_eng": "Dance"
-      },
-      {
-        "id": 39,
-        "name": "Этно",
-        "name_eng": "Ethno"
-      },
-      {
-        "id": 51,
-        "name": "Шансон",
-        "name_eng": "Chanson"
-      }
-    ],
-    "languages": [
-      {
-        "id": 1,
-        "name": "Русский",
-        "name_eng": "Russian"
-      }
-    ],
-    "streams": [
-      {
-        "id": 455,
-        "stream_url": "http://arbuzfm.ru:8485/live.ogg",
-        "audio_format": "aac",
-        "bitrate": 128,
-        "server_type": "icecast"
-      },
-      {
-        "id": 456,
-        "stream_url": "http://arbuzfm.ru:8485/live.mp3",
-        "audio_format": "mp3",
-        "bitrate": 128,
-        "server_type": "icecast"
-      }
-    ],
-    "total_votes": 14,
-    "total_score": 68,
-    "user_id": 1993,
-    "rating": 4.857142857142857,
-    "created": "2024-06-24T09:13:36",
     "default_stream": null
   },
   {
@@ -2959,136 +2961,6 @@
     "default_stream": null
   },
   {
-    "id": 613,
-    "name": "Радио Анастасия",
-    "slug": "radio-anastasiiazdravstvuite-d",
-    "description": "Здравствуйте, друзья! Меня зовут Анастасия, и на этом радио я хочу поделиться лучшими хитами из моей большой музыкальной коллекции. Слушайте и наслаждайтесь!",
-    "enabled": true,
-    "website_url": "http://anastasiya.myrh.ru/",
-    "logo": "https://app.streaming.center/media/catalog_logos/radio_71231.jpg",
-    "country": {
-      "id": 192,
-      "iso2": "ru",
-      "name": "Россия",
-      "name_eng": "Russia"
-    },
-    "region": {
-      "id": 2770,
-      "name": "Ярославская Область",
-      "name_eng": "Yaroslavl Oblast"
-    },
-    "city": {
-      "id": 181382,
-      "name": "Ярославль",
-      "name_eng": "Yaroslavl"
-    },
-    "genres": [
-      {
-        "id": 18,
-        "name": "Поп",
-        "name_eng": "Pop"
-      },
-      {
-        "id": 21,
-        "name": "Рок",
-        "name_eng": "Rock"
-      },
-      {
-        "id": 41,
-        "name": "Евродэнс",
-        "name_eng": "Eurodance"
-      }
-    ],
-    "languages": [
-      {
-        "id": 1,
-        "name": "Русский",
-        "name_eng": "Russian"
-      }
-    ],
-    "streams": [
-      {
-        "id": 513,
-        "stream_url": "http://a6.radioheart.ru:8011/RH82406",
-        "audio_format": "mp3",
-        "bitrate": 128,
-        "server_type": "icecast"
-      },
-      {
-        "id": 514,
-        "stream_url": "http://a6.radioheart.ru:8011/RH82406",
-        "audio_format": "mp3",
-        "bitrate": 128,
-        "server_type": "icecast"
-      }
-    ],
-    "total_votes": 7,
-    "total_score": 34,
-    "user_id": 2032,
-    "rating": 4.857142857142857,
-    "created": "2025-07-01T01:17:40",
-    "default_stream": null
-  },
-  {
-    "id": 529,
-    "name": "Страна талантов",
-    "slug": "strana-talantovmezhdunarodnoe-i",
-    "description": "Международное информационное музыкально-литературное радио «Страна талантов».\r\nСоздано для продвижения творчества талантливых людей во всех областях культуры, не имея границ (вне политики).",
-    "enabled": true,
-    "website_url": "https://volnorez.com/strana-talantov",
-    "logo": "https://app.streaming.center/media/catalog_logos/radio_71012.jpg",
-    "country": {
-      "id": 192,
-      "iso2": "ru",
-      "name": "Россия",
-      "name_eng": "Russia"
-    },
-    "region": {
-      "id": 1888,
-      "name": "Единецкий район",
-      "name_eng": "Raionul Edineţ"
-    },
-    "city": {
-      "id": 182975,
-      "name": "Москва",
-      "name_eng": "Moscow"
-    },
-    "genres": [
-      {
-        "id": 5,
-        "name": "Информационное",
-        "name_eng": "Informational"
-      },
-      {
-        "id": 56,
-        "name": "Разное",
-        "name_eng": "Various"
-      }
-    ],
-    "languages": [
-      {
-        "id": 1,
-        "name": "Русский",
-        "name_eng": "Russian"
-      }
-    ],
-    "streams": [
-      {
-        "id": 424,
-        "stream_url": "https://stream.volnorez.com/live-app/879346",
-        "audio_format": "mp3",
-        "bitrate": 128,
-        "server_type": "icecast"
-      }
-    ],
-    "total_votes": 14,
-    "total_score": 68,
-    "user_id": 1967,
-    "rating": 4.857142857142857,
-    "created": "2023-03-19T20:43:46",
-    "default_stream": "https://stream.volnorez.com/live-app/879346"
-  },
-  {
     "id": 367,
     "name": "AIR TOUCH",
     "slug": "air-touchair-touch-ne",
@@ -3337,7 +3209,7 @@
     "city": {
       "id": 182244,
       "name": "Санкт-Петербург",
-      "name_eng": "Leningrad"
+      "name_eng": "Saint Petersburg\n"
     },
     "genres": [
       {
@@ -3734,77 +3606,6 @@
     "default_stream": "https://myradio24.org/sohofm"
   },
   {
-    "id": 154,
-    "name": "Moscow Boogie Light",
-    "slug": "moscow-boogie-lightworld-s-rock-n",
-    "description": "World's Rock 'n' Roll 'n' Boogie Music\r\nКлассический рок-н-ролл, свинг, джаз, буги - 30-х, 40-х, 50-х годов.\r\nВзрослая музыка 7 дней в неделю, 24 часа в сутки.",
-    "enabled": true,
-    "website_url": "http://radio.msk0.ru",
-    "logo": "https://app.streaming.center/media/catalog_logos/radio_69667.png",
-    "country": {
-      "id": 192,
-      "iso2": "ru",
-      "name": "Россия",
-      "name_eng": "Russia"
-    },
-    "region": {
-      "id": 1888,
-      "name": "Единецкий район",
-      "name_eng": "Raionul Edineţ"
-    },
-    "city": {
-      "id": 182975,
-      "name": "Москва",
-      "name_eng": "Moscow"
-    },
-    "genres": [
-      {
-        "id": 7,
-        "name": "Блюз",
-        "name_eng": "Blues"
-      },
-      {
-        "id": 15,
-        "name": "Джаз",
-        "name_eng": "Jazz"
-      },
-      {
-        "id": 17,
-        "name": "Старые песни",
-        "name_eng": "Oldies"
-      }
-    ],
-    "languages": [
-      {
-        "id": 2,
-        "name": "Английский",
-        "name_eng": "English"
-      }
-    ],
-    "streams": [
-      {
-        "id": 118,
-        "stream_url": "http://listen.radionomy.com/moscowboogie",
-        "audio_format": "mp3",
-        "bitrate": 128,
-        "server_type": "icecast"
-      },
-      {
-        "id": 119,
-        "stream_url": "http://listen.radionomy.com/moscowboogie",
-        "audio_format": "mp3",
-        "bitrate": 128,
-        "server_type": "icecast"
-      }
-    ],
-    "total_votes": 460,
-    "total_score": 2133,
-    "user_id": 1620,
-    "rating": 4.636956521739131,
-    "created": "2015-10-23T15:12:34",
-    "default_stream": null
-  },
-  {
     "id": 486,
     "name": "Рок-Атака",
     "slug": "rok-atakaonline-radio-r",
@@ -3954,6 +3755,77 @@
     "default_stream": "https://listen.myrh.ru/sk-radio/mobile"
   },
   {
+    "id": 154,
+    "name": "Moscow Boogie Light",
+    "slug": "moscow-boogie-lightworld-s-rock-n",
+    "description": "World's Rock 'n' Roll 'n' Boogie Music\r\nКлассический рок-н-ролл, свинг, джаз, буги - 30-х, 40-х, 50-х годов.\r\nВзрослая музыка 7 дней в неделю, 24 часа в сутки.",
+    "enabled": true,
+    "website_url": "http://radio.msk0.ru",
+    "logo": "https://app.streaming.center/media/catalog_logos/radio_69667.png",
+    "country": {
+      "id": 192,
+      "iso2": "ru",
+      "name": "Россия",
+      "name_eng": "Russia"
+    },
+    "region": {
+      "id": 1888,
+      "name": "Единецкий район",
+      "name_eng": "Raionul Edineţ"
+    },
+    "city": {
+      "id": 182975,
+      "name": "Москва",
+      "name_eng": "Moscow"
+    },
+    "genres": [
+      {
+        "id": 7,
+        "name": "Блюз",
+        "name_eng": "Blues"
+      },
+      {
+        "id": 15,
+        "name": "Джаз",
+        "name_eng": "Jazz"
+      },
+      {
+        "id": 17,
+        "name": "Старые песни",
+        "name_eng": "Oldies"
+      }
+    ],
+    "languages": [
+      {
+        "id": 2,
+        "name": "Английский",
+        "name_eng": "English"
+      }
+    ],
+    "streams": [
+      {
+        "id": 118,
+        "stream_url": "http://listen.radionomy.com/moscowboogie",
+        "audio_format": "mp3",
+        "bitrate": 128,
+        "server_type": "icecast"
+      },
+      {
+        "id": 119,
+        "stream_url": "http://listen.radionomy.com/moscowboogie",
+        "audio_format": "mp3",
+        "bitrate": 128,
+        "server_type": "icecast"
+      }
+    ],
+    "total_votes": 461,
+    "total_score": 2134,
+    "user_id": 1620,
+    "rating": 4.629067245119306,
+    "created": "2015-10-23T15:12:34",
+    "default_stream": null
+  },
+  {
     "id": 101,
     "name": "Atm.Fm",
     "slug": "atm-fmatm-fm-progre",
@@ -3975,7 +3847,7 @@
     "city": {
       "id": 182244,
       "name": "Санкт-Петербург",
-      "name_eng": "Leningrad"
+      "name_eng": "Saint Petersburg\n"
     },
     "genres": [
       {
@@ -4694,60 +4566,6 @@
     "default_stream": null
   },
   {
-    "id": 379,
-    "name": "Радио Респект",
-    "slug": "radio-respektradio-respect",
-    "description": "Radio Respect – это стильно – музыкальный  сетевой радио проект.",
-    "enabled": true,
-    "website_url": "http://radiorespect.com.ua/",
-    "logo": "https://app.streaming.center/media/catalog_logos/radio_70590.png",
-    "country": {
-      "id": 231,
-      "iso2": "ua",
-      "name": "Украина",
-      "name_eng": "Ukraine"
-    },
-    "region": {
-      "id": 3593,
-      "name": "Киев",
-      "name_eng": "Kyiv City"
-    },
-    "city": {
-      "id": 197402,
-      "name": "Киев",
-      "name_eng": "Kyiv"
-    },
-    "genres": [
-      {
-        "id": 18,
-        "name": "Поп",
-        "name_eng": "Pop"
-      }
-    ],
-    "languages": [
-      {
-        "id": 1,
-        "name": "Русский",
-        "name_eng": "Russian"
-      }
-    ],
-    "streams": [
-      {
-        "id": 296,
-        "stream_url": "http://listen6.myradio24.com:9000/95451",
-        "audio_format": "mp3",
-        "bitrate": 320,
-        "server_type": "icecast"
-      }
-    ],
-    "total_votes": 5,
-    "total_score": 23,
-    "user_id": 1826,
-    "rating": 4.6,
-    "created": "2020-02-08T23:50:16",
-    "default_stream": null
-  },
-  {
     "id": 325,
     "name": "Радио Странствий",
     "slug": "radio-stranstviiradio-stranstvi",
@@ -4840,7 +4658,7 @@
     "city": {
       "id": 182244,
       "name": "Санкт-Петербург",
-      "name_eng": "Leningrad"
+      "name_eng": "Saint Petersburg\n"
     },
     "genres": [
       {
@@ -5476,7 +5294,7 @@
     "city": {
       "id": 182244,
       "name": "Санкт-Петербург",
-      "name_eng": "Leningrad"
+      "name_eng": "Saint Petersburg\n"
     },
     "genres": [
       {
@@ -5523,67 +5341,6 @@
     "user_id": 1613,
     "rating": 4.523809523809524,
     "created": "2015-08-26T01:58:02",
-    "default_stream": null
-  },
-  {
-    "id": 453,
-    "name": "loveprod_radio",
-    "slug": "loveprod-radiov-efire-zvuchat",
-    "description": "В эфире звучат популярные треки разных исполнителей, каждый день мы встречаемся в эфире для того, чтобы что-нибудь обсудить, открыть для себя новое. И всё это, под приятную музыку в эфире.",
-    "enabled": true,
-    "website_url": "",
-    "logo": "https://app.streaming.center/media/catalog_logos/radio_70817.jpg",
-    "country": {
-      "id": 192,
-      "iso2": "ru",
-      "name": "Россия",
-      "name_eng": "Russia"
-    },
-    "region": {
-      "id": 1888,
-      "name": "Единецкий район",
-      "name_eng": "Raionul Edineţ"
-    },
-    "city": {
-      "id": 182975,
-      "name": "Москва",
-      "name_eng": "Moscow"
-    },
-    "genres": [
-      {
-        "id": 18,
-        "name": "Поп",
-        "name_eng": "Pop"
-      }
-    ],
-    "languages": [
-      {
-        "id": 1,
-        "name": "Русский",
-        "name_eng": "Russian"
-      }
-    ],
-    "streams": [
-      {
-        "id": 360,
-        "stream_url": "http://loveprod.ru:8000/live",
-        "audio_format": "mp3",
-        "bitrate": 320,
-        "server_type": "icecast"
-      },
-      {
-        "id": 361,
-        "stream_url": "http://loveprod.ru:8000/live",
-        "audio_format": "mp3",
-        "bitrate": 320,
-        "server_type": "icecast"
-      }
-    ],
-    "total_votes": 8,
-    "total_score": 36,
-    "user_id": 1894,
-    "rating": 4.5,
-    "created": "2021-10-28T20:44:41",
     "default_stream": null
   },
   {
@@ -6244,70 +6001,6 @@
     "default_stream": null
   },
   {
-    "id": 187,
-    "name": "All Time 70s 80s Greatest",
-    "slug": "all-time-70s-80s-greatestwelcome-to-your",
-    "description": "Welcome to your very own personal dedicated 70s and 80s Internet Radio Station ! Nothing but the 70s and 80s, Non-Stop all day and every day. All classic hits, one hit wonders and all those songs you had forgotten about..! 24/7 - 365 days music free to your computer, smart phone and radio..! Start listening Now !",
-    "enabled": true,
-    "website_url": "http://alltimegreatestradio.weebly.com/",
-    "logo": "https://app.streaming.center/media/catalog_logos/radio_69790.jpg",
-    "country": {
-      "id": 55,
-      "iso2": "cy",
-      "name": "Кипр",
-      "name_eng": "Cyprus"
-    },
-    "region": {
-      "id": 726,
-      "name": "Лимасол",
-      "name_eng": "Limassol District"
-    },
-    "city": {
-      "id": 47952,
-      "name": "Лимасол",
-      "name_eng": "Limassol"
-    },
-    "genres": [
-      {
-        "id": 8,
-        "name": "Классический Рок",
-        "name_eng": "Rock Classics"
-      },
-      {
-        "id": 18,
-        "name": "Поп",
-        "name_eng": "Pop"
-      },
-      {
-        "id": 47,
-        "name": "Ретро",
-        "name_eng": "Retro"
-      }
-    ],
-    "languages": [
-      {
-        "id": 2,
-        "name": "Английский",
-        "name_eng": "English"
-      }
-    ],
-    "streams": [
-      {
-        "id": 141,
-        "stream_url": "http://streamingp.shoutcast.com/JamendoLounge",
-        "audio_format": "mp3",
-        "bitrate": 128,
-        "server_type": "icecast"
-      }
-    ],
-    "total_votes": 45,
-    "total_score": 198,
-    "user_id": 1653,
-    "rating": 4.4,
-    "created": "2016-02-21T01:14:09",
-    "default_stream": null
-  },
-  {
     "id": 455,
     "name": "Рассвет",
     "slug": "rassvetradio-rassvet-p",
@@ -6433,6 +6126,84 @@
     "user_id": 1659,
     "rating": 4.375,
     "created": "2016-03-20T01:55:31",
+    "default_stream": null
+  },
+  {
+    "id": 156,
+    "name": "KUFM | Komplete Ultimate ",
+    "slug": "kufm-komplete-ultimate-kufm-eto-saundt",
+    "description": "KUFM это саундтрек для жизни. Это яркие, мелодичные всплески, наложенные на плотный бас, это жесткое звучание классического техно, это жизнь в цифровой оболочке современного мира, определяющая твои эмоции от трека к треку. KUFM - экспериментальная музыка для мечтателей, это музыка для тех, кто к нам присоединился.",
+    "enabled": true,
+    "website_url": "http://kufm.space/",
+    "logo": "https://app.streaming.center/media/catalog_logos/radio_69684.jpg",
+    "country": {
+      "id": 192,
+      "iso2": "ru",
+      "name": "Россия",
+      "name_eng": "Russia"
+    },
+    "region": {
+      "id": 1888,
+      "name": "Единецкий район",
+      "name_eng": "Raionul Edineţ"
+    },
+    "city": {
+      "id": 182975,
+      "name": "Москва",
+      "name_eng": "Moscow"
+    },
+    "genres": [
+      {
+        "id": 22,
+        "name": "Техно",
+        "name_eng": "Techno"
+      },
+      {
+        "id": 40,
+        "name": "Электронное",
+        "name_eng": "Electronic"
+      },
+      {
+        "id": 58,
+        "name": "Dj сеты",
+        "name_eng": "Dj sets"
+      }
+    ],
+    "languages": [
+      {
+        "id": 1,
+        "name": "Русский",
+        "name_eng": "Russian"
+      }
+    ],
+    "streams": [
+      {
+        "id": 120,
+        "stream_url": "http://85.21.240.53:8000/kufm",
+        "audio_format": "mp3",
+        "bitrate": 128,
+        "server_type": "icecast"
+      },
+      {
+        "id": 121,
+        "stream_url": "http://85.21.240.53:8000/kufm",
+        "audio_format": "mp3",
+        "bitrate": 128,
+        "server_type": "icecast"
+      },
+      {
+        "id": 122,
+        "stream_url": "http://85.21.240.53:8000/kufm",
+        "audio_format": "mp3",
+        "bitrate": 128,
+        "server_type": "icecast"
+      }
+    ],
+    "total_votes": 8,
+    "total_score": 35,
+    "user_id": 1622,
+    "rating": 4.375,
+    "created": "2015-11-10T13:50:12",
     "default_stream": null
   },
   {
@@ -6972,6 +6743,70 @@
     "user_id": 1888,
     "rating": 4.333333333333333,
     "created": "2021-07-06T22:53:56",
+    "default_stream": null
+  },
+  {
+    "id": 187,
+    "name": "All Time 70s 80s Greatest",
+    "slug": "all-time-70s-80s-greatestwelcome-to-your",
+    "description": "Welcome to your very own personal dedicated 70s and 80s Internet Radio Station ! Nothing but the 70s and 80s, Non-Stop all day and every day. All classic hits, one hit wonders and all those songs you had forgotten about..! 24/7 - 365 days music free to your computer, smart phone and radio..! Start listening Now !",
+    "enabled": true,
+    "website_url": "http://alltimegreatestradio.weebly.com/",
+    "logo": "https://app.streaming.center/media/catalog_logos/radio_69790.jpg",
+    "country": {
+      "id": 55,
+      "iso2": "cy",
+      "name": "Кипр",
+      "name_eng": "Cyprus"
+    },
+    "region": {
+      "id": 726,
+      "name": "Лимасол",
+      "name_eng": "Limassol District"
+    },
+    "city": {
+      "id": 47952,
+      "name": "Лимасол",
+      "name_eng": "Limassol"
+    },
+    "genres": [
+      {
+        "id": 8,
+        "name": "Классический Рок",
+        "name_eng": "Rock Classics"
+      },
+      {
+        "id": 18,
+        "name": "Поп",
+        "name_eng": "Pop"
+      },
+      {
+        "id": 47,
+        "name": "Ретро",
+        "name_eng": "Retro"
+      }
+    ],
+    "languages": [
+      {
+        "id": 2,
+        "name": "Английский",
+        "name_eng": "English"
+      }
+    ],
+    "streams": [
+      {
+        "id": 141,
+        "stream_url": "http://streamingp.shoutcast.com/JamendoLounge",
+        "audio_format": "mp3",
+        "bitrate": 128,
+        "server_type": "icecast"
+      }
+    ],
+    "total_votes": 46,
+    "total_score": 199,
+    "user_id": 1653,
+    "rating": 4.326086956521739,
+    "created": "2016-02-21T01:14:09",
     "default_stream": null
   },
   {
@@ -9498,84 +9333,6 @@
     "default_stream": null
   },
   {
-    "id": 462,
-    "name": "VINILA-VANILA",
-    "slug": "vinila-vanilaigraem-s-vinila",
-    "description": "Играем с винила в отличном качестве (128/320kbps) Garage Rock, Psychedelic Rock, Stoner Rock, Psych Pop, Dub, Reggae, Psy Trance. Особо почитаем золотую эру психоделического рока '69, но не ограничиваем свое восприятие) Многие кристаллы, пока так и не вышли на виниле, но их блеск настолько ярок, что они все равно проникают в наш эфир. Но таких всего лишь 1% от эфира.\r\n",
-    "enabled": true,
-    "website_url": "http://vinilavanila.online",
-    "logo": "https://app.streaming.center/media/catalog_logos/radio_70840.jpg",
-    "country": {
-      "id": 192,
-      "iso2": "ru",
-      "name": "Россия",
-      "name_eng": "Russia"
-    },
-    "region": {
-      "id": 1888,
-      "name": "Единецкий район",
-      "name_eng": "Raionul Edineţ"
-    },
-    "city": {
-      "id": 182975,
-      "name": "Москва",
-      "name_eng": "Moscow"
-    },
-    "genres": [
-      {
-        "id": 21,
-        "name": "Рок",
-        "name_eng": "Rock"
-      },
-      {
-        "id": 40,
-        "name": "Электронное",
-        "name_eng": "Electronic"
-      },
-      {
-        "id": 45,
-        "name": "Психоделик",
-        "name_eng": "Psychedelic"
-      }
-    ],
-    "languages": [
-      {
-        "id": 1,
-        "name": "Русский",
-        "name_eng": "Russian"
-      }
-    ],
-    "streams": [
-      {
-        "id": 368,
-        "stream_url": "https://myradio24.org/vinila",
-        "audio_format": "mp3",
-        "bitrate": 320,
-        "server_type": "icecast"
-      },
-      {
-        "id": 369,
-        "stream_url": "http://myradio24.org/vinila",
-        "audio_format": "mp3",
-        "bitrate": 320,
-        "server_type": "icecast"
-      },
-      {
-        "id": 370,
-        "stream_url": "http://myradio24.org/vinila_128",
-        "audio_format": "mp3",
-        "bitrate": 128,
-        "server_type": "icecast"
-      }
-    ],
-    "total_votes": 3,
-    "total_score": 12,
-    "user_id": 1903,
-    "rating": 4.0,
-    "created": "2022-01-16T15:38:50",
-    "default_stream": "https://myradio24.org/vinila"
-  },
-  {
     "id": 436,
     "name": "Два Берега",
     "slug": "dva-beregapervaia-internet",
@@ -9637,77 +9394,6 @@
     "user_id": 1879,
     "rating": 4.0,
     "created": "2021-02-28T17:17:38",
-    "default_stream": null
-  },
-  {
-    "id": 75,
-    "name": "Радио Благовестие",
-    "slug": "radio-blagovestiekulturno-prosv",
-    "description": "Культурно-просветительский радиоканал \"Благовестие\" - по благословению митрополита Воронежского и Борисоглебского Сергия.\r\n\r\nНа радио \"Благовестие\" - только качественная русская музыка, проникновенные стихи, познавательные программы и религиозные рубрики, свежие новости православия и культурной жизни.\r\n\r\nВы можете услышать нас с 6:00 до 24:00 в Воронеже на частоте 73,55 УКВ, а также онлайн",
-    "enabled": true,
-    "website_url": "http://radio-blagovestie.ru",
-    "logo": "https://app.streaming.center/media/catalog_logos/radio_68827.png",
-    "country": {
-      "id": 192,
-      "iso2": "ru",
-      "name": "Россия",
-      "name_eng": "Russia"
-    },
-    "region": {
-      "id": 2771,
-      "name": "Воронежская Область",
-      "name_eng": "Voronezh Oblast"
-    },
-    "city": {
-      "id": 181464,
-      "name": "Воронеж",
-      "name_eng": "Voronezh"
-    },
-    "genres": [
-      {
-        "id": 18,
-        "name": "Поп",
-        "name_eng": "Pop"
-      },
-      {
-        "id": 21,
-        "name": "Рок",
-        "name_eng": "Rock"
-      },
-      {
-        "id": 49,
-        "name": "Фолк",
-        "name_eng": "Folk"
-      }
-    ],
-    "languages": [
-      {
-        "id": 1,
-        "name": "Русский",
-        "name_eng": "Russian"
-      }
-    ],
-    "streams": [
-      {
-        "id": 67,
-        "stream_url": "http://live.borneo.ru:8888/bv128",
-        "audio_format": "mp3",
-        "bitrate": 128,
-        "server_type": "icecast"
-      },
-      {
-        "id": 68,
-        "stream_url": "http://live.borneo.ru:8888/bv64",
-        "audio_format": "mp3",
-        "bitrate": 64,
-        "server_type": "icecast"
-      }
-    ],
-    "total_votes": 9,
-    "total_score": 36,
-    "user_id": 682,
-    "rating": 4.0,
-    "created": "2013-04-09T21:02:29",
     "default_stream": null
   },
   {
@@ -10243,7 +9929,7 @@
     "city": {
       "id": 182244,
       "name": "Санкт-Петербург",
-      "name_eng": "Leningrad"
+      "name_eng": "Saint Petersburg\n"
     },
     "genres": [
       {
@@ -10549,6 +10235,77 @@
     "default_stream": null
   },
   {
+    "id": 75,
+    "name": "Радио Благовестие",
+    "slug": "radio-blagovestiekulturno-prosv",
+    "description": "Культурно-просветительский радиоканал \"Благовестие\" - по благословению митрополита Воронежского и Борисоглебского Сергия.\r\n\r\nНа радио \"Благовестие\" - только качественная русская музыка, проникновенные стихи, познавательные программы и религиозные рубрики, свежие новости православия и культурной жизни.\r\n\r\nВы можете услышать нас с 6:00 до 24:00 в Воронеже на частоте 73,55 УКВ, а также онлайн",
+    "enabled": true,
+    "website_url": "http://radio-blagovestie.ru",
+    "logo": "https://app.streaming.center/media/catalog_logos/radio_68827.png",
+    "country": {
+      "id": 192,
+      "iso2": "ru",
+      "name": "Россия",
+      "name_eng": "Russia"
+    },
+    "region": {
+      "id": 2771,
+      "name": "Воронежская Область",
+      "name_eng": "Voronezh Oblast"
+    },
+    "city": {
+      "id": 181464,
+      "name": "Воронеж",
+      "name_eng": "Voronezh"
+    },
+    "genres": [
+      {
+        "id": 18,
+        "name": "Поп",
+        "name_eng": "Pop"
+      },
+      {
+        "id": 21,
+        "name": "Рок",
+        "name_eng": "Rock"
+      },
+      {
+        "id": 49,
+        "name": "Фолк",
+        "name_eng": "Folk"
+      }
+    ],
+    "languages": [
+      {
+        "id": 1,
+        "name": "Русский",
+        "name_eng": "Russian"
+      }
+    ],
+    "streams": [
+      {
+        "id": 67,
+        "stream_url": "http://live.borneo.ru:8888/bv128",
+        "audio_format": "mp3",
+        "bitrate": 128,
+        "server_type": "icecast"
+      },
+      {
+        "id": 68,
+        "stream_url": "http://live.borneo.ru:8888/bv64",
+        "audio_format": "mp3",
+        "bitrate": 64,
+        "server_type": "icecast"
+      }
+    ],
+    "total_votes": 10,
+    "total_score": 38,
+    "user_id": 682,
+    "rating": 3.8,
+    "created": "2013-04-09T21:02:29",
+    "default_stream": null
+  },
+  {
     "id": 66,
     "name": "Ocean Stream Radio",
     "slug": "ocean-stream-radiointernet-radio",
@@ -10732,13 +10489,6 @@
       {
         "id": 251,
         "stream_url": "https://s05.volnorez.com/live-app/788219",
-        "audio_format": "mp3",
-        "bitrate": 128,
-        "server_type": "icecast"
-      },
-      {
-        "id": 252,
-        "stream_url": "https://stream.volnorez.com/live-app/788219",
         "audio_format": "mp3",
         "bitrate": 128,
         "server_type": "icecast"
@@ -11463,70 +11213,6 @@
     "default_stream": null
   },
   {
-    "id": 102,
-    "name": "vtsu",
-    "slug": "vtsukharkovskaia-stu",
-    "description": "Харьковская студенческая музыкально-развлекательная радиостанция. Музыкальный формат: dance, pop, disco, r'n'b, Кроме музыкальных блоков в эфире звучат различные развлекательные и познавательные программы. Станция транслирует и программы изготовления столичной синдикейшн-компании \"ФДР Радиоцентр\". Станция создана коллективом Кафедры вычислительной техники и систем управления Украинской Государственной Академии Железнодорожного Транспорта, г. Харьков, является некоммерческим проектом, Ведущие радиостанции - студенты и преподаватели Академии и других Харьковских вузов. Название станции VTSU - аббревиатура названия кафедры на русском языке (Кафедра вычислительной техники и систем управления). Станция начала вещания 12.05.2010, работает исключительно в сети интернет.",
-    "enabled": true,
-    "website_url": "http://vtsu.org.ua:8000",
-    "logo": "https://app.streaming.center/media/catalog_logos/radio_69245.png",
-    "country": {
-      "id": 231,
-      "iso2": "ua",
-      "name": "Украина",
-      "name_eng": "Ukraine"
-    },
-    "region": {
-      "id": 3598,
-      "name": "Харьковская область",
-      "name_eng": "Kharkivs’ka Oblast’"
-    },
-    "city": {
-      "id": 197682,
-      "name": "Харьков",
-      "name_eng": "Kharkiv"
-    },
-    "genres": [
-      {
-        "id": 10,
-        "name": "Танцевальное",
-        "name_eng": "Dance"
-      },
-      {
-        "id": 18,
-        "name": "Поп",
-        "name_eng": "Pop"
-      },
-      {
-        "id": 53,
-        "name": "Клубное",
-        "name_eng": "Club"
-      }
-    ],
-    "languages": [
-      {
-        "id": 1,
-        "name": "Русский",
-        "name_eng": "Russian"
-      }
-    ],
-    "streams": [
-      {
-        "id": 78,
-        "stream_url": "http://vtsu.org.ua:8000/vtsu-pop",
-        "audio_format": "mp3",
-        "bitrate": 128,
-        "server_type": "icecast"
-      }
-    ],
-    "total_votes": 4,
-    "total_score": 13,
-    "user_id": 1576,
-    "rating": 3.25,
-    "created": "2014-04-11T16:36:44",
-    "default_stream": null
-  },
-  {
     "id": 184,
     "name": "Отрыв",
     "slug": "otryvmy-nosim-takoe",
@@ -11770,77 +11456,6 @@
     "default_stream": null
   },
   {
-    "id": 19,
-    "name": "Сумеречное Радио",
-    "slug": "sumerechnoe-radioproekt-twiligh",
-    "description": "Проект \"Twilight Radio\" (\"Сумеречное Радио\") - это интернет-радио, в эфире которого звучат композиции почти всех направлений тяжелой музыки от блюза и классического рока до метала и альтернативной музыки. Переодически проводятся специальные эфиры, во время которых Вы можете передать привет друзьям или заказать композицию. Проект принимает активное участие в жизни мира тяжелой музыки, освещает предстоящие концерты и помогает в развитии молодым и начинающим группам. Сайт Сумеречного Радио - http://twilightradio.ru",
-    "enabled": true,
-    "website_url": "http://twilightradio.ru",
-    "logo": "https://app.streaming.center/media/catalog_logos/radio_67466.png",
-    "country": {
-      "id": 192,
-      "iso2": "ru",
-      "name": "Россия",
-      "name_eng": "Russia"
-    },
-    "region": {
-      "id": 1888,
-      "name": "Единецкий район",
-      "name_eng": "Raionul Edineţ"
-    },
-    "city": {
-      "id": 182975,
-      "name": "Москва",
-      "name_eng": "Moscow"
-    },
-    "genres": [
-      {
-        "id": 24,
-        "name": "Альтернатива",
-        "name_eng": "Alternative"
-      },
-      {
-        "id": 26,
-        "name": "Хэви-метал",
-        "name_eng": "Heavy Metal"
-      },
-      {
-        "id": 48,
-        "name": "Тяжелый рок",
-        "name_eng": "Heavy rock"
-      }
-    ],
-    "languages": [
-      {
-        "id": 1,
-        "name": "Русский",
-        "name_eng": "Russian"
-      }
-    ],
-    "streams": [
-      {
-        "id": 35,
-        "stream_url": "http://twilightradio.ru:8000/radio",
-        "audio_format": "mp3",
-        "bitrate": 192,
-        "server_type": "icecast"
-      },
-      {
-        "id": 36,
-        "stream_url": "http://twilightradio.ru:8000/radio",
-        "audio_format": "mp3",
-        "bitrate": 192,
-        "server_type": "icecast"
-      }
-    ],
-    "total_votes": 12,
-    "total_score": 39,
-    "user_id": 1502,
-    "rating": 3.25,
-    "created": "2010-10-04T11:11:05",
-    "default_stream": null
-  },
-  {
     "id": 348,
     "name": "Твой день",
     "slug": "tvoi-denkhity-80-kh-90-kh",
@@ -11862,7 +11477,7 @@
     "city": {
       "id": 182244,
       "name": "Санкт-Петербург",
-      "name_eng": "Leningrad"
+      "name_eng": "Saint Petersburg\n"
     },
     "genres": [
       {
@@ -11980,91 +11595,6 @@
     "user_id": 1938,
     "rating": 3.25,
     "created": "2022-09-04T15:20:08",
-    "default_stream": null
-  },
-  {
-    "id": 398,
-    "name": "Камерата",
-    "slug": "kameratapriamye-transliats",
-    "description": "Прямые трансляции и записи прошедших обучающих и досуговых мероприятий для незрячих и слабовидящих людей, которые организованы Нижегородским областным центром реабилитации инвалидов по зрению \"Камерата\".",
-    "enabled": true,
-    "website_url": "https://www.kamerata.org/http://",
-    "logo": "https://app.streaming.center/media/catalog_logos/radio_70655.jpg",
-    "country": {
-      "id": 192,
-      "iso2": "ru",
-      "name": "Россия",
-      "name_eng": "Russia"
-    },
-    "region": {
-      "id": 2815,
-      "name": "Нижегородская Область",
-      "name_eng": "Nizhny Novgorod Oblast"
-    },
-    "city": {
-      "id": 182853,
-      "name": "Нижний Новгород",
-      "name_eng": "Nizhny Novgorod"
-    },
-    "genres": [
-      {
-        "id": 3,
-        "name": "Разговорное",
-        "name_eng": "Talk"
-      },
-      {
-        "id": 5,
-        "name": "Информационное",
-        "name_eng": "Informational"
-      },
-      {
-        "id": 56,
-        "name": "Разное",
-        "name_eng": "Various"
-      }
-    ],
-    "languages": [
-      {
-        "id": 1,
-        "name": "Русский",
-        "name_eng": "Russian"
-      }
-    ],
-    "streams": [
-      {
-        "id": 306,
-        "stream_url": "http://radio.kamerata.org:8000/normal.aac",
-        "audio_format": "mp3",
-        "bitrate": 96,
-        "server_type": "shoutcast"
-      },
-      {
-        "id": 307,
-        "stream_url": "http://radio.kamerata.org:8000/standart.mp3",
-        "audio_format": "mp3",
-        "bitrate": 96,
-        "server_type": "shoutcast"
-      },
-      {
-        "id": 308,
-        "stream_url": "http://radio.kamerata.org:8000/normal.aac",
-        "audio_format": "mp3",
-        "bitrate": 96,
-        "server_type": "shoutcast"
-      },
-      {
-        "id": 309,
-        "stream_url": "http://radio.kamerata.org:8000/low.aac",
-        "audio_format": "mp3",
-        "bitrate": 96,
-        "server_type": "shoutcast"
-      }
-    ],
-    "total_votes": 2,
-    "total_score": 6,
-    "user_id": 973,
-    "rating": 3.0,
-    "created": "2020-05-26T15:56:24",
     "default_stream": null
   },
   {
@@ -12199,7 +11729,7 @@
     "id": 431,
     "name": "Cassiopeia Station",
     "slug": "cassiopeia-station-u-vas-romantich",
-    "description": " У вас романтическое настроение или вам хочется просто отдохнуть и расслабиться. Тогда интернет-радиостанция \"Cassiopeia Station\"для вас.\r\nЗдесь вы услышите электронную музыку,впитавшую в себя красивые Советские традиции космической романтики.Вся музыка и альбомы, которые представлены на радиостанции,есть на Телеграмм-канале \"Cassiopeia Station\"\r\n",
+    "description": "\"Cassiopeia Station\": Мир Электронной Музыки\r\nДобро пожаловать на Cassiopeia Station - вашу персональную радиоволну, транслирующую неповторимые музыкальные произведения от российских композиторов, работающих в жанрах New Age, Ambient и Electronic Classic. Насладитесь изысканными мелодиями, созданными для пробуждения вашего воображения и расширения сознания.\r\nЗдесь вы найдете только лучшую электронную музыку, созданную талантливыми авторами из России. Наши радиоведущие тщательно отбирают композиции, чтобы предложить вам только самое качественное звучание и неповторимые эмоции.\r\nПрисоединяйтесь к нам онлайн бесплатно и окунитесь в мир электронной музыки, где каждая нота пронизана вдохновением и гармонией. Cassiopeia Station – ваш проводник в мир музыкального путешествия, которое изменит ваше представление о возможностях электронной музыки.\r\nДонат на сбербанк онлайн +7 916 214 89 50",
     "enabled": true,
     "website_url": "https://cassiopeia-station.ru/",
     "logo": "https://app.streaming.center/media/catalog_logos/radio_70752.jpg",
@@ -12245,21 +11775,28 @@
     ],
     "streams": [
       {
-        "id": 339,
+        "id": 594,
+        "stream_url": "https://stream.cassiopeia-station.ru:1195/stream",
+        "audio_format": "mp3",
+        "bitrate": 320,
+        "server_type": "icecast"
+      },
+      {
+        "id": 595,
+        "stream_url": "https://stream.cassiopeia-station.ru:5015/stream",
+        "audio_format": "mp3",
+        "bitrate": 256,
+        "server_type": "icecast"
+      },
+      {
+        "id": 592,
         "stream_url": "https://stream.cassiopeia-station.ru:1075/stream",
         "audio_format": "mp3",
         "bitrate": 128,
         "server_type": "icecast"
       },
       {
-        "id": 340,
-        "stream_url": "https://stream.cassiopeia-station.ru:1075/stream",
-        "audio_format": "mp3",
-        "bitrate": 128,
-        "server_type": "icecast"
-      },
-      {
-        "id": 341,
+        "id": 593,
         "stream_url": "https://stream.cassiopeia-station.ru:1085/stream",
         "audio_format": "mp3",
         "bitrate": 64,
@@ -12271,7 +11808,7 @@
     "user_id": 893,
     "rating": 2.8,
     "created": "2021-01-25T17:50:57",
-    "default_stream": "https://stream.cassiopeia-station.ru:1075/stream"
+    "default_stream": "https://stream.cassiopeia-station.ru:1195/stream"
   },
   {
     "id": 136,
@@ -12295,7 +11832,7 @@
     "city": {
       "id": 182244,
       "name": "Санкт-Петербург",
-      "name_eng": "Leningrad"
+      "name_eng": "Saint Petersburg\n"
     },
     "genres": [
       {
@@ -12921,11 +12458,11 @@
   },
   {
     "id": 201,
-    "name": "Alternative X-Rock",
+    "name": "Alternative X-Rock Station",
     "slug": "alternative-x-rockalternativnyi",
     "description": "Альтернативный рок прошлых лет и современный рок, самые известные и яркие хиты на онлайн радио Alternative X-Rock.",
     "enabled": true,
-    "website_url": "http://alternative-x-rock.weebly.com/",
+    "website_url": "https://stream.rocksradio.net/",
     "logo": "https://app.streaming.center/media/catalog_logos/radio_69851.jpg",
     "country": {
       "id": 192,
@@ -12969,17 +12506,10 @@
     ],
     "streams": [
       {
-        "id": 162,
-        "stream_url": "http://listen.radionomy.com/alternativex-rockradio",
+        "id": 549,
+        "stream_url": "https://stream.rocksradio.net:1095/stream",
         "audio_format": "mp3",
-        "bitrate": 128,
-        "server_type": "icecast"
-      },
-      {
-        "id": 163,
-        "stream_url": "http://listen.radionomy.com/alternativex-rockradio",
-        "audio_format": "mp3",
-        "bitrate": 128,
+        "bitrate": 192,
         "server_type": "icecast"
       }
     ],
@@ -12988,7 +12518,132 @@
     "user_id": 976,
     "rating": 2.2857142857142856,
     "created": "2016-04-23T21:06:41",
+    "default_stream": "https://stream.rocksradio.net:1095/stream"
+  },
+  {
+    "id": 528,
+    "name": "Радио Новая волна",
+    "slug": "radio-novaia-volnanovaia-volna",
+    "description": "Новая волна",
+    "enabled": true,
+    "website_url": "https://sv-veter.ru",
+    "logo": "https://app.streaming.center/media/catalog_logos/radio_71005.jpg",
+    "country": {
+      "id": 192,
+      "iso2": "ru",
+      "name": "Россия",
+      "name_eng": "Russia"
+    },
+    "region": {
+      "id": 2773,
+      "name": "Волгоградская Область",
+      "name_eng": "Volgograd Oblast"
+    },
+    "city": {
+      "id": 181491,
+      "name": "Волгоград",
+      "name_eng": "Volgograd"
+    },
+    "genres": [
+      {
+        "id": 49,
+        "name": "Фолк",
+        "name_eng": "Folk"
+      }
+    ],
+    "languages": [
+      {
+        "id": 1,
+        "name": "Русский",
+        "name_eng": "Russian"
+      }
+    ],
+    "streams": [
+      {
+        "id": 422,
+        "stream_url": "http://volgograd.sv-veter.ru:8008/nv_online",
+        "audio_format": "mp3",
+        "bitrate": 128,
+        "server_type": "icecast"
+      },
+      {
+        "id": 423,
+        "stream_url": "http://volgograd.sv-veter.ru:8008/nv_online",
+        "audio_format": "mp3",
+        "bitrate": 128,
+        "server_type": "icecast"
+      }
+    ],
+    "total_votes": 8,
+    "total_score": 17,
+    "user_id": 1966,
+    "rating": 2.125,
+    "created": "2023-03-05T17:28:44",
     "default_stream": null
+  },
+  {
+    "id": 475,
+    "name": "Wow Music Cover",
+    "slug": "wow-music-coverwow-music-cover",
+    "description": "Wow Music Cover - любимые песни в новом звучании! Проект от стриминговой платформы Wow Music. Круглосуточный эфир без рекламы и надоедливых разговоров. Wow Music – это круче, чем радио!",
+    "enabled": true,
+    "website_url": "http://wowmusic.ru",
+    "logo": "https://app.streaming.center/media/catalog_logos/radio_70866.png",
+    "country": {
+      "id": 192,
+      "iso2": "ru",
+      "name": "Россия",
+      "name_eng": "Russia"
+    },
+    "region": {
+      "id": 1888,
+      "name": "Единецкий район",
+      "name_eng": "Raionul Edineţ"
+    },
+    "city": {
+      "id": 182975,
+      "name": "Москва",
+      "name_eng": "Moscow"
+    },
+    "genres": [
+      {
+        "id": 11,
+        "name": "Диско",
+        "name_eng": "Disco"
+      },
+      {
+        "id": 18,
+        "name": "Поп",
+        "name_eng": "Pop"
+      },
+      {
+        "id": 56,
+        "name": "Разное",
+        "name_eng": "Various"
+      }
+    ],
+    "languages": [
+      {
+        "id": 1,
+        "name": "Русский",
+        "name_eng": "Russian"
+      }
+    ],
+    "streams": [
+      {
+        "id": 381,
+        "stream_url": "https://stream.vyshka24.ru/wowcover",
+        "audio_format": "mp3",
+        "bitrate": 192,
+        "server_type": "icecast"
+      }
+    ],
+    "total_votes": 1,
+    "total_score": 2,
+    "user_id": 1915,
+    "rating": 2.0,
+    "created": "2022-04-04T04:30:31",
+    "default_stream": "https://stream.vyshka24.ru/wowcover"
   },
   {
     "id": 331,
@@ -13527,77 +13182,6 @@
     "default_stream": "https://kamchatkalive.ru:8103/chillout"
   },
   {
-    "id": 400,
-    "name": "Minatrix.FM",
-    "slug": "minatrix-fmminatriks-fm-pr",
-    "description": "Минатрикс.FM представляет собой современный прогрессивный проект онлайн радио в музыкально-развлекательном формате. Здесь вы услышите авторские программы самых популярных отечественных и зарубежных ди-джеев, прямые трансляции клубов и имеете возможность пообщаться с диджеями лично.",
-    "enabled": true,
-    "website_url": "https://minatrix.fm",
-    "logo": "https://app.streaming.center/media/catalog_logos/radio_70663.png",
-    "country": {
-      "id": 231,
-      "iso2": "ua",
-      "name": "Украина",
-      "name_eng": "Ukraine"
-    },
-    "region": {
-      "id": 3588,
-      "name": "Одесская область",
-      "name_eng": "Odesa Oblast"
-    },
-    "city": {
-      "id": 196932,
-      "name": "Одесса",
-      "name_eng": "Odesa"
-    },
-    "genres": [
-      {
-        "id": 10,
-        "name": "Танцевальное",
-        "name_eng": "Dance"
-      },
-      {
-        "id": 53,
-        "name": "Клубное",
-        "name_eng": "Club"
-      },
-      {
-        "id": 58,
-        "name": "Dj сеты",
-        "name_eng": "Dj sets"
-      }
-    ],
-    "languages": [
-      {
-        "id": 1,
-        "name": "Русский",
-        "name_eng": "Russian"
-      }
-    ],
-    "streams": [
-      {
-        "id": 312,
-        "stream_url": "http://minatrix.fm:8000/play",
-        "audio_format": "mp3",
-        "bitrate": 128,
-        "server_type": "icecast"
-      },
-      {
-        "id": 313,
-        "stream_url": "http://minatrix.fm:8000/play",
-        "audio_format": "mp3",
-        "bitrate": 128,
-        "server_type": "icecast"
-      }
-    ],
-    "total_votes": 1,
-    "total_score": 1,
-    "user_id": 1846,
-    "rating": 1.0,
-    "created": "2020-06-06T16:30:17",
-    "default_stream": null
-  },
-  {
     "id": 256,
     "name": "New Age Radio",
     "slug": "new-age-radiomuzykalnaia-int",
@@ -13868,70 +13452,6 @@
     "default_stream": null
   },
   {
-    "id": 347,
-    "name": "Джаз Филармоник Радио",
-    "slug": "dzhaz-filarmonik-radiodzhaz-filarmonik",
-    "description": "Джаз Филармоник радио из Санкт_Петербурга дарит вам лучшее из джазового мейнстрима: классики жанра, великие имена, представители современной джазовой сцены. \r\nВ эфире звучат джазовые стандарты, удивительные импровизации, авторские произведения.  Руководитель проекта- народный артист России, руководитель Филармонии джазовой музыки- Давид Голощекин. Так же слушайте в эфире авторские программы, интервью и концертную афишу.\r\n",
-    "enabled": true,
-    "website_url": "http://radio.jazz-hall.ru/",
-    "logo": "https://app.streaming.center/media/catalog_logos/radio_70463.jpg",
-    "country": {
-      "id": 192,
-      "iso2": "ru",
-      "name": "Россия",
-      "name_eng": "Russia"
-    },
-    "region": {
-      "id": 2801,
-      "name": "Санкт-Петербург",
-      "name_eng": "Leningrad"
-    },
-    "city": {
-      "id": 182244,
-      "name": "Санкт-Петербург",
-      "name_eng": "Leningrad"
-    },
-    "genres": [
-      {
-        "id": 15,
-        "name": "Джаз",
-        "name_eng": "Jazz"
-      },
-      {
-        "id": 36,
-        "name": "Соул",
-        "name_eng": "Soul"
-      },
-      {
-        "id": 47,
-        "name": "Ретро",
-        "name_eng": "Retro"
-      }
-    ],
-    "languages": [
-      {
-        "id": 1,
-        "name": "Русский",
-        "name_eng": "Russian"
-      }
-    ],
-    "streams": [
-      {
-        "id": 262,
-        "stream_url": "http://broad.jazz-hall.ru:8000/jphradio64.mp3",
-        "audio_format": "mp3",
-        "bitrate": 64,
-        "server_type": "icecast"
-      }
-    ],
-    "total_votes": 1,
-    "total_score": 1,
-    "user_id": 1798,
-    "rating": 1.0,
-    "created": "2019-02-11T13:41:52",
-    "default_stream": null
-  },
-  {
     "id": 463,
     "name": "Классное радио РДШ",
     "slug": "klassnoe-radio-rdsh-klassnoe-radio",
@@ -14131,70 +13651,6 @@
     "rating": 1.0,
     "created": "2022-06-30T09:02:11",
     "default_stream": "https://myradio24.org/5894"
-  },
-  {
-    "id": 512,
-    "name": "Радио Лидер",
-    "slug": "radio-lidervse-voprosy-kas",
-    "description": "Все вопросы,касающиеся работы станции, авторских или тематических эфиров, ведущих и тому подобного решает ТОЛЬКО Сергей 72\n\nДи-джеи свободны в выборе станций,на которых они могут работать, с разрешения админов.\n\nКаждый ди-джей вправе самостоятельно решать кто из слушателей может быть заблокирован.Правила хорошего тона и приличия обязательны для всех.",
-    "enabled": true,
-    "website_url": "http://https://volnorez.com/lider-radio",
-    "logo": "https://app.streaming.center/media/catalog_logos/radio_70958.jpg",
-    "country": {
-      "id": 192,
-      "iso2": "ru",
-      "name": "Россия",
-      "name_eng": "Russia"
-    },
-    "region": {
-      "id": 1888,
-      "name": "Единецкий район",
-      "name_eng": "Raionul Edineţ"
-    },
-    "city": {
-      "id": 182975,
-      "name": "Москва",
-      "name_eng": "Moscow"
-    },
-    "genres": [
-      {
-        "id": 11,
-        "name": "Диско",
-        "name_eng": "Disco"
-      },
-      {
-        "id": 17,
-        "name": "Старые песни",
-        "name_eng": "Oldies"
-      },
-      {
-        "id": 41,
-        "name": "Евродэнс",
-        "name_eng": "Eurodance"
-      }
-    ],
-    "languages": [
-      {
-        "id": 1,
-        "name": "Русский",
-        "name_eng": "Russian"
-      }
-    ],
-    "streams": [
-      {
-        "id": 410,
-        "stream_url": "https://stream.volnorez.com/live-app/900927",
-        "audio_format": "mp3",
-        "bitrate": 128,
-        "server_type": "icecast"
-      }
-    ],
-    "total_votes": 3,
-    "total_score": 3,
-    "user_id": 1953,
-    "rating": 1.0,
-    "created": "2022-12-10T18:17:49",
-    "default_stream": "https://stream.volnorez.com/live-app/900927"
   },
   {
     "id": 247,
@@ -14475,77 +13931,6 @@
     "default_stream": null
   },
   {
-    "id": 614,
-    "name": "BIBA FM Радио",
-    "slug": "biba-fm-radiobiba-fm-radiost",
-    "description": "BIBA FM РАДИОСТАНЦИЯ .САМЫЕ ЯРКИЕ И ЗАБЫТЫЕ  РУССКИЕ И ЗАРУБЕЖНЫЕ ХИТЫ 80.90.00.А ТАКЖЕ СОВРЕМЕННЫЕ ХИТЫ РАЗБАВЛЕННЫЕ НОТКАМИ ШАНСОНА РОКА ПОП ДИСКО МИССИЯ СТАНЦИИ- ВОЗРОДИТЬ ИНТЕРЕС К РОССИЙСКОЙ ПЕСЕННОЙ КУЛЬТУРЕ",
-    "enabled": true,
-    "website_url": "http://biba.myrh.ru/",
-    "logo": "https://app.streaming.center/media/catalog_logos/radio_71232.jpg",
-    "country": {
-      "id": 192,
-      "iso2": "ru",
-      "name": "Россия",
-      "name_eng": "Russia"
-    },
-    "region": {
-      "id": 2776,
-      "name": "Тверская Область",
-      "name_eng": "Tver Oblast"
-    },
-    "city": {
-      "id": 183601,
-      "name": "Кимры",
-      "name_eng": "Kimry"
-    },
-    "genres": [
-      {
-        "id": 8,
-        "name": "Классический Рок",
-        "name_eng": "Rock Classics"
-      },
-      {
-        "id": 11,
-        "name": "Диско",
-        "name_eng": "Disco"
-      },
-      {
-        "id": 18,
-        "name": "Поп",
-        "name_eng": "Pop"
-      }
-    ],
-    "languages": [
-      {
-        "id": 1,
-        "name": "Русский",
-        "name_eng": "Russian"
-      }
-    ],
-    "streams": [
-      {
-        "id": 515,
-        "stream_url": "https://a8.radioheart.ru:8014/RH54354",
-        "audio_format": "mp3",
-        "bitrate": 128,
-        "server_type": "icecast"
-      },
-      {
-        "id": 516,
-        "stream_url": "http://a8.radioheart.ru:8014/RH54354",
-        "audio_format": "mp3",
-        "bitrate": 128,
-        "server_type": "icecast"
-      }
-    ],
-    "total_votes": 0,
-    "total_score": 0,
-    "user_id": 2033,
-    "rating": 0.0,
-    "created": "2025-07-05T13:13:23",
-    "default_stream": "https://a8.radioheart.ru:8014/RH54354"
-  },
-  {
     "id": 449,
     "name": "Blagost.fm",
     "slug": "blagost-fmblagost-fm-po",
@@ -14608,6 +13993,62 @@
     "rating": 0.0,
     "created": "2021-08-05T11:55:13",
     "default_stream": null
+  },
+  {
+    "id": 631,
+    "name": "BOOMBOX LIFE",
+    "slug": "boombox-life",
+    "description": "Boombox Life – это онлайн-радиостанция, созданная для ценителей разнообразной музыки, объединяющей поколения. Здесь царит атмосфера ностальгии и радости, где каждый слушатель найдёт что-то близкое сердцу. Отличительной чертой станции является её уникальный плейлист, включающий композиции, ставшие золотыми хитами музыкальной истории.​\r\n\r\nМузыкальный эфир Boombox Life охватывает период последних тридцати лет и включает в себя поп, техно, дэнс, немного рока и электронной музыки. В эфире звучат как энергичные танцевальные композиции, так и потрясающие медленные мелодии, оставившие след в сердцах слушателей. Слушайте онлайн-вещание и наслаждайтесь любимыми хитами вместе с нами!",
+    "enabled": true,
+    "website_url": "https://boombox.top/",
+    "logo": "https://app.streaming.center/media/catalog_logos/logo.png",
+    "country": {
+      "id": 136,
+      "iso2": "lv",
+      "name": "Латвия",
+      "name_eng": "Latvia"
+    },
+    "region": null,
+    "city": null,
+    "genres": [
+      {
+        "id": 10,
+        "name": "Танцевальное",
+        "name_eng": "Dance"
+      },
+      {
+        "id": 18,
+        "name": "Поп",
+        "name_eng": "Pop"
+      },
+      {
+        "id": 43,
+        "name": "Топ",
+        "name_eng": "Top"
+      }
+    ],
+    "languages": [
+      {
+        "id": 1,
+        "name": "Русский",
+        "name_eng": "Russian"
+      }
+    ],
+    "streams": [
+      {
+        "id": 553,
+        "stream_url": "https://radio.boombox.top:1045/stream",
+        "audio_format": "mp3",
+        "bitrate": 192,
+        "server_type": "icecast"
+      }
+    ],
+    "total_votes": 0,
+    "total_score": 0,
+    "user_id": 819,
+    "rating": 0.0,
+    "created": "2025-09-21T17:27:06.033",
+    "default_stream": "https://radio.boombox.top:1045/stream"
   },
   {
     "id": 620,
@@ -14735,6 +14176,70 @@
     "default_stream": "https://myradio24.org/bosscomaz"
   },
   {
+    "id": 655,
+    "name": "Christmas Hits 1",
+    "slug": "christmas-hits-1",
+    "description": "Écoutez notre radio de Noël et découvrez la magie de Noël en musique. Écoutez gratuitement plus de 10 000 musiques de Noël et ressentez l'atmosphère de Noël sans interruption 24h/24h et 365 jours par an.\r\nListen to our christmas radio station and discover the magic of christmas in music. Listen for free to more than 10,000 Christmas musics and feel the Christmas atmosphere without interruption.",
+    "enabled": true,
+    "website_url": "https://www.hits1radio.com/",
+    "logo": "https://app.streaming.center/media/catalog_logos/H1-christmas.png",
+    "country": {
+      "id": 75,
+      "iso2": "fr",
+      "name": "Франция",
+      "name_eng": "France"
+    },
+    "region": {
+      "id": 1019,
+      "name": "",
+      "name_eng": "Occitanie"
+    },
+    "city": {
+      "id": 74143,
+      "name": "Тулуза",
+      "name_eng": "Toulouse"
+    },
+    "genres": [
+      {
+        "id": 2,
+        "name": "Детское",
+        "name_eng": "Children"
+      },
+      {
+        "id": 18,
+        "name": "Поп",
+        "name_eng": "Pop"
+      },
+      {
+        "id": 51,
+        "name": "Шансон",
+        "name_eng": "Chanson"
+      }
+    ],
+    "languages": [
+      {
+        "id": 2,
+        "name": "Английский",
+        "name_eng": "English"
+      }
+    ],
+    "streams": [
+      {
+        "id": 613,
+        "stream_url": "https://stream.christmas.hits1radio.com",
+        "audio_format": "mp3",
+        "bitrate": 320,
+        "server_type": "icecast"
+      }
+    ],
+    "total_votes": 0,
+    "total_score": 0,
+    "user_id": 2145,
+    "rating": 0.0,
+    "created": "2025-11-01T20:23:57.344",
+    "default_stream": "https://stream.christmas.hits1radio.com"
+  },
+  {
     "id": 407,
     "name": "Dance Wave!",
     "slug": "dance-wave-all-about-dance",
@@ -14756,7 +14261,7 @@
     "city": {
       "id": 182244,
       "name": "Санкт-Петербург",
-      "name_eng": "Leningrad"
+      "name_eng": "Saint Petersburg\n"
     },
     "genres": [
       {
@@ -14797,6 +14302,70 @@
     "rating": 0.0,
     "created": "2020-07-29T21:11:09",
     "default_stream": null
+  },
+  {
+    "id": 642,
+    "name": "DIGITAL 2 RADIO",
+    "slug": "digital-2-radio",
+    "description": "DIGITAL 2 est votre radio dédiée à la Musique des années 70 et d'aujourd'hui, et aux plus grands succès de la musique Française et Internationale d'hier à aujourd'hui. Des titres rares remastérisés et inédits jamais diffusés sur aucune radio, DIGITAL 2 vous les fait redécouvrir ! \\\\\"Classic Hits\" \\\\\"Pop\" \\\\\"Love songs\"\\\\\"Hits\" \\\\ DIGITAL 2 : La Radio de Vos Générations.",
+    "enabled": true,
+    "website_url": "https://www.digital2radio.com/",
+    "logo": "https://app.streaming.center/media/catalog_logos/DIGITAL_2_1200x1200px.png",
+    "country": {
+      "id": 75,
+      "iso2": "fr",
+      "name": "Франция",
+      "name_eng": "France"
+    },
+    "region": {
+      "id": 1020,
+      "name": "О-де-Франс",
+      "name_eng": "Hauts-de-France"
+    },
+    "city": {
+      "id": 88032,
+      "name": "Абвиль",
+      "name_eng": "Abbeville"
+    },
+    "genres": [
+      {
+        "id": 18,
+        "name": "Поп",
+        "name_eng": "Pop"
+      },
+      {
+        "id": 43,
+        "name": "Топ",
+        "name_eng": "Top"
+      },
+      {
+        "id": 66,
+        "name": "Мировая музыка",
+        "name_eng": "World Music"
+      }
+    ],
+    "languages": [
+      {
+        "id": 9,
+        "name": "Французский",
+        "name_eng": "French"
+      }
+    ],
+    "streams": [
+      {
+        "id": 577,
+        "stream_url": "https://ecmanager4.pro-fhi.net:2315/stream",
+        "audio_format": "mp3",
+        "bitrate": 320,
+        "server_type": "icecast"
+      }
+    ],
+    "total_votes": 0,
+    "total_score": 0,
+    "user_id": 2051,
+    "rating": 0.0,
+    "created": "2025-09-25T21:23:22.520",
+    "default_stream": "https://ecmanager4.pro-fhi.net:2315/stream"
   },
   {
     "id": 444,
@@ -14891,7 +14460,7 @@
     "city": {
       "id": 182244,
       "name": "Санкт-Петербург",
-      "name_eng": "Leningrad"
+      "name_eng": "Saint Petersburg\n"
     },
     "genres": [
       {
@@ -14941,68 +14510,58 @@
     "default_stream": "https://myradio24.org/dsound_192"
   },
   {
-    "id": 561,
-    "name": "Endless Joy Radio",
-    "slug": "endless-joy-radio-endless-joy-ra",
-    "description": "\"ENDLESS JOY RADIO\" – это Ваша персональная волна счастья в мире интернет-радио! Мы воплощаем в жизнь музыкальные мечты, ведь у нас играет самая радостная и живая немецкая музыка, которая мгновенно поднимает настроение и заряжает позитивом. Наши ведущие направления – это Discofox, Schlager, Pop, Rock и Country, каждое из которых уникально и неповторимо.\r\n\r\nЗабудьте о серых буднях, включите \"ENDLESS JOY RADIO\" и погрузитесь в мир, где каждая нота и каждый бит наполнены радостью и энергией. Мы знаем, как сделать ваш день лучше, и готовы делиться этим с Вами 24/7. Присоединяйтесь к нам и станьте частью большой музыкальной семьи \"ENDLESS JOY RADIO\", где музыка создает настроение!",
+    "id": 647,
+    "name": "Eternity Ready Radio",
+    "slug": "eternity-ready-radio",
+    "description": "Eternity Ready Radio broadcasts around the clock, delivering uplifting gospel music, inspiring messages, and faith-based talk programming to help listeners grow spiritually. Our mission is to prepare hearts and minds for eternity through the power of the Gospel of Jesus Christ. Whether you’re at home, work, or on the go, Eternity Ready Radio brings light, encouragement, and praise to your daily life.",
     "enabled": true,
-    "website_url": "https://myradio24.com/endlessjoy",
-    "logo": "https://app.streaming.center/media/catalog_logos/radio_71106.jpg",
+    "website_url": "https://eternityready.com",
+    "logo": "https://app.streaming.center/media/catalog_logos/eternityRadio.png",
     "country": {
-      "id": 192,
-      "iso2": "ru",
-      "name": "Россия",
-      "name_eng": "Russia"
+      "id": 234,
+      "iso2": "us",
+      "name": "США",
+      "name_eng": "United States"
     },
     "region": {
-      "id": 2787,
-      "name": "Пермский край",
-      "name_eng": "Perm Krai"
+      "id": 3626,
+      "name": "Миссури",
+      "name_eng": "Missouri"
     },
     "city": {
-      "id": 182573,
-      "name": "Пермь",
-      "name_eng": "Perm"
+      "id": 203147,
+      "name": "Канзас-Сити",
+      "name_eng": "Kansas City"
     },
     "genres": [
       {
-        "id": 10,
-        "name": "Танцевальное",
-        "name_eng": "Dance"
-      },
-      {
-        "id": 11,
-        "name": "Диско",
-        "name_eng": "Disco"
-      },
-      {
-        "id": 41,
-        "name": "Евродэнс",
-        "name_eng": "Eurodance"
+        "id": 55,
+        "name": "Религия",
+        "name_eng": "Gospel"
       }
     ],
     "languages": [
       {
-        "id": 8,
-        "name": "Немецкий",
-        "name_eng": "German"
+        "id": 2,
+        "name": "Английский",
+        "name_eng": "English"
       }
     ],
     "streams": [
       {
-        "id": 450,
-        "stream_url": "https://myradio24.org/endlessjoy",
+        "id": 591,
+        "stream_url": "https://mp3.eternityready.com/stream",
         "audio_format": "mp3",
-        "bitrate": 192,
+        "bitrate": 320,
         "server_type": "icecast"
       }
     ],
     "total_votes": 0,
     "total_score": 0,
-    "user_id": 1990,
+    "user_id": 2060,
     "rating": 0.0,
-    "created": "2024-05-07T03:51:06",
-    "default_stream": "https://myradio24.org/endlessjoy"
+    "created": "2025-10-09T07:47:15.541",
+    "default_stream": "https://mp3.eternityready.com/stream"
   },
   {
     "id": 591,
@@ -15197,6 +14756,457 @@
     "rating": 0.0,
     "created": "2024-12-13T17:03:29",
     "default_stream": null
+  },
+  {
+    "id": 653,
+    "name": "Hits 1",
+    "slug": "hits-1",
+    "description": "Just Hits & Dance ! Tous les futurs Hits CHR, Dance et Electro sont sur Hits 1 ! 100% Hits Music sans Pub ! N'importe où et n'importe quand, Hits 1 Just Hits & Dance ! Ecoutez les webradios Hits 1 radio, Hits 1 latina, Cristmas Hits 1",
+    "enabled": true,
+    "website_url": "https://www.hits1radio.com",
+    "logo": "https://app.streaming.center/media/catalog_logos/1024.png",
+    "country": {
+      "id": 75,
+      "iso2": "fr",
+      "name": "Франция",
+      "name_eng": "France"
+    },
+    "region": {
+      "id": 1019,
+      "name": "",
+      "name_eng": "Occitanie"
+    },
+    "city": {
+      "id": 74143,
+      "name": "Тулуза",
+      "name_eng": "Toulouse"
+    },
+    "genres": [
+      {
+        "id": 10,
+        "name": "Танцевальное",
+        "name_eng": "Dance"
+      },
+      {
+        "id": 43,
+        "name": "Топ",
+        "name_eng": "Top"
+      },
+      {
+        "id": 53,
+        "name": "Клубное",
+        "name_eng": "Club"
+      }
+    ],
+    "languages": [
+      {
+        "id": 9,
+        "name": "Французский",
+        "name_eng": "French"
+      }
+    ],
+    "streams": [
+      {
+        "id": 611,
+        "stream_url": "https://stream.hd1.hits1radio.com",
+        "audio_format": "mp3",
+        "bitrate": 256,
+        "server_type": "icecast"
+      }
+    ],
+    "total_votes": 0,
+    "total_score": 0,
+    "user_id": 2145,
+    "rating": 0.0,
+    "created": "2025-11-01T20:19:37.873",
+    "default_stream": "https://stream.hd1.hits1radio.com"
+  },
+  {
+    "id": 658,
+    "name": "Hits 1 Clubbing Party",
+    "slug": "hits-1-clubbing-party",
+    "description": "Clubbing Party, le meilleur du son actuel mixé par notre DJ Résident « Kris »",
+    "enabled": true,
+    "website_url": "https://www.hits1radio.com/",
+    "logo": "https://app.streaming.center/media/catalog_logos/clubbing_party.jpg",
+    "country": {
+      "id": 75,
+      "iso2": "fr",
+      "name": "Франция",
+      "name_eng": "France"
+    },
+    "region": {
+      "id": 1019,
+      "name": "",
+      "name_eng": "Occitanie"
+    },
+    "city": {
+      "id": 74143,
+      "name": "Тулуза",
+      "name_eng": "Toulouse"
+    },
+    "genres": [
+      {
+        "id": 10,
+        "name": "Танцевальное",
+        "name_eng": "Dance"
+      },
+      {
+        "id": 40,
+        "name": "Электронное",
+        "name_eng": "Electronic"
+      },
+      {
+        "id": 43,
+        "name": "Топ",
+        "name_eng": "Top"
+      }
+    ],
+    "languages": [
+      {
+        "id": 2,
+        "name": "Английский",
+        "name_eng": "English"
+      }
+    ],
+    "streams": [
+      {
+        "id": 617,
+        "stream_url": "https://listen.openstream.co/6995/audio",
+        "audio_format": "mp3",
+        "bitrate": 320,
+        "server_type": "icecast"
+      }
+    ],
+    "total_votes": 0,
+    "total_score": 0,
+    "user_id": 2145,
+    "rating": 0.0,
+    "created": "2025-11-01T20:28:28.956",
+    "default_stream": "https://listen.openstream.co/6995/audio"
+  },
+  {
+    "id": 654,
+    "name": "Hits 1 latina",
+    "slug": "hits-1-latina",
+    "description": "le son pop latino",
+    "enabled": true,
+    "website_url": "https://www.hits1radio.com/",
+    "logo": "https://app.streaming.center/media/catalog_logos/hits1-latina-500x500jpg.jpg",
+    "country": {
+      "id": 75,
+      "iso2": "fr",
+      "name": "Франция",
+      "name_eng": "France"
+    },
+    "region": {
+      "id": 1019,
+      "name": "",
+      "name_eng": "Occitanie"
+    },
+    "city": {
+      "id": 74143,
+      "name": "Тулуза",
+      "name_eng": "Toulouse"
+    },
+    "genres": [
+      {
+        "id": 18,
+        "name": "Поп",
+        "name_eng": "Pop"
+      },
+      {
+        "id": 43,
+        "name": "Топ",
+        "name_eng": "Top"
+      },
+      {
+        "id": 50,
+        "name": "Латинское",
+        "name_eng": "Latin"
+      }
+    ],
+    "languages": [
+      {
+        "id": 2,
+        "name": "Английский",
+        "name_eng": "English"
+      }
+    ],
+    "streams": [
+      {
+        "id": 614,
+        "stream_url": "https://stream.latina.hits1radio.com",
+        "audio_format": "mp3",
+        "bitrate": 320,
+        "server_type": "icecast"
+      }
+    ],
+    "total_votes": 0,
+    "total_score": 0,
+    "user_id": 2145,
+    "rating": 0.0,
+    "created": "2025-11-01T20:21:48.331",
+    "default_stream": "https://stream.latina.hits1radio.com"
+  },
+  {
+    "id": 656,
+    "name": "Hits 1 Mallorca",
+    "slug": "hits-1-mallorca",
+    "description": "Hits 1 is the ONLY radio station broadcasting 24 Hours a day the BEST in electronic and dance music WITHOUT commercial breaks and much blabla.",
+    "enabled": true,
+    "website_url": "https://www.hits1radio.com/",
+    "logo": "https://app.streaming.center/media/catalog_logos/Hits_1_Mallorca.png",
+    "country": {
+      "id": 68,
+      "iso2": "es",
+      "name": "Испания",
+      "name_eng": "Spain"
+    },
+    "region": {
+      "id": 945,
+      "name": "Балеарские Острова",
+      "name_eng": "Balearic Islands"
+    },
+    "city": {
+      "id": 64943,
+      "name": "Пальма",
+      "name_eng": "Palma de Mallorca"
+    },
+    "genres": [
+      {
+        "id": 10,
+        "name": "Танцевальное",
+        "name_eng": "Dance"
+      },
+      {
+        "id": 40,
+        "name": "Электронное",
+        "name_eng": "Electronic"
+      },
+      {
+        "id": 43,
+        "name": "Топ",
+        "name_eng": "Top"
+      }
+    ],
+    "languages": [
+      {
+        "id": 2,
+        "name": "Английский",
+        "name_eng": "English"
+      }
+    ],
+    "streams": [
+      {
+        "id": 615,
+        "stream_url": "https://stream.ibiza1.hits1radio.com",
+        "audio_format": "mp3",
+        "bitrate": 256,
+        "server_type": "icecast"
+      }
+    ],
+    "total_votes": 0,
+    "total_score": 0,
+    "user_id": 2145,
+    "rating": 0.0,
+    "created": "2025-11-01T20:25:49.256",
+    "default_stream": "https://stream.ibiza1.hits1radio.com"
+  },
+  {
+    "id": 660,
+    "name": "Holy Forever Radio",
+    "slug": "holy-forever-radio",
+    "description": "Радио создано для прославления Бога. Круглосуточно 24/7. В эфире звучит только музыка христианских исполнителей со всего мира. ( Radio was created to glorify God. Around the clock 24/7. The broadcast includes only music from Christian artists from around the world.)",
+    "enabled": true,
+    "website_url": "https://holyforever-radio.com",
+    "logo": "https://app.streaming.center/media/catalog_logos/512%D1%85512.png",
+    "country": {
+      "id": 192,
+      "iso2": "ru",
+      "name": "Россия",
+      "name_eng": "Russia"
+    },
+    "region": null,
+    "city": {
+      "id": 182975,
+      "name": "Москва",
+      "name_eng": "Moscow"
+    },
+    "genres": [
+      {
+        "id": 55,
+        "name": "Религия",
+        "name_eng": "Gospel"
+      }
+    ],
+    "languages": [
+      {
+        "id": 1,
+        "name": "Русский",
+        "name_eng": "Russian"
+      },
+      {
+        "id": 2,
+        "name": "Английский",
+        "name_eng": "English"
+      },
+      {
+        "id": 3,
+        "name": "Украинский",
+        "name_eng": "Ukrainian"
+      }
+    ],
+    "streams": [
+      {
+        "id": 619,
+        "stream_url": "https://holyforever-radio.com:1045/stream",
+        "audio_format": "mp3",
+        "bitrate": 128,
+        "server_type": "icecast"
+      },
+      {
+        "id": 620,
+        "stream_url": "https://holyforever-radio.com:1065/stream",
+        "audio_format": "mp3",
+        "bitrate": 128,
+        "server_type": "icecast"
+      }
+    ],
+    "total_votes": 0,
+    "total_score": 0,
+    "user_id": 910,
+    "rating": 0.0,
+    "created": "2025-11-08T19:12:05.868",
+    "default_stream": "https://holyforever-radio.com:1045/stream"
+  },
+  {
+    "id": 657,
+    "name": "Ibiza World Club Tour Channel",
+    "slug": "ibiza-world-club-tour-channel",
+    "description": "Ibiza World Club Tour Channel – one of the internationally most successful brands from the party-island no. 1",
+    "enabled": true,
+    "website_url": "https://www.hits1radio.com/",
+    "logo": "https://app.streaming.center/media/catalog_logos/Ibiza_World_Club_Tour_Channel.png",
+    "country": {
+      "id": 68,
+      "iso2": "es",
+      "name": "Испания",
+      "name_eng": "Spain"
+    },
+    "region": {
+      "id": 945,
+      "name": "Балеарские Острова",
+      "name_eng": "Balearic Islands"
+    },
+    "city": {
+      "id": 65373,
+      "name": "Ибица",
+      "name_eng": "Ibiza Town"
+    },
+    "genres": [
+      {
+        "id": 10,
+        "name": "Танцевальное",
+        "name_eng": "Dance"
+      },
+      {
+        "id": 53,
+        "name": "Клубное",
+        "name_eng": "Club"
+      },
+      {
+        "id": 58,
+        "name": "Dj сеты",
+        "name_eng": "Dj sets"
+      }
+    ],
+    "languages": [
+      {
+        "id": 2,
+        "name": "Английский",
+        "name_eng": "English"
+      }
+    ],
+    "streams": [
+      {
+        "id": 616,
+        "stream_url": "https://listen.openstream.co/7066/audio",
+        "audio_format": "mp3",
+        "bitrate": 320,
+        "server_type": "icecast"
+      }
+    ],
+    "total_votes": 0,
+    "total_score": 0,
+    "user_id": 2145,
+    "rating": 0.0,
+    "created": "2025-11-01T20:27:08.253",
+    "default_stream": "https://listen.openstream.co/7066/audio"
+  },
+  {
+    "id": 649,
+    "name": "Incredible Radio",
+    "slug": "incredible-radio",
+    "description": "24/7 Music from around the world, New,, Old and all between from the early 60 till now.",
+    "enabled": true,
+    "website_url": "https://incredibleradio.com",
+    "logo": "https://app.streaming.center/media/catalog_logos/Incredible_radio_upscaled_banner_900x900.png",
+    "country": {
+      "id": 167,
+      "iso2": "nl",
+      "name": "Нидерланды",
+      "name_eng": "The Netherlands"
+    },
+    "region": {
+      "id": 2398,
+      "name": "Южная Голландия",
+      "name_eng": "South Holland"
+    },
+    "city": {
+      "id": 156623,
+      "name": "",
+      "name_eng": "Ter Aar"
+    },
+    "genres": [
+      {
+        "id": 4,
+        "name": "Новости",
+        "name_eng": "News"
+      },
+      {
+        "id": 56,
+        "name": "Разное",
+        "name_eng": "Various"
+      },
+      {
+        "id": 66,
+        "name": "Мировая музыка",
+        "name_eng": "World Music"
+      }
+    ],
+    "languages": [
+      {
+        "id": 52,
+        "name": "Нидерландский",
+        "name_eng": "Dutch"
+      }
+    ],
+    "streams": [
+      {
+        "id": 598,
+        "stream_url": "https://stream1.supremehosting.nl/8010",
+        "audio_format": "mp3",
+        "bitrate": 320,
+        "server_type": "shoutcast"
+      }
+    ],
+    "total_votes": 0,
+    "total_score": 0,
+    "user_id": 1317,
+    "rating": 0.0,
+    "created": "2025-10-14T08:06:53.925",
+    "default_stream": "https://stream1.supremehosting.nl/8010"
   },
   {
     "id": 493,
@@ -15402,6 +15412,134 @@
     "default_stream": "https://myradio24.org/67739"
   },
   {
+    "id": 659,
+    "name": "MAXIMA",
+    "slug": "maxima",
+    "description": "Radio Dance Si lo tuyo es la música electrónica, entonces Maxima FM te encantará. Es la radio española de música dance más escuchada por los jóvenes, con una programación que abarca toda la gama dance y EDM, pasando por la música progressive, electro, makina, techno, house, trance, dream, chill out y lounge. Sintoniza la emisora y disfruta de los más grandes éxitos de la música electrónica y las mezclas más excitantes de los DJs más famosos a nivel mundial",
+    "enabled": true,
+    "website_url": "https://www.maximafm.fr/",
+    "logo": "https://app.streaming.center/media/catalog_logos/maxima_fm.png",
+    "country": {
+      "id": 68,
+      "iso2": "es",
+      "name": "Испания",
+      "name_eng": "Spain"
+    },
+    "region": {
+      "id": 945,
+      "name": "Балеарские Острова",
+      "name_eng": "Balearic Islands"
+    },
+    "city": {
+      "id": 64943,
+      "name": "Пальма",
+      "name_eng": "Palma de Mallorca"
+    },
+    "genres": [
+      {
+        "id": 10,
+        "name": "Танцевальное",
+        "name_eng": "Dance"
+      },
+      {
+        "id": 40,
+        "name": "Электронное",
+        "name_eng": "Electronic"
+      },
+      {
+        "id": 43,
+        "name": "Топ",
+        "name_eng": "Top"
+      }
+    ],
+    "languages": [
+      {
+        "id": 5,
+        "name": "Испанский",
+        "name_eng": "Spanish"
+      }
+    ],
+    "streams": [
+      {
+        "id": 618,
+        "stream_url": "https://listen.openstream.co/6835/audio",
+        "audio_format": "mp3",
+        "bitrate": 320,
+        "server_type": "icecast"
+      }
+    ],
+    "total_votes": 0,
+    "total_score": 0,
+    "user_id": 2145,
+    "rating": 0.0,
+    "created": "2025-11-01T20:29:35.378",
+    "default_stream": "https://listen.openstream.co/6835/audio"
+  },
+  {
+    "id": 638,
+    "name": "Muslim Vanoli",
+    "slug": "muslim-vanoli",
+    "description": "Learn Islam in its purest form",
+    "enabled": true,
+    "website_url": "https://www.muslimvanoli.com/",
+    "logo": "https://app.streaming.center/media/catalog_logos/MUSLIM-VANOLI.png",
+    "country": {
+      "id": 131,
+      "iso2": "lk",
+      "name": "Шри-Ланка",
+      "name_eng": "Sri Lanka"
+    },
+    "region": {
+      "id": 1754,
+      "name": "Западная провинция",
+      "name_eng": "Western Province"
+    },
+    "city": {
+      "id": 134581,
+      "name": "Коломбо",
+      "name_eng": "Colombo"
+    },
+    "genres": [
+      {
+        "id": 3,
+        "name": "Разговорное",
+        "name_eng": "Talk"
+      },
+      {
+        "id": 5,
+        "name": "Информационное",
+        "name_eng": "Informational"
+      },
+      {
+        "id": 69,
+        "name": "Индийская",
+        "name_eng": "Indian"
+      }
+    ],
+    "languages": [
+      {
+        "id": 33,
+        "name": "Тамильский",
+        "name_eng": "Tamil"
+      }
+    ],
+    "streams": [
+      {
+        "id": 567,
+        "stream_url": "https://stream.muslimvanoli.com:1035/stream",
+        "audio_format": "mp3",
+        "bitrate": 320,
+        "server_type": "icecast"
+      }
+    ],
+    "total_votes": 0,
+    "total_score": 0,
+    "user_id": 988,
+    "rating": 0.0,
+    "created": "2025-09-23T09:01:47.914",
+    "default_stream": "https://stream.muslimvanoli.com:1035/stream"
+  },
+  {
     "id": 590,
     "name": "NuclearFM",
     "slug": "nuclearfmsamoe-radioakti",
@@ -15470,6 +15608,70 @@
     "user_id": 2014,
     "rating": 0.0,
     "created": "2025-01-08T08:50:19",
+    "default_stream": null
+  },
+  {
+    "id": 634,
+    "name": "OM Radio",
+    "slug": "om-radio",
+    "description": "Основные направления современной и классической электроники 24/7",
+    "enabled": true,
+    "website_url": "http://azblog.me/radio",
+    "logo": "https://app.streaming.center/media/catalog_logos/om_radio_logo_572x572.png",
+    "country": {
+      "id": 140,
+      "iso2": "md",
+      "name": "Молдова",
+      "name_eng": "Moldova"
+    },
+    "region": {
+      "id": 1905,
+      "name": "Кишинёв",
+      "name_eng": "Chișinău Municipality"
+    },
+    "city": {
+      "id": 135853,
+      "name": "Кишинёв",
+      "name_eng": "Chișinău"
+    },
+    "genres": [
+      {
+        "id": 29,
+        "name": "Эмбиент",
+        "name_eng": "Ambient"
+      },
+      {
+        "id": 31,
+        "name": "Транс",
+        "name_eng": "Trance"
+      },
+      {
+        "id": 34,
+        "name": "Хаус",
+        "name_eng": "House"
+      }
+    ],
+    "languages": [
+      {
+        "id": 2,
+        "name": "Английский",
+        "name_eng": "English"
+      }
+    ],
+    "streams": [
+      {
+        "id": 560,
+        "stream_url": "http://188.138.251.192:8002/;",
+        "audio_format": "mp3",
+        "bitrate": 256,
+        "server_type": "shoutcast"
+      }
+    ],
+    "total_votes": 0,
+    "total_score": 0,
+    "user_id": 983,
+    "rating": 0.0,
+    "created": "2025-09-22T13:29:26.520",
     "default_stream": null
   },
   {
@@ -15549,6 +15751,86 @@
     "rating": 0.0,
     "created": "2019-08-11T18:52:27",
     "default_stream": null
+  },
+  {
+    "id": 633,
+    "name": "POPFM Биробиджан",
+    "slug": "popfm-birobidzhan",
+    "description": "POPFM Биробиджан – это современная музыкальная радиостанция, ориентированная на жителей Биробиджана и Еврейской автономной области. Мы вещаем в формате CHR (Contemporary Hit Radio), предлагая слушателям самые горячие хиты от ведущих мировых и российских исполнителей, а также проверенные временем популярные композиции.\r\n\r\nЧто вы услышите на POPFM Биробиджан:\r\n\r\nТолько лучшие хиты: В нашем эфире звучат самые актуальные треки, занимающие верхние строчки музыкальных чартов.\r\nРазнообразие жанров: Мы играем современную поп-музыку, танцевальные хиты, поп-рок, и немного R&B, чтобы удовлетворить вкусы широкой аудитории.\r\nИнтерактивные программы и конкурсы: Участвуйте в наших конкурсах, выигрывайте призы и передавайте приветы в прямом эфире!\r\nПозитивное настроение: POPFM Биробиджан – это музыка, которая поднимает настроение и создает позитивный настрой на весь день.\r\nНаша целевая аудитория:\r\n\r\nМы ориентированы на молодых, активных людей в возрасте от 16 до 35 лет, которые следят за музыкальными новинками и предпочитают слушать только самые лучшие хиты. Мы также интересны более взрослой аудитории, ценящей качественную поп-музыку.\r\n\r\nПочему стоит слушать POPFM Биробиджан:\r\n\r\nАктуальная музыка: Вы всегда будете в курсе последних музыкальных трендов.\r\nПозитивный контент: Мы создаем хорошее настроение и дарим позитивные эмоции.\r\nИнтерактивность: Вы можете стать частью нашего эфира.\r\nКачественное вещание: Мы гарантируем отличное качество звука.\r\nГде нас найти:\r\n\r\nОнлайн-трансляция на нашем сайте: http://popfm-bir.ru/\r\nВ мобильном приложении POPFM: https://www.rustore.ru/catalog/app/center.streaming.p..\r\nВ социальных сетях: https://vk.com/popfm_bir\r\n\r\nPOPFM Биробиджан – Твоя музыка. Твой город!",
+    "enabled": true,
+    "website_url": "https://popfm-bir.ru/",
+    "logo": "https://app.streaming.center/media/catalog_logos/512.png",
+    "country": {
+      "id": 192,
+      "iso2": "ru",
+      "name": "Россия",
+      "name_eng": "Russia"
+    },
+    "region": {
+      "id": 2845,
+      "name": "Еврейская АО",
+      "name_eng": "Jewish Autonomous Oblast"
+    },
+    "city": {
+      "id": 186053,
+      "name": "Биробиджан",
+      "name_eng": "Birobidzhan"
+    },
+    "genres": [
+      {
+        "id": 18,
+        "name": "Поп",
+        "name_eng": "Pop"
+      },
+      {
+        "id": 56,
+        "name": "Разное",
+        "name_eng": "Various"
+      }
+    ],
+    "languages": [
+      {
+        "id": 1,
+        "name": "Русский",
+        "name_eng": "Russian"
+      }
+    ],
+    "streams": [
+      {
+        "id": 559,
+        "stream_url": "https://stream.popfm-bir.ru:1085/radio",
+        "audio_format": "mp3",
+        "bitrate": 320,
+        "server_type": "icecast"
+      },
+      {
+        "id": 556,
+        "stream_url": "https://stream.popfm-bir.ru:1085/radio",
+        "audio_format": "mp3",
+        "bitrate": 128,
+        "server_type": "icecast"
+      },
+      {
+        "id": 557,
+        "stream_url": "https://radio.dline-media.com/popfm",
+        "audio_format": "mp3",
+        "bitrate": 128,
+        "server_type": "icecast"
+      },
+      {
+        "id": 558,
+        "stream_url": "https://stream.popfm-bir.ru:1045/stream",
+        "audio_format": "mp3",
+        "bitrate": 128,
+        "server_type": "icecast"
+      }
+    ],
+    "total_votes": 0,
+    "total_score": 0,
+    "user_id": 1208,
+    "rating": 0.0,
+    "created": "2025-09-21T23:00:09.696",
+    "default_stream": "https://stream.popfm-bir.ru:1085/radio"
   },
   {
     "id": 499,
@@ -15693,6 +15975,108 @@
     "default_stream": "https://c32.radioboss.fm:8775/stream"
   },
   {
+    "id": 644,
+    "name": "radio Gherla HIT",
+    "slug": "forum-radio-gherla-fm",
+    "description": "Слушайте радио GherlaFM онлайн бесплатно. Радиостанция вещает в прямом эфире 24/7 в России и доступна для прослушивания по всему миру. Наслаждайтесь музыкой Поп, 90-е годы.\r\n\r\nradio Gherla FM — одна из самых популярных онлайн-радиостанций.",
+    "enabled": true,
+    "website_url": "https://t.me/+ftD7zz67HsA4MDQ6",
+    "logo": "https://app.streaming.center/media/catalog_logos/photo_2025-09-30_22-42-25_U4eJYHS.jpg",
+    "country": {
+      "id": 192,
+      "iso2": "ru",
+      "name": "Россия",
+      "name_eng": "Russia"
+    },
+    "region": {
+      "id": 2783,
+      "name": "Самарская Область",
+      "name_eng": "Samara Oblast"
+    },
+    "city": {
+      "id": 182254,
+      "name": "Самара",
+      "name_eng": "Samara"
+    },
+    "genres": [
+      {
+        "id": 18,
+        "name": "Поп",
+        "name_eng": "Pop"
+      },
+      {
+        "id": 19,
+        "name": "R&B",
+        "name_eng": "R&B"
+      },
+      {
+        "id": 47,
+        "name": "Ретро",
+        "name_eng": "Retro"
+      }
+    ],
+    "languages": [
+      {
+        "id": 1,
+        "name": "Русский",
+        "name_eng": "Russian"
+      },
+      {
+        "id": 2,
+        "name": "Английский",
+        "name_eng": "English"
+      },
+      {
+        "id": 5,
+        "name": "Испанский",
+        "name_eng": "Spanish"
+      }
+    ],
+    "streams": [
+      {
+        "id": 610,
+        "stream_url": "https://torint.ru:1335/stream",
+        "audio_format": "mp3",
+        "bitrate": 320,
+        "server_type": "icecast"
+      },
+      {
+        "id": 609,
+        "stream_url": "https://torint.ru:1325/stream",
+        "audio_format": "mp3",
+        "bitrate": 256,
+        "server_type": "icecast"
+      },
+      {
+        "id": 608,
+        "stream_url": "https://torint.ru:1315/stream",
+        "audio_format": "mp3",
+        "bitrate": 192,
+        "server_type": "icecast"
+      },
+      {
+        "id": 607,
+        "stream_url": "https://torint.ru:1305/stream",
+        "audio_format": "mp3",
+        "bitrate": 160,
+        "server_type": "icecast"
+      },
+      {
+        "id": 606,
+        "stream_url": "https://torint.ru:1295/stream",
+        "audio_format": "mp3",
+        "bitrate": 128,
+        "server_type": "icecast"
+      }
+    ],
+    "total_votes": 0,
+    "total_score": 0,
+    "user_id": 1215,
+    "rating": 0.0,
+    "created": "2025-09-30T19:04:32.720",
+    "default_stream": "https://torint.ru:1335/stream"
+  },
+  {
     "id": 624,
     "name": "radio.r41",
     "slug": "radio-r41dva-kanala-veshcha",
@@ -15816,74 +16200,6 @@
     "rating": 0.0,
     "created": "2022-05-19T23:35:40",
     "default_stream": "https://stream.vyshka24.ru/radio24"
-  },
-  {
-    "id": 573,
-    "name": "RadioShakh",
-    "slug": "radioshakhpervoe-shakhovsko",
-    "description": "Первое Шаховское музыкальное интернет радио. Только музыка и ничего кроме музыки!",
-    "enabled": true,
-    "website_url": "https://www.radioshakh.online",
-    "logo": "https://app.streaming.center/media/catalog_logos/radio_71135.png",
-    "country": {
-      "id": 192,
-      "iso2": "ru",
-      "name": "Россия",
-      "name_eng": "Russia"
-    },
-    "region": {
-      "id": 1888,
-      "name": "Единецкий район",
-      "name_eng": "Raionul Edineţ"
-    },
-    "city": {
-      "id": 182153,
-      "name": "Шаховская",
-      "name_eng": "Shakhovskaya"
-    },
-    "genres": [
-      {
-        "id": 56,
-        "name": "Разное",
-        "name_eng": "Various"
-      }
-    ],
-    "languages": [
-      {
-        "id": 1,
-        "name": "Русский",
-        "name_eng": "Russian"
-      }
-    ],
-    "streams": [
-      {
-        "id": 464,
-        "stream_url": "http://radioshakh.ru/music",
-        "audio_format": "mp3",
-        "bitrate": 256,
-        "server_type": "icecast"
-      },
-      {
-        "id": 465,
-        "stream_url": "http://radioshakh.ru/music",
-        "audio_format": "mp3",
-        "bitrate": 256,
-        "server_type": "icecast"
-      },
-      {
-        "id": 466,
-        "stream_url": "http://radioshakh.ru/music",
-        "audio_format": "mp3",
-        "bitrate": 256,
-        "server_type": "icecast"
-      }
-    ],
-    "total_votes": 0,
-    "total_score": 0,
-    "user_id": 1072,
-    "rating": 0.0,
-    "created": "2024-08-09T14:22:27",
-    "default_stream": null
   },
   {
     "id": 612,
@@ -16156,6 +16472,321 @@
     "default_stream": "https://myradio24.org/dvachu"
   },
   {
+    "id": 641,
+    "name": "Star Radio",
+    "slug": "star-radio",
+    "description": "We play the Hitz",
+    "enabled": true,
+    "website_url": "https://www.starfm.lk/",
+    "logo": "https://app.streaming.center/media/catalog_logos/Star_Radio.png",
+    "country": {
+      "id": 131,
+      "iso2": "lk",
+      "name": "Шри-Ланка",
+      "name_eng": "Sri Lanka"
+    },
+    "region": {
+      "id": 1754,
+      "name": "Западная провинция",
+      "name_eng": "Western Province"
+    },
+    "city": {
+      "id": 134581,
+      "name": "Коломбо",
+      "name_eng": "Colombo"
+    },
+    "genres": [
+      {
+        "id": 21,
+        "name": "Рок",
+        "name_eng": "Rock"
+      },
+      {
+        "id": 68,
+        "name": "Азиатская",
+        "name_eng": "Asian"
+      },
+      {
+        "id": 69,
+        "name": "Индийская",
+        "name_eng": "Indian"
+      }
+    ],
+    "languages": [
+      {
+        "id": 2,
+        "name": "Английский",
+        "name_eng": "English"
+      }
+    ],
+    "streams": [
+      {
+        "id": 570,
+        "stream_url": "https://stream.starfm.lk:12275/stream",
+        "audio_format": "mp3",
+        "bitrate": 320,
+        "server_type": "icecast"
+      }
+    ],
+    "total_votes": 0,
+    "total_score": 0,
+    "user_id": 988,
+    "rating": 0.0,
+    "created": "2025-09-23T09:58:16.137",
+    "default_stream": "https://stream.starfm.lk:12275/stream"
+  },
+  {
+    "id": 639,
+    "name": "Tharu FM",
+    "slug": "tharu-fm",
+    "description": "Favorite Radio Station",
+    "enabled": true,
+    "website_url": "https://tharufm.com/",
+    "logo": "https://app.streaming.center/media/catalog_logos/THARU-FM.png",
+    "country": {
+      "id": 131,
+      "iso2": "lk",
+      "name": "Шри-Ланка",
+      "name_eng": "Sri Lanka"
+    },
+    "region": {
+      "id": 1754,
+      "name": "Западная провинция",
+      "name_eng": "Western Province"
+    },
+    "city": {
+      "id": 134581,
+      "name": "Коломбо",
+      "name_eng": "Colombo"
+    },
+    "genres": [
+      {
+        "id": 6,
+        "name": "Рэп",
+        "name_eng": "Rap"
+      },
+      {
+        "id": 21,
+        "name": "Рок",
+        "name_eng": "Rock"
+      },
+      {
+        "id": 68,
+        "name": "Азиатская",
+        "name_eng": "Asian"
+      }
+    ],
+    "languages": [
+      {
+        "id": 59,
+        "name": "Сингальский",
+        "name_eng": "Sinhalese"
+      }
+    ],
+    "streams": [
+      {
+        "id": 568,
+        "stream_url": "https://stream.starfm.lk:12265/stream",
+        "audio_format": "mp3",
+        "bitrate": 320,
+        "server_type": "icecast"
+      }
+    ],
+    "total_votes": 0,
+    "total_score": 0,
+    "user_id": 988,
+    "rating": 0.0,
+    "created": "2025-09-23T09:04:57.354",
+    "default_stream": "https://stream.starfm.lk:12265/stream"
+  },
+  {
+    "id": 650,
+    "name": "Ultraradio",
+    "slug": "ultraradio",
+    "description": "All kind of music",
+    "enabled": true,
+    "website_url": "https://ultraradio.eu",
+    "logo": "https://app.streaming.center/media/catalog_logos/152379055_2229180463886037_1047526556511445181_n.jpg",
+    "country": {
+      "id": 167,
+      "iso2": "nl",
+      "name": "Нидерланды",
+      "name_eng": "The Netherlands"
+    },
+    "region": {
+      "id": 2398,
+      "name": "Южная Голландия",
+      "name_eng": "South Holland"
+    },
+    "city": {
+      "id": 156792,
+      "name": "Роттердам",
+      "name_eng": "Rotterdam"
+    },
+    "genres": [
+      {
+        "id": 9,
+        "name": "Кантри",
+        "name_eng": "Country"
+      },
+      {
+        "id": 56,
+        "name": "Разное",
+        "name_eng": "Various"
+      },
+      {
+        "id": 66,
+        "name": "Мировая музыка",
+        "name_eng": "World Music"
+      }
+    ],
+    "languages": [
+      {
+        "id": 52,
+        "name": "Нидерландский",
+        "name_eng": "Dutch"
+      }
+    ],
+    "streams": [
+      {
+        "id": 599,
+        "stream_url": "https://stream1.supremehosting.nl:1050/;?type=http&nocache=1760428166",
+        "audio_format": "mp3",
+        "bitrate": 192,
+        "server_type": "shoutcast"
+      }
+    ],
+    "total_votes": 0,
+    "total_score": 0,
+    "user_id": 1317,
+    "rating": 0.0,
+    "created": "2025-10-14T08:19:27.377",
+    "default_stream": "https://stream1.supremehosting.nl:1050/;?type=http&nocache=1760428166"
+  },
+  {
+    "id": 640,
+    "name": "Velicham FM",
+    "slug": "velicham-fm",
+    "description": "This is the Light of Islam",
+    "enabled": true,
+    "website_url": "https://www.muslimvanoli.com/",
+    "logo": "https://app.streaming.center/media/catalog_logos/Velicham_FM.png",
+    "country": {
+      "id": 131,
+      "iso2": "lk",
+      "name": "Шри-Ланка",
+      "name_eng": "Sri Lanka"
+    },
+    "region": {
+      "id": 1754,
+      "name": "Западная провинция",
+      "name_eng": "Western Province"
+    },
+    "city": {
+      "id": 134581,
+      "name": "Коломбо",
+      "name_eng": "Colombo"
+    },
+    "genres": [
+      {
+        "id": 3,
+        "name": "Разговорное",
+        "name_eng": "Talk"
+      },
+      {
+        "id": 69,
+        "name": "Индийская",
+        "name_eng": "Indian"
+      }
+    ],
+    "languages": [
+      {
+        "id": 33,
+        "name": "Тамильский",
+        "name_eng": "Tamil"
+      }
+    ],
+    "streams": [
+      {
+        "id": 569,
+        "stream_url": "https://stream.muslimvanoli.com:1105/stream",
+        "audio_format": "mp3",
+        "bitrate": 320,
+        "server_type": "icecast"
+      }
+    ],
+    "total_votes": 0,
+    "total_score": 0,
+    "user_id": 988,
+    "rating": 0.0,
+    "created": "2025-09-23T09:08:55.208",
+    "default_stream": "https://stream.muslimvanoli.com:1105/stream"
+  },
+  {
+    "id": 648,
+    "name": "Vertizontal Radio",
+    "slug": "vertizontal-radio",
+    "description": "Stellar music from yesterday and today. A mix of CCM, JAZZ, R&B, Country, Soft Rock, and Folk Rock music.",
+    "enabled": true,
+    "website_url": "https://www.vertizontalradio.com",
+    "logo": "https://app.streaming.center/media/catalog_logos/vertizontalmedia-logo-resized300.png",
+    "country": {
+      "id": 234,
+      "iso2": "us",
+      "name": "США",
+      "name_eng": "United States"
+    },
+    "region": {
+      "id": 3626,
+      "name": "Миссури",
+      "name_eng": "Missouri"
+    },
+    "city": {
+      "id": 203135,
+      "name": "Индепенденс",
+      "name_eng": "Independence"
+    },
+    "genres": [
+      {
+        "id": 9,
+        "name": "Кантри",
+        "name_eng": "Country"
+      },
+      {
+        "id": 15,
+        "name": "Джаз",
+        "name_eng": "Jazz"
+      },
+      {
+        "id": 55,
+        "name": "Религия",
+        "name_eng": "Gospel"
+      }
+    ],
+    "languages": [
+      {
+        "id": 2,
+        "name": "Английский",
+        "name_eng": "English"
+      }
+    ],
+    "streams": [
+      {
+        "id": 600,
+        "stream_url": "https://streaming.live365.com/a34398",
+        "audio_format": "mp3",
+        "bitrate": 128,
+        "server_type": "other"
+      }
+    ],
+    "total_votes": 0,
+    "total_score": 0,
+    "user_id": 2065,
+    "rating": 0.0,
+    "created": "2025-10-13T11:47:14.303",
+    "default_stream": "https://streaming.live365.com/a34398"
+  },
+  {
     "id": 621,
     "name": "veshok radio",
     "slug": "veshok-radiotolko-luchshie-kh",
@@ -16225,6 +16856,60 @@
     "rating": 0.0,
     "created": "2025-09-02T17:44:54",
     "default_stream": "https://radio.veshok.com:8443/veshokradio"
+  },
+  {
+    "id": 652,
+    "name": "Vijay FM",
+    "slug": "vijay-fm",
+    "description": "Tamil Radio",
+    "enabled": true,
+    "website_url": "https://share.google/ExmEbDoKIeEpTkkZW",
+    "logo": "https://app.streaming.center/media/catalog_logos/ic_launcher_round.png",
+    "country": {
+      "id": 105,
+      "iso2": "in",
+      "name": "Индия",
+      "name_eng": "India"
+    },
+    "region": {
+      "id": 1348,
+      "name": "Тамилнад",
+      "name_eng": "Tamil Nadu"
+    },
+    "city": {
+      "id": 116124,
+      "name": "",
+      "name_eng": "Mūkondapalli"
+    },
+    "genres": [
+      {
+        "id": 21,
+        "name": "Рок",
+        "name_eng": "Rock"
+      }
+    ],
+    "languages": [
+      {
+        "id": 33,
+        "name": "Тамильский",
+        "name_eng": "Tamil"
+      }
+    ],
+    "streams": [
+      {
+        "id": 605,
+        "stream_url": "https://stream.zeno.fm/760bq8vdpy8uv.pls",
+        "audio_format": "mp3",
+        "bitrate": 128,
+        "server_type": "icecast"
+      }
+    ],
+    "total_votes": 0,
+    "total_score": 0,
+    "user_id": 1258,
+    "rating": 0.0,
+    "created": "2025-10-27T17:20:18.736",
+    "default_stream": "https://stream.zeno.fm/760bq8vdpy8uv.pls"
   },
   {
     "id": 628,
@@ -16417,70 +17102,6 @@
     "rating": 0.0,
     "created": "2022-04-06T22:58:27",
     "default_stream": null
-  },
-  {
-    "id": 475,
-    "name": "Wow Music Cover",
-    "slug": "wow-music-coverwow-music-cover",
-    "description": "Wow Music Cover - любимые песни в новом звучании! Проект от стриминговой платформы Wow Music. Круглосуточный эфир без рекламы и надоедливых разговоров. Wow Music – это круче, чем радио!",
-    "enabled": true,
-    "website_url": "http://wowmusic.ru",
-    "logo": "https://app.streaming.center/media/catalog_logos/radio_70866.png",
-    "country": {
-      "id": 192,
-      "iso2": "ru",
-      "name": "Россия",
-      "name_eng": "Russia"
-    },
-    "region": {
-      "id": 1888,
-      "name": "Единецкий район",
-      "name_eng": "Raionul Edineţ"
-    },
-    "city": {
-      "id": 182975,
-      "name": "Москва",
-      "name_eng": "Moscow"
-    },
-    "genres": [
-      {
-        "id": 11,
-        "name": "Диско",
-        "name_eng": "Disco"
-      },
-      {
-        "id": 18,
-        "name": "Поп",
-        "name_eng": "Pop"
-      },
-      {
-        "id": 56,
-        "name": "Разное",
-        "name_eng": "Various"
-      }
-    ],
-    "languages": [
-      {
-        "id": 1,
-        "name": "Русский",
-        "name_eng": "Russian"
-      }
-    ],
-    "streams": [
-      {
-        "id": 381,
-        "stream_url": "https://stream.vyshka24.ru/wowcover",
-        "audio_format": "mp3",
-        "bitrate": 192,
-        "server_type": "icecast"
-      }
-    ],
-    "total_votes": 0,
-    "total_score": 0,
-    "user_id": 1915,
-    "rating": 0.0,
-    "created": "2022-04-04T04:30:31",
-    "default_stream": "https://stream.vyshka24.ru/wowcover"
   },
   {
     "id": 473,
@@ -16773,6 +17394,74 @@
     "default_stream": null
   },
   {
+    "id": 630,
+    "name": "YACHT RADIO",
+    "slug": "yacht-radio",
+    "description": "Яхт-радио, это интернет-проект, созданный коллективом волонтеров. Первое Яхтенное, Первое Волонтерское, территория, свободная от политики!",
+    "enabled": true,
+    "website_url": "https://yachtradio.com/",
+    "logo": "https://app.streaming.center/media/catalog_logos/photo_2025-09-21_21-08-13.jpg",
+    "country": {
+      "id": 136,
+      "iso2": "lv",
+      "name": "Латвия",
+      "name_eng": "Latvia"
+    },
+    "region": null,
+    "city": null,
+    "genres": [
+      {
+        "id": 18,
+        "name": "Поп",
+        "name_eng": "Pop"
+      },
+      {
+        "id": 47,
+        "name": "Ретро",
+        "name_eng": "Retro"
+      },
+      {
+        "id": 56,
+        "name": "Разное",
+        "name_eng": "Various"
+      }
+    ],
+    "languages": [
+      {
+        "id": 1,
+        "name": "Русский",
+        "name_eng": "Russian"
+      },
+      {
+        "id": 2,
+        "name": "Английский",
+        "name_eng": "English"
+      }
+    ],
+    "streams": [
+      {
+        "id": 552,
+        "stream_url": "https://yacht-radio.lv:1165/stream",
+        "audio_format": "mp3",
+        "bitrate": 320,
+        "server_type": "icecast"
+      },
+      {
+        "id": 551,
+        "stream_url": "https://yacht-radio.lv:8195/stream",
+        "audio_format": "mp3",
+        "bitrate": 192,
+        "server_type": "icecast"
+      }
+    ],
+    "total_votes": 0,
+    "total_score": 0,
+    "user_id": 819,
+    "rating": 0.0,
+    "created": "2025-09-21T17:10:51.233",
+    "default_stream": "https://yacht-radio.lv:1165/stream"
+  },
+  {
     "id": 571,
     "name": "БарсукФМ",
     "slug": "barsukfmrok-s-beregov-v",
@@ -16955,13 +17644,13 @@
     "default_stream": "https://myradio24.org/dushevnoe"
   },
   {
-    "id": 629,
-    "name": "КАЗАНТИПЫ",
-    "slug": "kazantipy",
-    "description": "Развлекательное радио с утренними, дневными и вечерними шоу, уникальными подкастами о музыке, медицине, отношениях и другом!\r\n\r\nШоу #КАЗАНТИПЫУТРО - Артём Рычёв и Руслан Мазитов по будням с  08:00 до 09:00",
+    "id": 646,
+    "name": "ЗЕМЛЯ Плюс (Earth plus) FM",
+    "slug": "zemlia-plius-earth-plus-fm",
+    "description": "🌍Землянин, устал от однотипных и скучных FM-волн? Присоединяйся к нам, ЗЕМЛЯ PLUS FM готова порадовать самыми свежими новинками!\r\n✅ Земля Плюс (Earth Plus) - радиостанция , где звучат самые свежие хиты и легендарные композиции из прошлого!\r\n\r\n✅ Мы приглашаем всех ценителей отличной музыки на нашу космическую - радиостанцию Радио Земля Плюс FM!\r\n\r\n✅ Здесь ты услышишь легкую и тяжелую, позитивную и грустную, танцевальную и энергичную музыку 90-х, 2000-х и наших дней - все самое клёвое для настоящих ценителей качественного звука.\r\n\r\n✅ Земля Плюс - это радиостанция для тех, кто знает толк в хорошей музыке и умеет наслаждаться жизнью. Здесь ты найдешь музыку для своей вечеринки, для отдыха с друзьями и для того, чтобы поднять себе настроение в любой момент!\r\n\r\n✅ Слушай нас где угодно и когда угодно, просто подключившись к нашему интернет-потоку. Давай зажигать вместе с Земля Плюс!",
     "enabled": true,
-    "website_url": "https://kazantipyradio.bigtwinmusic.ru/",
-    "logo": "https://app.streaming.center/media/catalog_logos/%D1%80%D0%BE%D0%B7%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D0%BD%D0%B3.png",
+    "website_url": "https://eaplfm.ru/",
+    "logo": "https://app.streaming.center/media/catalog_logos/PwseGdu6uKFPDvFk6e6glIy_PIEvdKp5BKjT85p7vEhd34Hp6fMBmPKvtHJOvY7mjQziUI0Lb1_zBSAjiK.jpg",
     "country": {
       "id": 192,
       "iso2": "ru",
@@ -16969,22 +17658,86 @@
       "name_eng": "Russia"
     },
     "region": null,
-    "city": null,
+    "city": {
+      "id": 182853,
+      "name": "Нижний Новгород",
+      "name_eng": "Nizhny Novgorod"
+    },
     "genres": [
-      {
-        "id": 3,
-        "name": "Разговорное",
-        "name_eng": "Talk"
-      },
       {
         "id": 4,
         "name": "Новости",
         "name_eng": "News"
       },
       {
-        "id": 42,
-        "name": "Юмор",
-        "name_eng": "Humor"
+        "id": 53,
+        "name": "Клубное",
+        "name_eng": "Club"
+      },
+      {
+        "id": 56,
+        "name": "Разное",
+        "name_eng": "Various"
+      }
+    ],
+    "languages": [
+      {
+        "id": 1,
+        "name": "Русский",
+        "name_eng": "Russian"
+      },
+      {
+        "id": 2,
+        "name": "Английский",
+        "name_eng": "English"
+      }
+    ],
+    "streams": [
+      {
+        "id": 590,
+        "stream_url": "https://listen.eaplfm.com/top.mp3",
+        "audio_format": "mp3",
+        "bitrate": 128,
+        "server_type": "icecast"
+      }
+    ],
+    "total_votes": 0,
+    "total_score": 0,
+    "user_id": 2056,
+    "rating": 0.0,
+    "created": "2025-10-05T02:27:43.147",
+    "default_stream": "https://listen.eaplfm.com/top.mp3"
+  },
+  {
+    "id": 651,
+    "name": "ЗОЛОТАЯ  КОЛЛЕКЦИЯ",
+    "slug": "zolotaia-kollektsiia",
+    "description": "«Золотая Коллекция» — это не просто радиостанция, а культурный феномен, сохраняющий музыкальное наследие XX века. Мы создаём пространство, где каждый слушатель находит свою любимую мелодию.«Золотая Коллекция» — это уникальная интернет-радиостанция, которая погружает слушателей в атмосферу незабываемых музыкальных хитов 80-х, 90-х и 2000-х годов. Мы собрали для вас настоящую музыкальную сокровищницу, где каждый трек — это драгоценность высшей пробы.\r\nМиссия радиостанции:\r\nСохранение музыкального наследия\r\nПоддержка культурных традиций\r\nСоздание пространства для общения единомышленников\r\nПродвижение качественной музыки\r\nОсновные ценности:\r\nКачество музыкального контента\r\nПрофессионализм в подаче материала\r\nУважение к слушателю\r\nСохранение музыкального наследия\r\nПриглашаем вас стать частью уникального музыкального проекта, где каждая нота наполнена историей и эмоциями!\r\nВместе мы создаём пространство, где музыка объединяет людей, а воспоминания оживают в каждом треке.",
+    "enabled": true,
+    "website_url": "https://goldencollection.tilda.ws",
+    "logo": "https://app.streaming.center/media/catalog_logos/%D0%9A%D0%9E%D0%9B%D0%9B_%D0%91%D0%90%D0%9D%D0%95%D0%A0.jpg",
+    "country": {
+      "id": 192,
+      "iso2": "ru",
+      "name": "Россия",
+      "name_eng": "Russia"
+    },
+    "region": null,
+    "city": {
+      "id": 185541,
+      "name": "Барнаул",
+      "name_eng": "Barnaul"
+    },
+    "genres": [
+      {
+        "id": 18,
+        "name": "Поп",
+        "name_eng": "Pop"
+      },
+      {
+        "id": 47,
+        "name": "Ретро",
+        "name_eng": "Retro"
       }
     ],
     "languages": [
@@ -16996,19 +17749,19 @@
     ],
     "streams": [
       {
-        "id": 544,
-        "stream_url": "http://kazantipyradio.bigtwinmusic.ru:1040/stream",
+        "id": 604,
+        "stream_url": "https://listen5.myradio24.com/83524",
         "audio_format": "mp3",
-        "bitrate": 128,
+        "bitrate": 320,
         "server_type": "icecast"
       }
     ],
     "total_votes": 0,
     "total_score": 0,
-    "user_id": 1369,
+    "user_id": 2073,
     "rating": 0.0,
-    "created": "2025-09-18T14:25:20.265",
-    "default_stream": null
+    "created": "2025-10-19T06:32:21.473",
+    "default_stream": "https://listen5.myradio24.com/83524"
   },
   {
     "id": 542,
@@ -17082,6 +17835,60 @@
     "default_stream": "https://myradio24.org/kinozaltv"
   },
   {
+    "id": 661,
+    "name": "Ночное такси",
+    "slug": "nochnoe-taksi",
+    "description": "Интернет-радио «Ночное такси» вещает из Петербурга с портала Студии «Ночное такси». Трансляция осуществляется в соответствии со Свидетельством о регистрации СМИ: Эл №77-2423, от 21 февраля 2000г.\r\n\r\nВещание радиостанции с одноименным Студии названием, соответствует логике развития своих СМИ, которые для продюсера Александра Фрумина  были обязательными элементами структуры Студии «Ночное такси», где  не только осуществляют профессиональное производство аудио и видео продукции шансона по-русски, но активно занимаются продвижением русской песни. С этой целью был создан сайт Студии «Ночное такси», а в 2010г. был открыт телеканал «Ночное такси» на YouTube по прямому договору с  компанией Google Ireland. Трансляция радиопрограммы, связанной с деятельностью Студии - важная часть этой стратегии.",
+    "enabled": true,
+    "website_url": "https://radiont.shansonspb.ru:1030/api/startpage/1/",
+    "logo": "https://app.streaming.center/media/catalog_logos/logo-radio.jpg",
+    "country": {
+      "id": 192,
+      "iso2": "ru",
+      "name": "Россия",
+      "name_eng": "Russia"
+    },
+    "region": {
+      "id": 2801,
+      "name": "Санкт-Петербург",
+      "name_eng": "Leningrad"
+    },
+    "city": {
+      "id": 182244,
+      "name": "Санкт-Петербург",
+      "name_eng": "Saint Petersburg\n"
+    },
+    "genres": [
+      {
+        "id": 51,
+        "name": "Шансон",
+        "name_eng": "Chanson"
+      }
+    ],
+    "languages": [
+      {
+        "id": 1,
+        "name": "Русский",
+        "name_eng": "Russian"
+      }
+    ],
+    "streams": [
+      {
+        "id": 622,
+        "stream_url": "https://radiont.shansonspb.ru:1045/stream",
+        "audio_format": "mp3",
+        "bitrate": 256,
+        "server_type": "icecast"
+      }
+    ],
+    "total_votes": 0,
+    "total_score": 0,
+    "user_id": 1158,
+    "rating": 0.0,
+    "created": "2025-11-08T20:01:18.392",
+    "default_stream": "https://radiont.shansonspb.ru:1045/stream"
+  },
+  {
     "id": 441,
     "name": "Радио \"Бродяга On-Line\"",
     "slug": "radio-brodiaga-on-line-brodiaga-on-lin",
@@ -17103,7 +17910,7 @@
     "city": {
       "id": 182244,
       "name": "Санкт-Петербург",
-      "name_eng": "Leningrad"
+      "name_eng": "Saint Petersburg\n"
     },
     "genres": [
       {
@@ -17151,6 +17958,60 @@
     "rating": 0.0,
     "created": "2021-04-30T14:09:49",
     "default_stream": "https://myradio24.org/traveller"
+  },
+  {
+    "id": 664,
+    "name": "Радио \"Голос Общин\"",
+    "slug": "radio-golos-obshchin",
+    "description": "Голос Общин - интернет радио которое вещает круглосуточно на аварском языке из Дагестана. Голос Общин - всегда с тобой частичка Родины, куда бы не забросила тебя судьба.",
+    "enabled": true,
+    "website_url": "https://avar-radio.online",
+    "logo": "https://app.streaming.center/media/catalog_logos/%D0%BB%D0%BE%D0%B3%D0%BE_%D1%80%D0%B0%D0%B4%D0%B8%D0%BE_%D0%B4%D0%BB%D1%8F_%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9.png",
+    "country": {
+      "id": 192,
+      "iso2": "ru",
+      "name": "Россия",
+      "name_eng": "Russia"
+    },
+    "region": {
+      "id": 2816,
+      "name": "Дагестан",
+      "name_eng": "Dagestan"
+    },
+    "city": {
+      "id": 183122,
+      "name": "Махачкала",
+      "name_eng": "Makhachkala"
+    },
+    "genres": [
+      {
+        "id": 3,
+        "name": "Разговорное",
+        "name_eng": "Talk"
+      }
+    ],
+    "languages": [
+      {
+        "id": 1,
+        "name": "Русский",
+        "name_eng": "Russian"
+      }
+    ],
+    "streams": [
+      {
+        "id": 627,
+        "stream_url": "https://avar-radio.online:8005/stream",
+        "audio_format": "mp3",
+        "bitrate": 128,
+        "server_type": "icecast"
+      }
+    ],
+    "total_votes": 0,
+    "total_score": 0,
+    "user_id": 1037,
+    "rating": 0.0,
+    "created": "2025-11-27T15:25:32.858",
+    "default_stream": "https://avar-radio.online:8005/stream"
   },
   {
     "id": 507,
@@ -17330,72 +18191,6 @@
     "default_stream": "https://stream.vyshka24.ru/uzbekistan"
   },
   {
-    "id": 588,
-    "name": "Радио Малина",
-    "slug": "radio-malinaradio-malina",
-    "description": "Радио Малина - это яркий, сочный, динамичный микс русских хитов! 24/7 мы поднимаем настроение нашим слушателям хитами и новинками. Радио Малина - стихия русской музыки!",
-    "enabled": true,
-    "website_url": "https://vk.com/radiomalinafm",
-    "logo": "https://app.streaming.center/media/catalog_logos/radio_71180.jpg",
-    "country": {
-      "id": 192,
-      "iso2": "ru",
-      "name": "Россия",
-      "name_eng": "Russia"
-    },
-    "region": {
-      "id": 2774,
-      "name": "Ульяновская Область",
-      "name_eng": "Ulyanovsk Oblast"
-    },
-    "city": {
-      "id": 181673,
-      "name": "Ульяновск",
-      "name_eng": "Ulyanovsk"
-    },
-    "genres": [
-      {
-        "id": 10,
-        "name": "Танцевальное",
-        "name_eng": "Dance"
-      },
-      {
-        "id": 18,
-        "name": "Поп",
-        "name_eng": "Pop"
-      }
-    ],
-    "languages": [
-      {
-        "id": 1,
-        "name": "Русский",
-        "name_eng": "Russian"
-      }
-    ],
-    "streams": [
-      {
-        "id": 479,
-        "stream_url": "https://listen5.myradio24.com/malina",
-        "audio_format": "mp3",
-        "bitrate": 128,
-        "server_type": "icecast"
-      },
-      {
-        "id": 480,
-        "stream_url": "http://myradio24.org/malina",
-        "audio_format": "mp3",
-        "bitrate": 128,
-        "server_type": "icecast"
-      }
-    ],
-    "total_votes": 0,
-    "total_score": 0,
-    "user_id": 2012,
-    "rating": 0.0,
-    "created": "2024-12-25T09:42:03",
-    "default_stream": "https://listen5.myradio24.com/malina"
-  },
-  {
     "id": 328,
     "name": "Радио Мегахит",
     "slug": "radio-megakhitluchshie-sovremen",
@@ -17476,7 +18271,7 @@
     "city": {
       "id": 182244,
       "name": "Санкт-Петербург",
-      "name_eng": "Leningrad"
+      "name_eng": "Saint Petersburg\n"
     },
     "genres": [
       {
@@ -17547,7 +18342,7 @@
     "city": {
       "id": 182244,
       "name": "Санкт-Петербург",
-      "name_eng": "Leningrad"
+      "name_eng": "Saint Petersburg\n"
     },
     "genres": [
       {
@@ -17585,6 +18380,59 @@
     "rating": 0.0,
     "created": "2025-07-21T11:24:14",
     "default_stream": "https://stream.vyshka24.ru/radioretro24"
+  },
+  {
+    "id": 632,
+    "name": "РАДИО СТАРЫЙ МАЯК",
+    "slug": "radio-staryi-maiak",
+    "description": "Радио Cтарый Маяк – это радиостанция для тех, кто ценит музыку с характером и историей. Здесь царит тёплая, ностальгическая атмосфера, способная перенести вас в лучшие времена. Аудитория станции – взрослые слушатели, которым близки ритмы юности, мелодии любви и энергия танцполов прошлого века. Станция отличается внимательным подходом к музыкальному наполнению: каждый день — как звуковая открытка из 70-х, 80-х и 90-х\r\n\r\nМузыкальный эфир наполнен легендарными композициями прошлых десятилетий – от диско до софт-рока, от поп-групп до соло-исполнителей. В эфире звучат любимые хиты от ABBA, Boney M, Queen, Donna Summer, Modern Talking, Bee Gees и многих других.",
+    "enabled": true,
+    "website_url": "https://yachtradio.com/",
+    "logo": "https://app.streaming.center/media/catalog_logos/17885_radio.png",
+    "country": {
+      "id": 136,
+      "iso2": "lv",
+      "name": "Латвия",
+      "name_eng": "Latvia"
+    },
+    "region": null,
+    "city": null,
+    "genres": [
+      {
+        "id": 47,
+        "name": "Ретро",
+        "name_eng": "Retro"
+      }
+    ],
+    "languages": [
+      {
+        "id": 1,
+        "name": "Русский",
+        "name_eng": "Russian"
+      }
+    ],
+    "streams": [
+      {
+        "id": 555,
+        "stream_url": "https://yacht-radio.lv:1175/stream",
+        "audio_format": "mp3",
+        "bitrate": 320,
+        "server_type": "icecast"
+      },
+      {
+        "id": 554,
+        "stream_url": "https://yacht-radio.lv:1115/stream",
+        "audio_format": "mp3",
+        "bitrate": 192,
+        "server_type": "icecast"
+      }
+    ],
+    "total_votes": 0,
+    "total_score": 0,
+    "user_id": 819,
+    "rating": 0.0,
+    "created": "2025-09-21T17:30:54.634",
+    "default_stream": "https://yacht-radio.lv:1175/stream"
   },
   {
     "id": 424,
@@ -17849,65 +18697,6 @@
     "default_stream": "https://myradio24.org/49731"
   },
   {
-    "id": 596,
-    "name": "Русский Драйв FM",
-    "slug": "russkii-draiv-fm-russkii-draiv",
-    "description": "\r\nРусский Драйв FM — это радиостанция, ориентированная на русскоязычную аудиторию. Она транслирует популярные хиты, сочетая в себе различные музыкальные жанры, такие как поп, рок и хип-хоп, с акцентом на современные музыкальные тренды. Станция предлагает динамичное вещание, которое отражает энергичную атмосферу и драйв, характерный для молодежной культуры. Русский Драйв FM идеально подходит для тех, кто ищет позитивные и вдохновляющие треки для активного и насыщенного дня.\r\n",
-    "enabled": true,
-    "website_url": "https://rusdriveradio.ru",
-    "logo": "https://app.streaming.center/media/catalog_logos/radio_71206.png",
-    "country": {
-      "id": 192,
-      "iso2": "ru",
-      "name": "Россия",
-      "name_eng": "Russia"
-    },
-    "region": {
-      "id": 2783,
-      "name": "Самарская Область",
-      "name_eng": "Samara Oblast"
-    },
-    "city": {
-      "id": 182254,
-      "name": "Самара",
-      "name_eng": "Samara"
-    },
-    "genres": [
-      {
-        "id": 10,
-        "name": "Танцевальное",
-        "name_eng": "Dance"
-      },
-      {
-        "id": 18,
-        "name": "Поп",
-        "name_eng": "Pop"
-      }
-    ],
-    "languages": [
-      {
-        "id": 1,
-        "name": "Русский",
-        "name_eng": "Russian"
-      }
-    ],
-    "streams": [
-      {
-        "id": 492,
-        "stream_url": "https://rusdriveradio.ru:8000/live_aac64",
-        "audio_format": "mp3",
-        "bitrate": 128,
-        "server_type": "icecast"
-      }
-    ],
-    "total_votes": 0,
-    "total_score": 0,
-    "user_id": 2018,
-    "rating": 0.0,
-    "created": "2025-02-08T10:06:22",
-    "default_stream": "https://rusdriveradio.ru:8000/live_aac64"
-  },
-  {
     "id": 366,
     "name": "Салют Fm ",
     "slug": "saliut-fm-muzykalnoe-rad",
@@ -17957,20 +18746,6 @@
     ],
     "streams": [
       {
-        "id": 284,
-        "stream_url": "https://stream.salyutfm.ru:8015/stream",
-        "audio_format": "mp3",
-        "bitrate": 256,
-        "server_type": "icecast"
-      },
-      {
-        "id": 283,
-        "stream_url": "https://stream.salyutfm.ru:8025/stream",
-        "audio_format": "mp3",
-        "bitrate": 192,
-        "server_type": "icecast"
-      },
-      {
         "id": 281,
         "stream_url": "http://stream.salyutfm.ru:8000/stream",
         "audio_format": "mp3",
@@ -17987,10 +18762,10 @@
     ],
     "total_votes": 0,
     "total_score": 0,
-    "user_id": 622,
+    "user_id": 227,
     "rating": 0.0,
     "created": "2019-09-12T07:28:35",
-    "default_stream": "https://stream.salyutfm.ru:8015/stream"
+    "default_stream": "https://stream.salyutfm.ru:8005/stream"
   },
   {
     "id": 601,
@@ -18059,39 +18834,30 @@
     "default_stream": "https://drh-node-03.dline-media.com/smorodina"
   },
   {
-    "id": 611,
-    "name": "Шалаев Радио",
-    "slug": "shalaev-radioinstrumentalna",
-    "description": "Инструментальная музыка и песни композитора и исполнителя Виталия Шалаева",
+    "id": 662,
+    "name": "Стратосфера",
+    "slug": "stratosfera",
+    "description": "На этой радиостанции записи работы и переговоров космонавтов с ЦУП.\r\nМузыка композиторов сотрудничающих с радиостанцией \"Cassiopeia Station\".",
     "enabled": true,
-    "website_url": "",
-    "logo": "https://app.streaming.center/media/catalog_logos/radio_71228.jpg",
+    "website_url": "https://cp.ural-radio-station.ru:1030/api/startpage/7/",
+    "logo": "https://app.streaming.center/media/catalog_logos/%D0%9C%D0%B0%D0%BA%D0%B5%D1%82_%D0%A1%D1%82%D1%80%D0%B0%D1%82%D0%BE%D1%81%D1%84%D0%B5%D1%80%D0%B0.png",
     "country": {
       "id": 192,
       "iso2": "ru",
       "name": "Россия",
       "name_eng": "Russia"
     },
-    "region": {
-      "id": 2791,
-      "name": "Новгородская Область",
-      "name_eng": "Novgorod Oblast"
-    },
+    "region": null,
     "city": {
-      "id": 182833,
-      "name": "Великий Новгород",
-      "name_eng": "Veliky Novgorod"
+      "id": 184834,
+      "name": "Екатеринбург",
+      "name_eng": "Yekaterinburg"
     },
     "genres": [
       {
-        "id": 33,
-        "name": "Инструментальное",
-        "name_eng": "Instrumental"
-      },
-      {
-        "id": 40,
-        "name": "Электронное",
-        "name_eng": "Electronic"
+        "id": 29,
+        "name": "Эмбиент",
+        "name_eng": "Ambient"
       }
     ],
     "languages": [
@@ -18103,25 +18869,18 @@
     ],
     "streams": [
       {
-        "id": 509,
-        "stream_url": "https://drh-node-03.dline-media.com/ShalaevRadio",
+        "id": 623,
+        "stream_url": "https://cp.ural-radio-station.ru:1115/stream",
         "audio_format": "mp3",
-        "bitrate": 128,
-        "server_type": "icecast"
-      },
-      {
-        "id": 510,
-        "stream_url": "https://drh-node-03.dline-media.com/ShalaevRadio",
-        "audio_format": "mp3",
-        "bitrate": 128,
+        "bitrate": 320,
         "server_type": "icecast"
       }
     ],
     "total_votes": 0,
     "total_score": 0,
-    "user_id": 2031,
+    "user_id": 1305,
     "rating": 0.0,
-    "created": "2025-06-03T06:40:28",
-    "default_stream": "https://drh-node-03.dline-media.com/ShalaevRadio"
+    "created": "2025-11-22T14:51:57.778",
+    "default_stream": "https://cp.ural-radio-station.ru:1115/stream"
   }
 ]
