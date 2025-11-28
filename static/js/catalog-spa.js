@@ -319,15 +319,44 @@ class CatalogSPA {
       return;
     }
 
-    let paginationHTML = '<ul class="pagination-list">';
+    let paginationHTML = '<ul class="pagination pagination-default">';
 
-    // Previous button
-    if (currentPage > 1) {
-      paginationHTML += `<li><a href="#" class="pagination-link" data-page="${currentPage - 1}">‹</a></li>`;
+    // First button
+    if (currentPage === 1) {
+      paginationHTML += `
+      <li class="page-item disabled">
+        <a aria-disabled="true" aria-label="First" class="page-link" role="button" tabindex="-1">
+          <span aria-hidden="true">««</span>
+        </a>
+      </li>`;
+    } else {
+      paginationHTML += `
+      <li class="page-item">
+        <a href="#" aria-label="First" class="page-link" role="button" data-page="1">
+          <span aria-hidden="true">««</span>
+        </a>
+      </li>`;
     }
 
-    // Page numbers
-    const maxVisible = 7;
+    // Previous button
+    if (currentPage === 1) {
+      paginationHTML += `
+      <li class="page-item disabled">
+        <a aria-disabled="true" aria-label="Previous" class="page-link" role="button" tabindex="-1">
+          <span aria-hidden="true">«</span>
+        </a>
+      </li>`;
+    } else {
+      paginationHTML += `
+      <li class="page-item">
+        <a href="#" aria-label="Previous" class="page-link" role="button" data-page="${currentPage - 1}">
+          <span aria-hidden="true">«</span>
+        </a>
+      </li>`;
+    }
+
+    // Page numbers - show up to 5 pages around current page
+    const maxVisible = 5;
     let startPage = Math.max(1, currentPage - Math.floor(maxVisible / 2));
     let endPage = Math.min(totalPages, startPage + maxVisible - 1);
 
@@ -335,35 +364,59 @@ class CatalogSPA {
       startPage = Math.max(1, endPage - maxVisible + 1);
     }
 
-    if (startPage > 1) {
-      paginationHTML += `<li><a href="#" class="pagination-link" data-page="1">1</a></li>`;
-      if (startPage > 2) {
-        paginationHTML += `<li><span class="pagination-ellipsis">…</span></li>`;
-      }
-    }
-
     for (let i = startPage; i <= endPage; i++) {
-      const activeClass = i === currentPage ? 'is-current' : '';
-      paginationHTML += `<li><a href="#" class="pagination-link ${activeClass}" data-page="${i}">${i}</a></li>`;
-    }
-
-    if (endPage < totalPages) {
-      if (endPage < totalPages - 1) {
-        paginationHTML += `<li><span class="pagination-ellipsis">…</span></li>`;
+      if (i === currentPage) {
+        paginationHTML += `
+      <li class="page-item active">
+        <a aria-current="page" aria-label="Page ${i}" class="page-link" role="button" style="cursor: default;">${i}</a>
+      </li>`;
+      } else {
+        paginationHTML += `
+      <li class="page-item">
+        <a href="#" aria-label="Page ${i}" class="page-link" role="button" data-page="${i}">${i}</a>
+      </li>`;
       }
-      paginationHTML += `<li><a href="#" class="pagination-link" data-page="${totalPages}">${totalPages}</a></li>`;
     }
 
     // Next button
-    if (currentPage < totalPages) {
-      paginationHTML += `<li><a href="#" class="pagination-link" data-page="${currentPage + 1}">›</a></li>`;
+    if (currentPage === totalPages) {
+      paginationHTML += `
+      <li class="page-item disabled">
+        <a aria-disabled="true" aria-label="Next" class="page-link" role="button" tabindex="-1">
+          <span aria-hidden="true">»</span>
+        </a>
+      </li>`;
+    } else {
+      paginationHTML += `
+      <li class="page-item">
+        <a href="#" aria-label="Next" class="page-link" role="button" data-page="${currentPage + 1}">
+          <span aria-hidden="true">»</span>
+        </a>
+      </li>`;
+    }
+
+    // Last button
+    if (currentPage === totalPages) {
+      paginationHTML += `
+      <li class="page-item disabled">
+        <a aria-disabled="true" aria-label="Last" class="page-link" role="button" tabindex="-1">
+          <span aria-hidden="true">»»</span>
+        </a>
+      </li>`;
+    } else {
+      paginationHTML += `
+      <li class="page-item">
+        <a href="#" aria-label="Last" class="page-link" role="button" data-page="${totalPages}">
+          <span aria-hidden="true">»»</span>
+        </a>
+      </li>`;
     }
 
     paginationHTML += '</ul>';
     paginationContainer.innerHTML = paginationHTML;
 
     // Attach pagination click handlers
-    paginationContainer.querySelectorAll('.pagination-link').forEach(link => {
+    paginationContainer.querySelectorAll('.page-link[data-page]').forEach(link => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
         const page = parseInt(link.dataset.page);

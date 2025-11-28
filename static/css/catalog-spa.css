@@ -217,63 +217,10 @@
   transform: translateX(-3px);
 }
 
-/* Pagination Styles */
+/* Pagination - using Hugo's classes, so no custom styles needed */
 .pagination {
   margin-top: 40px;
   padding: 20px 0;
-}
-
-.pagination-list {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  flex-wrap: wrap;
-}
-
-.pagination-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 40px;
-  height: 40px;
-  padding: 8px 12px;
-  background: #fff;
-  color: #274c77;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.pagination-link:hover {
-  background: #274c77;
-  color: #fff;
-  border-color: #274c77;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(39, 76, 119, 0.2);
-}
-
-.pagination-link.is-current {
-  background: #274c77;
-  color: #fff;
-  border-color: #274c77;
-  cursor: default;
-  pointer-events: none;
-}
-
-.pagination-ellipsis {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 40px;
-  height: 40px;
-  color: #999;
-  font-weight: 600;
 }
 
 /* Responsive Design */
