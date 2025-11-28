@@ -38,14 +38,14 @@ class CatalogSPA {
     // Determine initial view based on URL
     const path = window.location.pathname;
     
-    if (path.includes('/catalog/') && !path.endsWith('/catalog/')) {
+    if (path.endsWith('/catalog/') || path.includes('/catalog/page/')) {
+      // We're on the list page (including paginated pages)
+      this.currentView = 'list';
+      this.setupListView();
+    } else if (path.includes('/catalog/')) {
       // We're on a detail page
       this.currentView = 'detail';
       this.loadDetailView(path);
-    } else if (path.endsWith('/catalog/') || path.includes('/catalog/page/')) {
-      // We're on the list page
-      this.currentView = 'list';
-      this.setupListView();
     }
   }
 
@@ -154,6 +154,12 @@ class CatalogSPA {
   async loadCatalogData() {
     this.showLoading(true);
 
+    // Remove back button if it exists (we're loading list view data)
+    const existingBackButton = document.getElementById('spa-back-button');
+    if (existingBackButton) {
+      existingBackButton.remove();
+    }
+
     try {
       // Build query parameters
       const params = new URLSearchParams();
@@ -248,13 +254,19 @@ class CatalogSPA {
     const grid = document.querySelector('.catalog-grid');
     if (!grid) return;
 
+    // Remove back button if it exists (we're on list view, not detail view)
+    const existingBackButton = document.getElementById('spa-back-button');
+    if (existingBackButton) {
+      existingBackButton.remove();
+    }
+
     if (items.length === 0) {
       grid.innerHTML = `<div class="no-results">${this.getTranslation('no_results')}</div>`;
       return;
     }
 
-    // const lang = this.detectLanguage();
-    const cardsHTML = items.map(item => this.renderCatalogCard(item)).join('');
+    const lang = this.detectLanguage();
+    const cardsHTML = items.map(item => this.renderCatalogCard(item, lang)).join('');
     grid.innerHTML = cardsHTML;
 
     // Re-attach card click listeners
@@ -520,13 +532,13 @@ class CatalogSPA {
     const state = e.state;
     const path = window.location.pathname;
  
-    if (path.includes('/catalog/') && !path.endsWith('/catalog/')) {
+    if (path.endsWith('/catalog/') || path.includes('/catalog/page/')) {
+      // List view - reload the page to restore original state
+      window.location.reload();
+    } else if (path.includes('/catalog/')) {
       // Detail view
       this.currentView = 'detail';
       this.loadDetailView(path);
-    } else if (path.endsWith('/catalog/') || path.includes('/catalog/page/')) {
-      // List view - reload the page to restore original state
-      window.location.reload();
     }
   }
 
