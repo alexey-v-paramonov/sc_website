@@ -66,8 +66,11 @@ class CatalogSPA {
     // Attach event listeners
     this.attachListEventListeners();
     
-    // Load initial data or use existing static content
-    this.loadCatalogData();
+    // Extract filter options from existing static content
+    this.extractFiltersFromStaticContent();
+    
+    // Don't load data on initial page load - use server-rendered content
+    // API calls will only happen when user interacts (search, filter, sort, paginate)
   }
 
   injectListControls() {
@@ -309,6 +312,44 @@ class CatalogSPA {
     this.populateFilterSelect('region', Array.from(regions).sort());
     this.populateFilterSelect('city', Array.from(cities).sort());
     this.populateFilterSelect('language', Array.from(languages).sort());
+  }
+
+  extractFiltersFromStaticContent() {
+    // Extract filter options from the existing static HTML content
+    const cards = document.querySelectorAll('.catalog-card');
+    if (cards.length === 0) return;
+
+    const genres = new Set();
+    const countries = new Set();
+    const regions = new Set();
+    const cities = new Set();
+    const languages = new Set();
+
+    cards.forEach(card => {
+      // Extract genres from tags
+      const genreTags = card.querySelectorAll('.catalog-card-tags span');
+      genreTags.forEach(tag => {
+        const genre = tag.textContent.replace('#', '').trim();
+        if (genre) genres.add(genre);
+      });
+
+      // Extract country from flag image
+      const flag = card.querySelector('.catalog-card-flag');
+      if (flag && flag.alt) {
+        countries.add(flag.alt);
+      }
+    });
+
+    // Populate filter dropdowns with extracted data
+    if (genres.size > 0) {
+      this.populateFilterSelect('genre', Array.from(genres).sort());
+    }
+    if (countries.size > 0) {
+      this.populateFilterSelect('country', Array.from(countries).sort());
+    }
+    
+    // Note: regions, cities, and languages will be populated when API is called
+    // after user interaction, as they're not readily available in static HTML
   }
 
   populateFilterSelect(filterType, options) {
