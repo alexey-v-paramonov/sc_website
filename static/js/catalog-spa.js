@@ -5,6 +5,7 @@
 
 class CatalogSPA {
   constructor() {
+    console.log('CatalogSPA constructor called');
     this.apiBaseUrl = 'https://streaming.center/api/v1/catalog/public/';
     this.currentView = 'list'; // 'list' or 'detail'
     this.searchDebounceTimer = null;
@@ -30,6 +31,9 @@ class CatalogSPA {
     
     // Detect and store language early before DOM changes
     this.language = this.detectLanguage();
+    
+    // Track if global listeners are attached
+    this.globalListenersAttached = false;
     
     this.init();
   }
@@ -138,22 +142,54 @@ class CatalogSPA {
       });
     }
 
-    // Intercept catalog card clicks for SPA navigation
-    this.attachCardClickListeners();
+    // Attach global click listeners only once
+    if (!this.globalListenersAttached) {
+      console.log('Attaching global listeners');
+      this.attachCardClickListeners();
+      this.attachBreadcrumbClickListeners();
+      this.globalListenersAttached = true;
+    } else {
+      console.log('Global listeners already attached, skipping');
+    }
   }
 
   attachCardClickListeners() {
     document.addEventListener('click', (e) => {
+      // Skip if already handled
+      if (e.defaultPrevented) return;
+      
       // Find if click is on a catalog card link
       const link = e.target.closest('.catalog-card-title a, .catalog-thumb-wrap a');
       if (link && link.href) {
         const url = new URL(link.href);
-        console.log('Intercepting link click to:', url.pathname);
+        console.log('Intercepting link click to:', url.pathname, 'at', Date.now(), e.eventPhase);
         
         // Only intercept catalog item links
         if (url.pathname.includes('/catalog/') && !url.pathname.endsWith('/catalog/')) {
           e.preventDefault();
+          e.stopImmediatePropagation();
           this.navigateToDetail(url.pathname);
+        }
+      }
+    });
+  }
+
+  attachBreadcrumbClickListeners() {
+    document.addEventListener('click', (e) => {
+      // Skip if already handled
+      if (e.defaultPrevented) return;
+      
+      // Find if click is on a breadcrumb link to catalog
+      const link = e.target.closest('.breadcrumbs a');
+      if (link && link.href) {
+        const url = new URL(link.href);
+        
+        // Only intercept catalog list page links
+        if (url.pathname.endsWith('/catalog/')) {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+          console.log('Intercepting breadcrumb click to catalog at', Date.now(), e.eventPhase);
+          this.navigateBackToCatalog();
         }
       }
     });
@@ -161,12 +197,6 @@ class CatalogSPA {
 
   async loadCatalogData() {
     this.showLoading(true);
-
-    // Remove back button if it exists (we're loading list view data)
-    const existingBackButton = document.getElementById('spa-back-button');
-    if (existingBackButton) {
-      existingBackButton.remove();
-    }
 
     try {
       // Build query parameters
@@ -261,12 +291,6 @@ class CatalogSPA {
   renderCatalogGrid(items) {
     const grid = document.querySelector('.catalog-grid');
     if (!grid) return;
-
-    // Remove back button if it exists (we're on list view, not detail view)
-    const existingBackButton = document.getElementById('spa-back-button');
-    if (existingBackButton) {
-      existingBackButton.remove();
-    }
 
     if (items.length === 0) {
       grid.innerHTML = `<div class="no-results">${this.getTranslation('no_results')}</div>`;
@@ -492,9 +516,6 @@ class CatalogSPA {
         if (currentMain) {
           currentMain.replaceWith(mainContent);
           
-          // Add back button
-          this.addBackButton();
-          
           // Re-execute any scripts in the new content
           this.executeScripts(mainContent);
           
@@ -513,74 +534,21 @@ class CatalogSPA {
     }
   }
 
-  addBackButton() {
-    const container = document.querySelector('.container.index');
-    if (!container) return;
-
-    // Check if back button already exists
-    if (document.getElementById('spa-back-button')) return;
-
-    const backButton = document.createElement('button');
-    backButton.id = 'spa-back-button';
-    backButton.className = 'spa-back-button btn';
-    backButton.innerHTML = `<span>← ${this.getTranslation('back_to_catalog')}</span>`;
-    
-    backButton.addEventListener('click', (e) => {
-      e.preventDefault();
-      this.navigateBackToCatalog();
-    });
-
-    // Insert at the top of the container
-    const breadcrumbs = container.querySelector('.breadcrumbs');
-    if (breadcrumbs) {
-      breadcrumbs.insertAdjacentElement('afterend', backButton);
-    } else {
-      container.insertAdjacentElement('afterbegin', backButton);
-    }
-  }
-
   async navigateBackToCatalog() {
-    // Don't use history.back() - it's unreliable
-    // Instead, directly navigate and restore the view
-    
-    this.currentView = 'list';
-    
-    // Try to get the previous state before we navigate back
-    // We need to look at what was saved when we navigated to detail
-    let savedState = null;
-    
-    // Attempt to go back in history and capture state
-    // But don't wait for it - do the navigation immediately
-    const catalogUrl = '/catalog/';
-    
-    // Check if there are any active filters to restore
-    const hasActiveFilters = this.currentFilters.search || 
-                             this.currentFilters.genre || 
-                             this.currentFilters.country || 
-                             this.currentFilters.region || 
-                             this.currentFilters.city || 
-                             this.currentFilters.language ||
-                             this.currentPage > 1;
-    
-    // Update URL without triggering a page load
-    window.history.pushState({ view: 'list', filters: this.currentFilters, page: this.currentPage, language: this.language }, '', catalogUrl);
-    
-    // Restore the list view structure
-    await this.restoreListView();
-    
-    // Restore UI to match current filters
-    this.restoreFilterUI();
-    
-    // If we have active filters, reload data
-    if (hasActiveFilters) {
-      this.loadCatalogData();
-    }
+    // Simply go back in history - this will trigger handlePopState
+    // which will restore the saved filter state
+    window.history.back();
   }
 
   executeScripts(container) {
     // Find and execute inline scripts
     const scripts = container.querySelectorAll('script');
     scripts.forEach(oldScript => {
+      // Skip external scripts (they're already loaded globally)
+      if (oldScript.src) {
+        return;
+      }
+      
       const newScript = document.createElement('script');
       Array.from(oldScript.attributes).forEach(attr => {
         newScript.setAttribute(attr.name, attr.value);
@@ -770,10 +738,15 @@ class CatalogSPA {
 }
 
 // Initialize SPA when DOM is ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => {
+// Only create one instance
+if (!window.catalogSPA) {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!window.catalogSPA) {
+        window.catalogSPA = new CatalogSPA();
+      }
+    });
+  } else {
     window.catalogSPA = new CatalogSPA();
-  });
-} else {
-  window.catalogSPA = new CatalogSPA();
+  }
 }
