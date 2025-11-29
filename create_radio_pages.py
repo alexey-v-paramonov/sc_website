@@ -151,7 +151,7 @@ def create_radio_pages():
                "region_name": region_name,
                "city_name": city_name,
                "languages": language_names,
-               "genres": genre_names,
+               # "genres": genre_names,
             })
             f.write(json.dumps(info, indent=4))
             

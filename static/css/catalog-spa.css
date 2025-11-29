@@ -1,0 +1,299 @@
+/* Catalog SPA Styles */
+
+/* Controls Container */
+.catalog-spa-controls {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.catalog-controls-row,
+.catalog-filters-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.catalog-filters-row {
+  margin-bottom: 0;
+}
+
+/* Search Input */
+.catalog-search-wrapper {
+  flex: 1;
+  min-width: 250px;
+  position: relative;
+}
+
+.catalog-search-input {
+  width: 100%;
+  padding: 12px 40px 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.catalog-search-input:focus {
+  outline: none;
+  border-color: #274c77;
+  box-shadow: 0 0 0 3px rgba(39, 76, 119, 0.1);
+}
+
+.search-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Sort Dropdown */
+.catalog-sort-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.catalog-sort-wrapper label {
+  font-weight: 600;
+  color: #333;
+  white-space: nowrap;
+}
+
+.catalog-sort-select {
+  padding: 10px 35px 10px 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 15px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+.catalog-sort-select:hover,
+.catalog-sort-select:focus {
+  border-color: #274c77;
+  outline: none;
+}
+
+/* Filter Selects */
+.catalog-filter-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.catalog-filter-wrapper label {
+  font-weight: 500;
+  color: #555;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.catalog-filter-select {
+  padding: 8px 30px 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath fill='%23666' d='M5 7L1 3h8z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+}
+
+.catalog-filter-select:hover,
+.catalog-filter-select:focus {
+  border-color: #274c77;
+  outline: none;
+}
+
+/* Reset Button */
+.catalog-reset-btn {
+  padding: 10px 20px;
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.catalog-reset-btn:hover {
+  background: #c0392b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+}
+
+.catalog-reset-btn:active {
+  transform: translateY(0);
+}
+
+/* Loading Spinner */
+.catalog-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  margin: 20px 0;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #274c77;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.catalog-loading span {
+  font-size: 16px;
+  font-weight: 500;
+  color: #274c77;
+}
+
+/* No Results Message */
+.no-results {
+  text-align: center;
+  padding: 60px 20px;
+  font-size: 18px;
+  color: #666;
+  background: #f9f9f9;
+  border-radius: 12px;
+  margin: 20px 0;
+}
+
+/* Back Button for Detail View */
+.spa-back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: #274c77;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+  text-decoration: none;
+}
+
+.spa-back-button:hover {
+  background: #1e3a5f;
+  transform: translateX(-5px);
+  box-shadow: 0 4px 12px rgba(39, 76, 119, 0.3);
+}
+
+.spa-back-button:active {
+  transform: translateX(-3px);
+}
+
+/* Pagination - using Hugo's classes, so no custom styles needed */
+.pagination {
+  margin-top: 40px;
+  padding: 20px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .catalog-controls-row,
+  .catalog-filters-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .catalog-search-wrapper,
+  .catalog-sort-wrapper,
+  .catalog-filter-wrapper {
+    width: 100%;
+  }
+
+  .catalog-sort-wrapper,
+  .catalog-filter-wrapper {
+    justify-content: space-between;
+  }
+
+  .catalog-sort-select,
+  .catalog-filter-select {
+    flex: 1;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .catalog-spa-controls {
+    padding: 15px;
+  }
+
+  .catalog-search-input {
+    font-size: 14px;
+    padding: 10px 35px 10px 12px;
+  }
+
+  .catalog-sort-select,
+  .catalog-filter-select {
+    font-size: 13px;
+    padding: 8px 28px 8px 10px;
+  }
+
+  .catalog-reset-btn {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .spa-back-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .pagination-link {
+    min-width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+}
+
+/* Integration with existing catalog styles */
+.catalog-grid {
+  margin-top: 0;
+}
+
+/* Smooth transitions */
+.catalog-card {
+  transition: all 0.3s ease;
+}
+
+/* Loading overlay for grid */
+.catalog-grid.is-loading {
+  opacity: 0.5;
+  pointer-events: none;
+}

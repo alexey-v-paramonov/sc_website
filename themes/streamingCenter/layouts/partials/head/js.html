@@ -3,6 +3,29 @@
 <script src="/libs/nice-select2/nice-select2.js"></script>
 <script src="/libs/fslightbox.js"></script>
 <script src="/js/main.js?v=1.12"></script>
+<script src="/js/catalog-detail.js"></script>
+<script async src="https://static.addtoany.com/menu/page.js"></script>
+
+<!-- Load Facebook SDK for English pages -->
+{{ if eq .Lang "en" }}
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml: true,
+      version: 'v20.0'
+    });
+    console.log('Facebook SDK initialized');
+  };
+</script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+{{ end }}
+
+<!-- Load VK SDK for Russian pages -->
+{{ if eq .Lang "ru" }}
+<script src="https://vk.com/js/api/openapi.js?172" defer></script>
+{{ end }}
+
 {{ if .Params.js }}
   {{- with resources.Get .Params.js }}
     {{- with . | js.Build }}
