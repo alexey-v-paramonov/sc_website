@@ -516,13 +516,28 @@ class CatalogSPA {
         if (currentMain) {
           currentMain.replaceWith(mainContent);
           
-          // Re-execute any scripts in the new content
+          // Re-execute any scripts in the new content (inline scripts only)
           this.executeScripts(mainContent);
           
-          // Reinitialize audio player if available
+          console.log('Detail page loaded, initializing...');
+          
+          // Initialize detail page functionality (audio player, voting, etc.)
+          if (typeof window.initializeCatalogDetail === 'function') {
+            console.log('Calling initializeCatalogDetail');
+            window.initializeCatalogDetail();
+          } else {
+            console.error('initializeCatalogDetail function not found!');
+          }
+          
+          // Reinitialize catalog audio player if available
           if (typeof window.initializeCatalogAudio === 'function') {
+            console.log('Calling initializeCatalogAudio');
             window.initializeCatalogAudio();
           }
+          
+          // Reinitialize external scripts (social sharing, comments)
+          console.log('Calling reinitializeExternalScripts');
+          this.reinitializeExternalScripts();
         }
       }
 
@@ -556,6 +571,71 @@ class CatalogSPA {
       newScript.textContent = oldScript.textContent;
       oldScript.parentNode.replaceChild(newScript, oldScript);
     });
+  }
+
+  reinitializeExternalScripts() {
+    console.log('Reinitializing external scripts...');
+    
+    // Wait a bit for external scripts to load if needed
+    setTimeout(() => {
+      // Reinitialize AddToAny sharing buttons
+      if (typeof a2a !== 'undefined') {
+        try {
+          // Find all AddToAny kits and reinitialize them
+          const a2aKits = document.querySelectorAll('.a2a_kit');
+          if (a2aKits.length > 0) {
+            console.log('Reinitializing AddToAny, found', a2aKits.length, 'kits');
+            a2a.init('page');
+          }
+        } catch (e) {
+          console.error('Error reinitializing AddToAny:', e);
+        }
+      } else {
+        console.log('AddToAny (a2a) not loaded yet');
+      }
+
+      // Reinitialize Facebook comments
+      const fbComments = document.querySelector('.fb-comments');
+      if (fbComments) {
+        console.log('Found Facebook comments element');
+        if (typeof FB !== 'undefined') {
+          try {
+            console.log('Reinitializing Facebook comments with FB.XFBML.parse()...');
+            // Update the data-href to current URL
+            fbComments.setAttribute('data-href', window.location.href);
+            // Parse the new comments widget
+            FB.XFBML.parse();
+          } catch (e) {
+            console.error('Error reinitializing Facebook comments:', e);
+          }
+        } else {
+          console.log('Facebook SDK (FB) not loaded yet');
+        }
+      }
+
+      // Reinitialize VK comments
+      const vkCommentsContainer = document.getElementById('vk_comments');
+      if (vkCommentsContainer && typeof VK !== 'undefined') {
+        try {
+          console.log('Reinitializing VK comments...');
+          // Clear existing content
+          vkCommentsContainer.innerHTML = '';
+          
+          // Get the page URL from the container or use current URL
+          const pageUrl = window.location.href;
+          
+          // Reinitialize VK widgets
+          VK.Widgets.Comments('vk_comments', {
+            limit: 10,
+            attach: "*",
+            pageUrl: pageUrl,
+            width: "100%"
+          });
+        } catch (e) {
+          console.error('Error initializing VK comments:', e);
+        }
+      }
+    }, 500); // Wait 500ms for external scripts to load
   }
 
   async handlePopState(e) {
