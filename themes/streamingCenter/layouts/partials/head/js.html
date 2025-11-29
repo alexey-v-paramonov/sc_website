@@ -5,6 +5,18 @@
 <script src="/js/main.js?v=1.12"></script>
 <script src="/js/catalog-detail.js"></script>
 <script async src="https://static.addtoany.com/menu/page.js"></script>
+
+<!-- Load Facebook SDK for English pages -->
+{{ if eq .Lang "en" }}
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0"></script>
+{{ end }}
+
+<!-- Load VK SDK for Russian pages -->
+{{ if eq .Lang "ru" }}
+<script src="https://vk.com/js/api/openapi.js?172" defer></script>
+{{ end }}
+
 {{ if .Params.js }}
   {{- with resources.Get .Params.js }}
     {{- with . | js.Build }}
