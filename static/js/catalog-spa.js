@@ -472,7 +472,25 @@ class CatalogSPA {
     });
   }
 
+  stopAllAudio() {
+    // Stop and cleanup any playing audio
+    const audioElements = document.querySelectorAll('audio');
+    audioElements.forEach(audio => {
+      if (!audio.paused) {
+        audio.pause();
+        audio.currentTime = 0;
+      }
+      // Clear the src to fully stop loading
+      audio.src = '';
+      audio.load();
+    });
+    console.log('Stopped all audio players');
+  }
+
   navigateToDetail(path) {
+    // Stop any playing audio before navigating
+    this.stopAllAudio();
+    
     // Save current list view state before navigating away
     const listState = {
       view: 'list',
@@ -550,6 +568,9 @@ class CatalogSPA {
   }
 
   async navigateBackToCatalog() {
+    // Stop any playing audio before navigating back
+    this.stopAllAudio();
+    
     // Simply go back in history - this will trigger handlePopState
     // which will restore the saved filter state
     window.history.back();
@@ -598,19 +619,27 @@ class CatalogSPA {
       const fbComments = document.querySelector('.fb-comments');
       if (fbComments) {
         console.log('Found Facebook comments element');
-        if (typeof FB !== 'undefined') {
+        if (typeof FB !== 'undefined' && FB.XFBML) {
           try {
             console.log('Reinitializing Facebook comments with FB.XFBML.parse()...');
             // Update the data-href to current URL
             fbComments.setAttribute('data-href', window.location.href);
-            // Parse the new comments widget
-            FB.XFBML.parse();
+            // Parse the specific element
+            FB.XFBML.parse(fbComments.parentElement);
+            console.log('Facebook comments parsed successfully');
           } catch (e) {
             console.error('Error reinitializing Facebook comments:', e);
           }
         } else {
-          console.log('Facebook SDK (FB) not loaded yet');
+          console.log('Facebook SDK (FB) not fully loaded yet, waiting...');
+          // Wait for Facebook SDK to load
+          window.fbAsyncInit = function() {
+            console.log('Facebook SDK loaded, parsing comments...');
+            FB.XFBML.parse(fbComments.parentElement);
+          };
         }
+      } else {
+        console.log('No Facebook comments element found');
       }
 
       // Reinitialize VK comments

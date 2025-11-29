@@ -9,7 +9,16 @@
 <!-- Load Facebook SDK for English pages -->
 {{ if eq .Lang "en" }}
 <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0"></script>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml: true,
+      version: 'v20.0'
+    });
+    console.log('Facebook SDK initialized');
+  };
+</script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
 {{ end }}
 
 <!-- Load VK SDK for Russian pages -->

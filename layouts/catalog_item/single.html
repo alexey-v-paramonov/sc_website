@@ -254,27 +254,13 @@
     </div>
   </div>
 
-  {{ if eq .Lang "en" }}
-  <div id="fb-root"></div>
-  {{ end }}
-
-  {{ if eq .Lang "ru" }}
-  <!-- VK comments container handled in VK script below -->
-  {{ end }}
-
-
 </main>
 
-<!-- External scripts for social sharing and comments -->
-{{ if eq .Lang "en" }}
-<script id="fb-sdk-script" async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0"></script>
-{{ end }}
-
 {{ if eq .Lang "ru" }}
-<script id="vk-sdk-script" src="https://vk.com/js/api/openapi.js?172" defer></script>
-<script id="vk-init-script">
+<script>
+  // Initialize VK comments when on detail page
   window.addEventListener('load', function () {
-    if (typeof VK !== 'undefined') {
+    if (typeof VK !== 'undefined' && document.getElementById('vk_comments')) {
       VK.init({ apiId: 3245656, onlyWidgets: true });
       VK.Widgets.Comments("vk_comments", {
         limit: 10,
