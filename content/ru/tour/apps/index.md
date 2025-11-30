@@ -3,7 +3,7 @@ title: "Мобильные приложения для Интернет-Ради
 date: 2024-08-18T11:45:44+03:00
 ---
 <div class="view-item__block">
-    {{< lightbox "/images/tour/ru/app.png" "/images/tour/ru/app.png">}}
+    {{< lightbox "/images/tour/ru/app.webp" "/images/tour/ru/app.webp">}}
     <div class="view-item__bold">Некоторые "фичи" наших приложений:</div>
     <ul class="view-item__green">
     <li>Приложения на 100% нативные для Android и iOS</li>
