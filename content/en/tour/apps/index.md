@@ -3,7 +3,7 @@ title: "Internet-radio mobile applications (Android, iOS)"
 date: 2024-08-18T11:45:44+03:00
 ---
 <div class="view-item__block">
-    {{< lightbox "/images/tour/en/app.webp" "/images/tour/en/app.png">}}
+    {{< lightbox "/images/tour/en/app.webp" "/images/tour/en/app.webp">}}
     <div class="view-item__bold">Some of the features of our applications:</div>
     <ul class="view-item__green">
     <li>100% Native Android & iOS apps</li>
