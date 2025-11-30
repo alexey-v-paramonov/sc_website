@@ -48,7 +48,7 @@ date: 2024-08-18T11:45:44+03:00
 </li>
 </ul>
     </div>
-    <a class="view-item__btn btn" href="https://app.streaming.center/signup"><img class="db" src="/img/marker.svg" alt=""><span class="db">Создать приложение для радио</span></a>
+    <a class="view-item__btn btn" href="https://app.streaming.center/signup"><img class="db" src="/img/marker.svg" alt=""><span class="db">Создать приложение</span></a>
 </div>
 
 
