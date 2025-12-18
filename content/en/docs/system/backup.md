@@ -61,7 +61,7 @@ If you are upgrading your hardware, or the old server has started to fail, migra
 
 **On the *old* server**:
 
-1. [Update](/docs/system/upgrade) to the latest version of Streaming.center: `bash <(wget -qO- https://streaming.center/dist/update.sh)`
+1. [Update](/docs/system/upgrade) to the latest version of Streaming.center: `bash <(curl -s https://streaming.center/dist/update.sh)`
 2. Create a full backup of all accounts
 {{< highlight bash  >}}
 cd /opt/bin
@@ -91,7 +91,7 @@ During the backup recovery, do not let any other utilities run on schedule.
 6. If the domain is also moving, change the old IP address to a new one in the DNS settings of the domain and wait for the domain to transfer (it may take several hours)
 7. Setup the domain name for the radio using the `cd /opt/bin && ./change_host` command 
 8. Run `cd /opt/bin && ./ssl_enable` to setup SSL centificate.
-9. Run the update script: `bash <(wget -qO- https://streaming.center/dist/update.sh)`
+9. Run the update script: `bash <(curl -s https://streaming.center/dist/update.sh)`
 10. Uncomment the lines in the `/etc/crontab' file that were commented out in step 2.
 
 #### Restoring radio account templates (optional)
