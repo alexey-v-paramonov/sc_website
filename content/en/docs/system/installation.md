@@ -51,7 +51,7 @@ Further commands in the terminal are the same and do not depend on your operatin
 
 
 ### Starting the installation script
-Copy and run this command in your terminal: `bash <(wget -qO- https://streaming.center/dist/install.sh)`
+Copy and run this command in your terminal: `bash <(curl -s https://streaming.center/dist/install.sh)`
 
 ### Choosing disk drive partition
 At the first step, the system will display the following message, which requires confirmation from your side:
