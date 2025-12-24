@@ -182,12 +182,13 @@ ns2.hosting.ru
 ### Windows
 1. Нажмите Win + R  
 2. Введите `cmd` и нажмите Enter  
-3. Выполните команду:  
-   ping stream.radio.ru  
+3. Выполните команду: `ping stream.radio.ru`
 
 ### macOS / Linux
 Откройте терминал и выполните:  
-ping stream.radio.ru  
+```
+ping stream.radio.ru
+```
 
 ### Что должно получиться
 В ответе будет указан IP-адрес.

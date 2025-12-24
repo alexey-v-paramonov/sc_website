@@ -176,12 +176,13 @@ You can verify DNS using the `ping` command. This works on most computers and is
 ### On Windows
 1. Press Win + R  
 2. Type `cmd` and press Enter  
-3. Run:  
-   ping stream.radio.com  
+3. Run: `ping stream.radio.com`
 
 ### On macOS or Linux
-Open Terminal and run:  
-ping stream.radio.com  
+Open Terminal and run: 
+``` 
+ping stream.radio.com
+```
 
 ### What You Should See
 The output should show an IP address.  
