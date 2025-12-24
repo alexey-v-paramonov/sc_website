@@ -202,7 +202,7 @@ Once the domain or subdomain resolves to the correct IP address:
 
 - Contact our technical support to have a free SSL certificate installed for you, or use the `change_host` and `ssl_enable` utilities as described in [this section](/docs/system/utils/)
 - Your panel becomes accessible via HTTPS, for example:  
-  https://stream.radio.com  
+  https://stream.radio.com:2345  
 
 Benefits:
 - Encrypted and secure connection
