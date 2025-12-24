@@ -108,6 +108,7 @@ If you are unsure, contact their support and ask:
 
 They will tell you exactly where to find the DNS editor.
 We cannot provide a universal instruction that fits all hosting providers, because almost every provider has its own interface for managing DNS records. However, the general principle is the same.
+
 ---
 
 ### 3. Use a WHOIS Lookup
