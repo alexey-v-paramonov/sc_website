@@ -1,6 +1,5 @@
 ---
-weight: 1
-
+weight: 50
 title: "HLS Streaming"
 summary: "Learn how HLS streaming works on our internet radio control panel, its benefits, limitations, and how it differs from traditional Icecast/SHOUTcast setups."
 seo_title: "HLS Streaming Explained – Internet Radio Platform Guide"
