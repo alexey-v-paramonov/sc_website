@@ -38,6 +38,7 @@ This option is **not recommended** if:
 - Email services are attached to that domain
 
 Changing the main domain IP may break existing services. It is also better to host the main domain not on the radio server, but on a specialized web hosting platform designed for websites, with convenient tools and control panels tailored specifically for site management.
+
 ---
 
 ### Using a Subdomain (Recommended)
