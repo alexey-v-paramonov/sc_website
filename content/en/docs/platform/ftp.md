@@ -8,7 +8,7 @@ description: "Efficient bulk upload of audio files to your internet radio server
 
 ## Uploading Audio Files via FTP Client
 
-Our internet radio control panel allows you to upload audio files (MP3, FLAC, AAC, and others) directly through the web interface in the Media Library section. However, it’s **much more convenient, faster, and reliable** to use a dedicated FTP client - especially when uploading large batches of files or high-quality albums.
+Our Streaming.Center Internet-radio Control Panel allows you to upload audio files (MP3, FLAC, AAC, and others) directly through the web interface in the Media Library section. However, it’s **much more convenient, faster, and reliable** to use a dedicated FTP client - especially when uploading large batches of files or high-quality albums.
 
 ### Why Use an FTP Client?
 
