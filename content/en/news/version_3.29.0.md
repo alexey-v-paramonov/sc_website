@@ -1,5 +1,5 @@
 ---
-title: "Version 3.29.0: Low-frequency noise filter, 10-band audio equalizer.
+title: "Version 3.29.0: Low-frequency noise filter, 10-band audio equalizer."
 date: 2025-12-28
 ---
 
