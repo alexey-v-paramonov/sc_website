@@ -1,5 +1,5 @@
 ---
-title: "iOS radio app"
+title: "Apple iOS"
 date: 2024-08-23T11:41:02+03:00
 weight: 20
 summary: "Our company offers a simple, cost-effective solution for creating custom iOS apps for internet radio stations, featuring easy customization, support for Shoutcast and Icecast streaming, and no subscription fees."
@@ -33,6 +33,8 @@ Don't waste time and money on building from scratch – use our ready-made solut
 ## Step-by-Step Guide
 - Go to the <a href="https://app.streaming.center/login/" target="_blank">order page and register</a>.
 - In your personal account, open the "Applications" section -> "Apple iOS".
+    {{< lightbox "/images/ios_app/en/app_builder1_mini.png" "/images/ios_app/en/app_builder1.png" >}}
+    
 - Click the "Create Mobile App" button and select the basic app settings: name, publishing parameters, and copyright in the app.
 - Sequentially fill out all the fields in the "Information" form: specify a full and short description, upload logos and icons.
 - Customize the appearance of the app in the "Design" section: you can either choose a ready-made "skin" or customize all element colors individually.
@@ -42,3 +44,18 @@ Don't waste time and money on building from scratch – use our ready-made solut
 - Once your app is ready, our specialist will publish it in the Apple App Store.
 
 Unlike the [Android version](/docs/apps/android) of the app, there is no way to download the app file to your phone without publishing it in the Apple App Store. Therefore, if you are ordering the app for both platforms, you can first create and test the Android version, download it to your phone, and check the result. The iOS app will look identical.
+
+
+## Changes that require publishing a new app version
+
+Some changes affect the core structure or metadata of the application and therefore require publishing a new version in Apple App Store:
+- Changing the main app icon
+- Changing the main app logo
+- Changing app color themes
+- Updating the app title, main description, website URL, or contact email
+- Receiving new core engine updates, including:
+    - New application features
+    - Support for newer iOS versions (released every year)
+    - Platform-level improvements and optimizations
+
+In these cases, a new version must be submitted to Apple App Store. **Publishing such updates may involve an additional fee**, depending on the scope of changes and update policy at the time.
