@@ -36,6 +36,8 @@ Don't waste time and money on building from scratch – use our ready-made solut
     {{< lightbox "/images/ios_app/en/app_builder1_mini.png" "/images/ios_app/en/app_builder1.png" >}}
     
 - Click the "Create Mobile App" button and select the basic app settings: name, publishing parameters, and copyright in the app.
+    {{< lightbox "/images/ios_app/en/app_builder2_mini.png" "/images/ios_app/en/app_builder2.png" >}}
+
 - Sequentially fill out all the fields in the "Information" form: specify a full and short description, upload logos and icons.
 - Customize the appearance of the app in the "Design" section: you can either choose a ready-made "skin" or customize all element colors individually.
 - In the "Radio Stations" section of the builder, you can add **any number of radio stations** to the app. If the app has several stations, an additional menu will automatically appear, allowing the listener to switch between stations.
