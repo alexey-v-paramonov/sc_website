@@ -39,10 +39,20 @@ Don't waste time and money on building from scratch – use our ready-made solut
     {{< lightbox "/images/ios_app/en/app_builder2_mini.png" "/images/ios_app/en/app_builder2.png" >}}
 
 - Sequentially fill out all the fields in the "Information" form: specify a full and short description, upload logos and icons.
+    {{< lightbox "/images/ios_app/en/app_builder3_mini.png" "/images/ios_app/en/app_builder3.png" >}}
+
 - Customize the appearance of the app in the "Design" section: you can either choose a ready-made "skin" or customize all element colors individually.
+    {{< lightbox "/images/ios_app/en/app_builder4_mini.png" "/images/ios_app/en/app_builder4.png" >}}
+
 - In the "Radio Stations" section of the builder, you can add **any number of radio stations** to the app. If the app has several stations, an additional menu will automatically appear, allowing the listener to switch between stations.
+    {{< lightbox "/images/ios_app/en/app_builder5_mini.png" "/images/ios_app/en/app_builder5.png" >}}
+
 - Each station in the app can have its own logo, radio streams, social media links, and text for the "Info" section in the app.
+    {{< lightbox "/images/ios_app/en/app_builder6_mini.png" "/images/ios_app/en/app_builder6.png" >}}
+
 - Once all the information is filled out correctly, send the app for building using the corresponding button in the top menu. Our specialist will compile the app, and we will send you screenshots.
+    {{< lightbox "/images/ios_app/en/app_builder7_mini.png" "/images/ios_app/en/app_builder7.png" >}}
+
 - Once your app is ready, our specialist will publish it in the Apple App Store.
 
 Unlike the [Android version](/docs/apps/android) of the app, there is no way to download the app file to your phone without publishing it in the Apple App Store. Therefore, if you are ordering the app for both platforms, you can first create and test the Android version, download it to your phone, and check the result. The iOS app will look identical.
