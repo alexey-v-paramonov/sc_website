@@ -2,9 +2,9 @@
 title: "Streaming with BUTT"
 date: 2026-01-21
 weight: 10
-summary: ""
-seo_title: ""
-description: ""
+summary: "This article explains how to stream live internet radio using BUTT with the Streaming.Center control panel. It covers DJ creation, connection parameters, server configuration in BUTT, and going live on air, with recommendations for optimal audio quality settings."
+seo_title: "How to Stream Internet Radio with BUTT (Streaming.Center Guide)"
+description: "Learn how to stream live internet radio using BUTT with the Streaming.Center control panel. Step-by-step guide covering DJ setup, connection settings, and going on air."
 ---
 
 # Streaming Internet Radio with BUTT
