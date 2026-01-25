@@ -59,7 +59,7 @@ https://danielnoethen.de/butt/
 - задать пароль - **этот пароль будет использоваться в настройках BUTT**.
 
 После заполнения всех полей нажмите кнопку **«Добавить диджея»**.  После создания DJ наша платформа автоматически выделит **отдельный порт для вещания**, который будет использоваться для live-стрима.
-  {{< lightbox "/images/live_stream/butt/en/dj_form_mini.png" "/images/live_stream/butt/en/dj_form.png" >}}
+  {{< lightbox "/images/live_stream/butt/ru/dj_form_mini.png" "/images/live_stream/butt/ru/dj_form.png" >}}
 
 ## Просмотр параметров подключения DJ
 
@@ -73,7 +73,7 @@ https://danielnoethen.de/butt/
 - **Пароль** - пароль DJ, который Вы указали при его создании.
 
 Именно эти данные необходимо использовать при настройке BUTT.
- {{< lightbox "/images/live_stream/butt/en/dj_edit_mini.png" "/images/live_stream/butt/en/dj_edit.png" >}}
+ {{< lightbox "/images/live_stream/butt/ru/dj_edit_mini.png" "/images/live_stream/butt/ru/dj_edit.png" >}}
 
 
 ## Добавление радиостанции в BUTT
@@ -113,7 +113,7 @@ https://danielnoethen.de/butt/
 - **Password**
 
 Остальные поля заполнять не нужно. Указание неверных значений в дополнительных полях может привести к некорректной работе стрима.
- {{< lightbox "/images/live_stream/butt/en/butt_server_settings.png" "/images/live_stream/butt/en/butt_server_settings.png" >}}
+ {{< lightbox "/images/live_stream/butt/ru/butt_server_settings.png" "/images/live_stream/butt/ru/butt_server_settings.png" >}}
 
 После ввода параметров нажмите **Save**.
 
@@ -125,7 +125,7 @@ https://danielnoethen.de/butt/
 Одновременно с этим обновите страницу **Диджеи** в панели управления радио.  
 Сначала статус DJ изменится на **«Подключен: Да»**, а после небольшой буферизации стрима значение **«В эфире»** также станет **«Да»**. Это означает, что DJ успешно подключён и ведёт live-вещание.
 
-{{< lightbox "/images/live_stream/butt/en/butt_server_connected.png" "/images/live_stream/butt/en/butt_server_connected.png" >}}
+{{< lightbox "/images/live_stream/butt/ru/butt_server_connected.png" "/images/live_stream/butt/ru/butt_server_connected.png" >}}
 
 ### Настройки качества звука (рекомендуется)
 
