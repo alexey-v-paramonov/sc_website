@@ -1,26 +1,30 @@
 ---
-title: "Renting a VPS/VDS for Internet Radio"
+title: "Renting a Server for Internet Radio"
 date: 2026-01-28
 weight: 11
-summary: "A practical, provider-agnostic guide to buying a VPS/VDS for an internet radio: choosing a plan, region, OS, getting access, and what hardware/network details matter most."
-seo_title: "How to Rent a VPS/VDS for Internet Radio — Step-by-step (Any Provider)"
-description: "Learn how VPS/VDS ordering typically works across popular hosting providers: picking CPU/RAM/SSD, choosing Ubuntu 24.04, getting SSH access, and connecting the server to our streaming panel."
+summary: "A practical, provider-agnostic guide to renting a server for internet radio — VPS/VDS or dedicated: choosing a plan, region, OS, getting access, and what hardware/network details matter most."
+seo_title: "How to Rent a Server for Internet Radio (VPS/VDS or Dedicated) — Step-by-step"
+description: "Learn how server ordering typically works across popular hosting providers (VPS/VDS and dedicated): choosing CPU/RAM/SSD, Ubuntu 24.04, SSH access, and connecting the server to our streaming panel."
 ---
 
-# Renting a VPS/VDS for Internet Radio (any hosting provider)
+# Renting a server for Internet Radio (VPS/VDS or dedicated)
 
-This article explains how renting a VPS/VDS (virtual server) usually works on most common hosting providers, and what to pay attention to when your goal is stable internet radio streaming.
+This article explains how renting a server for internet radio usually works on most common hosting providers. You can use a VPS/VDS (virtual server) or a dedicated server — both options are supported.
 
 Important note: our Streaming.Center panel does **not** lock you to any particular hosting company. You can choose any provider you like — it doesn’t matter to us. The only requirement is that your server meets the minimum specs from our system requirements.
 
 - System requirements: [/docs/system/system_requirements/](/docs/system/system_requirements/)
 
-## Examples of well‑regarded VPS providers (US & Europe)
+## Examples of well‑regarded providers (US & Europe)
 
-There’s no single “best” provider for everyone, but these companies are commonly considered reliable and user‑friendly in the US and European markets:
+There’s no single “best” provider for everyone, but these companies are commonly considered reliable and user‑friendly (and are often well‑reviewed) in the US and European markets.
 
-- US / global: DigitalOcean, Vultr, Linode (Akamai Connected Cloud)
-- Europe / global: Hetzner, OVHcloud, Scaleway, UpCloud
+- VPS/VDS (easy to start):
+  - US / global: DigitalOcean, Vultr, Linode (Akamai Connected Cloud)
+  - Europe / global: Hetzner, OVHcloud, Scaleway, UpCloud
+- Dedicated servers (more performance per $ at scale):
+  - US / global: OVHcloud, Liquid Web
+  - Europe / global: Hetzner, OVHcloud, Leaseweb
 
 Pick the provider and region that best match your audience and your budget.
 
@@ -66,22 +70,25 @@ Even a great platform can have outages — what matters is how they communicate 
 - Look for transparent status pages and clear incident reports.
 - Avoid providers with recurring complaints about bandwidth throttling or unstable nodes.
 
-## Typical VPS/VDS ordering steps (works similarly everywhere)
+## Typical ordering steps (VPS/VDS or dedicated)
 
 Below is the usual flow you’ll see on most hosting websites.
 
 1. **Create an account** with your chosen provider.
-2. **Choose a VPS/VDS plan** (CPU/RAM/disk) according to [our requirements](/docs/system/system_requirements/).
-
+2. **Choose a plan** (VPS/VDS or dedicated) based on [our requirements](/docs/system/system_requirements/) and your expected load.
 3. **Pick a region / data center** closer to your audience.
 4. **Select the operating system** (recommended: **Ubuntu 24.04, x86_64**).
-5. **Set up access**: Prefer **SSH keys** if the provider supports it. Otherwise set a strong root password and store it safely.
-6. **Create the server** and wait until it becomes active (usually a few minutes).
+5. **Set up access**:
+   - Prefer **SSH keys** (recommended).
+   - Otherwise set a strong root password and store it safely.
+6. **Provision the server**:
+   - VPS/VDS is usually ready in minutes.
+   - Dedicated servers may take longer (sometimes hours) and may include extra options (drive type, RAID, IPMI/KVM, etc.).
 7. **Get the server IP address** and verify you can connect via SSH.
 
 ## Adding the server to your account
 
-We don’t use license keys tied to your server. To manage a self‑hosted radio with our system, simply add the server to your account. Once you have a running server, its public **IP address**, and **root** password:
+We don’t use license keys tied to your server. To manage a self‑hosted radio with our system, simply add the server to your account. Once you have a running server, its public **IP address**, and **root** access (SSH key or password):
 
 1. Create an [account on our website](https://app.streaming.center) (if you don’t have one yet) or sign in.
 2. Go to the **Self hosted radios** section.
