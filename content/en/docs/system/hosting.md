@@ -19,10 +19,10 @@ Important note: our Streaming.Center panel does **not** lock you to any particul
 
 There’s no single “best” provider for everyone, but these companies are commonly considered reliable and user‑friendly (and are often well‑reviewed) in the US and European markets.
 
-- VPS/VDS (easy to start):
+### VPS/VDS (easy to start):
   - US / global: DigitalOcean, Vultr, Linode (Akamai Connected Cloud)
   - Europe / global: Hetzner, OVHcloud, Scaleway, UpCloud
-- Dedicated servers (more performance per $ at scale):
+### Dedicated servers (more performance per $ at scale):
   - US / global: OVHcloud, Liquid Web
   - Europe / global: Hetzner, OVHcloud, Leaseweb
 
@@ -78,12 +78,8 @@ Below is the usual flow you’ll see on most hosting websites.
 2. **Choose a plan** (VPS/VDS or dedicated) based on [our requirements](/docs/system/system_requirements/) and your expected load.
 3. **Pick a region / data center** closer to your audience.
 4. **Select the operating system** (recommended: **Ubuntu 24.04, x86_64**).
-5. **Set up access**:
-   - Prefer **SSH keys** (recommended).
-   - Otherwise set a strong root password and store it safely.
-6. **Provision the server**:
-   - VPS/VDS is usually ready in minutes.
-   - Dedicated servers may take longer (sometimes hours) and may include extra options (drive type, RAID, IPMI/KVM, etc.).
+5. **Set up access**: Prefer **SSH keys** (recommended). Otherwise set a strong root password and store it safely.
+6. **Provision the server**: VPS/VDS is usually ready in minutes. Dedicated servers may take longer (sometimes hours) and may include extra options (drive type, RAID, IPMI/KVM, etc.).
 7. **Get the server IP address** and verify you can connect via SSH.
 
 ## Adding the server to your account
