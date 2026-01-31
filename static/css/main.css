@@ -1377,10 +1377,10 @@ body {
 .doc-content ol {
   counter-reset: counter;
 }
-.doc-content ol li {
+.doc-content ol > li {
   counter-increment: counter;
 }
-.doc-content ol li:not(ul li):not(ol ul li)::before {
+.doc-content ol > li::before {
   content: counter(counter) ".";
   position: absolute;
   left: 0;
