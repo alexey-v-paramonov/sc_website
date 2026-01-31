@@ -1325,7 +1325,7 @@ body {
   color: #274c77;
 }
 .doc-content p {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 .doc-content img {
   margin-bottom: 40px;
@@ -1380,7 +1380,7 @@ body {
 .doc-content ol li {
   counter-increment: counter;
 }
-.doc-content ol li::before {
+.doc-content ol li:not(ul li):not(ol ul li)::before {
   content: counter(counter) ".";
   position: absolute;
   left: 0;
@@ -2549,7 +2549,7 @@ body {
   .doc-content img,
   .doc-content ul,
   .doc-content ol {
-    margin-bottom: 24px;
+    margin-bottom: 12px;
   }
   .doc-content ul li::before {
     top: 5px;
