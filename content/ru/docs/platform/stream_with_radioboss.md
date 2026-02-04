@@ -2,9 +2,9 @@
 title: "Настройка вещания через RadioBOSS"
 date: 2026-01-28
 weight: 20
-summary: ""
-seo_title: ""
-description: ""
+summary: "Пошаговая инструкция по настройке live-вещания интернет-радио через RadioBOSS для панели Radio-Tochka: создание DJ, параметры подключения, добавление энкодера и запуск эфира."
+seo_title: "Настройка live-вещания через RadioBOSS — Radio-Tochka (Shoutcast/Icecast)"
+description: "Как настроить прямой эфир (live) через RadioBOSS в панели Radio-Tochka: создайте DJ, возьмите сервер/порт/пароль, добавьте подключение в Вещание и запустите эфир."
 ---
 
 # Вещание Интернет-радио с помощью RadioBOSS
@@ -43,7 +43,7 @@ RadioBOSS работает только на операционной систе
 
 https://www.djsoft.net/rus/
 
-Перейдите в раздел **[Скачать](https://www.djsoft.net/rus/download.htm)** и выберите RadioBOSS последней версии. Для покупки программ перейдите на страницу **[Купить](https://www.djsoft.net/rus/download.htm)**.
+Перейдите в раздел **[Скачать](https://www.djsoft.net/rus/download.htm)** и выберите RadioBOSS последней версии. Для покупки программ перейдите на страницу **[Купить](https://www.djsoft.net/rus/buy.htm)**.
 
 
 ## Создание DJ для прямого эфира
