@@ -1,7 +1,7 @@
 ---
 title: "Streaming setup with RadioBOSS"
 date: 2026-01-28
-weight: 20
+weight: 11
 summary: "Step-by-step guide to set up live internet radio streaming with RadioBOSS for the Streaming.Center control panel: create a DJ user, get server/port/password, add an encoder, and go live."
 seo_title: "RadioBOSS live streaming setup — Streaming.Center (Shoutcast/Icecast)"
 description: "How to start a live broadcast with RadioBOSS in the Streaming.Center panel: create a DJ, copy server/port/password, add a connection in Broadcasting, and start streaming."
