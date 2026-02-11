@@ -1,5 +1,5 @@
 ---
-title: "Version 3.29.1: Bugfix-releas with a bunch of minor improvements."
+title: "Version 3.29.1: Bugfix-release with a bunch of minor improvements."
 date: 2026-02-11
 seo_title: "Version 3.29.1 Release Notes: Bug Fixes & Minor Improvements"
 description: "Bugfix release 3.29.1: new Dutch/Czech translations, updated GeoIP, faster stats, improved HLS/CORS, bigger podcast uploads, plus AutoDJ and scheduler fixes."
