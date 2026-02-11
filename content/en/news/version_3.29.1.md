@@ -5,7 +5,7 @@ seo_title: "Version 3.29.1 Release Notes: Bug Fixes & Minor Improvements"
 description: "Bugfix release 3.29.1: new Dutch/Czech translations, updated GeoIP, faster stats, improved HLS/CORS, bigger podcast uploads, plus AutoDJ and scheduler fixes."
 ---
 
-Version 3.29.0 is out:
+Version 3.29.1 is out:
 - Added Dutch and Czech language translations.
 - Updated GeoIP database to improve listener geolocation accuracy on the map and in statistics.
 - Improved Broadcaster interface responsiveness for smaller screens.
