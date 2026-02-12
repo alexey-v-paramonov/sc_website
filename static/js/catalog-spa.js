@@ -6,7 +6,15 @@
 class CatalogSPA {
   constructor() {
     console.log('CatalogSPA constructor called');
-    this.apiBaseUrl = 'https://streaming.center/api/v1/catalog/public/';
+    
+    // Set API base URL based on current domain
+    const hostname = window.location.hostname;
+    if (hostname.includes('radio-tochka.com')) {
+      this.apiBaseUrl = 'https://radio-tochka.com/api/v1/catalog/public/';
+    } else {
+      this.apiBaseUrl = 'https://streaming.center/api/v1/catalog/public/';
+    }
+    
     this.currentView = 'list'; // 'list' or 'detail'
     this.searchDebounceTimer = null;
     this.currentPage = 1;
