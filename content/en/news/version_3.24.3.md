@@ -1,6 +1,8 @@
 ---
 title: "Version 3.24.3: Audio-editor update"
 date: 2024-09-20T13:50:08
+seo_title: "Version 3.24.3: Audio-editor update"
+description: "Our Internet Radio control panel 3.24.2 has been released: - Audio Editor (where you generate your track waveform and define mix in and out points) has been..."
 icon: waveform.svg
 
 ---

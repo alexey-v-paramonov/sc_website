@@ -1,6 +1,8 @@
 ---
 title: "Version 3.28.0: Improved AAC format support, HLS streaming"
 date: 2025-12-22
+seo_title: "Version 3.28.0: Improved AAC format support, HLS streaming"
+description: "Version 3.28.0 is out: - Two new AAC encoders added. You can now stream in AAC-HE v1 and AAC-LC formats (AAC-HE v2 support was already available). - AAC..."
 ---
 
 Version 3.28.0 is out:

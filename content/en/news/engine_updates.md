@@ -1,6 +1,8 @@
 ---
 title: "Radio core engine updates"
 date: 2019-12-31T10:54:49
+seo_title: "Radio core engine updates"
+description: "First of all, we would like to congratulate everyone on the New Year 2020! As the creators of the Internet radio broadcasting service, we would like to see..."
 ---
 
 

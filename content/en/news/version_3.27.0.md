@@ -1,6 +1,8 @@
 ---
 title: "Version 3.27.0: Media Manager, Priority Track Queue"
 date: 2025-11-23
+seo_title: "Version 3.27.0: Media Manager, Priority Track Queue"
+description: "Version 3.27.0 is out: - Added MediaLibrary section to broadcaster panel - Introduced Priority Track queue: play selected tracks immediately, ahead of..."
 ---
 
 Version 3.27.0 is out:

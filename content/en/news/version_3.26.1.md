@@ -1,6 +1,8 @@
 ---
 title: "Version 3.26.1: Scheduler, Rotations, WHMCS & fixes"
 date: 2025-09-05
+seo_title: "Version 3.26.1: Scheduler, Rotations, WHMCS & fixes"
+description: "Version 3.26.1 is out: - New WHMCS module: manage most radio account features directly. - Switched to our own Icecast-KH fork with critical bug fixes. -..."
 ---
 
 Version 3.26.1 is out:

@@ -1,6 +1,8 @@
 ---
 title: "Version 3.25.1: Bugfix release"
 date: 2025-01-26T13:50:08
+seo_title: "Version 3.25.1: Bugfix release"
+description: "Version 3.25.1 is out: - Fixed a memory leak in the FLAC streams - Update of internal libraries (support for Django up to 4.x and Python up to 3.12) -..."
 ---
 
 Version 3.25.1 is out:

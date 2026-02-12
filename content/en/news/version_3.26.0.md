@@ -1,6 +1,8 @@
 ---
 title: "Version 3.26.0: Faster music processing"
 date: 2025-05-27T11:15:21Z
+seo_title: "Version 3.26.0: Faster music processing"
+description: "Version 3.26.0 is out: - Music processing now utilizes all CPU cores, significantly speeding up performance (e.g., ~4× faster on a 4-core CPU). -..."
 ---
 
 Version 3.26.0 is out:

@@ -1,6 +1,8 @@
 ---
 title: "Faster file processing, new sheduler settings"
 date: 2020-10-21T10:54:49
+seo_title: "Faster file processing, new sheduler settings"
+description: "A new option has been introduced for events in the scheduler - for playlists that are not random, but play in order, it is now possible to uncheck \"Start..."
 ---
 
 
