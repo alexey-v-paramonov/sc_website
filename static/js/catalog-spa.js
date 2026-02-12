@@ -657,6 +657,7 @@ class CatalogSPA {
           console.log('Reinitializing VK comments...');
           // Clear existing content
           vkCommentsContainer.innerHTML = '';
+          VK.init({ apiId: 54450993, onlyWidgets: true });
           
           // Get the page URL from the container or use current URL
           const pageUrl = window.location.href;
