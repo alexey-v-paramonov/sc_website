@@ -667,7 +667,6 @@ class CatalogSPA {
             limit: 10,
             attach: "*",
             pageUrl: pageUrl,
-            width: "100%"
           });
         } catch (e) {
           console.error('Error initializing VK comments:', e);
