@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
         tryBtn.innerHTML = loadingText;
 
         try {
-            const url = langCode == 'en' ? "https://streaming.center/api/v1/users/" : "https://app.radio-tochka.com/api/v1/users/";
+            const url = langCode == 'en' ? "https://streaming.center/api/v1/users/" : "https://radio-tochka.com/api/v1/users/";
             const response = await fetch(url, {
                 method: "POST",
                 headers: {
