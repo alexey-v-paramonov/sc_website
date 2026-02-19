@@ -103,9 +103,14 @@ unsafe= true
         weight = 100
 
       [[languages.ru.menus.agreement]]
+        name = 'Каталог Интернет-радио'
+        pageRef = '#catalog'
+        weight = 110
+
+      [[languages.ru.menus.agreement]]
         name = 'Реквизиты'
         pageRef = '#requisites'
-        weight = 110
+        weight = 120
 
         
 
@@ -195,9 +200,14 @@ unsafe= true
         weight = 100
 
       [[languages.en.menus.agreement]]
+        name = 'Internet-radio Catalog'
+        pageRef = '#catalog'
+        weight = 110
+
+      [[languages.en.menus.agreement]]
         name = 'Requisites'
         pageRef = '#requisites'
-        weight = 110
+        weight = 120
 
 
 

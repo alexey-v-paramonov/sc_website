@@ -180,6 +180,85 @@ By registering for an account on the Streaming.Center platform ("Personal Accoun
   </ol>
   </li>
 
+  <a name="catalog"></a>
+  <li><b>Streaming.Center Internet Radio Directory</b>
+    <ol>
+    <li><b>Service status and non-participation in broadcasting:</b>
+      <ol>
+          <li>The Service is an informational platform that allows Users to publish information about Internet radio stations in the directory and to listen to audio streams via an embedded software player.
+          </li>
+          <li>
+          “Streaming.Center” Service does not create, form, broadcast, transmit, retransmit, store, record, modify, or otherwise use the audio streams of Internet radio stations.
+          </li>
+          <li>
+          All audio streams published in the directory are transmitted from third-party servers that are not owned by and not controlled by the Service. Playback occurs directly on the end user’s device via their Internet browser.
+          </li>
+          <li>The Service is not a broadcaster, a telecommunications operator, the owner of a streaming server, a hosting provider of a radio station, or any other party involved in the creation or distribution of audio content.
+          </li>
+      </ol>
+    </li>
+    <li><b>Independent responsibility of the radio station owner</b>.<br />The User who publishes an Internet radio station in the directory confirms and warrants that:
+      <ol>
+          <li>
+          they are the lawful owner of the relevant radio station or an authorized representative of the owner;
+          </li>
+          <li>
+          they have all necessary rights to transmit musical, literary, phonographic, and other works included in the broadcast;
+          </li>
+          <li>
+          they have entered into all necessary agreements with rights holders and/or with collective rights management organizations;
+          </li>
+          <li>
+          they pay all royalties and related fees required by applicable law.
+          </li>
+      </ol>
+    </li>
+    <li>The User undertakes to independently and at their own expense resolve all matters related to copyright, related rights, and any other rights of third parties arising in connection with the broadcasting of their Internet radio station.</li>
+    <li>Publishing an Internet radio station in the directory of the Service does not impose on the Service any obligations to obtain licenses or enter into agreements with rights holders or collective rights management organizations, including but not limited to RAO, VOIS, or similar organizations in other jurisdictions.</li>
+    <li>The radio station owner bears full responsibility for the content being broadcast, including compliance with legislation on copyright, related rights, advertising, information security, and any other applicable regulations.</li>
+  <li><b>Limitation of the Service’s liability:</b>
+    <ol>
+    <li>The Service  is not responsible for the content of audio streams published by Users, nor for any potential infringement of third-party rights by such content.</li>
+    <li>If any claims, demands, lawsuits, or other requests are made against the Service by rights holders or governmental authorities in connection with a specific radio station, the User undertakes to:
+    <ul>
+    <li>independently participate in the consideration of the relevant dispute;</li>
+    <li>provide necessary explanations and documents;</li>
+    <li>reimburse the Service for all documented losses, including court costs and fines, if such losses arise due to the User’s actions or inaction.</li>
+    </ul>
+    </li>
+    </ol>
+  </li>
+  <li><b>Procedure for handling rights holder requests:</b>
+    <ol>
+      <li>If any person believes that an audio stream published in the directory infringes their rights, they may send a request to the following email address: info@streaming.center</li>
+      <li>The request must include:
+        <ul>
+        <li>information about the rights holder;</li>
+        <li>an indication of the alleged infringement;</li>
+        <li>a description of the protected work/content;</li>
+        <li>contact details for feedback.</li>
+        </ul>
+      </li>
+      <li>The Service reserves the right to temporarily restrict or remove information about the radio station until the circumstances are clarified.</li>
+    </ol>
+  </li>
+  <li><b>Use of trademarks and other intellectual property</b>:
+    <ol>
+      <li>All trademarks, names, logos, and other means of identification published in the directory belong to their lawful rights holders.</li>
+      <li>Their use in the directory is solely informational, for the purpose of identifying the relevant radio station.</li>
+      <li>The Service does not claim any rights to the above intellectual property.</li>
+    </ol>
+  </li>
+  <li><b>General provisions</b>:
+    <ol>
+      <li>All materials published on the Service are provided for informational purposes only.</li>
+      <li>The Service does not sell or distribute audio content.</li>
+      <li>If materials that infringe a rights holder’s rights are discovered, the rights holder may send an official request with proof of their rights from a corporate or otherwise verifiable email address.</li>
+    </ol>
+  </li>
+  </ol>
+  </li>
+
 <a name="requisites"></a>
  <li><b>Requisites</b>
 
