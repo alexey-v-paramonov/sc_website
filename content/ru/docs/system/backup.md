@@ -53,7 +53,7 @@ python3 sc_backup all quick
 
 **На *старом* сервере**:
 
-1. [Обновитесь](/docs/system/upgrade) до последней версии Streaming.center: `bash <(curl -s https://streaming.center/dist/update.sh)`
+1. [Обновитесь](/docs/system/upgrade) до последней версии Streaming.center: `bash <(curl -s https://radio-tochka.com/dist/update.sh)`
 
 2. Создать полную резервную копию всех аккаунтов
 {{< highlight bash  >}}
@@ -83,7 +83,7 @@ python3 sc_backup all
 6. Если переезжает и домен - в настройках ДНС домена сменить старый IP адрес на новый и дождаться переезда домена (может занимать несколько часов)
 7. Установить домен для радио, используя команду `cd /opt/bin && ./change_host` 
 8. Запустить `cd /opt/bin && ./ssl_enable` для настройки SSL сертификата.
-9. Запустить скрипт обновления: `bash <(curl -s https://streaming.center/dist/update.sh)`
+9. Запустить скрипт обновления: `bash <(curl -s https://radio-tochka.com/dist/update.sh)`
 10. Раскомментировать строки в файле `/etc/crontab`, которые закомментировали на шаге 2.
 
 #### Восстановление шаблонов радио-аккаунтов (опционально)

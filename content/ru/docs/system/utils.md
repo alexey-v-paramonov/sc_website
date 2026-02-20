@@ -26,7 +26,7 @@ cd /opt/bin
 {{< / highlight >}}
 
 При запуске утилита выведет текущее доменное имя или IP адрес и запросит новый домен. После изменения домена рекомендуется запустить скрипт обновления системы:
-```bash <(curl -s https://streaming.center/dist/update.sh)```
+```bash <(curl -s https://radio-tochka.com/dist/update.sh)```
 
 ### Подключение SSL сертификата:
 
@@ -36,7 +36,7 @@ cd /opt/bin
 {{< / highlight >}}
 
 Устанавливается бесплатный сертификат от Letsencrypt, который обновляется автоматически каждые 90 дней. После изменения домена рекомендуется запустить скрипт обновления системы:
-```bash <(curl -s https://streaming.center/dist/update.sh)```
+```bash <(curl -s https://radio-tochka.com/dist/update.sh)```
 
 ### Смена паролей всех радио-аккаунтов:
 {{< highlight bash  >}}
