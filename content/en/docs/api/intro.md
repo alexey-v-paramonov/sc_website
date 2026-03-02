@@ -15,7 +15,7 @@ To work with the API, you must already have our Internet Radio Control Panel ins
 
 The API URL is: **<<address of your panel on the server>>/api/<<api version>>**, for example:
 
-[https://demoaccount.radio-tochka.com:8080/api/v2/](https://demoaccount.radio-tochka.com:8080/api/v2/) 
+[https://demoaccount.streaming.center:8080/api/v2/](https://demoaccount.streaming.center:8080/api/v2/) 
 
 
 Our API uses JSON and JSONP formats for data exchange. For the API to work correctly, we strongly recommend that you have configured and working support for the **HTTPS** protocol on the server side, and in cases where [Authorization](/docs/api/auth) is required for API requests, the **HTTPS** protocol is critically necessary to protect the transfer of authorization tokens.
@@ -26,7 +26,7 @@ An example of an API request in the Python programming language that receives th
 
 import requests
 
-response = requests.get("https://demoaccount.s02.radio-tochka.com:8080/api/v2/history/?limit=1&offset=0&server=1")
+response = requests.get("https://demoaccount.streaming.center:8080/api/v2/history/?limit=1&offset=0&server=1")
 print(response.json())
 
 {{< / highlight >}}
@@ -37,7 +37,7 @@ Example output about the current track on the radio in JSON format:
 
 {
    "count":500,
-   "next":"https://demoaccount.s02.radio-tochka.com:8080/api/v2/history/?limit=1&offset=1&server=1",
+   "next":"https://demoaccount.streaming.center:8080/api/v2/history/?limit=1&offset=1&server=1",
    "previous":"None",
    "results":[
       {
@@ -51,9 +51,9 @@ Example output about the current track on the radio in JSON format:
          "genre":"None",
          "id":11552,
          "img_fetched":true,
-         "img_large_url":"https://demoaccount.s02.radio-tochka.com:8080/media/tracks/trackImage1190_large.jpg",
-         "img_medium_url":"https://demoaccount.s02.radio-tochka.com:8080/media/tracks/trackImage1190_medium.jpg",
-         "img_url":"https://demoaccount.s02.radio-tochka.com:8080/media/tracks/trackImage1190.jpg",
+         "img_large_url":"https://demoaccount.streaming.center:8080/media/tracks/trackImage1190_large.jpg",
+         "img_medium_url":"https://demoaccount.streaming.center:8080/media/tracks/trackImage1190_medium.jpg",
+         "img_url":"https://demoaccount.streaming.center:8080/media/tracks/trackImage1190.jpg",
          "isrc":"None",
          "jingle_id":"None",
          "label":"None",
