@@ -9,7 +9,7 @@ url: /content/privacy_policy
 
 - Наименование разработчика в магазине **Google Play**: «iRadioService».
 
-- Наименование разработчика в магазине **AppStore:**: «Alexey Paramonov».
+- Наименование разработчика в магазине **Apple App Store**: «Alexey Paramonov».
 
 Мы очень серьезно подходим к политике конфиденциальности. 
 
