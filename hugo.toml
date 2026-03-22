@@ -25,7 +25,7 @@ unsafe= true
     languageCode = 'ru-RU'
     languageDirection = 'ltr'
     languageName = 'Russian'
-    title = 'Radio-Tochka.com'
+    title = 'Профессиональная панель управления Интернет-радио и мобильные приложения'
     weight = 2
     [languages.ru.params]
       subtitle = 'Платформа Интернет-Радио'
