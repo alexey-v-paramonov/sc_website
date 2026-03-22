@@ -2,6 +2,8 @@
 title: "История эфира"
 date: 2024-08-22T11:37:29+03:00
 weight: 3
+seo_title: "API история эфира Интернет-радио | Радио-Точка"
+description: "API-метод для получения истории треков в эфире «Радио-Точка»: URL /api/v2/history/, параметры limit, offset и server, примеры на Python и формат ответа JSON с данными треков."
 ---
 
 <div class="api-block">

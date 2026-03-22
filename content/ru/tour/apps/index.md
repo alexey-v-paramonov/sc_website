@@ -1,6 +1,8 @@
 ---
 title: "Мобильные приложения для Интернет-Радио"
 date: 2024-08-18T11:45:44+03:00
+seo_title: "Мобильные приложения для Интернет-радио Android и iOS | Радио-Точка"
+description: "Создайте брендированное мобильное приложение для Вашего Интернет-радио: нативные Android и iOS приложения с поддержкой HLS, Bluetooth, Android Auto и публикацией в Google Play и App Store."
 ---
 <div class="view-item__block">
     {{< lightbox "/images/tour/ru/app.webp" "/images/tour/ru/app.webp">}}
