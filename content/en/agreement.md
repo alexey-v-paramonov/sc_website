@@ -1,5 +1,7 @@
 ---
 title: "Service Agreement"
+seo_title: "Service Agreement | Streaming.Center"
+description: "Read the public service agreement for Streaming.Center — terms and conditions for using the Internet radio control panel, Auto-DJ, mobile apps, and related broadcasting services."
 date: 2024-08-18T11:27:31+03:00
 type: "agreement"
 ---

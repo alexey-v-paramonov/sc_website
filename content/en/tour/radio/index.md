@@ -1,5 +1,7 @@
 ---
 title: "Internet Radio Control panel"
+seo_title: "Internet Radio Control Panel Tour | Streaming.Center"
+description: "Explore the Streaming.Center Internet radio control panel: Auto-DJ, live broadcasting, schedule management, listener statistics, HTTPS streaming, and multi-format support."
 date: 2024-08-18T11:45:30+03:00
 ---
 <div class="view-item__block">

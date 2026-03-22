@@ -1,5 +1,7 @@
 ---
 title: "Privacy Policy"
+seo_title: "Privacy Policy | Streaming.Center"
+description: "Privacy Policy for Streaming.Center: how we collect and use personal data in our Internet radio control panel and mobile applications for Android and iOS."
 date: 2024-08-18T11:26:05+03:00
 url: /content/privacy_policy
 ---

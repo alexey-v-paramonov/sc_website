@@ -1,5 +1,7 @@
 ---
 title: "Internet-radio mobile applications (Android, iOS)"
+seo_title: "Internet Radio Mobile Apps for Android & iOS | Streaming.Center"
+description: "Build branded Android and iOS apps for your Internet radio station with Streaming.Center. Native apps with live stream, song history, podcasts, push notifications, and no coding required."
 date: 2024-08-18T11:45:44+03:00
 ---
 <div class="view-item__block">

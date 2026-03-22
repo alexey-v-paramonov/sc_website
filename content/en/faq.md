@@ -1,5 +1,7 @@
 ---
 title: "FAQ"
+seo_title: "Internet Radio FAQ: Common Questions Answered | Streaming.Center"
+description: "Answers to frequently asked questions about Internet radio: playback issues, live broadcasting, using your own domain, royalty payments, and billing options on Streaming.Center."
 date: 2024-08-18T11:27:53+03:00
 ---
 

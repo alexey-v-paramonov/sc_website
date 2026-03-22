@@ -1,5 +1,7 @@
 ---
 title: "Payments, billing"
+seo_title: "Payments & Billing | Streaming.Center Internet Radio"
+description: "How to pay for Streaming.Center services: top up your personal account balance, manage subscriptions, one-time payments, auto-billing, and invoicing for organizations."
 date: 2024-08-18T11:27:53+03:00
 ---
 
