@@ -12,7 +12,7 @@ if(document.location.host.indexOf("localhost:1313") >= 0 || document.location.ho
 const PRICING = {
     ru: {
         selfhosted: {
-            base: 549,
+            base: 649,
             single: 80,
             whitelabel: 300
         },
