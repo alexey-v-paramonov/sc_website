@@ -13,7 +13,7 @@ unsafe= true
   priority = -1
 
 [caches]
-    [caches.getjson]
+    [caches.getresource]
         dir = ":cacheDir/:project"
         maxAge = "5m"
 
