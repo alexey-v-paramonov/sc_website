@@ -24,7 +24,7 @@ Gets a list of podcasts.
 
 import requests
 
-response = requests.get("https://demoaccount.s02.radio-tochka.com:8080/api/v2/podcasts/?server=1")
+response = requests.get("https://demoaccount.streaming.center:8080/api/v2/podcasts/?server=1")
 print(response.json())
 
 {{< / highlight >}}

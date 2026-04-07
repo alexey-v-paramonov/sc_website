@@ -593,14 +593,3 @@ Response: LicenseSerializer JSON with model fields (`key`, `local_key`, `version
 ## Errors & conventions
 - Validation and serializer errors return HTTP 400 with a JSON mapping of field -> list of error codes/messages.
 - Many endpoints return a simple `{}` or `{"success": true}` on success for side-effect operations.
-
----
-
-If you want, I can:
-- Add example `curl` commands for every single endpoint showing how to include the `Authorization: Token <key>` header when needed (I already included samples in the main flows). I can expand that to every endpoint verbosely.
-- Generate a short table of endpoints at the top for quick navigation.
-
-
----
-
-End of API reference.
