@@ -1,6 +1,6 @@
 ---
 title: "Broadcast Channels"
-date: 2026-04-08T12:00:00+03:00
+date: 2026-04-04T12:00:00+03:00
 weight: 51
 seo_title: "Streaming Channel API for Internet Radio | Streaming.Center"
 description: "Documentation for the Streaming.Center broadcast channels API: listing channels, creating, updating, deleting, and using listener authentication endpoints."

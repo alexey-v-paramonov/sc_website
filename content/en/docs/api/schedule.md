@@ -1,6 +1,6 @@
 ---
 title: "Scheduler"
-date: 2026-04-08T12:00:00+03:00
+date: 2026-04-05T12:00:00+03:00
 weight: 52
 seo_title: "Scheduler API for Internet Radio | Streaming.Center"
 description: "Documentation for the Streaming.Center scheduler API: retrieving schedule events, creating, updating, deleting, and clearing the broadcast schedule."
