@@ -2,9 +2,9 @@
 title: "Intro Files"
 date: 2026-06-01
 weight: 21
-summary: ""
-seo_title: ""
-description: ""
+summary: "Learn how to upload, manage, group, and schedule intro audio files for your radio stream."
+seo_title: "Intro Files: Upload, Group, and Schedule Stream Intros"
+description: "Step-by-step guide to using intro files on Streaming.Center: upload audio clips, set defaults, create random groups, and schedule intros by time and day."
 ---
 
 # How to Use Intro Files on Streaming.Center
