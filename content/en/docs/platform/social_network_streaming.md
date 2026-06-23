@@ -2,7 +2,7 @@
 title: "Streaming Radio to Social Networks"
 date: 2026-06-01
 weight: 22
-summary: "Learn how to relay your Internet radio station to YouTube, Telegram, and Facebook from the Radio-Tochka.com control panel."
+summary: "Learn how to relay your Internet radio station to YouTube, Telegram, and Facebook from the Streaming.Center control panel."
 seo_title: "Stream Internet Radio to YouTube, Telegram, and Facebook"
 description: "Step-by-step guide to streaming Internet radio on YouTube, Telegram, and Facebook: get server URLs and stream keys, select a channel, and go live."
 ---
@@ -17,7 +17,7 @@ Our Internet radio platform can automatically relay your station's broadcast to 
 
 This article explains how to integrate radio stations that are already running on our platform with social networks.
 
-**Important:** You can stream audio or video to social networks without our platform, for example by using OBS Studio. However, this option is not covered in this article. Here, we will show you how to connect an existing Internet radio station running on the Radio-Tochka.com platform to social networks.
+**Important:** You can stream audio or video to social networks without our platform, for example by using OBS Studio. However, this option is not covered in this article. Here, we will show you how to connect an existing Internet radio station running on the Streaming.Center platform to social networks.
 
 Once everything is set up, listeners will be able to tune in to your station just as they would watch a regular video stream: they can listen to music, chat on the social network, and access the broadcast on a phone, computer, or Smart TV, or through a web browser. YouTube, RuTube, and other platforms are available on almost any device.
 
