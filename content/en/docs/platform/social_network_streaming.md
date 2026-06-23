@@ -19,7 +19,7 @@ This article explains how to integrate radio stations that are already running o
 
 **Important:** You can stream audio or video to social networks without our platform, for example by using OBS Studio. However, this option is not covered in this article. Here, we will show you how to connect an existing Internet radio station running on the Streaming.Center platform to social networks.
 
-Once everything is set up, listeners will be able to tune in to your station just as they would watch a regular video stream: they can listen to music, chat on the social network, and access the broadcast on a phone, computer, or Smart TV, or through a web browser. YouTube, RuTube, and other platforms are available on almost any device.
+Once everything is set up, listeners will be able to tune in to your station just as they would watch a regular video stream: they can listen to music, chat on the social network, and access the broadcast on a phone, computer, or Smart TV, or through a web browser. YouTube and other platforms are available on almost any device.
 
 During the stream, your station's logo or a video loop can be displayed instead of regular video. You can upload a short video clip that will automatically repeat throughout the broadcast.
 
