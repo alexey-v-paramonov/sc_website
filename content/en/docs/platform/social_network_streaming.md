@@ -12,8 +12,8 @@ description: ""
 Our Internet radio platform can automatically relay your station's broadcast to social networks and video platforms, including:
 
 - [YouTube](#setting-up-radio-streaming-on-youtube)
-- Facebook
 - [Telegram](#setting-up-internet-radio-streaming-on-telegram)
+- Facebook
 
 This article focuses specifically on social network integration for radio stations that have already been created and are running on our platform.
 
@@ -165,3 +165,75 @@ Please note that, due to the technical limitations of this integration, listener
     Congratulations! Your radio station is now streaming on **Telegram**.
 
 Please note that when you stream to Telegram, the feed is delivered through Telegram's servers. If listeners experience interruptions or connection problems during playback, these issues are outside our control.
+
+## Setting Up Internet Radio Streaming on Facebook
+
+1. Create or prepare a Facebook account.
+
+    You probably already have a Facebook account. However, for an Internet radio station, it is better to create a separate account or group and name it after your station.
+    This will make it easier for listeners to find your station and give the stream a more professional appearance.
+
+2. Get the stream URL and stream key.
+
+    Sign in to Facebook with the account you will use to stream your radio station.
+
+    Then open the live streaming producer:
+
+    https://www.facebook.com/live/producer
+
+    Choose “Go live” in Live Producer:
+    {{< lightbox "/images/social/en/fb_1_mini.png" "/images/social/en/fb_1.png" >}}
+
+    Select "Streaming software" as a video source, copy the following two values from the live streaming dashboard:
+
+    - Server URL
+    - Stream key
+
+    {{< lightbox "/images/social/en/fb_2_mini.png" "/images/social/en/fb_2.png" >}}
+
+    You will need these details to connect your radio station to Facebook.
+
+3. Connect your radio stream to Facebook.
+
+    Open your Internet radio control panel. On the main page, where your broadcast channels are listed, select the channel you want to use.
+
+    A single radio station can have multiple channels, for example:
+
+    - 320 kbps MP3
+    - 64 kbps MP3
+
+    {{< lightbox "/images/social/en/channels.png" "/images/social/en/channels.png" >}}
+
+    Only one channel can be connected to Facebook. We recommend selecting the highest-quality channel. In the example above, that is the 320 kbps MP3 channel.
+
+    The audio quality of your Facebook stream will match the quality of the selected channel.
+
+4. Enter the Facebook settings in the control panel.
+
+    Click **Edit** for the selected channel.
+
+    In the settings window, open the Facebook section and fill in the required fields:
+
+    - stream URL;
+    - stream key;
+    - a logo image or video clip to use as the stream visual.
+
+    The uploaded logo or video clip will be displayed in the Facebook stream instead of regular video.
+
+    Once all fields have been filled in correctly, you can enable streaming. Select the checkbox that enables the stream, then save the settings.
+
+    To stop streaming to Facebook, clear this checkbox and save the settings again.
+
+    The result should look similar to this:
+
+    {{< lightbox "/images/social/en/fb_3_mini.png" "/images/social/en/fb_3.png" >}}
+
+    An image should appear in the Facebook live streaming producer, and the "Go live" button should become active:
+
+    {{< lightbox "/images/social/en/fb_4_mini.png" "/images/social/en/fb_4.png" >}}
+
+    Congratulations! Click on "Go live" and radio station will be streaming on **Facebook**.
+
+    {{< lightbox "/images/social/en/fb_5.png" "/images/social/en/fb_5.png" >}}
+
+    Please note that the current normal Facebook Live limit is **8 hours**.
