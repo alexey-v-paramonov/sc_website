@@ -13,7 +13,7 @@ Our Internet radio platform can automatically relay your station's broadcast to 
 
 - [YouTube](#setting-up-radio-streaming-on-youtube)
 - Facebook
-- Telegram
+- [Telegram](#setting-up-internet-radio-streaming-on-telegram)
 
 This article focuses specifically on social network integration for radio stations that have already been created and are running on our platform.
 
@@ -98,3 +98,70 @@ Please note that, due to the technical limitations of this integration, listener
     Congratulations! Your radio station is now streaming on **YouTube**.
 
     Please note that when you stream audio to YouTube, the service automatically checks the content for copyright violations and may block the stream.
+
+## Setting Up Internet Radio Streaming on Telegram
+
+1. Prepare a Telegram channel or group.
+
+    You must have your own Telegram channel or group to broadcast—create one in advance. You will need the Telegram desktop app to configure streaming; the web and mobile versions cannot be used for this.
+
+2. Get the stream key and URL.
+
+    Open the channel or group you want to use and click the button at the top of the window to create a live stream:
+
+    {{< lightbox "/images/social/en/group.png" "/images/social/en/group.png" >}}
+
+3. Select **Stream With…** from the drop-down menu:
+
+    {{< lightbox "/images/social/en/stream_with.png" "/images/social/en/stream_with.png" >}}
+
+4. Copy the server URL and stream key, then click **Start Streaming**:
+
+    {{< lightbox "/images/social/en/start_stream.png" "/images/social/en/start_stream.png" >}}
+
+    An empty stream window will then appear:
+
+    {{< lightbox "/images/social/en/stream_1.png" "/images/social/en/stream_1.png" >}}
+
+5. Connect your radio stream to Telegram.
+
+    Open your Internet radio control panel. On the main page, where your broadcast channels are listed, select the channel you want to use.
+
+    A single radio station can have multiple channels, for example:
+
+    - 320 kbps MP3
+    - 64 kbps MP3
+
+    {{< lightbox "/images/social/en/channels.png" "/images/social/en/channels.png" >}}
+
+    Only one channel can be connected to Telegram. We recommend selecting the highest-quality channel. In the example above, that is the 320 kbps MP3 channel.
+
+    The audio quality of your Telegram stream will match the selected channel, although Telegram's servers may transcode it.
+
+6. Enter the Telegram settings in the control panel.
+
+    Click **Edit** for the selected channel.
+
+    In the settings window, open the Telegram section and fill in the required fields:
+
+    - stream URL;
+    - stream key;
+    - a logo image or video clip to use as the stream visual.
+
+    The uploaded logo or video clip will be displayed in the Telegram stream instead of regular video.
+
+    Once all fields have been filled in correctly, you can enable streaming. Select the checkbox that enables the stream, then save the settings.
+
+    To stop streaming to Telegram, clear this checkbox and save the settings again.
+
+    The result should look similar to this:
+
+    {{< lightbox "/images/social/en/tg1_mini.png" "/images/social/en/tg1.png" >}}
+
+    After you save the settings, the stream visual should appear in the Telegram stream window and broadcasting will begin:
+
+    {{< lightbox "/images/social/ru/tg_ok.png" "/images/social/ru/tg_ok.png" >}}
+
+    Congratulations! Your radio station is now streaming on **Telegram**.
+
+Please note that when you stream to Telegram, the feed is delivered through Telegram's servers. If listeners experience interruptions or connection problems during playback, these issues are outside our control.
