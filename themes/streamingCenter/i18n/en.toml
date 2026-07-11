@@ -65,6 +65,9 @@ other = "Get a free trial"
 [invalid_email]
 other = "Invalid Email"
 
+[captcha_error]
+other = "Complete the captcha"
+
 [try_account_success]
 other = "In 5 minutes we will send the account credentials to:"
 

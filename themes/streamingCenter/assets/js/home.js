@@ -44,9 +44,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const tryContainer = document.getElementById("try-form");
     const captchaContainer = document.getElementById("captcha-container");
 
-    // Returns the Yandex SmartCaptcha token, or an empty string if not passed yet.
+    // Field the API expects for the captcha token: Yandex SmartCaptcha on the
+    // Russian site, Cloudflare Turnstile on the English one.
+    const captchaField = langCode == 'en' ? 'cf-turnstile-response' : 'smart-token';
+
+    // Returns the captcha token, or an empty string if not passed yet. Both
+    // providers expose the token via a hidden input inside the widget.
     function getCaptchaToken() {
-        const tokenInput = captchaContainer.querySelector('input[name="smart-token"]');
+        if (!captchaContainer) return "";
+        const tokenInput = captchaContainer.querySelector(`input[name="${captchaField}"]`);
         return tokenInput ? tokenInput.value : "";
     }
 
@@ -72,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const url = langCode == 'en' ? "https://streaming.center/api/v1/users/" : "https://radio-tochka.com/api/v1/users/";
             const payload = { email: tryEmail.value, language: langCode == 'en' ? 0 : 1, currency: langCode == 'en' ? 0 : 1 };
             if (captchaContainer && captchaErrorText) {
-                payload['smart-token'] = getCaptchaToken();
+                payload[captchaField] = getCaptchaToken();
             }
             const response = await fetch(url, {
                 method: "POST",

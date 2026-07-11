@@ -789,7 +789,7 @@ body {
   margin-top: 25px;
   gap: 30px;
 }
-.home-form .home-form__footer .home-form__bottom--ru {
+.home-form .home-form__footer .home-form__bottom--inline {
   margin: 0;
   width: auto;
   -webkit-box-flex: 1;
@@ -2431,7 +2431,7 @@ body {
   .home-form__footer {
     display: block;
   }
-  .home-form .home-form__footer .home-form__bottom--ru {
+  .home-form .home-form__footer .home-form__bottom--inline {
     text-align: center;
     margin-bottom: 20px;
   }
