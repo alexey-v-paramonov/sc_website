@@ -798,8 +798,8 @@ body {
   text-align: left;
 }
 .home-form__footer .home-form__captcha {
-  width: 331px;
-  min-width: 331px;
+  width: 334px;
+  min-width: 334px;
   -ms-flex-negative: 0;
   flex-shrink: 0;
   display: -webkit-box;
