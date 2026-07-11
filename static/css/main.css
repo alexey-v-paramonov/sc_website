@@ -800,6 +800,15 @@ body {
 .home-form__footer .home-form__captcha {
   width: 331px;
   min-width: 331px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  overflow: visible;
 }
 
 .main-slider .swiper-wrapper {
@@ -2429,6 +2438,9 @@ body {
   .home-form__footer .home-form__captcha {
     width: 100%;
     min-width: 0;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
   }
   .main-mobile {
     display: block;

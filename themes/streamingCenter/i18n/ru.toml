@@ -67,7 +67,7 @@ other = "Заказать демо"
 other = "Неверный Email"
 
 [captcha_error]
-other = "Пройдите капчу"
+other = "Пройдите капчу↓"
 
 [try_loading]
 other = "Минутку..."
