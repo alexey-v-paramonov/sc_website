@@ -8,3 +8,6 @@
 <link rel="canonical" href="{{ .Permalink }}">
 <link rel="icon" href="/img/favicon.svg">
 {{ partialCached "head/css.html" . }}
+{{ if eq .Lang "ru" }}
+<script src="https://smartcaptcha.yandexcloud.net/captcha.js" defer></script>
+{{ end }}
