@@ -123,6 +123,15 @@
           </form>
         </div>
         <div class="home-form__bottom">{{ T "try_description" }}</div>
+        {{ if eq .Lang "ru" }}
+          <div
+            style="height: 100px"
+            id="captcha-container"
+            class="smart-captcha"
+            data-sitekey="ysc1_gz9VDvc5PJxSbSGsMdmV1TPfCiTtvd0awJXWSAIzfdf7ccbb"
+          ></div>
+        {{ end }}
+
       </div>
     </div>
   </div>
