@@ -66,6 +66,9 @@ other = "Заказать демо"
 [invalid_email]
 other = "Неверный Email"
 
+[captcha_error]
+other = "Пройдите капчу"
+
 [try_loading]
 other = "Минутку..."
 

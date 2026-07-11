@@ -37,10 +37,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     originalButtonText = tryBtn.innerHTML;
     const invalidEmailText = tryBtn.getAttribute('data-invalid-email');
+    const captchaErrorText = tryBtn.getAttribute('data-captcha-error');
     const loadingText = tryBtn.getAttribute('data-loading-text');
     const langCode = tryBtn.getAttribute('data-lang');
     const trySuccessText = tryBtn.getAttribute('data-success-text');
     const tryContainer = document.getElementById("try-form");
+    const captchaContainer = document.getElementById("captcha-container");
+
+    // Returns the Yandex SmartCaptcha token, or an empty string if not passed yet.
+    function getCaptchaToken() {
+        const tokenInput = captchaContainer.querySelector('input[name="smart-token"]');
+        return tokenInput ? tokenInput.value : "";
+    }
 
     tryBtn.addEventListener('click', async function (event) {
         event.preventDefault();
@@ -51,19 +59,28 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
+        if (captchaContainer && captchaErrorText && !getCaptchaToken()) {
+            addErrorToButton(captchaErrorText);
+            return;
+        }
+
         tryBtn.setAttribute("disabled", "disabled");
         tryEmail.setAttribute("disabled", "disabled");
         tryBtn.innerHTML = loadingText;
 
         try {
             const url = langCode == 'en' ? "https://streaming.center/api/v1/users/" : "https://radio-tochka.com/api/v1/users/";
+            const payload = { email: tryEmail.value, language: langCode == 'en' ? 0 : 1, currency: langCode == 'en' ? 0 : 1 };
+            if (captchaContainer && captchaErrorText) {
+                payload['smart-token'] = getCaptchaToken();
+            }
             const response = await fetch(url, {
                 method: "POST",
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ email: tryEmail.value, language: langCode == 'en' ? 0 : 1, currency: langCode == 'en' ? 0 : 1 })
+                body: JSON.stringify(payload)
             });
             tryEmail.removeAttribute("disabled");
             if (!response.ok) {
