@@ -1,7 +1,7 @@
 ---
-title: "Video streming is not supported for Youtube, FB, VK"
+title: "Video streaming is not supported for Youtube, FB, VK"
 date: 2021-03-28T13:50:08
-seo_title: "Video streming is not supported for Youtube, FB, VK"
+seo_title: "Video streaming is not supported for Youtube, FB, VK"
 description: "Some time ago, VKontakte changed the mechanism of video broadcasts, so radio broadcasts stopped working. Now this has been fixed, plus for broadcasts on..."
 ---
 

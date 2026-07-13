@@ -9,7 +9,7 @@ date: 2024-08-18T11:45:30+03:00
     <div class="view-item__bold">Our platform allows you to:</div>
     <ul class="view-item__green">
     <li>Broadcast synchronously in different formats (MP3, AAC, FLAC, bitrates from 16kbps to 320kbps)</li>
-    <li>Track the radio audience - from basic statistics in numbers, to displaying your listenes on the World map is real time</li>
+    <li>Track the radio audience - from basic statistics in numbers, to displaying your listeners on the World map in real time</li>
     <li>Go live on air at any time</li>
     <li>Manage playlists</li>
     <li>Program the broadcast and schedule the broadcast of playlists at a certain time via the scheduler</li>

@@ -5,7 +5,7 @@ other = "Прямо сейчас мы обслуживаем"
 other = "Слушателей"
 
 [stats_radios]
-other = "Радистанций"
+other = "Радиостанций"
 
 [stats_servers]
 other = "Серверов"
@@ -91,7 +91,7 @@ other = "Интернет-радио"
 other = "Android приложения"
 
 [slide3_title]
-other = "iOs приложения"
+other = "iOS приложения"
 
 [slide4_title]
 other = "Сайт радио"

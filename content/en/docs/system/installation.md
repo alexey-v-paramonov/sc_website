@@ -7,7 +7,7 @@ summary: "You can install the Streaming.Center Platform on a clean Linux server 
 description: "Learn how to install the Streaming.Center Internet radio platform on a clean Linux server via SSH. Step-by-step guide with video, screenshots, and free installation support included."
 ---
 
-You can install our Streaming Platform on a virtual or any type of dedicated server that meets the [mininum requirements](/docs/system/system_requirements). Installation is only possible on a clean server, you must have SSH access to the server.
+You can install our Streaming Platform on a virtual or any type of dedicated server that meets the [minimum requirements](/docs/system/system_requirements). Installation is only possible on a clean server, you must have SSH access to the server.
 
 **Important**: if the procedure described below causes difficulties for you, you are afraid of breaking something or you do not have experience - no problem, just provide our specialists with access to the server during installation (you can change your passwords later) and we will perform the installation **free of charge**.
 
@@ -87,7 +87,7 @@ NOTE: SSL encryption is available for valid domains only and not available for I
 {{< / highlight >}}
 
 (the address 109.172.7.21 in your case will be different - this is the IP address of *your* server.)
-We will be using **demo.streaming.center** domain in our example and this domain is already configured to resolve to **109.172.7.21** IP address by creating an `А` record type with `demo` nama and `109.172.7.21` as a value in the DNS settings of the root `streaming.center` domain, so we provide it to the installation script:
+We will be using **demo.streaming.center** domain in our example and this domain is already configured to resolve to **109.172.7.21** IP address by creating an `A` record type with `demo` name and `109.172.7.21` as a value in the DNS settings of the root `streaming.center` domain, so we provide it to the installation script:
 
 {{< highlight bash  >}}
 demo.streaming.center
@@ -120,7 +120,7 @@ If you did not specify a domain name earlier when installing the panel and set t
 If you agree to install the certificate, the script will request a service email address to which notifications about the operation of the certificate and its update will be sent:
 
 {{< highlight bash  >}}
-Enter your email address (required by Let's Encrypt SSL cenrtificate): 
+Enter your email address (required by Let's Encrypt SSL certificate):
 {{< / highlight >}}
 
 Usually you can just use the same admin email that you used before:

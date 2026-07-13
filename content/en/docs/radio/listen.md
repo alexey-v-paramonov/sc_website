@@ -12,7 +12,7 @@ description: "Discover the many ways to listen to Internet radio, including offi
 Listening to Internet radio is easy and can be done using various software and hardware options across different devices and operating systems. Below is a detailed guide.
 
 #### Official radio website
-The easiest way to listen to Internet radio is by visiting the station’s website and using its built-in audio player, if available. Look for a "Listen Live" button which is usually prominently displayed on the homepage or in a "Live" section. Most modern stations use HTML5 players that work instantly without downloads. Adjust volume or settings directly on the website's player by using volume controls and quality selection buttons. This is the easiest way to listent to the radio because you do not need to have any additional applications or an account, the stream works directly in your browser (Chrome, Safari, Firefox, etc.) and any device: smartphone, tablet, computer, or smart TV browser.
+The easiest way to listen to Internet radio is by visiting the station’s website and using its built-in audio player, if available. Look for a "Listen Live" button which is usually prominently displayed on the homepage or in a "Live" section. Most modern stations use HTML5 players that work instantly without downloads. Adjust volume or settings directly on the website's player by using volume controls and quality selection buttons. This is the easiest way to listen to the radio because you do not need to have any additional applications or an account, the stream works directly in your browser (Chrome, Safari, Firefox, etc.) and any device: smartphone, tablet, computer, or smart TV browser.
 
 Stations often prioritize their own websites over third-party apps and may even hide their streaming links to drive more traffic to their official site.
 
@@ -64,7 +64,7 @@ If an official app is not available, you can use the following players for Andro
   - Foobar2000 – Lightweight and highly customizable.
   - AIMP – Good for music and radio streaming.
 
-- **iOs**
+- **iOS**
   - TuneIn Radio – One of the most popular radio apps with thousands of stations.
   - Radio Garden – Lets you explore stations on an interactive world map.
   - Simple Radio – Lightweight and user-friendly.

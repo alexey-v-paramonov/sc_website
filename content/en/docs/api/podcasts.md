@@ -12,7 +12,7 @@ description: "Integrate podcast functionality with your Internet radio station. 
 <b>Authentication:</b> not required<br/>
 <b>Parameters:</b> <br/>
 <b>limit: </b> the number of records in response (optional)<br/>
-<b>offset:</b> offest, idicates the starting record (optional)<br/>
+<b>offset:</b> offset, indicates the starting record (optional)<br/>
 <b>server:</b> radio server ID (optional)<br/>
 </div>
 
@@ -52,7 +52,7 @@ print(response.json())
 
 - folder: podcast folder on the server filesystem
 - image: podcast cover image 
-- episodes_count: the number of episoded in this podcast
+- episodes_count: the number of episodes in this podcast
 - feed_url: RSS feed URL for this podcast
 - public_page_url: public page URL for this podcast, allows to browse the podcast via a browser
 - title: podcast title
@@ -71,7 +71,7 @@ print(response.json())
 <b>server:</b> radio server ID<br/>
 </div>
 
-Create a podcast on the radio with specified radio server ID. If you also need to include podcast cover into the podcast creation request, you need to send your POST request with `multipart/form-data` header and specify the podcats cover via the **image** parameter.
+Create a podcast on the radio with specified radio server ID. If you also need to include podcast cover into the podcast creation request, you need to send your POST request with `multipart/form-data` header and specify the podcast cover via the **image** parameter.
 
 <div class="api-block">
 <b>Endpoint:</b> /api/v2/podcasts/<b>id</b>/ <br/>

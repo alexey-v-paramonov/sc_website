@@ -1,7 +1,7 @@
 ---
-title: "New current track wiget, mobile apps update"
+title: "New current track widget, mobile apps update"
 date: 2017-09-01T10:54:49
-seo_title: "New current track wiget, mobile apps update"
+seo_title: "New current track widget, mobile apps update"
 description: "A new, fully customizable widget for the current radio track has been added to the \"Useful\" section of the radio control panel. The radio mobile apps for..."
 ---
 

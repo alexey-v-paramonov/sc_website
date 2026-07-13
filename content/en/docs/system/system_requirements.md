@@ -46,7 +46,7 @@ We support Linux operating system with **x86 64bit** architecture.
 
 
 ### Server network bandwidth
-Netwrok bandwidth is the main factor that affects the simultaneous listener limit that you can have on your server. It is not up to RAM or CPU, those factor are insignificant. The following network connections are commonly used:
+Network bandwidth is the main factor that affects the simultaneous listener limit that you can have on your server. It is not up to RAM or CPU, those factor are insignificant. The following network connections are commonly used:
 
 - **100 mbps**: can host up to ~**700** simultaneous listeners in 128Kbps MP3
 - **1 Gbps**: can host up to ~**7.000** simultaneous listeners in 128Kbps MP3

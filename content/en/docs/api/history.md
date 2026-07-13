@@ -12,7 +12,7 @@ description: "Access and retrieve your Internet radio station's track history wi
 <b>Authentication:</b> not required<br/>
 <b>Parameters:</b> <br/>
 <b>limit: </b> the number of records in response<br/>
-<b>offset:</b> offest, idicates the starting record<br/>
+<b>offset:</b> offset, indicates the starting record<br/>
 <b>server:</b> radio server ID<br/>
 </div>
 

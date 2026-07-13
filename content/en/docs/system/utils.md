@@ -31,7 +31,7 @@ cd /opt/bin
 When started, the utility outputs the current domain name or IP address and requests a new domain/IP. After changing the domain, it is recommended to run the system update script:
 ```bash <(curl -s https://streaming.center/dist/update.sh)```
 
-### Сonfiguring an SSL certificate:
+### Configuring an SSL certificate:
 
 {{< highlight bash  >}}
 cd /opt/bin

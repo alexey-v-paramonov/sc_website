@@ -43,7 +43,7 @@ For streaming at **128 kbps (MP3)**, a server with:
 #### Important:
 When you order internet radio hosting from us, traffic is not metered and does not affect the cost of the service.
 
-### Internet-radio Trafic Calculator:
+### Internet-radio Traffic Calculator:
 
 <table class="common-table">
     <tr>
@@ -64,7 +64,7 @@ When you order internet radio hosting from us, traffic is not metered and does n
     </td>
     </tr>
     <tr>
-        <td>Сoncurrent listeners:</td>
+        <td>Concurrent listeners:</td>
         <td>
             <div class="select small">
                 <select id="listeners">
@@ -131,5 +131,3 @@ When you order internet radio hosting from us, traffic is not metered and does n
     </tr>
 </table>
 <br />
-
-

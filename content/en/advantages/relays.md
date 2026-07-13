@@ -5,4 +5,4 @@ seo_title: "Relay any Internet-Radio using our platform | Streaming.Center"
 description: "Expand your radio's reach with strategically placed relay servers around the world. Improve listening quality and reduce latency for your international audience."
 ---
 
-Repeaters can pick up the audio stream from other Internet radio stations and you can put them on the air at a certain time using the scehduler.
+Repeaters can pick up the audio stream from other Internet radio stations and you can put them on the air at a certain time using the scheduler.

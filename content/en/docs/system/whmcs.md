@@ -12,7 +12,7 @@ description: "Learn how to integrate Streaming.Center with WHMCS using the open-
 WHMCS, which stands for Web Host Manager Complete Solution, is an all-in-one platform designed for web hosting businesses to manage clients, billing, and support. It streamlines various aspects of web hosting operations, from customer sign-ups to server provisioning, all in one place. 
 
 
-Streaming.Center platform has WHMCS itegration via a special module that you can download and install into your WHMCS instance allowing you to manage your radio account easily.
+Streaming.Center platform has WHMCS integration via a special module that you can download and install into your WHMCS instance allowing you to manage your radio account easily.
 Out module is Open-Source, you can see the complete source code at [GitHub](https://github.com/alexey-v-paramonov/streamingcenter_whmcs/)
 
 ## 🚀 Features
@@ -91,13 +91,13 @@ Out module is Open-Source, you can see the complete source code at [GitHub](http
 
     {{< lightbox "/images/whmcs/submit_order.png" "/images/whmcs/submit_order.png" >}}
 
-    Make sure to check **Run Module Create** - it will trigger broadacster account creation in Streaming.Center, pick your broadcaster account **username** and the password. You will not be able to change the username later and it should be unique.
+    Make sure to check **Run Module Create** - it will trigger broadcaster account creation in Streaming.Center, pick your broadcaster account **username** and the password. You will not be able to change the username later and it should be unique.
 
     Click **Accept order**. It will take a few minutes for the broadcaster account to create in Streaming.Center.
 
 5. **Updating** an existing order.    
-    When your order is in "Active" state and the broadcaster accoutn is ready and running in Streaming.Center you can change the account options individually. To do that you need to find your order, click on it and then click **Product/Service** link in the "Item" column of the **Order Items** table. Inside the **Products/Services** tab you will find all your broadacster account ptions and functions like account suspension, password change and termination.
-    You can also change individual accoutn settign using this form:
+    When your order is in "Active" state and the broadcaster account is ready and running in Streaming.Center you can change the account options individually. To do that you need to find your order, click on it and then click **Product/Service** link in the "Item" column of the **Order Items** table. Inside the **Products/Services** tab you will find all your broadcaster account options and functions like account suspension, password change and termination.
+    You can also change individual account settings using this form:
     {{< lightbox "/images/whmcs/change_order.png" "/images/whmcs/change_order.png" >}}
 
-If you have any issues installing or using our WHMCS module - please countact our support at info@streaming.center.
+If you have any issues installing or using our WHMCS module - please contact our support at info@streaming.center.

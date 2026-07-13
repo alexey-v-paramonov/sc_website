@@ -18,7 +18,7 @@ While this works, it is **not recommended**. Accessing the control panel via an 
 
 Using a **domain name or subdomain** (for example `radio.com` or `stream.radio.com`) provides:
 
-- A clean and professional URL wich is easy to remember
+- A clean and professional URL which is easy to remember
 - Easier access to the Radio Panel web interface  
 - The ability to use HTTPS with a free SSL certificate (Let’s Encrypt)  
 

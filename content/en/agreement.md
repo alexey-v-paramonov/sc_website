@@ -48,7 +48,7 @@ By registering for an account on the Streaming.Center platform ("Personal Accoun
 <a name="rights"></a>
  <li><b>Rights and Obligations of the Parties</b>
   <ol>
-   <li>Streming.Center has the right to:
+   <li>Streaming.Center has the right to:
      <ol>
       <li>At any time, apply measures that do not contradict applicable law to limit the provision of Services / terminate the provision of Services of the Service Provider in relation to Users who violate this Agreement, including the distribution through the Software Product or the Service Provider of materials that violate copyright or other related rights, materials that violate the laws.</li>
       <li>At any time, change the Services of the Service Provider, the Software Product, including their structure, functionality, design, content, etc. In case of such changes, the User is not entitled to demand access to the Services of "Streaming.Center" as they existed before the changes.</li>
@@ -68,7 +68,7 @@ By registering for an account on the Streaming.Center platform ("Personal Accoun
       <li>Access their Account Balance and transaction history at any time, subject to successful authentication.</li>
      </ol>
     </li>
-    <li>Streming.Center is obliged to:
+    <li>Streaming.Center is obliged to:
      <ol>
       <li>Provide services in accordance with the terms and conditions of this Agreement.</li>
       <li>Maintain the User's Account Balance, accurately reflecting all transactions.</li>
@@ -80,20 +80,20 @@ By registering for an account on the Streaming.Center platform ("Personal Accoun
     <li>User is obliged to:
      <ol>
       <li>Comply with all terms of this Agreement and pay for services as per the agreed tariffs and schedules.</li>
-      <li>Respect the intellectual property rights of Streming.Center and its partners.</li>
+      <li>Respect the intellectual property rights of Streaming.Center and its partners.</li>
       <li>Obtain necessary licenses or agreements for any copyrighted content distributed through the service from the rights holder.</li>
-      <li>Communicate respectfully with Streming.Center staff.</li>
+      <li>Communicate respectfully with Streaming.Center staff.</li>
       <li>Keep account information up to date in the Personal Account.</li>
       <li>Maintain a sufficient balance in the Account Balance to cover service costs.</li>
-      <li>Refrain from actions that could harm the reputation of Streming.Center or its services.</li>
-      <li>Compensate Streming.Center for any losses resulting from the User's breach of this Agreement, intellectual property rights, or other rights.</li>
+      <li>Refrain from actions that could harm the reputation of Streaming.Center or its services.</li>
+      <li>Compensate Streaming.Center for any losses resulting from the User's breach of this Agreement, intellectual property rights, or other rights.</li>
       <li>Report any unauthorized access to their account immediately.</li>
       <li>Provide proof of payment via email or support chat if not made through the automated system.</li>
-      <li>Protect confidential information provided by Streming.Center, such as links, usernames, and passwords.</li>
-      <li>Follow security and operational recommendations provided by Streming.Center, or Streming.Center does not guarantee service operability.</li>
+      <li>Protect confidential information provided by Streaming.Center, such as links, usernames, and passwords.</li>
+      <li>Follow security and operational recommendations provided by Streaming.Center, or Streaming.Center does not guarantee service operability.</li>
       <li>If an individual cost calculation was agreed upon, it is valid for 30 calendar days, after which a new calculation must be ordered.</li>
-      <li>Independently moderate and track user-generated content (e.g., comments, chat messages, audio recordings, reviews) distributed through the Software Product, as Streming.Center is not responsible for such content.</li>
-      <li>Notify Streming.Center of any service issues via email within five calendar days of discovery.</li>
+      <li>Independently moderate and track user-generated content (e.g., comments, chat messages, audio recordings, reviews) distributed through the Software Product, as Streaming.Center is not responsible for such content.</li>
+      <li>Notify Streaming.Center of any service issues via email within five calendar days of discovery.</li>
      </ol>
    </li>
   </ol>
@@ -107,7 +107,7 @@ By registering for an account on the Streaming.Center platform ("Personal Accoun
   <li>Individually negotiated tariffs may result in different support and maintenance costs.</li>
   <li>Changes to service costs will be applied from the effective date of the change.</li>
   <li>Users can pay via bank transfer to the specified details in clause 10 of the Agreement or through automated payment systems available in their Personal Account.</li>
-  <li>If a service is suspended and not reactivated for more than 30 days, Streming.Center may delete the service without recovery.</li>
+  <li>If a service is suspended and not reactivated for more than 30 days, Streaming.Center may delete the service without recovery.</li>
   <li>Payments are reflected in the Account Balance section of the Personal Account.</li>
   <li>Services are deemed accepted if no objections are raised within five days of the following month.</li>
   <li>In case of refusal of services, Streaming.Center returns to the User the funds remaining on the balance of the Personal Account at the time of termination.</li>
