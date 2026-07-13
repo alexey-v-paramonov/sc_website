@@ -21,7 +21,7 @@ You can set up regular backups through the WEB-based admin interface. To do this
 {{< lightbox "/images/backup/en/backup.png" "/images/backup/en/backup.png" >}}
 
 You can create a backup immediately, or schedule regular backups according to a schedule. In the "Quick backup" mode, the system creates only client database dumps, configuration files, and so on, basically everything except for media files. This way, backups will not take up much space and the user's settings will not be lost.
-Backup settings can be saved for a single particular account, or applied to all account using the "Apply to all" button.
+Backup settings can be saved for a single account or applied to all accounts using the "Apply to all" button.
 
 Backups are created in the `/var/users/backup` directory, each file there is a copy of the user's folder and its database, the file is named similarly to the username in the system.
 If you don't have enough space on your server to store backups, you can connect network storage to this directory using Linux tools, for example via NFS, SSHFS, S3 Storage, and so on.
@@ -89,7 +89,7 @@ During the backup recovery, do not let any other utilities run on schedule.
 4. Navigate to `cd /opt/bin` on the server console.
 5. Run: `python3 sc_backup.pyc` - command to restore the backups. In case of errors, you will be able to see them in the console.
 6. If the domain is also moving, change the old IP address to a new one in the DNS settings of the domain and wait for the domain to transfer (it may take several hours)
-7. Setup the domain name for the radio using the `cd /opt/bin && ./change_host` command 
+7. Set up the domain name for the radio using the `cd /opt/bin && ./change_host` command.
 8. Run `cd /opt/bin && ./ssl_enable` to set up an SSL certificate.
 9. Run the update script: `bash <(curl -s https://streaming.center/dist/update.sh)`
 10. Uncomment the lines in the `/etc/crontab' file that were commented out in step 2.

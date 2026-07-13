@@ -163,7 +163,7 @@ Routes:
 
 Авторизация: Необходима
 
-Поля :
+Поля:
 - `pk`, `username`, `email`, `first_name`, `image`
 - `accounts_current` (integer) — количество радио-аккаунтов, принадлежащих этому реселлеру
 - `limit_accounts`, `limit_listeners`, `limit_du`, `limit_bitrate`, `limit_traffic`
@@ -587,4 +587,3 @@ JSON запроса: `license_key` (string)
 ## Ошибки и соглашения
 - Ошибки валидации и serializer возвращают HTTP 400 с JSON-объектом вида field -> список кодов или сообщений об ошибках.
 - Многие endpoints возвращают простой `{}` или `{"success": true}` при успешном выполнении операций с побочным эффектом.
-

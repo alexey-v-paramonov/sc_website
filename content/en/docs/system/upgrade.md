@@ -21,7 +21,7 @@ After installing Putty, you must enter the server's IP address on the home scree
 
 {{< lightbox "/images/installation/putty.png" "/images/installation/putty.png" >}}
 
-When you click the Open button, you will be prompted for the username: enter `root` and your password :
+When you click the Open button, you will be prompted for a username and password. Enter `root` as the username:
 
 {{< lightbox "/images/installation/putty2.png" "/images/installation/putty2.png" >}}
 

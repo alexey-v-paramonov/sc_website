@@ -220,7 +220,7 @@ By registering for an account on the Streaming.Center platform ("Personal Accoun
     <li>The radio station owner bears full responsibility for the content being broadcast, including compliance with legislation on copyright, related rights, advertising, information security, and any other applicable regulations.</li>
   <li><b>Limitation of the Service’s liability:</b>
     <ol>
-    <li>The Service  is not responsible for the content of audio streams published by Users, nor for any potential infringement of third-party rights by such content.</li>
+    <li>The Service is not responsible for the content of audio streams published by Users, nor for any potential infringement of third-party rights by such content.</li>
     <li>If any claims, demands, lawsuits, or other requests are made against the Service by rights holders or governmental authorities in connection with a specific radio station, the User undertakes to:
     <ul>
     <li>independently participate in the consideration of the relevant dispute;</li>

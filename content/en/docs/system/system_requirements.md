@@ -7,17 +7,17 @@ seo_title: "System Requirements for Internet Radio Control Panel | Streaming.Cen
 description: "Review the hardware and software requirements for installing and running our Internet radio control panel, including CPU, RAM, OS, and storage needs."
 ---
 
-The information below will be useful if Streaming.Center Radio Platform is installed on a dedicated or a virtual server. If the radio is hosted on our servers, all system requirements have already been taken into account by us.
+The information below is useful when the Streaming.Center Radio Platform is installed on a dedicated or virtual server. If the radio is hosted on our servers, we have already taken all system requirements into account.
 
 ### Minimum system requirements
-**Works if**: you plan to have 1-5 radios with a small number of streams, without streaming to social networks or using StereoTools audio processor, which consume a lot of CPU resources.
+**Works if**: You plan to have 1–5 radios with a small number of streams, without streaming to social networks or using the StereoTools audio processor, both of which consume significant CPU resources.
 - CPU: 1 core
 - RAM: 1Gb
 - Disk space: at least 10Gb
 
 
 ### Recommended system requirements
-**Works if**: You still have a few stations (up to 10), but you want to work comfortably and connect additional options, have several synchronous broadcast streams, and have plans for the future development of your radio.
+**Works if**: You have a few stations (up to 10) but want to work comfortably, enable additional options, run several simultaneous broadcast streams, and leave room for future growth.
 - CPU: 2 cores
 - RAM: 2Gb
 - Disk space: at least 20Gb
@@ -33,23 +33,23 @@ The information below will be useful if Streaming.Center Radio Platform is insta
 ### Disk space and disk hardware
 The minimum requirement for the Streaming.center Radio Platform is 10 gigabytes of disk space: this is enough for the operating system, log files, and the Radio Platform itself. Next, you should have a rough idea of how much audio content you have that you plan to upload to the server for broadcasting. Please note that if you make backups of the radio on the server, they also take up disk space.
 
-Optimal performance will be achieved by using an SSD/NVMe disk, the use of HDD disks is not recommended, except those cases where disk space is a priority and the number of stations on the server is not large (1-10 radios on the server).
+For optimal performance, use an SSD or NVMe drive. HDDs are not recommended except when disk capacity is a priority and the server hosts only a small number of stations (1–10).
 
-### Supported Operating systems
+### Supported operating systems
 - Ubuntu Linux 24.04
 - Ubuntu Linux 22.04
 - Ubuntu Linux 20.04
 - Centos Linux 7 (obsolete, not recommended for fresh installations)
 
 ### OS Architecture
-We support Linux operating system with **x86 64bit** architecture.
+We support Linux operating systems with the **x86-64** architecture.
 
 
 ### Server network bandwidth
-Network bandwidth is the main factor that affects the simultaneous listener limit that you can have on your server. It is not up to RAM or CPU, those factor are insignificant. The following network connections are commonly used:
+Network bandwidth is the main factor that determines your server's simultaneous-listener limit. RAM and CPU have little effect on this limit. The following network connection speeds are commonly used:
 
 - **100 mbps**: can host up to ~**700** simultaneous listeners in 128Kbps MP3
-- **1 Gbps**: can host up to ~**7.000** simultaneous listeners in 128Kbps MP3
+- **1 Gbps**: can host up to ~**7,000** simultaneous listeners at 128 Kbps MP3
 
 
 ### Important Notice About Unreliable Hosting Providers and Potential Issues
@@ -72,4 +72,4 @@ There have been cases where server cooling systems failed, causing processors to
 
 **Conclusion**
 
-All of these factors directly impact the stability and performance of our software. To avoid frequent support requests due to system instability, make sure to choose a **reliable hosting provider and a high-quality server** in advance. Doing so will save you time, effort, and ensure the smooth operation of your internet radio platform.
+All of these factors directly impact the stability and performance of our software. To avoid frequent support requests due to system instability, make sure to choose a **reliable hosting provider and a high-quality server** in advance. Doing so will save you time and effort and ensure the smooth operation of your internet radio platform.

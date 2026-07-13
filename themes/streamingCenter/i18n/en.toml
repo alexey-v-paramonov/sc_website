@@ -14,16 +14,16 @@ other = "Servers"
 other = "Applications"
 
 [stats_listeners_hint]
-other = "Are listening to Online stations built with our software at this moment!"
+other = "Are listening to online stations built with our software right now!"
 
 [stats_radios_hint]
-other = "Currently online and running across multiple servers aroud the World."
+other = "Are currently online and running across multiple servers around the world."
 
 [stats_servers_hint]
 other = "Have our software installed and running. That includes hosting providers and individual instances."
 
 [stats_apps_hint]
-other = "We have created and published into Google Play and Apple App Store."
+other = "We have created and published on Google Play and the Apple App Store."
 
 [news]
 other = "Latest News"
@@ -69,7 +69,7 @@ other = "Invalid Email"
 other = "Complete the captcha"
 
 [try_account_success]
-other = "In 5 minutes we will send the account credentials to:"
+other = "We will send the account credentials within five minutes to:"
 
 [try_loading]
 other = "Loading..."
@@ -82,7 +82,7 @@ other = "Create a full-fledged account: register to get full access to all the s
 other = "Try before you buy: we will create a test station and send you access credentials so you can try out our radio panel."
 
 [signin_signup]
-other = "Log In/ Sign up"
+other = "Log in / Sign up"
 
 
 [slide1_title]
@@ -104,7 +104,7 @@ other = "Extras"
 other = "Your station, your vibe. Whether you're just starting out or going big, our Internet-radio streaming panel makes it easy to get on the air and sound amazing."
 
 [slide2_description]
-other = "Create a ready-to-use app in just 10 minutes! 5-day free trial — pay only afterwards. Supports Android Auto, Android TV, tablets, and smartphones."
+other = "Create a ready-to-use app in just 10 minutes! Get a five-day free trial and pay only if you like it. The app supports Android Auto, Android TV, tablets, and smartphones."
 
 [slide3_description]
 other = "Having trouble with iOS apps? We’ve got it covered! Over 100 radio apps successfully published on the App Store."
@@ -113,7 +113,7 @@ other = "Having trouble with iOS apps? We’ve got it covered! Over 100 radio ap
 other = "Got a radio stream but no listeners yet? Use our ready-made, free website — it's built right into our Radio Platform. Name, description, social links, live stream, and an easy-to-use player — all set up out of the box!"
 
 [slide5_description]
-other = "We've been creating internet radio for 20 years. We know all the ins and outs, can help bring your ideas to life, and answer any questions"
+other = "We've been creating internet radio for 20 years. We know all the ins and outs, can help bring your ideas to life, and answer any questions."
 
 [slide1_cta]
 other = "Create your Radio!"
@@ -155,7 +155,7 @@ other = "Payments"
 other = "Try"
 
 [before_buy]
-other = "before buy"
+other = "before buying"
 
 [try_email]
 other = "Enter your E-mail"
