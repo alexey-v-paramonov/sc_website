@@ -42,7 +42,7 @@ description: "Learn how Streaming.Center automatically detects SHOUTcast and Ice
 
   - RadioBOSS — can send the station logo and cover for the playing track. Enable SHOUTcast 2 as the server type and turn
     on the playing-artwork option in the encoder settings. Make sure your music files contain embedded cover images.
-    [RadioBOSS broadcasting guide](https://manual.djsoft.net/radioboss/ru/broadcasting_internet_radio.htm)
+    [RadioBOSS broadcasting guide](https://manual.djsoft.net/radioboss/en/broadcasting_internet_radio.htm)
 
   - Winamp with the SHOUTcast Source DSP — supports both stream branding and covers extracted from the playing file. On the
     DSP’s Artwork tab, enable “Send in-stream artwork,” then select the playing-file and stream-branding options you want to

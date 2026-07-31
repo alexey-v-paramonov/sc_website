@@ -45,7 +45,7 @@ Radio-Tochka.com использует обложку текущего трека
 
 - RadioBOSS — может передавать логотип станции и обложку текущего трека. Выберите SHOUTcast 2 в качестве типа сервера и
   включите отправку обложки текущего трека в настройках энкодера. Убедитесь, что в музыкальные файлы встроены изображения
-  обложек. [Руководство по вещанию в RadioBOSS](https://manual.djsoft.net/radioboss/en/broadcasting_internet_radio.htm)
+  обложек. [Руководство по вещанию в RadioBOSS](https://manual.djsoft.net/radioboss/ru/broadcasting_internet_radio.htm)
 
 - Winamp с SHOUTcast Source DSP — поддерживает фирменное изображение потока и обложки, извлечённые из воспроизводимого
   файла. На вкладке Artwork плагина DSP включите «Send in-stream artwork», затем выберите нужные параметры для изображения
