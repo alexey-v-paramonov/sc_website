@@ -5,6 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ if .Params.Seo_Title }}{{.Params.Seo_Title}}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}{{ end }}"/>
 {{ if .Params.Description }}<meta name="description" content="{{ .Params.Description }}">{{ end }}
+{{ with .Params.Keywords }}<meta name="keywords" content="{{ delimit . ", " }}">{{ end }}
 <link rel="canonical" href="{{ .Permalink }}">
 <link rel="icon" href="/img/favicon.svg">
 {{ partialCached "head/css.html" . }}
