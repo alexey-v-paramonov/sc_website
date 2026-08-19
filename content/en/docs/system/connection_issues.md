@@ -26,7 +26,7 @@ needed.
 
 ---
 
-## First — what the radio server already does for you
+## First — what the radio server running Streaming.Center software already does for you
 
 Before anything else, it's worth saying that a dropped connection is not treated
 as your problem to solve alone. Our streaming engine already works hard to keep
