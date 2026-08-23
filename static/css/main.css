@@ -1461,6 +1461,7 @@ body {
   line-height: 20px;
   font-family: "Inter", sans-serif;
 }
+.doc-content table thead,
 .doc-content table tbody {
   display: block;
   width: 100%;
@@ -1493,7 +1494,8 @@ body {
   -ms-flex-align: center;
   align-items: center;
 }
-.doc-content table tr:first-child {
+.doc-content table thead tr,
+.doc-content table > tbody:first-child > tr:first-child {
   margin: 0;
   background: transparent;
 }
@@ -2841,6 +2843,7 @@ body {
   .price-tables__item-block::-webkit-scrollbar {
     display: none;
   }
+  .doc-content table thead,
   .doc-content table tbody,
   .price-tables__item-block tbody {
     padding: 9px;
