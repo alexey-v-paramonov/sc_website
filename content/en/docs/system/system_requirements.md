@@ -36,6 +36,7 @@ The minimum requirement for the Streaming.center Radio Platform is 10 gigabytes 
 For optimal performance, use an SSD or NVMe drive. HDDs are not recommended except when disk capacity is a priority and the server hosts only a small number of stations (1–10).
 
 ### Supported operating systems
+- Ubuntu Linux 26.04
 - Ubuntu Linux 24.04
 - Ubuntu Linux 22.04
 - Ubuntu Linux 20.04

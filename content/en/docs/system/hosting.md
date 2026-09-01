@@ -77,7 +77,7 @@ Below is the usual flow you’ll see on most hosting websites.
 1. **Create an account** with your chosen provider.
 2. **Choose a plan** (VPS/VDS or dedicated) based on [our requirements](/docs/system/system_requirements/) and your expected load.
 3. **Pick a region / data center** closer to your audience.
-4. **Select the operating system** (recommended: **Ubuntu 24.04, x86_64**).
+4. **Select the operating system** (recommended: **Ubuntu 26.04, x86_64**).
 5. **Set up access**: Prefer **SSH keys** (recommended). Otherwise set a strong root password and store it safely.
 6. **Provision the server**: VPS/VDS is usually ready in minutes. Dedicated servers may take longer (sometimes hours) and may include extra options (drive type, RAID, IPMI/KVM, etc.).
 7. **Get the server IP address** and verify you can connect via SSH.
