@@ -5,7 +5,7 @@ seo_title: "Stream Your Internet Radio to Social Networks"
 description: "Relay your Internet radio to YouTube, Telegram, Facebook, Instagram and other streaming services from your Streaming.Center account."
 ---
 
-The new **Social Network Streaming** service is now available in your Streaming.Center account. It relays any public Internet radio stream to YouTube, Telegram, Facebook, Instagram and other platforms that accept live RTMP or RTMPS broadcasts.
+The new **Social Network Streaming** service is now available in your [Streaming.Center account](https://app.streaming.center/social). It relays any public Internet radio stream to YouTube, Telegram, Facebook, Instagram and other platforms that accept live RTMP or RTMPS broadcasts.
 
 Add your radio stream, connect one or more social network destinations, and choose what viewers see while they listen. You can use a static image or looping video, display the current track title, and automatically show track covers.
 
