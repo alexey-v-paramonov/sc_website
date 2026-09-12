@@ -1,14 +1,7 @@
-let lang = 'ru';
-let currency = "₽";
-let period = " / мес";
-let period2 = " Разовый платёж";
-if(document.location.host.indexOf("localhost:1313") >= 0 || document.location.host.indexOf("streaming.center") >= 0){
-    lang = 'en';
-    currency = "$";
-    period = " monthly";
-    period2 = " one-time";
-
-}
+const lang = document.documentElement.lang.toLowerCase().startsWith("en") ? "en" : "ru";
+const currency = lang === "en" ? "$" : "₽";
+const period = lang === "en" ? " monthly" : " / мес";
+const period2 = lang === "en" ? " one-time" : " Разовый платёж";
 const PRICING = {
     ru: {
         selfhosted: {
@@ -30,6 +23,9 @@ const PRICING = {
                 publishing: 0,
                 whitelabel: 2500,
             }
+        },
+        social: {
+            destination: 450
         }
     },
     en: {
@@ -52,6 +48,9 @@ const PRICING = {
                 publishing: 0,
                 whitelabel: 40,
             }
+        },
+        social: {
+            destination: 9
         }
     }
 }
@@ -132,11 +131,24 @@ function calculateiOsAppPrice(){
     iosPriceContainer.innerHTML = price + currency + "<span style='font-size: 14px'>" + period2 + "</span>";
 }
 
+function calculateSocialStreamingPrice(){
+    const destinationInput = document.getElementById("social-streaming-destinations");
+    const priceContainer = document.getElementById("social-streaming-price");
+    if (!destinationInput || !priceContainer) {
+        return;
+    }
+
+    const destinations = Math.max(1, Math.floor(Number(destinationInput.value) || 1));
+    destinationInput.value = destinations;
+    priceContainer.textContent = destinations * PRICING[lang]["social"]["destination"] + currency + period;
+}
+
 function calcEverything(){
     calculateSelfHostedPrice();
     calculateHostedPrice();
     calculateAndroidAppPrice();
     calculateiOsAppPrice();
+    calculateSocialStreamingPrice();
 }
 document.addEventListener('DOMContentLoaded', function() {
     // Self hosted
@@ -169,6 +181,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const iosCopyrightSelect = document.getElementById("ios-app-copyright");
     iosPublishingSelect.addEventListener("change", calculateiOsAppPrice );
     iosCopyrightSelect.addEventListener("change", calculateiOsAppPrice );
+
+    // Social-network streaming
+    const socialDestinationsInput = document.getElementById("social-streaming-destinations");
+    socialDestinationsInput && socialDestinationsInput.addEventListener("input", calculateSocialStreamingPrice);
 
     calcEverything();
 

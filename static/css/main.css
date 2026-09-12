@@ -1751,6 +1751,18 @@ body {
   letter-spacing: 0.65px;
   text-transform: uppercase;
 }
+.price-calc__number {
+  box-sizing: border-box;
+  width: 100%;
+  height: 55px;
+  padding: 0 20px;
+  border: 1px solid rgba(79, 131, 91, 0.15);
+  border-radius: 5px;
+  background: #fff;
+  color: #274c77;
+  font: inherit;
+  font-size: 16px;
+}
 .price-calc__box-text {
   color: rgba(39, 76, 119, 0.7);
   font-size: 14px;

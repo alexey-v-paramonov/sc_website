@@ -9,6 +9,8 @@ description: "Step-by-step guide to streaming Internet radio on YouTube, Telegra
 
 # How to Stream Internet Radio to YouTube, Telegram, Facebook, and Other Platforms
 
+To relay any public Internet radio stream through the Social streaming section of your Streaming.Center account, see [Social streaming from your account]({{< ref "/docs/radio/social_streaming" >}}).
+
 Our Internet radio platform can automatically relay your station's broadcast to social networks and video platforms, including:
 
 - [YouTube](#setting-up-radio-streaming-on-youtube)
