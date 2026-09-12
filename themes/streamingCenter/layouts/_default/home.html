@@ -247,8 +247,8 @@
         {{ range (where .Site.Pages "Section" "news").ByDate }}
         {{ range first 3 .Pages }}
           <div class="benefits-block col">
-            <div class="blog-item posr"><a class="benefits-item__link db posa" href="{{ .RelPermalink }}"></a>
-              <div class="blog-item__top df aic">
+            <div class="blog-item posr">
+              <div class="blog-item__top df aic posr"><a class="benefits-item__link db posa" href="{{ .RelPermalink }}"></a>
                 {{ $newsDate := print .Date | time.Format "2 01.06" }}
                 {{ $newsDay := index (split $newsDate " ") 0 }}
                 {{ $newsMonthYear := index (split $newsDate " ") 1 }}

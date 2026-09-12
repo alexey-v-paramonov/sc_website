@@ -1,6 +1,6 @@
 ---
 title: "Social network streaming is now available"
-date: 2026-09-12T10:00:00+03:00
+date: 2026-09-12
 seo_title: "Stream Your Internet Radio to Social Networks"
 description: "Relay your Internet radio to YouTube, Telegram, Facebook, Instagram and other streaming services from your Streaming.Center account."
 ---
