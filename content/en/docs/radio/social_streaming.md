@@ -1,5 +1,5 @@
 ---
-title: "Social streaming from your account"
+title: "Streaming to social networks"
 date: 2026-09-12T12:00:00+03:00
 weight: 35
 summary: "Create an automated social broadcast from any public MP3 or AAC radio stream, with a background image or video, track covers and current track titles."
@@ -7,7 +7,7 @@ seo_title: "How to Stream Internet Radio to Social Networks from Your Account"
 description: "Step-by-step guide to relaying any public MP3 or AAC Internet radio stream to YouTube, Telegram, Facebook and other platforms from your Streaming.Center account."
 ---
 
-# How to Create a Social Network Stream in Your Account
+# Streaming to Social Networks
 
 The **Social streaming** service relays an existing Internet radio stream to social networks and video platforms. Your radio can be hosted anywhere: it does not need to run on the Streaming.Center radio platform. You only need a publicly accessible direct MP3 or AAC stream URL.
 
@@ -106,4 +106,3 @@ Each destination is managed independently. Disabling one pauses that broadcast a
 Connection failures do not automatically suspend billing. If a social platform rejects a key or a radio source is unavailable and you do not want continued charges, disable the affected destination or source while correcting it.
 
 When a source has no decodable audio for more than 10 minutes, its video title changes to **Stream is offline**. If it remains offline for more than 24 hours, the source and its destinations are disabled automatically. After fixing the radio URL, review the settings and enable them again.
-
