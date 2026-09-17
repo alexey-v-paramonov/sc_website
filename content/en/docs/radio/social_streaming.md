@@ -11,6 +11,8 @@ description: "Step-by-step guide to relaying any public MP3 or AAC Internet radi
 
 The **Social streaming** service is provided by Streaming.Center. It relays an existing Internet radio stream to social networks and video platforms. Your radio can be hosted anywhere: it does not need to run on the Streaming.Center radio platform. You only need a publicly accessible direct MP3 or AAC stream URL.
 
+Streaming to social networks and video platforms can expand your audience by making your station available where people already discover, follow and share content. It also allows listeners to enjoy your radio through devices and apps that may not support a traditional radio player—for example, Smart TVs, streaming media players, game consoles, smartphones and tablets. Depending on the destination platform, listeners may also discover your station through recommendations, receive live notifications, share the broadcast and interact through comments or live chat.
+
 The service converts the radio audio to AAC and combines it with a background image or looping video. It can read the current track title from ICY metadata, display the title in the video and automatically find and display the track cover. If a cover cannot be found, the station's default image is used.
 
 Ready-made presets are available for popular platforms including YouTube, Telegram, Facebook, Instagram, TikTok, Twitch, Mixcloud and X. You can also add any service that accepts a custom RTMP or RTMPS stream and configure its video format manually.
@@ -34,24 +36,25 @@ Sign in to your [Streaming.Center account](https://app.streaming.center/) and se
 
 Click **Add radio stream**.
 
-<!-- SCREENSHOT TO ADD: Social streaming overview with the “Add radio stream” button highlighted. -->
+{{< lightbox "/images/social_streams/en/create_mini.png" "/images/social_streams/en/create.png" >}}
+
 
 ## 2. Add the Source Radio Stream
 
 Fill in the source form:
 
 1. Enter a recognizable **Station name**. This name is used only for managing the service and is not shown instead of missing track metadata.
-2. Paste the direct public **Radio stream URL**. It must be an HTTP or HTTPS MP3/AAC stream.
+2. Paste the direct public **Radio stream URL**. It must be an HTTP or HTTPS MP3/AAC stream powered by Shoutcast, Icecast or similar HTTP server.
 3. Click **Test radio stream** and wait for the successful validation message.
 4. Upload a **Default station image**. It is used when the current track has no cover.
 5. Choose the **Track cover provider**:
    - **Streaming.Center service** automatically searches for covers.
-   - **My public cover API** uses your own public API endpoint. Test it in the form; the service searches for `Metallica - Battery` and checks that the response contains a usable image.
+   - **My public cover API** uses your own public API endpoint to provide the cover art for the current track.
 6. Click **Create draft**.
 
 The source is initially saved as disabled. This lets you finish adding destinations and check all settings before broadcasting begins.
 
-<!-- SCREENSHOT TO ADD: Completed source form, including stream validation, default image and cover-provider selection. -->
+{{< lightbox "/images/social_streams/en/add_stream_mini.png" "/images/social_streams/en/add_stream.png" >}}
 
 ## 3. Add a Social Destination
 
@@ -59,7 +62,7 @@ Open the newly created source and click **Add destination**.
 
 One source radio can have any number of destinations. For example, the same station can stream to YouTube, Telegram and two different channels on another platform. Each destination has its own server URL, stream key, enabled state, trial and billing.
 
-<!-- SCREENSHOT TO ADD: Source details page with the “Add destination” button highlighted. -->
+{{< lightbox "/images/social_streams/en/add_social_network_mini.png" "/images/social_streams/en/add_social_network.png" >}}
 
 ## 4. Enter the Platform Connection Details
 
@@ -72,7 +75,7 @@ Complete the destination form:
 
 If you need help obtaining a server URL and key, see the platform examples in [Streaming Radio to Social Networks]({{< ref "/docs/platform/social_network_streaming" >}}). Social platforms can expire or replace stream keys, so update the destination when its key changes.
 
-<!-- SCREENSHOT TO ADD: Destination form with the platform preset, server URL and masked stream-key fields visible. Do not use a real stream key in the screenshot. -->
+{{< lightbox "/images/social_streams/en/social_settings1.png" "/images/social_streams/en/social_settings1.png" >}}
 
 ## 5. Configure the Background, Cover and Title
 
@@ -87,7 +90,7 @@ For a video broadcast:
 
 The built-in presets lock the required resolution, bitrate and keyframe settings. With **Custom RTMP**, you may open **Video settings** and adjust the output for the destination's requirements.
 
-<!-- SCREENSHOT TO ADD: Visual settings with a background preview, track-cover/title switches and colour controls. -->
+{{< lightbox "/images/social_streams/en/social_settings2.png" "/images/social_streams/en/social_settings2.png" >}}
 
 ## 6. Save and Start Broadcasting
 
@@ -97,7 +100,11 @@ Review the destination, then click **Enable** on it. Enable the source radio as 
 
 The source page refreshes its status automatically. It shows the current track, destination status, remaining trial hours and any connection error. A destination may take a short time to prepare its first video card and connect.
 
-<!-- SCREENSHOT TO ADD: Enabled source and destination showing the free-trial banner and live status. -->
+{{< lightbox "/images/social_streams/en/telegram_stream_active_mini.png" "/images/social_streams/en/telegram_stream_active.png" >}}
+
+The broadcast will now appear in your Telegram channel or group, displaying the track cover and title on a semi-transparent background in the color you selected:
+{{< lightbox "/images/social_streams/en/tg_stream_live.png" "/images/social_streams/en/tg_stream_live.png" >}}
+
 
 ## Managing Costs and Interruptions
 
