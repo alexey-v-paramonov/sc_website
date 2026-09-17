@@ -9,17 +9,17 @@ description: "Step-by-step guide to relaying any public MP3 or AAC Internet radi
 
 # Streaming to Social Networks
 
-The **Social streaming** service relays an existing Internet radio stream to social networks and video platforms. Your radio can be hosted anywhere: it does not need to run on the Streaming.Center radio platform. You only need a publicly accessible direct MP3 or AAC stream URL.
+The **Social streaming** service is provided by Streaming.Center. It relays an existing Internet radio stream to social networks and video platforms. Your radio can be hosted anywhere: it does not need to run on the Streaming.Center radio platform. You only need a publicly accessible direct MP3 or AAC stream URL.
 
 The service converts the radio audio to AAC and combines it with a background image or looping video. It can read the current track title from ICY metadata, display the title in the video and automatically find and display the track cover. If a cover cannot be found, the station's default image is used.
 
-Ready-made presets are available for popular platforms including YouTube, Telegram, Facebook, Instagram, TikTok, VK, RuTube, Twitch, Mixcloud, OK.ru and X. You can also add any service that accepts a custom RTMP or RTMPS stream and configure its video format manually.
+Ready-made presets are available for popular platforms including YouTube, Telegram, Facebook, Instagram, TikTok, Twitch, Mixcloud and X. You can also add any service that accepts a custom RTMP or RTMPS stream and configure its video format manually.
 
-Each new social destination includes a **48-hour free trial**. After the trial, each enabled destination is billed daily at its share of the monthly price: **$9 per month** for English-language accounts or **450 ₽ per month** for Russian-language accounts. You can disable an individual destination at any time to stop its future daily charges, or disable the radio source to pause all its destinations.
+Each new social destination includes a **48-hour free trial**. After the trial, each enabled destination is billed daily at its share of the monthly price: **$9 per month**. You can disable an individual destination at any time to stop its future daily charges, or disable the radio source to pause all its destinations.
 
 Before starting, keep these points in mind:
 
-- Use the direct public radio stream URL, not a station website, web player or playlist page. Authenticated and private source URLs are not supported.
+- Use the direct public radio stream URL provided by Shoutcast/Icecast server, not a station website, web player or playlist page. Authenticated and private source URLs are not supported.
 - Track titles and covers require usable ICY track metadata. A station without metadata can still broadcast, but its video will not update with track information.
 - Most social platforms require video. You will need a background image or a short looping video unless the selected preset offers audio-only mode.
 - Obtain the destination server URL and stream key from the social platform. Stream keys are credentials: do not publish or share them.
@@ -30,7 +30,7 @@ Before starting, keep these points in mind:
 
 ## 1. Open Social Streaming
 
-Sign in to your [Streaming.Center account](https://app.streaming.center/) and select **Social streaming** in the main menu. The page lists your source radio streams, their destinations, current status and monthly enabled rate.
+Sign in to your [Streaming.Center account](https://app.streaming.center/) and select **Social streaming** in the main menu. The page lists your source radio streams, their social networks, current status and monthly enabled rate.
 
 Click **Add radio stream**.
 
