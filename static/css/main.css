@@ -591,6 +591,21 @@ body {
   text-decoration: none;
   color: #a3cef1;
 }
+.header-nav ul li a.header-nav__pricing {
+  padding: 13px 18px;
+  border-radius: 5px;
+  background: #f2cb3f;
+  color: #274c77;
+}
+.header-nav ul li a.header-nav__pricing:hover,
+.header-nav ul li a.header-nav__pricing:focus-visible {
+  background: #ffdc62;
+  color: #274c77;
+}
+.header-nav ul li a.header-nav__pricing:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
 .header-btn {
   width: 195px;
 }
@@ -2123,6 +2138,9 @@ body {
   }
   .header-nav ul li::after {
     display: none;
+  }
+  .header-nav ul li a.header-nav__pricing {
+    display: inline-block;
   }
   .header-logo img {
     height: 35px;

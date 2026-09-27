@@ -136,7 +136,7 @@ unsafe= true
         pageRef = '/tour'
         weight = 20
       [[languages.en.menus.main]]
-        name = 'Price'
+        name = 'Pricing'
         pageRef = '/pricing'
         weight = 30
       [[languages.en.menus.main]]

@@ -14,10 +14,9 @@
     {{ end }}      
     <div class="header-nav">
       <a class="mobile-btn btn" href="{{ T "signin_url" }}"><img class="db" src="/img/marker.svg" alt=""><span class="db">{{ T "signin_signup" }}</span></a>
-      {{ $currentPage := . }}
       <ul>
         {{- range site.Menus.main }}
-          <li><a href="{{ or .URL .PageRef }}">{{ .Name }}</a></li>
+          <li><a{{ if eq .PageRef "/pricing" }} class="header-nav__pricing"{{ end }} href="{{ or .URL .PageRef }}">{{ .Name }}</a></li>
         {{- end }}
       </ul>
     </div>
