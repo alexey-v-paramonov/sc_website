@@ -17,6 +17,12 @@ to manage every song yourself. Streaming.Center AutoDJ works toward that goal
 automatically: **its first priority is to space out artists, and it also uses recent
 track history to reduce repeats of individual songs.**
 
+> **No repeat-window setting is needed.** Many other systems offer a setting such as
+> “do not repeat within the last N tracks.” In the Streaming.Center panel, artist
+> spacing and track repeat avoidance are handled automatically behind the scenes.
+> AutoDJ uses the available music and recent history to make these choices, so you
+> do not need to choose, enable, or adjust a repeat window.
+
 We previously offered an adjustable repeat limit. We removed it because it was easy
 to set a value that the playlist could not support. A higher number looked like
 better protection, but often changed expectations more than it improved the music.
