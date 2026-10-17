@@ -1,6 +1,28 @@
+import glob
 import json
 import os
+import re
+import shutil
+import sys
 from datetime import datetime
+from urllib.parse import unquote
+
+
+def hugo_publish_dirs():
+    """publishDir values set in hugo*.toml configs."""
+    dirs = set()
+    for config in glob.glob("hugo*.toml"):
+        with open(config) as f:
+            for line in f:
+                if line.lstrip().startswith("["):
+                    break  # publishDir is a top-level key, it can't follow a table
+                m = re.match(r"\s*publishDir\s*=\s*['\"](.+?)['\"]", line)
+                if m:
+                    dirs.add(m.group(1))
+    if not dirs:
+        sys.exit("publishDir is not set in any hugo*.toml config, don't know where to remove orphan stations from")
+    return sorted(dirs)
+
 
 def generate_listen_links(radio):
 
@@ -30,6 +52,42 @@ def generate_listen_links(radio):
         with open(pls_path, 'w') as pls_file:
             pls_file.write(pls_content) 
             
+
+
+def prune_destination(dest):
+    """Hugo never deletes from publishDir, so remove built stations that
+    are no longer in the catalog (pages in content/*/catalog, playlists in static/listen)."""
+    def key(name):
+        return unquote(name).lower()
+
+    removed = 0
+    for lang in ("en", "ru"):
+        src = f"content/{lang}/catalog"
+        keep = {key(f[:-3]) for f in os.listdir(src) if f.endswith(".md") and f != "_index.md"} if os.path.isdir(src) else set()
+        if not keep:
+            # never wipe the whole built catalog because of an empty export
+            continue
+        for out in (os.path.join(dest, lang, "catalog"), os.path.join(dest, "catalog")):
+            if not os.path.isdir(out):
+                continue
+            for name in os.listdir(out):
+                path = os.path.join(out, name)
+                # "page" holds pagination, not a station
+                if not os.path.isdir(path) or name == "page" or key(name) in keep:
+                    continue
+                print(f"remove {path}")
+                removed += 1
+                shutil.rmtree(path)
+
+    listen_out = os.path.join(dest, "listen")
+    if os.path.isdir(listen_out):
+        keep = set(os.listdir("static/listen")) if os.path.isdir("static/listen") else set()
+        for name in os.listdir(listen_out):
+            if name.endswith((".m3u", ".pls")) and name not in keep:
+                print(f"remove {os.path.join(listen_out, name)}")
+                removed += 1
+                os.remove(os.path.join(listen_out, name))
+    print(f"removed {removed} stale item(s) from {dest}")
 
 
 def create_radio_pages():
@@ -177,4 +235,8 @@ def create_radio_pages():
             # f.write('---\n')
 
 if __name__ == '__main__':
+    publish_dirs = hugo_publish_dirs()
     create_radio_pages()
+    for publish_dir in publish_dirs:
+        if os.path.isdir(publish_dir):
+            prune_destination(publish_dir)
