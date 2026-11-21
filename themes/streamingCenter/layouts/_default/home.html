@@ -15,12 +15,12 @@
                             <h1 class="main-title h1">{{ T "slide1_title" }}</h1>
                             <div class="main-subtitle maxw">{{ T "slide1_description" }}</div>
                             <a class="main-btn btn" href="{{ T "signup_url" }}" target="_blank">{{ T "slide1_cta" }}</a>
-                            <img class="main-mobile hide" src="/img/main_page/main_radio_{{.Lang}}.webp" alt=""  />
+                            <div class="main-mobile hide hero-globe"><img src="/img/main_page/main_radio_{{.Lang}}.webp" alt=""  /></div>
                         </div>
                     </div>
                     <div class="main-desktop posa pointer">
                         <div class="container index">
-                            <img class="db" src="/img/main_page/main_radio_{{.Lang}}.webp" alt="" />
+                            <div class="hero-globe"><img class="db" src="/img/main_page/main_radio_{{.Lang}}.webp" alt="" /></div>
                         </div>
                     </div>
                 </div>
@@ -104,6 +104,15 @@
         <div class="swiper-pagination"></div>
     </div>
 </main>
+<style>
+  .hero-globe { position: relative; aspect-ratio: 628 / 673; max-width: 100%; }
+  .main-desktop .hero-globe { width: 628px; margin-left: auto; }
+  .hero-globe > img { display: block; width: 100%; height: 100%; object-fit: contain; }
+  .hero-globe.is-live > img { display: none; }
+  .hero-globe__canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+  @media (max-width: 1330px) { .main-desktop .hero-globe { width: 400px; } }
+</style>
+<script type="module" src="/js/hero-globe.js?v=3"></script>
 
 <div class="home-form index">
     <div class="container">
