@@ -2,14 +2,14 @@
 title: "Каналы вещания"
 date: 2026-04-04T12:00:00+03:00
 weight: 51
-seo_title: "API каналов вещания интернет-радио | Радио-Точка"
+seo_title: "API каналов вещания интернет-радио | Radio-Tochka.com"
 description: "Документация по API каналов вещания Radio-Tochka: получение списка каналов, создание, изменение, удаление и служебные endpoint-ы авторизации слушателей."
 ---
 
-<div class="api-block">
+<div class="api-block" id="api-channels">
 <b>Endpoint:</b> /api/v2/channels/<br/>
 <b>HTTP метод:</b> GET, POST <br/>
-<b>Авторизация:</b> GET - не обязательна, POST - необходима<br/>
+<b>Авторизация:</b> GET доступен без авторизации. Для POST нужен JWT-токен.<br/>
 <b>Query параметры для GET:</b> <br/>
 <b>limit:</b> количество элементов в ответе<br/>
 <b>offset:</b> смещение для пагинации<br/>
@@ -27,7 +27,7 @@ description: "Документация по API каналов вещания Ra
 import requests
 
 response = requests.get(
-	"https://demo.streaming.center:1030/api/v2/channels/?limit=20&offset=0&server=1"
+	"https://demo.radio-tochka.com:1030/api/v2/channels/?limit=20&offset=0&server=1"
 )
 print(response.json())
 
@@ -73,9 +73,9 @@ print(response.json())
 		 "traffic":"0 B",
 		 "state":2,
 		 "links_html":"<a href=\"#\">Listen</a>",
-		 "stream_url":"http://s02.demo.streaming.center:8000/stream",
-		 "secure_stream_url":"https://s02.demo.streaming.center:8443/stream",
-		 "admin_link":"https://s02.demo.streaming.center:8443/",
+		 "stream_url":"http://s02.demo.radio-tochka.com:8000/stream",
+		 "secure_stream_url":"https://s02.demo.radio-tochka.com:8443/stream",
+		 "admin_link":"https://s02.demo.radio-tochka.com:8443/",
 		 "youtube_stream_image":null,
 		 "youtube_stream_image_resolution":null,
 		 "fb_stream_image":null,
@@ -106,7 +106,7 @@ print(response.json())
 
 - id: уникальный ID канала.
 - active: активен ли канал.
-- server: ID радиосервера, к которому относится канал.
+- server: ID [станции](/docs/api/servers/#api-stations), к которой относится канал.
 - bitrate: битрейт потока.
 - listeners: лимит слушателей для канала.
 - s_type: тип стриминг-сервера, например `icecast`, `icecast-kh`, `shoutcast1`, `shoutcast2`, `shoutcast2.6`.
@@ -126,7 +126,7 @@ print(response.json())
 - ssl_proxy_enabled: включён ли HTTPS proxy на 443 порту.
 - ssl_proxy_status: статус HTTPS proxy.
 - ssl_proxy_url_path: путь для HTTPS proxy.
-- allow_auth_listeners_only: разрешать ли подключение только авторизованным слушателям.
+- allow_auth_listeners_only: требуется ли [токен доступа к потоку](/docs/api/settings/#api-stream-access).
 - queue_size: размер очереди буфера.
 - burst_size: размер burst-буфера.
 - listeners_current: текущее количество слушателей на канале.
@@ -185,11 +185,11 @@ print(response.json())
 
 import requests
 
-API_KEY = "your_api_key"
-headers = {"SC-API-KEY": API_KEY}
+PANEL_TOKEN = "your_panel_access_token"
+headers = {"Authorization": f"JWT {PANEL_TOKEN}"}
 
 response = requests.post(
-	"https://demo.streaming.center:1030/api/v2/channels/",
+	"https://demo.radio-tochka.com:1030/api/v2/channels/",
 	headers=headers,
 	json={
 		"server": 1,
@@ -257,7 +257,7 @@ print(response.json())
 <div class="api-block">
 <b>Endpoint:</b> /api/v2/channels/:id/<br/>
 <b>HTTP метод:</b> GET, PUT, DELETE <br/>
-<b>Авторизация:</b> GET - не обязательна, PUT и DELETE - необходима<br/>
+<b>Авторизация:</b> GET доступен без авторизации. Для PUT и DELETE нужен JWT-токен.<br/>
 <b>Параметры:</b> <br/>
 <b>id:</b> ID канала<br/>
 </div>
@@ -271,7 +271,7 @@ print(response.json())
 import requests
 
 response = requests.get(
-	"https://demo.streaming.center:1030/api/v2/channels/11/"
+	"https://demo.radio-tochka.com:1030/api/v2/channels/11/"
 )
 print(response.json())
 
@@ -285,11 +285,11 @@ print(response.json())
 
 import requests
 
-API_KEY = "your_api_key"
-headers = {"SC-API-KEY": API_KEY}
+PANEL_TOKEN = "your_panel_access_token"
+headers = {"Authorization": f"JWT {PANEL_TOKEN}"}
 
 response = requests.put(
-	"https://demo.streaming.center:1030/api/v2/channels/11/",
+	"https://demo.radio-tochka.com:1030/api/v2/channels/11/",
 	headers=headers,
 	json={
 		"server": 1,
@@ -318,11 +318,11 @@ print(response.json())
 
 import requests
 
-API_KEY = "your_api_key"
-headers = {"SC-API-KEY": API_KEY}
+PANEL_TOKEN = "your_panel_access_token"
+headers = {"Authorization": f"JWT {PANEL_TOKEN}"}
 
 response = requests.delete(
-	"https://demo.streaming.center:1030/api/v2/channels/11/",
+	"https://demo.radio-tochka.com:1030/api/v2/channels/11/",
 	headers=headers
 )
 
@@ -363,7 +363,7 @@ Endpoint возвращает пустой HTTP 200 response и выставля
 - icecast-auth-user: всегда `1`.
 - icecast-auth-message: всегда `auth`.
 
-<div class="api-block">
+<div class="api-block" id="api-icecast-auth">
 <b>Endpoint:</b> /api/v2/channels/:id/auth_listener/<br/>
 <b>HTTP метод:</b> GET, POST <br/>
 <b>Авторизация:</b> не требуется<br/>
@@ -387,7 +387,7 @@ Endpoint принимает параметры в query string или в POST bo
 - ip: IP-адрес слушателя.
 - agent: user-agent слушателя.
 
-Если token из параметра `mount` найден в таблице авторизованных слушателей и активен для сервера канала, endpoint разрешит подключение.
+Если token из параметра `mount` найден в [таблице авторизованных слушателей](/docs/api/settings/#api-stream-access) и активен для сервера канала, endpoint разрешит подключение.
 
 #### Пример ответа
 
@@ -398,4 +398,44 @@ Endpoint возвращает пустой HTTP 200 response и выставля
 
 #### Как получить общее количество слушателей радио
 
-Чтобы получить суммарное количество слушателей по радио, запросите список каналов через `/api/v2/channels/?server=<server_id>` и просуммируйте поле `listeners_current` только для тех каналов, которые находятся online. Поле `state` помогает определить состояние канала: `0` - канал offline, `1` - канал online, но без активного подключения, `2` - канал online и реально вещает. Если вам нужен именно текущий total listeners по всем вещающим потокам радио, обычно суммируют `listeners_current` у каналов со `state = 2`.
+Чтобы получить суммарное количество слушателей по радио, запросите список каналов через [`/api/v2/channels/?server=<server_id>`](/docs/api/channels/#api-channels) и просуммируйте поле `listeners_current` только для тех каналов, которые находятся online. Поле `state` помогает определить состояние канала: `0` - канал offline, `1` - канал online, но без активного подключения, `2` - канал online и реально вещает. Если вам нужен именно текущий total listeners по всем вещающим потокам радио, обычно суммируют `listeners_current` у каналов со `state = 2`.
+
+Для общего счётчика по всем активным каналам установки используйте [`GET /api/total_listeners/`](/docs/api/statistics/#api-total-listeners). Перед созданием канала можно узнать [свободный порт](/docs/api/utilities/#api-free-port).
+
+## Дополнительные методы каналов
+
+<div class="api-block">
+<b>Путь</b> /api/v2/channels/{id}/<br/>
+<b>Методы HTTP</b> PATCH<br/>
+<b>Авторизация</b> JWT-токен<br/>
+</div>
+
+Частичное обновление редактируемых полей из PUT. Возвращает обновлённый канал.
+
+<div class="api-block">
+<b>Путь</b> /api/v2/channels/{id}/add_listener_allow/<br/>
+<b>Методы HTTP</b> GET, POST<br/>
+<b>Авторизация</b> Без авторизации<br/>
+</div>
+
+Обработчик подключения Icecast для каналов, разрешающих соединение. Принимает поля обработчика Icecast, например `mount`, `client`, `ip` и `agent`, в строке запроса GET или теле POST. Возвращает HTTP 200 с `icecast-auth-user: 1` и `icecast-auth-message: auth`.
+
+<div class="api-block">
+<b>Путь</b> /api/v2/channels/{id}/remove_listener/<br/>
+<b>Методы HTTP</b> GET, POST<br/>
+<b>Авторизация</b> Без авторизации<br/>
+</div>
+
+Обработчик отключения Icecast. Возвращает HTTP 200 и заголовки Icecast.
+
+<div class="api-block">
+<b>Путь</b> /api/links/<br/>
+<b>Методы HTTP</b> GET<br/>
+<b>Авторизация</b> Без авторизации<br/>
+</div>
+
+Передайте `c` (ID канала) и `t`: `winamp` возвращает M3U, `wmp` — ASX, а `itunes` — PLS. По умолчанию `winamp`.
+
+```http
+GET /api/links/?c=11&t=itunes
+```

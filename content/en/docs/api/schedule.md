@@ -6,7 +6,7 @@ seo_title: "Scheduler API for Internet Radio | Streaming.Center"
 description: "Documentation for the Streaming.Center scheduler API: retrieving schedule events, creating, updating, deleting, and clearing the broadcast schedule."
 ---
 
-<div class="api-block">
+<div class="api-block" id="api-schedule">
 <b>Endpoint:</b> /api/v2/grid/<br/>
 <b>HTTP method:</b> GET, POST <br/>
 <b>Authentication:</b> GET - not required, POST - required<br/>
@@ -147,11 +147,11 @@ print(response.json())
 - week_2: second week of the month enabled.
 - week_3: third week of the month enabled.
 - week_4: fourth week of the month enabled.
-- playlist: playlist ID if the event starts a playlist or a radioshow playlist.
-- playlist_after_radioshow: playlist ID that should start after a radioshow.
-- rotation_after_radioshow: rotation ID that should start after a radioshow.
-- dj: DJ ID if the event is associated with a DJ.
-- rotation: rotation ID.
+- playlist: [playlist ID](/docs/api/playlists/#api-playlists) if the event starts a playlist or a radioshow playlist.
+- playlist_after_radioshow: [playlist ID](/docs/api/playlists/#api-playlists) that should start after a radioshow.
+- rotation_after_radioshow: [rotation ID](/docs/api/rotations/#api-rotations) that should start after a radioshow.
+- dj: [DJ ID](/docs/api/djs/#api-djs) if the event is associated with a DJ.
+- rotation: [rotation ID](/docs/api/rotations/#api-rotations).
 - allow_jingles: whether jingles are allowed during the event.
 - allow_song_requests: whether song requests are allowed during the event.
 - allow_jingles_after: whether jingles are allowed after a radioshow.
@@ -219,11 +219,11 @@ Main parameters used when creating a scheduler event:
 - finish_time: optional finish time.
 - wd_mon, wd_tue, wd_wed, wd_thu, wd_fri, wd_sat, wd_sun: weekdays for a `periodic` event.
 - week_1, week_2, week_3, week_4: enabled month weeks for a `periodic` event.
-- playlist: playlist ID.
-- playlist_after_radioshow: playlist ID after a radioshow.
-- rotation_after_radioshow: rotation ID after a radioshow.
-- dj: DJ ID.
-- rotation: rotation ID.
+- playlist: [playlist ID](/docs/api/playlists/#api-playlists).
+- playlist_after_radioshow: [playlist ID](/docs/api/playlists/#api-playlists) after a radioshow.
+- rotation_after_radioshow: [rotation ID](/docs/api/rotations/#api-rotations) after a radioshow.
+- dj: [DJ ID](/docs/api/djs/#api-djs).
+- rotation: [rotation ID](/docs/api/rotations/#api-rotations).
 - allow_jingles: allow jingles.
 - allow_song_requests: allow song requests.
 - allow_jingles_after: allow jingles after a radioshow.
@@ -244,7 +244,7 @@ When creating or updating an event, the API validates model constraints and may 
 
 On success, the API returns the created event object as JSON.
 
-<div class="api-block">
+<div class="api-block" id="api-schedule-event">
 <b>Endpoint:</b> /api/v2/grid/:id/<br/>
 <b>HTTP method:</b> GET, PUT, DELETE <br/>
 <b>Authentication:</b> GET - not required, PUT and DELETE - required<br/>
@@ -369,4 +369,9 @@ print(response.json())
 
 #### Practical note for list requests
 
-For `GET /api/v2/grid/`, it is best to always pass `server`, `start_ts`, and `end_ts` together. In this form the endpoint can correctly build the calendar range, expand periodic events, and filter out events that fall outside the requested interval.
+For [`GET /api/v2/grid/`](/docs/api/schedule/#api-schedule), it is best to always pass `server`, `start_ts`, and `end_ts` together. In this form the endpoint can correctly build the calendar range, expand periodic events, and filter out events that fall outside the requested interval.
+
+
+## Partial updates
+
+[`PATCH /api/v2/grid/{id}/`](/docs/api/schedule/#api-schedule-event) updates selected event fields. Send a panel JWT with schedule write permission or a valid API key and use the event fields and scheduling constraints described above. The response contains the updated event.

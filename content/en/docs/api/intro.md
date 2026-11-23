@@ -18,9 +18,9 @@ The API URL is: **<<address of your panel on the server>>/api/<<api version>>**,
 [https://demoaccount.streaming.center:8080/api/v2/](https://demoaccount.streaming.center:8080/api/v2/) 
 
 
-Our API uses JSON and JSONP formats for data exchange. For the API to work correctly, we strongly recommend that you have configured and working support for the **HTTPS** protocol on the server side, and in cases where [Authorization](/docs/api/auth) is required for API requests, the **HTTPS** protocol is critically necessary to protect the transfer of authorization tokens.
+The API uses JSON for most requests and responses. [History](/docs/api/history/#api-history) also supports JSONP. Endpoints for media, exports, widgets, and public pages can use other formats as described in their reference sections. For the API to work correctly, we strongly recommend that you have configured and working support for the **HTTPS** protocol on the server side, and in cases where [Authorization](/docs/api/auth/) is required for API requests, the **HTTPS** protocol is critically necessary to protect the transfer of authorization tokens.
 
-An example of an API request in the Python programming language that receives the history of the broadcast (1 last track, it is also the current one on the radio that is playing right now) that were played on the server **1**:
+An example of an API request in the Python programming language that receives the [history of the broadcast](/docs/api/history/#api-history) (1 last track, it is also the current one on the radio that is playing right now) that were played on the server **1**:
 
 {{< highlight python  >}}
 
@@ -38,35 +38,35 @@ Example output about the current track on the radio in JSON format:
 {
    "count":500,
    "next":"https://demoaccount.streaming.center:8080/api/v2/history/?limit=1&offset=1&server=1",
-   "previous":"None",
+   "previous":null,
    "results":[
       {
          "album":"Ozzmosis (Expanded Edition)",
          "all_music_id":1190,
          "author":"Ozzy Osbourne",
-         "author_other":"None",
-         "comment":"None",
-         "composer":"None",
+         "author_other":null,
+         "comment":null,
+         "composer":null,
          "dj_name":"AutoDJ",
-         "genre":"None",
+         "genre":null,
          "id":11552,
          "img_fetched":true,
          "img_large_url":"https://demoaccount.streaming.center:8080/media/tracks/trackImage1190_large.jpg",
          "img_medium_url":"https://demoaccount.streaming.center:8080/media/tracks/trackImage1190_medium.jpg",
          "img_url":"https://demoaccount.streaming.center:8080/media/tracks/trackImage1190.jpg",
-         "isrc":"None",
-         "jingle_id":"None",
-         "label":"None",
+         "isrc":null,
+         "jingle_id":null,
+         "label":null,
          "length":296347,
          "lyricist":"",
          "metadata":"Ozzy Osbourne - I Just Want You",
          "n_listeners":0,
-         "performance_type":"None",
+         "performance_type":null,
          "playlist_title":"All music",
-         "publisher":"None",
+         "publisher":null,
          "title":"I Just Want You",
          "ts":1733763534000,
-         "year":"None"
+         "year":null
       }
    ]
 }
@@ -74,3 +74,11 @@ Example output about the current track on the radio in JSON format:
 
 As you can see, the API provides a lot of information - the name of the current track, 
 the playlist, when the track started playing and how long it lasts, the track covers (if any) and other parameters that are described in details in our documentation.
+
+## Request conventions
+
+Use the URL paths as shown, including a trailing slash where present. Path placeholders in braces, such as `{id}`, are replaced by actual IDs. For station-specific collections, `?server=1` commonly filters the list and the JSON field `server` sets [the station when creating](/docs/api/servers/#api-stations) a resource.
+
+Use `Content-Type: application/json` for JSON bodies, or `multipart/form-data` for uploads. Standard list endpoints return an array unless pagination applies. For limit/offset pagination the object contains `count`, `next`, `previous`, and `results`. Link fields are null when there is no corresponding page. Some endpoints use their own pagination and response fields.
+
+Standard create operations respond with HTTP 201 and the saved object. Update operations generally return HTTP 200 with the object, and standard deletions return HTTP 204 without a body. Validation errors usually return HTTP 400 with field-specific messages. Access failures can return HTTP 401 or 403, and missing records return HTTP 404. See the section for each endpoint for options and exceptions.

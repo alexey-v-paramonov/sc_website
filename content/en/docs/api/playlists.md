@@ -6,7 +6,7 @@ seo_title: "Internet Radio Playlist API | Streaming.Center Documentation"
 description: "Complete guide to managing internet radio playlists programmatically with Streaming.Center. Learn how to create, update, copy playlists, add tracks, and work with the AllMusic library API."
 ---
 
-<div class="api-block">
+<div class="api-block" id="api-playlists">
 <b>Endpoint:</b> /api/v2/playlists/<br/>
 <b>HTTP method:</b> GET, POST <br/>
 <b>Authentication:</b> required<br/>
@@ -115,7 +115,7 @@ To create a playlist, send the following JSON payload:
 
 #### Example: POST request for importing an M3U playlist file
 
-To import an M3U file, first upload the actual audio files to the server using FTP or the web interface. Then send a **POST** request with `Content-Type` set to `multipart/form-data`:
+To import an M3U file, first upload the audio files via [FTP](/docs/api/settings/#api-ftp-users), the web interface, or the [media upload endpoint](/docs/api/playlists/#api-media-upload). Then send a **POST** request with `Content-Type` set to `multipart/form-data`:
 
 {{< highlight python  >}}
 import requests
@@ -142,7 +142,7 @@ response = requests.post(
 
 {{< / highlight >}}
 
-<div class="api-block">
+<div class="api-block" id="api-playlist-detail">
 <b>Endpoint:</b> /api/v2/playlists/:id/<br/>
 <b>HTTP method:</b> GET, PUT, DELETE <br/>
 <b>Authentication:</b> required<br/>
@@ -152,7 +152,7 @@ response = requests.post(
 
 Lets you retrieve a specific playlist with **GET**, update it with **PUT**, or delete it with **DELETE**.
 
-<div class="api-block">
+<div class="api-block" id="api-playlist-add-tracks">
 <b>Endpoint:</b> /api/v2/playlists/:id/add_tracks_ordered/<br/>
 <b>HTTP method:</b> POST <br/>
 <b>Authentication:</b> required<br/>
@@ -174,7 +174,7 @@ Adds tracks to a playlist. You must pass an array of `AllMusic` track IDs. The o
 <b>id:</b> playlist ID<br/>
 </div>
 
-Schedules the playlist to start playing at the next full minute. For example, if you call this API at 11:30:25, a scheduler event will be created for 11:31. No payload is required.
+Schedules the playlist to start playing at the next full minute. For example, if you call this API at 11:30:25, a [scheduler event](/docs/api/schedule/#api-schedule-event) will be created for 11:31. No payload is required.
 
 <div class="api-block">
 <b>Endpoint:</b> /api/v2/playlists/:id/copy/<br/>
@@ -261,7 +261,7 @@ Returns an `.xlsx` Excel file with the playlist track list. The spreadsheet cont
 <b>id:</b> playlist ID<br/>
 </div>
 
-Adds recordings from the selected DJ recordings directory into the playlist. Files are copied into the server music library and also created as new `AllMusic` records.
+Adds recordings from the [selected DJ recordings directory](/docs/api/djs/#api-dj-recordings) into the playlist. Files are copied into the server music library and also created as new `AllMusic` records.
 
 #### Example payload
 
@@ -276,7 +276,7 @@ Adds recordings from the selected DJ recordings directory into the playlist. Fil
 
 If `recordings` is empty, the API returns `400`.
 
-<div class="api-block">
+<div class="api-block" id="api-playlist-tracks">
 <b>Endpoint:</b> /api/v2/playlists/:playlist_pk/tracks/<br/>
 <b>HTTP method:</b> GET <br/>
 <b>Authentication:</b> required<br/>
@@ -315,7 +315,7 @@ Returns tracks for a specific playlist with position information and a nested `A
 
 {{< / highlight >}}
 
-<div class="api-block">
+<div class="api-block" id="api-playlist-track-detail">
 <b>Endpoint:</b> /api/v2/playlists/:playlist_pk/tracks/:id/<br/>
 <b>HTTP method:</b> GET, DELETE <br/>
 <b>Authentication:</b> required<br/>
@@ -476,7 +476,7 @@ print(response.json())
 - length_formatted: formatted duration.
 - samplerate: file sample rate.
 - audio_format: audio format.
-- requestable: whether the track can be requested by listeners.
+- requestable: whether the track can be [requested by listeners](/docs/api/track-requests/#api-track-requests).
 - requests_number: number of times the track was requested.
 - human_up: like count.
 - human_down: dislike count.
@@ -500,7 +500,7 @@ print(response.json())
 - region_length: calculated playback region length.
 - max_volume_db: maximum safe gain increase without clipping.
 
-<div class="api-block">
+<div class="api-block" id="api-music-track">
 <b>Endpoint:</b> /api/v2/music/:id/<br/>
 <b>HTTP method:</b> GET, PUT, DELETE <br/>
 <b>Authentication:</b> GET - not required, PUT and DELETE - required<br/>
@@ -510,7 +510,7 @@ print(response.json())
 
 `GET` returns one track object. `PUT` lets you update metadata such as `author`, `title`, `album`, `genre`, `isrc`, `requestable`, `category`, and other model fields. `DELETE` removes the track from the database and deletes the corresponding file from storage.
 
-<div class="api-block">
+<div class="api-block" id="api-music-like">
 <b>Endpoint:</b> /api/v2/music/:id/like/<br/>
 <b>HTTP method:</b> POST <br/>
 <b>Authentication:</b> not required<br/>
@@ -648,7 +648,7 @@ Allows bulk updates for several `AllMusic` tracks in one request.
 
 `update_mode` can be `fill-empty` or `overwrite`.
 
-<div class="api-block">
+<div class="api-block" id="api-music-rename">
 <b>Endpoint:</b> /api/v2/music/:id/rename/<br/>
 <b>HTTP method:</b> POST <br/>
 <b>Authentication:</b> required<br/>
@@ -881,7 +881,7 @@ Deletes selected files and optionally removes empty directories.
 
 If `ml=true`, the corresponding `AllMusic` records are also deleted from the database.
 
-<div class="api-block">
+<div class="api-block" id="api-media-upload">
 <b>Endpoint:</b> /api/v2/mediafile/upload/<br/>
 <b>HTTP method:</b> PUT <br/>
 <b>Authentication:</b> required<br/>
@@ -898,9 +898,9 @@ Uploads an audio file into the selected folder on the server.
 
 #### How to get the like count for a specific track by its AllMusic ID
 
-To get the like count for a track, perform a `GET` request to `/api/v2/music/:id/`, where `:id` is the `AllMusic` object ID. In the response, use the `human_up` field, which contains the current number of likes.
+To get the like count for a track, perform a `GET` request to [`/api/v2/music/:id/`](/docs/api/playlists/#api-music-track), where `:id` is the `AllMusic` object ID. In the response, use the `human_up` field, which contains the current number of likes.
 
-For example, for track ID `40`, the request `GET /api/v2/music/40/` returns a track object where `human_up` may look like this:
+For example, for track ID `40`, the request [`GET /api/v2/music/40/`](/docs/api/playlists/#api-music-track) returns a track object where `human_up` may look like this:
 
 {{< highlight json  >}}
 
@@ -914,4 +914,202 @@ For example, for track ID `40`, the request `GET /api/v2/music/40/` returns a tr
 
 {{< / highlight >}}
 
-If you want not only to read the current value but also to immediately get updated counters after a user vote, call `POST /api/v2/music/:id/like/`. The API response includes `up` and `down`, where `up` is the new like count.
+If you want not only to read the current value but also to immediately get updated counters after a user vote, call [`POST /api/v2/music/:id/like/`](/docs/api/playlists/#api-music-like). The API response includes `up` and `down`, where `up` is the new like count.
+
+## Additional library and playlist operations
+
+<div class="api-block">
+<b>Endpoint</b> /api/v2/playlists/{id}/reorder/<br/>
+<b>HTTP methods</b> POST<br/>
+<b>Authentication</b> Panel JWT or API key<br/>
+</div>
+
+Send `server` and zero-based `position` to reorder the playlist list. Returns `playlist_id` and `position`.
+
+<div class="api-block">
+<b>Endpoint</b> /api/v2/playlists/{id}/add_tracks/<br/>
+<b>HTTP methods</b> POST<br/>
+<b>Authentication</b> Panel JWT or API key<br/>
+</div>
+
+Send an array of library track IDs. Adds them in library ID order and returns an empty response.
+
+<div class="api-block">
+<b>Endpoint</b> /api/v2/music/{id}/rescan/<br/>
+<b>HTTP methods</b> POST<br/>
+<b>Authentication</b> Panel JWT or API key<br/>
+</div>
+
+Marks the file for reanalysis. Returns `{"result":"ok","updated":1}`.
+
+<div class="api-block" id="api-music-rescan">
+<b>Endpoint</b> /api/v2/music/rescan_files/<br/>
+<b>HTTP methods</b> POST<br/>
+<b>Authentication</b> Panel JWT or API key<br/>
+</div>
+
+Send up to 500 library IDs in `file_ids` with an optional `server` query filter. Returns `result` and `updated`.
+
+<div class="api-block">
+<b>Endpoint</b> /api/v2/music/clear_categories/<br/>
+<b>HTTP methods</b> POST<br/>
+<b>Authentication</b> Panel JWT or API key<br/>
+</div>
+
+Send `ids`, an array of library track IDs. Clears assignments and returns `{}`.
+
+<div class="api-block">
+<b>Endpoint</b> /api/v2/music/folder_rename/<br/>
+<b>HTTP methods</b> POST<br/>
+<b>Authentication</b> Panel JWT or API key<br/>
+</div>
+
+Send `server`, `folder_path`, and `new_name`. Returns `{"result":"ok"}`.
+
+<div class="api-block">
+<b>Endpoint</b> /api/v2/music/folder_delete/<br/>
+<b>HTTP methods</b> POST<br/>
+<b>Authentication</b> Panel JWT or API key<br/>
+</div>
+
+Send `server` and `folder_path`. Returns `result` and `deleted_tracks`.
+
+<div class="api-block">
+<b>Endpoint</b> /api/v2/music/folder_create/<br/>
+<b>HTTP methods</b> POST<br/>
+<b>Authentication</b> Panel JWT or API key<br/>
+</div>
+
+Send `server`, `new_name`, and optional `parent_path` (default `/`). Returns the updated tree.
+
+<div class="api-block">
+<b>Endpoint</b> /api/v2/music/add_dir/<br/>
+<b>HTTP methods</b> POST<br/>
+<b>Authentication</b> Panel JWT or API key<br/>
+</div>
+
+Send `server_id`, `parent_dir`, and `new_dir`. Returns the updated tree.
+
+<div class="api-block">
+<b>Endpoint</b> /api/v2/music/remove_bad_file/<br/>
+<b>HTTP methods</b> POST<br/>
+<b>Authentication</b> Panel JWT or API key<br/>
+</div>
+
+Send `fp`, the relative path of a failed media file. HTTP 204 indicates removal.
+
+<div class="api-block">
+<b>Endpoint</b> /api/v2/music/duplicates/<br/>
+<b>HTTP methods</b> GET<br/>
+<b>Authentication</b> Public<br/>
+</div>
+
+Send `server_id` and optional `dupes` grouping mode. Returns `duplicates` groups with `entity` and `dupes` rows.
+
+<div class="api-block">
+<b>Endpoint</b> /api/v2/music/{id}/download/<br/>
+<b>HTTP methods</b> GET<br/>
+<b>Authentication</b> Public<br/>
+</div>
+
+Local audio attachment or redirect to the remote track URL.
+
+<div class="api-block" id="api-forecast">
+<b>Endpoint</b> /api/v2/forecast/<br/>
+<b>HTTP methods</b> GET<br/>
+<b>Authentication</b> Public<br/>
+</div>
+
+Legacy playback forecast for the active playlist. Query `server` and optional `with_current=1`. Rows include track, playlist, estimated start time and duration.
+
+<div class="api-block" id="api-legacy-playlist-tracks">
+<b>Endpoint</b> /api/v2/playlist_tracks/<br/>
+<b>HTTP methods</b> GET<br/>
+<b>Authentication</b> Public<br/>
+</div>
+
+Legacy playlist track list. Pass `playlist_id`. Use the [nested playlist tracks route above](/docs/api/playlists/#api-playlist-tracks) for current integrations.
+
+## Music categories
+
+<div class="api-block" id="api-music-categories">
+<b>Endpoint</b> /api/v2/music_categories/<br/>
+<b>HTTP methods</b> GET, POST<br/>
+<b>Authentication</b> Panel JWT or API key<br/>
+</div>
+
+GET returns top-level categories with nested `subcategories`. POST accepts `name` and optional `parent` ID.
+
+<div class="api-block">
+<b>Endpoint</b> /api/v2/music_categories/{id}/<br/>
+<b>HTTP methods</b> GET, PUT, PATCH, DELETE<br/>
+<b>Authentication</b> Panel JWT or API key<br/>
+</div>
+
+Read, edit, or delete a category.
+
+<div class="api-block">
+<b>Endpoint</b> /api/v2/music_categories/{id}/assign_tracks/<br/>
+<b>HTTP methods</b> POST<br/>
+<b>Authentication</b> Panel JWT or API key<br/>
+</div>
+
+Send an array of library IDs or `{"ids":[40,52]}`. Returns counts and invalid IDs.
+
+## Play queue
+
+<div class="api-block">
+<b>Endpoint</b> /api/v2/track_queue/<br/>
+<b>HTTP methods</b> GET, POST<br/>
+<b>Authentication</b> Panel JWT or API key<br/>
+</div>
+
+GET lists queue entries by `server`. POST with `server` and `track_id` appends one track. Use `file_ids` instead of `track_id` for bulk append.
+
+<div class="api-block">
+<b>Endpoint</b> /api/v2/track_queue/{id}/<br/>
+<b>HTTP methods</b> GET, PUT, PATCH, DELETE<br/>
+<b>Authentication</b> Panel JWT or API key<br/>
+</div>
+
+Work with one queue entry by queue ID. The response includes `id`, nested `track`, `server`, `order`, and `created`.
+
+<div class="api-block">
+<b>Endpoint</b> /api/v2/track_queue/reorder/<br/>
+<b>HTTP methods</b> POST<br/>
+<b>Authentication</b> Panel JWT or API key<br/>
+</div>
+
+Send `server` and `queue_ids` in desired order. Returns `result` and `updated_count`.
+
+<div class="api-block">
+<b>Endpoint</b> /api/v2/track_queue/clear/<br/>
+<b>HTTP methods</b> POST<br/>
+<b>Authentication</b> Panel JWT or API key<br/>
+</div>
+
+Send `server`. Returns `result` and `deleted_count`.
+
+```http
+POST /api/v2/track_queue/
+```
+
+```json
+{
+  "server": 1,
+  "file_ids": [
+    40,
+    52
+  ]
+}
+```
+
+Successful bulk append returns HTTP 201 with `result: ok`, the number of entries in `created`, and their records in `items`.
+
+### Playlist entry and library updates
+
+Use [`PATCH /api/v2/playlists/{id}/`](/docs/api/playlists/#api-playlist-detail) or [`PATCH /api/v2/music/{id}/`](/docs/api/playlists/#api-music-track) to change only the supplied properties. The response is the updated playlist or track.
+
+Use `PUT` or [`PATCH /api/v2/playlists/{playlist_pk}/tracks/{id}/`](/docs/api/playlists/#api-playlist-track-detail) with a nested `track` object containing both `author` and `title`. This changes the underlying library track’s tags. Omitted title or artist values can be cleared, so send both. To add an existing track to a playlist, use [`add_tracks_ordered`](/docs/api/playlists/#api-playlist-add-tracks) with library IDs. To get the compact listing, set `compact=1` when listing playlist tracks.
+
+`GET /api/v2/` returns links to the legacy [`forecast`](/docs/api/playlists/#api-forecast) and [`playlist_tracks`](/docs/api/playlists/#api-legacy-playlist-tracks) collections. Those routes also expose format suffixes such as [`/api/v2/playlist_tracks.json?playlist_id=12`](/docs/api/playlists/#api-legacy-playlist-tracks).

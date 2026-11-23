@@ -2,11 +2,11 @@
 title: "Сетка вещания"
 date: 2026-04-04T12:00:00+03:00
 weight: 52
-seo_title: "API сетки вещания интернет-радио | Радио-Точка"
+seo_title: "API сетки вещания интернет-радио | Radio-Tochka.com"
 description: "Документация по API сетки вещания Radio-Tochka: получение событий расписания, создание, изменение, удаление и очистка сетки эфира."
 ---
 
-<div class="api-block">
+<div class="api-block" id="api-schedule">
 <b>Endpoint:</b> /api/v2/grid/<br/>
 <b>HTTP метод:</b> GET, POST <br/>
 <b>Авторизация:</b> GET - не обязательна, POST - необходима<br/>
@@ -37,7 +37,7 @@ description: "Документация по API сетки вещания Radio-
 import requests
 
 response = requests.get(
-		"https://demo.streaming.center:1030/api/v2/grid/?server=1&start_ts=1744041600&end_ts=1744646400&utc=1"
+		"https://demo.radio-tochka.com:1030/api/v2/grid/?server=1&start_ts=1744041600&end_ts=1744646400&utc=1"
 )
 print(response.json())
 
@@ -147,11 +147,11 @@ print(response.json())
 - week_2: активна ли вторая неделя месяца.
 - week_3: активна ли третья неделя месяца.
 - week_4: активна ли четвёртая неделя месяца.
-- playlist: ID плейлиста, если событие запускает плейлист или radioshow-плейлист.
-- playlist_after_radioshow: ID плейлиста, который должен стартовать после radioshow.
-- rotation_after_radioshow: ID ротации, которая должна стартовать после radioshow.
-- dj: ID DJ, если событие связано с DJ.
-- rotation: ID ротации.
+- playlist: [ID плейлиста](/docs/api/playlists/#api-playlists), если событие запускает плейлист или radioshow-плейлист.
+- playlist_after_radioshow: [ID плейлиста](/docs/api/playlists/#api-playlists), который должен стартовать после radioshow.
+- rotation_after_radioshow: [ID ротации](/docs/api/rotations/#api-rotations), которая должна стартовать после radioshow.
+- dj: [ID DJ](/docs/api/djs/#api-djs), если событие связано с DJ.
+- rotation: [ID ротации](/docs/api/rotations/#api-rotations).
 - allow_jingles: разрешены ли джинглы во время события.
 - allow_song_requests: разрешены ли заказы треков во время события.
 - allow_jingles_after: разрешены ли джинглы после radioshow.
@@ -181,7 +181,7 @@ API_KEY = "your_api_key"
 headers = {"SC-API-KEY": API_KEY}
 
 response = requests.post(
-		"https://demo.streaming.center:1030/api/v2/grid/",
+		"https://demo.radio-tochka.com:1030/api/v2/grid/",
 		headers=headers,
 		json={
 				"server": 1,
@@ -219,11 +219,11 @@ print(response.json())
 - finish_time: необязательное время окончания.
 - wd_mon, wd_tue, wd_wed, wd_thu, wd_fri, wd_sat, wd_sun: дни недели для `periodic` события.
 - week_1, week_2, week_3, week_4: недели месяца для `periodic` события.
-- playlist: ID плейлиста.
-- playlist_after_radioshow: ID плейлиста после radioshow.
-- rotation_after_radioshow: ID ротации после radioshow.
-- dj: ID DJ.
-- rotation: ID ротации.
+- playlist: [ID плейлиста](/docs/api/playlists/#api-playlists).
+- playlist_after_radioshow: [ID плейлиста](/docs/api/playlists/#api-playlists) после radioshow.
+- rotation_after_radioshow: [ID ротации](/docs/api/rotations/#api-rotations) после radioshow.
+- dj: [ID DJ](/docs/api/djs/#api-djs).
+- rotation: [ID ротации](/docs/api/rotations/#api-rotations).
 - allow_jingles: разрешить джинглы.
 - allow_song_requests: разрешить song requests.
 - allow_jingles_after: разрешить джинглы после radioshow.
@@ -244,7 +244,7 @@ print(response.json())
 
 В ответ на успешное создание API возвращает созданный объект события в JSON.
 
-<div class="api-block">
+<div class="api-block" id="api-schedule-event">
 <b>Endpoint:</b> /api/v2/grid/:id/<br/>
 <b>HTTP метод:</b> GET, PUT, DELETE <br/>
 <b>Авторизация:</b> GET - не обязательна, PUT и DELETE - необходимы<br/>
@@ -261,7 +261,7 @@ print(response.json())
 import requests
 
 response = requests.get(
-		"https://demo.streaming.center:1030/api/v2/grid/10/"
+		"https://demo.radio-tochka.com:1030/api/v2/grid/10/"
 )
 print(response.json())
 
@@ -279,7 +279,7 @@ API_KEY = "your_api_key"
 headers = {"SC-API-KEY": API_KEY}
 
 response = requests.put(
-		"https://demo.streaming.center:1030/api/v2/grid/10/",
+		"https://demo.radio-tochka.com:1030/api/v2/grid/10/",
 		headers=headers,
 		json={
 				"id": 10,
@@ -320,7 +320,7 @@ API_KEY = "your_api_key"
 headers = {"SC-API-KEY": API_KEY}
 
 response = requests.delete(
-		"https://demo.streaming.center:1030/api/v2/grid/10/",
+		"https://demo.radio-tochka.com:1030/api/v2/grid/10/",
 		headers=headers
 )
 
@@ -350,7 +350,7 @@ API_KEY = "your_api_key"
 headers = {"SC-API-KEY": API_KEY}
 
 response = requests.delete(
-		"https://demo.streaming.center:1030/api/v2/grid/clear/?server=1",
+		"https://demo.radio-tochka.com:1030/api/v2/grid/clear/?server=1",
 		headers=headers
 )
 print(response.json())
@@ -369,4 +369,9 @@ print(response.json())
 
 #### Практическое замечание по запросу списка
 
-Для `GET /api/v2/grid/` лучше всегда передавать одновременно `server`, `start_ts` и `end_ts`. Именно в таком виде этот endpoint рассчитывает диапазон календаря, разворачивает periodic события и корректно отфильтровывает события вне выбранного интервала.
+Для [`GET /api/v2/grid/`](/docs/api/schedule/#api-schedule) лучше всегда передавать одновременно `server`, `start_ts` и `end_ts`. Именно в таком виде этот endpoint рассчитывает диапазон календаря, разворачивает periodic события и корректно отфильтровывает события вне выбранного интервала.
+
+
+## Частичные обновления
+
+[`PATCH /api/v2/grid/{id}/`](/docs/api/schedule/#api-schedule-event) обновляет выбранные поля события. Передайте JWT-токен пользователя с правом редактировать сетку вещания или действующий ключ API и используйте приведённые выше поля и ограничения сетки. В ответе возвращается обновлённое событие.

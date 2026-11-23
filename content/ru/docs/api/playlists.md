@@ -6,7 +6,7 @@ seo_title: "API плейлистов Панели Управления Инте�
 description: "Полное руководство по программному управлению плейлистами интернет-радио. Узнайте, как создавать, изменять, копировать плейлисты и добавлять треки с помощью API Radio-Tochka.com."
 ---
 
-<div class="api-block">
+<div class="api-block" id="api-playlists">
 <b>Endpoint:</b> /api/v2/playlists/<br/>
 <b>HTTP метод:</b> GET, POST <br/>
 <b>Авторизация:</b> необходима<br/>
@@ -28,7 +28,7 @@ API_KEY = "6aNLaqRN.87L4xZ5LUXwWLCkK7dBswDafWZNcaLOB"
 headers = {"SC-API-KEY": API_KEY}
 
 response = requests.get(
-  "https://demo.streaming.center:1030/api/v2/playlists/?server=1",
+  "https://demo.radio-tochka.com:1030/api/v2/playlists/?server=1",
   headers=headers
 )
 print(response.json())
@@ -95,7 +95,7 @@ API_KEY = "6aNLaqRN.87L4xZ5LUXwWLCkK7dBswDafWZNcaLOA"
 headers = {"SC-API-KEY": API_KEY}
 
 response = requests.post(
-    "https://demo.streaming.center:1030/api/v2/playlists/", 
+    "https://demo.radio-tochka.com:1030/api/v2/playlists/",
     headers=headers, 
     json={"name":"New playlist","is_random":True,"server":1}
 )
@@ -133,7 +133,7 @@ files = {
     'm3u': (m3u_file, open(m3u_file, 'rb'),)
 }
 response = requests.post(
-    "https://demo.streaming.center:1030/api/v2/playlists/", 
+    "https://demo.radio-tochka.com:1030/api/v2/playlists/",
     headers=headers, 
     data=data,
     files=files
@@ -141,8 +141,7 @@ response = requests.post(
 
 {{< / highlight >}}
 
-
-<div class="api-block">
+<div class="api-block" id="api-playlist-detail">
 <b>Endpoint:</b> /api/v2/playlists/:id/<br/>
 <b>HTTP метод:</b> GET, PUT, DELETE <br/>
 <b>Авторизация:</b> необходима<br/>
@@ -153,7 +152,7 @@ response = requests.post(
 Позволяет загрузить конкретный плейлист по ID при использовании метода **GET** и обновить плейлист при использовании метода **PUT**.
 С помощью метода **DELETE** можно удалить плейлист по ID.
 
-<div class="api-block">
+<div class="api-block" id="api-playlist-add-tracks">
 <b>Endpoint:</b> /api/v2/playlists/:id/add_tracks_ordered/<br/>
 <b>HTTP метод:</b> POST <br/>
 <b>Авторизация:</b> необходима<br/>
@@ -167,7 +166,6 @@ response = requests.post(
 
 Этот endpoint позволяет добавлять треки в плейлист. Необходимо передать массив ID музыкальных файлов для треков, которые вы хотите добавить. Порядок ID в payload важен: треки будут добавлены в плейлист в том же порядке, в котором они указаны в массиве.
 
-
 <div class="api-block">
 <b>Endpoint:</b> /api/v2/playlists/:id/start_broadcasting/<br/>
 <b>HTTP метод:</b> POST <br/>
@@ -176,7 +174,7 @@ response = requests.post(
 <b>id:</b> ID плейлиста<br/>
 </div>
 
-Позволяет запланировать воспроизведение плейлиста. Воспроизведение начнется в следующую полную минуту. Например, если вызвать это API в 11:30:25, в планировщике будет создано событие на 11:31 для запуска этого плейлиста. Этот endpoint не требует payload.
+Позволяет запланировать воспроизведение плейлиста. Воспроизведение начнется в следующую полную минуту. Например, если вызвать это API в 11:30:25, в сетке вещания будет создано [событие](/docs/api/schedule/#api-schedule-event) на 11:31 для запуска этого плейлиста. Этот endpoint не требует payload.
 
 <div class="api-block">
 <b>Endpoint:</b> /api/v2/playlists/:id/copy/<br/>
@@ -263,7 +261,7 @@ response = requests.post(
 <b>id:</b> ID плейлиста<br/>
 </div>
 
-Добавляет в плейлист записи из директории recordings выбранного DJ. Файлы копируются в музыкальную библиотеку сервера и одновременно добавляются как новые записи `AllMusic`.
+Добавляет в плейлист записи из [директории recordings выбранного DJ](/docs/api/djs/#api-dj-recordings). Файлы копируются в музыкальную библиотеку сервера и одновременно добавляются как новые записи `AllMusic`.
 
 #### Пример payload
 
@@ -278,7 +276,7 @@ response = requests.post(
 
 Если `recordings` пустой, API вернёт ошибку `400`.
 
-<div class="api-block">
+<div class="api-block" id="api-playlist-tracks">
 <b>Endpoint:</b> /api/v2/playlists/:playlist_pk/tracks/<br/>
 <b>HTTP метод:</b> GET <br/>
 <b>Авторизация:</b> необходима<br/>
@@ -317,7 +315,7 @@ response = requests.post(
 
 {{< / highlight >}}
 
-<div class="api-block">
+<div class="api-block" id="api-playlist-track-detail">
 <b>Endpoint:</b> /api/v2/playlists/:playlist_pk/tracks/:id/<br/>
 <b>HTTP метод:</b> GET, DELETE <br/>
 <b>Авторизация:</b> необходима<br/>
@@ -417,7 +415,7 @@ response = requests.post(
 import requests
 
 response = requests.get(
-        "https://demo.streaming.center:1030/api/v2/music/?server=1&requestable=1&search_q=queen"
+        "https://demo.radio-tochka.com:1030/api/v2/music/?server=1&requestable=1&search_q=queen"
 )
 print(response.json())
 
@@ -478,7 +476,7 @@ print(response.json())
 - length_formatted: форматированная длительность.
 - samplerate: sample rate файла.
 - audio_format: формат аудио.
-- requestable: доступен ли трек для requests.
+- requestable: доступен ли трек [для заказа слушателями](/docs/api/track-requests/#api-track-requests).
 - requests_number: сколько раз трек заказывали.
 - human_up: количество лайков.
 - human_down: количество дизлайков.
@@ -502,7 +500,7 @@ print(response.json())
 - region_length: вычисленная длина playback region.
 - max_volume_db: максимально допустимое увеличение уровня без перегруза.
 
-<div class="api-block">
+<div class="api-block" id="api-music-track">
 <b>Endpoint:</b> /api/v2/music/:id/<br/>
 <b>HTTP метод:</b> GET, PUT, DELETE <br/>
 <b>Авторизация:</b> GET - не обязательна, PUT и DELETE - необходимы<br/>
@@ -512,7 +510,7 @@ print(response.json())
 
 `GET` возвращает один объект трека. `PUT` позволяет обновить метаданные, например `author`, `title`, `album`, `genre`, `isrc`, `requestable`, `category` и другие поля модели. `DELETE` удаляет трек из базы и удаляет соответствующий файл из storage.
 
-<div class="api-block">
+<div class="api-block" id="api-music-like">
 <b>Endpoint:</b> /api/v2/music/:id/like/<br/>
 <b>HTTP метод:</b> POST <br/>
 <b>Авторизация:</b> не требуется<br/>
@@ -656,9 +654,9 @@ print(response.json())
 <b>Авторизация:</b> необходима<br/>
 </div>
 
-Этот endpoint отсутствует как collection route. Для переименования используется маршрут `/api/v2/music/:id/rename/`.
+Этот endpoint отсутствует как collection route. Для переименования используется маршрут [`/api/v2/music/:id/rename/`](/docs/api/playlists/#api-music-rename).
 
-<div class="api-block">
+<div class="api-block" id="api-music-rename">
 <b>Endpoint:</b> /api/v2/music/:id/rename/<br/>
 <b>HTTP метод:</b> POST <br/>
 <b>Авторизация:</b> необходима<br/>
@@ -891,7 +889,7 @@ print(response.json())
 
 Если `ml=true`, соответствующие записи `AllMusic` тоже будут удалены из базы.
 
-<div class="api-block">
+<div class="api-block" id="api-media-upload">
 <b>Endpoint:</b> /api/v2/mediafile/upload/<br/>
 <b>HTTP метод:</b> PUT <br/>
 <b>Авторизация:</b> необходима<br/>
@@ -908,9 +906,9 @@ print(response.json())
 
 #### Как получить количество лайков у определённого трека по его ID из музыкальной базы AllMusic
 
-Чтобы получить количество лайков у трека, выполните `GET` запрос к `/api/v2/music/:id/`, где `:id` — это ID объекта `AllMusic`. В ответе используйте поле `human_up`: именно оно содержит текущее число лайков трека.
+Чтобы получить количество лайков у трека, выполните `GET` запрос к [`/api/v2/music/:id/`](/docs/api/playlists/#api-music-track), где `:id` — это ID объекта `AllMusic`. В ответе используйте поле `human_up`: именно оно содержит текущее число лайков трека.
 
-Например, для трека с ID `40` запрос `GET /api/v2/music/40/` вернёт объект трека, в котором поле `human_up` может выглядеть так:
+Например, для трека с ID `40` запрос [`GET /api/v2/music/40/`](/docs/api/playlists/#api-music-track) вернёт объект трека, в котором поле `human_up` может выглядеть так:
 
 {{< highlight json  >}}
 
@@ -924,4 +922,202 @@ print(response.json())
 
 {{< / highlight >}}
 
-Если нужно не только прочитать текущее значение, но и сразу получить обновлённые счётчики после пользовательского голосования, можно вызвать `POST /api/v2/music/:id/like/`. В ответе API вернёт поля `up` и `down`, где `up` соответствует новому числу лайков.
+Если нужно не только прочитать текущее значение, но и сразу получить обновлённые счётчики после пользовательского голосования, можно вызвать [`POST /api/v2/music/:id/like/`](/docs/api/playlists/#api-music-like). В ответе API вернёт поля `up` и `down`, где `up` соответствует новому числу лайков.
+
+## Дополнительные операции с медиатекой и плейлистами
+
+<div class="api-block">
+<b>Путь</b> /api/v2/playlists/{id}/reorder/<br/>
+<b>Методы HTTP</b> POST<br/>
+<b>Авторизация</b> JWT-токен или ключ API<br/>
+</div>
+
+Передайте `server` и `position` с отсчётом от нуля, чтобы переместить плейлист в списке. Возвращает `playlist_id` и `position`.
+
+<div class="api-block">
+<b>Путь</b> /api/v2/playlists/{id}/add_tracks/<br/>
+<b>Методы HTTP</b> POST<br/>
+<b>Авторизация</b> JWT-токен или ключ API<br/>
+</div>
+
+Передайте массив ID треков медиатеки. Добавляет их в порядке ID медиатеки и возвращает пустой ответ.
+
+<div class="api-block">
+<b>Путь</b> /api/v2/music/{id}/rescan/<br/>
+<b>Методы HTTP</b> POST<br/>
+<b>Авторизация</b> JWT-токен или ключ API<br/>
+</div>
+
+Помечает файл для повторного анализа. Возвращает `{"result":"ok","updated":1}`.
+
+<div class="api-block" id="api-music-rescan">
+<b>Путь</b> /api/v2/music/rescan_files/<br/>
+<b>Методы HTTP</b> POST<br/>
+<b>Авторизация</b> JWT-токен или ключ API<br/>
+</div>
+
+Передайте до 500 ID треков в `file_ids` и при необходимости фильтр `server` в строке запроса. Возвращает `result` и `updated`.
+
+<div class="api-block">
+<b>Путь</b> /api/v2/music/clear_categories/<br/>
+<b>Методы HTTP</b> POST<br/>
+<b>Авторизация</b> JWT-токен или ключ API<br/>
+</div>
+
+Передайте массив ID треков медиатеки `ids`. Снимает привязки к категориям и возвращает `{}`.
+
+<div class="api-block">
+<b>Путь</b> /api/v2/music/folder_rename/<br/>
+<b>Методы HTTP</b> POST<br/>
+<b>Авторизация</b> JWT-токен или ключ API<br/>
+</div>
+
+Передайте `server`, `folder_path` и `new_name`. Возвращает `{"result":"ok"}`.
+
+<div class="api-block">
+<b>Путь</b> /api/v2/music/folder_delete/<br/>
+<b>Методы HTTP</b> POST<br/>
+<b>Авторизация</b> JWT-токен или ключ API<br/>
+</div>
+
+Передайте `server` и `folder_path`. Возвращает `result` и `deleted_tracks`.
+
+<div class="api-block">
+<b>Путь</b> /api/v2/music/folder_create/<br/>
+<b>Методы HTTP</b> POST<br/>
+<b>Авторизация</b> JWT-токен или ключ API<br/>
+</div>
+
+Передайте `server`, `new_name` и необязательный `parent_path` (по умолчанию `/`). Возвращает обновлённое дерево.
+
+<div class="api-block">
+<b>Путь</b> /api/v2/music/add_dir/<br/>
+<b>Методы HTTP</b> POST<br/>
+<b>Авторизация</b> JWT-токен или ключ API<br/>
+</div>
+
+Передайте `server_id`, `parent_dir` и `new_dir`. Возвращает обновлённое дерево.
+
+<div class="api-block">
+<b>Путь</b> /api/v2/music/remove_bad_file/<br/>
+<b>Методы HTTP</b> POST<br/>
+<b>Авторизация</b> JWT-токен или ключ API<br/>
+</div>
+
+Передайте относительный путь ошибочного файла `fp`. HTTP 204 означает удаление.
+
+<div class="api-block">
+<b>Путь</b> /api/v2/music/duplicates/<br/>
+<b>Методы HTTP</b> GET<br/>
+<b>Авторизация</b> Без авторизации<br/>
+</div>
+
+Передайте `server_id` и необязательный режим группировки `dupes`. В `duplicates` возвращаются группы с `entity` и строками `dupes`.
+
+<div class="api-block">
+<b>Путь</b> /api/v2/music/{id}/download/<br/>
+<b>Методы HTTP</b> GET<br/>
+<b>Авторизация</b> Без авторизации<br/>
+</div>
+
+Скачивание локального аудио или перенаправление к удалённому треку.
+
+<div class="api-block" id="api-forecast">
+<b>Путь</b> /api/v2/forecast/<br/>
+<b>Методы HTTP</b> GET<br/>
+<b>Авторизация</b> Без авторизации<br/>
+</div>
+
+Прогноз эфира для активного плейлиста. Параметры `server` и необязательный `with_current=1`. Строки содержат трек, плейлист, расчётное время начала и длительность.
+
+<div class="api-block" id="api-legacy-playlist-tracks">
+<b>Путь</b> /api/v2/playlist_tracks/<br/>
+<b>Методы HTTP</b> GET<br/>
+<b>Авторизация</b> Без авторизации<br/>
+</div>
+
+Список треков плейлиста прежнего формата. Передайте `playlist_id`. Для новых интеграций используйте [вложенный метод треков плейлиста выше](/docs/api/playlists/#api-playlist-tracks).
+
+## Категории музыки
+
+<div class="api-block" id="api-music-categories">
+<b>Путь</b> /api/v2/music_categories/<br/>
+<b>Методы HTTP</b> GET, POST<br/>
+<b>Авторизация</b> JWT-токен или ключ API<br/>
+</div>
+
+GET возвращает категории верхнего уровня с вложенными `subcategories`. POST принимает `name` и необязательный ID `parent`.
+
+<div class="api-block">
+<b>Путь</b> /api/v2/music_categories/{id}/<br/>
+<b>Методы HTTP</b> GET, PUT, PATCH, DELETE<br/>
+<b>Авторизация</b> JWT-токен или ключ API<br/>
+</div>
+
+Чтение, изменение или удаление категории.
+
+<div class="api-block">
+<b>Путь</b> /api/v2/music_categories/{id}/assign_tracks/<br/>
+<b>Методы HTTP</b> POST<br/>
+<b>Авторизация</b> JWT-токен или ключ API<br/>
+</div>
+
+Передайте массив ID треков медиатеки или `{"ids":[40,52]}`. Возвращает счётчики и некорректные ID.
+
+## Очередь воспроизведения
+
+<div class="api-block">
+<b>Путь</b> /api/v2/track_queue/<br/>
+<b>Методы HTTP</b> GET, POST<br/>
+<b>Авторизация</b> JWT-токен или ключ API<br/>
+</div>
+
+GET возвращает очередь по `server`. POST с `server` и `track_id` добавляет один трек. Для добавления нескольких укажите `file_ids` вместо `track_id`.
+
+<div class="api-block">
+<b>Путь</b> /api/v2/track_queue/{id}/<br/>
+<b>Методы HTTP</b> GET, PUT, PATCH, DELETE<br/>
+<b>Авторизация</b> JWT-токен или ключ API<br/>
+</div>
+
+Работа с элементом по его ID в очереди. Ответ содержит `id`, вложенный `track`, `server`, `order` и `created`.
+
+<div class="api-block">
+<b>Путь</b> /api/v2/track_queue/reorder/<br/>
+<b>Методы HTTP</b> POST<br/>
+<b>Авторизация</b> JWT-токен или ключ API<br/>
+</div>
+
+Передайте `server` и `queue_ids` в нужном порядке. Возвращает `result` и `updated_count`.
+
+<div class="api-block">
+<b>Путь</b> /api/v2/track_queue/clear/<br/>
+<b>Методы HTTP</b> POST<br/>
+<b>Авторизация</b> JWT-токен или ключ API<br/>
+</div>
+
+Передайте `server`. Возвращает `result` и `deleted_count`.
+
+```http
+POST /api/v2/track_queue/
+```
+
+```json
+{
+  "server": 1,
+  "file_ids": [
+    40,
+    52
+  ]
+}
+```
+
+Успешное пакетное добавление возвращает HTTP 201 с `result: ok`, числом новых записей в `created` и записями в `items`.
+
+### Изменение плейлиста и треков
+
+Для изменения отдельных полей используйте [`PATCH /api/v2/playlists/{id}/`](/docs/api/playlists/#api-playlist-detail) или [`PATCH /api/v2/music/{id}/`](/docs/api/playlists/#api-music-track). В ответе возвращается обновлённый плейлист или трек.
+
+Для `PUT` или [`PATCH /api/v2/playlists/{playlist_pk}/tracks/{id}/`](/docs/api/playlists/#api-playlist-track-detail) передайте вложенный объект `track` с обоими полями `author` и `title`. Запрос меняет теги трека в медиатеке. Если пропустить одно из этих полей, оно может очиститься. Для добавления существующего трека используйте [`add_tracks_ordered`](/docs/api/playlists/#api-playlist-add-tracks) с ID треков медиатеки. Чтобы получить сокращённый список треков, укажите `compact=1`.
+
+`GET /api/v2/` возвращает ссылки на коллекции прежнего формата [`forecast`](/docs/api/playlists/#api-forecast) и [`playlist_tracks`](/docs/api/playlists/#api-legacy-playlist-tracks). Они также поддерживают суффикс формата, например [`/api/v2/playlist_tracks.json?playlist_id=12`](/docs/api/playlists/#api-legacy-playlist-tracks).

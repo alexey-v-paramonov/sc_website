@@ -1,5 +1,5 @@
 ---
-title: "Admin Area API description"
+title: "Admin area"
 date: 2025-10-10T11:37:26+03:00
 weight: 20
 seo_title: Admin Area API Reference — Authentication, Broadcasters & Resellers
@@ -383,7 +383,7 @@ curl -X POST -H "Content-Type: application/json" -d '{"username":"admin","passwo
 Auth: No
 Request JSON:
 - `server_username`, `server_password` (to authenticate server admin)
-- `username` (account username to get panel token for)
+- `username` (account username for the [panel token](/docs/api/auth/#api-panel-sign-in))
 
 Response (success):
 ```json

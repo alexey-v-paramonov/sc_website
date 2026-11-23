@@ -53,7 +53,7 @@ print(response.json())
 - folder: папка подкаста в файловой системе сервера
 - image: изображение обложки подкаста
 - episodes_count: количество эпизодов в этом подкасте
-- feed_url: URL RSS-ленты для этого подкаста
+- feed_url: [URL RSS-ленты для этого подкаста](/docs/api/podcasts/#api-podcast-rss)
 - public_page_url: URL публичной страницы этого подкаста, позволяет просматривать подкаст в браузере
 - title: название подкаста
 - description: описание подкаста
@@ -81,7 +81,7 @@ print(response.json())
 
 Возвращает один подкаст по ID.
 
-<div class="api-block">
+<div class="api-block" id="api-podcast-episodes">
 <b>Endpoint:</b> /api/v2/podcasts/<b>podcast_id</b>/episodes/ <br/>
 <b>HTTP methods:</b> GET <br/>
 <b>Авторизация:</b> не требуется<br/>
@@ -105,11 +105,90 @@ print(response.json())
 
 Скачивает файл эпизода в формате MP3.
 
+## Управление подкастами и эпизодами
 
-<!-- 
+Для изменений нужен [JWT-токен](/docs/api/auth/#api-panel-sign-in) пользователя с правом редактировать подкасты. В [публичный список](/docs/api/podcasts/#api-podcast-episodes) входят уже опубликованные эпизоды по `publish_ts`. Параметр `q` ищет по названию и описанию эпизода.
 
-/api/v2/podcasts/<pk>/add_recording/    podcasts.views.PodcastViewSet   podcast-add-recording
-/api/v2/podcasts/<pk>/create_episode_from_track/        podcasts.views.PodcastViewSet   podcast-create-episode-from-track
-/api/v2/podcasts_settings/      podcasts.views.PodcastsPageSettingsViewSet      podcastspagesettings-list
-/api/v2/podcasts_settings/<pk>/ podcasts.views.PodcastsPageSettingsViewSet      podcastspagesettings-detail
--->
+<div class="api-block">
+<b>Путь</b> /api/v2/podcasts/{id}/<br/>
+<b>Методы HTTP</b> PUT, PATCH, DELETE<br/>
+<b>Авторизация</b> JWT-токен<br/>
+</div>
+
+Обновление `title`, `description`, `published` или загружаемого `image`, либо удаление подкаста. Поля `folder`, `feed_url` и `episodes_count` вычисляются автоматически.
+
+<div class="api-block">
+<b>Путь</b> /api/v2/podcasts/{id}/episodes/<br/>
+<b>Методы HTTP</b> POST<br/>
+<b>Авторизация</b> JWT-токен<br/>
+</div>
+
+Для создания эпизода передайте multipart-поля `podcast`, `title` и аудиофайл `path`. Необязательные поля — `description`, `image` и `publish_ts` (секунды Unix в запросе, миллисекунды в ответе). Возвращает HTTP 201 и эпизод.
+
+<div class="api-block">
+<b>Путь</b> /api/v2/podcasts/{id}/episodes/{episode_id}/<br/>
+<b>Методы HTTP</b> PUT, PATCH, DELETE<br/>
+<b>Авторизация</b> JWT-токен<br/>
+</div>
+
+Изменение или удаление эпизода. Ссылки возвращаются в `url` и `public_page_url`.
+
+<div class="api-block">
+<b>Путь</b> /api/v2/podcasts/{id}/create_episode_from_track/<br/>
+<b>Методы HTTP</b> POST<br/>
+<b>Авторизация</b> JWT-токен<br/>
+</div>
+
+Копирует [трек из медиатеки](/docs/api/playlists/#api-music-track) по `track_id`. При успехе возвращает `{}`, при повторяющемся заголовке или ошибке копирования — HTTP 400.
+
+<div class="api-block">
+<b>Путь</b> /api/v2/podcasts/{id}/add_recording/<br/>
+<b>Методы HTTP</b> POST<br/>
+<b>Авторизация</b> JWT-токен<br/>
+</div>
+
+Передайте [ID диджея](/docs/api/djs/#api-djs) в `dj` и [имена файлов](/docs/api/djs/#api-dj-recordings) в `recordings`. При успехе возвращает `{}`.
+
+```http
+POST /api/v2/podcasts/2/create_episode_from_track/
+```
+
+```json
+{
+  "track_id": 40
+}
+```
+
+## Публичный RSS и настройки страницы
+
+<div class="api-block" id="api-podcast-rss">
+<b>Путь</b> /api/v2/podcasts/{id}/feed.xml<br/>
+<b>Методы HTTP</b> GET<br/>
+<b>Авторизация</b> Без авторизации<br/>
+</div>
+
+RSS-лента подкаста. Путь заканчивается на `.xml`.
+
+<div class="api-block">
+<b>Путь</b> /api/podcast_feed/{server_id}/<br/>
+<b>Методы HTTP</b> GET<br/>
+<b>Авторизация</b> Без авторизации<br/>
+</div>
+
+Публичная HTML-страница подкастов станции.
+
+<div class="api-block" id="api-podcast-page-settings">
+<b>Путь</b> /api/v2/podcasts_settings/<br/>
+<b>Методы HTTP</b> GET, POST<br/>
+<b>Авторизация</b> GET доступен без авторизации. Для изменений нужен JWT-токен.<br/>
+</div>
+
+GET с `?server=1` возвращает объект настроек страницы станции. POST создаёт запись настроек с `server`, если записи ещё нет.
+
+<div class="api-block">
+<b>Путь</b> /api/v2/podcasts_settings/{id}/<br/>
+<b>Методы HTTP</b> GET, PUT, PATCH, DELETE<br/>
+<b>Авторизация</b> GET доступен без авторизации. Для изменений нужен JWT-токен.<br/>
+</div>
+
+GET использует ID станции в пути. Для обновления передайте `server` или `?server=1`. Среди полей — `title_tag`, `description_tag` и `block_footer_html`. DELETE выбирает станцию так же, как обновление.

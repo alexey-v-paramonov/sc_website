@@ -7,3 +7,4 @@ seo_title: "Internet Radio API Documentation | Streaming.Center"
 description: "Complete documentation for the Streaming.Center API. Learn how to integrate and automate your Internet radio station with our comprehensive API reference."
 ---
 
+Use this reference with the URL of your broadcaster panel. Start with [Getting started](intro/) and [Authentication](auth/) for request examples. The [Admin API](admin/) covers a separate hosting administration interface.

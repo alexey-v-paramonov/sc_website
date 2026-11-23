@@ -6,10 +6,10 @@ seo_title: "Streaming Channel API for Internet Radio | Streaming.Center"
 description: "Documentation for the Streaming.Center broadcast channels API: listing channels, creating, updating, deleting, and using listener authentication endpoints."
 ---
 
-<div class="api-block">
+<div class="api-block" id="api-channels">
 <b>Endpoint:</b> /api/v2/channels/<br/>
 <b>HTTP method:</b> GET, POST <br/>
-<b>Authentication:</b> GET - not required, POST - required<br/>
+<b>Authentication:</b> GET is public. POST requires a panel JWT.<br/>
 <b>GET query parameters:</b> <br/>
 <b>limit:</b> number of items in the response<br/>
 <b>offset:</b> pagination offset<br/>
@@ -106,7 +106,7 @@ Fields available in the public `GET` response:
 
 - id: unique channel ID.
 - active: whether the channel is active.
-- server: ID of the radio server this channel belongs to.
+- server: ID of the [station](/docs/api/servers/#api-stations) this channel belongs to.
 - bitrate: stream bitrate.
 - listeners: channel listener limit.
 - s_type: stream server type, for example `icecast`, `icecast-kh`, `shoutcast1`, `shoutcast2`, `shoutcast2.6`.
@@ -126,7 +126,7 @@ Fields available in the public `GET` response:
 - ssl_proxy_enabled: whether HTTPS proxy on port 443 is enabled.
 - ssl_proxy_status: HTTPS proxy status.
 - ssl_proxy_url_path: HTTPS proxy URL path.
-- allow_auth_listeners_only: whether only authenticated listeners are allowed.
+- allow_auth_listeners_only: whether access requires a [stream access token](/docs/api/settings/#api-stream-access).
 - queue_size: buffer queue size.
 - burst_size: burst buffer size.
 - listeners_current: current number of listeners on the channel.
@@ -185,8 +185,8 @@ Create a new channel for server ID 1:
 
 import requests
 
-API_KEY = "your_api_key"
-headers = {"SC-API-KEY": API_KEY}
+PANEL_TOKEN = "your_panel_access_token"
+headers = {"Authorization": f"JWT {PANEL_TOKEN}"}
 
 response = requests.post(
     "https://demo.streaming.center:1030/api/v2/channels/",
@@ -257,7 +257,7 @@ On success, the API returns the created channel object as JSON.
 <div class="api-block">
 <b>Endpoint:</b> /api/v2/channels/:id/<br/>
 <b>HTTP method:</b> GET, PUT, DELETE <br/>
-<b>Authentication:</b> GET - not required, PUT and DELETE - required<br/>
+<b>Authentication:</b> GET is public. PUT and DELETE require a panel JWT.<br/>
 <b>Parameters:</b> <br/>
 <b>id:</b> channel ID<br/>
 </div>
@@ -285,8 +285,8 @@ The response returns one channel object with the same fields used in the `result
 
 import requests
 
-API_KEY = "your_api_key"
-headers = {"SC-API-KEY": API_KEY}
+PANEL_TOKEN = "your_panel_access_token"
+headers = {"Authorization": f"JWT {PANEL_TOKEN}"}
 
 response = requests.put(
     "https://demo.streaming.center:1030/api/v2/channels/11/",
@@ -318,8 +318,8 @@ You can pass the same fields used during channel creation. The API returns the u
 
 import requests
 
-API_KEY = "your_api_key"
-headers = {"SC-API-KEY": API_KEY}
+PANEL_TOKEN = "your_panel_access_token"
+headers = {"Authorization": f"JWT {PANEL_TOKEN}"}
 
 response = requests.delete(
     "https://demo.streaming.center:1030/api/v2/channels/11/",
@@ -363,7 +363,7 @@ The endpoint returns an empty HTTP 200 response and sets these headers:
 - icecast-auth-user: always `1`.
 - icecast-auth-message: always `auth`.
 
-<div class="api-block">
+<div class="api-block" id="api-icecast-auth">
 <b>Endpoint:</b> /api/v2/channels/:id/auth_listener/<br/>
 <b>HTTP method:</b> GET, POST <br/>
 <b>Authentication:</b> not required<br/>
@@ -387,7 +387,7 @@ The endpoint accepts parameters in the query string or in the POST body.
 - ip: listener IP address.
 - agent: listener user-agent.
 
-If the token extracted from `mount` exists in the authorized listener table and is active for the channel server, the endpoint allows the connection.
+If the token extracted from `mount` exists in the [authorized listener table](/docs/api/settings/#api-stream-access) and is active for the channel server, the endpoint allows the connection.
 
 #### Example response
 
@@ -398,4 +398,44 @@ The endpoint returns an empty HTTP 200 response and sets these headers:
 
 #### How to get the total number of listeners for a radio station
 
-To get the total listener count for a radio station, request the channel list through `/api/v2/channels/?server=<server_id>` and sum the `listeners_current` field only for channels that are online. The `state` field helps identify the current channel state: `0` means offline, `1` means online but without an active source connection, and `2` means online and actively broadcasting. If you need the current total listeners across all live streams, you will usually sum `listeners_current` for channels with `state = 2`.
+To get the total listener count for a radio station, request the channel list through [`/api/v2/channels/?server=<server_id>`](/docs/api/channels/#api-channels) and sum the `listeners_current` field only for channels that are online. The `state` field helps identify the current channel state: `0` means offline, `1` means online but without an active source connection, and `2` means online and actively broadcasting. If you need the current total listeners across all live streams, you will usually sum `listeners_current` for channels with `state = 2`.
+
+For an installation-wide count, use [`GET /api/total_listeners/`](/docs/api/statistics/#api-total-listeners). When preparing a new channel, you can look up a [free port](/docs/api/utilities/#api-free-port).
+
+## Additional channel routes
+
+<div class="api-block">
+<b>Endpoint</b> /api/v2/channels/{id}/<br/>
+<b>HTTP methods</b> PATCH<br/>
+<b>Authentication</b> Panel JWT<br/>
+</div>
+
+Partial update using the writable properties from PUT. Returns the updated channel.
+
+<div class="api-block">
+<b>Endpoint</b> /api/v2/channels/{id}/add_listener_allow/<br/>
+<b>HTTP methods</b> GET, POST<br/>
+<b>Authentication</b> Public<br/>
+</div>
+
+Icecast listener connection callback for channels that allow the connection. Accepts Icecast callback fields such as `mount`, `client`, `ip`, and `agent` in GET query parameters or the POST body. Returns HTTP 200 with `icecast-auth-user: 1` and `icecast-auth-message: auth`.
+
+<div class="api-block">
+<b>Endpoint</b> /api/v2/channels/{id}/remove_listener/<br/>
+<b>HTTP methods</b> GET, POST<br/>
+<b>Authentication</b> Public<br/>
+</div>
+
+Icecast disconnect callback. Returns HTTP 200 and Icecast headers.
+
+<div class="api-block">
+<b>Endpoint</b> /api/links/<br/>
+<b>HTTP methods</b> GET<br/>
+<b>Authentication</b> Public<br/>
+</div>
+
+Pass `c` (channel ID) and `t`: `winamp` returns M3U, `wmp` returns ASX, and `itunes` returns PLS. Default is `winamp`.
+
+```http
+GET /api/links/?c=11&t=itunes
+```
