@@ -294,3 +294,31 @@ GET /api/v2/analytics/live/?server=1
 [В `overview`](/docs/api/statistics/#api-analysis-overview) объект `totals` включает `sessions_started`, `qualified_started`, `short_started`, `short_share`, `listeners`, `listeners_all`, `listening_s`, `listening_hours`, `average_audience` и `bytes`. Сравнение с предыдущим периодом находится в `previous` и `trend`. Объекты `legacy` и `service_health` описывают исторические данные и состояние потоков. Для CSV-выгрузки таблицы отказов или сбоев укажите `section=rejections` или `section=outages`.
 
 [В `heatmap`](/docs/api/statistics/#api-analysis-heatmap) каждая строка содержит `weekday` (0 — понедельник), `hour`, `available`, `listening_s` и `sessions_started`. [В `durations`](/docs/api/statistics/#api-analysis-durations) массив `buckets` содержит `lower_s`, `upper_s`, `sessions` и `total_s`. Средняя и медианная длительность сеанса возвращаются в `mean_s` и `median_s`.
+
+## Значения параметров аналитики
+
+| Поле или параметр | Значение |
+| --- | --- |
+| `interval` | `15m` — интервалы по 15 минут. `hour`, `day`, `week` и `month` группируют по часу, дню, неделе и месяцу соответственно. |
+| `dim` | `country` и `city` группируют по стране и городу слушателя, `client` — по плееру или клиенту, `device` — по типу устройства, `os` — по операционной системе, `channel` — по каналу, `protocol` — по протоколу доставки. |
+| `type`, `by` | Тип рекламы `type`: `item` — отдельная вставка, `block` — блок джинглов, `intro` — вступление при подключении. Вставки группируются по `item` (аудио) или `rule` (правило). Для блоков используется `block`, для вступлений — `intro`. |
+| `page`, `page_size` | В отчёте о выходах рекламы `page` начинается с 1. `page_size` — число строк на странице, по умолчанию 50, максимум 200. |
+
+В примере используется станция с ID 1, рекомендуемый интервал обновления 10 секунд и оценочная задержка счётчика слушателей HLS 60 секунд. `as_of` — время снимка в UTC. `export=csv` возвращает данные через запятую, `export=xlsx` — книгу Excel.
+
+## ID форматов отчётов
+
+Передайте `id` из [списка форматов](/docs/api/statistics/#api-royalty-formats) в параметре `format` при просмотре или скачивании. Без `country` возвращаются все форматы. Для одной страны передайте двухбуквенный код.
+
+| Поле или параметр | Значение |
+| --- | --- |
+| `AU` | `au_apra` — APRA AMCOS / PPCA, Австралия. |
+| `BR` | `br_ecad` — ECAD, Бразилия. |
+| `CA` | `ca_resound_t8m` — ежемесячный отчёт Re:Sound по тарифу 8, `ca_socan` — SOCAN. Канада. |
+| `DE` | `de_gvl` — GVL, Германия. |
+| `FR` | `fr_sacem` — SACEM, Франция. |
+| `GB` | `uk_ppl_prs` — PPL/PRS, Великобритания. |
+| `IT` | `it_scf` — SCF, `it_siae` — SIAE. Италия. |
+| `MX` | `mx_sacm` — SACM / EMMAC-SACM, Мексика. |
+| `RU` | `ru_rao` — РАО, вещание, `ru_rao_public` — РАО, публичное исполнение, `ru_vois` — ВОИС. Россия. |
+| `US` | `us_soundexchange` — SoundExchange, США. |

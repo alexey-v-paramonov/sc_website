@@ -109,3 +109,9 @@ POST /api/v2/panel_users/roles/
 ```json
 {"name":"Analyst","description":"Audience reporting","permissions":{"statistics":"read"}}
 ```
+
+## Role levels and account states
+
+A role permission value is `none` (no access), `read` (read access), or `write` (write access, which includes read where applicable). Action-only permissions use `none` or `write`. Query the permission catalog for the values each key accepts. In the account creation example, `roles: [2]` assigns the role with ID 2.
+
+Account `status` is `active` (access enabled), `disabled` (inactive user), or `expired` (access expiration has passed).

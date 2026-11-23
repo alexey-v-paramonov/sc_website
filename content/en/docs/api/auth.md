@@ -143,3 +143,7 @@ Send current `password` to disable 2FA. Returns `{}`.
 </div>
 
 Replace previously issued recovery codes. Returns new `recovery_codes`.
+
+## Authentication example values
+
+The example creates a playlist on station ID 1. `is_random: true` enables shuffle and `false` uses sequential playback. The `otp` and `code` values are strings from the authenticator app. Keep any leading zeroes.

@@ -24,7 +24,7 @@ This endpoint lets you retrieve scheduler events for a selected time range and c
 When you request the event list, the API:
 
 - loads events for the selected server;
-- expands periodic events into real occurrences by weekday and week-of-month rules;
+- expands periodic events into real occurrences by weekday and four-week cycle rules;
 - automatically calculates `finish_date`, `finish_time`, and `end_ts` based on the next event or the end of a radioshow;
 - may add a service event representing the end of a radioshow when `playlist_after_radioshow` or `rotation_after_radioshow` is configured.
 
@@ -37,7 +37,7 @@ Get the scheduler for server ID 1 within a specific range:
 import requests
 
 response = requests.get(
-    "https://demo.streaming.center:1030/api/v2/grid/?server=1&start_ts=1744041600&end_ts=1744646400&utc=1"
+    "https://demo.streaming.center:1030/api/v2/grid/?server=1&start_ts=1775433600&end_ts=1776038400&utc=1"
 )
 print(response.json())
 
@@ -85,9 +85,9 @@ print(response.json())
     "local_time": "08:00:00",
     "timezone": "Europe/Moscow",
     "parent_id": null,
-    "start_ts": 1744099200,
+    "start_ts": 1775624400,
     "start_ts_utc_readable": "2026-04-08T05:00:00Z",
-    "end_ts": 1744106400
+    "end_ts": 1775631600
   },
   {
     "id": null,
@@ -98,9 +98,9 @@ print(response.json())
     "break_track": false,
     "start_playlist_from_beginning": true,
     "start_date": "2026-04-08",
-    "start_time": "10:00:00",
+    "start_time": "07:00:00",
     "finish_date": "2026-04-08",
-    "finish_time": "12:00:00",
+    "finish_time": "09:00:00",
     "playlist": 1,
     "playlist_after_radioshow": null,
     "rotation_after_radioshow": null,
@@ -112,12 +112,12 @@ print(response.json())
     "allow_song_requests_after": false,
     "color": "#a2e47a",
     "color2": null,
-    "local_time": "10:00:00",
+    "local_time": "07:00:00",
     "timezone": "UTC",
     "parent_id": 10,
-    "start_ts": 1744106400,
+    "start_ts": 1775631600,
     "start_ts_utc_readable": "2026-04-08T07:00:00Z",
-    "end_ts": 1744113600
+    "end_ts": 1775638800
   }
 ]
 
@@ -143,10 +143,10 @@ print(response.json())
 - wd_fri: repeat on Friday.
 - wd_sat: repeat on Saturday.
 - wd_sun: repeat on Sunday.
-- week_1: first week of the month enabled.
-- week_2: second week of the month enabled.
-- week_3: third week of the month enabled.
-- week_4: fourth week of the month enabled.
+- week_1: slot 1 of the four-week cycle enabled.
+- week_2: slot 2 of the four-week cycle enabled.
+- week_3: slot 3 of the four-week cycle enabled.
+- week_4: slot 4 of the four-week cycle enabled.
 - playlist: [playlist ID](/docs/api/playlists/#api-playlists) if the event starts a playlist or a radioshow playlist.
 - playlist_after_radioshow: [playlist ID](/docs/api/playlists/#api-playlists) that should start after a radioshow.
 - rotation_after_radioshow: [rotation ID](/docs/api/rotations/#api-rotations) that should start after a radioshow.
@@ -167,7 +167,7 @@ print(response.json())
 
 #### Periodic event behavior
 
-If `periodicity=periodic`, the event is expanded in the list according to selected `wd_*` weekdays and `week_1` ... `week_4` month-week flags. If a matching `onetime` event exists at the same time, the `onetime` event takes priority and the periodic occurrence is omitted from the response.
+If `periodicity=periodic`, the event is expanded in the list according to selected `wd_*` weekdays and `week_1` ... `week_4` four-week cycle flags. If a matching `onetime` event exists at the same time, the `onetime` event takes priority and the periodic occurrence is omitted from the response.
 
 #### Example: POST
 
@@ -218,7 +218,7 @@ Main parameters used when creating a scheduler event:
 - finish_date: optional finish date.
 - finish_time: optional finish time.
 - wd_mon, wd_tue, wd_wed, wd_thu, wd_fri, wd_sat, wd_sun: weekdays for a `periodic` event.
-- week_1, week_2, week_3, week_4: enabled month weeks for a `periodic` event.
+- week_1, week_2, week_3, week_4: enabled four-week cycle slots for a `periodic` event.
 - playlist: [playlist ID](/docs/api/playlists/#api-playlists).
 - playlist_after_radioshow: [playlist ID](/docs/api/playlists/#api-playlists) after a radioshow.
 - rotation_after_radioshow: [rotation ID](/docs/api/rotations/#api-rotations) after a radioshow.
@@ -238,7 +238,7 @@ Main parameters used when creating a scheduler event:
 When creating or updating an event, the API validates model constraints and may return these validation errors:
 
 - `repeat_week_days_not_set`: no weekday selected for a `periodic` event.
-- `repeat_weeks_not_set`: no month week selected for a `periodic` event.
+- `repeat_weeks_not_set`: no week slot selected for a `periodic` event.
 - `playlist_required`: the event requires a playlist, but `playlist` is empty.
 - `time_slot_busy`: the selected slot is already occupied by another event.
 
@@ -375,3 +375,14 @@ For [`GET /api/v2/grid/`](/docs/api/schedule/#api-schedule), it is best to alway
 ## Partial updates
 
 [`PATCH /api/v2/grid/{id}/`](/docs/api/schedule/#api-schedule-event) updates selected event fields. Send a panel JWT with schedule write permission or a valid API key and use the event fields and scheduling constraints described above. The response contains the updated event.
+
+## Schedule values
+
+| Field or parameter | Meaning |
+| --- | --- |
+| `cast_type` | `playlist` starts a playlist, `radioshow` plays a show with its optional follow-up, `relay` starts a relay, `rotation` starts a rotation. |
+| `periodicity` | `onetime` runs once on `start_date`. `periodic` repeats on the selected weekdays and week slots. |
+| `start_ts`, `end_ts`, `utc` | Range boundaries in Unix seconds. Set `utc=1` to interpret the dates in UTC. Omitting `utc` or setting `utc=0` uses the server’s local time. |
+| `week_1` through `week_4` | Enable slots 1–4 in the repeating four-week ISO week cycle. Each flag is `true` for an enabled slot or `false` for a skipped slot. |
+
+The query example covers April 6 through April 13, 2026, with both boundaries at 00:00 UTC. The show starts at 08:00 Moscow time, or 05:00 UTC. Example IDs are station 1, event 10, playlist 2 for the show, and playlist 1 for the follow-up. The generated ending event uses `parent_id: 10` to refer to the show. `color` and `color2` are hexadecimal colors for the event and its follow-up. The response timestamps `start_ts` and `end_ts` are Unix seconds.

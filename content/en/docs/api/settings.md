@@ -186,3 +186,27 @@ List or add IP entries. Create with `server` and `ip_or_mask` containing an IP a
 </div>
 
 Read, update, or delete an IP entry.
+
+## Setting values
+
+| Field or parameter | Meaning |
+| --- | --- |
+| `crossfade_mode` | `1` fade out the first track and fade in the next, `2` fade out with next track at normal volume, `3` first track ends at normal volume and next fades in, `4` mix without fades. |
+| `autodj_resume_mode` | `0` continue where playback stopped, `1` resume with the next track. |
+| `random_mode` | `1` choose by score, `2` choose from a shuffled permutation. |
+| `request_moderation` | `0` allow all, `1` premoderate, `2` registered-users-only setting. |
+| `stereotool_status` | `0` off, `1` on, `2` turning on, `3` turning off, `4` error. `stereotool_status_debug` provides diagnostic text. |
+| `status` in URL branding | `0` inactive, `1` configuring, `2` active, `3` DNS error, `4` Apache error, `5` TLS error, `6` nginx error, `7` panel error, `8` stream error, `9` other error. `ip` is the target host address and `branded_url` is the configured hostname. |
+
+In the PATCH example, 3 is the settings record ID. The strings `"3.25"` and `"1.50"` set transitions of 3.25 seconds between tracks and 1.50 seconds between DJ sources, respectively.
+
+### Audio, metadata, and library settings
+
+- `trim_silence` enables silence trimming. `trim_silence_db` and `trim_silence_end_db` set start and end thresholds for tracks. `jingle_trim_silence_start_db` and `jingle_trim_silence_end_db` set the thresholds for jingles. All thresholds are −80 to −20 dB and default to −40 dB.
+- `dc_blocker_enabled` enables the DC filter. `eq_enabled` enables the equalizer. Fields `m_eq_frequency_0` through `m_eq_frequency_9` set gain in dB for 31, 62, 125, 250, 500, 1000, 2000, 4000, 8000, and 16000 Hz, respectively. Zero means no gain adjustment.
+- `normalize_volume` normalizes track levels. `emergency_restart` restarts a stopped station. `jingles_play_all_colliding` plays all jingles scheduled for the same time.
+- `djname_in_metadata` includes the presenter’s name. `dj_caption` is the fallback for a live connection without metadata. `playlist_meta_empty` is the fallback when the playlist is empty. `use_static_metadata` enables the fixed `static_metadata` text. `output_meta_format` formats stream metadata, and `request_meta_format` formats metadata for requested tracks.
+- `playlist_creating_dirs` creates playlists from folders. `jingles_create_dirs` creates jingle groups from folders. `set_missing_tags` fills missing tags, and `search_cover_art` enables cover lookup. `media_server` selects the library station by ID and `playlist_files_per_page` controls the playlist page size in the panel.
+- `request_notification_email` receives request notifications. `tunein_station_id`, `tunein_partner_id`, and `tunein_partner_key` are the TuneIn station ID, partner ID, and partner key. `timezone_name` is an IANA zone. `timezones_available` lists the zones offered by the panel.
+
+`library_rescan_state` is `never` when there is no previous rescan, `scheduled` when a request awaits completion, and `completed` when the latest request has finished. `library_rescan_requested_at` and `library_rescan_completed_at` are UTC timestamps. `library_rescan_next_allowed_at` is the next time a rescan can be requested.

@@ -60,3 +60,7 @@ Mark the request as moderated. Returns `{}`.
 Pass `?server=1` to remove unplayed requests for the station.
 
 The request object includes `id`, `server`, `person`, `message`, `moderated`, the nested `all_music` track, and `dttm` and `played_at` timestamps in Unix milliseconds. `played_at` is null until playback. Public GET responses omit `src_ip`.
+
+## Request filters and example IDs
+
+The example sends `server_id: 1` for station ID 1 and `music_id: 40` for library track ID 40. For `with_name` and `with_message`, `true` excludes empty values and `false` includes them. Omit `show_pending` to exclude unplayed requests, or pass `show_pending=1` to include them. Any nonempty query value for `show_pending`, including `0`, includes unplayed records.

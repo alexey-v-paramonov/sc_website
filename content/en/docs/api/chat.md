@@ -262,3 +262,14 @@ Read or partially update the station’s chat widget settings. Returns the widge
 Message histories return `messages`, `has_more`, and `next_before`. Pass `next_before` as the next request’s `before` to load older messages. Page size is limited to 50. Conversation lists return `items`, `has_more`, and a conversation-specific `next_before` cursor.
 
 Message sends return `id`, `message_id`, `duplicate`, `version`, and `message`. A message includes the sender’s `author_id`, `author_name`, `author_kind`, `text`, `created_at`, optional `photo`, reaction counts and lists, and either a `room_id` or a `conversation_id`.
+
+## Chat and moderation values
+
+| Field or parameter | Meaning |
+| --- | --- |
+| `size` | `display` for the display image or `thumb` for the thumbnail. |
+| `emoji` | Emoji character or its hexadecimal Unicode codepoint key from the chat widget’s reaction set. For example, `1f44d` is 👍. Availability follows the widget’s reaction catalog. |
+| `kind`, `until` | `mute` prevents sending messages and `ban` blocks chat access. `until` is the expiration time or `null` for no expiration. |
+| `reason_code` | `spam`, `abuse` (abusive behavior), `off_topic`, or `other`. |
+
+In the example, `12` is the room ID, and the value of `client_id` is an opaque client-generated message identifier for retry deduplication. Staff listener lookup uses a one-based `page` and a `limit` of 25 by default, at most 100 results per page.

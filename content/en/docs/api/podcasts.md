@@ -44,7 +44,7 @@ print(response.json())
         "description": "There are many variations of passages of Lorem Ipsum",
         "published": true,
         "server": 1
-    },
+    }
 ]
 {{< / highlight >}}
 
@@ -192,3 +192,7 @@ GET with `?server=1` returns the station’s page settings object. POST creates 
 </div>
 
 GET uses the station ID in the path. For updates, send `server` or supply `?server=1`. Fields include `title_tag`, `description_tag`, and `block_footer_html`. DELETE uses the same station selector as update.
+
+## Podcast example values
+
+`server: 1` identifies the station, `id: 2` identifies the sample podcast and is reused in the RSS and episode-creation paths, and `episodes_count: 5` means five visible episodes. `track_id: 40` identifies the library track to copy.

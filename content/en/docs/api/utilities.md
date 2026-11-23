@@ -78,3 +78,9 @@ GET /api/v2/admin_notifications/
   "items": []
 }
 ```
+
+## Utility values
+
+`du_free_gb` and `du_total_gb` are free and total space in binary gigabytes. The `*_mb` variants use binary megabytes. `show_mb` indicates which display unit to use, `du_overspending` is usage above quota in megabytes, and `is_unlimited` indicates an unlimited disk quota. `port` is the free streaming port number.
+
+Voiceover `text` is the text to synthesize, `lang` selects a language/locale, `voice` selects a voice for that locale, `speed` is its speaking rate multiplier, and `emotion` is the voice style. Available combinations depend on the voiceover service and are shown in the panel’s voice picker.

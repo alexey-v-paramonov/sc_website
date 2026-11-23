@@ -44,7 +44,7 @@ print(response.json())
         "description": "There are many variations of passages of Lorem Ipsum",
         "published": true,
         "server": 1
-    },
+    }
 ]
 {{< / highlight >}}
 
@@ -192,3 +192,7 @@ GET с `?server=1` возвращает объект настроек стран
 </div>
 
 GET использует ID станции в пути. Для обновления передайте `server` или `?server=1`. Среди полей — `title_tag`, `description_tag` и `block_footer_html`. DELETE выбирает станцию так же, как обновление.
+
+## Значения в примерах подкастов
+
+`server: 1` — ID станции, `id: 2` — ID подкаста, повторяющийся в путях RSS и создания эпизода. `episodes_count: 5` означает пять видимых эпизодов. `track_id: 40` — ID копируемого трека медиатеки.

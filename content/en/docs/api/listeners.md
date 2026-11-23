@@ -152,3 +152,13 @@ GET returns `blocks`. POST with JSON `account` blocks that listener and returns 
 </div>
 
 Send `station` for [a chat connection](/docs/api/chat/#api-chat-rooms). HTTP 201 returns `ticket` and `expires_in` (30 seconds).
+
+## Listener parameter values
+
+Challenge `purpose` is `register` for account creation, `resend` for another confirmation email, or `reset` for password reset. Omitting it requests a general challenge. `email_verified` is `true` for a confirmed email and `false` otherwise. `account` in a block request identifies the other listener. `station` in a ticket request identifies the station that the ticket grants access to.
+
+## Profile and challenge limits
+
+`display_name` is the visible listener name, with 3–32 characters after trimming spaces. `email` is the address used for sign-in and confirmation. `password` is at least 8 characters and must pass strength checks. `language` is a locale tag of at most 16 characters and defaults to `en` (English). Where a translation is missing, the server uses English.
+
+`altcha` contains the solved challenge. The challenge expires after 10 minutes. The messaging `ticket` is a separate temporary credential and `expires_in` gives its lifetime in seconds.

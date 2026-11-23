@@ -141,3 +141,18 @@ Returns `presets` for supported platforms, `editable_fields` with value ranges a
 Use `label` for the panel label, `stream_key` for the platform’s stream key, and `enabled` to activate the destination. `audio_only` selects audio-only mode where supported. In video mode, `asset` is an uploaded background, `cover_enabled` and `title_enabled` control overlays, and `base_color` and `title_color` use hex colors. `profile_overrides` supplies permitted encoding overrides.
 
 The `platform` values are `youtube`, `rutube`, `vk`, `telegram`, `facebook`, `tiktok`, `instagram`, `twitch`, `mixcloud`, `ok`, `x`, and `custom`. The response includes `effective_profile` (the resulting encoding settings), `audio_only_supported`, `encoder_editable`, and any uploaded asset’s dimensions and duration.
+
+## Social streaming statuses
+
+`status` is `disabled` (destination disabled), `offline` (engine stopped), `connecting` (connection opening), `live` (broadcasting), `degraded` (broadcast is falling behind), `error` (processing or connection fault), or `expired` (platform ended the session). In the start example, `1` is the station ID.
+
+## Custom encoder parameters
+
+| Field or parameter | Meaning |
+| --- | --- |
+| `width`, `height` | Even video dimensions in pixels. Width is 640–1920 and height is 360–1920. |
+| `video_bitrate_k`, `video_maxrate_k` | Target and maximum video bitrate in kbps. Both accept 500–20000 and must match. |
+| `video_bufsize_k` | Encoder buffer size in kilobits, 500–40000. Its numeric value must be at least the maximum bitrate value. |
+| `keyframe_interval_ms` | Time between keyframes in milliseconds, 1000–4000. |
+
+Only destinations with `platform: custom` accept `profile_overrides`. The presets endpoint returns the available fields and ranges in `editable_fields`.

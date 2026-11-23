@@ -38,7 +38,7 @@ Successful login example (HTTP 200):
 ```json
 {
   "key": "<dj-rest-auth-token>",
-  "user": { /* token serializer includes nested user profile */ }
+  "user": { "username": "admin" }
 }
 ```
 
@@ -215,7 +215,7 @@ Extra action:
 ```json
 {
   "key": "<token_key>",
-  "user": { /* ProfileResellerSerializer or ProfileSerializer nested */ }
+  "user": { "username": "reseller" }
 }
 ```
 
@@ -593,3 +593,18 @@ Response: LicenseSerializer JSON with model fields (`key`, `local_key`, `version
 ## Errors & conventions
 - Validation and serializer errors return HTTP 400 with a JSON mapping of field -> list of error codes/messages.
 - Many endpoints return a simple `{}` or `{"success": true}` on success for side-effect operations.
+
+## Account, schedule, and template codes
+
+| Field or parameter | Meaning |
+| --- | --- |
+| `account_type` | `0` administrator, `1` reseller, `2` broadcaster. The profile example uses `2` for a broadcaster. |
+| `status` for an account | `0` creating, `1` deleting, `2` running, `3` suspended, `4` processing error, `5` suspending, `6` unsuspending, `7` on hold, `8` restore failed. |
+| `type` for backup scheduling | `0` daily, `1` weekly, `null` no automatic schedule. `action: backup` starts a copy, `save` saves settings for one account, and `save_all` applies settings to all accounts visible to the caller. `backup_quick` enables quick mode. |
+| `email_type` | `0` broadcaster created, `1` reseller created, `2` administrator created, `3` administrator updated, `4` reset instructions, `5` reset confirmation, `6` transfer limit approaching, `7` transfer limit exceeded, `8` account reinstated, `9` bitrate limit exceeded, `10` suspended, `11` reactivated, `12` disk quota approaching, `13` disk quota exceeded, `14` broadcaster reset instructions. The types endpoint returns the available pairs. |
+
+`pk` identifies the account in each example, including the nested `owner.pk` for its owner. Numeric `limit_*` fields give maximum counts in the named resource, such as `limit_stations: 1` (one station) and `limit_listeners: 100` (100 listeners). `accounts_current: 0` means no broadcaster accounts have been assigned. `files: 10` counts the files transferred.
+
+In the statistics examples, `cpu_cores` counts CPU cores. `broadsters_num`, `resellers_num`, and `listeners_num` count broadcasters, resellers, and listeners. `r_kbps` and `t_kbps` are receive and transmit rates in KiB/s. `du_free` and `du_total` are bytes, and the corresponding `*_readable` fields format them as text. `ram_free_megabytes` and `ram_total_megabytes` are memory sizes in megabytes. `uptime` is server uptime text.
+
+For backup scheduling, `when` is the hour from 0 (midnight) to 23 (23:00) for daily backups, or the weekday from 1 (Monday) to 7 (Sunday) for weekly backups. The example uses `type: 0` and `when: 1` to schedule a backup daily at 01:00. `action: retry_remote` retries a remote copy and takes the destination ID in `remote_id`.

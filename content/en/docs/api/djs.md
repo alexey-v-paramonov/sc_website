@@ -144,3 +144,9 @@ GET /api/v2/djs/7/recording_air_timeline/?file=show.mp3
   "recording_type": "raw_input"
 }
 ```
+
+## Buffer and recording values
+
+`dj_buffer_ms` accepts `0` (no jitter reserve), `1000` (1 second), `3000` (3 seconds), `8000` (8 seconds), `30000` (30 seconds), or `60000` (60 seconds). In the recording example, `7` is the DJ ID and `at_ms: 1200` marks the start of on-air playback 1.2 seconds into the raw recording.
+
+`volume_change` is the percentage adjustment to the incoming source level. Use 0 for no adjustment. `meta_charset` names the stream metadata encoding and defaults to `UTF-8`. In `priorities`, each key is a DJ ID and its integer value is the desired priority for that DJ.

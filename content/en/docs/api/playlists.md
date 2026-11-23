@@ -49,7 +49,7 @@ print(response.json())
       "is_random":true,
       "on_air":false,
       "directory_name":"",
-      "current_track_order":-9,
+      "current_track_order":-8000000,
       "server":1
    },
    {
@@ -1113,3 +1113,41 @@ Use [`PATCH /api/v2/playlists/{id}/`](/docs/api/playlists/#api-playlist-detail) 
 Use `PUT` or [`PATCH /api/v2/playlists/{playlist_pk}/tracks/{id}/`](/docs/api/playlists/#api-playlist-track-detail) with a nested `track` object containing both `author` and `title`. This changes the underlying library track’s tags. Omitted title or artist values can be cleared, so send both. To add an existing track to a playlist, use [`add_tracks_ordered`](/docs/api/playlists/#api-playlist-add-tracks) with library IDs. To get the compact listing, set `compact=1` when listing playlist tracks.
 
 `GET /api/v2/` returns links to the legacy [`forecast`](/docs/api/playlists/#api-forecast) and [`playlist_tracks`](/docs/api/playlists/#api-legacy-playlist-tracks) collections. Those routes also expose format suffixes such as [`/api/v2/playlist_tracks.json?playlist_id=12`](/docs/api/playlists/#api-legacy-playlist-tracks).
+
+## Library filters and track values
+
+| Field or parameter | Meaning |
+| --- | --- |
+| `order` | Library query sort. `1` artist, `2` title, `3` random. Omit for title followed by artist. |
+| `genre`, `search_q` | Exact genre and artist/title substring, respectively. |
+| `with_tags_only`, `remote`, `requestable` | Send `1` to require both artist and title tags, only remote tracks, or only requestable tracks, respectively. Omit to disable the filter. Any nonempty query value, including `0`, activates these filters. |
+| `tempo` | `1` below 75 BPM, `2` 75–94 BPM, `3` 95–114 BPM, `4` 115–134 BPM, `5` 135 BPM and above. |
+| `bpm`, `bpm_min`, `bpm_max` | Tempo in beats per minute. Direct track updates accept 40–250 BPM. Filters accept 0–400 BPM and include both bounds. |
+| `energy`, `danceability` | `1` very low, `2` low, `3` medium, `4` high, `5` very high. |
+| `musical_key` | Values `0`–`11` are major and `12`–`23` minor. Each sequence runs in semitone order C, C♯, D, D♯, E, F, F♯, G, G♯, A, A♯, B. For example, `0` is C major and `12` is C minor. `null` clears the key. |
+| `ending` | `0` unknown, `1` abrupt ending, `2` fade-out. |
+| `vocal`, `lead_gender`, `character` | `vocal`: `1` vocal, `2` instrumental. `lead_gender`: `1` male, `2` female, `3` mixed. `character`: `1` acoustic, `2` electronic. These fields accept `null`. |
+| `moods` | Mood bits are `1` happy, `2` sad, `4` relaxed, `8` aggressive, `16` party. For a track write, add the selected bits. `0` selects no moods and `null` clears the value. In a query, pass individual bit values, not their sum. |
+| `audio_format` | Stored audio format codes `0` unknown, `1` MP3, `2` FLAC, `3` AAC. |
+| `playback_region_calculation_status` | `1` queued, `2` calculating, `3` done, `4` failed. `null` means no calculation state. |
+| `fade_out_ms` | Fade-out duration in milliseconds. Accepts a nonnegative integer or `null`. |
+| `reset_overrides` | Array of field names to return to automatic analysis. Accepted names are `bpm`, `tempo`, `energy`, `musical_key`, `ending`, `fade_out_ms`, `genre`, `vocal`, `lead_gender`, `moods`, `danceability`, and `character`. |
+| `dupes` | `filename` groups by basename and is the default. `title` groups by combined artist and title. |
+
+Analysis choice filters accept one value, comma-separated values, or repeated query keys. Alternatives within one field match any selected value. Filters for different fields apply together.
+
+The playlist examples use station 1, DJ 4, and library track IDs such as 40, 52 and 70. Arrays sent to `add_tracks_ordered` or `track_queue` contain library track IDs. Arrays for `order_tracks`, `bulk_move`, and `bulk_delete` contain playlist entry IDs such as 101–103. `position: 5` is the requested target order. `added` and `removed` in the membership response contain playlist IDs. `flag: 0` is the default stored playlist-entry flag. `current_track_order` is the playback cursor; `-8000000` is its reset value before playback starts at the beginning.
+
+`playback_start_time: 0.85` and `playback_end_time: 176.12` are offsets in seconds from the beginning of the original file. `length` and playlist `duration` are milliseconds. `human_up`, `human_down`, `up`, and `down` are vote counts. `updated`, `moved_count`, and `failed_count` count the affected records.
+
+## Flags and playback offsets
+
+| Field or parameter | Meaning |
+| --- | --- |
+| `is_ad` | For the library query, `1` or `true` limits results to ads. Other or omitted values leave all tracks eligible. On a write, send the JSON boolean to mark or unmark an ad. |
+| `fs` | In a body or query, `true`, `1`, `yes`, or `on` requests removal from disk as well as the playlist. Use `false` or omit to remove from the playlist only. |
+| `compact` | `1`, `true`, or `True` selects the compact playlist entries. Other or omitted values use the full track representation. |
+| `with_current` | Send `1` to include the current track in the legacy forecast and omit to start after it. Any nonempty query value enables the flag. |
+| `playback_start_time`, `playback_end_time` | In seconds from the start of the file. `0` or `null` means the file boundary on that side. A custom end must follow the start and stay within the file. |
+| `mix_in_time`, `mix_out_time` | Mix-in and mix-out offsets in seconds from the beginning of the file. Use `null` to derive the point from the station crossfade. The resulting points must be ordered and inside the playback region. |
+| `position` | When reordering playlists, `0` is the first slot. When moving tracks in bulk within a playlist, `1` is the first slot. Therefore `position: 5` in the bulk track move example targets the fifth place. |

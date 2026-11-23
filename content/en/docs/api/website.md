@@ -150,3 +150,7 @@ PUT /api/v2/player_widget_settings/1/
 ```
 
 The chat and call widget configurations both accept `background_color`, `text_color`, and `accent_color` as three- or six-digit hex values. `width` accepts 100–2000 pixels and `height` accepts 100–3000 pixels. The call widget also accepts `height: 0`. The chat widget accepts `default_room`, [a room ID from the same station](/docs/api/chat/#api-chat-rooms) or null. Use the widget settings routes in [Chat](/docs/api/chat/#api-chat-widget) and [Calls](/docs/api/calls/#api-call-widget).
+
+## Widget counts and sorting
+
+The player example uses station ID 1 and channel IDs 11 and 12. `history_limit: 10` requests a history display of up to ten tracks. For `ordering` in the track request widget, use `1` for artist A–Z, `2` for title A–Z, or `3` for random order. `tracks_num` is the number of tracks shown and `track_width` is the card width in pixels. `ip_timeout` and `track_timeout` are milliseconds between requests from the same IP or for the same track.

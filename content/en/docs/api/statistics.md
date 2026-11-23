@@ -294,3 +294,31 @@ Date-range responses include `range` with local `date_from` and `date_to` and co
 [In `overview`](/docs/api/statistics/#api-analysis-overview), `totals` includes `sessions_started`, `qualified_started`, `short_started`, `short_share`, `listeners`, `listeners_all`, `listening_s`, `listening_hours`, `average_audience`, and `bytes`. `previous` and `trend` provide comparison data. The `legacy` and `service_health` objects describe legacy coverage and stream service health. For overview CSV, use `section=rejections` or `section=outages` to export those tables.
 
 [In `heatmap`](/docs/api/statistics/#api-analysis-heatmap), each row contains `weekday` (0 is Monday), `hour`, `available`, `listening_s`, and `sessions_started`. [In `durations`](/docs/api/statistics/#api-analysis-durations), `buckets` hold `lower_s`, `upper_s`, `sessions`, and `total_s`. `mean_s` and `median_s` summarize session duration.
+
+## Analytics parameter values
+
+| Field or parameter | Meaning |
+| --- | --- |
+| `interval` | `15m` means 15-minute buckets. `hour`, `day`, `week`, and `month` group by hour, day, week, and month, respectively. |
+| `dim` | `country` or `city` groups by listener location, `client` by player or client, `device` by device type, `os` by operating system, `channel` by stream channel, `protocol` by delivery protocol. |
+| `type`, `by` | Ad `type` is `item` (individual scheduled insert), `block` (jingle block), or `intro` (connection intro). Group an item by `item` (audio item) or `rule` (scheduling rule). Group a block by `block` and an intro by `intro`. |
+| `page`, `page_size` | On ad airings, `page` starts at 1 for the first page. `page_size` is the number of rows per page, 50 by default and at most 200. |
+
+The live example uses station ID 1, a 10-second recommended refresh interval, and an estimated HLS listener-count lag of 60 seconds. `as_of` is the timestamp of the snapshot in UTC. `export=csv` returns comma-separated data and `export=xlsx` returns an Excel workbook.
+
+## Royalty format IDs
+
+Use the `id` from the [format list](/docs/api/statistics/#api-royalty-formats) as `format` in preview and download requests. Omit `country` to list all formats or pass a two-letter country code. The current catalog is listed below.
+
+| Field or parameter | Meaning |
+| --- | --- |
+| `AU` | `au_apra` for Australia’s APRA AMCOS / PPCA. |
+| `BR` | `br_ecad` for Brazil’s ECAD. |
+| `CA` | `ca_resound_t8m` for Canada’s Re:Sound Tariff 8 monthly report and `ca_socan` for SOCAN. |
+| `DE` | `de_gvl` for Germany’s GVL. |
+| `FR` | `fr_sacem` for France’s SACEM. |
+| `GB` | `uk_ppl_prs` for the United Kingdom’s PPL/PRS. |
+| `IT` | `it_scf` for Italy’s SCF and `it_siae` for SIAE. |
+| `MX` | `mx_sacm` for Mexico’s SACM / EMMAC-SACM. |
+| `RU` | `ru_rao` for RAO broadcast, `ru_rao_public` for RAO public performance, and `ru_vois` for VOIS. |
+| `US` | `us_soundexchange` for US SoundExchange. |

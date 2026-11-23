@@ -129,3 +129,15 @@ PUT /api/v2/calls/settings
 ```json
 {"station":1,"enabled":true,"who_can_call":"registered","max_wait_min":15}
 ```
+
+## Call status and log filters
+
+| Field or parameter | Meaning |
+| --- | --- |
+| `state` | `ok` means calling is available, `offline` means it is unavailable for this caller. |
+| `status`, `outcome` | `pending` admission in progress, `queued` waiting for host, `accepted` answered, `ended` closed. The `outcome` query accepts one of these states or an exact `end_reason` from a log row. |
+| `registered` | `1`, `true`, or `yes` for accounts; `0`, `false`, or `no` for guests. An omitted or empty value includes both. |
+| `date`, `limit`, `offset` | Log date in `YYYY-MM-DD`, result count (50 by default, at most 200), and number of rows to skip (0 starts at the first row), respectively. |
+| `browser_id`, `name`, `intro` | Browser identifier of 1–64 characters, guest name up to 40 characters, and optional introduction up to 140 characters. Signed-in callers use their account display name. |
+
+In the examples, `station: 1` selects station ID 1 and `max_wait_min: 15` limits the wait to 15 minutes. `messaging` requests a control or chat connection. `audio` requests an audio connection. Panel roles are `ptt` for push-to-talk, `call_host` for the call host, and `chat_staff` for chat staff.

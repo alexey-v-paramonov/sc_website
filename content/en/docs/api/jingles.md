@@ -293,3 +293,15 @@ POST /api/v2/intros/slots/save/
   ]
 }
 ```
+
+## Jingle rules and intro values
+
+| Field or parameter | Meaning |
+| --- | --- |
+| `cat` | `hourly` each hour, `daily` at a daily time, `time_interval` at minute intervals inside the time window, `break` after a track interval, `request` before a listener request, `playlist` before a playlist starts. |
+| `hour`, `minute`, `weekday` | Clock hour 0–23 and minute 0–59. Weekdays are `0` Monday through `6` Sunday, in calendar order. The keys of `repeat_days` use the same weekday numbering. |
+| `break_track`, `time_interval_minute` | Number of tracks between inserts for a track interval, or minutes between inserts for a timed interval, respectively. `time_interval_start_ts` and `time_interval_end_ts` are clock times for the window. |
+| `mix_level` | Mix level from 0 to 100 percent, applied when `do_mix` is enabled. |
+| `encoding_status` | `pending` when encoding is incomplete or has yet to start, `ready` when the encoded versions are ready. |
+
+The intro example uses station ID 1 and intro file ID 4. `08:00:00` and `12:00:00` are local start and end times, and `1111100` enables Monday through Friday. An intro slot may cross midnight when its end is earlier than its start.

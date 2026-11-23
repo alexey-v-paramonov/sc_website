@@ -82,3 +82,13 @@ Use the URL paths as shown, including a trailing slash where present. Path place
 Use `Content-Type: application/json` for JSON bodies, or `multipart/form-data` for uploads. Standard list endpoints return an array unless pagination applies. For limit/offset pagination the object contains `count`, `next`, `previous`, and `results`. Link fields are null when there is no corresponding page. Some endpoints use their own pagination and response fields.
 
 Standard create operations respond with HTTP 201 and the saved object. Update operations generally return HTTP 200 with the object, and standard deletions return HTTP 204 without a body. Validation errors usually return HTTP 400 with field-specific messages. Access failures can return HTTP 401 or 403, and missing records return HTTP 404. See the section for each endpoint for options and exceptions.
+
+## Values in the examples
+
+Replace example IDs with IDs returned by your panel. A number in a URL path identifies the resource named immediately before it, such as a channel, podcast, or event. The HTTP port in the example host is part of the panel address. Use the port in your own panel URL. The `v2` path segment selects version 2 of the panel API. The hosting administration API uses `v1` for version 1.
+
+In the history example, `server=1` selects station ID 1, `limit=1` requests one entry, and `offset=0` starts at the newest entry. The link in `next` has `offset=1` to skip that entry. `count: 500` is the number of matching history records. `id` identifies the play, `all_music_id` identifies the library track, `length` is duration in milliseconds, `ts` is Unix time in milliseconds, and `n_listeners: 0` means zero listeners when playback started.
+
+HTTP codes used in the examples include `200` (successful request), `201` (created), `202` (accepted for processing), `204` (success with an empty body), `400` (invalid input), `401` (authentication required or failed), `403` (permission denied), `404` (resource missing or inaccessible), `405` (method unavailable), `409` (conflict), `429` (rate limit), `500` (server error), `502` (upstream error), `503` (service unavailable), and `504` (upstream timeout).
+
+In JSON, flags such as `enabled` take `true` (on) or `false` (off). A nullable field can take `null` when the value is absent or cleared. Query string flags can use other spellings. Their accepted values are listed with the relevant endpoint.

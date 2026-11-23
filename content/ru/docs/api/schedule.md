@@ -24,7 +24,7 @@ description: "Документация по API сетки вещания Radio-
 При запросе списка API:
 
 - получает события для указанного сервера;
-- разворачивает periodic-события в реальные вхождения по дням недели и неделям месяца;
+- разворачивает periodic-события в реальные вхождения по дням недели и позициям четырёхнедельного цикла;
 - автоматически вычисляет `finish_date`, `finish_time` и `end_ts` на основе следующего события или окончания radioshow;
 - может добавлять служебное событие завершения radioshow, если у эфира задан `playlist_after_radioshow` или `rotation_after_radioshow`.
 
@@ -37,7 +37,7 @@ description: "Документация по API сетки вещания Radio-
 import requests
 
 response = requests.get(
-		"https://demo.radio-tochka.com:1030/api/v2/grid/?server=1&start_ts=1744041600&end_ts=1744646400&utc=1"
+		"https://demo.radio-tochka.com:1030/api/v2/grid/?server=1&start_ts=1775433600&end_ts=1776038400&utc=1"
 )
 print(response.json())
 
@@ -85,9 +85,9 @@ print(response.json())
 		"local_time": "08:00:00",
 		"timezone": "Europe/Moscow",
 		"parent_id": null,
-		"start_ts": 1744099200,
+		"start_ts": 1775624400,
 		"start_ts_utc_readable": "2026-04-08T05:00:00Z",
-		"end_ts": 1744106400
+		"end_ts": 1775631600
 	},
 	{
 		"id": null,
@@ -98,9 +98,9 @@ print(response.json())
 		"break_track": false,
 		"start_playlist_from_beginning": true,
 		"start_date": "2026-04-08",
-		"start_time": "10:00:00",
+		"start_time": "07:00:00",
 		"finish_date": "2026-04-08",
-		"finish_time": "12:00:00",
+		"finish_time": "09:00:00",
 		"playlist": 1,
 		"playlist_after_radioshow": null,
 		"rotation_after_radioshow": null,
@@ -112,12 +112,12 @@ print(response.json())
 		"allow_song_requests_after": false,
 		"color": "#a2e47a",
 		"color2": null,
-		"local_time": "10:00:00",
+		"local_time": "07:00:00",
 		"timezone": "UTC",
 		"parent_id": 10,
-		"start_ts": 1744106400,
+		"start_ts": 1775631600,
 		"start_ts_utc_readable": "2026-04-08T07:00:00Z",
-		"end_ts": 1744113600
+		"end_ts": 1775638800
 	}
 ]
 
@@ -143,10 +143,10 @@ print(response.json())
 - wd_fri: признак повтора по пятницам.
 - wd_sat: признак повтора по субботам.
 - wd_sun: признак повтора по воскресеньям.
-- week_1: активна ли первая неделя месяца.
-- week_2: активна ли вторая неделя месяца.
-- week_3: активна ли третья неделя месяца.
-- week_4: активна ли четвёртая неделя месяца.
+- week_1: активна ли первая позиция четырёхнедельного цикла.
+- week_2: активна ли вторая позиция четырёхнедельного цикла.
+- week_3: активна ли третья позиция четырёхнедельного цикла.
+- week_4: активна ли четвёртая позиция четырёхнедельного цикла.
 - playlist: [ID плейлиста](/docs/api/playlists/#api-playlists), если событие запускает плейлист или radioshow-плейлист.
 - playlist_after_radioshow: [ID плейлиста](/docs/api/playlists/#api-playlists), который должен стартовать после radioshow.
 - rotation_after_radioshow: [ID ротации](/docs/api/rotations/#api-rotations), которая должна стартовать после radioshow.
@@ -167,7 +167,7 @@ print(response.json())
 
 #### Поведение periodic событий
 
-Если `periodicity=periodic`, событие в списке разворачивается по выбранным дням недели `wd_*` и неделям месяца `week_1` ... `week_4`. Если в то же время существует событие `onetime`, оно получает приоритет, а периодическое вхождение не включается в ответ.
+Если `periodicity=periodic`, событие в списке разворачивается по выбранным дням недели `wd_*` и позициям четырёхнедельного цикла `week_1` ... `week_4`. Если в то же время существует событие `onetime`, оно получает приоритет, а периодическое вхождение не включается в ответ.
 
 #### Пример: POST
 
@@ -218,7 +218,7 @@ print(response.json())
 - finish_date: необязательная дата окончания.
 - finish_time: необязательное время окончания.
 - wd_mon, wd_tue, wd_wed, wd_thu, wd_fri, wd_sat, wd_sun: дни недели для `periodic` события.
-- week_1, week_2, week_3, week_4: недели месяца для `periodic` события.
+- week_1, week_2, week_3, week_4: позиции четырёхнедельного цикла для `periodic` события.
 - playlist: [ID плейлиста](/docs/api/playlists/#api-playlists).
 - playlist_after_radioshow: [ID плейлиста](/docs/api/playlists/#api-playlists) после radioshow.
 - rotation_after_radioshow: [ID ротации](/docs/api/rotations/#api-rotations) после radioshow.
@@ -238,7 +238,7 @@ print(response.json())
 При создании и обновлении API проверяет ограничения модели и может вернуть ошибки валидации:
 
 - `repeat_week_days_not_set`: для `periodic` события не выбран ни один день недели.
-- `repeat_weeks_not_set`: для `periodic` события не выбрана ни одна неделя месяца.
+- `repeat_weeks_not_set`: для `periodic` события не выбрана ни одна позиция четырёхнедельного цикла.
 - `playlist_required`: событие требует плейлист, но поле `playlist` не заполнено.
 - `time_slot_busy`: выбранный слот уже занят другим событием.
 
@@ -375,3 +375,14 @@ print(response.json())
 ## Частичные обновления
 
 [`PATCH /api/v2/grid/{id}/`](/docs/api/schedule/#api-schedule-event) обновляет выбранные поля события. Передайте JWT-токен пользователя с правом редактировать сетку вещания или действующий ключ API и используйте приведённые выше поля и ограничения сетки. В ответе возвращается обновлённое событие.
+
+## Значения в сетке вещания
+
+| Поле или параметр | Значение |
+| --- | --- |
+| `cast_type` | `playlist` запускает плейлист, `radioshow` — передачу с необязательным продолжением, `relay` — ретрансляцию, `rotation` — ротацию. |
+| `periodicity` | `onetime` — разовый запуск в дату `start_date`. `periodic` — повтор в выбранные дни и недели. |
+| `start_ts`, `end_ts`, `utc` | Границы периода в секундах Unix. `utc=1` задаёт интерпретацию дат в UTC. Без `utc` или при `utc=0` используется местное время сервера. |
+| `week_1`–`week_4` | Включают позиции с 1 по 4 в повторяющемся четырёхнедельном цикле ISO. `true` включает позицию, `false` её пропускает. |
+
+В примере запроса указан период с 6 по 13 апреля 2026 года, обе границы в 00:00 UTC. Передача начинается в 08:00 по Москве, то есть в 05:00 UTC. Число 1 — ID станции, 10 — ID события, 2 — ID плейлиста передачи и 1 — ID плейлиста продолжения. Сгенерированное событие окончания ссылается на передачу через `parent_id: 10`. `color` и `color2` — цвета события и продолжения в формате HEX. Поля ответа `start_ts` и `end_ts` передаются в секундах Unix.

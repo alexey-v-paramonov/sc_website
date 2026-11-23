@@ -439,3 +439,18 @@ Pass `c` (channel ID) and `t`: `winamp` returns M3U, `wmp` returns ASX, and `itu
 ```http
 GET /api/links/?c=11&t=itunes
 ```
+
+## Channel types, formats, and limits
+
+| Field or parameter | Meaning |
+| --- | --- |
+| `s_type` | `icecast` (Icecast), `icecast-kh` (Icecast KH), `shoutcast1` (SHOUTcast 1), `shoutcast2` (SHOUTcast 2.5), `shoutcast2.6` (SHOUTcast 2.6). |
+| `s_format` | `mp3` (MP3), `aac-lc` (AAC-LC), `aac-he` (AAC+), `aac` (AAC++), `flac` (lossless FLAC), `opus` (Opus). |
+| `bitrate` | Numeric string in kbps. Base choices are `16`, `24`, `32`, `48`, `64`, `96`, `128`, `160`, `192`, `256`, `320`, `384`, `448`, `510`, `728`. Availability can depend on installation and account limits. |
+| `listeners` | Numeric string for the maximum simultaneous listeners. The standalone choices are 5–40 in steps of 5, 50–100 in steps of 10, 120, 150, 200–500 in steps of 50, 600–3000 in steps of 100, and 3500, 4000, 5000, 7000, 10000. Shared installations can use a shorter or customized list. |
+| `port`, `ssl_port` | Streaming and HTTPS port numbers. When supplied, use available, permitted ports in the inclusive range 1024–65535. `ssl_port` can be null. |
+| `buffer_preset` | Icecast buffering preset. `low` uses a 1-second burst and 4-second queue, `medium` uses 2 and 8 seconds, and `large` uses 8 and 30 seconds. `large` is the creation default. The serializer derives `burst_size` and `queue_size` in bytes. |
+| `proxy_status`, `ssl_proxy_status` | `0` inactive, `1` configuring, `2` active, `3` error. |
+| `hls_status` | `inactive` (no active HLS output), `starting` (waiting for the playlist), `active` (playlist exists). |
+
+In the examples, `limit=20` asks for at most 20 results, `offset=0` starts with the first result, `server=1` is the example station, and `id=11` or `c=11` selects the example channel. Ports 8000 and 8443 illustrate separate HTTP and HTTPS listeners. The update uses 192 kbps and 1000 listener slots. `traf_month` records the traffic month. Zero in the example indicates an unset month.

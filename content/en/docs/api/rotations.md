@@ -73,3 +73,11 @@ Set `block_type` to `1` for [a playlist (`playlist`)](/docs/api/playlists/#api-p
 Random tracks support `filter_category`, `filter_genre`, `filter_artist`, `filter_folder`, `filter_not_played_hours`, and `filter_added_days`. Wait blocks use one of `wait_minutes`, `wait_until_time`, and `wait_until_minute`. Jingle blocks can combine `jingle_in` or `jingle_category_in`, playlist or track content, and `jingle_out` or `jingle_category_out`. Playlist behavior uses `playlist_track_count`, `play_entire_playlist`, and `play_entire_playlist_in_sequence` as applicable.
 
 Use the [schedule API](/docs/api/schedule/#api-schedule) to place a rotation on the grid at a specific time.
+
+## Rotation example values
+
+The sample creates a playlist rotation on station ID 1. `rotation_type: 1` selects playlist rotation, `block_type: 1` selects a playlist block, `position: 0` puts it first, `playlist: 12` selects playlist ID 12, and `weight: 1` gives it one unit of random selection weight.
+
+- `weight` accepts integers from 1 to 10000. A larger weight makes a block more likely to be selected in a random playlist rotation. Sequential and clock rotations force `is_random` to `false`.
+- `clock_offset_seconds` is the slot start after the top of the hour, from 0 (the top of the hour) to 3599 (the last second). `clock_duration_seconds` is a positive slot length. Their sum can be at most 3600 seconds, the end of the hour.
+- `wait_minutes` waits a positive number of minutes. `wait_until_time` waits for a clock time. `wait_until_minute` waits for a minute of the hour from 0 to 59. Supply exactly one for a wait block.

@@ -105,3 +105,7 @@ print(response.json())
 Public reads use the last 500 tracks for the selected station. With `limit`, the response is a paginated object and the maximum page size is 100. Without `limit`, the response is an array. For older history, send [a valid API key](/docs/api/settings/#api-api-keys) or [a panel JWT](/docs/api/auth/#api-panel-sign-in) with statistics read permission and an explicit `limit` and `offset` whose sum exceeds 500. An archive request with `offset` greater than 10,000 returns an empty page.
 
 `GET /api/v2/history/{id}/?server=1` returns a history entry available in the selected history view, or HTTP 404. For JSONP, request `format=jsonp` and pass optional `callback`, which defaults to `callback`.
+
+## History example values
+
+The example requests one entry (`limit=1`), skipping zero rows (`offset=0)), from station 1 (`server=1`). The next URL skips one row. The response shows 500 matching entries and zero listeners when this track began playing. `id: 11552` identifies the airplay record. `all_music_id: 1190` identifies the library track. `length: 296347` is the duration in milliseconds and `ts: 1733763534000` is its start time in Unix milliseconds.
